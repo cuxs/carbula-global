@@ -38,7 +38,7 @@ export async function getServerSideProps(context) {
         zonas: parsedZonas,
         referer: referer ? referer : null,
         COUNTRY_CODE: getCountryCode(context.locale),
-        ...(await serverSideTranslations(context.locale, ['common', 'BlackoutComponent'])),
+        ...(await serverSideTranslations(context.locale, ['common', 'BlackoutComponent', 'FaqComponent'])),
       }
     }
   } catch (e) {
@@ -47,7 +47,7 @@ export async function getServerSideProps(context) {
       props: {
         referer: referer ? referer : null,
         COUNTRY_CODE: getCountryCode(context.locale),
-        ...(await serverSideTranslations(context.locale, ['common', 'BlackoutComponent'])),
+        ...(await serverSideTranslations(context.locale, ['common', 'BlackoutComponent', 'FaqComponent'])),
       }
     }
   }

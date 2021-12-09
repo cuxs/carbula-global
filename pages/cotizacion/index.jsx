@@ -13,6 +13,7 @@ import { COUNTRY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE } from '../../utils/consta
 import { checkScheduleMeeting, getLocationName } from '../../utils/fetches';
 import dayjs from 'dayjs';
 import { useRouter } from 'next/router';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Nav = dynamic(import('../../components/nav'))
 const Button = dynamic(import('../../components/Button'))
@@ -23,7 +24,9 @@ const FaqCotization = dynamic(import('../../components/FaqCotization'))
 export async function getServerSideProps(context) {
   return{
     props:{
-      COUNTRY_CODE: getCountryCode(context.locale)
+      COUNTRY_CODE: getCountryCode(context.locale),
+      ...(await serverSideTranslations(context.locale, ['common', 'CotizationForm'])),
+
     }
   }
 }

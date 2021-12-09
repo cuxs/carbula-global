@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import styles from './blackout.module.scss'
+import { useTranslation } from 'next-i18next'
 import classnames from "classnames"
 import { useSpring, animated, config } from 'react-spring'
 import { PuffLoader } from "react-spinners";
@@ -13,7 +14,7 @@ const BlackoutComponent = ({ overlayBackground }) => {
   const [logoStyle, logoSpring] = useSpring(() => ({ from: { opacity: 0 }, }))
   const [textStyle, textSpring] = useSpring(() => ({ from: { opacity: 0 }, }))
   const [text2Style, text2Spring] = useSpring(() => ({ from: { opacity: 0 }, }))
-  
+  const { t } = useTranslation('BlackoutComponent')
 
   useEffect(() => {
     if (overlayBackground) {
@@ -31,7 +32,7 @@ const BlackoutComponent = ({ overlayBackground }) => {
         <PuffLoader color="#3074F1" css={`position: absolute; top: 1000px;left:50%; transform: translate(-50%)`} />
       </div>
       <animated.h2 style={textStyle}>Estamos analizando el mercado en tiempo real con tecnología de punta</animated.h2>
-      <animated.h3 style={text2Style}>Aguardá un momento, preparar tu propuesta puede llevar alrededor de 30 segundos. </animated.h3>
+      <animated.h3 style={text2Style}>{t('footer')}</animated.h3>
     </div>
   </span>)
 }

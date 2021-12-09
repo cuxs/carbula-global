@@ -8,7 +8,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import styles from "./faq.module.scss";
 const FaqCotization = () => {
-  const { t } = useTranslation('BlackoutComponent')
+  const { t } = useTranslation('FaqCotization')
   return (
     <Accordion allowZeroExpanded className={styles.accordion}>
       <AccordionItem className={styles.accordion__item}>

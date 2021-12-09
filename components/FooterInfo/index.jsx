@@ -1,9 +1,13 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-scroll";
 import Button from '../Button';
 import styles from './footerInfo.module.scss';
 
 const FooterInfo = ({ blue, grey, white }) => {
+
+  const { t } = useTranslation('FooterInfo')
+
   const renderColorStyle = () => {
     if (blue) return { color: '#ACC7F9' };
     if (white) return { color: 'white' }
@@ -17,8 +21,8 @@ const FooterInfo = ({ blue, grey, white }) => {
   return (<div className={styles.footerInfo__container} id='contacto'>
     <img src={renderImagSrc('carbula')} alt="logo" className={styles.footerInfo__logo} />
     <div className={styles.legal__texts}>
-      <p style={renderColorStyle()} className={styles.razon__text}> Razón Social: Cárbula S.A.S</p>
-      <p style={renderColorStyle()} className={styles.rut__text}>CUIT: 30-71643870-4</p>
+      <p style={renderColorStyle()} className={styles.razon__text}>{t('razonSocial')}</p>
+      <p style={renderColorStyle()} className={styles.rut__text}>{t('cuit')}</p>
     </div>
     <div className={styles.elements__container}>
       <div className={styles.text__area}>
@@ -64,8 +68,6 @@ const FooterInfo = ({ blue, grey, white }) => {
         </a>
       </div>
     </div>
-    {/* <p style={renderColorStyle()} className={styles.razon__text}> Razón Social: Cárbula S.P.A.</p>
-    <p style={renderColorStyle()} className={styles.rut__text}> RUT: 77.058.168-0</p> */}
   </div>)
 }
 export default FooterInfo;

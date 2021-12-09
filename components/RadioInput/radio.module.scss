@@ -1,0 +1,201 @@
+@import "../../sass/variables.scss";
+
+.radio__container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  width: 90%;
+}
+.radio__container--vertical {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-left: 10px;
+  .option__button:hover {
+    border: none;
+    border-bottom: none;
+    background-color: transparent;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    box-shadow: none;
+  }
+  .option__button--selected {
+    b {
+      color: $primaryColor;
+      text-align: left;
+    }
+    p {
+      text-align: left !important;
+    }
+    box-shadow: none;
+    border-bottom: none;
+    background-color: white;
+    color: $black;
+    border: none;
+    position: relative;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      background-color: $primaryColor;
+      border: 1px solid $primaryColor;
+      left: -20px;
+      top: 30%;
+      border-radius: 100%;
+    }
+  }
+  .option__button--touched {
+    cursor: pointer;
+    box-shadow: none;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    p {
+      font-size: 13px;
+      text-align: left;
+    }
+    p {
+      text-align: left !important;
+    }
+    b {
+      color: $grey;
+    }
+    border-bottom: none;
+    background-color: white;
+    color: $grey;
+    border: none;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      border: 1px solid $grey;
+      background-color: white;
+      left: -20px;
+      top: 30%;
+      border-radius: 100%;
+    }
+  }
+
+  .option__button {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    box-shadow: none;
+    b {
+      color: $primaryColor;
+    }
+    p {
+      text-align: left !important;
+    }
+    border: none;
+    color: $black;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      border: 1px solid $primaryColor;
+      border-radius: 100%;
+      left: -20px;
+      top: 30%;
+    }
+  }
+  .option__button,
+  .option__button--selected {
+    cursor: pointer;
+    p {
+      font-size: 13px;
+      text-align: left;
+    }
+  }
+}
+.option__button {
+  padding: 10px;
+  color: $primaryColor;
+  border: 3px solid $primaryColor;
+  min-width: 65px;
+  border-radius: 100px;
+  margin: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  p {
+    text-align: center !important;
+  }
+  &:hover {
+    border: 3px solid $lightBlue;
+    background-color: $lightBlue;
+  }
+  &--touched {
+    margin: 10px;
+    min-width: 65px;
+    border: 3px solid $lightBlue;
+    background-color: $lightBlue;
+    border-radius: 100px;
+    color: $primaryColor;
+    padding: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+    p {
+      text-align: center !important;
+    }
+  }
+  &--selected {
+    margin: 10px;
+    min-width: 70px;
+    border: 3px solid $primaryColor;
+    background-color: $primaryColor;
+    border-radius: 100px;
+    color: white;
+    padding: 10px;
+    p {
+      text-align: center !important;
+    }
+  }
+}
+@media (max-width: 769px) {
+  .radio__container {
+    flex-direction: column;
+    width: 50%;
+    margin: 10px auto;
+  }
+  .radio__container--vertical {
+    .option__button {
+      b {
+        color: $primaryColor;
+        font-size: 1.5em;
+        font-weight: 100;
+      }
+    }
+    .option__button--selected {
+      b {
+        color: $primaryColor;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+@media (max-width: 475px) {
+  .radio__container{
+    width: 65%;
+  }
+}
+@media (max-width: 375px) {
+  .option__button{
+    padding: 15px 10px
+  }
+  .radio__container--vertical {
+    .option__button{
+      padding: 10px;
+    }
+  }
+  .radio__container{
+    width: 80%;
+  }
+}

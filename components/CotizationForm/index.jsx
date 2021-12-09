@@ -1,0 +1,849 @@
+import React, { useState, Fragment, useRef, useEffect } from 'react';
+import { formatNumber, getCalendlyURL } from '../../utils/helpers';
+import dynamic from 'next/dynamic'
+import Button from '../Button';
+import styles from './cotization-form.module.scss';
+import Select from '../SelectComponent';
+import ProgressBar from '../ProgressBar';
+import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY } from '../../utils/constants';
+import { Formik, Field } from 'formik';
+import { object, mixed, number } from 'yup';
+import Iframe from 'react-iframe'
+import RadioInput from '../RadioInput';
+import cotizationsJSON from '../../public/autopress.json';
+import FaqCotization from '../FaqCotization';
+import { updateLeadPrices, rejectSellTime, updateHubspotProperty } from '../../utils/fetches';
+import Modal from '../Modal';
+import NumberFormat from 'react-number-format';
+import { InlineWidget } from "react-calendly";
+import dayjs from 'dayjs';
+
+const Odometer = dynamic(import('react-odometerjs'), {
+  ssr: false,
+  loading: () => 0
+});
+
+const CotizationForm = ({
+  selectedPrice,
+  setSelectedPrice,
+  step,
+  setStep,
+  name,
+  email,
+  width,
+  grantedPrice,
+  variablePrices: { _publicationPrice,
+    _marginPrice,
+    _carbulaFee, },
+  external_id,
+  brand,
+  year,
+  model,
+  version,
+  kms,
+  meetData,
+  locationName,
+  COUNTRY_CODE }) => {
+
+  const [publicationPrice, setPublicationPrice] = useState(_publicationPrice)
+  const [marginPrice, setMarginPrice] = useState(_marginPrice);
+  const [carbulaFee, setCarbulaFee] = useState(_carbulaFee);
+  const [formValues, setFormValues] = useState({});
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [step])
+
+  const handlePriceChange = (value) => {
+    setSelectedPrice(value)
+    const cotizationRow = cotizationsJSON.find((row) => (
+      row.AUTOPRESSMIN < value && row.AUTOPRESSMAX > value
+    ))
+    if (cotizationRow) {
+      setPublicationPrice(value + cotizationRow.MARGEN + cotizationRow.FEE)
+      setMarginPrice(cotizationRow.MARGEN)
+      setCarbulaFee(cotizationRow.FEE)
+    }
+  }
+  // const preciosOptions = () => {
+  //   const precio = parseInt(selectedPrice, 10)
+  //   const limit = 4000000;
+  //   let variablePrice = precio - limit <= 200000 ? 200000 : precio - limit;
+  //   let preciosArray = []
+  //   while (variablePrice < precpio + limit) {
+  //     preciosArray.push({ label: `$ ${formatNumber(variablePrice + 150000, 0)}`, value: variablePrice + 150000 },)
+  //     variablePrice += 50000
+  //   }
+  //   return preciosArray;
+  // }
+  const handleCondicionSubmit = (values, actions) => {
+    try {
+      updateHubspotProperty(values)
+    } catch (e) {
+      console.log(e)
+    }
+    if (values.owners && values.owners === '5 o más') {
+      return setStep('end-categoria')
+    }
+    // if (values.carStatus && values.carStatus[0] === 'Con harto uso') {
+    //   return setStep('end-categoria')
+    // }
+    if (values.prendado && values.prendado === 'Sí') {
+      return setStep('end-prendado')
+    }
+    if (values.rematado && values.rematado === 'Sí') {
+      return setStep('end-rematado')
+    }
+    if (values.prendado && values.prendado === 'Sí') {
+      return setStep('end-prendado')
+    }
+    setFormValues({ ...formValues, ...values })
+    setStep(step + 1)
+  }
+  const handleIframeURLload = (e) => {
+    const key = e.target.src.split('=').pop;
+    if (key === 'success') {
+      setStep('success')
+    }
+  }
+  const handlePriceStep = async () => {
+    const prices = {
+      publicationPrice: _publicationPrice,
+      marginPrice: _marginPrice,
+      carbulaFee: _carbulaFee,
+      grantedPrice,
+      montoCliente: selectedPrice,
+      marginPrice_client: marginPrice,
+      carbulaFee_client: carbulaFee,
+      publicationPrice_client: publicationPrice,
+      external_id: external_id,
+    }
+    try {
+      updateLeadPrices(prices)
+      setStep(step + 1)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+  const handleRejectSellTime = async () => {
+    try {
+      rejectSellTime({ external_id, country_code: COUNTRY_CODE })
+      setStep('end-venta')
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  const handleUpdateDealProperty = async (values, actions) => {
+    try {
+      updateHubspotProperty(values)
+    } catch (e) {
+      console.log(e)
+    }
+    if (values.owners && values.owners === '5 o más') {
+      return setStep('end-categoria')
+    }
+    if (values.prendado && values.prendado === 'Sí') {
+      return setStep('end-prendado')
+    }
+    // if (values.carStatus && values.carStatus[0] === 'Con harto uso') {
+    //   return setStep('end-categoria')
+    // }
+    if (values.rematado && values.rematado === 'Sí') {
+      return setStep('end-categoria')
+    }
+    setStep(step + 1)
+  }
+  const Step1Desktop = () => (
+    <div className={styles['secondary-steps__container']}>
+      <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
+      <h4 className={styles.text__primary}>Ahora cuéntenos un poco más acerca de su vehículo. </h4>
+      <hr />
+      <p>No lo olvide, en Cárbula <b>no compramos su auto</b>. Lo que hacemos
+        es venderlo por usted en 20 días o menos y garantizar hasta un 25% más
+        de dinero que una automotora tradicional.
+        <br /><br /><b>Le haremos unas preguntas de sobre vehículo:</b></p>
+      <Formik
+        onSubmit={handleCondicionSubmit}
+        validationSchema={object().shape({
+          prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
+          rematado: mixed().required('Seleccione una opción.'),
+        })}
+        initialValues={{
+          prendado: '',
+          rematado: '',
+          external_id,
+          country_code: COUNTRY_CODE
+        }}
+      >
+        {({ handleChange, errors, values, touched, handleSubmit, }) => (
+          <form onSubmit={handleSubmit}>
+            <div className='form-item'>
+              <label>¿Actualmente está con prenda?</label>
+              <RadioInput
+                touched={touched.prendado}
+                value={values.prendado}
+                name="prendado"
+                options={['Sí', 'No', 'No lo sé']}
+              />
+              {errors.prendado && touched.prendado && (
+                <div className="form-error">
+                  {errors.prendado}
+                </div>
+              )}
+            </div>
+            <div className='form-item'>
+              <label>¿Ha sido rematado por algún motivo? </label>
+              <RadioInput
+                touched={touched.rematado}
+                value={values.rematado}
+                name="rematado"
+                options={['Sí', 'No']}
+              />
+              {errors.rematado && touched.rematado && (
+                <div className="form-error">
+                  {errors.rematado}
+                </div>
+              )}
+            </div>
+            <div className={styles['buttons__container--horizontal']}>
+              <Button primary type='submit'>Agendar inspección</Button>
+              <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+            </div>
+          </form>
+        )}
+      </Formik>
+      {/* <div className={styles.buttons__container}>
+            <Button outlined onClick={() => setStep(step + 1)}><b>Sí</b>, me parece genial.</Button>
+            <Button outlined onClick={handleRejectSellTime}><b>No</b>, necesito venderlo al tiro.</Button>
+            <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+          </div> */}
+    </div>
+  )
+
+  const Step1Mobile = () => (
+    <div className={styles['secondary-steps__container']}>
+      <h2 className={`${styles.text__primary} ${styles.main__title}`}>¡Gracias {name}!</h2>
+      <h4 className={styles.text__primary}>Ahora cuéntenos un poco más acerca de su vehículo. </h4>
+      <hr />
+      <p>No lo olvide, en Cárbula <b>no compramos su auto</b>. Lo que hacemos
+        es venderlo por usted en 20 días o menos y garantizar hasta un 25% más
+        de dinero que una automotora tradicional.
+        <br /><br /><b>Le haremos unas preguntas de sobre vehículo:</b></p>
+      <Formik
+        onSubmit={handleCondicionSubmit}
+        validationSchema={object().shape({
+          prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
+        })}
+        initialValues={{
+          prendado: '',
+          external_id,
+          country_code: COUNTRY_CODE
+        }}
+      >
+        {({ handleChange, errors, values, touched, handleSubmit, }) => (
+          <form onSubmit={handleSubmit}>
+            <div className='form-item'>
+              <label>¿Actualmente está con prenda?</label>
+              <RadioInput
+                touched={touched.prendado}
+                value={values.prendado}
+                name="prendado"
+                options={['Sí', 'No', 'No lo sé']}
+              />
+              {errors.prendado && touched.prendado && (
+                <div className="form-error">
+                  {errors.prendado}
+                </div>
+              )}
+            </div>
+            <div className={styles['buttons__container--horizontal']}>
+              <Button primary type='submit'>Siguiente</Button>
+              <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+            </div>
+          </form>
+        )}
+      </Formik>
+    </div>
+  )
+
+  const Step2Mobile = () => <div className={styles['secondary-steps__container']}>
+    <Formik
+      onSubmit={handleCondicionSubmit}
+      validationSchema={object().shape({
+        rematado: mixed().required('Seleccione una opción.'),
+      })}
+      initialValues={{
+        rematado: '',
+        external_id,
+        country_code: COUNTRY_CODE
+      }}
+    >
+      {({ handleChange, errors, values, touched, handleSubmit, }) => (
+        <form onSubmit={handleSubmit}>
+          <div className='form-item'>
+            <label>¿Ha sido rematado por algún motivo? </label>
+            <RadioInput
+              touched={touched.rematado}
+              value={values.rematado}
+              name="rematado"
+              options={['Sí', 'No']}
+            />
+            {errors.rematado && touched.rematado && (
+              <div className="form-error">
+                {errors.rematado}
+              </div>
+            )}
+          </div>
+          <div className={styles['buttons__container--horizontal']}>
+            <Button primary type='submit'>Agendar inspección</Button>
+            <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+          </div>
+        </form>
+      )}
+    </Formik>
+  </div>
+  const Step2Desktop = () => <div className={styles['secondary-steps__container']}>
+    <Formik
+      onSubmit={handleCondicionSubmit}
+      validationSchema={object().shape({
+        saleTime: mixed().required('Seleccione el tiempo de venta que desea.'),
+        owners: mixed().required('Seleccione una opción.'),
+        prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
+      })}
+      initialValues={{
+        saleTime: '',
+        owners: '',
+        prendado: '',
+        external_id,
+        country_code: COUNTRY_CODE
+      }}
+    >
+      {({ handleChange, errors, values, touched, handleSubmit, }) => (
+        <form onSubmit={handleSubmit}>
+          <div className='form-item'>
+            <label>¿Qué tan rápido necesitás que vendamos tu auto?</label>
+            <RadioInput
+              touched={touched.saleTime}
+              value={values.saleTime}
+              name="saleTime"
+              options={['Muy rápido', 'Normal', 'Sin apuro']}
+            />
+            {errors.saleTime && touched.saleTime && (
+              <div className="form-error">
+                {errors.saleTime}
+              </div>
+            )}
+          </div>
+          <hr />
+          <div className='form-item'>
+            <label>¿Cuántos dueños ha tenido el auto?</label>
+            <RadioInput
+              touched={touched.owners}
+              value={values.owners}
+              name="owners"
+              options={['1', '2', '3', '4 o más']}
+            />
+            {errors.owners && touched.owners && (
+              <div className="form-error">
+                {errors.owners}
+              </div>
+            )}
+          </div>
+          <hr />
+          <div className='form-item'>
+            <label>¿Actualmente está prendado?</label>
+            <RadioInput
+              touched={touched.prendado}
+              value={values.prendado}
+              name="prendado"
+              options={['Sí', 'No', 'No lo sé']}
+            />
+            {errors.prendado && touched.prendado && (
+              <div className="form-error">
+                {errors.prendado}
+              </div>
+            )}
+          </div>
+          <div className={styles['buttons__container--horizontal']}>
+            <Button primary type='submit'>Siguiente</Button>
+            <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+          </div>
+        </form>
+      )}
+    </Formik>
+  </div>
+
+  const Step3Mobile = () => <div className={styles['secondary-steps__container']}>
+    <Formik
+      onSubmit={handleUpdateDealProperty}
+      validationSchema={object().shape({
+        owners: mixed().required('Seleccione una opción.'),
+      })}
+      initialValues={{
+        owners: '',
+        external_id,
+        country_code: COUNTRY_CODE
+      }}
+    >
+      {({ handleChange, errors, values, touched, handleSubmit, }) => (
+        <form onSubmit={handleSubmit}>
+          <div className='form-item'>
+            <label>¿Cuántos dueños ha tenido el auto?</label>
+            <RadioInput
+              submitOnClick
+              touched={touched.owners}
+              value={values.owners}
+              name="owners"
+              options={['1', '2', '3', '4 o más']}
+            />
+            {errors.owners && touched.owners && (
+              <div className="form-error">
+                {errors.owners}
+              </div>
+            )}
+          </div>
+          <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+        </form>
+      )}
+    </Formik>
+  </div>
+  const Step3Desktop = () => <div className={styles['secondary-steps__container']}>
+    <Formik
+      onSubmit={handleCondicionSubmit}
+      validationSchema={object().shape({
+        carStatus: mixed().required('Seleccione una opción.'),
+        rematado: mixed().required('Seleccione una opción.'),
+        saleDeal: mixed().required('Seleccione una opción.'),
+      })}
+      initialValues={{
+        carStatus: '',
+        rematado: '',
+        saleDeal: '',
+        external_id,
+        country_code: COUNTRY_CODE
+      }}
+    >
+      {({ handleChange, errors, values, touched, handleSubmit, }) => (
+        <form onSubmit={handleSubmit}>
+          <div className='form-item'>
+            <label>¿En qué estado se encuentra tu auto?</label>
+            <RadioInput
+              touched={touched.carStatus}
+              vertical
+              boldOption
+              value={values.carStatus}
+              name="carStatus"
+              options={[
+                ['Excelente', 'está como nuevo y en excelentes condiciones mecánicas.'],
+                ['Muy bueno', 'tiene pequeños daños externos y no tiene problemas mecánicos.'],
+                ['Bueno', 'tiene detalles menores que requieren reparación y/o sustitución de alguna pieza. Detalles menores de pintura y algún abollón'],
+                ['Razonable', 'le urge una reparación mecánica. Presenta luces en el tablero, su carrocería tiene abollones y el interior necesita ser restaurado.'],
+              ]}
+            />
+            {errors.carStatus && touched.carStatus && (
+              <div className="form-error">
+                {errors.carStatus}
+              </div>
+            )}
+          </div>
+          <hr />
+          <div className='form-item'>
+            <label>¿Ha sido rematado por algún motivo? </label>
+            <RadioInput
+              touched={touched.rematado}
+              value={values.rematado}
+              name="rematado"
+              options={['Sí', 'No']}
+            />
+            {errors.rematado && touched.rematado && (
+              <div className="form-error">
+                {errors.rematado}
+              </div>
+            )}
+          </div>
+          <hr />
+          <div className='form-item'>
+            <label>¿Cuál es tu plan con la venta del auto?  </label>
+            <RadioInput
+              touched={touched.saleDeal}
+              value={values.saleDeal}
+              name="saleDeal"
+              boldOption
+              options={[['Solo vender', ''], ['Vender y comprar', 'uno más económico'], ['Vender y comprar', 'uno más caro']]}
+            />
+            {errors.saleDeal && touched.saleDeal && (
+              <div className="form-error">
+                {errors.saleDeal}
+              </div>
+            )}
+          </div>
+          <div className={styles['buttons__container--horizontal']}>
+            <Button primary type='submit'>Siguiente</Button>
+            <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+          </div>
+
+        </form>
+      )}
+    </Formik>
+  </div>
+
+  const Step4Mobile = () => <div className={styles['secondary-steps__container']}>
+
+    <Formik
+      onSubmit={handleUpdateDealProperty}
+      validationSchema={object().shape({
+        prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
+      })}
+      initialValues={{
+        prendado: '',
+        external_id,
+        country_code: COUNTRY_CODE
+      }}
+    >
+      {({ handleChange, errors, values, touched, handleSubmit, }) => (
+        <form onSubmit={handleSubmit}>
+          <div className='form-item'>
+            <label>¿Actualmente está prendado?</label>
+            <RadioInput
+              submitOnClick
+              touched={touched.prendado}
+              value={values.prendado}
+              name="prendado"
+              options={['Sí', 'No', 'No lo sé']}
+            />
+            {errors.prendado && touched.prendado && (
+              <div className="form-error">
+                {errors.prendado}
+              </div>
+            )}
+          </div>
+          <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+        </form>
+      )}
+    </Formik>
+
+  </div>
+  const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name)} />
+
+  const Step5Mobile = () => <div className={styles['secondary-steps__container']}>
+    <Formik
+      onSubmit={handleUpdateDealProperty}
+      validationSchema={object().shape({
+        carStatus: mixed().required('Seleccione una opción.'),
+      })}
+      initialValues={{
+        carStatus: '',
+        external_id,
+        country_code: COUNTRY_CODE
+      }}
+    >
+      {({ handleChange, errors, values, touched, handleSubmit, }) => (
+        <form onSubmit={handleSubmit}>
+          <div className='form-item'>
+            <label>¿En qué estado se encuentra tu auto?</label>
+            <RadioInput
+              touched={touched.carStatus}
+              vertical
+              boldOption
+              submitOnClick
+              value={values.carStatus}
+              name="carStatus"
+              options={[
+                ['Excelente', 'está como nuevo y en excelentes condiciones mecánicas.'],
+                ['Muy bueno', 'tiene pequeños daños externos y no tiene problemas mecánicos.'],
+                ['Bueno', 'tiene detalles menores que requieren reparación y/o sustitución de alguna pieza. Detalles menores de pintura y algún abollón menor'],
+                ['Razonable', 'le urge una reparación mecánica. Presenta luces en el tablero, su carrocería tiene abollones y el interior necesita ser restaurado.'],
+              ]}
+            />
+            {errors.carStatus && touched.carStatus && (
+              <div className="form-error">
+                {errors.carStatus}
+              </div>
+            )}
+          </div>
+          <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+        </form>
+      )}
+    </Formik>
+  </div>
+  const Step5 = () => <div className={styles['meeting-info']}>
+    <h2>{year} {brand} {model}</h2>
+    <h3>{version} - {formatNumber(kms, 0)} kms</h3>
+    <hr />
+    <div className={styles.meeting__row}>
+      <img src="/icons/calendar.svg" alt="calendario" />
+      <p>{meetData.date}</p>
+    </div>
+    {/* <div className={styles.meeting__row}>
+      <img src="/icons/location.svg" alt="ubicación" />
+      <p>{meetData.address}, {locationName}, {COUNTRY}</p>
+    </div> */}
+    <hr />
+    <p className={styles['meeting-info__footer']}>Ahora que ya agendaste su inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.</p>
+    <a href="https://catalogo.carbula.com"><Button primary>Ver catálogo</Button></a>
+  </div>
+
+  const Step6Mobile = () => <div className={styles['secondary-steps__container']}>
+    <Formik
+      onSubmit={handleUpdateDealProperty}
+      validationSchema={object().shape({
+        rematado: mixed().required('Seleccioná una opción.'),
+      })}
+      initialValues={{
+        rematado: '',
+        external_id,
+        country_code: COUNTRY_CODE
+      }}
+    >
+      {({ handleChange, errors, values, touched, handleSubmit, }) => (
+        <form onSubmit={handleSubmit}>
+          <div className='form-item'>
+            <label>¿Ha sido rematado por algún motivo? </label>
+            <RadioInput
+              touched={touched.rematado}
+              value={values.rematado}
+              name="rematado"
+              submitOnClick
+              options={['Sí', 'No']}
+            />
+            {errors.rematado && touched.rematado && (
+              <div className="form-error">
+                {errors.rematado}
+              </div>
+            )}
+          </div>
+          <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+        </form>
+      )}
+    </Formik>
+  </div>
+
+  const Step7Mobile = () => <div className={styles['secondary-steps__container']}>
+    <Formik
+      onSubmit={handleUpdateDealProperty}
+      validationSchema={object().shape({
+        saleDeal: mixed().required('Seleccione una opción.'),
+      })}
+      initialValues={{
+        saleDeal: '',
+        external_id
+      }}
+    >
+      {({ handleChange, errors, values, touched, handleSubmit, }) => (
+        <form onSubmit={handleSubmit}>
+          <div className='form-item'>
+            <label>¿Cuál es tu plan con la venta del auto?  </label>
+            <RadioInput
+              touched={touched.saleDeal}
+              value={values.saleDeal}
+              submitOnClick
+              name="saleDeal"
+              boldOption
+              options={[['Solo vender', ''], ['Vender y comprar', 'uno más económico'], ['Vender y comprar', 'uno más caro']]}
+            />
+            {errors.saleDeal && touched.saleDeal && (
+              <div className="form-error">
+                {errors.saleDeal}
+              </div>
+            )}
+          </div>
+          <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+        </form>
+      )}
+    </Formik>
+  </div>
+
+  const renderCardBody = () => {
+    switch (step) {
+      case 0: return (
+        <Fragment>
+          <h2 className={`${styles.text__primary} ${styles.main__title}`}>¿Cuánto dinero desea ganar?</h2>
+          <div className={styles.price__dropdown}>
+
+            <input
+              readOnly
+              type="string"
+              value={formatNumber(selectedPrice, 0)}
+              step={50000}
+              min={selectedPrice - 4000000}
+              max={selectedPrice + 4000000}
+              onChange={handlePriceChange}
+              name='selectedPrice'
+            >
+            </input>
+            {/* <Odometer value={selectedPrice} format="(.ddd),dd" /> */}
+            <div className={styles.odometer__buttons}>
+              <button><img src='/icons/plus.svg' alt="mas" onClick={() => handlePriceChange(selectedPrice + 50000)} alt='up' /></button>
+              <button><img src='/icons/minus.svg' alt="menos" onClick={() => handlePriceChange(selectedPrice - 50000)} alt='down' /></button>
+            </div>
+            {/* <Select
+              big
+              name='selectedPrice'
+              options={preciosOptions()}
+              large
+              onChange={handlePriceChange}
+              defaultValue={{ label: `$ ${formatNumber(selectedPrice, 0)}`, value: selectedPrice }}
+              renderNoOptionMessage={() => 'Elije'}
+            /> */}
+            <small className={styles.price__currency}>{CURRENCY[COUNTRY_CODE]}</small>
+          </div>
+          <div className={styles.card__text}>
+            <p>9 de cada 10 autos que vendemos, lo hacemos en 20 días o menos, utilizando nuestro precio sugerido. <span>Mientras más competitivo sea el precio de publicación que elijas, más rápido lograremos tu objetivo. </span></p>
+          </div>
+          <div className={styles.card__prices}>
+            <div className={styles['price__row--grey']}>
+              <p>Valor de publicación</p> <p>$ {formatNumber(publicationPrice, 0)}</p>
+            </div>
+            <div className={styles['price__row--grey']}>
+              <p>Margen para negociar</p> <p>$ {formatNumber(marginPrice, 0)}</p>
+            </div>
+            <div className={styles['price__row--grey']}>
+              <p>Comisión Cárbula</p><p>$ {formatNumber(carbulaFee, 0)}</p>
+            </div>
+            <div className={styles.price__row}>
+              <p>Dinero en mano para usted</p><p>$ {formatNumber(selectedPrice, 0)}</p>
+            </div>
+          </div>
+          <Button primary onClick={handlePriceStep}> Continuar</Button>
+        </Fragment>
+      )
+      case 1: if (width < 769) {
+        return <Step1Mobile />
+      }
+        return <Step1Desktop />
+
+      case 2:
+        if (width < 769) {
+          return <Step2Mobile />
+        }
+        return <Step4 />
+      case 3:
+        if (width < 769) {
+          return <Step4 />
+        }
+        return <Step5 />
+      case 4:
+        if (width < 769) {
+          return <Step5 />
+        }
+        return <div />
+      case 'end-venta': return (
+        <div>
+          <div className={styles['error-card__container']}>
+            <img src="/icons/cancel.svg" alt='error' />
+            <hr />
+            <h3>No se preocupe.</h3>
+            <h4>Para ayudarte a resolver la venta inmediata, le contaremos tu situación a la sólida red de concesionarias acreditadas que trabajan con nosotros para que te contacten cuanto antes.</h4>
+          </div>
+        </div>
+      )
+      case 'end-categoria': return (
+        <div>
+          <div className={styles['error-card__container']}>
+            <img src="/icons/cancel.svg" alt='error' />
+            <hr />
+            <h3>Desafortunadamente, no vendemos vehículos de su categoría por el momento. </h3>
+            <h4>Agradecemos su tiempo y esperamos vuelva pronto!</h4>
+          </div>
+        </div>
+      )
+      case 'end-rematado': return (
+        <div>
+          <div className={styles['error-card__container']}>
+            <img src="/icons/cancel.svg" alt='error' />
+            <hr />
+            <h4>En este momento no estamos vendiendo vehículos rematados. Agradecemos su tiempo y esperamos vender su próximo auto!</h4>
+          </div>
+        </div>
+      )
+      case 'end-prendado': return (
+        <div>
+          <div className={styles['error-card__container']}>
+            <img src="/icons/cancel.svg" alt='error' />
+            <hr />
+            <h4>En este momento no estamos vendiendo vehículos prendados. Agradecemos su tiempo y esperamos vender su próximo auto!</h4>
+          </div>
+        </div>
+      )
+      default:
+        break;
+    }
+  }
+  return (
+    <div className={styles['cotization-form__container']}>
+      <div
+        className={styles.card__container}
+      >
+        <ProgressBar step={step} total={width < 769 ? LAST_STEP_MOBILE : LAST_STEP_DESKTOP} />
+        {renderCardBody()}
+      </div>
+      {width < 769 && <FaqCotization />}
+      <Modal isOpen={!selectedPrice}>
+        <div className={styles.form__container}>
+          <h3>¡Hola {name}!</h3>
+          <p>Muchas gracias por utilizar los servicios de <b>Cárbula</b>.</p>
+          <p>Por el momento no tenemos un valor de referencia para brindarte.</p>
+          <p>Por favor ingresá el valor que querés ganar por tu vehículo 🚗</p>
+          <Formik
+            onSubmit={(values) => {
+              const parsedValue = values.amount.replace(/\./g, '')
+              handlePriceChange(parseInt(parsedValue))
+            }}
+            initialValues={{
+              amount: ''
+            }}
+            validationSchema={
+              object().shape({
+                amount: number()
+                  .transform((value, originalValue) => {
+                    const parsedValue = originalValue.replace(/\./g, '')
+                    return parseInt(parsedValue)
+                  })
+                  .min(40000, 'Ingresá un valor mayor a $40.000.')
+                  .max(9490000, 'Como máximo $9.490.000.')
+                  .required('Ingresá el monto que deseas ganar')
+              })
+            }
+          >
+            {({ setFieldValue, values, handleSubmit, handleBlur, handleChange, touched, errors }) => (
+              <form onSubmit={handleSubmit}>
+                <div className={styles.price__dropdown}>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    name="amount"
+                    thousandSeparator="."
+                    decimalSeparator=","
+                    value={values.amount}
+                    onChange={handleChange}
+                    inputmode="numeric"
+                    placeholder="Sólo números"
+                    onBlur={handleBlur}
+                  />
+                  {/* <input
+                    name="amount"
+                    value={values.amount}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Sólo números"
+                  /> */}
+                  <small className={styles.price__currency}>{CURRENCY[COUNTRY_CODE]}</small>
+                  {errors.amount && touched.amount && (
+                    <div className={styles.form__error}>
+                      {errors.amount}
+                    </div>
+                  )}
+                </div>
+                <div className={styles.form__buttons}>
+                  <Button primary type="submit">Continuar</Button>
+                </div>
+              </form>)}
+          </Formik>
+        </div>
+
+      </Modal>
+    </div >
+  )
+}
+
+export default CotizationForm

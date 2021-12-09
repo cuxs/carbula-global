@@ -1,0 +1,177 @@
+@import "../../sass/variables.scss";
+
+.sellform__container {
+  position: relative;
+  perspective: 1000px;
+}
+.sellform__card {
+  position: absolute;
+  top: -100px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 40px 65px 40px 65px;
+  width: 650px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: space-around;
+}
+.fields--mobile {
+  display: none;
+}
+.fields--desktop {
+  display: block;
+}
+.division__container {
+  p {
+    font-size: 15px;
+    margin-left: -4px;
+    margin-bottom: 2px;
+  }
+}
+.sellform__division {
+  display: block;
+  width: 20px;
+  height: 60px;
+  border-left: 1px solid $grey;
+}
+.form__row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+.patente__input {
+  width: 240px;
+  border-radius: 0px;
+}
+.buscar__button {
+  button {
+    transform: translate3d(0px, 8px, 0px);
+  }
+  margin-top: 25px;
+  .patente::before {
+    content: "\00a0";
+  }
+}
+.submit__button {
+  margin-top: 50px;
+  text-align: center;
+}
+.personal-data__form {
+  .form__row {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .buttons__container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+}
+.personal-data__form-item{
+  width: 100%;
+  margin-left: 10px;
+  input{
+    width: 95%
+  }
+}
+.terms {
+  font-size: 12px;
+  margin: 30px 0px;
+}
+.kms__input{
+  width: 150px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+@media (max-width: 769px) {
+  .sellform__card {
+    width: 60vw;
+    top: -320px;
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .personal-data__form-item{
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+  .submit__button {
+    margin: 20px auto 0px auto;
+    display: flex;
+    justify-content: center;
+  }
+  .patente__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .patente__input {
+    width: 200px;
+  }
+  .division__container {
+    display: flex;
+    margin-top: 20px;
+    p {
+      margin: 20px 10px 0px 10px;
+    }
+  }
+  .sellform__division {
+    border-top: 1px solid $grey;
+    border-left: none;
+    height: 0px;
+    width: 90%;
+    margin: 30px 0px 30px 0px;
+  }
+}
+@media (max-width: 690px){
+  .patente {
+    display: none !important;
+  }
+}
+@media (max-width: 566px) {
+  .fields--mobile {
+    display: block;
+  }
+  .fields--desktop {
+    display: none;
+  }
+  .sellform__card {
+    width: 80vw;
+    top: -320px;
+    padding: 40px 20px;
+  }
+  .patente__input {
+    width: 150px;
+  }
+  .kms__input{
+    width: 80%;
+    margin-left: 20px;
+  }
+  .hide__responsive {
+    display: none;
+  }
+}
+
+@media (max-width: 376px) {
+  .kms__input{
+    width: 90%;
+    margin-left: 20px;
+  }
+  .sellform__card {
+    input {
+      width: 120px;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .sellform__card {
+    width: 95vw;
+    top: -300px;
+    padding: 40px 10px;
+    box-sizing: border-box;
+  }
+}

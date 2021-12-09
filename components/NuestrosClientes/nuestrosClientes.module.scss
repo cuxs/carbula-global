@@ -1,0 +1,132 @@
+@import "../../sass/variables.scss";
+
+.nuestrosClientes__container {
+  text-align: center;
+  width: 80%;
+  margin: 140px auto 50px auto;
+  background-color: $greyBackground;
+  h2 {
+    margin-bottom: 3rem;
+  }
+}
+
+.reviews__container {
+  display: flex;
+  justify-content: space-around;
+}
+.reference__card {
+  display: flex;
+  background-color: white;
+  border: 0.5px solid #AAAAAA;
+  padding: 40px 20px 40px 20px;
+  border-radius: 12px;
+  width: 300px;
+  height: 350px;
+  flex-direction: column;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  hr {
+    width: 100%;
+  }
+  p {
+    color: $grey;
+    margin: 20px 0px;
+    font-size: 14px;
+  }
+}
+.reference__icon {
+  width: 60px;
+  display: block;
+  margin-bottom: 20px;
+}
+.reference__heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    border-radius: 100%;
+    width: 50px;
+  }
+  b {
+    margin-left: 10px;
+  }
+}
+.reference__stars {
+  width: 120px;
+  display: block;
+  margin: 0px auto 20px auto;
+}
+
+@media screen and (max-width: 1025px) {
+  .reference__card {
+    width: 250px;
+    height: 370px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .carousel .slider-wrapper {
+    margin-bottom: 30px !important;
+  }
+  .slide {
+    background-color: white !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .item-important__price {
+    margin: 20px 0px 0px 0px;
+  }
+  .reference__icon {
+    width: 60px !important;
+    display: block !important;
+    margin-bottom: 20px !important;
+  }
+  .reference__stars {
+    width: 120px !important;
+    display: block !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .reference__card {
+    border:none;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    hr {
+      width: 100%;
+    }
+  }
+  .reference__stars {
+    width: 120px !important;
+  }
+  .nuestrosClientes__container {
+    margin-top: 30px;
+    text-align: center;
+    h2 {
+      margin-bottom: 15px;
+      margin-left: auto;
+      width: 80%;
+      margin-right: auto;
+    }
+  }
+}
+@media screen and (max-width: 321px) {
+  .reference__card {
+    width: 240px;
+    height: 300px;
+    padding: 10px;
+    p{
+      font-size: 12px;
+    }
+  }
+}

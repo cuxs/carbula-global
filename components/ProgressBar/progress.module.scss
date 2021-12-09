@@ -1,0 +1,35 @@
+@import "../../sass/variables.scss";
+
+.progress-bar--0 {
+  display: none;
+}
+.progress-bar {
+  position: absolute;
+  background-color: $primaryColor;
+  height: 10px;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 5px;
+  transition: all 1s;
+}
+.progress-bar--success{
+  position: absolute;
+  background-color: $secondaryColor;
+  height: 10px;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  transition: all 1s;
+}
+.error {
+  position: absolute;
+  background-color: $red;
+  height: 10px;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: all 1s;
+  width: 100%;
+}

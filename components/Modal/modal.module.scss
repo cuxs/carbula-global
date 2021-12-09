@@ -1,0 +1,40 @@
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(103,103,103,0.7);
+  z-index: 5;
+}
+.modal {
+  background: white;
+  text-align: left;
+  outline: none;
+  border-radius: 10px;
+  z-index: 5;
+  margin: 5% auto;
+  width: 40%;
+  padding: 30px 25px 15px 25px;
+}
+@media (max-width: 1025px){
+  .modal{
+    padding: 30px 15px 15px 15px;
+    width: 40%;
+  }
+}
+@media (max-width: 769px){
+  .modal{
+    width: 60%;
+  }
+}
+@media (max-width: 600px){
+  .modal{
+    width: 80%;
+  }
+}
+@media (max-width: 320px){
+  .modal{
+    width: 80%;
+  }
+}

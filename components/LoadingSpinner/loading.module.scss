@@ -1,0 +1,52 @@
+@import '../../sass/variables.scss';
+
+.loading__ring {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-right: 20px;
+}
+.loading__ring:after {
+  content: " ";
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 6px solid $primaryColor;
+  border-color: $primaryColor transparent $primaryColor transparent;
+  animation: loading__ring 1.2s linear infinite;
+}
+.white:after {
+  border: 6px solid white;
+  border-color: white transparent white transparent;
+}
+@keyframes loading__ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 426px) {
+  .loading__ring {
+    display: inline-block;
+    width: 22px;
+    height: 18px;
+    margin-right: 5px;
+  }
+  .loading__ring:after {
+    content: " ";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid $primaryColor;
+    border-color: $primaryColor transparent $primaryColor transparent;
+    animation: loading__ring 1.2s linear infinite;
+  }
+  .white:after {
+    border: 2px solid white;
+    border-color: white transparent white transparent;
+  }
+}

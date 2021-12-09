@@ -9,17 +9,16 @@ import { getZonas } from '../utils/fetches';
 import { useSpring, animated } from "react-spring";
 import { hotjar } from 'react-hotjar'
 import { clearCotization, getCountryCode, clearLocalStorage } from '../utils/helpers';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 
 const BlackoutComponent = dynamic(import('../components/BlackoutComponent'))
-const Carousel = dynamic(import('@brainhubeu/react-carousel'), {ssr: false})
+const Carousel = dynamic(import('@brainhubeu/react-carousel'), { ssr: false })
 const NuestrosClientes = dynamic(import('../components/NuestrosClientes'))
 const FaqComponent = dynamic(import('../components/FaqComponent'))
 const QuoteComponent = dynamic(import('../components/QuoteComponent'))
 const FooterInfo = dynamic(import('../components/FooterInfo'))
-const SellForm = dynamic(import('../components/SellForm'))
 const Button = dynamic(import('../components/Button'))
 const Nav = dynamic(import('../components/nav'))
 
@@ -54,9 +53,16 @@ export async function getServerSideProps(context) {
 }
 
 const Home = ({ zonas, referer, COUNTRY_CODE }) => {
+  const SellForm = dynamic(() => {
+    const SellForms = {
+      'ar': import('../components/SellForm'),
+      'cl': import('../components/SellFormChile'),
+      'uy': import('../components/SellForm'),
+      'mx': import('../components/SellForm'),
+    }
+    return SellForms[COUNTRY_CODE]
+  })
   const router = useRouter();
-  console.log('locale:', router.locale)
-  console.log('default:', router.defaultLocale)
   const [title, setTitle] = useState(['Vendemos su vehículo', 'por hasta 25% más de dinero.'])
   const [subtitle, setSubtitle] = useState(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.']);
   const [step, setStep] = useState(0)

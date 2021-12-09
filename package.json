@@ -8,7 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@brainhubeu/react-carousel": "^2.0.4",
+    "@brainhubeu/react-carousel": "1.19.26",
     "antd": "^4.17.3",
     "axios": "^0.24.0",
     "body-scroll-lock": "^4.0.0-beta.0",

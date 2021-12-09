@@ -167,7 +167,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
       <section className={styles.section3}>
         <div className={styles.section3__container}>
           <h2 className={styles.text__primary}>¿Qué opinan nuestros clientes?</h2>
-          <NuestrosClientes />
+          <NuestrosClientes country_code={COUNTRY_CODE} />
         </div>
         <div className={styles.somos__text}>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" href="https://www.startupchile.org">STARTUP CHILE</a> y <a target="__blank" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> COMPROMETIDA <br /> EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</div>
         <hr />

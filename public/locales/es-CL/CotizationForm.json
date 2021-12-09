@@ -1,0 +1,24 @@
+{
+  "labelVender": "¿Qué tan apurado está en vender?",
+  "vender":{
+    "opcion1":"Muy apurado",
+    "opcion2":"Normal",
+    "opcion3":"No tengo apuro"
+  },
+  "prendaLabel": "¿Actualmente está con prenda?",
+  "statusLabel": "¿En qué estado se encuentra su auto?",
+  "carStatus":{
+    "option3":{
+      "detail":"tiene detalles menores que requieren reparación y/o sustitución de alguna pieza. Detalles menores de pintura y algún topón."
+    },
+    "option4":{
+      "detail":"le urge una reparación mecánica. Presenta luces en el tablero, su carrocería tiene topones y el interior necesita ser restaurado."
+    }
+  },
+  "planLabel": "¿Cuál es su plan con la venta del auto?",
+  "prendadoLabel": "¿Actualmente está con prenda?",
+  "inspectionSavedText": "Ahora que ya agendó su inspección, aproveche para conocer los autos que tenemos en venta.",
+  "tu": "su",
+  "concesionarias": "automotoras",
+  "ventaInmediataText": "Para ayudarle a resolver la venta inmediata, le contaremos su situación a la sólida red de automotoras acreditadas que trabajan con nosotros para que le contacten al tiro."
+}

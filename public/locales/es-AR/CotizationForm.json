@@ -1,0 +1,23 @@
+{
+  "labelVender": "¿Qué tan rápido necesitás que vendamos tu auto?",
+  "vender":{
+    "opcion1":"Muy rápido",
+    "opcion2":"Normal",
+    "opcion3":"Sin apuro"
+  },
+  "prendaLabel": "¿Actualmente está prendado?",
+  "statusLabel": "¿En qué estado se encuentra tu auto?",
+  "carStatus":{
+    "option3":{
+      "detail":"tiene detalles menores que requieren reparación y/o sustitución de alguna pieza. Detalles menores de pintura y algún abollón."
+    },
+    "option4":{
+      "detail":"le urge una reparación mecánica. Presenta luces en el tablero, su carrocería tiene abollones y el interior necesita ser restaurado."
+    }
+  },
+  "planLabel": "¿Cuál es tu plan con la venta del auto?",
+  "prendadoLabel": "¿Actualmente está prendado?",
+  "inspectionSavedText": "Ahora que ya agendaste su inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.",
+  "tu": "tu",
+  "ventaInmediataText":"Para ayudarte a resolver la venta inmediata, le contaremos tu situación a la sólida red de concesionarias acreditadas que trabajan con nosotros para que te contacten cuanto antes."
+}

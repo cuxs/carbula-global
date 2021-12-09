@@ -17,11 +17,9 @@ import Modal from '../Modal';
 import NumberFormat from 'react-number-format';
 import { InlineWidget } from "react-calendly";
 import dayjs from 'dayjs';
+import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
 
-const Odometer = dynamic(import('react-odometerjs'), {
-  ssr: false,
-  loading: () => 0
-});
 
 const CotizationForm = ({
   selectedPrice,
@@ -49,6 +47,8 @@ const CotizationForm = ({
   const [marginPrice, setMarginPrice] = useState(_marginPrice);
   const [carbulaFee, setCarbulaFee] = useState(_carbulaFee);
   const [formValues, setFormValues] = useState({});
+  const { t } = useTranslation('BlackoutComponent')
+  const router = useRouter()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -221,6 +221,16 @@ const CotizationForm = ({
     </div>
   )
 
+  const renderOwnerOptions = () => {
+    const options = {
+      'es-AR': ['1', '2', '3', '4 o más'],
+      'es-UY': ['1', '2', '3', '4 o más'],
+      'es-CL': ['1', '2', '3', '4', '5 o más'],
+      'es-MX': ['1', '2', '3', '4', '5 o más'],
+    }
+    return options[router.locale]
+  }
+
   const Step1Mobile = () => (
     <div className={styles['secondary-steps__container']}>
       <h2 className={`${styles.text__primary} ${styles.main__title}`}>¡Gracias {name}!</h2>
@@ -322,12 +332,12 @@ const CotizationForm = ({
       {({ handleChange, errors, values, touched, handleSubmit, }) => (
         <form onSubmit={handleSubmit}>
           <div className='form-item'>
-            <label>¿Qué tan rápido necesitás que vendamos tu auto?</label>
+            <label>{t('labelVender')}</label>
             <RadioInput
               touched={touched.saleTime}
               value={values.saleTime}
               name="saleTime"
-              options={['Muy rápido', 'Normal', 'Sin apuro']}
+              options={[t('vender.opcion1'), t('vender.opcion2'), t('vender.opcion3')]}
             />
             {errors.saleTime && touched.saleTime && (
               <div className="form-error">
@@ -342,7 +352,7 @@ const CotizationForm = ({
               touched={touched.owners}
               value={values.owners}
               name="owners"
-              options={['1', '2', '3', '4 o más']}
+              options={renderOwnerOptions()}
             />
             {errors.owners && touched.owners && (
               <div className="form-error">
@@ -352,7 +362,7 @@ const CotizationForm = ({
           </div>
           <hr />
           <div className='form-item'>
-            <label>¿Actualmente está prendado?</label>
+            <label>{t('prendaLabel')}</label>
             <RadioInput
               touched={touched.prendado}
               value={values.prendado}
@@ -395,7 +405,7 @@ const CotizationForm = ({
               touched={touched.owners}
               value={values.owners}
               name="owners"
-              options={['1', '2', '3', '4 o más']}
+              options={renderOwnerOptions()}
             />
             {errors.owners && touched.owners && (
               <div className="form-error">
@@ -427,7 +437,7 @@ const CotizationForm = ({
       {({ handleChange, errors, values, touched, handleSubmit, }) => (
         <form onSubmit={handleSubmit}>
           <div className='form-item'>
-            <label>¿En qué estado se encuentra tu auto?</label>
+            <label>{t('statusLabel')}</label>
             <RadioInput
               touched={touched.carStatus}
               vertical
@@ -437,8 +447,8 @@ const CotizationForm = ({
               options={[
                 ['Excelente', 'está como nuevo y en excelentes condiciones mecánicas.'],
                 ['Muy bueno', 'tiene pequeños daños externos y no tiene problemas mecánicos.'],
-                ['Bueno', 'tiene detalles menores que requieren reparación y/o sustitución de alguna pieza. Detalles menores de pintura y algún abollón'],
-                ['Razonable', 'le urge una reparación mecánica. Presenta luces en el tablero, su carrocería tiene abollones y el interior necesita ser restaurado.'],
+                ['Bueno', t('carStatus.option3.detail')],
+                ['Razonable', t('carStatus.option4.detail')],
               ]}
             />
             {errors.carStatus && touched.carStatus && (
@@ -464,7 +474,7 @@ const CotizationForm = ({
           </div>
           <hr />
           <div className='form-item'>
-            <label>¿Cuál es tu plan con la venta del auto?  </label>
+            <label>{t('planLabel')}</label>
             <RadioInput
               touched={touched.saleDeal}
               value={values.saleDeal}
@@ -504,7 +514,7 @@ const CotizationForm = ({
       {({ handleChange, errors, values, touched, handleSubmit, }) => (
         <form onSubmit={handleSubmit}>
           <div className='form-item'>
-            <label>¿Actualmente está prendado?</label>
+            <label>{t('prendadoLabel')}</label>
             <RadioInput
               submitOnClick
               touched={touched.prendado}
@@ -541,7 +551,7 @@ const CotizationForm = ({
       {({ handleChange, errors, values, touched, handleSubmit, }) => (
         <form onSubmit={handleSubmit}>
           <div className='form-item'>
-            <label>¿En qué estado se encuentra tu auto?</label>
+            <label>{t('statusLabel')}</label>
             <RadioInput
               touched={touched.carStatus}
               vertical
@@ -552,8 +562,8 @@ const CotizationForm = ({
               options={[
                 ['Excelente', 'está como nuevo y en excelentes condiciones mecánicas.'],
                 ['Muy bueno', 'tiene pequeños daños externos y no tiene problemas mecánicos.'],
-                ['Bueno', 'tiene detalles menores que requieren reparación y/o sustitución de alguna pieza. Detalles menores de pintura y algún abollón menor'],
-                ['Razonable', 'le urge una reparación mecánica. Presenta luces en el tablero, su carrocería tiene abollones y el interior necesita ser restaurado.'],
+                ['Bueno', t('carStatus.option3.detail')],
+                ['Razonable', t('carStatus.option4.detail')],
               ]}
             />
             {errors.carStatus && touched.carStatus && (
@@ -588,7 +598,7 @@ const CotizationForm = ({
     <Formik
       onSubmit={handleUpdateDealProperty}
       validationSchema={object().shape({
-        rematado: mixed().required('Seleccioná una opción.'),
+        rematado: mixed().required('Selecciona una opción.'),
       })}
       initialValues={{
         rematado: '',
@@ -633,7 +643,7 @@ const CotizationForm = ({
       {({ handleChange, errors, values, touched, handleSubmit, }) => (
         <form onSubmit={handleSubmit}>
           <div className='form-item'>
-            <label>¿Cuál es tu plan con la venta del auto?  </label>
+            <label>{t('planLabel')}</label>
             <RadioInput
               touched={touched.saleDeal}
               value={values.saleDeal}
@@ -672,7 +682,6 @@ const CotizationForm = ({
               name='selectedPrice'
             >
             </input>
-            {/* <Odometer value={selectedPrice} format="(.ddd),dd" /> */}
             <div className={styles.odometer__buttons}>
               <button><img src='/icons/plus.svg' alt="mas" onClick={() => handlePriceChange(selectedPrice + 50000)} alt='up' /></button>
               <button><img src='/icons/minus.svg' alt="menos" onClick={() => handlePriceChange(selectedPrice - 50000)} alt='down' /></button>
@@ -689,7 +698,7 @@ const CotizationForm = ({
             <small className={styles.price__currency}>{CURRENCY[COUNTRY_CODE]}</small>
           </div>
           <div className={styles.card__text}>
-            <p>9 de cada 10 autos que vendemos, lo hacemos en 20 días o menos, utilizando nuestro precio sugerido. <span>Mientras más competitivo sea el precio de publicación que elijas, más rápido lograremos tu objetivo. </span></p>
+            <p>9 de cada 10 autos que vendemos, lo hacemos en 20 días o menos, utilizando nuestro precio sugerido. <span>Mientras más competitivo sea el precio de publicación que elijas, más rápido lograremos {t('tu')} objetivo. </span></p>
           </div>
           <div className={styles.card__prices}>
             <div className={styles['price__row--grey']}>
@@ -734,7 +743,7 @@ const CotizationForm = ({
             <img src="/icons/cancel.svg" alt='error' />
             <hr />
             <h3>No se preocupe.</h3>
-            <h4>Para ayudarte a resolver la venta inmediata, le contaremos tu situación a la sólida red de concesionarias acreditadas que trabajan con nosotros para que te contacten cuanto antes.</h4>
+            <h4>{t('ventaInmediataText')}</h4>
           </div>
         </div>
       )

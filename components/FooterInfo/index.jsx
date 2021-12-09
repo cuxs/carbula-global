@@ -1,10 +1,11 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-scroll";
+import { getCatalogoURL } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './footerInfo.module.scss';
 
-const FooterInfo = ({ blue, grey, white }) => {
+const FooterInfo = ({ blue, grey, white, country_code }) => {
 
   const { t } = useTranslation('FooterInfo')
 
@@ -30,7 +31,7 @@ const FooterInfo = ({ blue, grey, white }) => {
       </div>
       <div className={styles.buttons__container}>
         <Button link><Link style={renderColorStyle()} to="vender" duration={500} offset={-100}>Vender</Link></Button>
-        <Button link><a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="https://catalogo.carbula.com" > Comprar</a></Button>
+        <Button link><a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getCatalogoURL(country_code)} > Comprar</a></Button>
         <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="mailto:hola@carbula.com" >Contacto</a></Button>
         <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="https://blog.carbula.cl/blog" >Blog</a></Button>
         <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href='/terminos-y-condiciones' >Términos y condiciones</a></Button>

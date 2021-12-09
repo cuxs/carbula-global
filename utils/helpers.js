@@ -35,7 +35,7 @@ export const checkZone = (location, allzones) => {
 
 export const getSourceType = (query, referer) => {
   if (query.hasOwnProperty('utm_campaign')) {
-    if(query.utm_campaign ==='Referrals' || query.utm_campaign ==='referrals'){
+    if (query.utm_campaign === 'Referrals' || query.utm_campaign === 'referrals') {
       return SOURCES.REFERRALS
     }
     return SOURCES.PAID_SEARCH
@@ -46,7 +46,7 @@ export const getSourceType = (query, referer) => {
       return SOURCES.SOCIAL_MEDIA
     }
   }
-  if (query.hasOwnProperty('utm_source') && query.utm_source === 'Whatsapp'){
+  if (query.hasOwnProperty('utm_source') && query.utm_source === 'Whatsapp') {
     return SOURCES.WHATSAPP
   }
   if (query.hasOwnProperty('utm_source') && !query.hasOwnProperty('utm_medium')) {
@@ -58,28 +58,28 @@ export const getSourceType = (query, referer) => {
   return SOURCES.DIRECT_TRAFFIC
 }
 
-export const getCampania = (query)=>{
+export const getCampania = (query) => {
   if (query.hasOwnProperty('utm_campaign')) {
     return query.utm_campaign
   }
   return undefined
 }
 
-export const checkYear = (year)=>{
+export const checkYear = (year) => {
   const tenYearsBack = dayjs().year() - 10;
-  if (year < tenYearsBack){
+  if (year < tenYearsBack) {
     throw new Error('year not supported')
   }
 }
 
 export const isAllowedBrand = (brand) => {
-  if (['Chevrolet', 'Ford', 'Renault', 'Fiat', 'Volkswagen', 'Peugeot', 'Toyota' ].some((row)=>row===brand)) {
+  if (['Chevrolet', 'Ford', 'Renault', 'Fiat', 'Volkswagen', 'Peugeot', 'Toyota'].some((row) => row === brand)) {
     return true
   }
   return false
 }
 
-export const getModelExampleText = (brand)=>{
+export const getModelExampleText = (brand) => {
   const models = {
     Chevrolet: 'Onix, Cruze o Prisma',
     Ford: 'Focus, EcoSport o Fiesta',
@@ -92,48 +92,48 @@ export const getModelExampleText = (brand)=>{
   return models[brand] || null
 }
 
-export const saveCotization =(encryptedCotization)=>{
+export const saveCotization = (encryptedCotization) => {
   if (typeof window !== "undefined") {
     localStorage.setItem('cotization', encryptedCotization)
   }
 }
 
-export const clearLocalStorage = ()=>{
+export const clearLocalStorage = () => {
   if (typeof window !== "undefined") {
     localStorage.clear()
   }
 }
 
-export const getCotization = ()=>{
+export const getCotization = () => {
   if (typeof window !== "undefined") {
     return localStorage.getItem('cotization')
   }
 }
 
-export const getCountryCode = (locale)=>{
+export const getCountryCode = (locale) => {
   return lowerCase(locale.slice(3))
 }
-export const saveToken = (token)=>{
+export const saveToken = (token) => {
   if (typeof window !== "undefined") {
     localStorage.setItem('token', token)
   }
 }
-export const getToken =()=>{
+export const getToken = () => {
   if (typeof window !== "undefined") {
     return localStorage.getItem('token')
   }
 }
-export const getCalendlyURL = (country_code, email, name)=>{
-  const urls={
-      'ar': `https://calendly.com/d/zr2q-96wm/argentina-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`,
-      'mx': `https://calendly.com/d/cgt-qz4-49w/mexico-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`,
-      'uy': `https://calendly.com/d/ckh-qwz-mzm/uruguay-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`,
+export const getCalendlyURL = (country_code, email, name) => {
+  const urls = {
+    'ar': `https://calendly.com/d/zr2q-96wm/argentina-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`,
+    'mx': `https://calendly.com/d/cgt-qz4-49w/mexico-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`,
+    'uy': `https://calendly.com/d/ckh-qwz-mzm/uruguay-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`,
 
   }
   return urls[country_code]
 }
 
-export const getReviews = (country_code)=>{
+export const getReviews = (country_code) => {
   const reviews = {
     ar: [
       {
@@ -215,4 +215,34 @@ export const getReviews = (country_code)=>{
     mx: []
   }
   return reviews[country_code]
+}
+
+export const getCatalogoURL = (country_code) => {
+  const catalogoUrl = {
+    ar: 'https://catalogo.carbula.com',
+    mx: 'https://catalogo.carbula.com',
+    uy: 'https://catalogo.carbula.com',
+    cl: 'https://catalogo.carbula.cl'
+  }
+  return catalogoUrl[country_code]
+}
+
+export const getPhoneNumber = (country_code) => {
+  const phoneNumbers = {
+    ar: '+5492614864083',
+    mx: '+5492614864083',
+    uy: '+5492614864083',
+    cl: '+56971417008',
+  }
+  return phoneNumbers[country_code]
+}
+
+export const getFacebookDomainVerification = (country_code) => {
+  const ids = {
+    ar: 'o1cpz3juti6u4og457vtz73phm8v4m',
+    cl: 'xttlstugadcn3syxvsdpcr2kpm0ajs',
+    mx: '',
+    uy: '',
+  }
+  return ids[country_code]
 }

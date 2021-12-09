@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useRef, useEffect } from 'react';
-import { formatNumber, getCalendlyURL } from '../../utils/helpers';
+import { formatNumber, getCalendlyURL, getCatalogoURL } from '../../utils/helpers';
 import dynamic from 'next/dynamic'
 import Button from '../Button';
 import styles from './cotization-form.module.scss';
@@ -591,7 +591,7 @@ const CotizationForm = ({
     </div> */}
     <hr />
     <p className={styles['meeting-info__footer']}>Ahora que ya agendaste su inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.</p>
-    <a href="https://catalogo.carbula.com"><Button primary>Ver catálogo</Button></a>
+    <a href={getCatalogoURL(COUNTRY_CODE)}><Button primary>Ver catálogo</Button></a>
   </div>
 
   const Step6Mobile = () => <div className={styles['secondary-steps__container']}>

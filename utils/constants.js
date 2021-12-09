@@ -8,7 +8,6 @@ switch (process.env.NODE_ENV) {
 }
 
 module.exports = {
-  COUNTRY_CODE: 'ar',
   COUNTRY:'Argentina',
   MIN_TEXT_SEARCH_LENGTH: 2,
   API_URL,

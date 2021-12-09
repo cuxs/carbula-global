@@ -292,6 +292,12 @@
     }
   }
 }
+@media (max-width: 501px){
+  .footer__blue,
+  .footer__red {
+    height: 700px;
+  }
+}
 @media (max-width: 475px) {
   .steps__container {
     width: 400px;
@@ -311,5 +317,9 @@
     .agendar {
       display: none !important;
     }
+  }
+  .footer__blue,
+  .footer__red {
+    height: 600px;
   }
 }

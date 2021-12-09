@@ -2,10 +2,14 @@ import React from "react";
 import Link from 'next/link'
 import styles from './toolbar.module.scss'
 import classNames from 'classnames/bind';
+import { getCatalogoURL, getCountryCode } from "../../utils/helpers";
+import {useRouter} from 'next/router';
 
 
 const SideDrawer = ({ show, click, }) => {
   const classNameContext = classNames.bind(styles)
+  const router = useRouter()
+  const COUNTRY_CODE= getCountryCode(router.locale)
 
   const sideDrawerClassname = classNameContext({
     'side-drawer': true,
@@ -18,7 +22,7 @@ const SideDrawer = ({ show, click, }) => {
         <ul>
           <li><a href="/"><b>Vender</b></a></li>
           <li>
-            <a href="https://catalogo.carbula.com" target="__blank">Comprar</a>
+            <a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Comprar</a>
           </li>
           <li>
             <a href="https://blog.carbula.cl/blog" target="__blank">Blog</a>

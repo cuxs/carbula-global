@@ -452,7 +452,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
         />}
       </animated.div>
       <div className={styles.footer__container}>
-        <FooterInfo blue={step !== LAST_STEP_MOBILE} white={step === LAST_STEP_MOBILE} />
+        <FooterInfo blue={step !== LAST_STEP_MOBILE} white={step === LAST_STEP_MOBILE} country_code={COUNTRY_CODE}/>
       </div>
       {!startsWith(step, 'end') && <animated.div style={blueFooterProps} className={styles.footer__blue} />}
       {startsWith(step, 'end') && <animated.div style={redFooterProps} className={styles.footer__red} />}

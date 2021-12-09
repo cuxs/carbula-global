@@ -175,7 +175,7 @@ const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
         <hr />
       </section>
       <section>
-        <FooterInfo grey />
+        <FooterInfo grey country_code={COUNTRY_CODE} />
       </section>
     </Fragment>
   )

@@ -10,7 +10,6 @@ import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
 import Iframe from 'react-iframe'
 import RadioInput from '../RadioInput';
-import cotizationsJSON from '../../public/autopress.json';
 import FaqCotization from '../FaqCotization';
 import { updateLeadPrices, rejectSellTime, updateHubspotProperty } from '../../utils/fetches';
 import Modal from '../Modal';
@@ -19,6 +18,7 @@ import { InlineWidget } from "react-calendly";
 import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 
 
 const CotizationForm = ({
@@ -43,6 +43,15 @@ const CotizationForm = ({
   locationName,
   COUNTRY_CODE }) => {
 
+  const cotizationsJSON = dynamic(() => {
+    const cotizationsJSONs = {
+      'ar': import('../../public/autopress.json'),
+      'cl': import('../../public/autopress-cl.json'),
+      'uy': import('../../public/autopress.json'),
+      'mx': import('../../public/autopress.json'),
+    }
+    return cotizationsJSONs[COUNTRY_CODE]
+  })
   const [publicationPrice, setPublicationPrice] = useState(_publicationPrice)
   const [marginPrice, setMarginPrice] = useState(_marginPrice);
   const [carbulaFee, setCarbulaFee] = useState(_carbulaFee);

@@ -96,7 +96,7 @@
     }
   }
   .section1__container {
-    margin-top:0px;
+    margin-top: 0px;
     flex-direction: column;
   }
   .couple__image {
@@ -155,8 +155,16 @@
     margin: 50px auto;
   }
 }
+@media (max-width: 576px) {
+  .section1__title {
+    margin-top: 210px;
+  }
+}
 
 @media (max-width: 426px) {
+  .section1__title {
+    margin-top: 200px;
+  }
   .couple__image {
     margin: 30px 60px 50px 60px;
   }
@@ -177,5 +185,8 @@
   .section1__container,
   .section3__container {
     margin: 0px 10px 0px 10px;
+  }
+  .section1__title {
+    margin-top:50px
   }
 }

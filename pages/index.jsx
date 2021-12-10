@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { getZonas } from '../utils/fetches';
 import { useSpring, animated } from "react-spring";
 import { hotjar } from 'react-hotjar'
-import { clearCotization, getCountryCode, clearLocalStorage } from '../utils/helpers';
+import { clearCotization, getCountryCode, clearLocalStorage, getHotjarId } from '../utils/helpers';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -71,7 +71,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   const titleProps = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 500 })
 
   useEffect(() => {
-    hotjar.initialize(2558732, 6)
+    hotjar.initialize(getHotjarId(COUNTRY_CODE), 6)
     clearLocalStorage()
   }, [])
   useEffect(() => {

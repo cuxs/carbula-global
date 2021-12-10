@@ -267,3 +267,13 @@ export const getGtagId = country_code=>{
   }
   return ids[country_code]
 }
+
+export const getHotjarId =country_code=>{
+  const ids={
+    ar: '2558732',
+    cl: '2558126',
+    mx: '',
+    uy: ''
+  }
+  return ids[country_code]
+}

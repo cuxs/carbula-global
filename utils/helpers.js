@@ -227,7 +227,7 @@ export const getCatalogoURL = (country_code) => {
   return catalogoUrl[country_code]
 }
 
-export const getPhoneNumber = (country_code) => {
+export const getWhatsappNumber = (country_code) => {
   const phoneNumbers = {
     ar: '+5492614864083',
     mx: '+5492614864083',
@@ -237,10 +237,31 @@ export const getPhoneNumber = (country_code) => {
   return phoneNumbers[country_code]
 }
 
+export const getPhoneNumber = (country_code) => {
+  const phoneNumbers = {
+    ar: '+5492613013473',
+    mx: '+5492614864083',
+    uy: '+5492614864083',
+    cl: '+56228977930',
+  }
+  return phoneNumbers[country_code]
+}
+
+
 export const getFacebookDomainVerification = (country_code) => {
   const ids = {
     ar: 'o1cpz3juti6u4og457vtz73phm8v4m',
     cl: 'xttlstugadcn3syxvsdpcr2kpm0ajs',
+    mx: '',
+    uy: '',
+  }
+  return ids[country_code]
+}
+
+export const getGtagId = country_code=>{
+  const ids ={
+    ar: 'AW-787470327/c3SbCKHNtvECEPevv_cC',
+    cl: 'AW-702067534/3226COqk-IkCEM7m4s4C',
     mx: '',
     uy: '',
   }

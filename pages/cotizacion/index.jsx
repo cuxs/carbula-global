@@ -6,7 +6,7 @@ import { PuffLoader } from "react-spinners";
 import CryptoJS from 'crypto-js'
 import { capitalize, startsWith, isEmpty } from 'lodash';
 import classnames from 'classnames';
-import { formatNumber, getCotization, getCountryCode } from '../../utils/helpers';
+import { formatNumber, getCotization, getCountryCode, getGtagId, getPhoneNumber, getWhatsappNumber } from '../../utils/helpers';
 import { clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { useSpring, useTransition, animated, config } from "react-spring";
 import { COUNTRY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE } from '../../utils/constants';
@@ -25,7 +25,7 @@ export async function getServerSideProps(context) {
   return{
     props:{
       COUNTRY_CODE: getCountryCode(context.locale),
-      ...(await serverSideTranslations(context.locale, ['common', 'CotizationForm', 'FaqCotization'])),
+      ...(await serverSideTranslations(context.locale, ['cotizacion', 'CotizationForm', 'FaqCotization'])),
 
     }
   }
@@ -55,7 +55,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
   })
   useEffect(() => {
     setWidth(window.innerWidth)
-    window.gtag ? window.gtag('event', 'conversion', { 'send_to': 'AW-787470327/c3SbCKHNtvECEPevv_cC' }) : ''
+    window.gtag ? window.gtag('event', 'conversion', { 'send_to': getGtagId(COUNTRY_CODE) }) : ''
     const cotizationCrypted = getCotization();
     if (!cotizationCrypted) {
       return router.push('/')
@@ -146,7 +146,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
     }
     if (shouldFetchMeetingData) {
       checkMeeting()
-      window.gtag ? window.gtag('event', 'conversion', { 'send_to': 'AW-787470327/c3SbCKHNtvECEPevv_cC' }) : ''
+      window.gtag ? window.gtag('event', 'conversion', { 'send_to': getGtagId(COUNTRY_CODE) }) : ''
     }
     return () => clearTimeout(timeout)
   }, [shouldFetchMeetingData])
@@ -181,8 +181,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               <h3>para su {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
             </animated.div>
             <animated.div style={priceProps} className={styles.price__comparison}>
-              {cotizationData.retake_price && <div className={styles.automotora__price}><h4 className={styles.red}>Una concesionaria te paga</h4><h3>${formatNumber(cotizationData.retake_price, 0)}</h3></div>}
-              <div className={styles.carbula__price}><h4>Con Cárbula ganás</h4><h3>${formatNumber(selectedPrice, 0)}</h3></div>
+              {cotizationData.retake_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('pricepriceComparison.unaConsesionaria')}</h4><h3>${formatNumber(cotizationData.retake_price, 0)}</h3></div>}
+              <div className={styles.carbula__price}><h4>{t('priceComparison.withCarbula')}</h4><h3>${formatNumber(selectedPrice, 0)}</h3></div>
             </animated.div>
             <animated.div style={faqProps}>
               {width > 769 && <FaqCotization />}
@@ -246,8 +246,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <hr />
                 <p>Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos. <br /> ¡Con gusto le ayudaremos!</p>
                 <div className={styles['end-buttons']}>
-                  <a href='tel:+56229798669'><Button noBorderSecondary>Llamar</Button></a>
-                  <a href="http://api.whatsapp.com/send?phone=+56553280869&text=Hola,%20tengo%20una%20consulta" target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+                  <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
+                  <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
                 </div>
               </div>
             </div >
@@ -275,8 +275,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos.<br />¡Con gusto le ayudaremos!
               </p>
               <div className={styles['end-buttons']}>
-                <a href='tel:+56229798669'><Button noBorderSecondary>Llamar</Button></a>
-                <a href="http://api.whatsapp.com/send?phone=+56553280869&text=Hola,%20tengo%20una%20consulta" target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+                <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
+                <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
               </div>
             </div >
           }
@@ -301,17 +301,17 @@ const Cotizacion = ({COUNTRY_CODE}) => {
           }
           return (
             <div className={styles['price-model__container']}>
-              <h2>¡Felicitaciones! <br /> Agendaste tu inspección</h2>
+              <h2>¡Felicitaciones! <br />{t('congratulations')}</h2>
               <div className={styles.steps__container}>
-                <p><b>Es muy importante</b> que tu auto se encuentre estacionado al aire libre y limpio. Debe estar despejado de objetos personales y en su mejor estado posible para que podamos sacar el mayor provecho a las fotos y sean atractivas.
+                <p><b>Es muy importante</b> {t('importante')}
                   <br /><br />
                   ¡Nos vemos pronto!
                 </p>
                 <hr />
-                <p>Si tenés alguna pregunta o necesita ayuda, no dudes en contactarnos. <br /> ¡Con gusto te ayudaremos!</p>
+                <p>Si {t('tenes')} alguna pregunta o necesita ayuda, no dudes en contactarnos. <br /> ¡Con gusto {t('te')} ayudaremos!</p>
                 <div className={styles['end-buttons']}>
-                  <a href='tel:+5492613013473'><Button noBorderSecondary>Llamar</Button></a>
-                  <a href="http://api.whatsapp.com/send?phone=+5492614864083&text=Hola,%20tengo%20una%20consulta" target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+                  <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
+                  <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
                 </div>
               </div>
             </div >
@@ -390,8 +390,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos.<br />¡Con gusto le ayudaremos!
             </p>
             <div className={styles['end-buttons']}>
-              <a href='tel:+5492613013473'><Button noBorderSecondary>Llamar</Button></a>
-              <a href="http://api.whatsapp.com/send?phone=+5492614864083&text=Hola,%20tengo%20una%20consulta" target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
+              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
             </div>
           </div >
         }

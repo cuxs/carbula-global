@@ -8,16 +8,15 @@ import Image from 'next/image'
 import { getZonas } from '../../utils/fetches';
 import { useSpring, animated } from "react-spring";
 import { hotjar } from 'react-hotjar'
-import { capitalize} from 'lodash';
+import { capitalize } from 'lodash';
 import { getCountryCode, getModelExampleText, isAllowedBrand } from '../../utils/helpers';
 
 const BlackoutComponent = dynamic(import('../../components/BlackoutComponent'))
-const Carousel = dynamic(import('@brainhubeu/react-carousel'), {ssr: false})
+const Carousel = dynamic(import('@brainhubeu/react-carousel'), { ssr: false })
 const NuestrosClientes = dynamic(import('../../components/NuestrosClientes'))
 const FaqComponent = dynamic(import('../../components/FaqComponent'))
 const QuoteComponent = dynamic(import('../../components/QuoteComponent'))
 const FooterInfo = dynamic(import('../../components/FooterInfo'))
-const SellForm = dynamic(import('../../components/SellForm'))
 const Button = dynamic(import('../../components/Button'))
 const Nav = dynamic(import('../../components/nav'))
 
@@ -27,7 +26,7 @@ export async function getServerSideProps(context) {
 
   const capitalizedBrand = capitalize(brand)
 
-  if(!capitalizedBrand || !isAllowedBrand(capitalizedBrand)){
+  if (!capitalizedBrand || !isAllowedBrand(capitalizedBrand)) {
     context.res.setHeader('location', '/')
     context.res.statusCode = 302
     context.res.end()
@@ -60,6 +59,15 @@ export async function getServerSideProps(context) {
 }
 
 const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
+  const SellForm = dynamic(() => {
+    const SellForms = {
+      'ar': import('../components/SellForm'),
+      'cl': import('../components/SellFormChile'),
+      'uy': import('../components/SellForm'),
+      'mx': import('../components/SellForm'),
+    }
+    return SellForms[COUNTRY_CODE]
+  })
   const [title, setTitle] = useState([`Vendemos tu ${brand}`, 'por hasta 25% más de dinero.'])
   const [subtitle, setSubtitle] = useState(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.']);
   const [step, setStep] = useState(0)
@@ -68,7 +76,7 @@ const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
   const titleProps = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 500 })
 
   useEffect(() => {
-    hotjar.initialize(2558732, 6)
+    hotjar.initialize(getHotjarId(COUNTRY_CODE), 6)
   }, [])
   useEffect(() => {
     switch (step) {

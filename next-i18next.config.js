@@ -1,7 +1,10 @@
+const path = require('path');
+
 module.exports = {
   i18n: {
     locales: ['es-AR', 'es-UY', 'es-MX', 'es-CL'],
     defaultLocale: 'es-AR',
+    localePath: path.resolve('./public/locales'),
     domains: [
       {
         domain: "test.carbula.com",

@@ -8,9 +8,12 @@ import Image from 'next/image'
 import { getZonas } from '../utils/fetches';
 import { useSpring, animated } from "react-spring";
 import { hotjar } from 'react-hotjar'
-import { clearCotization, getCountryCode, clearLocalStorage, getHotjarId } from '../utils/helpers';
+import { clearCotization, getCountryCode, clearLocalStorage, getHotjarId, getPhoneNumber, getWhatsappNumber } from '../utils/helpers';
+import {upperFirst} from 'lodash'
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
 
 
 const BlackoutComponent = dynamic(import('../components/BlackoutComponent'))
@@ -53,6 +56,7 @@ export async function getServerSideProps(context) {
 }
 
 const Home = ({ zonas, referer, COUNTRY_CODE }) => {
+  const { t } = useTranslation('common')
   const SellForm = dynamic(() => {
     const SellForms = {
       'ar': import('../components/SellForm'),
@@ -63,7 +67,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     return SellForms[COUNTRY_CODE]
   })
   const router = useRouter();
-  const [title, setTitle] = useState(['Vendemos su vehículo', 'por hasta 25% más de dinero.'])
+  const [title, setTitle] = useState([`Vendemos ${t('tu')} vehículo`, 'por hasta 25% más de dinero.'])
   const [subtitle, setSubtitle] = useState(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.']);
   const [step, setStep] = useState(0)
   const [overlayBackground, setOverlayBackground] = useState(false);
@@ -77,12 +81,12 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   useEffect(() => {
     switch (step) {
       case 0:
-        setTitle(['Vendemos tu vehículo', 'por hasta 25% más de dinero.'])
+        setTitle([`Vendemos ${t('tu')} vehículo`, 'por hasta 25% más de dinero.'])
         setSubtitle(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.'])
         break;
       case 1:
-        setTitle(['Gracias por completar los datos de tu vehículo'])
-        setSubtitle(['Contanos cómo podemos contactarte'])
+        setTitle([`Gracias por completar los datos de ${t('tu')} vehículo`])
+        setSubtitle([t('contanos')])
         window.scrollTo(0, 0)
         break;
       default:
@@ -112,33 +116,33 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
         <div className={styles.text__container}>
           <h2 className={styles.section1__title}>Nosotros nos ocupamos de todo.</h2>
           <div className={styles['benefits--desktop']}>
-            <h3>Tu tiempo es valioso.</h3>
-            <p>Dedicate a lo que realmente importa, sin tener que salir de casa, atender a extraños o dejar de usar tu auto.</p>
-            <h3>Tu vehículo vale más.</h3>
+            <h3>{upperFirst(t('tu'))} tiempo es valioso.</h3>
+            <p>{t('dedicate')}</p>
+            <h3>{upperFirst(t('tu'))} vehículo vale más.</h3>
             <p>Sin especular y al mejor valor del mercado, vendiendo con nosotros usted gana hasta un 25% más de dinero.</p>
-            <h3>Tu tranquilidad es lo principal.</h3>
-            <p>Te garantizamos la cobranza de los fondos, atendemos a los interesados y nos ocupamos de todos los trámites.</p>
+            <h3>{upperFirst(t('tu'))} tranquilidad es lo principal.</h3>
+            <p>{upperFirst(t('te'))}  garantizamos la cobranza de los fondos, atendemos a los interesados y nos ocupamos de todos los trámites.</p>
           </div>
           <div className={styles['benefits--mobile']}>
             <Carousel dots infinite autoplay>
               <div className={styles.carousel__step}>
                 <div className={styles.step__title}>
-                  <h3>Tu tiempo es valioso.</h3>
+                  <h3>{upperFirst(t('tu'))} tiempo es valioso.</h3>
                 </div>
-                <p>Dedicate a lo que realmente importa, sin tener que atender a extraños, salir de casa o dejar de usar su auto.</p>
+                <p>{t('dedicate')}</p>
               </div>
               <div className={styles.carousel__step}>
                 <div className={styles.step__title}>
-                  <h3>Tu auto vale más.</h3>
+                  <h3>{upperFirst(t('tu'))} auto vale más.</h3>
                 </div>
                 <p>Sin especular y al mejor valor del mercado, vendiendo con nosotros usted gana hasta un 25% más de dinero.</p>
               </div>
               <div className={styles.carousel__step}>
                 <div className={styles.step__title}>
 
-                  <h3>Tu tranquilidad es lo principal.</h3>
+                  <h3>{upperFirst(t('tu'))} tranquilidad es lo principal.</h3>
                 </div>
-                <p>Te garantizamos la cobranza de los fondos, atendemos a los interesados y nos ocupamos de todos los trámites.</p>
+                <p>{upperFirst(t('te'))}  garantizamos la cobranza de los fondos, atendemos a los interesados y nos ocupamos de todos los trámites.</p>
               </div>
             </Carousel>
           </div>
@@ -153,15 +157,15 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
       <section>
         <div className={styles.section2__container}>
           <div>
-            <h2 className={styles.text__secondary}>Contactanos</h2>
+            <h2 className={styles.text__secondary}>{t('contactanos')}</h2>
             <div className={styles.image} >
               <Image src="/images/carbula_contacto.png" width="465" height="448" alt="Contacto" />
             </div>
-            <p>Si tenés alguna pregunta o necesitás ayuda,</p>
+            <p>Si tenés alguna pregunta o {t('necesitas')} ayuda,</p>
             <p> no dudes en contactarnos. ¡Con gusto te ayudaremos!</p>
             <div className={styles.buttons__container}>
-              <a href='tel:+5492613013473'><Button secondaryOutlined>Llamar</Button></a>
-              <a href="http://api.whatsapp.com/send?phone=+5492614864083&text=Hola,%20tengo%20una%20consulta" target="__blank"><Button secondary>Whatsapp</Button></a>
+              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>
+              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondary>Whatsapp</Button></a>
             </div>
           </div>
           <div>

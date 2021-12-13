@@ -9,7 +9,7 @@ import { getZonas } from '../../utils/fetches';
 import { useSpring, animated } from "react-spring";
 import { hotjar } from 'react-hotjar'
 import { capitalize, upperFirst} from 'lodash';
-import { getCountryCode, getModelExampleText, isAllowedBrand, getHotjarId } from '../../utils/helpers';
+import { getCountryCode, getModelExampleText, isAllowedBrand, getHotjarId, getPhoneNumber, getWhatsappNumber } from '../../utils/helpers';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 

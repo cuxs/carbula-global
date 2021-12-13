@@ -162,15 +162,15 @@ const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
       <section>
         <div className={styles.section2__container}>
           <div>
-            <h2 className={styles.text__secondary}>Contactanos</h2>
+            <h2 className={styles.text__secondary}>{t('contactanos')}</h2>
             <div className={styles.image} >
               <Image src="/images/carbula_contacto.png" width="465" height="448" alt="Contacto" />
             </div>
-            <p>Si tenés alguna pregunta o necesitás ayuda,</p>
-            <p> no dudes en contactarnos. ¡Con gusto te ayudaremos!</p>
+            <p>Si tenés alguna pregunta o {t('necesitas')} ayuda,</p>
+            <p> no dudes en contactarnos. ¡Con gusto {t('te')} ayudaremos!</p>
             <div className={styles.buttons__container}>
-              <a href='tel:+5492613013473'><Button secondaryOutlined>Llamar</Button></a>
-              <a href="http://api.whatsapp.com/send?phone=+5492614864083&text=Hola,%20tengo%20una%20consulta" target="__blank"><Button secondary>Whatsapp</Button></a>
+              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>
+              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondary>Whatsapp</Button></a>
             </div>
           </div>
           <div>

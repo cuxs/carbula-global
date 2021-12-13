@@ -8,8 +8,10 @@ import Image from 'next/image'
 import { getZonas } from '../../utils/fetches';
 import { useSpring, animated } from "react-spring";
 import { hotjar } from 'react-hotjar'
-import { capitalize } from 'lodash';
-import { getCountryCode, getModelExampleText, isAllowedBrand } from '../../utils/helpers';
+import { capitalize, upperFirst} from 'lodash';
+import { getCountryCode, getModelExampleText, isAllowedBrand, getHotjarId } from '../../utils/helpers';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 const BlackoutComponent = dynamic(import('../../components/BlackoutComponent'))
 const Carousel = dynamic(import('@brainhubeu/react-carousel'), { ssr: false })
@@ -44,7 +46,8 @@ export async function getServerSideProps(context) {
         referer: referer ? referer : null,
         brand: capitalizedBrand,
         modelsExampleText: getModelExampleText(capitalizedBrand),
-        COUNTRY_CODE: getCountryCode(context.locale)
+        COUNTRY_CODE: getCountryCode(context.locale),
+        ...(await serverSideTranslations(context.locale, ['brand'])),
       }
     }
   } catch (e) {
@@ -52,23 +55,25 @@ export async function getServerSideProps(context) {
     return {
       props: {
         referer: referer ? referer : null,
-        COUNTRY_CODE: getCountryCode(context.locale)
+        COUNTRY_CODE: getCountryCode(context.locale),
+        ...(await serverSideTranslations(context.locale, ['brand'])),
       }
     }
   }
 }
 
 const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
+  const { t } = useTranslation('brand')
   const SellForm = dynamic(() => {
     const SellForms = {
-      'ar': import('../components/SellForm'),
-      'cl': import('../components/SellFormChile'),
-      'uy': import('../components/SellForm'),
-      'mx': import('../components/SellForm'),
+      'ar': import('../../components/SellForm'),
+      'cl': import('../../components/SellFormChile'),
+      'uy': import('../../components/SellForm'),
+      'mx': import('../../components/SellForm'),
     }
     return SellForms[COUNTRY_CODE]
   })
-  const [title, setTitle] = useState([`Vendemos tu ${brand}`, 'por hasta 25% más de dinero.'])
+  const [title, setTitle] = useState([`Vendemos ${t('tu')} ${brand}`, 'por hasta 25% más de dinero.'])
   const [subtitle, setSubtitle] = useState(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.']);
   const [step, setStep] = useState(0)
   const [overlayBackground, setOverlayBackground] = useState(false);
@@ -81,12 +86,12 @@ const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
   useEffect(() => {
     switch (step) {
       case 0:
-        setTitle([`Vendemos tu ${brand}`, 'por hasta 25% más de dinero.'])
+        setTitle([`Vendemos ${t('tu')} ${brand}`, 'por hasta 25% más de dinero.'])
         setSubtitle(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.'])
         break;
       case 1:
-        setTitle(['Gracias por completar los datos de tu vehículo'])
-        setSubtitle(['Contanos cómo podemos contactarte'])
+        setTitle([`Gracias por completar los datos de ${t('tu')} vehículo`])
+        setSubtitle([t('contanos')])
         window.scrollTo(0, 0)
         break;
       default:
@@ -116,33 +121,33 @@ const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
         <div className={styles.text__container}>
           <h2 className={styles.section1__title}>Nosotros nos ocupamos de todo.</h2>
           <div className={styles['benefits--desktop']}>
-            <h3>Tu tiempo es valioso.</h3>
-            <p>Dedicate a lo que realmente importa, sin tener que salir de casa, atender a extraños o dejar de usar tu auto.</p>
-            <h3>Tu vehículo vale más.</h3>
-            <p>Sin especular y al mejor valor del mercado, vendiendo tu {brand} con nosotros puedes ganar hasta un 25% más de dinero. Vendemos todos los modelos, ya sea {modelsExampleText}.</p>
-            <h3>Tu tranquilidad es lo principal.</h3>
-            <p>Te garantizamos la cobranza de los fondos, atendemos a los interesados y nos ocupamos de todos los trámites de tu {brand}.</p>
+            <h3>{upperFirst(t('tu'))} tiempo es valioso.</h3>
+            <p>{t('dedicate')}</p>
+            <h3>{t('valemas')}</h3>
+            <p>Sin especular y al mejor valor del mercado, vendiendo {t('tu')} {brand} con nosotros puedes ganar hasta un 25% más de dinero. Vendemos todos los modelos, ya sea {modelsExampleText}.</p>
+            <h3>{upperFirst(t('tu'))} tranquilidad es lo principal.</h3>
+            <p>{upperFirst(t('te'))} garantizamos la cobranza de los fondos, atendemos a los interesados y nos ocupamos de todos los trámites de {t('tu')} {brand}.</p>
           </div>
           <div className={styles['benefits--mobile']}>
             <Carousel dots infinite autoplay>
               <div className={styles.carousel__step}>
                 <div className={styles.step__title}>
-                  <h3>Tu tiempo es valioso.</h3>
+                  <h3>{upperFirst(t('tu'))} tiempo es valioso.</h3>
                 </div>
-                <p>Dedicate a lo que realmente importa, sin tener que atender a extraños, salir de casa o dejar de usar su auto.</p>
+                <p>{t('dedicate')}</p>
               </div>
               <div className={styles.carousel__step}>
                 <div className={styles.step__title}>
-                  <h3>Tu auto vale más.</h3>
+                  <h3>{t('valemas')}</h3>
                 </div>
-                <p>Sin especular y al mejor valor del mercado, vendiendo tu {brand} con nosotros usted gana hasta un 25% más de dinero. Vendemos todos los modelos, ya sea {modelsExampleText}.</p>
+                <p>Sin especular y al mejor valor del mercado, vendiendo {t('tu')} {brand} con nosotros usted gana hasta un 25% más de dinero. Vendemos todos los modelos, ya sea {modelsExampleText}.</p>
               </div>
               <div className={styles.carousel__step}>
                 <div className={styles.step__title}>
 
-                  <h3>Tu tranquilidad es lo principal.</h3>
+                  <h3>{upperFirst(t('tu'))}  tranquilidad es lo principal.</h3>
                 </div>
-                <p>Te garantizamos la cobranza de los fondos, atendemos a los interesados y nos ocupamos de todos los trámites de tu {brand}.</p>
+                <p>{upperFirst(t('te'))} garantizamos la cobranza de los fondos, atendemos a los interesados y nos ocupamos de todos los trámites de {t('tu')} {brand}.</p>
               </div>
             </Carousel>
           </div>

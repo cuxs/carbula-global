@@ -211,8 +211,82 @@ export const getReviews = (country_code) => {
         "rating": 5,
       },
     ],
-    uy: [],
-    mx: []
+    uy: [
+      {
+        author_name: 'Juan Bustamante',
+        text: 'Cierre de venta sumamente rapido ( 1 semana desde publicacion) .Procedimiento de venta expedito 1hora en tu misma casa todo efectuado con transferencias electronicas y todo a un buen precio me atrevo a recomendarlo.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Ghb4D2t2PIEDHTZ8dGcpoQc5Xn2MZ8M1COZD849=w36-h36-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Carola L',
+        text: 'No tenía experiencia en ventas de vehículos y me ayudaron demasiado, además poseen una gran agilidad y rapidez en esto, siempre estuvieron en contacto y con una gran transparencia. Totalmente recomendado para los que quieran vender sus vehículos o comprarlos',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Gg6K5mtfV53TMlMqbB8wtzvkqdxzoBxZzczBwZ6e1I=w36-h36-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Pablo Ceballos',
+        text: 'Compre hace muy poco mi vehículo junto a Cárbula, y nada que decir, excelente servicio, muy buena y rápida gestión de nuestro ejecutivo, en 24 hrs concretamos compra. Todo fue bastante claro y transparente. Muy recomendable el servicio. ¡Muchas gracias!',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjWCnGhbeqsXedfgJKrAPP9O5O5XouW9Nuf2570OA=w60-h60-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Gabriela Peñaloza',
+        text: 'Excelente Servicio muy rápido y sencillo el proceso para vender el auto. Todo digitalizado. La atención de primera nos apoyaron en cualquier duda. El auto lo vendieron en solo 2 días una maravilla. 100% recomendado.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjcwZUS2myjtBUIyRMELcRHpus6NWJDphjLAgK2=w60-h60-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Karina Alejandra Quinteros',
+        text: 'Excelente servicio! Le sacaron fotografías a mi Subaru New XV el día martes, lo publicaron el miércoles y el día viernes ya estaba vendido!. Todo fue en mi domicilio, sin tener que ir a la notaria para hacer el trámite de transferencia ya que se realizó on-line. Recomiendo de todas maneras.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjJ-2BH5-qq1F67n7M1dA1Nl9P_sJBhvY43SqrIAQ=w60-h60-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Carlos Vilches',
+        text: 'Excelente servicio y atención. Un sistema personalizado y que por lejos supera la compra de otros sitios. Muy agradecido de la gestión. Demoró un poco más de una semana vender mi auto.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GhYGERvwGQ5UNVLX5wknqJWC7KeVA4o4ZTHD5h6=w60-h60-p-rp-mo-ba3-br100',
+        "rating": 5,
+      },
+    ],
+    mx: [
+      {
+        author_name: 'Juan Bustamante',
+        text: 'Cierre de venta sumamente rapido ( 1 semana desde publicacion) .Procedimiento de venta expedito 1hora en tu misma casa todo efectuado con transferencias electronicas y todo a un buen precio me atrevo a recomendarlo.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Ghb4D2t2PIEDHTZ8dGcpoQc5Xn2MZ8M1COZD849=w36-h36-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Carola L',
+        text: 'No tenía experiencia en ventas de vehículos y me ayudaron demasiado, además poseen una gran agilidad y rapidez en esto, siempre estuvieron en contacto y con una gran transparencia. Totalmente recomendado para los que quieran vender sus vehículos o comprarlos',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Gg6K5mtfV53TMlMqbB8wtzvkqdxzoBxZzczBwZ6e1I=w36-h36-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Pablo Ceballos',
+        text: 'Compre hace muy poco mi vehículo junto a Cárbula, y nada que decir, excelente servicio, muy buena y rápida gestión de nuestro ejecutivo, en 24 hrs concretamos compra. Todo fue bastante claro y transparente. Muy recomendable el servicio. ¡Muchas gracias!',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjWCnGhbeqsXedfgJKrAPP9O5O5XouW9Nuf2570OA=w60-h60-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Gabriela Peñaloza',
+        text: 'Excelente Servicio muy rápido y sencillo el proceso para vender el auto. Todo digitalizado. La atención de primera nos apoyaron en cualquier duda. El auto lo vendieron en solo 2 días una maravilla. 100% recomendado.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjcwZUS2myjtBUIyRMELcRHpus6NWJDphjLAgK2=w60-h60-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Karina Alejandra Quinteros',
+        text: 'Excelente servicio! Le sacaron fotografías a mi Subaru New XV el día martes, lo publicaron el miércoles y el día viernes ya estaba vendido!. Todo fue en mi domicilio, sin tener que ir a la notaria para hacer el trámite de transferencia ya que se realizó on-line. Recomiendo de todas maneras.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjJ-2BH5-qq1F67n7M1dA1Nl9P_sJBhvY43SqrIAQ=w60-h60-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Carlos Vilches',
+        text: 'Excelente servicio y atención. Un sistema personalizado y que por lejos supera la compra de otros sitios. Muy agradecido de la gestión. Demoró un poco más de una semana vender mi auto.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GhYGERvwGQ5UNVLX5wknqJWC7KeVA4o4ZTHD5h6=w60-h60-p-rp-mo-ba3-br100',
+        "rating": 5,
+      },
+    ],
   }
   return reviews[country_code]
 }
@@ -252,8 +326,8 @@ export const getFacebookDomainVerification = (country_code) => {
   const ids = {
     ar: 'o1cpz3juti6u4og457vtz73phm8v4m',
     cl: 'xttlstugadcn3syxvsdpcr2kpm0ajs',
-    mx: '',
-    uy: '',
+    mx: 'xbbkq67yvogzf0656jxyzlwamjm4tp',
+    uy: 'u9xibrmbxi98j13w4lv7b1baytrgvy',
   }
   return ids[country_code]
 }
@@ -274,6 +348,16 @@ export const getHotjarId =country_code=>{
     cl: '2558126',
     mx: '',
     uy: ''
+  }
+  return ids[country_code]
+}
+
+export const getGTMid= country_code=>{
+  const ids={
+    ar: 'GTM-PDW9FVV', //'GTM-TCKHB87',
+    cl: 'GTM-WLSKKJC ', //GTM-WZS7KD7
+    mx: 'GTM-PDWPP7J',
+    uy: 'GTM-T4DFD26'
   }
   return ids[country_code]
 }

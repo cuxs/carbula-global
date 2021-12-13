@@ -18,7 +18,6 @@ import { InlineWidget } from "react-calendly";
 import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
 
 
 const CotizationForm = ({

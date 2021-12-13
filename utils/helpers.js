@@ -336,8 +336,8 @@ export const getGtagId = country_code=>{
   const ids ={
     ar: 'AW-787470327/c3SbCKHNtvECEPevv_cC',
     cl: 'AW-702067534/3226COqk-IkCEM7m4s4C',
-    mx: '',
-    uy: '',
+    mx: 'aaa',
+    uy: 'aaa',
   }
   return ids[country_code]
 }

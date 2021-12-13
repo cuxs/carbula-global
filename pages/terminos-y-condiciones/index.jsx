@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 
 const TerminosCondiciones = () => {
   const router = useRouter()
-  console.log(router.locale)
   if (router.locale === 'es-AR') {
     return (
       <div>

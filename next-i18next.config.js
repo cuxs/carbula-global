@@ -1,6 +1,6 @@
 module.exports = {
   i18n: {
-    locales: ['es-AR', 'es-UY', 'es-MX', 'es-CL', 'redirect', 'redirect2'],
+    locales: ['es-AR', 'es-UY', 'es-MX', 'es-CL'],
     defaultLocale: 'es-AR',
     domains: [
       {
@@ -12,10 +12,10 @@ module.exports = {
         domain: 'www.carbula.mx',
         defaultLocale: 'es-MX',
       },
-      {
-        domain: 'www.carbula.com.mx',
-        defaultLocale: 'redirect',
-      },
+      // {
+      //   domain: 'www.carbula.com.mx',
+      //   defaultLocale: 'redirect',
+      // },
       {
         domain: 'www.carbula.cl',
         defaultLocale: 'es-CL'
@@ -24,10 +24,10 @@ module.exports = {
         domain: 'www.carbula.uy',
         defaultLocale: 'es-UY'
       },
-      {
-        domain: 'www.carbula.com.uy',
-        defaultLocale: 'redirect2'
-      }
+      // {
+      //   domain: 'www.carbula.com.uy',
+      //   defaultLocale: 'redirect2'
+      // }
     ],
   },
 }

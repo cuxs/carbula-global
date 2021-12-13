@@ -20,8 +20,8 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        <script defer type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
-        <script defer type="text/javascript" id="hs-script-loader" src="//js.hs-scripts.com/8886399.js"></script>
+        <Script defer type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></Script>
+        <Script defer type="text/javascript" id="hs-script-loader" src="//js.hs-scripts.com/8886399.js"></Script>
         <Script
           strategy="afterInteractive"
           src='https://www.googletagmanager.com/gtag/js?id=UA-125037526-2'

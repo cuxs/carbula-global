@@ -29,7 +29,6 @@ const Acceso = () => {
     try {
       setCheckingCode(true)
       const { data } = await verifyCode({ code })
-      console.log(data.token)
       saveToken(data.token)
       router.replace('/leads')
     } catch (e) {

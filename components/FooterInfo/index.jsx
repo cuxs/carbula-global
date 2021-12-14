@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-scroll";
-import { getCatalogoURL } from '../../utils/helpers';
+import { getCatalogoURL, getInstagramLink } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './footerInfo.module.scss';
 
@@ -41,7 +41,7 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
           style={renderColorStyle()}
           target="__blank" rel="noopener noreferrer"
           className={styles.social__link}
-          href="https://www.instagram.com/carbula.ar/"
+          href={getInstagramLink(country_code)}
         >
           <img src={renderImagSrc('instagram')} alt="Instagram"/> Instagram
       </a>
@@ -56,7 +56,7 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
         <a
           target="__blank" rel="noopener noreferrer"
           className={styles.social__link}
-          href="https://www.instagram.com/carbula.ar/"
+          href={getInstagramLink(country_code)}
           style={renderColorStyle()}
         >
           <img src={renderImagSrc('instagram')} alt="Instagram" />

@@ -361,3 +361,13 @@ export const getGTMid= country_code=>{
   }
   return ids[country_code]
 }
+
+export const getInstagramLink = country_code=>{
+  const urls={
+    ar: 'https://www.instagram.com/carbula.ar/',
+    cl: 'https://www.instagram.com/carbula.ar/',
+    mx: 'https://www.instagram.com/carbula.ar/',
+    uy: 'https://www.instagram.com/carbula.uy/'
+  }
+  return urls[country_code]
+}

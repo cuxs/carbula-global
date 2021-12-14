@@ -9,7 +9,7 @@ import { getZonas } from '../utils/fetches';
 import { useSpring, animated } from "react-spring";
 import { hotjar } from 'react-hotjar'
 import { clearCotization, getCountryCode, clearLocalStorage, getHotjarId, getPhoneNumber, getWhatsappNumber } from '../utils/helpers';
-import {upperFirst} from 'lodash'
+import { upperFirst } from 'lodash'
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -103,6 +103,16 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
       clearAllBodyScrollLocks()
     }
   }, [overlayBackground])
+
+  const getSomosText = () => {
+    const texts = {
+      ar: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" href="https://www.startupchile.org">STARTUP CHILE</a> y <a target="__blank" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> COMPROMETIDA <br /> EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
+      cl: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://www.startupchile.org/">STARTUP CHILE</a> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
+      uy: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://www.anii.org.uy/">ANII</a>, STARTUP CHILE y SEEDSTARS COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
+      mx: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://www.startupchile.org/">STARTUP CHILE</a> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>
+    }
+    return texts[COUNTRY_CODE]
+  }
   return (
     <Fragment>
       <Head title="Cárbula" />
@@ -179,11 +189,11 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           <h2 className={styles.text__primary}>¿Qué opinan nuestros clientes?</h2>
           <NuestrosClientes country_code={COUNTRY_CODE} />
         </div>
-        <div className={styles.somos__text}>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" href="https://www.startupchile.org">STARTUP CHILE</a> y <a target="__blank" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> COMPROMETIDA <br /> EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</div>
+        <div className={styles.somos__text}>{getSomosText()}</div>
         <hr />
       </section>
       <section>
-        <FooterInfo grey country_code={COUNTRY_CODE}/>
+        <FooterInfo grey country_code={COUNTRY_CODE} />
       </section>
     </Fragment>
   )

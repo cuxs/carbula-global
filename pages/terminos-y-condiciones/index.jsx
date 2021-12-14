@@ -74,7 +74,7 @@ const TerminosCondiciones = () => {
       </div>
     )
   }
-  if (router.locale === 'es-CL') {
+  if (router.locale === 'es-CL' || router.locale === 'es-MX') {
     return (
       <div>
         <Head title="Términos y condiciones" />
@@ -206,9 +206,6 @@ const TerminosCondiciones = () => {
 
       </div>
     </div>
-  }
-  if (router.locale === 'es-MX') {
-    return <div>Mexico</div>
   }
 }
 

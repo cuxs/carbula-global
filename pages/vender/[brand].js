@@ -47,7 +47,7 @@ export async function getServerSideProps(context) {
         brand: capitalizedBrand,
         modelsExampleText: getModelExampleText(capitalizedBrand),
         COUNTRY_CODE: getCountryCode(context.locale),
-        ...(await serverSideTranslations(context.locale, ['brand'])),
+        ...(await serverSideTranslations(context.locale, ['brand', 'BlackoutComponent', 'FaqComponent', 'FooterInfo'])),
       }
     }
   } catch (e) {
@@ -56,7 +56,7 @@ export async function getServerSideProps(context) {
       props: {
         referer: referer ? referer : null,
         COUNTRY_CODE: getCountryCode(context.locale),
-        ...(await serverSideTranslations(context.locale, ['brand'])),
+        ...(await serverSideTranslations(context.locale, ['brand', 'BlackoutComponent', 'FaqComponent', 'FooterInfo'])),
       }
     }
   }

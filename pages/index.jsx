@@ -40,7 +40,7 @@ export async function getServerSideProps(context) {
         zonas: parsedZonas,
         referer: referer ? referer : null,
         COUNTRY_CODE: getCountryCode(context.locale),
-        ...(await serverSideTranslations(context.locale, ['common', 'BlackoutComponent', 'FaqComponent'])),
+        ...(await serverSideTranslations(context.locale, ['common', 'BlackoutComponent', 'FaqComponent', 'FooterInfo'])),
       }
     }
   } catch (e) {

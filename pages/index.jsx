@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from 'react'
+import React, { useState, Fragment, useEffect, useMemo, useCallback } from 'react'
 import dynamic from 'next/dynamic'
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import Head from '../components/head'
@@ -57,7 +57,7 @@ export async function getServerSideProps(context) {
 
 const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   const { t } = useTranslation('common')
-  const SellForm = dynamic(() => {
+  const SellForm = useCallback(dynamic(() => {
     const SellForms = {
       'ar': import('../components/SellForm'),
       'cl': import('../components/SellFormChile'),
@@ -65,7 +65,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
       'mx': import('../components/SellForm'),
     }
     return SellForms[COUNTRY_CODE]
-  })
+  }),[])
   const router = useRouter();
   const [title, setTitle] = useState([`Vendemos ${t('tu')} vehículo`, 'por hasta 25% más de dinero.'])
   const [subtitle, setSubtitle] = useState(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.']);
@@ -78,7 +78,8 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     hotjar.initialize(getHotjarId(COUNTRY_CODE), 6)
     clearLocalStorage()
   }, [])
-  useEffect(() => {
+
+  useMemo(() => {
     switch (step) {
       case 0:
         setTitle([`Vendemos ${t('tu')} vehículo`, 'por hasta 25% más de dinero.'])
@@ -108,7 +109,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     const texts = {
       ar: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" href="https://www.startupchile.org">STARTUP CHILE</a> y <a target="__blank" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> COMPROMETIDA <br /> EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
       cl: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://www.startupchile.org/">STARTUP CHILE</a> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
-      uy: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://www.anii.org.uy/">ANII</a>, STARTUP CHILE y SEEDSTARS COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
+      uy: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://www.anii.org.uy/">ANII</a>, <a target="__blank" href="https://www.startupchile.org">STARTUP CHILE</a> y <a target="__blank" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
       mx: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://www.startupchile.org/">STARTUP CHILE</a> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>
     }
     return texts[COUNTRY_CODE]
@@ -200,4 +201,4 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
 }
 
 
-export default Home
+export default React.memo(Home)

@@ -79,7 +79,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     clearLocalStorage()
   }, [])
 
-  useMemo(() => {
+  useEffect(() => {
     switch (step) {
       case 0:
         setTitle([`Vendemos ${t('tu')} vehículo`, 'por hasta 25% más de dinero.'])

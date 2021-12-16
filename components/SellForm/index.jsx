@@ -226,7 +226,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
     const masks = {
       'ar': '+54 9 nnn nnnn nnnn',
       'uy': '+598 nnnn nnnn',
-      'mx': '+52 nnn nnnn nnnn',
+      'mx': '+52 nn nnnn nnnn',
       'cl': '+56 9 nnnn nnnn'
     }
     return masks[COUNTRY_CODE]

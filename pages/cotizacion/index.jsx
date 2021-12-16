@@ -14,6 +14,7 @@ import { checkScheduleMeeting, getLocationName } from '../../utils/fetches';
 import dayjs from 'dayjs';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 const Nav = dynamic(import('../../components/nav'))
 const Button = dynamic(import('../../components/Button'))
@@ -41,6 +42,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
   const [locationName, setLocationName] = useState('')
   const [cotizationData, setCotizationData] = useState()
   const router = useRouter()
+  const {t} = useTranslation('cotizacion')
 
   const titleProps = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 200, config: config.slow })
   const priceProps = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 400, config: config.slow })

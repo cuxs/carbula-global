@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useRef, useEffect } from 'react';
+import React, { useState, Fragment, useCallback, useEffect } from 'react';
 import { formatNumber, getCalendlyURL, getCatalogoURL } from '../../utils/helpers';
 import dynamic from 'next/dynamic'
 import Button from '../Button';
@@ -18,6 +18,10 @@ import { InlineWidget } from "react-calendly";
 import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
+import cotizationJSONcl from '../../public/autopress-cl.json'
+import cotizationJSONar from '../../public/autopress.json'
+import cotizationJSONuy from '../../public/autopress-cl.json'
+import cotizationJSONmx from '../../public/autopress-cl.json'
 
 
 const CotizationForm = ({
@@ -42,29 +46,28 @@ const CotizationForm = ({
   locationName,
   COUNTRY_CODE }) => {
 
-  const cotizationsJSON = dynamic(() => {
+  const cotizationsJSON = useCallback(() => {
     const cotizationsJSONs = {
-      'ar': import('../../public/autopress.json'),
-      'cl': import('../../public/autopress-cl.json'),
-      'uy': import('../../public/autopress.json'),
-      'mx': import('../../public/autopress.json'),
+      'ar': cotizationJSONar,
+      'cl': cotizationJSONcl,
+      'uy': cotizationJSONuy,
+      'mx': cotizationJSONmx,
     }
     return cotizationsJSONs[COUNTRY_CODE]
-  })
+  },[])
   const [publicationPrice, setPublicationPrice] = useState(_publicationPrice)
   const [marginPrice, setMarginPrice] = useState(_marginPrice);
   const [carbulaFee, setCarbulaFee] = useState(_carbulaFee);
   const [formValues, setFormValues] = useState({});
   const { t } = useTranslation('BlackoutComponent')
   const router = useRouter()
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [step])
 
-  const handlePriceChange = (value) => {
+  const handlePriceChange = useCallback((value) => {
     setSelectedPrice(value)
-    const cotizationRow = cotizationsJSON.find((row) => (
+    const cotizationRow = cotizationsJSON().find((row) => (
       row.AUTOPRESSMIN < value && row.AUTOPRESSMAX > value
     ))
     if (cotizationRow) {
@@ -72,7 +75,7 @@ const CotizationForm = ({
       setMarginPrice(cotizationRow.MARGEN)
       setCarbulaFee(cotizationRow.FEE)
     }
-  }
+  },[cotizationsJSON, setSelectedPrice])
   // const preciosOptions = () => {
   //   const precio = parseInt(selectedPrice, 10)
   //   const limit = 4000000;
@@ -863,4 +866,4 @@ const CotizationForm = ({
   )
 }
 
-export default CotizationForm
+export default React.memo(CotizationForm)

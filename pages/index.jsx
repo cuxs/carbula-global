@@ -77,6 +77,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   useEffect(() => {
     hotjar.initialize(getHotjarId(COUNTRY_CODE), 6)
     clearLocalStorage()
+    router.prefetch('/cotizacion')
   }, [])
 
   useEffect(() => {

@@ -19,9 +19,9 @@ import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import cotizationJSONcl from '../../public/autopress-cl.json'
-import cotizationJSONar from '../../public/autopress.json'
-import cotizationJSONuy from '../../public/autopress-cl.json'
-import cotizationJSONmx from '../../public/autopress-cl.json'
+import cotizationJSONar from '../../public/autopress-ar.json'
+import cotizationJSONuy from '../../public/autopress-uy.json'
+import cotizationJSONmx from '../../public/autopress-mx.json'
 
 
 const CotizationForm = ({

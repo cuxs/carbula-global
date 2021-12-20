@@ -1,0 +1,1196 @@
+[
+  {
+    "AUTOPRES_MIN": 8300,
+    "AUTOPRES_MAX": 18500,
+    "MARGEN": 3200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 18500,
+    "AUTOPRES_MAX": 28600,
+    "MARGEN": 3200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 28600,
+    "AUTOPRES_MAX": 38900,
+    "MARGEN": 3200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 38900,
+    "AUTOPRES_MAX": 49100,
+    "MARGEN": 3200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 49100,
+    "AUTOPRES_MAX": 59200,
+    "MARGEN": 3200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 59200,
+    "AUTOPRES_MAX": 69400,
+    "MARGEN": 3200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 69400,
+    "AUTOPRES_MAX": 79700,
+    "MARGEN": 3200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 79700,
+    "AUTOPRES_MAX": 89800,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 89800,
+    "AUTOPRES_MAX": 100000,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 100000,
+    "AUTOPRES_MAX": 110300,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 110300,
+    "AUTOPRES_MAX": 120400,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 120400,
+    "AUTOPRES_MAX": 130600,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 129600,
+    "AUTOPRES_MAX": 139900,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 139900,
+    "AUTOPRES_MAX": 150000,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 150000,
+    "AUTOPRES_MAX": 160200,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 160200,
+    "AUTOPRES_MAX": 170500,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 170500,
+    "AUTOPRES_MAX": 180600,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 178600,
+    "AUTOPRES_MAX": 188800,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 188800,
+    "AUTOPRES_MAX": 199100,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 199100,
+    "AUTOPRES_MAX": 209200,
+    "MARGEN": 6200,
+    "FEE": 10100
+  },
+  {
+    "AUTOPRES_MIN": 209200,
+    "AUTOPRES_MAX": 219400,
+    "MARGEN": 8300,
+    "FEE": 10300
+  },
+  {
+    "AUTOPRES_MIN": 219400,
+    "AUTOPRES_MAX": 229700,
+    "MARGEN": 8300,
+    "FEE": 10300
+  },
+  {
+    "AUTOPRES_MIN": 229700,
+    "AUTOPRES_MAX": 239700,
+    "MARGEN": 8300,
+    "FEE": 10300
+  },
+  {
+    "AUTOPRES_MIN": 238700,
+    "AUTOPRES_MAX": 249000,
+    "MARGEN": 8300,
+    "FEE": 11300
+  },
+  {
+    "AUTOPRES_MIN": 249000,
+    "AUTOPRES_MAX": 259300,
+    "MARGEN": 8300,
+    "FEE": 11300
+  },
+  {
+    "AUTOPRES_MIN": 259300,
+    "AUTOPRES_MAX": 269300,
+    "MARGEN": 8300,
+    "FEE": 12300
+  },
+  {
+    "AUTOPRES_MIN": 267300,
+    "AUTOPRES_MAX": 277600,
+    "MARGEN": 8300,
+    "FEE": 12300
+  },
+  {
+    "AUTOPRES_MIN": 277600,
+    "AUTOPRES_MAX": 287900,
+    "MARGEN": 8300,
+    "FEE": 12300
+  },
+  {
+    "AUTOPRES_MIN": 287900,
+    "AUTOPRES_MAX": 297900,
+    "MARGEN": 8300,
+    "FEE": 13300
+  },
+  {
+    "AUTOPRES_MIN": 297900,
+    "AUTOPRES_MAX": 308200,
+    "MARGEN": 8300,
+    "FEE": 13300
+  },
+  {
+    "AUTOPRES_MIN": 308200,
+    "AUTOPRES_MAX": 318500,
+    "MARGEN": 8300,
+    "FEE": 14300
+  },
+  {
+    "AUTOPRES_MIN": 318500,
+    "AUTOPRES_MAX": 328500,
+    "MARGEN": 8300,
+    "FEE": 14300
+  },
+  {
+    "AUTOPRES_MIN": 326500,
+    "AUTOPRES_MAX": 336800,
+    "MARGEN": 8300,
+    "FEE": 14300
+  },
+  {
+    "AUTOPRES_MIN": 336800,
+    "AUTOPRES_MAX": 346800,
+    "MARGEN": 8300,
+    "FEE": 15500
+  },
+  {
+    "AUTOPRES_MIN": 346800,
+    "AUTOPRES_MAX": 357100,
+    "MARGEN": 8300,
+    "FEE": 15500
+  },
+  {
+    "AUTOPRES_MIN": 355100,
+    "AUTOPRES_MAX": 365400,
+    "MARGEN": 8300,
+    "FEE": 16500
+  },
+  {
+    "AUTOPRES_MIN": 365400,
+    "AUTOPRES_MAX": 375400,
+    "MARGEN": 8300,
+    "FEE": 16500
+  },
+  {
+    "AUTOPRES_MIN": 375400,
+    "AUTOPRES_MAX": 385700,
+    "MARGEN": 8300,
+    "FEE": 17500
+  },
+  {
+    "AUTOPRES_MIN": 383700,
+    "AUTOPRES_MAX": 393900,
+    "MARGEN": 8300,
+    "FEE": 17500
+  },
+  {
+    "AUTOPRES_MIN": 393900,
+    "AUTOPRES_MAX": 404000,
+    "MARGEN": 8300,
+    "FEE": 17500
+  },
+  {
+    "AUTOPRES_MIN": 402000,
+    "AUTOPRES_MAX": 412300,
+    "MARGEN": 10300,
+    "FEE": 18500
+  },
+  {
+    "AUTOPRES_MIN": 412300,
+    "AUTOPRES_MAX": 422300,
+    "MARGEN": 10300,
+    "FEE": 18500
+  },
+  {
+    "AUTOPRES_MIN": 422300,
+    "AUTOPRES_MAX": 432600,
+    "MARGEN": 10300,
+    "FEE": 18500
+  },
+  {
+    "AUTOPRES_MIN": 430600,
+    "AUTOPRES_MAX": 440800,
+    "MARGEN": 10300,
+    "FEE": 19500
+  },
+  {
+    "AUTOPRES_MIN": 440800,
+    "AUTOPRES_MAX": 450900,
+    "MARGEN": 10300,
+    "FEE": 19500
+  },
+  {
+    "AUTOPRES_MIN": 450900,
+    "AUTOPRES_MAX": 461200,
+    "MARGEN": 10300,
+    "FEE": 20500
+  },
+  {
+    "AUTOPRES_MIN": 461200,
+    "AUTOPRES_MAX": 471400,
+    "MARGEN": 10300,
+    "FEE": 20500
+  },
+  {
+    "AUTOPRES_MIN": 469400,
+    "AUTOPRES_MAX": 479500,
+    "MARGEN": 12300,
+    "FEE": 20500
+  },
+  {
+    "AUTOPRES_MIN": 479500,
+    "AUTOPRES_MAX": 489800,
+    "MARGEN": 12300,
+    "FEE": 21500
+  },
+  {
+    "AUTOPRES_MIN": 487700,
+    "AUTOPRES_MAX": 497800,
+    "MARGEN": 12300,
+    "FEE": 21500
+  },
+  {
+    "AUTOPRES_MIN": 497800,
+    "AUTOPRES_MAX": 508100,
+    "MARGEN": 12300,
+    "FEE": 22500
+  },
+  {
+    "AUTOPRES_MIN": 508100,
+    "AUTOPRES_MAX": 518300,
+    "MARGEN": 12300,
+    "FEE": 22500
+  },
+  {
+    "AUTOPRES_MIN": 516300,
+    "AUTOPRES_MAX": 526400,
+    "MARGEN": 14300,
+    "FEE": 22500
+  },
+  {
+    "AUTOPRES_MIN": 526400,
+    "AUTOPRES_MAX": 536700,
+    "MARGEN": 14300,
+    "FEE": 23600
+  },
+  {
+    "AUTOPRES_MIN": 536700,
+    "AUTOPRES_MAX": 546900,
+    "MARGEN": 14300,
+    "FEE": 23600
+  },
+  {
+    "AUTOPRES_MIN": 544700,
+    "AUTOPRES_MAX": 555000,
+    "MARGEN": 14300,
+    "FEE": 24600
+  },
+  {
+    "AUTOPRES_MIN": 555000,
+    "AUTOPRES_MAX": 565300,
+    "MARGEN": 14300,
+    "FEE": 24600
+  },
+  {
+    "AUTOPRES_MIN": 565300,
+    "AUTOPRES_MAX": 575500,
+    "MARGEN": 14300,
+    "FEE": 24600
+  },
+  {
+    "AUTOPRES_MIN": 575500,
+    "AUTOPRES_MAX": 585600,
+    "MARGEN": 14300,
+    "FEE": 25600
+  },
+  {
+    "AUTOPRES_MIN": 585600,
+    "AUTOPRES_MAX": 595800,
+    "MARGEN": 14300,
+    "FEE": 25600
+  },
+  {
+    "AUTOPRES_MIN": 593800,
+    "AUTOPRES_MAX": 603900,
+    "MARGEN": 14300,
+    "FEE": 26600
+  },
+  {
+    "AUTOPRES_MIN": 603900,
+    "AUTOPRES_MAX": 614200,
+    "MARGEN": 14300,
+    "FEE": 26600
+  },
+  {
+    "AUTOPRES_MIN": 614200,
+    "AUTOPRES_MAX": 624400,
+    "MARGEN": 14300,
+    "FEE": 26600
+  },
+  {
+    "AUTOPRES_MIN": 624400,
+    "AUTOPRES_MAX": 634500,
+    "MARGEN": 14300,
+    "FEE": 27600
+  },
+  {
+    "AUTOPRES_MIN": 634500,
+    "AUTOPRES_MAX": 644800,
+    "MARGEN": 14300,
+    "FEE": 27600
+  },
+  {
+    "AUTOPRES_MIN": 644800,
+    "AUTOPRES_MAX": 655000,
+    "MARGEN": 14300,
+    "FEE": 28600
+  },
+  {
+    "AUTOPRES_MIN": 653000,
+    "AUTOPRES_MAX": 663100,
+    "MARGEN": 14300,
+    "FEE": 28600
+  },
+  {
+    "AUTOPRES_MIN": 663100,
+    "AUTOPRES_MAX": 673300,
+    "MARGEN": 14300,
+    "FEE": 28600
+  },
+  {
+    "AUTOPRES_MIN": 673300,
+    "AUTOPRES_MAX": 683600,
+    "MARGEN": 14300,
+    "FEE": 29600
+  },
+  {
+    "AUTOPRES_MIN": 683600,
+    "AUTOPRES_MAX": 693700,
+    "MARGEN": 14300,
+    "FEE": 29600
+  },
+  {
+    "AUTOPRES_MIN": 693700,
+    "AUTOPRES_MAX": 703900,
+    "MARGEN": 14300,
+    "FEE": 30800
+  },
+  {
+    "AUTOPRES_MIN": 703900,
+    "AUTOPRES_MAX": 714200,
+    "MARGEN": 14300,
+    "FEE": 30800
+  },
+  {
+    "AUTOPRES_MIN": 710000,
+    "AUTOPRES_MAX": 720300,
+    "MARGEN": 16500,
+    "FEE": 30800
+  },
+  {
+    "AUTOPRES_MIN": 720300,
+    "AUTOPRES_MAX": 730500,
+    "MARGEN": 16500,
+    "FEE": 31800
+  },
+  {
+    "AUTOPRES_MIN": 730500,
+    "AUTOPRES_MAX": 740600,
+    "MARGEN": 16500,
+    "FEE": 31800
+  },
+  {
+    "AUTOPRES_MIN": 740600,
+    "AUTOPRES_MAX": 750800,
+    "MARGEN": 16500,
+    "FEE": 32800
+  },
+  {
+    "AUTOPRES_MIN": 750800,
+    "AUTOPRES_MAX": 761100,
+    "MARGEN": 16500,
+    "FEE": 32800
+  },
+  {
+    "AUTOPRES_MIN": 761100,
+    "AUTOPRES_MAX": 771200,
+    "MARGEN": 16500,
+    "FEE": 33800
+  },
+  {
+    "AUTOPRES_MIN": 769200,
+    "AUTOPRES_MAX": 779400,
+    "MARGEN": 18500,
+    "FEE": 33800
+  },
+  {
+    "AUTOPRES_MIN": 779400,
+    "AUTOPRES_MAX": 789700,
+    "MARGEN": 18500,
+    "FEE": 33800
+  },
+  {
+    "AUTOPRES_MIN": 789700,
+    "AUTOPRES_MAX": 799800,
+    "MARGEN": 18500,
+    "FEE": 34800
+  },
+  {
+    "AUTOPRES_MIN": 799800,
+    "AUTOPRES_MAX": 810000,
+    "MARGEN": 18500,
+    "FEE": 34800
+  },
+  {
+    "AUTOPRES_MIN": 810000,
+    "AUTOPRES_MAX": 820300,
+    "MARGEN": 18500,
+    "FEE": 35800
+  },
+  {
+    "AUTOPRES_MIN": 816100,
+    "AUTOPRES_MAX": 826300,
+    "MARGEN": 18500,
+    "FEE": 35800
+  },
+  {
+    "AUTOPRES_MIN": 826300,
+    "AUTOPRES_MAX": 836600,
+    "MARGEN": 18500,
+    "FEE": 35800
+  },
+  {
+    "AUTOPRES_MIN": 836600,
+    "AUTOPRES_MAX": 846700,
+    "MARGEN": 18500,
+    "FEE": 36800
+  },
+  {
+    "AUTOPRES_MIN": 846700,
+    "AUTOPRES_MAX": 856900,
+    "MARGEN": 18500,
+    "FEE": 36800
+  },
+  {
+    "AUTOPRES_MIN": 856900,
+    "AUTOPRES_MAX": 867200,
+    "MARGEN": 18500,
+    "FEE": 36800
+  },
+  {
+    "AUTOPRES_MIN": 867200,
+    "AUTOPRES_MAX": 877300,
+    "MARGEN": 20500,
+    "FEE": 37800
+  },
+  {
+    "AUTOPRES_MIN": 875300,
+    "AUTOPRES_MAX": 885500,
+    "MARGEN": 20500,
+    "FEE": 37800
+  },
+  {
+    "AUTOPRES_MIN": 885500,
+    "AUTOPRES_MAX": 895800,
+    "MARGEN": 20500,
+    "FEE": 37800
+  },
+  {
+    "AUTOPRES_MIN": 895800,
+    "AUTOPRES_MAX": 905900,
+    "MARGEN": 20500,
+    "FEE": 38900
+  },
+  {
+    "AUTOPRES_MIN": 905900,
+    "AUTOPRES_MAX": 916100,
+    "MARGEN": 20500,
+    "FEE": 38900
+  },
+  {
+    "AUTOPRES_MIN": 914100,
+    "AUTOPRES_MAX": 924400,
+    "MARGEN": 20500,
+    "FEE": 38900
+  },
+  {
+    "AUTOPRES_MIN": 924400,
+    "AUTOPRES_MAX": 934400,
+    "MARGEN": 20500,
+    "FEE": 39900
+  },
+  {
+    "AUTOPRES_MIN": 932400,
+    "AUTOPRES_MAX": 942700,
+    "MARGEN": 20500,
+    "FEE": 39900
+  },
+  {
+    "AUTOPRES_MIN": 942700,
+    "AUTOPRES_MAX": 952800,
+    "MARGEN": 20500,
+    "FEE": 39900
+  },
+  {
+    "AUTOPRES_MIN": 952800,
+    "AUTOPRES_MAX": 963000,
+    "MARGEN": 20500,
+    "FEE": 40900
+  },
+  {
+    "AUTOPRES_MIN": 963000,
+    "AUTOPRES_MAX": 973300,
+    "MARGEN": 20500,
+    "FEE": 40900
+  },
+  {
+    "AUTOPRES_MIN": 973300,
+    "AUTOPRES_MAX": 983400,
+    "MARGEN": 20500,
+    "FEE": 40900
+  },
+  {
+    "AUTOPRES_MIN": 981300,
+    "AUTOPRES_MAX": 991600,
+    "MARGEN": 20500,
+    "FEE": 41900
+  },
+  {
+    "AUTOPRES_MIN": 991600,
+    "AUTOPRES_MAX": 1001900,
+    "MARGEN": 20500,
+    "FEE": 41900
+  },
+  {
+    "AUTOPRES_MIN": 1001900,
+    "AUTOPRES_MAX": 1011900,
+    "MARGEN": 20500,
+    "FEE": 41900
+  },
+  {
+    "AUTOPRES_MIN": 1011900,
+    "AUTOPRES_MAX": 1022200,
+    "MARGEN": 20500,
+    "FEE": 42900
+  },
+  {
+    "AUTOPRES_MIN": 1022200,
+    "AUTOPRES_MAX": 1032500,
+    "MARGEN": 20500,
+    "FEE": 42900
+  },
+  {
+    "AUTOPRES_MIN": 1032500,
+    "AUTOPRES_MAX": 1042500,
+    "MARGEN": 20500,
+    "FEE": 42900
+  },
+  {
+    "AUTOPRES_MIN": 1040500,
+    "AUTOPRES_MAX": 1050800,
+    "MARGEN": 20500,
+    "FEE": 43900
+  },
+  {
+    "AUTOPRES_MIN": 1048800,
+    "AUTOPRES_MAX": 1058800,
+    "MARGEN": 22500,
+    "FEE": 43900
+  },
+  {
+    "AUTOPRES_MIN": 1058800,
+    "AUTOPRES_MAX": 1069100,
+    "MARGEN": 22500,
+    "FEE": 43900
+  },
+  {
+    "AUTOPRES_MIN": 1069100,
+    "AUTOPRES_MAX": 1079400,
+    "MARGEN": 22500,
+    "FEE": 44900
+  },
+  {
+    "AUTOPRES_MIN": 1079400,
+    "AUTOPRES_MAX": 1089400,
+    "MARGEN": 22500,
+    "FEE": 44900
+  },
+  {
+    "AUTOPRES_MIN": 1089400,
+    "AUTOPRES_MAX": 1099700,
+    "MARGEN": 22500,
+    "FEE": 44900
+  },
+  {
+    "AUTOPRES_MIN": 1097700,
+    "AUTOPRES_MAX": 1108000,
+    "MARGEN": 22500,
+    "FEE": 46100
+  },
+  {
+    "AUTOPRES_MIN": 1108000,
+    "AUTOPRES_MAX": 1118000,
+    "MARGEN": 22500,
+    "FEE": 46100
+  },
+  {
+    "AUTOPRES_MIN": 1118000,
+    "AUTOPRES_MAX": 1128300,
+    "MARGEN": 22500,
+    "FEE": 46100
+  },
+  {
+    "AUTOPRES_MIN": 1128300,
+    "AUTOPRES_MAX": 1138600,
+    "MARGEN": 22500,
+    "FEE": 47100
+  },
+  {
+    "AUTOPRES_MIN": 1138600,
+    "AUTOPRES_MAX": 1148600,
+    "MARGEN": 22500,
+    "FEE": 47100
+  },
+  {
+    "AUTOPRES_MIN": 1146600,
+    "AUTOPRES_MAX": 1156900,
+    "MARGEN": 24600,
+    "FEE": 47100
+  },
+  {
+    "AUTOPRES_MIN": 1154900,
+    "AUTOPRES_MAX": 1164900,
+    "MARGEN": 24600,
+    "FEE": 48100
+  },
+  {
+    "AUTOPRES_MIN": 1164900,
+    "AUTOPRES_MAX": 1175200,
+    "MARGEN": 24600,
+    "FEE": 48100
+  },
+  {
+    "AUTOPRES_MIN": 1175200,
+    "AUTOPRES_MAX": 1185500,
+    "MARGEN": 24600,
+    "FEE": 48100
+  },
+  {
+    "AUTOPRES_MIN": 1185500,
+    "AUTOPRES_MAX": 1195500,
+    "MARGEN": 24600,
+    "FEE": 49100
+  },
+  {
+    "AUTOPRES_MIN": 1195500,
+    "AUTOPRES_MAX": 1205800,
+    "MARGEN": 24600,
+    "FEE": 49100
+  },
+  {
+    "AUTOPRES_MIN": 1203800,
+    "AUTOPRES_MAX": 1214000,
+    "MARGEN": 24600,
+    "FEE": 49100
+  },
+  {
+    "AUTOPRES_MIN": 1214000,
+    "AUTOPRES_MAX": 1224100,
+    "MARGEN": 24600,
+    "FEE": 50100
+  },
+  {
+    "AUTOPRES_MIN": 1224100,
+    "AUTOPRES_MAX": 1234400,
+    "MARGEN": 24600,
+    "FEE": 50100
+  },
+  {
+    "AUTOPRES_MIN": 1234400,
+    "AUTOPRES_MAX": 1244600,
+    "MARGEN": 24600,
+    "FEE": 50100
+  },
+  {
+    "AUTOPRES_MIN": 1242600,
+    "AUTOPRES_MAX": 1252700,
+    "MARGEN": 26600,
+    "FEE": 51100
+  },
+  {
+    "AUTOPRES_MIN": 1252700,
+    "AUTOPRES_MAX": 1263000,
+    "MARGEN": 26600,
+    "FEE": 51100
+  },
+  {
+    "AUTOPRES_MIN": 1260900,
+    "AUTOPRES_MAX": 1271000,
+    "MARGEN": 26600,
+    "FEE": 51100
+  },
+  {
+    "AUTOPRES_MIN": 1271000,
+    "AUTOPRES_MAX": 1281300,
+    "MARGEN": 26600,
+    "FEE": 52100
+  },
+  {
+    "AUTOPRES_MIN": 1281300,
+    "AUTOPRES_MAX": 1291500,
+    "MARGEN": 26600,
+    "FEE": 52100
+  },
+  {
+    "AUTOPRES_MIN": 1291500,
+    "AUTOPRES_MAX": 1301600,
+    "MARGEN": 26600,
+    "FEE": 52100
+  },
+  {
+    "AUTOPRES_MIN": 1301600,
+    "AUTOPRES_MAX": 1311900,
+    "MARGEN": 26600,
+    "FEE": 53100
+  },
+  {
+    "AUTOPRES_MIN": 1311900,
+    "AUTOPRES_MAX": 1322100,
+    "MARGEN": 26600,
+    "FEE": 53100
+  },
+  {
+    "AUTOPRES_MIN": 1320100,
+    "AUTOPRES_MAX": 1330200,
+    "MARGEN": 26600,
+    "FEE": 53100
+  },
+  {
+    "AUTOPRES_MIN": 1330200,
+    "AUTOPRES_MAX": 1340500,
+    "MARGEN": 26600,
+    "FEE": 54100
+  },
+  {
+    "AUTOPRES_MIN": 1338400,
+    "AUTOPRES_MAX": 1348700,
+    "MARGEN": 28600,
+    "FEE": 54100
+  },
+  {
+    "AUTOPRES_MIN": 1348700,
+    "AUTOPRES_MAX": 1358800,
+    "MARGEN": 28600,
+    "FEE": 54100
+  },
+  {
+    "AUTOPRES_MIN": 1358800,
+    "AUTOPRES_MAX": 1369000,
+    "MARGEN": 28600,
+    "FEE": 55200
+  },
+  {
+    "AUTOPRES_MIN": 1367000,
+    "AUTOPRES_MAX": 1377100,
+    "MARGEN": 28600,
+    "FEE": 55200
+  },
+  {
+    "AUTOPRES_MIN": 1377100,
+    "AUTOPRES_MAX": 1387400,
+    "MARGEN": 28600,
+    "FEE": 55200
+  },
+  {
+    "AUTOPRES_MIN": 1387400,
+    "AUTOPRES_MAX": 1397600,
+    "MARGEN": 30800,
+    "FEE": 56200
+  },
+  {
+    "AUTOPRES_MIN": 1397600,
+    "AUTOPRES_MAX": 1407900,
+    "MARGEN": 30800,
+    "FEE": 56200
+  },
+  {
+    "AUTOPRES_MIN": 1407900,
+    "AUTOPRES_MAX": 1418000,
+    "MARGEN": 30800,
+    "FEE": 56200
+  },
+  {
+    "AUTOPRES_MIN": 1418000,
+    "AUTOPRES_MAX": 1428200,
+    "MARGEN": 30800,
+    "FEE": 57200
+  },
+  {
+    "AUTOPRES_MIN": 1426200,
+    "AUTOPRES_MAX": 1436300,
+    "MARGEN": 30800,
+    "FEE": 57200
+  },
+  {
+    "AUTOPRES_MIN": 1434300,
+    "AUTOPRES_MAX": 1444500,
+    "MARGEN": 30800,
+    "FEE": 57200
+  },
+  {
+    "AUTOPRES_MIN": 1444500,
+    "AUTOPRES_MAX": 1454800,
+    "MARGEN": 30800,
+    "FEE": 58200
+  },
+  {
+    "AUTOPRES_MIN": 1454800,
+    "AUTOPRES_MAX": 1464900,
+    "MARGEN": 30800,
+    "FEE": 58200
+  },
+  {
+    "AUTOPRES_MIN": 1464900,
+    "AUTOPRES_MAX": 1475100,
+    "MARGEN": 30800,
+    "FEE": 58200
+  },
+  {
+    "AUTOPRES_MIN": 1475100,
+    "AUTOPRES_MAX": 1485400,
+    "MARGEN": 30800,
+    "FEE": 59200
+  },
+  {
+    "AUTOPRES_MIN": 1483200,
+    "AUTOPRES_MAX": 1493400,
+    "MARGEN": 32800,
+    "FEE": 59200
+  },
+  {
+    "AUTOPRES_MIN": 1493400,
+    "AUTOPRES_MAX": 1503700,
+    "MARGEN": 32800,
+    "FEE": 59200
+  },
+  {
+    "AUTOPRES_MIN": 1503700,
+    "AUTOPRES_MAX": 1514000,
+    "MARGEN": 32800,
+    "FEE": 60200
+  },
+  {
+    "AUTOPRES_MIN": 1514000,
+    "AUTOPRES_MAX": 1524000,
+    "MARGEN": 32800,
+    "FEE": 60200
+  },
+  {
+    "AUTOPRES_MIN": 1524000,
+    "AUTOPRES_MAX": 1534300,
+    "MARGEN": 32800,
+    "FEE": 60200
+  },
+  {
+    "AUTOPRES_MIN": 1532300,
+    "AUTOPRES_MAX": 1542400,
+    "MARGEN": 32800,
+    "FEE": 61400
+  },
+  {
+    "AUTOPRES_MIN": 1540300,
+    "AUTOPRES_MAX": 1550600,
+    "MARGEN": 32800,
+    "FEE": 61400
+  },
+  {
+    "AUTOPRES_MIN": 1550600,
+    "AUTOPRES_MAX": 1560900,
+    "MARGEN": 32800,
+    "FEE": 61400
+  },
+  {
+    "AUTOPRES_MIN": 1560900,
+    "AUTOPRES_MAX": 1570900,
+    "MARGEN": 32800,
+    "FEE": 62400
+  },
+  {
+    "AUTOPRES_MIN": 1570900,
+    "AUTOPRES_MAX": 1581200,
+    "MARGEN": 32800,
+    "FEE": 62400
+  },
+  {
+    "AUTOPRES_MIN": 1581200,
+    "AUTOPRES_MAX": 1591500,
+    "MARGEN": 34800,
+    "FEE": 62400
+  },
+  {
+    "AUTOPRES_MIN": 1589500,
+    "AUTOPRES_MAX": 1599500,
+    "MARGEN": 34800,
+    "FEE": 63400
+  },
+  {
+    "AUTOPRES_MIN": 1599500,
+    "AUTOPRES_MAX": 1609800,
+    "MARGEN": 34800,
+    "FEE": 63400
+  },
+  {
+    "AUTOPRES_MIN": 1609800,
+    "AUTOPRES_MAX": 1620100,
+    "MARGEN": 34800,
+    "FEE": 63400
+  },
+  {
+    "AUTOPRES_MIN": 1620100,
+    "AUTOPRES_MAX": 1630100,
+    "MARGEN": 34800,
+    "FEE": 64400
+  },
+  {
+    "AUTOPRES_MIN": 1628100,
+    "AUTOPRES_MAX": 1638400,
+    "MARGEN": 34800,
+    "FEE": 64400
+  },
+  {
+    "AUTOPRES_MIN": 1638400,
+    "AUTOPRES_MAX": 1648400,
+    "MARGEN": 34800,
+    "FEE": 64400
+  },
+  {
+    "AUTOPRES_MIN": 1646400,
+    "AUTOPRES_MAX": 1656700,
+    "MARGEN": 34800,
+    "FEE": 65400
+  },
+  {
+    "AUTOPRES_MIN": 1656700,
+    "AUTOPRES_MAX": 1667000,
+    "MARGEN": 34800,
+    "FEE": 65400
+  },
+  {
+    "AUTOPRES_MIN": 1667000,
+    "AUTOPRES_MAX": 1677000,
+    "MARGEN": 36800,
+    "FEE": 65400
+  },
+  {
+    "AUTOPRES_MIN": 1677000,
+    "AUTOPRES_MAX": 1687300,
+    "MARGEN": 36800,
+    "FEE": 66400
+  },
+  {
+    "AUTOPRES_MIN": 1687300,
+    "AUTOPRES_MAX": 1697600,
+    "MARGEN": 36800,
+    "FEE": 66400
+  },
+  {
+    "AUTOPRES_MIN": 1697600,
+    "AUTOPRES_MAX": 1707600,
+    "MARGEN": 36800,
+    "FEE": 66400
+  },
+  {
+    "AUTOPRES_MIN": 1705600,
+    "AUTOPRES_MAX": 1715900,
+    "MARGEN": 36800,
+    "FEE": 67400
+  },
+  {
+    "AUTOPRES_MIN": 1715900,
+    "AUTOPRES_MAX": 1726100,
+    "MARGEN": 36800,
+    "FEE": 67400
+  },
+  {
+    "AUTOPRES_MIN": 1723900,
+    "AUTOPRES_MAX": 1734200,
+    "MARGEN": 36800,
+    "FEE": 67400
+  },
+  {
+    "AUTOPRES_MIN": 1734200,
+    "AUTOPRES_MAX": 1744500,
+    "MARGEN": 36800,
+    "FEE": 68400
+  },
+  {
+    "AUTOPRES_MIN": 1744500,
+    "AUTOPRES_MAX": 1754500,
+    "MARGEN": 36800,
+    "FEE": 68400
+  },
+  {
+    "AUTOPRES_MIN": 1752500,
+    "AUTOPRES_MAX": 1762800,
+    "MARGEN": 36800,
+    "FEE": 68400
+  },
+  {
+    "AUTOPRES_MIN": 1762800,
+    "AUTOPRES_MAX": 1773100,
+    "MARGEN": 36800,
+    "FEE": 69400
+  },
+  {
+    "AUTOPRES_MIN": 1773100,
+    "AUTOPRES_MAX": 1783100,
+    "MARGEN": 36800,
+    "FEE": 69400
+  },
+  {
+    "AUTOPRES_MIN": 1783100,
+    "AUTOPRES_MAX": 1793400,
+    "MARGEN": 38900,
+    "FEE": 69400
+  },
+  {
+    "AUTOPRES_MIN": 1793400,
+    "AUTOPRES_MAX": 1803600,
+    "MARGEN": 38900,
+    "FEE": 70500
+  },
+  {
+    "AUTOPRES_MIN": 1803600,
+    "AUTOPRES_MAX": 1813700,
+    "MARGEN": 38900,
+    "FEE": 70500
+  },
+  {
+    "AUTOPRES_MIN": 1811700,
+    "AUTOPRES_MAX": 1822000,
+    "MARGEN": 38900,
+    "FEE": 70500
+  },
+  {
+    "AUTOPRES_MIN": 1820000,
+    "AUTOPRES_MAX": 1830000,
+    "MARGEN": 38900,
+    "FEE": 71500
+  },
+  {
+    "AUTOPRES_MIN": 1830000,
+    "AUTOPRES_MAX": 1840300,
+    "MARGEN": 38900,
+    "FEE": 71500
+  },
+  {
+    "AUTOPRES_MIN": 1840300,
+    "AUTOPRES_MAX": 1850600,
+    "MARGEN": 38900,
+    "FEE": 71500
+  },
+  {
+    "AUTOPRES_MIN": 1850600,
+    "AUTOPRES_MAX": 1860600,
+    "MARGEN": 38900,
+    "FEE": 72500
+  },
+  {
+    "AUTOPRES_MIN": 1860600,
+    "AUTOPRES_MAX": 1870900,
+    "MARGEN": 38900,
+    "FEE": 72500
+  },
+  {
+    "AUTOPRES_MIN": 1868900,
+    "AUTOPRES_MAX": 1879100,
+    "MARGEN": 38900,
+    "FEE": 72500
+  },
+  {
+    "AUTOPRES_MIN": 1879100,
+    "AUTOPRES_MAX": 1889200,
+    "MARGEN": 38900,
+    "FEE": 73500
+  },
+  {
+    "AUTOPRES_MIN": 1889200,
+    "AUTOPRES_MAX": 1899500,
+    "MARGEN": 38900,
+    "FEE": 73500
+  },
+  {
+    "AUTOPRES_MIN": 1899500,
+    "AUTOPRES_MAX": 1909700,
+    "MARGEN": 38900,
+    "FEE": 73500
+  },
+  {
+    "AUTOPRES_MIN": 1909700,
+    "AUTOPRES_MAX": 1919800,
+    "MARGEN": 38900,
+    "FEE": 74500
+  },
+  {
+    "AUTOPRES_MIN": 1917800,
+    "AUTOPRES_MAX": 1928100,
+    "MARGEN": 40900,
+    "FEE": 74500
+  },
+  {
+    "AUTOPRES_MIN": 1926000,
+    "AUTOPRES_MAX": 1936100,
+    "MARGEN": 40900,
+    "FEE": 74500
+  }
+]

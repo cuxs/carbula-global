@@ -59,7 +59,7 @@ const CotizationForm = ({
   const [marginPrice, setMarginPrice] = useState(_marginPrice);
   const [carbulaFee, setCarbulaFee] = useState(_carbulaFee);
   const [formValues, setFormValues] = useState({});
-  const { t } = useTranslation('BlackoutComponent')
+  const { t } = useTranslation('CotizationForm')
   const router = useRouter()
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -168,12 +168,10 @@ const CotizationForm = ({
   const Step1Desktop = () => (
     <div className={styles['secondary-steps__container']}>
       <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
-      <h4 className={styles.text__primary}>Ahora cuéntenos un poco más acerca de su vehículo. </h4>
+      <h4 className={styles.text__primary}>{t('step1.h4')} </h4>
       <hr />
-      <p>No lo olvide, en Cárbula <b>no compramos su auto</b>. Lo que hacemos
-        es venderlo por usted en 20 días o menos y garantizar hasta un 25% más
-        de dinero que una automotora tradicional.
-        <br /><br /><b>Le haremos unas preguntas de sobre vehículo:</b></p>
+      <p>No lo {t('olvide')}, en Cárbula <b>no compramos {t('tu')} auto</b>. {t('loQueHacemos')}
+        <br /><br /><b>Le haremos unas preguntas del vehículo:</b></p>
       <Formik
         onSubmit={handleCondicionSubmit}
         validationSchema={object().shape({

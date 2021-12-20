@@ -1,4 +1,5 @@
 {
+  "step1.h4": "Ahora cuéntenos un poco más acerca de su vehículo.",
   "labelVender": "¿Qué tan apurado está en vender?",
   "vender":{
     "opcion1":"Muy apurado",
@@ -19,6 +20,8 @@
   "prendadoLabel": "¿Actualmente está con prenda?",
   "inspectionSavedText": "Ahora que ya agendó su inspección, aproveche para conocer los autos que tenemos en venta.",
   "tu": "su",
+  "olvide": "olvide",
+  "loQueHacemos": "Lo que hacemos es venderlo por usted en 20 días o menos y garantizar hasta un 25% más de dinero que una automotora tradicional.",
   "concesionarias": "automotoras",
   "ventaInmediataText": "Para ayudarle a resolver la venta inmediata, le contaremos su situación a la sólida red de automotoras acreditadas que trabajan con nosotros para que le contacten cuanto antes."
 }

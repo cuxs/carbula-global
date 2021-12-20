@@ -1,4 +1,5 @@
 {
+  "step1.h4": "Ahora cuéntanos un poco más acerca de tu vehículo.",
   "labelVender": "¿Qué tan rápido necesitás que vendamos tu auto?",
   "vender":{
     "opcion1":"Muy rápido",
@@ -19,6 +20,8 @@
   "prendadoLabel": "¿Actualmente está prendado?",
   "inspectionSavedText": "Ahora que ya agendaste su inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.",
   "tu": "tu",
+  "olvide": "olvides",
   "concesionarias": "concesionarias",
+  "loQueHacemos": "Lo que hacemos es venderlo por ti en 20 días o menos y garantizar hasta un 25% más de dinero que una concesionaria tradicional.",
   "ventaInmediataText":"Para ayudarte a resolver la venta inmediata, le contaremos tu situación a la sólida red de concesionarias acreditadas que trabajan con nosotros para que te contacten cuanto antes."
 }

@@ -128,6 +128,7 @@ export const getCalendlyURL = (country_code, email, name) => {
     'ar': `https://calendly.com/d/zr2q-96wm/argentina-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`,
     'mx': `https://calendly.com/d/cgt-qz4-49w/mexico-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`,
     'uy': `https://calendly.com/d/ckh-qwz-mzm/uruguay-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`,
+    'cl': `https://calendly.com/d/ygfm-5xt9/chile-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`
 
   }
   return urls[country_code]
@@ -354,8 +355,8 @@ export const getHotjarId =country_code=>{
 
 export const getGTMid= country_code=>{
   const ids={
-    ar: 'GTM-PDW9FVV', //'GTM-TCKHB87',
-    cl: 'GTM-WLSKKJC ', //GTM-WZS7KD7
+    ar: 'GTM-WZS7KD7',
+    cl: 'GTM-TCKHB87 ', //GTM-WZS7KD7
     mx: 'GTM-PDWPP7J',
     uy: 'GTM-T4DFD26'
   }

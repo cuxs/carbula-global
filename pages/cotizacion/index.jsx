@@ -9,7 +9,7 @@ import classnames from 'classnames';
 import { formatNumber, getCotization, getCountryCode, getGtagId, getPhoneNumber, getWhatsappNumber } from '../../utils/helpers';
 import { clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { useSpring, useTransition, animated, config } from "react-spring";
-import { COUNTRY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE } from '../../utils/constants';
+import { COUNTRY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, CURRENCY } from '../../utils/constants';
 import { checkScheduleMeeting, getLocationName } from '../../utils/fetches';
 import dayjs from 'dayjs';
 import { useRouter } from 'next/router';
@@ -184,7 +184,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
             </animated.div>
             <animated.div style={priceProps} className={styles.price__comparison}>
               {cotizationData.retake_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('pricepriceComparison.unaConsesionaria')}</h4><h3>${formatNumber(cotizationData.retake_price, 0)}</h3></div>}
-              <div className={styles.carbula__price}><h4>{t('priceComparison.withCarbula')}</h4><h3>${formatNumber(selectedPrice, 0)}</h3></div>
+              <div className={styles.carbula__price}><h4>{t('priceComparison.withCarbula')}</h4><h3>{CURRENCY[COUNTRY_CODE]}${formatNumber(selectedPrice, 0)}</h3></div>
             </animated.div>
             <animated.div style={faqProps}>
               {width > 769 && <FaqCotization />}

@@ -76,6 +76,13 @@ const CotizationForm = ({
       setCarbulaFee(cotizationRow.FEE)
     }
   },[cotizationsJSON, setSelectedPrice])
+
+  const getCotizationEdgePrices = ()=>{
+    const min = cotizationsJSON()[0].AUTOPRESSMIN
+    const max = cotizationsJSON().slice(-1)[0].AUTOPRESSMAX
+    return [min, max]
+
+  }
   // const preciosOptions = () => {
   //   const precio = parseInt(selectedPrice, 10)
   //   const limit = 4000000;
@@ -711,16 +718,16 @@ const CotizationForm = ({
           </div>
           <div className={styles.card__prices}>
             <div className={styles['price__row--grey']}>
-              <p>Valor de publicación</p> <p>$ {formatNumber(publicationPrice, 0)}</p>
+              <p>Valor de publicación</p> <p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>
             </div>
             <div className={styles['price__row--grey']}>
-              <p>Margen para negociar</p> <p>$ {formatNumber(marginPrice, 0)}</p>
+              <p>Margen para negociar</p> <p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(marginPrice, 0)}</p>
             </div>
             <div className={styles['price__row--grey']}>
-              <p>Comisión Cárbula</p><p>$ {formatNumber(carbulaFee, 0)}</p>
+              <p>Comisión Cárbula</p><p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p>
             </div>
             <div className={styles.price__row}>
-              <p>Dinero en mano para usted</p><p>$ {formatNumber(selectedPrice, 0)}</p>
+              <p>Dinero en mano para usted</p><p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</p>
             </div>
           </div>
           <Button primary onClick={handlePriceStep}> Continuar</Button>
@@ -788,6 +795,7 @@ const CotizationForm = ({
         break;
     }
   }
+  const [min, max] = getCotizationEdgePrices()
   return (
     <div className={styles['cotization-form__container']}>
       <div
@@ -818,8 +826,8 @@ const CotizationForm = ({
                     const parsedValue = originalValue.replace(/\./g, '')
                     return parseInt(parsedValue)
                   })
-                  .min(40000, 'Ingresá un valor mayor a $40.000.')
-                  .max(9490000, 'Como máximo $9.490.000.')
+                  .min(min, `Ingresá un valor mayor a ${CURRENCY[COUNTRY_CODE]} $${formatNumber(min, 0)}.`)
+                  .max(max, `Como máximo ${CURRENCY[COUNTRY_CODE]} $${formatNumber(max, 0)}.`)
                   .required('Ingresá el monto que deseas ganar')
               })
             }

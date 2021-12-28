@@ -333,16 +333,6 @@ export const getFacebookDomainVerification = (country_code) => {
   return ids[country_code]
 }
 
-export const getGtagId = country_code=>{
-  const ids ={
-    ar: 'AW-787470327/c3SbCKHNtvECEPevv_cC',
-    cl: 'AW-702067534/3226COqk-IkCEM7m4s4C',
-    mx: 'aaa',
-    uy: 'aaa',
-  }
-  return ids[country_code]
-}
-
 export const getHotjarId =country_code=>{
   const ids={
     ar: '2558732',
@@ -356,7 +346,7 @@ export const getHotjarId =country_code=>{
 export const getGTMid= country_code=>{
   const ids={
     ar: 'GTM-WZS7KD7',
-    cl: 'GTM-TCKHB87 ', //GTM-WZS7KD7
+    cl: 'GTM-TCKHB87 ',
     mx: 'GTM-PDWPP7J',
     uy: 'GTM-T4DFD26'
   }

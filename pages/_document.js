@@ -22,19 +22,6 @@ class MyDocument extends Document {
         </body>
         <Script defer type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></Script>
         <Script defer type="text/javascript" id="hs-script-loader" src="//js.hs-scripts.com/8886399.js"></Script>
-        <Script
-          strategy="afterInteractive"
-          src='https://www.googletagmanager.com/gtag/js?id=UA-125037526-2'
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-787470327');
-          `
-          }
-        </Script>
 
       </Html>
     )

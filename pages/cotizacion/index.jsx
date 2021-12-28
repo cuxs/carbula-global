@@ -6,7 +6,7 @@ import { PuffLoader } from "react-spinners";
 import CryptoJS from 'crypto-js'
 import { capitalize, startsWith, isEmpty } from 'lodash';
 import classnames from 'classnames';
-import { formatNumber, getCotization, getCountryCode, getGtagId, getPhoneNumber, getWhatsappNumber } from '../../utils/helpers';
+import { formatNumber, getCotization, getCountryCode, getPhoneNumber, getWhatsappNumber } from '../../utils/helpers';
 import { clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { useSpring, useTransition, animated, config } from "react-spring";
 import { COUNTRY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, CURRENCY } from '../../utils/constants';
@@ -57,7 +57,6 @@ const Cotizacion = ({COUNTRY_CODE}) => {
   })
   useEffect(() => {
     setWidth(window.innerWidth)
-    window.gtag ? window.gtag('event', 'conversion', { 'send_to': getGtagId(COUNTRY_CODE) }) : ''
     const cotizationCrypted = getCotization();
     if (!cotizationCrypted) {
       return router.push('/')
@@ -148,7 +147,6 @@ const Cotizacion = ({COUNTRY_CODE}) => {
     }
     if (shouldFetchMeetingData) {
       checkMeeting()
-      window.gtag ? window.gtag('event', 'conversion', { 'send_to': getGtagId(COUNTRY_CODE) }) : ''
     }
     return () => clearTimeout(timeout)
   }, [shouldFetchMeetingData])

@@ -143,7 +143,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       carAndContactData.campania = getCampania(router.query)
       setOverlayBackground(true)
       const { data } = await submitFormAndGetCotization(carAndContactData)
-      debugger;
       const query = CryptoJS.AES.encrypt(JSON.stringify(data.data), 'cotizacion').toString()
       saveCotization(query)
       router.push({

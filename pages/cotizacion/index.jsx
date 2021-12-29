@@ -181,7 +181,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               <h3>para su {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
             </animated.div>
             <animated.div style={priceProps} className={styles.price__comparison}>
-              {cotizationData.retake_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('pricepriceComparison.unaConsesionaria')}</h4><h3>${formatNumber(cotizationData.retake_price, 0)}</h3></div>}
+              {cotizationData.retake_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('priceComparison.unaConsesionaria')}</h4><h3>{CURRENCY[COUNTRY_CODE]}${formatNumber(cotizationData.retake_price, 0)}</h3></div>}
               <div className={styles.carbula__price}><h4>{t('priceComparison.withCarbula')}</h4><h3>{CURRENCY[COUNTRY_CODE]}${formatNumber(selectedPrice, 0)}</h3></div>
             </animated.div>
             <animated.div style={faqProps}>
@@ -435,6 +435,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
           step={step}
           name={cotizationData.name}
           email={cotizationData.email}
+          phone={cotizationData.phone}
           width={width}
           variablePrices={{
             _publicationPrice: cotizationData.precioPublicacion,

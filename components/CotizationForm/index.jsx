@@ -31,6 +31,7 @@ const CotizationForm = ({
   setStep,
   name,
   email,
+  phone,
   width,
   grantedPrice,
   variablePrices: { _publicationPrice,
@@ -550,7 +551,7 @@ const CotizationForm = ({
     </Formik>
 
   </div>
-  const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name)} />
+  const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
 
   const Step5Mobile = () => <div className={styles['secondary-steps__container']}>
     <Formik

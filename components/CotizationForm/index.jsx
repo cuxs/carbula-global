@@ -1,6 +1,5 @@
 import React, { useState, Fragment, useCallback, useEffect } from 'react';
 import { formatNumber, getCalendlyURL, getCatalogoURL } from '../../utils/helpers';
-import dynamic from 'next/dynamic'
 import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';

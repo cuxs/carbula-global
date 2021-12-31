@@ -94,7 +94,7 @@ export const getModelExampleText = (brand) => {
 
 export const saveCotization = (encryptedCotization) => {
   if (typeof window !== "undefined") {
-    localStorage.setItem('cotization', encryptedCotization)
+    return localStorage.setItem('cotization', encryptedCotization)
   }
 }
 
@@ -115,7 +115,7 @@ export const getCountryCode = (locale) => {
 }
 export const saveToken = (token) => {
   if (typeof window !== "undefined") {
-    localStorage.setItem('token', token)
+    return localStorage.setItem('token', token)
   }
 }
 export const getToken = () => {

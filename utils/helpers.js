@@ -306,7 +306,7 @@ export const getWhatsappNumber = (country_code) => {
   const phoneNumbers = {
     ar: '+5492614864083',
     mx: '+5492614864083',
-    uy: '+5492614864083',
+    uy: '+59899220055',
     cl: '+56971417008',
   }
   return phoneNumbers[country_code]
@@ -316,7 +316,7 @@ export const getPhoneNumber = (country_code) => {
   const phoneNumbers = {
     ar: '+5492613013473',
     mx: '+5492614864083',
-    uy: '+5492614864083',
+    uy: '+59899220055',
     cl: '+56228977930',
   }
   return phoneNumbers[country_code]

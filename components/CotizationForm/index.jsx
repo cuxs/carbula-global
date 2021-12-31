@@ -693,8 +693,8 @@ const CotizationForm = ({
               type="string"
               value={formatNumber(selectedPrice, 0)}
               step={50000}
-              min={selectedPrice - 4000000}
-              max={selectedPrice + 4000000}
+              min={selectedPrice? selectedPrice - 4000000 : 0}
+              max={selectedPrice? selectedPrice + 4000000 : 10}
               onChange={handlePriceChange}
               name='selectedPrice'
             >
@@ -843,7 +843,7 @@ const CotizationForm = ({
                     decimalSeparator=","
                     value={values.amount}
                     onChange={handleChange}
-                    inputmode="numeric"
+                    inputMode="numeric"
                     placeholder="Sólo números"
                     onBlur={handleBlur}
                   />

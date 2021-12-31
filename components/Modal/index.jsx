@@ -10,6 +10,7 @@ const Modal = ({ isOpen, children }) => {
       className={styles.modal}
       overlayClassName={styles.overlay}
       shouldCloseOnOverlayClick={false}
+      appElement={document.getElementById('__next')}
     >
       {children}
     </ReactModal>

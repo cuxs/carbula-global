@@ -1,11 +1,14 @@
-import '../sass/carousel.scss';
-import '../sass/odometer.scss';
+import { useEffect } from "react";
+import TagManager from 'react-gtm-module';
 import dayjs from 'dayjs'
 import calendar from 'dayjs/plugin/calendar'
 import updateLocale from 'dayjs/plugin/updateLocale'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
 import es from 'dayjs/locale/es'
 import { appWithTranslation } from 'next-i18next';
+import { getGTMid } from '../utils/helpers';
+import '../sass/carousel.scss';
+import '../sass/odometer.scss';
 
 dayjs.extend(calendar)
 dayjs.extend(updateLocale)
@@ -31,6 +34,10 @@ dayjs.updateLocale('es', {
 
 // This default export is required in a new `pages/_app.js` file.
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: getGTMid(pageProps.COUNTRY_CODE) });
+  }, [pageProps.COUNTRY_CODE]);
+
   return <Component {...pageProps} />
 }
 

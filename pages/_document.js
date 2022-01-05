@@ -1,6 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { getCountryCode, getGTMid } from '../utils/helpers'
-import GoogleTagManager from '../components/tagManager';
 import Script from 'next/script'
 
 class MyDocument extends Document {
@@ -11,12 +10,11 @@ class MyDocument extends Document {
 
 
   render() {
-    const country_code = getCountryCode(this.props.locale)
+
     return (
       <Html lang="es">
         <Head />
         <body>
-          <GoogleTagManager gtmId={getGTMid(country_code)} />
           <Main />
           <NextScript />
         </body>

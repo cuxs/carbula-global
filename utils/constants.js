@@ -12,9 +12,8 @@ module.exports = {
     'ar': 'Argentina',
     'uy': 'Uruguay',
     'mx': 'México',
-    'cl': 'Chile',
-
-  }
+    'cl': 'Chile'
+  },
   MIN_TEXT_SEARCH_LENGTH: 2,
   API_URL,
   CURRENCY:{

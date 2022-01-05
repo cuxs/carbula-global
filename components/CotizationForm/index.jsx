@@ -601,10 +601,6 @@ const CotizationForm = ({
       <img src="/icons/calendar.svg" alt="calendario" />
       <p>{meetData.date}</p>
     </div>
-    {/* <div className={styles.meeting__row}>
-      <img src="/icons/location.svg" alt="ubicación" />
-      <p>{meetData.address}, {locationName}, {COUNTRY}</p>
-    </div> */}
     <hr />
     <p className={styles['meeting-info__footer']}>Ahora que ya agendaste su inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.</p>
     <a href={getCatalogoURL(COUNTRY_CODE)}><Button primary>Ver catálogo</Button></a>

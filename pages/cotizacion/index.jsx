@@ -263,10 +263,6 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <img src="/icons/calendar-white.svg" alt="calendario" />
                 <p>{meetData.date}</p>
               </div>
-              {/* <div className={styles.meeting__row}>
-              <img src="/icons/location-white.svg" alt="ubicación" />
-              <p>{meetData.address}, {locationName}, {COUNTRY}</p>
-            </div> */}
               <hr />
               <h2>{cotizationData.year} {cotizationData.brand} {cotizationData.model}</h2>
               <h3>{cotizationData.version} - {formatNumber(cotizationData.kms, 0)} kms</h3>
@@ -380,7 +376,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
             </div>
             <div className={styles.meeting__row}>
               <img src="/icons/location-white.svg" alt="ubicación" />
-              <p>{meetData.address}, {locationName}, {COUNTRY}</p>
+              <p>{meetData.address}, {locationName}, {COUNTRY[COUNTRY_CODE]}</p>
             </div>
             <hr />
             <h2>{cotizationData.year} {cotizationData.brand} {cotizationData.model}</h2>

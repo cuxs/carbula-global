@@ -4,11 +4,17 @@ switch (process.env.NODE_ENV) {
   case 'development':  API_URL='http://localhost:4000'; break;
   case 'test':  API_URL='https://api-test.carbula.com'; break;
   case 'stage':  API_URL='https://api-test.carbula.com'; break;
-  default:  API_URL='https://api-test.carbula.com'; break;
+  default:  API_URL='https://api.carbula.com'; break;
 }
 
 module.exports = {
-  COUNTRY:'Argentina',
+  COUNTRY: {
+    'ar': 'Argentina',
+    'uy': 'Uruguay',
+    'mx': 'México',
+    'cl': 'Chile',
+
+  }
   MIN_TEXT_SEARCH_LENGTH: 2,
   API_URL,
   CURRENCY:{

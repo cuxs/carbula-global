@@ -295,8 +295,8 @@ export const getReviews = (country_code) => {
 export const getCatalogoURL = (country_code) => {
   const catalogoUrl = {
     ar: 'https://catalogo.carbula.com',
-    mx: 'https://catalogo.carbula.com',
-    uy: 'https://catalogo.carbula.com',
+    mx: 'https://catalogo.carbula.mx',
+    uy: 'https://catalogo.carbula.uy',
     cl: 'https://catalogo.carbula.cl'
   }
   return catalogoUrl[country_code]

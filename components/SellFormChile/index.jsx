@@ -4,7 +4,7 @@ import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
 import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
-import { COUNTRY_CODE, MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
+import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy } from 'lodash';
 import { mixed, object, number, string } from 'yup';
@@ -23,7 +23,7 @@ const whereOptions = [
   { value: 'Otro', label: 'Otro' },
 ]
 
-const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer }) => {
+const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY_CODE }) => {
   const [marcaModeloOptions, setMarcaModeloOption] = useState([])
   const [isMarcaModeloLoading, setMarcaModeloLoading] = useState(false)
   const [marcaModeloText, setMarcaModeloText] = useState('')
@@ -88,7 +88,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer }) 
     async function searchWithText() {
       try {
         setMarcaModeloLoading(true)
-        const { data } = await getMarcaModelo(marcaModeloText);
+        const { data } = await getMarcaModelo(marcaModeloText, COUNTRY_CODE);
         setMarcaModeloOption(parseMarcaModeloResponse(data))
         setMarcaModeloLoading(false)
         setYearDisabled(false)

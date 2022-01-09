@@ -6,6 +6,9 @@ export async function middleware(req) {
 
   const topLevelDomain = nextUrl.origin.split('.').pop()
   if(topLevelDomain !== geo.country.toLowerCase()){
+    if(geo.country === "AR" && topLevelDomain != "com"){
+      return NextResponse.rewrite("https://carbula.com")
+    }
     if(geo.country === "CL"){
       return NextResponse.rewrite('https://carbula.cl')
     }

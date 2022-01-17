@@ -1,0 +1,22 @@
+[
+    {
+        "COUNTRY_CODE": "ar",
+        "ESCALA": 50000,
+        "BORDE": 4000000
+    },
+    {
+      "COUNTRY_CODE": "cl",
+      "ESCALA": 50000,
+      "BORDE": 4000000
+    },
+    {
+        "COUNTRY_CODE": "mx",
+        "ESCALA": 1000,
+        "BORDE": 80000
+    },
+    {
+        "COUNTRY_CODE": "uy",
+        "ESCALA": 100,
+        "BORDE": 8000
+    }
+]

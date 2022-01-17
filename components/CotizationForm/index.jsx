@@ -21,6 +21,7 @@ import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONar from '../../public/autopress-ar.json'
 import cotizationJSONuy from '../../public/autopress-uy.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
+import escalasJSONmx from '../../public/escalas.json'
 
 
 const CotizationForm = ({

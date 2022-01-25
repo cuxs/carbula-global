@@ -150,7 +150,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       router.push({
         pathname: 'cotizacion',
         query: { paso: 'paso-1' }
-      })
+      }, undefined, {shallow: true})
     } catch (e) {
       setOverlayBackground(false)
       if (e.message.indexOf('cobertura') > -1) {

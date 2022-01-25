@@ -123,7 +123,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
   }, [step])
 
   useEffect(() => {
-
+    
     let timeout;
     async function checkMeeting() {
       try {
@@ -153,7 +153,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
 
   useEffect(() => {
     if (meetFetched) {
-      router.push({ query: { ...router.query, agendado: true } })
+      router.push({ query: { ...router.query, agendado: true}}, undefined, {shallow: true})
     }
   }, [meetFetched])
   const renderHeight = () => {

@@ -76,7 +76,7 @@ const CotizationForm = ({
       setCarbulaFee(cotizationRow.FEE)
     }
   },[cotizationsJSON, setSelectedPrice])
-  
+
   const getCotizationEdgePrices = ()=>{
     const min = cotizationsJSON()[0].AUTOPRESSMIN
     const max = cotizationsJSON().slice(-1)[0].AUTOPRESSMAX
@@ -545,12 +545,7 @@ const CotizationForm = ({
             )}
           </div>
           <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
-        </form>
-      )}
-    </Formik>
-
-  </div>
-  const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
+        </form>  ) => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
 
   const Step5Mobile = () => <div className={styles['secondary-steps__container']}>
     <Formik

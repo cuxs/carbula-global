@@ -545,7 +545,11 @@ const CotizationForm = ({
             )}
           </div>
           <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
-        </form>  ) => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
+        </form>
+      )}
+    </Formik>
+  </div>
+  const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
 
   const Step5Mobile = () => <div className={styles['secondary-steps__container']}>
     <Formik
@@ -682,7 +686,7 @@ const CotizationForm = ({
               readOnly
               type="string"
               value={formatNumber(selectedPrice, 0)}
-              step={50000}
+              step={scaleAmount}
               min={selectedPrice? selectedPrice - 4000000 : 0}
               max={selectedPrice? selectedPrice + 4000000 : 10}
               onChange={handlePriceChange}

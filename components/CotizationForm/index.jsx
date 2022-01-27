@@ -21,7 +21,7 @@ import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONar from '../../public/autopress-ar.json'
 import cotizationJSONuy from '../../public/autopress-uy.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
-
+import priceScalesJSON from '../../public/scales.json'
 
 const CotizationForm = ({
   selectedPrice,
@@ -76,7 +76,7 @@ const CotizationForm = ({
       setCarbulaFee(cotizationRow.FEE)
     }
   },[cotizationsJSON, setSelectedPrice])
-
+  
   const getCotizationEdgePrices = ()=>{
     const min = cotizationsJSON()[0].AUTOPRESSMIN
     const max = cotizationsJSON().slice(-1)[0].AUTOPRESSMAX
@@ -677,12 +677,12 @@ const CotizationForm = ({
   </div>
 
   const renderCardBody = () => {
+    const scaleAmount = priceScalesJSON[COUNTRY_CODE]["SCALE"]
     switch (step) {
       case 0: return (
         <Fragment>
           <h2 className={`${styles.text__primary} ${styles.main__title}`}>¿Cuánto dinero desea ganar?</h2>
           <div className={styles.price__dropdown}>
-
             <input
               readOnly
               type="string"
@@ -695,8 +695,8 @@ const CotizationForm = ({
             >
             </input>
             <div className={styles.odometer__buttons}>
-              <button><img src='/icons/plus.svg' alt="mas" onClick={() => handlePriceChange(selectedPrice + 50000)} alt='up' /></button>
-              <button><img src='/icons/minus.svg' alt="menos" onClick={() => handlePriceChange(selectedPrice - 50000)} alt='down' /></button>
+              <button><img src='/icons/plus.svg' alt="mas" onClick={() => handlePriceChange(selectedPrice + scaleAmount)} alt='up' /></button>
+              <button><img src='/icons/minus.svg' alt="menos" onClick={() => handlePriceChange(selectedPrice - scaleAmount)} alt='down' /></button>
             </div>
             {/* <Select
               big

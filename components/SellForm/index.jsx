@@ -254,7 +254,8 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                       setFieldValue('brand', option.nombreMarca)
                       setFieldValue('model', option.nombreModelo)
                       setFieldValue('idMarca', option.value)
-                    }
+                      }
+
                     }
                     isLoading={isMarcaModeloLoading}
                     renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? 'No se encontraron autos' : 'Escribe...'}
@@ -278,7 +279,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                       setFieldValue('idModelo', option.idModelo)
                     }}
                     disabled={yearDisabled}
-                    renderNoOptionMessage={() => 'No se encontraron años para este vehículo'}
+                    renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'}
 
                   />
                   {errors.year && touched.year && (
@@ -370,7 +371,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
 
                     }}
                     disabled={yearDisabled}
-                    renderNoOptionMessage={() => 'No se encontraron años para este vehículo'} />
+                    renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'} />
                   {errors.year && touched.year && (
                     <div className="form-error">
                       {errors.year}

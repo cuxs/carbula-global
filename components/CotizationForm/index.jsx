@@ -4,7 +4,7 @@ import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
 import ProgressBar from '../ProgressBar';
-import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY } from '../../utils/constants';
+import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES } from '../../utils/constants';
 import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
 import Iframe from 'react-iframe'
@@ -21,7 +21,6 @@ import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONar from '../../public/autopress-ar.json'
 import cotizationJSONuy from '../../public/autopress-uy.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
-import priceScalesJSON from '../../public/scales.json'
 
 const CotizationForm = ({
   selectedPrice,
@@ -676,7 +675,7 @@ const CotizationForm = ({
   </div>
 
   const renderCardBody = () => {
-    const scaleAmount = priceScalesJSON[COUNTRY_CODE]["SCALE"]
+    const scaleAmount = SCALES[COUNTRY_CODE]["SCALE"]
     switch (step) {
       case 0: return (
         <Fragment>

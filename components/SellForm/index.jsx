@@ -190,8 +190,8 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         .min(2, "Muy corto."),
       email: mixed()
         .test('isValidEmail',
-          "Ingrese un email válido. (.com)",
-          value => /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.(com|cl(?:\.[a-z]{2})?)$/.test(value)
+          "Ingrese un email válido.",
+          value => /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/.test(value)
         )
         .required("Ingresa tu email."),
       location: mixed()
@@ -254,7 +254,8 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                       setFieldValue('brand', option.nombreMarca)
                       setFieldValue('model', option.nombreModelo)
                       setFieldValue('idMarca', option.value)
-                    }
+                      }
+
                     }
                     isLoading={isMarcaModeloLoading}
                     renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? 'No se encontraron autos' : 'Escribe...'}
@@ -278,7 +279,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                       setFieldValue('idModelo', option.idModelo)
                     }}
                     disabled={yearDisabled}
-                    renderNoOptionMessage={() => 'No se encontraron años para este vehículo'}
+                    renderNoOptionMessage={() => 'asdSolamente recibimos vehículos que no superen los 10 años de antigüedad'}
 
                   />
                   {errors.year && touched.year && (

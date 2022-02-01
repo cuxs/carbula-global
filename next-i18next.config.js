@@ -8,7 +8,7 @@ module.exports = {
     localePath: path.resolve('./public/locales'),
     domains: [
       {
-        domain: "www.carbula.com",
+        domain: "www.carbula.ar",
         defaultLocale: 'es-AR',
       },
       {

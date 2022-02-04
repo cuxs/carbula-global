@@ -279,7 +279,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                   <Select
                     onBlur={handleBlur}
                     name="year"
-                    type="number"
                     pattern="^-?[0-9]\d*\.?\d*$"
                     options={yearOptions}
                     placeholder={formData.year ? formData.year : 'Año'}

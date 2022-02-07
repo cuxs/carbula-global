@@ -6,7 +6,7 @@ import Select from '../SelectComponent';
 import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, addContact } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
-import { orderBy } from 'lodash';
+import { orderBy, set } from 'lodash';
 import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
@@ -122,6 +122,16 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       setVersionOptions(parseVersionsResponse(data))
       setVersionLoading(false)
     }
+  }
+
+  const getCurrentYear = () => {
+    let currentDate = new Date()
+    return currentDate.getFullYear()
+  }
+
+  const getValidYeanInput = (typedYear) => {
+    let currentYear = getCurrentYear()
+    return typedYear > currentYear ? currentYear : typedYear
   }
 
   const handleSubmitFirstStep = (values, actions) => {
@@ -269,6 +279,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                   <Select
                     onBlur={handleBlur}
                     name="year"
+                    pattern="^-?[0-9]\d*\.?\d*$"
                     options={yearOptions}
                     placeholder={formData.year ? formData.year : 'Año'}
                     isLoading={isYearLoading}
@@ -276,6 +287,9 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                       handleYearChange(option)
                       setFieldValue('year', option.value)
                       setFieldValue('idModelo', option.idModelo)
+                    }}
+                    onInputChange={(value) => {
+                      setFieldValue('year', getValidYeanInput(value))
                     }}
                     disabled={yearDisabled}
                     renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'}

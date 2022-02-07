@@ -4,7 +4,7 @@ import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
 import ProgressBar from '../ProgressBar';
-import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY } from '../../utils/constants';
+import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES } from '../../utils/constants';
 import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
 import Iframe from 'react-iframe'
@@ -21,7 +21,6 @@ import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONar from '../../public/autopress-ar.json'
 import cotizationJSONuy from '../../public/autopress-uy.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
-
 
 const CotizationForm = ({
   selectedPrice,
@@ -548,7 +547,6 @@ const CotizationForm = ({
         </form>
       )}
     </Formik>
-
   </div>
   const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
 
@@ -677,17 +675,17 @@ const CotizationForm = ({
   </div>
 
   const renderCardBody = () => {
+    const scaleAmount = SCALES[COUNTRY_CODE]["SCALE"]
     switch (step) {
       case 0: return (
         <Fragment>
           <h2 className={`${styles.text__primary} ${styles.main__title}`}>¿Cuánto dinero desea ganar?</h2>
           <div className={styles.price__dropdown}>
-
             <input
               readOnly
               type="string"
               value={formatNumber(selectedPrice, 0)}
-              step={50000}
+              step={scaleAmount}
               min={selectedPrice? selectedPrice - 4000000 : 0}
               max={selectedPrice? selectedPrice + 4000000 : 10}
               onChange={handlePriceChange}
@@ -695,8 +693,8 @@ const CotizationForm = ({
             >
             </input>
             <div className={styles.odometer__buttons}>
-              <button><img src='/icons/plus.svg' alt="mas" onClick={() => handlePriceChange(selectedPrice + 50000)} alt='up' /></button>
-              <button><img src='/icons/minus.svg' alt="menos" onClick={() => handlePriceChange(selectedPrice - 50000)} alt='down' /></button>
+              <button><img src='/icons/plus.svg' alt="mas" onClick={() => handlePriceChange(selectedPrice + scaleAmount)} alt='up' /></button>
+              <button><img src='/icons/minus.svg' alt="menos" onClick={() => handlePriceChange(selectedPrice - scaleAmount)} alt='down' /></button>
             </div>
             {/* <Select
               big

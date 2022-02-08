@@ -244,6 +244,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   }
 
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
+
     switch (step) {
       case 0:
         return (
@@ -285,11 +286,8 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                     isLoading={isYearLoading}
                     onChange={(option) => {
                       handleYearChange(option)
-                      setFieldValue('year', option.value)
+                      setFieldValue('year', getValidYeanInput(option.value))
                       setFieldValue('idModelo', option.idModelo)
-                    }}
-                    onInputChange={(value) => {
-                      setFieldValue('year', getValidYeanInput(value))
                     }}
                     disabled={yearDisabled}
                     renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'}
@@ -379,9 +377,8 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                     isLoading={isYearLoading}
                     onChange={(option) => {
                       handleYearChange(option)
-                      setFieldValue('year', option.value)
+                      setFieldValue('year', getValidYeanInput(option.value))
                       setFieldValue('idModelo', option.idModelo)
-
                     }}
                     disabled={yearDisabled}
                     renderNoOptionMessage={() => 'No se encontraron años para este vehículo'} />

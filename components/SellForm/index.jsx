@@ -185,7 +185,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const validationSchema = [
     object().shape({
       marcaModelo: mixed().required('Selecciona una marca y modelo.'),
-      year: mixed().required('Selecciona un año.'),
+      // year: mixed().required('Selecciona un año.'),
       kms: number().max(150000, 'Solo recibimos vehículos con menos de 150.000kms').required('Completa este dato.'),
       version: mixed().required('Selecciona una versión.')
     }),

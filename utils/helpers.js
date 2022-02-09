@@ -346,7 +346,7 @@ export const getHotjarId =country_code=>{
 export const getGTMid= country_code=>{
   const ids={
     ar: 'GTM-WZS7KD7',
-    cl: 'GTM-TCKHB87 ',
+    cl: 'GTM-TCKHB87',
     mx: 'GTM-PDWPP7J',
     uy: 'GTM-T4DFD26'
   }

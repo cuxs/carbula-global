@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-scroll";
-import { getCatalogoURL, getInstagramLink } from '../../utils/helpers';
+import { getCatalogoURL, getFacebookLink, getInstagramLink } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './footerInfo.module.scss';
 
@@ -37,22 +37,38 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
         <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href='/terminos-y-condiciones' >Términos y condiciones</a></Button>
       </div>
       <div className={styles.social__container}>
-        <a
+      <a
           style={renderColorStyle()}
           target="__blank" rel="noopener noreferrer"
           className={styles.social__link}
-          href={getInstagramLink(country_code)}
+          href={getFacebookLink(country_code)}
+        >
+          <img src={renderImagSrc('facebook')} alt="Facebook"/> Facebook
+        </a>
+        <a
+            style={renderColorStyle()}
+            target="__blank" rel="noopener noreferrer"
+            className={styles.social__link}
+            href={getInstagramLink(country_code)}
         >
           <img src={renderImagSrc('instagram')} alt="Instagram"/> Instagram
-      </a>
+        </a>
         <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" className={styles.social__link} href="mailto:hola@carbula.com">
           <img src={renderImagSrc('icon-mail')} alt="Email"/> hola@carbula.com
-      </a>
+        </a>
         <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" className={styles.social__link} href="https://ar.linkedin.com/company/carbula">
           <img src={renderImagSrc('linkedin')} alt="linkedin" /> Linkedin
-      </a>
+        </a>
       </div>
       <div className={styles['social__container--mobile']}>
+      <a
+          target="__blank" rel="noopener noreferrer"
+          className={styles.social__link}
+          href={getFacebookLink(country_code)}
+          style={renderColorStyle()}
+        >
+          <img src={renderImagSrc('facebook')} alt="Facebook" />
+        </a>
         <a
           target="__blank" rel="noopener noreferrer"
           className={styles.social__link}

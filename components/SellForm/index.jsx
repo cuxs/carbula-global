@@ -248,7 +248,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       case 0:
         return (
           <Fragment>
-            {/* {history.pushState(null, document.title, window.location.origin)} */}
+            {history.pushState(null, document.title, window.location.origin)}
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
               <div className={styles.form__row}>
                 <div className='form-item'>

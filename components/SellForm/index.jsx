@@ -434,7 +434,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         )
       case 1:
         history.pushState(null, document.title, window.location.origin + '/vender')
-        ga('send', 'pageview');
+        // ga('send', 'pageview');
         dataLayer.push({event: 'pageview'});
         return (<form className={styles['personal-data__form']} onSubmit={handleSubmit}>
           <div className={styles.form__row} >

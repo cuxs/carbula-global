@@ -246,9 +246,9 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
       case 0:
+        history.pushState(null, document.title, window.location.origin)
         return (
           <Fragment>
-            {history.pushState(null, document.title, window.location.origin)}
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
               <div className={styles.form__row}>
                 <div className='form-item'>
@@ -433,10 +433,10 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           </Fragment>
         )
       case 1:
+        history.pushState(null, document.title, window.location.origin + '/vender')
         ga('send', 'pageview');
         dataLayer.push({event: 'pageview'});
         return (<form className={styles['personal-data__form']} onSubmit={handleSubmit}>
-          {history.pushState(null, document.title, window.location.origin + '/vender')}
           <div className={styles.form__row} >
             <div className={styles['personal-data__form-item']}>
               <input placeholder="Nombre" name="name" onChange={handleChange} onBlur={handleBlur} />

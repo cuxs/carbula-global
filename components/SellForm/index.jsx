@@ -246,7 +246,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
       case 0:
-        history.pushState(null, document.title, window.location.origin)
         return (
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>

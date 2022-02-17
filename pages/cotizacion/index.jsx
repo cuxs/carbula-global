@@ -93,7 +93,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
       },
       undefined, { shallow: true })
 
-      pushCustomState(window.location.href) // Send to Analytics and Tag Manager.
+      // pushCustomState(window.location.href) // Send to Analytics and Tag Manager.
   }, [step])
 
 

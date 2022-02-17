@@ -6,7 +6,7 @@ import { PuffLoader } from "react-spinners";
 import CryptoJS from 'crypto-js'
 import { capitalize, startsWith, isEmpty } from 'lodash';
 import classnames from 'classnames';
-import { formatNumber, getCotization, getCountryCode, getPhoneNumber, getWhatsappNumber } from '../../utils/helpers';
+import { formatNumber, getCotization, getCountryCode, getPhoneNumber, getWhatsappNumber, pushCustomState } from '../../utils/helpers';
 import { clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { useSpring, useTransition, animated, config } from "react-spring";
 import { COUNTRY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, CURRENCY } from '../../utils/constants';
@@ -92,7 +92,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
         query: { ...router.query, paso: urlStep[step] }
       },
       undefined, { shallow: true })
-
+      
   }, [step])
 
 

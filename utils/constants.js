@@ -32,5 +32,27 @@ module.exports = {
     ORGANIC_SEARCH: 'Organic Search',
     REFERRALS: 'Referrals',
     WHATSAPP: 'Whatsapp'
+  },
+  SCALES:{
+    ar:
+    {
+        "SCALE": 50000,
+        "BOUND": 4000000
+    },
+    cl:
+    {
+    "SCALE": 50000,
+    "BOUND": 4000000
+    },
+    mx:
+    {
+        "SCALE": 1000,
+        "BOUND": 80000
+    },
+    uy:
+    {
+        "SCALE": 100,
+        "BOUND": 8000
+    }
   }
 }

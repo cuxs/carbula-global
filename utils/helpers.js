@@ -346,7 +346,7 @@ export const getHotjarId =country_code=>{
 export const getGTMid= country_code=>{
   const ids={
     ar: 'GTM-WZS7KD7',
-    cl: 'GTM-TCKHB87 ',
+    cl: 'GTM-TCKHB87',
     mx: 'GTM-PDWPP7J',
     uy: 'GTM-T4DFD26'
   }
@@ -356,9 +356,19 @@ export const getGTMid= country_code=>{
 export const getInstagramLink = country_code=>{
   const urls={
     ar: 'https://www.instagram.com/carbula.ar/',
-    cl: 'https://www.instagram.com/carbula.ar/',
-    mx: 'https://www.instagram.com/carbula.ar/',
+    cl: 'https://www.instagram.com/carbula.cl/',
+    mx: 'https://www.instagram.com/carbula.mx/',
     uy: 'https://www.instagram.com/carbula.uy/'
+  }
+  return urls[country_code]
+}
+
+export const getFacebookLink = country_code=>{
+  const urls={
+    ar: 'https://www.facebook.com/carbulaok',
+    cl: 'https://www.facebook.com/carbula.cl/',
+    mx: 'https://www.facebook.com/carbulamexico/',
+    uy: 'https://www.facebook.com/C%C3%A1rbula-Uruguay-108353218349585/'
   }
   return urls[country_code]
 }

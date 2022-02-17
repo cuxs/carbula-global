@@ -6,7 +6,7 @@ import Select from '../SelectComponent';
 import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, addContact } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
-import { orderBy } from 'lodash';
+import { orderBy, set } from 'lodash';
 import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
@@ -126,6 +126,16 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
     }
   }
 
+  const getCurrentYear = () => {
+    let currentDate = new Date()
+    return currentDate.getFullYear()
+  }
+
+  const getValidYeanInput = (typedYear) => {
+    let currentYear = getCurrentYear()
+    return typedYear > currentYear ? currentYear : typedYear
+  }
+
   const handleSubmitFirstStep = (values, actions) => {
     setFormData(values);
     setStep(step + 1)
@@ -192,8 +202,8 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         .min(2, "Muy corto."),
       email: mixed()
         .test('isValidEmail',
-          "Ingrese un email válido. (.com)",
-          value => /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.(com|cl(?:\.[a-z]{2})?)$/.test(value)
+          "Ingrese un email válido.",
+          value => /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/.test(value)
         )
         .required("Ingresa tu email."),
       location: mixed()
@@ -256,7 +266,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                       setFieldValue('brand', option.nombreMarca)
                       setFieldValue('model', option.nombreModelo)
                       setFieldValue('idMarca', option.value)
-                    }
+                      }
                     }
                     isLoading={isMarcaModeloLoading}
                     renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? 'No se encontraron autos' : 'Escribe...'}
@@ -271,16 +281,17 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                   <Select
                     onBlur={handleBlur}
                     name="year"
+                    pattern="^-?[0-9]\d*\.?\d*$"
                     options={yearOptions}
                     placeholder={formData.year ? formData.year : 'Año'}
                     isLoading={isYearLoading}
                     onChange={(option) => {
                       handleYearChange(option)
-                      setFieldValue('year', option.value)
+                      setFieldValue('year', getValidYeanInput(option.value))
                       setFieldValue('idModelo', option.idModelo)
                     }}
                     disabled={yearDisabled}
-                    renderNoOptionMessage={() => 'No se encontraron años para este vehículo'}
+                    renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'}
 
                   />
                   {errors.year && touched.year && (
@@ -367,9 +378,8 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                     isLoading={isYearLoading}
                     onChange={(option) => {
                       handleYearChange(option)
-                      setFieldValue('year', option.value)
+                      setFieldValue('year', getValidYeanInput(option.value))
                       setFieldValue('idModelo', option.idModelo)
-
                     }}
                     disabled={yearDisabled}
                     renderNoOptionMessage={() => 'No se encontraron años para este vehículo'} />

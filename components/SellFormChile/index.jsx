@@ -302,7 +302,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
                   setFieldValue('idModelo', option.idModelo)
                 }}
                 disabled={yearDisabled}
-                renderNoOptionMessage={() => 'No se encontraron años para este vehículo'}
+                renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'}
 
               />
               {errors.year && touched.year && (
@@ -394,7 +394,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
                 }}
                 disabled={yearDisabled}
-                renderNoOptionMessage={() => 'No se encontraron años para este vehículo'} />
+                renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'} />
               {errors.year && touched.year && (
                 <div className="form-error">
                   {errors.year}

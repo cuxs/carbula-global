@@ -92,8 +92,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
         query: { ...router.query, paso: urlStep[step] }
       },
       undefined, { shallow: true })
-
-      // pushCustomState(window.location.href) // Send to Analytics and Tag Manager.
+      
   }, [step])
 
 

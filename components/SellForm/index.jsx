@@ -11,7 +11,7 @@ import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, animated, useTransition, config } from "react-spring";
-import { checkYear, checkZone, getCampania, getSourceType, saveCotization, pushCustomState } from '../../utils/helpers';
+import { checkYear, checkZone, getCampania, getSourceType, saveCotization } from '../../utils/helpers';
 
 
 
@@ -433,7 +433,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           </Fragment>
         )
       case 1:
-        // pushCustomState(window.location.origin + '/vender')
         return (<form className={styles['personal-data__form']} onSubmit={handleSubmit}>
           <div className={styles.form__row} >
             <div className={styles['personal-data__form-item']}>

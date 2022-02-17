@@ -3,10 +3,6 @@ import { SOURCES } from './constants'
 import dayjs from 'dayjs'
 import { lowerCase } from 'lodash'
 
-export const pushCustomState = (url) => {
-  history.pushState(null, document.title, url)
-}
-
 export const formatNumber = (number, decimals, decPoint = ',', thousandsSep = '.') => {
   if (number === 0) {
     return '0,00'

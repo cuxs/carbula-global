@@ -3,9 +3,8 @@ import { SOURCES } from './constants'
 import dayjs from 'dayjs'
 import { lowerCase } from 'lodash'
 
-export const pushCustomState = (url, event) => {
+export const pushCustomState = (url) => {
   history.pushState(null, document.title, url)
-  dataLayer.push({event: event})
 }
 
 export const formatNumber = (number, decimals, decPoint = ',', thousandsSep = '.') => {

@@ -433,7 +433,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           </Fragment>
         )
       case 1:
-        pushCustomState(window.location.origin + '/vender', 'pageview')
+        pushCustomState(window.location.origin + '/vender')
         return (<form className={styles['personal-data__form']} onSubmit={handleSubmit}>
           <div className={styles.form__row} >
             <div className={styles['personal-data__form-item']}>

@@ -250,6 +250,13 @@ a{
   font-size: 13px;
   margin-left: 10px;
 }
+.form-message{
+  position:absolute;
+  color: black;
+  font-family: ProximaNova;
+  font-size: 13px;
+  margin-left: 10px;
+}
 @media (max-width: 769px) {
   h1 {
     font-size: 25px;

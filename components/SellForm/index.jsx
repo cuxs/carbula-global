@@ -196,7 +196,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       pnMinNumber: 4
     },
     uy: {
-      pnInputInstructions: 'Ej.: 99 123 456 (sin el "0" a la izquierda).',
+      pnInputInstructions: 'Ej.: 99 123 456 (sin "0" a la izquierda).',
       pnMinNumber: 59810000000
     }
   }
@@ -224,7 +224,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         .required("Ingresa tu email."),
       location: mixed()
         .required("¿De dónde eres?"),
-      phone: number('Ingresa solo números')
+      phone: number("Ingresa solo números")
         .positive()
         .min(phoneNumberValidationData[COUNTRY_CODE].pnMinNumber, "Tu número debe ser más largo")
         .required("Ingresa tu teléfono."),
@@ -494,14 +494,16 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                 onChange={handleChange}
               />
               {errors.phone && touched.phone && (
-                <div className="form-error">
-                  {errors.phone}
+                <div>
+                  <div className="form-error">
+                    {errors.phone}
+                  </div>
+                  <div className='form-message'>
+                    <p><br></br></p>
+                    <span>{phoneNumberValidationData[COUNTRY_CODE].pnInputInstructions}</span>
+                  </div>
                 </div>
               )}
-              <div className='form-message'>
-                <p><br></br></p>
-                <span>{phoneNumberValidationData[COUNTRY_CODE].pnInputInstructions}</span>
-              </div>
             </div>
           </div>
           <div className={styles.form__row}>

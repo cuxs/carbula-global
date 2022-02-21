@@ -589,7 +589,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     from: { opacity: 0, transform: `translateX(0px) rotateY(0deg) rotateX(0deg)` },
     enter: { opacity: 1, transform: 'translateX(0px) rotateY(0deg) rotateX(0deg)' },
     leave: { opacity: 0, transform: 'translateX(-500px) rotateY(0deg) rotateX(0deg)' },
-    delay: 1000,
+    delay: 0,
     config: config.molasses
   })
 

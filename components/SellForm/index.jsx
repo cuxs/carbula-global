@@ -185,19 +185,19 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const phoneNumberValidationData= {
     ar: {
       pnInputInstructions: '',
-      pnMinLeght: 4
+      pnMinNumber: 4
     },
     cl: {
       pnInputInstructions: '',
-      pnMinLeght: 4
+      pnMinNumber: 4
     },
     mx: {
       pnInputInstructions: '',
-      pnMinLeght: 4
+      pnMinNumber: 4
     },
     uy: {
-      pnInputInstructions: 'Ej.: 99 123 456 (sin el "0" de la izquierda).',
-      pnMinLeght: 7
+      pnInputInstructions: 'Ej.: 99 123 456 (sin el "0" a la izquierda).',
+      pnMinNumber: 59810000000
     }
   }
   const validationSchema = [
@@ -226,7 +226,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         .required("¿De dónde eres?"),
       phone: number('Ingresa solo números')
         .positive()
-        .min(phoneNumberValidationData[COUNTRY_CODE].pnMinLeght, "Tu número debe ser más largo")
+        .min(phoneNumberValidationData[COUNTRY_CODE].pnMinNumber, "Tu número debe ser más largo")
         .required("Ingresa tu teléfono."),
     })
   ]

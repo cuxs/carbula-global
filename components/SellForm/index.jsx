@@ -224,7 +224,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         .required("Ingresa tu email."),
       location: mixed()
         .required("¿De dónde eres?"),
-      phone: number('Ingresa solo números')
+      phone: number("Ingresa solo números")
         .positive()
         .min(phoneNumberValidationData[COUNTRY_CODE].pnMinNumber, "Tu número debe ser más largo")
         .required("Ingresa tu teléfono."),

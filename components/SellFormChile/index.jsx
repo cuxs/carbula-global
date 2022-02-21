@@ -138,7 +138,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       country_code: COUNTRY_CODE,
     }
     try {
-      checkZone(values.location, zonas)
+      checkZone(values.location, zonas, COUNTRY_CODE)
       checkYear(carAndContactData.year)
       const dealSource = getSourceType(router.query, referer)
       carAndContactData.hs_analytics_source = dealSource

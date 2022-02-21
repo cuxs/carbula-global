@@ -146,7 +146,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       country_code: COUNTRY_CODE,
     }
     try {
-      checkZone(values.location, zonas)
+      checkZone(values.location, zonas, COUNTRY_CODE)
       checkYear(carAndContactData.year)
       const dealSource = getSourceType(router.query, referer)
       carAndContactData.hs_analytics_source = dealSource
@@ -337,7 +337,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                 </div>
               </div>
               <div className={styles.submit__button}>
-                <Button type="submit" primary>Continuar</Button>
+                <Button type="submit" primary id="btnSellFormContinuar">Continuar</Button>
               </div>
             </form>
             <form className={styles['fields--mobile']} onSubmit={handleSubmit}>

@@ -86,9 +86,14 @@ export const checkZone = (location, allzones, country_code) => {
     'Zapallar'
   ]
 
+  const uncoveredZonesMX = ['']
+  const uncoveredZonesUY = ['']
+
   const uncoveredZones = {
       ar: uncoveredZonesAR,
-      cl: uncoveredZonesCL
+      cl: uncoveredZonesCL,
+      mx: uncoveredZonesMX,
+      uy: uncoveredZonesUY
   };
 
   const selectedLocation = allzones.find((row) => row.value === location)

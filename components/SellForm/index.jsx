@@ -11,7 +11,7 @@ import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, animated, useTransition, config } from "react-spring";
-import { checkYear, checkZone, getCampania, getSourceType, saveCotization } from '../../utils/helpers';
+import { checkYear, checkZone, getCampania, getSourceType, saveCotization, phoneNumberValidationData } from '../../utils/helpers';
 
 
 
@@ -208,7 +208,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         .required("¿De dónde eres?"),
       phone: number("Ingresa solo números")
         .positive()
-        .min(4, "Tu número debe ser más largo")
+        .min(phoneNumberValidationData[COUNTRY_CODE].pnMinNumber, "Tu número debe ser más largo")
         .required("Ingresa tu teléfono."),
     })
   ]
@@ -469,7 +469,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                 }}
                 mask={renderMask()}
                 maskChar=" "
-                placeholder="Número WhatsApp"
+                placeholder={phoneNumberValidationData[COUNTRY_CODE].pnPlaceHolder}
                 name="phone"
                 inputMode="numeric"
                 onBlur={handleBlur}
@@ -480,6 +480,9 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                   {errors.phone}
                 </div>
               )}
+              <div className='form-message'>
+                {phoneNumberValidationData[COUNTRY_CODE].pnInputInstructions}
+              </div>
             </div>
           </div>
           <div className={styles.form__row}>

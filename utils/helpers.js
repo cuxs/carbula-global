@@ -24,7 +24,7 @@ export const phoneNumberValidationData= {
     pnMinNumber: 4
   },
   mx: {
-    pnPlaceHolder: 'Número WhatsApp',
+    pnPlaceHolder: 'Número de teléfono',
     pnInputInstructions: '',
     pnMinNumber: 4
   },

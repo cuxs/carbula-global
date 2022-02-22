@@ -498,16 +498,13 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                 onChange={handleChange}
               />
               {errors.phone && touched.phone && (
-                <div>
-                  <div className="form-error">
-                    {errors.phone}
-                  </div>
-                  <div className='form-message'>
-                    <p><br></br></p>
-                    <span>{phoneNumberValidationData[COUNTRY_CODE].pnInputInstructions}</span>
-                  </div>
+                <div className="form-error">
+                  {errors.phone}
                 </div>
               )}
+              <div className='form-message'>
+                <span>{phoneNumberValidationData[COUNTRY_CODE].pnInputInstructions}</span>
+              </div>
             </div>
           </div>
           <div className={styles.form__row}>

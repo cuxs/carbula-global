@@ -11,7 +11,7 @@ import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, animated, useTransition, config } from "react-spring";
-import { checkYear, checkZone, getCampania, getSourceType, saveCotization } from '../../utils/helpers';
+import { checkYear, checkZone, getCampania, getSourceType, saveCotization, phoneNumberValidationData } from '../../utils/helpers';
 
 
 
@@ -181,28 +181,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   }
   const handleBack = async () => {
     await setStep(step - 1);
-  }
-  const phoneNumberValidationData= {
-    ar: {
-      pnPlaceHolder: 'Número WhatsApp',
-      pnInputInstructions: '',
-      pnMinNumber: 4
-    },
-    cl: {
-      pnPlaceHolder: 'Número WhatsApp',
-      pnInputInstructions: '',
-      pnMinNumber: 4
-    },
-    mx: {
-      pnPlaceHolder: 'Número WhatsApp',
-      pnInputInstructions: '',
-      pnMinNumber: 4
-    },
-    uy: {
-      pnPlaceHolder: 'Teléfono o celular',
-      pnInputInstructions: 'Ej.: 99 123 456 (sin "0" a la izquierda).',
-      pnMinNumber: 59810000000
-    }
   }
   const validationSchema = [
     object().shape({

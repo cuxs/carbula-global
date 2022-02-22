@@ -21,12 +21,13 @@ const Button = dynamic(import('../../components/Button'))
 const FooterInfo = dynamic(import('../../components/FooterInfo'))
 const CotizationForm = dynamic(import('../../components/CotizationForm'))
 const FaqCotization = dynamic(import('../../components/FaqCotization'))
+const SellForm = dynamic(import('../../components/SellForm'))
 
 export async function getServerSideProps(context) {
   return{
     props:{
       COUNTRY_CODE: getCountryCode(context.locale),
-      ...(await serverSideTranslations(context.locale, ['cotizacion', 'CotizationForm', 'FaqCotization', 'FooterInfo'])),
+      ...(await serverSideTranslations(context.locale, ['cotizacion', 'CotizationForm', 'FaqCotization', 'FooterInfo', 'Sellform'])),
 
     }
   }

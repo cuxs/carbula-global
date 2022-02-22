@@ -12,7 +12,7 @@ import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, animated, useTransition, config } from "react-spring";
-import { checkYear, checkZone, getCampania, getSourceType, saveCotization, phoneNumberValidationData, useTextTranslation } from '../../utils/helpers';
+import { checkYear, checkZone, getCampania, getSourceType, saveCotization, phoneNumberValidationData } from '../../utils/helpers';
 
 const whereOptions = [
   { value: 'Por un conocido / amigo.', label: 'Por un conocido / amigo.' },
@@ -23,7 +23,7 @@ const whereOptions = [
 ]
 
 const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY_CODE }) => {
-  const { t } = useTranslation('FooterInfo')
+  const { t } = useTranslation('SellForm')
 
   const [marcaModeloOptions, setMarcaModeloOption] = useState([])
   const [isMarcaModeloLoading, setMarcaModeloLoading] = useState(false)
@@ -251,7 +251,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
               <div className={styles.form__row}>
-              <p>{t('razonSocial')}</p>
                 <div className='form-item'>
                   <Select
                     onBlur={handleBlur}
@@ -269,7 +268,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                       }
                     }
                     isLoading={isMarcaModeloLoading}
-                    renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? 'No se encontraron autos' : 'Escribe...'}
+                    renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('vehiculoNoEncontrado') : 'Escribe...'}
                   />
                   {errors.marcaModelo && touched.marcaModelo && (
                     <div className="form-error">
@@ -361,7 +360,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
 
                     }}
                     isLoading={isMarcaModeloLoading}
-                    renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? 'No se encontraron autos' : 'Escribe...'} />
+                    renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('vehiculoNoEncontrado') : 'Escribe...'} />
                   {errors.marcaModelo && touched.marcaModelo && (
                     <div className="form-error">
                       {errors.marcaModelo}

@@ -21,6 +21,7 @@ const QuoteComponent = dynamic(import('../../components/QuoteComponent'))
 const FooterInfo = dynamic(import('../../components/FooterInfo'))
 const Button = dynamic(import('../../components/Button'))
 const Nav = dynamic(import('../../components/nav'))
+const SellForm = dynamic(import('../../components/SellForm'))
 
 export async function getServerSideProps(context) {
   const { referer } = context.req.headers
@@ -47,7 +48,7 @@ export async function getServerSideProps(context) {
         brand: capitalizedBrand,
         modelsExampleText: getModelExampleText(capitalizedBrand),
         COUNTRY_CODE: getCountryCode(context.locale),
-        ...(await serverSideTranslations(context.locale, ['brand', 'BlackoutComponent', 'FaqComponent', 'FooterInfo'])),
+        ...(await serverSideTranslations(context.locale, ['brand', 'BlackoutComponent', 'FaqComponent', 'FooterInfo', 'SellForm'])),
       }
     }
   } catch (e) {
@@ -56,7 +57,7 @@ export async function getServerSideProps(context) {
       props: {
         referer: referer ? referer : null,
         COUNTRY_CODE: getCountryCode(context.locale),
-        ...(await serverSideTranslations(context.locale, ['brand', 'BlackoutComponent', 'FaqComponent', 'FooterInfo'])),
+        ...(await serverSideTranslations(context.locale, ['brand', 'BlackoutComponent', 'FaqComponent', 'FooterInfo', 'SellForm'])),
       }
     }
   }

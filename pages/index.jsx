@@ -24,8 +24,6 @@ const QuoteComponent = dynamic(import('../components/QuoteComponent'))
 const FooterInfo = dynamic(import('../components/FooterInfo'))
 const Button = dynamic(import('../components/Button'))
 const Nav = dynamic(import('../components/nav'))
-const SellForm = dynamic(import('../components/SellForm'))
-
 
 export async function getServerSideProps(context) {
   const { referer } = context.req.headers

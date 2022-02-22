@@ -12,8 +12,32 @@ export const formatNumber = (number, decimals, decPoint = ',', thousandsSep = '.
   })(number)
 }
 
-export const checkZone = (location, allzones) => {
-  const uncoveredZones = [
+export const phoneNumberValidationData= {
+  ar: {
+    pnPlaceHolder: 'Número WhatsApp',
+    pnInputInstructions: '',
+    pnMinNumber: 4
+  },
+  cl: {
+    pnPlaceHolder: 'Número WhatsApp',
+    pnInputInstructions: '',
+    pnMinNumber: 4
+  },
+  mx: {
+    pnPlaceHolder: 'Número WhatsApp',
+    pnInputInstructions: '',
+    pnMinNumber: 4
+  },
+  uy: {
+    pnPlaceHolder: 'Teléfono o celular',
+    pnInputInstructions: 'Ej.: 99 123 456 (sin "0" a la izquierda).',
+    pnMinNumber: 59810000000
+  }
+}
+
+export const checkZone = (location, allzones, country_code) => {
+
+  const uncoveredZonesAR = [
     'General Alvear - Mendoza',
     'Junín - Mendoza',
     'La Paz - Mendoza',
@@ -27,8 +51,76 @@ export const checkZone = (location, allzones) => {
     'Tunuyán - Mendoza',
     'Tupungato - Mendoza',
   ]
+
+  const uncoveredZonesCL = [
+    'Algarrobo',
+    'Alhué',
+    'Buin',
+    'Cabildo',
+    'Calera de Tango',
+    'Calle Larga',
+    'Cartagena',
+    'Casablanca',
+    'Catemu',
+    'Concón',
+    'Curacaví',
+    'El Monte',
+    'El Quisco',
+    'El Tabo',
+    'Hijuelas',
+    'Isla de Maipo',
+    'Isla de Pascua',
+    'Juan Fernández',
+    'La Calera',
+    'La Cruz',
+    'La Ligua',
+    'Limache',
+    'Llay-Llay',
+    'Los Andes',
+    'Mar',
+    'María Pinto',
+    'Melipilla',
+    'Nogales',
+    'Olmué',
+    'Paine',
+    'Panquehue',
+    'Papudo',
+    'Peñaflor',
+    'Petorca',
+    'Pirque',
+    'Puchuncaví',
+    'Putaendo',
+    'Quillota',
+    'Quilpué',
+    'Quintero',
+    'Rinconada',
+    'San Antonio',
+    'San Esteban',
+    'San Felipe',
+    'San José de Maipo',
+    'San Pedro',
+    'Santa María',
+    'Santo Domingo',
+    'Talagante',
+    'Til Til',
+    'Valparaíso',
+    'Villa Alemana',
+    'Viña del Mar',
+    'Zapallar'
+  ]
+
+  const uncoveredZonesMX = ['']
+  const uncoveredZonesUY = ['']
+
+  const uncoveredZones = {
+      ar: uncoveredZonesAR,
+      cl: uncoveredZonesCL,
+      mx: uncoveredZonesMX,
+      uy: uncoveredZonesUY
+  };
+
   const selectedLocation = allzones.find((row) => row.value === location)
-  if (uncoveredZones.indexOf(selectedLocation.label) > -1) {
+  if (uncoveredZones[country_code].indexOf(selectedLocation.label) > -1) {
     throw new Error('Fuera de cobertura')
   }
 }

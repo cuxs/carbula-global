@@ -11,7 +11,7 @@ import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, animated, useTransition, config } from "react-spring";
-import { checkYear, checkZone, getCampania, getSourceType, saveCotization } from '../../utils/helpers';
+import { checkYear, checkZone, getCampania, getSourceType, saveCotization, phoneNumberValidationData } from '../../utils/helpers';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -148,7 +148,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       country_code: COUNTRY_CODE,
     }
     try {
-      checkZone(values.location, zonas)
+      checkZone(values.location, zonas, COUNTRY_CODE)
       checkYear(carAndContactData.year)
       const dealSource = getSourceType(router.query, referer)
       carAndContactData.hs_analytics_source = dealSource
@@ -210,7 +210,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         .required("¿De dónde eres?"),
       phone: number("Ingresa solo números")
         .positive()
-        .min(4, "Tu número debe ser más largo")
+        .min(phoneNumberValidationData[COUNTRY_CODE].pnMinNumber, "Tu número debe ser más largo")
         .required("Ingresa tu teléfono."),
     })
   ]
@@ -339,7 +339,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                 </div>
               </div>
               <div className={styles.submit__button}>
-                <Button type="submit" primary>Continuar</Button>
+                <Button type="submit" primary id="btnSellFormContinuar">Continuar</Button>
               </div>
             </form>
             <form className={styles['fields--mobile']} onSubmit={handleSubmit}>
@@ -471,7 +471,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                 }}
                 mask={renderMask()}
                 maskChar=" "
-                placeholder="Número WhatsApp"
+                placeholder={phoneNumberValidationData[COUNTRY_CODE].pnPlaceHolder}
                 name="phone"
                 inputMode="numeric"
                 onBlur={handleBlur}
@@ -482,6 +482,9 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                   {errors.phone}
                 </div>
               )}
+              <div className='form-message'>
+                {phoneNumberValidationData[COUNTRY_CODE].pnInputInstructions}
+              </div>
             </div>
           </div>
           <div className={styles.form__row}>

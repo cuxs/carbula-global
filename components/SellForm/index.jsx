@@ -503,7 +503,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                 </div>
               )}
               <div className='form-message'>
-                <span>{phoneNumberValidationData[COUNTRY_CODE].pnInputInstructions}</span>
+                {phoneNumberValidationData[COUNTRY_CODE].pnInputInstructions}
               </div>
             </div>
           </div>

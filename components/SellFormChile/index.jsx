@@ -12,8 +12,6 @@ import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, animated, useTransition, config } from "react-spring";
 import { checkYear, checkZone, getCampania, getSourceType, saveCotization } from '../../utils/helpers';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
 
 
 const whereOptions = [

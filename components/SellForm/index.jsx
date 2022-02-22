@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
@@ -11,11 +12,7 @@ import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, animated, useTransition, config } from "react-spring";
-import { checkYear, checkZone, getCampania, getSourceType, saveCotization, phoneNumberValidationData } from '../../utils/helpers';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-
-
+import { checkYear, checkZone, getCampania, getSourceType, saveCotization, phoneNumberValidationData, useTextTranslation } from '../../utils/helpers';
 
 const whereOptions = [
   { value: 'Por un conocido / amigo.', label: 'Por un conocido / amigo.' },
@@ -26,6 +23,8 @@ const whereOptions = [
 ]
 
 const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY_CODE }) => {
+  const { t } = useTranslation('FooterInfo')
+
   const [marcaModeloOptions, setMarcaModeloOption] = useState([])
   const [isMarcaModeloLoading, setMarcaModeloLoading] = useState(false)
   const [marcaModeloText, setMarcaModeloText] = useState('')
@@ -252,6 +251,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
               <div className={styles.form__row}>
+              <p>{t('razonSocial')}</p>
                 <div className='form-item'>
                   <Select
                     onBlur={handleBlur}

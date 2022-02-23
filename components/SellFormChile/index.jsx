@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
@@ -14,7 +15,6 @@ import { useSpring, animated, useTransition, config } from "react-spring";
 import { checkYear, checkZone, getCampania, getSourceType, saveCotization } from '../../utils/helpers';
 
 
-
 const whereOptions = [
   { value: 'Por un conocido / amigo.', label: 'Por un conocido / amigo.' },
   { value: 'Buscando en internet.', label: 'Buscando en internet.' },
@@ -24,6 +24,8 @@ const whereOptions = [
 ]
 
 const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY_CODE }) => {
+  const { t } = useTranslation('SellForm')
+
   const [marcaModeloOptions, setMarcaModeloOption] = useState([])
   const [isMarcaModeloLoading, setMarcaModeloLoading] = useState(false)
   const [marcaModeloText, setMarcaModeloText] = useState('')
@@ -280,7 +282,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
                 }
                 }
                 isLoading={isMarcaModeloLoading}
-                renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? 'No se encontraron autos' : 'Escribe...'}
+                renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('vehiculoNoEncontrado') : 'Escribe...'}
               />
               {errors.marcaModelo && touched.marcaModelo && (
                 <div className="form-error">
@@ -371,7 +373,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
                 }}
                 isLoading={isMarcaModeloLoading}
-                renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? 'No se encontraron autos' : 'Escribe...'} />
+                renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('vehiculoNoEncontrado') : 'Escribe...'} />
               {errors.marcaModelo && touched.marcaModelo && (
                 <div className="form-error">
                   {errors.marcaModelo}

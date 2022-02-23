@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
   return{
     props:{
       COUNTRY_CODE: getCountryCode(context.locale),
-      ...(await serverSideTranslations(context.locale, ['cotizacion', 'CotizationForm', 'FaqCotization', 'FooterInfo'])),
+      ...(await serverSideTranslations(context.locale, ['cotizacion', 'CotizationForm', 'FaqCotization', 'FooterInfo', 'Sellform'])),
 
     }
   }

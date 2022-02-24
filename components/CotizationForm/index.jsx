@@ -705,7 +705,9 @@ const CotizationForm = ({
               defaultValue={{ label: `$ ${formatNumber(selectedPrice, 0)}`, value: selectedPrice }}
               renderNoOptionMessage={() => 'Elije'}
             /> */}
-            <small className={styles.price__currency}>{CURRENCY[COUNTRY_CODE]}</small>
+            <small className={styles.price__currency}>
+              {COUNTRY_CODE === 'mx' ? '$' : CURRENCY[COUNTRY_CODE]}
+            </small>
           </div>
           <div className={styles.card__text}>
             <p>9 de cada 10 autos que vendemos, lo hacemos en 20 días o menos, utilizando nuestro precio sugerido. <span>Mientras más competitivo sea el precio de publicación que elijas, más rápido lograremos {t('tu')} objetivo. </span></p>
@@ -801,10 +803,17 @@ const CotizationForm = ({
       {width < 769 && <FaqCotization />}
       <Modal isOpen={!selectedPrice}>
         <div className={styles.form__container}>
-          <h3>¡Hola {name}!</h3>
-          <p>Muchas gracias por utilizar los servicios de <b>Cárbula</b>.</p>
-          <p>Por el momento no tenemos un valor de referencia para brindarte.</p>
-          <p>Por favor ingresá el valor que querés ganar por tu vehículo 🚗</p>
+          {
+            COUNTRY_CODE === 'mx' ? 
+            <Fragment><h3>¿Cuánto dinero deseas ganar por la venta de tu auto?</h3></Fragment>
+            :
+            <Fragment>
+              <h3>¡Hola {name}!</h3>
+              <p>Muchas gracias por utilizar los servicios de <b>Cárbula</b>.</p>
+              <p>Por el momento no tenemos un valor de referencia para brindarte.</p>
+              <p>Por favor ingresá el valor que querés ganar por tu vehículo 🚗</p>
+            </Fragment>
+          }
           <Formik
             onSubmit={(values) => {
               const parsedValue = values.amount.replace(/\./g, '')
@@ -847,7 +856,9 @@ const CotizationForm = ({
                     onBlur={handleBlur}
                     placeholder="Sólo números"
                   /> */}
-                  <small className={styles.price__currency}>{CURRENCY[COUNTRY_CODE]}</small>
+                  <small className={styles.price__currency}>
+                    {COUNTRY_CODE === 'mx' ? '$' : CURRENCY[COUNTRY_CODE]}
+                  </small>
                   {errors.amount && touched.amount && (
                     <div className={styles.form__error}>
                       {errors.amount}

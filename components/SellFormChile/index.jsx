@@ -282,7 +282,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
                 }
                 }
                 isLoading={isMarcaModeloLoading}
-                renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('vehiculoNoEncontrado') : 'Escribe...'}
+                renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('inMarcaYmodeloNoEncontrado') : 'Escribe...'}
               />
               {errors.marcaModelo && touched.marcaModelo && (
                 <div className="form-error">
@@ -373,7 +373,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
                 }}
                 isLoading={isMarcaModeloLoading}
-                renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('vehiculoNoEncontrado') : 'Escribe...'} />
+                renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('inMarcaYmodeloNoEncontrado') : 'Escribe...'} />
               {errors.marcaModelo && touched.marcaModelo && (
                 <div className="form-error">
                   {errors.marcaModelo}

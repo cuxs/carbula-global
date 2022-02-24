@@ -302,7 +302,12 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
               </div>
               <div className={styles.form__row}>
                 <div className='form-item'>
-                  <input
+                  <InputMask
+                    formatChars={{
+                      'n': '[0-9]'
+                    }}
+                    mask={"nnnnnn"}
+                    maskChar=""
                     onBlur={handleBlur}
                     name="kms"
                     type="text"

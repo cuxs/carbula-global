@@ -679,7 +679,7 @@ const CotizationForm = ({
     switch (step) {
       case 0: return (
         <Fragment>
-          <h2 className={`${styles.text__primary} ${styles.main__title}`}>¿Cuánto dinero desea ganar?</h2>
+          <h2 className={`${styles.text__primary} ${styles.main__title}`}>{t('cuantoDineroDesea')}</h2>
           <div className={styles.price__dropdown}>
             <input
               readOnly
@@ -710,20 +710,20 @@ const CotizationForm = ({
             </small>
           </div>
           <div className={styles.card__text}>
-            <p>9 de cada 10 autos que vendemos, lo hacemos en 20 días o menos, utilizando nuestro precio sugerido. <span>Mientras más competitivo sea el precio de publicación que elijas, más rápido lograremos {t('tu')} objetivo. </span></p>
+            <p>{t('autosVendidosEnDias')} <span>{t('autosVendidosPreciosCompetitivos')} </span></p>
           </div>
           <div className={styles.card__prices}>
             <div className={styles['price__row--grey']}>
-              <p>Valor de publicación</p> <p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>
+              <p>{t('precioValorDePublicacion')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>
             </div>
             <div className={styles['price__row--grey']}>
-              <p>Margen para negociar</p> <p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(marginPrice, 0)}</p>
+              <p>{t('precioMargenParaNegociar')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(marginPrice, 0)}</p>
             </div>
             <div className={styles['price__row--grey']}>
-              <p>Comisión Cárbula</p><p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p>
+              <p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p>
             </div>
             <div className={styles.price__row}>
-              <p>Dinero en mano para usted</p><p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</p>
+              <p>{t('precioDineroEnMano')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</p>
             </div>
           </div>
           <Button primary onClick={handlePriceStep}> Continuar</Button>

@@ -178,7 +178,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
           <Fragment>
             <animated.div style={titleProps}>
               <h2>Valor promedio</h2>
-              <h3>para su {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
+              <h3>para {COUNTRY_CODE === 'mx' ? 'tu' : 'su'} {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
             </animated.div>
             <animated.div style={priceProps} className={styles.price__comparison}>
               {cotizationData.retake_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('priceComparison.unaConsesionaria')}</h4><h3>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(cotizationData.retake_price, 0)}</h3></div>}

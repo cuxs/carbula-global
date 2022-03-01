@@ -214,9 +214,10 @@ const CotizationForm = ({
                   // onBlur={handleBlur}
                   name="rematado"
                   options={estadosMX}
-                  large
+                  large                  
                   placeholder={'Estado'}
                   // onChange={(option) => setFieldValue('location', option.value)}
+                  value={values.rematado}
                 />
               </div>
               <div className={styles['buttons__container--horizontal']}>

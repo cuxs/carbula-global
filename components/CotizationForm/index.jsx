@@ -21,7 +21,6 @@ import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONar from '../../public/autopress-ar.json'
 import cotizationJSONuy from '../../public/autopress-uy.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
-import {Step2Desktop, Step2Mobile, Step4} from '../SellFormSteps'
 
 const CotizationForm = ({
   selectedPrice,
@@ -172,17 +171,6 @@ const CotizationForm = ({
     }
     setStep(step + 1)
   }
-
-  const renderOwnerOptions = () => {
-    const options = {
-      'es-AR': ['1', '2', '3', '4 o más'],
-      'es-UY': ['1', '2', '3', '4 o más'],
-      'es-CL': ['1', '2', '3', '4', '5 o más'],
-      'es-MX': ['1', '2', '3', '4', '5 o más'],
-    }
-    return options[router.locale]
-  }
-
   const Step1Desktop = () => (
     <div className={styles['secondary-steps__container']}>
       <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
@@ -248,76 +236,15 @@ const CotizationForm = ({
     </div>
   )
 
-  const Step2Desktop = () => <div className={styles['secondary-steps__container']}>
-  <Formik
-    onSubmit={handleCondicionSubmit}
-    validationSchema={object().shape({
-      saleTime: mixed().required('Seleccione el tiempo de venta que desea.'),
-      owners: mixed().required('Seleccione una opción.'),
-      prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
-    })}
-    initialValues={{
-      saleTime: '',
-      owners: '',
-      prendado: '',
-      external_id,
-      country_code: COUNTRY_CODE
-    }}
-  >
-    {({ handleChange, errors, values, touched, handleSubmit, }) => (
-      <form onSubmit={handleSubmit}>
-        <div className='form-item'>
-          <label>{t('labelVender')}</label>
-          <RadioInput
-            touched={touched.saleTime}
-            value={values.saleTime}
-            name="saleTime"
-            options={[t('vender.opcion1'), t('vender.opcion2'), t('vender.opcion3')]}
-          />
-          {errors.saleTime && touched.saleTime && (
-            <div className="form-error">
-              {errors.saleTime}
-            </div>
-          )}
-        </div>
-        <hr />
-        <div className='form-item'>
-          <label>¿Cuántos dueños ha tenido el auto?</label>
-          <RadioInput
-            touched={touched.owners}
-            value={values.owners}
-            name="owners"
-            options={renderOwnerOptions()}
-          />
-          {errors.owners && touched.owners && (
-            <div className="form-error">
-              {errors.owners}
-            </div>
-          )}
-        </div>
-        <hr />
-        <div className='form-item'>
-          <label>{t('prendaLabel')}</label>
-          <RadioInput
-            touched={touched.prendado}
-            value={values.prendado}
-            name="prendado"
-            options={['Sí', 'No', 'No lo sé']}
-          />
-          {errors.prendado && touched.prendado && (
-            <div className="form-error">
-              {errors.prendado}
-            </div>
-          )}
-        </div>
-        <div className={styles['buttons__container--horizontal']}>
-          <Button primary type='submit'>Siguiente</Button>
-          <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
-        </div>
-      </form>
-    )}
-  </Formik>
-  </div>
+  const renderOwnerOptions = () => {
+    const options = {
+      'es-AR': ['1', '2', '3', '4 o más'],
+      'es-UY': ['1', '2', '3', '4 o más'],
+      'es-CL': ['1', '2', '3', '4', '5 o más'],
+      'es-MX': ['1', '2', '3', '4', '5 o más'],
+    }
+    return options[router.locale]
+  }
 
   const Step1Mobile = () => (
     <div className={styles['secondary-steps__container']}>
@@ -364,6 +291,113 @@ const CotizationForm = ({
       </Formik>
     </div>
   )
+
+  const Step2Mobile = () => <div className={styles['secondary-steps__container']}>
+    <Formik
+      onSubmit={handleCondicionSubmit}
+      validationSchema={object().shape({
+        rematado: mixed().required('Seleccione una opción.'),
+      })}
+      initialValues={{
+        rematado: '',
+        external_id,
+        country_code: COUNTRY_CODE
+      }}
+    >
+      {({ handleChange, errors, values, touched, handleSubmit, }) => (
+        <form onSubmit={handleSubmit}>
+          <div className='form-item'>
+            <label>¿Ha sido rematado por algún motivo? </label>
+            <RadioInput
+              touched={touched.rematado}
+              value={values.rematado}
+              name="rematado"
+              options={['Sí', 'No']}
+            />
+            {errors.rematado && touched.rematado && (
+              <div className="form-error">
+                {errors.rematado}
+              </div>
+            )}
+          </div>
+          <div className={styles['buttons__container--horizontal']}>
+            <Button primary type='submit'>Agendar inspección</Button>
+            <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+          </div>
+        </form>
+      )}
+    </Formik>
+  </div>
+  const Step2Desktop = () => <div className={styles['secondary-steps__container']}>
+    <Formik
+      onSubmit={handleCondicionSubmit}
+      validationSchema={object().shape({
+        saleTime: mixed().required('Seleccione el tiempo de venta que desea.'),
+        owners: mixed().required('Seleccione una opción.'),
+        prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
+      })}
+      initialValues={{
+        saleTime: '',
+        owners: '',
+        prendado: '',
+        external_id,
+        country_code: COUNTRY_CODE
+      }}
+    >
+      {({ handleChange, errors, values, touched, handleSubmit, }) => (
+        <form onSubmit={handleSubmit}>
+          <div className='form-item'>
+            <label>{t('labelVender')}</label>
+            <RadioInput
+              touched={touched.saleTime}
+              value={values.saleTime}
+              name="saleTime"
+              options={[t('vender.opcion1'), t('vender.opcion2'), t('vender.opcion3')]}
+            />
+            {errors.saleTime && touched.saleTime && (
+              <div className="form-error">
+                {errors.saleTime}
+              </div>
+            )}
+          </div>
+          <hr />
+          <div className='form-item'>
+            <label>¿Cuántos dueños ha tenido el auto?</label>
+            <RadioInput
+              touched={touched.owners}
+              value={values.owners}
+              name="owners"
+              options={renderOwnerOptions()}
+            />
+            {errors.owners && touched.owners && (
+              <div className="form-error">
+                {errors.owners}
+              </div>
+            )}
+          </div>
+          <hr />
+          <div className='form-item'>
+            <label>{t('prendaLabel')}</label>
+            <RadioInput
+              touched={touched.prendado}
+              value={values.prendado}
+              name="prendado"
+              options={['Sí', 'No', 'No lo sé']}
+            />
+            {errors.prendado && touched.prendado && (
+              <div className="form-error">
+                {errors.prendado}
+              </div>
+            )}
+          </div>
+          <div className={styles['buttons__container--horizontal']}>
+            <Button primary type='submit'>Siguiente</Button>
+            <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+          </div>
+        </form>
+      )}
+    </Formik>
+  </div>
 
   const Step3Mobile = () => <div className={styles['secondary-steps__container']}>
     <Formik
@@ -479,8 +513,6 @@ const CotizationForm = ({
     </Formik>
   </div>
 
-const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
-
   const Step4Mobile = () => <div className={styles['secondary-steps__container']}>
 
     <Formik
@@ -516,6 +548,7 @@ const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name,
       )}
     </Formik>
   </div>
+  const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
 
   const Step5Mobile = () => <div className={styles['secondary-steps__container']}>
     <Formik
@@ -558,44 +591,6 @@ const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name,
       )}
     </Formik>
   </div>
-
-const Step2Mobile = () => <div className={styles['secondary-steps__container']}>
-<Formik
-  onSubmit={handleCondicionSubmit}
-  validationSchema={object().shape({
-    rematado: mixed().required('Seleccione una opción.'),
-  })}
-  initialValues={{
-    rematado: '',
-    external_id,
-    country_code: COUNTRY_CODE
-  }}
->
-  {({ handleChange, errors, values, touched, handleSubmit, }) => (
-    <form onSubmit={handleSubmit}>
-      <div className='form-item'>
-        <label>¿Ha sido rematado por algún motivo? </label>
-        <RadioInput
-          touched={touched.rematado}
-          value={values.rematado}
-          name="rematado"
-          options={['Sí', 'No']}
-        />
-        {errors.rematado && touched.rematado && (
-          <div className="form-error">
-            {errors.rematado}
-          </div>
-        )}
-      </div>
-      <div className={styles['buttons__container--horizontal']}>
-        <Button primary type='submit'>Agendar inspección</Button>
-        <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
-      </div>
-    </form>
-  )}
-</Formik>
-</div>
-
   const Step5 = () => <div className={styles['meeting-info']}>
     <h2>{year} {brand} {model}</h2>
     <h3>{version} - {formatNumber(kms, 0)} kms</h3>

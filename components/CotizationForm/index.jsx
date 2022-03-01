@@ -217,6 +217,7 @@ const CotizationForm = ({
                   large
                   placeholder={'Estado'}
                   // onChange={(option) => setFieldValue('location', option.value)}
+                  onChange={this.touched.rematado}
                 />
                 {errors.rematado && touched.rematado && (
                   <div className="form-error">

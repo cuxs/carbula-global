@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useCallback, useEffect } from 'react';
-import { formatNumber, getCalendlyURL, getCatalogoURL } from '../../utils/helpers';
+import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
@@ -172,68 +172,132 @@ const CotizationForm = ({
     setStep(step + 1)
   }
   const Step1Desktop = () => (
-    <div className={styles['secondary-steps__container']}>
-      <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
-      <h4 className={styles.text__primary}>{t('step1.h4')} </h4>
-      <hr />
-      <p>No lo {t('olvide')}, en Cárbula <b>no compramos {t('tu')} auto</b>. {t('loQueHacemos')}
-        <br /><br /><b>Le haremos unas preguntas del vehículo:</b></p>
-      <Formik
-        onSubmit={handleCondicionSubmit}
-        validationSchema={object().shape({
-          prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
-          rematado: mixed().required('Seleccione una opción.'),
-        })}
-        initialValues={{
-          prendado: '',
-          rematado: '',
-          external_id,
-          country_code: COUNTRY_CODE
-        }}
-      >
-        {({ handleChange, errors, values, touched, handleSubmit, }) => (
-          <form onSubmit={handleSubmit}>
-            <div className='form-item'>
-              <label>¿Actualmente está con prenda?</label>
-              <RadioInput
-                touched={touched.prendado}
-                value={values.prendado}
-                name="prendado"
-                options={['Sí', 'No', 'No lo sé']}
-              />
-              {errors.prendado && touched.prendado && (
-                <div className="form-error">
-                  {errors.prendado}
-                </div>
-              )}
-            </div>
-            <div className='form-item'>
-              <label>¿Ha sido rematado por algún motivo? </label>
-              <RadioInput
-                touched={touched.rematado}
-                value={values.rematado}
-                name="rematado"
-                options={['Sí', 'No']}
-              />
-              {errors.rematado && touched.rematado && (
-                <div className="form-error">
-                  {errors.rematado}
-                </div>
-              )}
-            </div>
-            <div className={styles['buttons__container--horizontal']}>
-              <Button primary type='submit'>Agendar inspección</Button>
+    COUNTRY_CODE === 'mx' ?
+    <Fragment>
+      <div className={styles['secondary-steps__container']}>
+        <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
+        <h4 className={styles.text__primary}>{t('step1.h4')} </h4>
+        <hr />
+        <p>{t('loQueHacemos')}<br /><br /><b>Ahora cuéntanos un poco más acerca de tu auto.</b></p>
+        <Formik
+          onSubmit={handleCondicionSubmit}
+          validationSchema={object().shape({
+            prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
+            rematado: mixed().required('Seleccione una opción.'),
+          })}
+          initialValues={{
+            prendado: '',
+            rematado: '',
+            external_id,
+            country_code: COUNTRY_CODE
+          }}
+        >
+          {({ handleChange, errors, values, touched, handleSubmit, }) => (
+            <form onSubmit={handleSubmit}>
+              <div className='form-item'>
+                <label>¿Cuántos dueños totales ha tenido el auto? Por favor inclúyete a ti en esta respuesta</label>
+                <RadioInput
+                  touched={touched.prendado}
+                  value={values.prendado}
+                  name="prendado"
+                  options={['Único dueño', 'De dos a cuatro dueños', 'Más de 4 dueños', 'No lo sé']}
+                />
+                {errors.prendado && touched.prendado && (
+                  <div className="form-error">
+                    {errors.prendado}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
+                <label>¿A qué estado pertenece tu placa?</label>
+                <Select
+                  onBlur={handleBlur}
+                  name="rematado"
+                  options={estadosMX}
+                  large
+                  placeholder={'Estado'}
+                  // onChange={(option) => setFieldValue('location', option.value)}
+                />
+                {errors.rematado && touched.rematado && (
+                  <div className="form-error">
+                    {errors.rematado}
+                  </div>
+                )}
+              </div>
+              <div className={styles['buttons__container--horizontal']}>
+                <Button primary type='submit'>Agendar inspección</Button>
+                <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+              </div>
+            </form>
+          )}
+        </Formik>
+      </div>
+    </Fragment>
+    :
+    <Fragment>
+      <div className={styles['secondary-steps__container']}>
+        <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
+        <h4 className={styles.text__primary}>{t('step1.h4')} </h4>
+        <hr />
+        <p>No lo {t('olvide')}, en Cárbula <b>no compramos {t('tu')} auto</b>. {t('loQueHacemos')}
+          <br /><br /><b>Le haremos unas preguntas del vehículo:</b></p>
+        <Formik
+          onSubmit={handleCondicionSubmit}
+          validationSchema={object().shape({
+            prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
+            rematado: mixed().required('Seleccione una opción.'),
+          })}
+          initialValues={{
+            prendado: '',
+            rematado: '',
+            external_id,
+            country_code: COUNTRY_CODE
+          }}
+        >
+          {({ handleChange, errors, values, touched, handleSubmit, }) => (
+            <form onSubmit={handleSubmit}>
+              <div className='form-item'>
+                <label>¿Actualmente está con prenda?</label>
+                <RadioInput
+                  touched={touched.prendado}
+                  value={values.prendado}
+                  name="prendado"
+                  options={['Sí', 'No', 'No lo sé']}
+                />
+                {errors.prendado && touched.prendado && (
+                  <div className="form-error">
+                    {errors.prendado}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
+                <label>¿Ha sido rematado por algún motivo? </label>
+                <RadioInput
+                  touched={touched.rematado}
+                  value={values.rematado}
+                  name="rematado"
+                  options={['Sí', 'No']}
+                />
+                {errors.rematado && touched.rematado && (
+                  <div className="form-error">
+                    {errors.rematado}
+                  </div>
+                )}
+              </div>
+              <div className={styles['buttons__container--horizontal']}>
+                <Button primary type='submit'>Agendar inspección</Button>
+                <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+              </div>
+            </form>
+          )}
+        </Formik>
+        {/* <div className={styles.buttons__container}>
+              <Button outlined onClick={() => setStep(step + 1)}><b>Sí</b>, me parece genial.</Button>
+              <Button outlined onClick={handleRejectSellTime}><b>No</b>, necesito venderlo al tiro.</Button>
               <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
-            </div>
-          </form>
-        )}
-      </Formik>
-      {/* <div className={styles.buttons__container}>
-            <Button outlined onClick={() => setStep(step + 1)}><b>Sí</b>, me parece genial.</Button>
-            <Button outlined onClick={handleRejectSellTime}><b>No</b>, necesito venderlo al tiro.</Button>
-            <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
-          </div> */}
-    </div>
+            </div> */}
+      </div>
+    </Fragment>
   )
 
   const renderOwnerOptions = () => {

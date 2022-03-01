@@ -211,13 +211,13 @@ const CotizationForm = ({
               <div className='form-item'>
                 <label>¿A qué estado pertenece tu placa?</label>
                 <Select
+                  touched={touched.rematado}
                   // onBlur={handleBlur}
                   name="rematado"
                   options={estadosMX}
                   large
                   placeholder={'Estado'}
                   // onChange={(option) => setFieldValue('location', option.value)}
-                  onChange={this.touched.rematado}
                 />
                 {errors.rematado && touched.rematado && (
                   <div className="form-error">

@@ -214,14 +214,18 @@ const CotizationForm = ({
                   // onBlur={handleBlur}
                   name="rematado"
                   options={estadosMX}
-                  large                  
+                  large
                   placeholder={'Estado'}
                   // onChange={(option) => setFieldValue('location', option.value)}
-                  value={values.rematado}
                 />
+                {errors.rematado && touched.rematado && (
+                  <div className="form-error">
+                    {errors.rematado}
+                  </div>
+                )}
               </div>
               <div className={styles['buttons__container--horizontal']}>
-                <Button primary type='submit'>Agendar inspección</Button>
+                <Button primary type='submit'>Continuar</Button>
                 <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
               </div>
             </form>

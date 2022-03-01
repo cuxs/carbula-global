@@ -217,13 +217,7 @@ const CotizationForm = ({
                   large
                   placeholder={'Estado'}
                   // onChange={(option) => setFieldValue('location', option.value)}
-                  onChange={touched.rematado}
                 />
-                {errors.rematado && touched.rematado && (
-                  <div className="form-error">
-                    {errors.rematado}
-                  </div>
-                )}
               </div>
               <div className={styles['buttons__container--horizontal']}>
                 <Button primary type='submit'>Agendar inspección</Button>

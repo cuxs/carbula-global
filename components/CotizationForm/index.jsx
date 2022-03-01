@@ -211,7 +211,7 @@ const CotizationForm = ({
               <div className='form-item'>
                 <label>¿A qué estado pertenece tu placa?</label>
                 <Select
-                  onBlur={handleBlur}
+                  // onBlur={handleBlur}
                   name="rematado"
                   options={estadosMX}
                   large

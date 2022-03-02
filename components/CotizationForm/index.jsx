@@ -213,10 +213,13 @@ const CotizationForm = ({
                 <Select
                   // onBlur={handleBlur}
                   name="rematado"
+                  touched={touched.prendado}
+                  value={values.prendado}
                   options={estadosMX}
                   large
                   placeholder={'Estado'}
                   // onChange={(option) => setFieldValue('location', option.value)}
+                  onChange={(option) => option.value=values.prendado}
                 />
                 {errors.rematado && touched.rematado && (
                   <div className="form-error">

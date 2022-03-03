@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { getZonas } from '../utils/fetches';
 import { useSpring, animated } from "react-spring";
 import { hotjar } from 'react-hotjar'
-import { clearCotization, getCountryCode, clearLocalStorage, getHotjarId, getPhoneNumber, getWhatsappNumber } from '../utils/helpers';
+import { clearCotization, getCountryCode, clearLocalStorage, getHotjarId, getPhoneNumber, getWhatsappNumber, getTitleByCountry } from '../utils/helpers';
 import { upperFirst } from 'lodash'
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -116,7 +116,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   }
   return (
     <Fragment>
-      <Head title="Cárbula" />
+      <Head title={getTitleByCountry(COUNTRY_CODE)} />
       <BlackoutComponent overlayBackground={overlayBackground} />
       <Nav />
       <animated.div style={titleProps}>

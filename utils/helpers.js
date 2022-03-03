@@ -378,7 +378,7 @@ export const getReviews = (country_code) => {
 
 export const getCatalogoURL = (country_code) => {
   const catalogoUrl = {
-    ar: 'https://catalogo.carbula.com',
+    ar: 'https://catalogo.carbula.ar',
     mx: 'https://catalogo.carbula.mx',
     uy: 'https://catalogo.carbula.uy',
     cl: 'https://catalogo.carbula.cl'
@@ -406,6 +406,26 @@ export const getPhoneNumber = (country_code) => {
   return phoneNumbers[country_code]
 }
 
+
+export const getTitleByCountry = (country_code) => {
+  const ids = {
+    ar: 'Cárbula Argentina - La nueva forma de comprar o vender autos',
+    cl: 'Cárbula Chile - La nueva forma de comprar o vender autos',
+    mx: 'Cárbula México - La nueva forma de comprar o vender autos',
+    uy: 'Cárbula Uruguay - La nueva forma de comprar o vender autos',
+  }
+  return ids[country_code]
+}
+
+export const getKeywordsByCountry = (country_code) => {
+  const ids = {
+    ar: 'autos usados Argentina, autos usados Mendoza, compra y venta autos usados Argentina, compra y venta autos usados Mendoza, venta autos usados, compra por internet, compra online de vehículos, venta online de vehículos, autos usados hasta 150000 kilómetros, autos seminuevos Mendoza, autos seminuevos Argentina',
+    cl: 'autos usados Chile, autos usados Santiago de Chile, compra y venta autos usados Chile, compra y venta autos usados Santiago de Chile, venta autos usados, compra por internet, compra online de vehículos, venta online de vehículos, vehiculos usados hasta 150000 kilómetros, autos usados hasta 150000 kilómetros, autos seminuevos Chile, autos seminuevos Santiago de Chile',
+    mx: 'autos usados México, autos usados Ciudad de México, compra y venta autos usados México, compra y venta autos usados Ciudad de México, carros usados México, carros usados Ciudad de México, compra y venta carros usados México, compra y venta carros usados Ciudad de México, coches usados México, coches usados Ciudad de México, compra y venta coches usados México, compra y venta coches usados Ciudad de México, venta autos usados, compra por internet, compra online de vehículos, venta online de vehículos, carros usados hasta 150000 kilómetros, coches usados hasta 150000 kilómetros, vehículos usados hasta 150000 kilómetros, autos usados hasta 150000 kilómetros, autos seminuevos Ciudad de México, vehículos seminuevos Ciudad de México, coches seminuevos Ciudad de México, carros seminuevos Ciudad de México',
+    uy: 'autos usados Uruguay, autos usados Montevideo, compra y venta autos usados Uruguay, compra y venta autos usados Montevideo, venta autos usados, compra por internet, compra online de vehículos, venta online de vehículos, autos usados hasta 150000 kilómetros, autos seminuevos Uruguay, autos seminuevos Montevideo',
+  }
+  return ids[country_code]
+}
 
 export const getFacebookDomainVerification = (country_code) => {
   const ids = {

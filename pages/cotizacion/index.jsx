@@ -246,8 +246,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <hr />
                 <p>Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos. <br /> ¡Con gusto le ayudaremos!</p>
                 <div className={styles['end-buttons']}>
-                  <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
-                  <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+                  <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button primaryColor>Llamar</Button></a>
+                  <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button primaryColor><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
                 </div>
               </div>
             </div >
@@ -271,8 +271,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos.<br />¡Con gusto le ayudaremos!
               </p>
               <div className={styles['end-buttons']}>
-                <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
-                <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+                <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button primaryColor>Llamar</Button></a>
+                <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button primaryColor><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
               </div>
             </div >
           }
@@ -306,8 +306,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <hr />
                 <p>Si {t('tenes')} alguna pregunta o necesita ayuda, no dudes en contactarnos. <br /> ¡Con gusto {t('te')} ayudaremos!</p>
                 <div className={styles['end-buttons']}>
-                  <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
-                  <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+                  <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button primaryColor>Llamar</Button></a>
+                  <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button primaryColor><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
                 </div>
               </div>
             </div >
@@ -386,8 +386,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos.<br />¡Con gusto le ayudaremos!
             </p>
             <div className={styles['end-buttons']}>
-              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
-              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button primaryColor>Llamar</Button></a>
+              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button primaryColor><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
             </div>
           </div >
         }

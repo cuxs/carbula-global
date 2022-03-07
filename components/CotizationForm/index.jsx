@@ -94,6 +94,7 @@ const CotizationForm = ({
   //   return preciosArray;
   // }
   const handleCondicionSubmit = (values, actions) => {
+    console.log('Values: ', values)
     try {
       updateHubspotProperty(values)
     } catch (e) {
@@ -172,7 +173,7 @@ const CotizationForm = ({
     setStep(step + 1)
   }
   const Step1Desktop = () => (
-    COUNTRY_CODE === 'mx' ?
+    COUNTRY_CODE === 'nx' ?
     <Fragment>
       <div className={styles['secondary-steps__container']}>
         <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
@@ -213,19 +214,14 @@ const CotizationForm = ({
                 <Select
                   // onBlur={handleBlur}
                   name="rematado"
-                  touched={touched.rematado}
-                  value={values.rematado}
+                  // touched={touched.rematado}
+                  // value={values.rematado}
                   options={estadosMX}
                   large
                   placeholder={'Estado'}
                   // onChange={(option) => setFieldValue('location', option.value)}
-                  onChange={(option) => option.value=values.rematado}
+                  onChange={touched.rematado.set= true}
                 />
-                {errors.rematado && touched.rematado && (
-                  <div className="form-error">
-                    {errors.rematado}
-                  </div>
-                )}
               </div>
               <div className={styles['buttons__container--horizontal']}>
                 <Button primary type='submit'>Continuar</Button>

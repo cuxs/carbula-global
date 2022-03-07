@@ -237,11 +237,11 @@ const Cotizacion = ({COUNTRY_CODE}) => {
         }
           return (
             <div className={styles['price-model__container']}>
-              <h2>¡Felicitaciones! <br /> Agendó su inspección</h2>
+              <h2>¡Felicitaciones! <br /> {t('congratulations')}</h2>
               <div className={styles.steps__container}>
-                <p><b>Es muy importante</b> que su vehículo se encuentre aparcado al aire libre y limpio; despejado de objetos personales y en su mejor estado posible para poder sacar el mayor provecho de las fotografías.
+                <p>{COUNTRY_CODE === 'mx' ? t('importante') : <Fragment><b>Es muy importante</b> que su vehículo se encuentre aparcado al aire libre y limpio; despejado de objetos personales y en su mejor estado posible para poder sacar el mayor provecho de las fotografías.</Fragment>}
                   <br /><br />
-                  ¡Nos vemos pronto!
+                  {t('nosVemos')}
                 </p>
                 <hr />
                 <p>Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos. <br /> ¡Con gusto le ayudaremos!</p>
@@ -297,11 +297,11 @@ const Cotizacion = ({COUNTRY_CODE}) => {
           }
           return (
             <div className={styles['price-model__container']}>
-              <h2>¡Felicitaciones! <br />{t('congratulations')}</h2>
+              <h2>¡Felicitaciones! <br /> {t('congratulations')}</h2>
               <div className={styles.steps__container}>
-                <p><b>Es muy importante</b> {t('importante')}
+                <p>{COUNTRY_CODE === 'mx' ? t('importante') : <Fragment><b>Es muy importante</b> que su vehículo se encuentre aparcado al aire libre y limpio; despejado de objetos personales y en su mejor estado posible para poder sacar el mayor provecho de las fotografías.</Fragment>}
                   <br /><br />
-                  ¡Nos vemos pronto!
+                  {t('nosVemos')}
                 </p>
                 <hr />
                 <p>Si {t('tenes')} alguna pregunta o necesita ayuda, no dudes en contactarnos. <br /> ¡Con gusto {t('te')} ayudaremos!</p>

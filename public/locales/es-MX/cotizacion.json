@@ -3,8 +3,9 @@
     "unaConsesionaria":"Una automotora le paga",
     "withCarbula":"Con nosotros ganarías"
   },
-  "congratulations": "Agendó su inspección",
-  "importante": "que su vehículo se encuentre aparcado al aire libre y limpio; despejado de objetos personales y en su mejor estado posible para poder sacar el mayor provecho de las fotografías.",
+  "congratulations": "Cada vez falta menos para que vendas tu auto.",
+  "importante": "La inspección mecánica fue agendada. El día de la inspección tomaremos fotos, por eso es muy importante que el auto se encuentre aparcado al aire libre y esté lo más limpio posible. También te pediremos que se encuentre libre de objetos personales para poder sacar el mayor provecho de las fotografías.",
   "tenes":"tienes",
-  "te": "le"
+  "te": "le",
+  "nosVemos" : "¡Muchas gracias y nos vemos pronto!"
 }

@@ -94,7 +94,6 @@ const CotizationForm = ({
   //   return preciosArray;
   // }
   const handleCondicionSubmit = (values, actions) => {
-    console.log('Values: ', values)
     try {
       updateHubspotProperty(values)
     } catch (e) {

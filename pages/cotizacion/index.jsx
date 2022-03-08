@@ -197,7 +197,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
             </div>
             <div className={styles.steps__container}>
               <div className={styles['step__row--active']}>
-                <span>1º</span><p>Condición</p>
+                <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
                 <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -213,7 +213,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
             </div>
             <div className={styles.steps__container}>
               <div className={styles.step__row} onClick={() => setStep(1)}>
-                <span>1º</span><p>Condición</p>
+                <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
                 <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -227,7 +227,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
             <h3>{capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
             <div className={styles.steps__container}>
               <div className={styles.step__row} onClick={() => setStep(1)}>
-                <span>1º</span><p>Condición</p>
+                <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
                 <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -287,7 +287,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                   <span>1º</span><p>Características</p>
                 </div>
                 <div className={styles['step__row--active']} onClick={() => setStep(2)}>
-                  <span>2º</span><p>Condición</p>
+                  <span>2º</span><p>{t('stepOneTitle')}</p>
                 </div>
                 <div className={styles.step__row}>
                   <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -323,7 +323,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>Características</p>
               </div>
               <div className={styles['step__row--active']} onClick={() => setStep(2)}>
-                <span>2º</span><p>Condición</p>
+                <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
                 <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -340,7 +340,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>Características</p>
               </div>
               <div className={styles['step__row--active']} onClick={() => setStep(2)}>
-                <span>2º</span><p>Condición</p>
+                <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
                 <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -357,7 +357,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>Características</p>
               </div>
               <div className={styles.step__row} onClick={() => setStep(2)}>
-                <span>2º</span><p>Condición</p>
+                <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
                 <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -399,7 +399,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               <span>1º</span><p>Características</p>
             </div>
             <div className={styles.step__row}>
-              <span>2º</span><p>Condición</p>
+              <span>2º</span><p>{t('stepOneTitle')}</p>
             </div>
             <div className={styles.step__row}>
               <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>

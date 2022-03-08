@@ -283,7 +283,7 @@ const CotizationForm = ({
                 )}
               </div>
               <div className={styles['buttons__container--horizontal']}>
-                <Button primary type='submit'>Agendar inspección</Button>
+                <Button primary type='submit'>{t('stepTwoTitle')}</Button>
                 <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
               </div>
             </form>
@@ -383,7 +383,7 @@ const CotizationForm = ({
             )}
           </div>
           <div className={styles['buttons__container--horizontal']}>
-            <Button primary type='submit'>Agendar inspección</Button>
+            <Button primary type='submit'>{t('stepTwoTitle')}</Button>
             <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
           </div>
         </form>

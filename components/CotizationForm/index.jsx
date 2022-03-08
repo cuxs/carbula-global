@@ -172,7 +172,7 @@ const CotizationForm = ({
     setStep(step + 1)
   }
   const Step1Desktop = () => (
-    COUNTRY_CODE === 'nx' ?
+    COUNTRY_CODE === 'mx' ?
     <Fragment>
       <div className={styles['secondary-steps__container']}>
         <h3 className={styles.text__primary}>¡Gracias {name}!</h3>

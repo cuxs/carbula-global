@@ -105,7 +105,7 @@ const CotizationForm = ({
     // if (values.carStatus && values.carStatus[0] === 'Con harto uso') {
     //   return setStep('end-categoria')
     // }
-    if(COUNTRY_CODE !== 'nx'){
+    if(COUNTRY_CODE !== 'mx'){
       if (values.prendado && values.prendado === 'Sí') {
         return setStep('end-prendado')
       }
@@ -175,7 +175,7 @@ const CotizationForm = ({
   }
 
   const Step1Desktop = () => (
-    COUNTRY_CODE === 'nx' ?
+    COUNTRY_CODE === 'mx' ?
     <Fragment>
       <div className={styles['secondary-steps__container']}>
         <h3 className={styles.text__primary}>¡Gracias {name}!</h3>

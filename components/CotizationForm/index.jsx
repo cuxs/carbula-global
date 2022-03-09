@@ -94,6 +94,7 @@ const CotizationForm = ({
   //   return preciosArray;
   // }
   const handleCondicionSubmit = (values, actions) => {
+    debugger
     try {
       updateHubspotProperty(values)
     } catch (e) {
@@ -105,14 +106,16 @@ const CotizationForm = ({
     // if (values.carStatus && values.carStatus[0] === 'Con harto uso') {
     //   return setStep('end-categoria')
     // }
-    if (values.prendado && values.prendado === 'Sí') {
-      return setStep('end-prendado')
-    }
-    if (values.rematado && values.rematado === 'Sí') {
-      return setStep('end-rematado')
-    }
-    if (values.prendado && values.prendado === 'Sí') {
-      return setStep('end-prendado')
+    if(country_code !== 'mx'){
+      if (values.prendado && values.prendado === 'Sí') {
+        return setStep('end-prendado')
+      }
+      if (values.rematado && values.rematado === 'Sí') {
+        return setStep('end-rematado')
+      }
+      if (values.prendado && values.prendado === 'Sí') {
+        return setStep('end-prendado')
+      }
     }
     setFormValues({ ...formValues, ...values })
     setStep(step + 1)
@@ -152,6 +155,7 @@ const CotizationForm = ({
   }
 
   const handleUpdateDealProperty = async (values, actions) => {
+    debugger
     try {
       updateHubspotProperty(values)
     } catch (e) {
@@ -171,8 +175,13 @@ const CotizationForm = ({
     }
     setStep(step + 1)
   }
+
+  const handleTest = () => {
+    console.log('Submit')
+  }
+  
   const Step1Desktop = () => (
-    COUNTRY_CODE === 'mx' ?
+    COUNTRY_CODE === 'nx' ?
     <Fragment>
       <div className={styles['secondary-steps__container']}>
         <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
@@ -182,29 +191,31 @@ const CotizationForm = ({
         <Formik
           onSubmit={handleCondicionSubmit}
           validationSchema={object().shape({
-            prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
+            prendado: mixed().required(t('errorPrendado')),
             rematado: mixed().required('Seleccione una opción.'),
           })}
           initialValues={{
-            prendado: '',
-            rematado: '',
+            prendado: 'No',
+            rematado: 'No',
             external_id,
-            country_code: COUNTRY_CODE
+            country_code: COUNTRY_CODE,
+            mxDueniosAnteriores: '',
+            mxEstadoMatricula: '',
           }}
         >
           {({ handleChange, errors, values, touched, handleSubmit, }) => (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleTest}>
               <div className='form-item'>
                 <label>¿Cuántos dueños totales ha tenido el auto? Por favor inclúyete a ti en esta respuesta</label>
                 <RadioInput
-                  touched={touched.prendado}
-                  value={values.prendado}
-                  name="prendado"
+                  touched={touched.mxDueniosAnteriores}
+                  value={values.mxDueniosAnteriores}
+                  name="mxDueniosAnteriores"
                   options={['Único dueño', 'De dos a cuatro dueños', 'Más de 4 dueños', 'No lo sé']}
                 />
-                {errors.prendado && touched.prendado && (
+                {errors.mxDueniosAnteriores && touched.mxDueniosAnteriores && (
                   <div className="form-error">
-                    {errors.prendado}
+                    {errors.mxDueniosAnteriores}
                   </div>
                 )}
               </div>
@@ -212,20 +223,24 @@ const CotizationForm = ({
                 <label>¿A qué estado pertenece tu placa?</label>
                 <Select
                   // onBlur={handleBlur}
-                  name="rematado"
-                  // touched={touched.rematado}
-                  // value={values.rematado}
+                  name="mxEstadoMatricula"
+                  touched={touched.mxEstadoMatricula}
+                  value={values.mxEstadoMatricula}
                   options={estadosMX}
                   large
                   placeholder={'Estado'}
                   // onChange={(option) => setFieldValue('location', option.value)}
-                  onChange={touched.rematado.set= true}
                 />
               </div>
               <div className={styles['buttons__container--horizontal']}>
                 <Button primary type='submit'>Continuar</Button>
                 <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
               </div>
+              {errors.mxEstadoMatricula && touched.mxEstadoMatricula && (
+                <div className="form-error">
+                  {errors.remmxEstadoMatriculaatado}
+                </div>
+              )}
             </form>
           )}
         </Formik>

@@ -31,5 +31,6 @@
   "precioMargenParaNegociar": "Margen para negociar",
   "precioComisiónCarbula": "Comisión Cárbula",
   "precioDineroEnMano": "Dinero en mano para usted",
-  "stepTwoTitle": "Inspección mecánica."
+  "stepTwoTitle": "Inspección mecánica.",
+  "errorPrendado": "¿Se encuenta prendado el vehículo?"
 }

@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useCallback, useEffect } from 'react';
-import { formatNumber, getCalendlyURL, getCatalogoURL } from '../../utils/helpers';
+import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
@@ -105,14 +105,16 @@ const CotizationForm = ({
     // if (values.carStatus && values.carStatus[0] === 'Con harto uso') {
     //   return setStep('end-categoria')
     // }
-    if (values.prendado && values.prendado === 'Sí') {
-      return setStep('end-prendado')
-    }
-    if (values.rematado && values.rematado === 'Sí') {
-      return setStep('end-rematado')
-    }
-    if (values.prendado && values.prendado === 'Sí') {
-      return setStep('end-prendado')
+    if(COUNTRY_CODE !== 'mx'){
+      if (values.prendado && values.prendado === 'Sí') {
+        return setStep('end-prendado')
+      }
+      if (values.rematado && values.rematado === 'Sí') {
+        return setStep('end-rematado')
+      }
+      if (values.prendado && values.prendado === 'Sí') {
+        return setStep('end-prendado')
+      }
     }
     setFormValues({ ...formValues, ...values })
     setStep(step + 1)
@@ -171,69 +173,138 @@ const CotizationForm = ({
     }
     setStep(step + 1)
   }
+
   const Step1Desktop = () => (
-    <div className={styles['secondary-steps__container']}>
-      <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
-      <h4 className={styles.text__primary}>{t('step1.h4')} </h4>
-      <hr />
-      <p>No lo {t('olvide')}, en Cárbula <b>no compramos {t('tu')} auto</b>. {t('loQueHacemos')}
-        <br /><br /><b>Le haremos unas preguntas del vehículo:</b></p>
-      <Formik
-        onSubmit={handleCondicionSubmit}
-        validationSchema={object().shape({
-          prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
-          rematado: mixed().required('Seleccione una opción.'),
-        })}
-        initialValues={{
-          prendado: '',
-          rematado: '',
-          external_id,
-          country_code: COUNTRY_CODE
-        }}
-      >
-        {({ handleChange, errors, values, touched, handleSubmit, }) => (
-          <form onSubmit={handleSubmit}>
-            <div className='form-item'>
-              <label>¿Actualmente está con prenda?</label>
-              <RadioInput
-                touched={touched.prendado}
-                value={values.prendado}
-                name="prendado"
-                options={['Sí', 'No', 'No lo sé']}
-              />
-              {errors.prendado && touched.prendado && (
+    COUNTRY_CODE === 'mx' ?
+    <Fragment>
+      <div className={styles['secondary-steps__container']}>
+        <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
+        <h4 className={styles.text__primary}>{t('step1.h4')} </h4>
+        <hr />
+        <p>{t('loQueHacemos')}<br /><br /><b>Ahora cuéntanos un poco más acerca de tu auto.</b></p>
+        <Formik
+          onSubmit={handleCondicionSubmit}
+          validationSchema={object().shape({
+            prendado: mixed().required(t('errorPrendado')),
+            rematado: mixed().required('Seleccione una opción.'),
+          })}
+          initialValues={{
+            prendado: 'No',
+            rematado: 'No',
+            external_id,
+            country_code: COUNTRY_CODE,
+            mxDueniosAnteriores: '',
+            mxEstadoMatricula: '',
+          }}
+        >
+          {({ handleChange, errors, values, touched, handleSubmit, }) => (
+            <form onSubmit={handleSubmit}>
+              <div className='form-item'>
+                <label>¿Cuántos dueños totales ha tenido el auto? Por favor inclúyete a ti en esta respuesta</label>
+                <RadioInput
+                  touched={touched.mxDueniosAnteriores}
+                  value={values.mxDueniosAnteriores}
+                  name="mxDueniosAnteriores"
+                  options={['Único dueño', 'De dos a cuatro dueños', 'Más de 4 dueños', 'No lo sé']}
+                />
+                {errors.mxDueniosAnteriores && touched.mxDueniosAnteriores && (
+                  <div className="form-error">
+                    {errors.mxDueniosAnteriores}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
+                <label>¿A qué estado pertenece tu placa?</label>
+                <Select
+                  // onBlur={handleBlur}
+                  name="mxEstadoMatricula"
+                  touched={touched.mxEstadoMatricula}
+                  value={values.mxEstadoMatricula}
+                  options={estadosMX}
+                  large
+                  placeholder={'Estado'}
+                  // onChange={(option) => setFieldValue('location', option.value)}
+                />
+              </div>
+              <div className={styles['buttons__container--horizontal']}>
+                <Button primary type='submit'>Continuar</Button>
+                <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+              </div>
+              {errors.mxEstadoMatricula && touched.mxEstadoMatricula && (
                 <div className="form-error">
-                  {errors.prendado}
+                  {errors.remmxEstadoMatriculaatado}
                 </div>
               )}
-            </div>
-            <div className='form-item'>
-              <label>¿Ha sido rematado por algún motivo? </label>
-              <RadioInput
-                touched={touched.rematado}
-                value={values.rematado}
-                name="rematado"
-                options={['Sí', 'No']}
-              />
-              {errors.rematado && touched.rematado && (
-                <div className="form-error">
-                  {errors.rematado}
-                </div>
-              )}
-            </div>
-            <div className={styles['buttons__container--horizontal']}>
-              <Button primary type='submit'>Agendar inspección</Button>
+            </form>
+          )}
+        </Formik>
+      </div>
+    </Fragment>
+    :
+    <Fragment>
+      <div className={styles['secondary-steps__container']}>
+        <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
+        <h4 className={styles.text__primary}>{t('step1.h4')} </h4>
+        <hr />
+        <p>No lo {t('olvide')}, en Cárbula <b>no compramos {t('tu')} auto</b>. {t('loQueHacemos')}
+          <br /><br /><b>Le haremos unas preguntas del vehículo:</b></p>
+        <Formik
+          onSubmit={handleCondicionSubmit}
+          validationSchema={object().shape({
+            prendado: mixed().required('¿Se encuenta prendado el vehículo?'),
+            rematado: mixed().required('Seleccione una opción.'),
+          })}
+          initialValues={{
+            prendado: '',
+            rematado: '',
+            external_id,
+            country_code: COUNTRY_CODE
+          }}
+        >
+          {({ handleChange, errors, values, touched, handleSubmit, }) => (
+            <form onSubmit={handleSubmit}>
+              <div className='form-item'>
+                <label>¿Actualmente está con prenda?</label>
+                <RadioInput
+                  touched={touched.prendado}
+                  value={values.prendado}
+                  name="prendado"
+                  options={['Sí', 'No', 'No lo sé']}
+                />
+                {errors.prendado && touched.prendado && (
+                  <div className="form-error">
+                    {errors.prendado}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
+                <label>¿Ha sido rematado por algún motivo? </label>
+                <RadioInput
+                  touched={touched.rematado}
+                  value={values.rematado}
+                  name="rematado"
+                  options={['Sí', 'No']}
+                />
+                {errors.rematado && touched.rematado && (
+                  <div className="form-error">
+                    {errors.rematado}
+                  </div>
+                )}
+              </div>
+              <div className={styles['buttons__container--horizontal']}>
+                <Button primary type='submit'>{t('stepTwoTitle')}</Button>
+                <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
+              </div>
+            </form>
+          )}
+        </Formik>
+        {/* <div className={styles.buttons__container}>
+              <Button outlined onClick={() => setStep(step + 1)}><b>Sí</b>, me parece genial.</Button>
+              <Button outlined onClick={handleRejectSellTime}><b>No</b>, necesito venderlo al tiro.</Button>
               <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
-            </div>
-          </form>
-        )}
-      </Formik>
-      {/* <div className={styles.buttons__container}>
-            <Button outlined onClick={() => setStep(step + 1)}><b>Sí</b>, me parece genial.</Button>
-            <Button outlined onClick={handleRejectSellTime}><b>No</b>, necesito venderlo al tiro.</Button>
-            <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
-          </div> */}
-    </div>
+            </div> */}
+      </div>
+    </Fragment>
   )
 
   const renderOwnerOptions = () => {
@@ -321,7 +392,7 @@ const CotizationForm = ({
             )}
           </div>
           <div className={styles['buttons__container--horizontal']}>
-            <Button primary type='submit'>Agendar inspección</Button>
+            <Button primary type='submit'>{t('stepTwoTitle')}</Button>
             <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
           </div>
         </form>
@@ -679,7 +750,7 @@ const CotizationForm = ({
     switch (step) {
       case 0: return (
         <Fragment>
-          <h2 className={`${styles.text__primary} ${styles.main__title}`}>¿Cuánto dinero desea ganar?</h2>
+          <h2 className={`${styles.text__primary} ${styles.main__title}`}>{t('cuantoDineroDesea')}</h2>
           <div className={styles.price__dropdown}>
             <input
               readOnly
@@ -705,23 +776,25 @@ const CotizationForm = ({
               defaultValue={{ label: `$ ${formatNumber(selectedPrice, 0)}`, value: selectedPrice }}
               renderNoOptionMessage={() => 'Elije'}
             /> */}
-            <small className={styles.price__currency}>{CURRENCY[COUNTRY_CODE]}</small>
+            <small className={styles.price__currency}>
+              {COUNTRY_CODE === 'mx' ? '$' : CURRENCY[COUNTRY_CODE]}
+            </small>
           </div>
           <div className={styles.card__text}>
-            <p>9 de cada 10 autos que vendemos, lo hacemos en 20 días o menos, utilizando nuestro precio sugerido. <span>Mientras más competitivo sea el precio de publicación que elijas, más rápido lograremos {t('tu')} objetivo. </span></p>
+            <p>{t('autosVendidosEnDias')} <span>{t('autosVendidosPreciosCompetitivos')} </span></p>
           </div>
           <div className={styles.card__prices}>
             <div className={styles['price__row--grey']}>
-              <p>Valor de publicación</p> <p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>
+              <p>{t('precioValorDePublicacion')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>
             </div>
             <div className={styles['price__row--grey']}>
-              <p>Margen para negociar</p> <p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(marginPrice, 0)}</p>
+              <p>{t('precioMargenParaNegociar')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(marginPrice, 0)}</p>
             </div>
             <div className={styles['price__row--grey']}>
-              <p>Comisión Cárbula</p><p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p>
+              <p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p>
             </div>
             <div className={styles.price__row}>
-              <p>Dinero en mano para usted</p><p>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</p>
+              <p>{t('precioDineroEnMano')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</p>
             </div>
           </div>
           <Button primary onClick={handlePriceStep}> Continuar</Button>
@@ -801,10 +874,17 @@ const CotizationForm = ({
       {width < 769 && <FaqCotization />}
       <Modal isOpen={!selectedPrice}>
         <div className={styles.form__container}>
-          <h3>¡Hola {name}!</h3>
-          <p>Muchas gracias por utilizar los servicios de <b>Cárbula</b>.</p>
-          <p>Por el momento no tenemos un valor de referencia para brindarte.</p>
-          <p>Por favor ingresá el valor que querés ganar por tu vehículo 🚗</p>
+          {
+            COUNTRY_CODE === 'mx' ? 
+            <Fragment><h3>¿Cuánto dinero deseas ganar por la venta de tu auto?</h3></Fragment>
+            :
+            <Fragment>
+              <h3>¡Hola {name}!</h3>
+              <p>Muchas gracias por utilizar los servicios de <b>Cárbula</b>.</p>
+              <p>Por el momento no tenemos un valor de referencia para brindarte.</p>
+              <p>Por favor ingresá el valor que querés ganar por tu vehículo 🚗</p>
+            </Fragment>
+          }
           <Formik
             onSubmit={(values) => {
               const parsedValue = values.amount.replace(/\./g, '')
@@ -847,7 +927,9 @@ const CotizationForm = ({
                     onBlur={handleBlur}
                     placeholder="Sólo números"
                   /> */}
-                  <small className={styles.price__currency}>{CURRENCY[COUNTRY_CODE]}</small>
+                  <small className={styles.price__currency}>
+                    {COUNTRY_CODE === 'mx' ? '$' : CURRENCY[COUNTRY_CODE]}
+                  </small>
                   {errors.amount && touched.amount && (
                     <div className={styles.form__error}>
                       {errors.amount}

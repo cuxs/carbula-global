@@ -85,7 +85,6 @@ const Cotizacion = ({COUNTRY_CODE}) => {
       8: 'paso-9',
       9: 'paso-10',
     }
-
     router.push(
       {
         pathname: router.pathname,
@@ -178,11 +177,11 @@ const Cotizacion = ({COUNTRY_CODE}) => {
           <Fragment>
             <animated.div style={titleProps}>
               <h2>Valor promedio</h2>
-              <h3>para su {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
+              <h3>para {COUNTRY_CODE === 'mx' ? 'tu' : 'su'} {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
             </animated.div>
             <animated.div style={priceProps} className={styles.price__comparison}>
-              {cotizationData.retake_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('priceComparison.unaConsesionaria')}</h4><h3>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(cotizationData.retake_price, 0)}</h3></div>}
-              <div className={styles.carbula__price}><h4>{t('priceComparison.withCarbula')}</h4><h3>{CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</h3></div>
+              {cotizationData.retake_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('priceComparison.unaConsesionaria')}</h4><h3>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(cotizationData.retake_price, 0)}</h3></div>}
+              <div className={styles.carbula__price}><h4>{t('priceComparison.withCarbula')}</h4><h3>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</h3></div>
             </animated.div>
             <animated.div style={faqProps}>
               {width > 769 && <FaqCotization />}
@@ -197,7 +196,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
             </div>
             <div className={styles.steps__container}>
               <div className={styles['step__row--active']}>
-                <span>1º</span><p>Condición</p>
+                <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
                 <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -213,7 +212,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
             </div>
             <div className={styles.steps__container}>
               <div className={styles.step__row} onClick={() => setStep(1)}>
-                <span>1º</span><p>Condición</p>
+                <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
                 <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -227,7 +226,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
             <h3>{capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
             <div className={styles.steps__container}>
               <div className={styles.step__row} onClick={() => setStep(1)}>
-                <span>1º</span><p>Condición</p>
+                <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
                 <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -237,17 +236,17 @@ const Cotizacion = ({COUNTRY_CODE}) => {
         }
           return (
             <div className={styles['price-model__container']}>
-              <h2>¡Felicitaciones! <br /> Agendó su inspección</h2>
+              <h2>¡Felicitaciones! <br /> {t('congratulations')}</h2>
               <div className={styles.steps__container}>
-                <p><b>Es muy importante</b> que su vehículo se encuentre aparcado al aire libre y limpio; despejado de objetos personales y en su mejor estado posible para poder sacar el mayor provecho de las fotografías.
+                <p>{COUNTRY_CODE === 'mx' ? t('importante') : <Fragment><b>Es muy importante</b> que su vehículo se encuentre aparcado al aire libre y limpio; despejado de objetos personales y en su mejor estado posible para poder sacar el mayor provecho de las fotografías.</Fragment>}
                   <br /><br />
-                  ¡Nos vemos pronto!
+                  {t('nosVemos')}
                 </p>
                 <hr />
                 <p>Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos. <br /> ¡Con gusto le ayudaremos!</p>
                 <div className={styles['end-buttons']}>
-                  <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
-                  <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+                  <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorder>Llamar</Button></a>
+                  <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorder><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
                 </div>
               </div>
             </div >
@@ -271,8 +270,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos.<br />¡Con gusto le ayudaremos!
               </p>
               <div className={styles['end-buttons']}>
-                <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
-                <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+                <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorder>Llamar</Button></a>
+                <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorder><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
               </div>
             </div >
           }
@@ -287,7 +286,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                   <span>1º</span><p>Características</p>
                 </div>
                 <div className={styles['step__row--active']} onClick={() => setStep(2)}>
-                  <span>2º</span><p>Condición</p>
+                  <span>2º</span><p>{t('stepOneTitle')}</p>
                 </div>
                 <div className={styles.step__row}>
                   <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -297,17 +296,17 @@ const Cotizacion = ({COUNTRY_CODE}) => {
           }
           return (
             <div className={styles['price-model__container']}>
-              <h2>¡Felicitaciones! <br />{t('congratulations')}</h2>
+              <h2>¡Felicitaciones! <br /> {t('congratulations')}</h2>
               <div className={styles.steps__container}>
-                <p><b>Es muy importante</b> {t('importante')}
+                <p>{COUNTRY_CODE === 'mx' ? t('importante') : <Fragment><b>Es muy importante</b> que su vehículo se encuentre aparcado al aire libre y limpio; despejado de objetos personales y en su mejor estado posible para poder sacar el mayor provecho de las fotografías.</Fragment>}
                   <br /><br />
-                  ¡Nos vemos pronto!
+                  {t('nosVemos')}
                 </p>
                 <hr />
                 <p>Si {t('tenes')} alguna pregunta o necesita ayuda, no dudes en contactarnos. <br /> ¡Con gusto {t('te')} ayudaremos!</p>
                 <div className={styles['end-buttons']}>
-                  <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
-                  <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+                  <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorder>Llamar</Button></a>
+                  <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorder><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
                 </div>
               </div>
             </div >
@@ -323,7 +322,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>Características</p>
               </div>
               <div className={styles['step__row--active']} onClick={() => setStep(2)}>
-                <span>2º</span><p>Condición</p>
+                <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
                 <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -340,7 +339,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>Características</p>
               </div>
               <div className={styles['step__row--active']} onClick={() => setStep(2)}>
-                <span>2º</span><p>Condición</p>
+                <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
                 <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -357,7 +356,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>Características</p>
               </div>
               <div className={styles.step__row} onClick={() => setStep(2)}>
-                <span>2º</span><p>Condición</p>
+                <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
                 <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
@@ -386,8 +385,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos.<br />¡Con gusto le ayudaremos!
             </p>
             <div className={styles['end-buttons']}>
-              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorderSecondary>Llamar</Button></a>
-              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorderSecondary><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
+              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button noBorder>Llamar</Button></a>
+              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button noBorder><img src="/icons/whatsapp-green.svg" alt="whatsapp" />Whatsapp</Button></a>
             </div>
           </div >
         }
@@ -399,7 +398,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               <span>1º</span><p>Características</p>
             </div>
             <div className={styles.step__row}>
-              <span>2º</span><p>Condición</p>
+              <span>2º</span><p>{t('stepOneTitle')}</p>
             </div>
             <div className={styles.step__row}>
               <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>

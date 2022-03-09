@@ -24,7 +24,7 @@ const FaqCotization = () => {
       <AccordionItem className={styles.accordion__item}>
         <AccordionItemHeading className={styles.accordion__heading}>
           <AccordionItemButton className={styles.accordion__button}>
-          Precio justo y honesto
+          {t('label2')}
                     </AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel  className={styles.accordion__panel}>

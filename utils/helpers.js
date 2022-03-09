@@ -27,6 +27,41 @@ export const globalValidationData= {
   }
 }
 
+export const estadosMX = [
+  { value: 'Aguascalientes', label: 'Aguascalientes' },
+  { value: 'Baja California', label: 'Baja California' },
+  { value: 'Baja California Sur', label: 'Baja California Sur' },
+  { value: 'Campeche', label: 'Campeche' },
+  { value: 'Chiapas', label: 'Chiapas' },
+  { value: 'Chihuahua', label: 'Chihuahua' },
+  { value: 'Ciudad de México', label: 'Ciudad de México' },
+  { value: 'Coahuila de Zaragoza', label: 'Coahuila de Zaragoza' },
+  { value: 'Colima', label: 'Colima' },
+  { value: 'Durango', label: 'Durango' },
+  { value: 'Guanajuato', label: 'Guanajuato' },
+  { value: 'Guerrero', label: 'Guerrero' },
+  { value: 'Hidalgo', label: 'Hidalgo' },
+  { value: 'Jalisco', label: 'Jalisco' },
+  { value: 'Estado de México', label: 'Estado de México' },
+  { value: 'Michoacán de Ocampo 	', label: 'Michoacán de Ocampo 	' },
+  { value: 'Morelos', label: 'Morelos' },
+  { value: 'Nayarit', label: 'Nayarit' },
+  { value: 'Nuevo León', label: 'Nuevo León' },
+  { value: 'Oaxaca', label: 'Oaxaca' },
+  { value: 'Puebla', label: 'Puebla' },
+  { value: 'Querétaro', label: 'Querétaro' },
+  { value: 'Quintana Roo', label: 'Quintana Roo' },
+  { value: 'San Luis Potosí', label: 'San Luis Potosí' },
+  { value: 'Sinaloa', label: 'Sinaloa' },
+  { value: 'Sonora', label: 'Sonora' },
+  { value: 'Tabasco', label: 'Tabasco' },
+  { value: 'Tamaulipas', label: 'Tamaulipas' },
+  { value: 'Tlaxcala', label: 'Tlaxcala' },
+  { value: 'Veracruz de Ignacio de la Llave', label: 'Veracruz de Ignacio de la Llave' },
+  { value: 'Yucatán', label: 'Yucatán' },
+  { value: 'Zacatecas', label: 'Zacatecas' }
+]
+
 export const checkZone = (location, allzones, country_code) => {
 
   const uncoveredZonesAR = [
@@ -399,7 +434,7 @@ export const getWhatsappNumber = (country_code) => {
 export const getPhoneNumber = (country_code) => {
   const phoneNumbers = {
     ar: '+5492613013473',
-    mx: '+5492614864083',
+    mx: '+525541622979',
     uy: '+59899220055',
     cl: '+56228977930',
   }

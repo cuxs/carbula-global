@@ -94,7 +94,6 @@ const CotizationForm = ({
   //   return preciosArray;
   // }
   const handleCondicionSubmit = (values, actions) => {
-    debugger
     try {
       updateHubspotProperty(values)
     } catch (e) {
@@ -155,7 +154,6 @@ const CotizationForm = ({
   }
 
   const handleUpdateDealProperty = async (values, actions) => {
-    debugger
     try {
       updateHubspotProperty(values)
     } catch (e) {
@@ -176,10 +174,6 @@ const CotizationForm = ({
     setStep(step + 1)
   }
 
-  const handleTest = () => {
-    console.log('Submit')
-  }
-  
   const Step1Desktop = () => (
     COUNTRY_CODE === 'nx' ?
     <Fragment>
@@ -204,7 +198,7 @@ const CotizationForm = ({
           }}
         >
           {({ handleChange, errors, values, touched, handleSubmit, }) => (
-            <form onSubmit={handleTest}>
+            <form onSubmit={handleSubmit}>
               <div className='form-item'>
                 <label>¿Cuántos dueños totales ha tenido el auto? Por favor inclúyete a ti en esta respuesta</label>
                 <RadioInput

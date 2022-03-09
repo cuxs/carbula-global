@@ -105,7 +105,7 @@ const CotizationForm = ({
     // if (values.carStatus && values.carStatus[0] === 'Con harto uso') {
     //   return setStep('end-categoria')
     // }
-    if(country_code !== 'mx'){
+    if(COUNTRY_CODE !== 'nx'){
       if (values.prendado && values.prendado === 'Sí') {
         return setStep('end-prendado')
       }

@@ -85,7 +85,6 @@ const Cotizacion = ({COUNTRY_CODE}) => {
       8: 'paso-9',
       9: 'paso-10',
     }
-    debugger
     router.push(
       {
         pathname: router.pathname,

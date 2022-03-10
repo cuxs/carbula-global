@@ -200,7 +200,7 @@ const CotizationForm = ({
           {({ handleChange, errors, values, touched, handleSubmit, }) => (
             <form onSubmit={handleSubmit}>
               <div className='form-item'>
-                <label>¿Cuántos dueños totales ha tenido el auto? Por favor inclúyete a ti en esta respuesta</label>
+                <label>¿Cuántos dueños ha tenido el auto? (Incluyéndote a ti)</label>
                 <RadioInput
                   touched={touched.mxDueniosAnteriores}
                   value={values.mxDueniosAnteriores}

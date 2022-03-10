@@ -205,7 +205,7 @@ const CotizationForm = ({
                   touched={touched.mxDueniosAnteriores}
                   value={values.mxDueniosAnteriores}
                   name="mxDueniosAnteriores"
-                  options={['Único dueño', 'De dos a cuatro dueños', 'Más de 4 dueños', 'No lo sé']}
+                  options={['1 dueño', 'Entre 2 y 4 dueños', 'Más de 4 dueños', 'No lo sé']}
                 />
                 {errors.mxDueniosAnteriores && touched.mxDueniosAnteriores && (
                   <div className="form-error">

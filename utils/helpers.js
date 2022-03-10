@@ -424,7 +424,7 @@ export const getCatalogoURL = (country_code) => {
 export const getWhatsappNumber = (country_code) => {
   const phoneNumbers = {
     ar: '+5492614864083',
-    mx: '+5492614864083',
+    mx: '+525541622979',
     uy: '+59899220055',
     cl: '+56971417008',
   }

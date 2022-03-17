@@ -245,7 +245,7 @@ export const getToken = () => {
 export const getCalendlyURL = (country_code, email, name, phone) => {
   const urls = {
     'ar': `https://calendly.com/d/zr2q-96wm/argentina-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}&a1=${phone}`,
-    'mx': `https://calendly.com/d/cgt-qz4-49w/mexico-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}&a1=${phone}`,
+    'mx': `https://calendly.com/carbulamex/visita?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}&a1=${phone}`,
     'uy': `https://calendly.com/d/ckh-qwz-mzm/uruguay-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}&a1=${phone}`,
     'cl': `https://calendly.com/d/ygfm-5xt9/chile-agendamientos-carbula?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}&a1=${phone}`
 

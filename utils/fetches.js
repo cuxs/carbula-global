@@ -23,9 +23,13 @@ export const getMarcaModelo = async (query, COUNTRY_CODE) => {
     throw e.response ? new Error(e.response.data.message) : new Error(e.message)
   }
 }
-export const getYears = async (idMarca, nombreModelo) => {
+export const getYears = async (idMarca, nombreModelo, country_code) => {
   try {
-    const response = await axios.get(`${cotizadorUrl}/anioModeloML`, { params: { idMarca, nombreModelo } })
+    let endpoint = '/anioModeloML'
+    if(country_code ==='cl'){
+      endpoint = 'anioModelo'
+    }
+    const response = await axios.get(`${cotizadorUrl}/${endpoint}`, { params: { idMarca, nombreModelo } })
     return response
   } catch (e) {
     console.log(e)

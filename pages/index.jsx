@@ -159,7 +159,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           </div>
         </div>
         <div className={styles.couple__image}>
-          <Image src="/images/carbula_couple.png" width="690" height="640" alt="Pareja" />
+          <Image src="/images/carbula_couple.webp" width="690" height="640" alt="Pareja" />
         </div>
       </section>
       <section>
@@ -170,7 +170,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           <div>
             <h2 className={styles.text__secondary}>{t('contactanos')}</h2>
             <div className={styles.image} >
-              <Image src="/images/carbula_contacto.png" width="465" height="448" alt="Contacto" />
+              <Image src="/images/carbula_contacto.webp" width="465" height="448" alt="Contacto" />
             </div>
             <p>Si tenés alguna pregunta o {t('necesitas')} ayuda,</p>
             <p> no dudes en contactarnos. ¡Con gusto te ayudaremos!</p>

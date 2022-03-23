@@ -159,7 +159,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           </div>
         </div>
         <div className={styles.couple__image}>
-          <Image src="/images/carbula_couple.png" width="690" height="640" alt="Pareja" />
+          <Image src="/images/carbula_couple.webp" width="690" height="640" alt="Pareja" />
         </div>
       </section>
       <section>

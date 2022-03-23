@@ -109,7 +109,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   const handleMarcaModeloOnChange = async (option) => {
     try {
       setYearLoading(true);
-      const { data } = await getYears(option.value, option.nombreModelo)
+      const { data } = await getYears(option.value, option.nombreModelo, COUNTRY_CODE)
       setYearOptions(parseYearResponse(data))
       setYearLoading(false);
     } catch (e) {

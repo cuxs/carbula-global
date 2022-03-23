@@ -1,5 +1,5 @@
 .jumbotron__container {
-  background-image: url("/images/header.jpg");
+  background-image: url("/images/header.webp");
   background-size: cover;
   background-repeat: no-repeat;
   height: 460px;
@@ -34,7 +34,7 @@
 @media (max-width: 769px) {
   .jumbotron__container {
     height: 640px;
-    background-image: url("/images/header_mobile.jpg");
+    background-image: url("/images/header_mobile.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: -100px;

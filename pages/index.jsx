@@ -82,8 +82,8 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   useEffect(() => {
     switch (step) {
       case 0:
-        setTitle([`Vendemos ${t('tu')} vehículo`, 'por hasta 25% más de dinero.'])
-        setSubtitle(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.'])
+        setTitle([`${t('titleVendemosL1')}`, `${t('titleVendemosL2')}`])
+        setSubtitle([t('subtitleVendemosL1'), t('subtitleVendemosL2'), t('subtitleVendemosL3'), t('subtitleVendemosL4')])
         break;
       case 1:
         setTitle([`Gracias por completar los datos de ${t('tu')} vehículo`])

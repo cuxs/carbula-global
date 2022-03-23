@@ -171,6 +171,16 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
             <h2 className={styles.text__primary}>{t('faq')}</h2>
             <FaqComponent />
           </div>
+          <div>
+            <h3 className={styles.text__secondary}>{t('contactanos')}</h3>
+            <div className={styles.buttons__container}>
+              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>
+              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondary>Whatsapp</Button></a>
+            </div>
+            <div className={styles.image} >
+              <Image src="/images/carbula_contacto.png" width="465" height="448" alt="Contacto" />
+            </div>
+          </div>
         </div>
       </section>
       <section className={styles.section3}>

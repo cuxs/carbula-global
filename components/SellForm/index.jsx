@@ -252,6 +252,16 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
     return masks[COUNTRY_CODE]
   }
 
+  const alertStyle = {
+    backgroundColor: '#D8F4D9',
+    width: "540px",
+    height: "97px",
+    color: 'blue',
+    padding: '10px',
+    borderRadius: '5px',
+    boxSizing: 'border-box'
+  }
+
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
       case 0:
@@ -259,7 +269,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
               <div className={styles.form__row}>
-                <button onClick={() => { alert.show('Recibimos tus datos correctamente. Un asesor se contactará a la brevedad') }}>Show Alert</button>
+                <button onClick={() => {alert.show(<div style={alertStyle}><b>Recibimos tus datos correctamente</b> Un asesesor se contactará a la brevedad.</div>)}}>Show Alert</button>
                 <div className='form-item'>
                   <Select
                     onBlur={handleBlur}

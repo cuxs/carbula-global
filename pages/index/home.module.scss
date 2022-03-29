@@ -1,5 +1,18 @@
 @import "../../sass/variables.scss";
 
+.alertNotification {
+  background-color: #D8F4D9;
+}
+
+.alertNotification{
+  position: absolute;
+  width: 540px;
+  height: 97px;
+  left: 1354px;
+  top: 949.5px;
+  background-color: #D8F4D9;
+}
+
 .section1__container {
   display: flex;
   justify-content: space-between;

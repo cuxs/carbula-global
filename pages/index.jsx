@@ -14,9 +14,22 @@ import { upperFirst } from 'lodash'
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-import { transitions, positions, types, Provider as AlertProvider } from 'react-alert'
-import AlertTemplate from 'react-alert-template-basic'
+import { positions, transitions, types, Provider as AlertProvider } from 'react-alert'
 
+const AlertTemplate = ({ style, options, message, close }) => (
+  <div style={style}>
+    <div>
+      <div></div>
+      <div>
+        {options.type === 'info'}
+        {options.type === 'success'}
+        {options.type === 'error'}
+        {message}
+        <button style={alertButtonStyle} onClick={close}>X</button>
+      </div>
+    </div>
+  </div>
+)
 
 const alertOptions = {
   position: positions.BOTTOM_RIGHT,                         // position of the alerts in the page
@@ -24,6 +37,24 @@ const alertOptions = {
   timeout: 0,                                               // timeout to alert remove itself, if  set to 0 it never removes itself
   offset: '30px',                                           // margin of each alert
   transition: transitions.FADE,                             // transition animation
+}
+
+const alertStyle = {
+  backgroundColor: '#D8F4D9',
+  width: "540px",
+  height: "97px",
+  color: 'blue',
+  padding: '10px',
+  borderRadius: '5px',
+  boxSizing: 'border-box'
+}
+
+const alertButtonStyle={
+  display: "inline",
+  border: 'none',
+  backgroundColor: 'transparent',
+  cursor: 'pointer',
+  color: '#FFFFFF'
 }
 
 const BlackoutComponent = dynamic(import('../components/BlackoutComponent'))

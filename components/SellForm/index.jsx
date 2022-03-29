@@ -13,6 +13,7 @@ import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, animated, useTransition, config } from "react-spring";
 import { checkYear, checkZone, getCampania, getSourceType, saveCotization, globalValidationData } from '../../utils/helpers';
+import { useAlert } from 'react-alert'
 
 const whereOptions = [
   { value: 'Por un conocido / amigo.', label: 'Por un conocido / amigo.' },
@@ -24,6 +25,7 @@ const whereOptions = [
 
 const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY_CODE }) => {
   const { t } = useTranslation('SellForm')
+  const alert = useAlert()
 
   const [marcaModeloOptions, setMarcaModeloOption] = useState([])
   const [isMarcaModeloLoading, setMarcaModeloLoading] = useState(false)
@@ -176,6 +178,12 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         addContact(carAndContactData)
         return setUserName(values.name)
       }
+      if (error.message === 'Tiempo de espera agotado.'){
+        return (
+        <Fragment>
+          {/* dsf */}
+        </Fragment>)
+      }
       console.log('Ocurrió un error en la cotización')
       console.log(error)
     }
@@ -251,6 +259,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
               <div className={styles.form__row}>
+                <button onClick={() => { alert.show('Recibimos tus datos correctamente. Un asesor se contactará a la brevedad') }}>Show Alert</button>
                 <div className='form-item'>
                   <Select
                     onBlur={handleBlur}

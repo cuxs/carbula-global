@@ -13,6 +13,7 @@ import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, animated, useTransition, config } from "react-spring";
 import { checkYear, checkZone, getCampania, getSourceType, saveCotization, globalValidationData } from '../../utils/helpers';
+import { useToast } from '@chakra-ui/react'
 
 const whereOptions = [
   { value: 'Por un conocido / amigo.', label: 'Por un conocido / amigo.' },
@@ -24,6 +25,7 @@ const whereOptions = [
 
 const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY_CODE }) => {
   const { t } = useTranslation('SellForm')
+  const toast = useToast()
 
   const [marcaModeloOptions, setMarcaModeloOption] = useState([])
   const [isMarcaModeloLoading, setMarcaModeloLoading] = useState(false)
@@ -257,7 +259,22 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
               <div className={styles.form__row}>
-                {/* <div>Test here</div> */}
+                <div>
+                  <Button
+                    onClick={() =>
+                      toast({
+                        title: 'Recibimos tus datos correctamente',
+                        description: "Un asesesor se contactará a la brevedad.",
+                        status: 'success',
+                        position: 'bottom-right',
+                        duration: null,
+                        isClosable: true,
+                      })
+                    }
+                  >
+                    Show Toast
+                  </Button>
+                </div>
                 <div className='form-item'>
                   <Select
                     onBlur={handleBlur}

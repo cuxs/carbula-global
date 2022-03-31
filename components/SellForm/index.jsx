@@ -176,6 +176,12 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         addContact(carAndContactData)
         return setUserName(values.name)
       }
+      if (error.message === 'Tiempo de espera agotado.'){
+        return (
+        <Fragment>
+          {/* dsf */}
+        </Fragment>)
+      }
       console.log('Ocurrió un error en la cotización')
       console.log(error)
     }
@@ -251,6 +257,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
               <div className={styles.form__row}>
+                {/* <div>Test here</div> */}
                 <div className='form-item'>
                   <Select
                     onBlur={handleBlur}

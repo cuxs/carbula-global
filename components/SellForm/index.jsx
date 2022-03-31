@@ -180,9 +180,15 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       }
       if (error.message === 'Tiempo de espera agotado.'){
         return (
-        <Fragment>
-          {/* dsf */}
-        </Fragment>)
+          toast({
+            title: 'Recibimos tus datos correctamente',
+            description: "Un asesesor se contactará a la brevedad.",
+            status: 'success',
+            position: 'bottom-right',
+            duration: null,
+            isClosable: true,
+          })
+        )        
       }
       console.log('Ocurrió un error en la cotización')
       console.log(error)
@@ -259,22 +265,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
               <div className={styles.form__row}>
-                <div>
-                  <Button
-                    onClick={() =>
-                      toast({
-                        title: 'Recibimos tus datos correctamente',
-                        description: "Un asesesor se contactará a la brevedad.",
-                        status: 'success',
-                        position: 'bottom-right',
-                        duration: null,
-                        isClosable: true,
-                      })
-                    }
-                  >
-                    Show Toast
-                  </Button>
-                </div>
                 <div className='form-item'>
                   <Select
                     onBlur={handleBlur}

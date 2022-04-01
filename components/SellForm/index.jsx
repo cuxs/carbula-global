@@ -179,16 +179,14 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         return setUserName(values.name)
       }
       if (error.message === 'Tiempo de espera agotado.'){
-        return (
-          toast({
-            title: 'Recibimos tus datos correctamente',
-            description: "Un asesesor se contactará a la brevedad.",
-            status: 'success',
-            position: 'bottom-right',
-            duration: null,
-            isClosable: true,
-          })
-        )        
+        toast({
+          title: 'Recibimos tus datos correctamente',
+          description: "Un asesesor se contactará a la brevedad.",
+          status: 'success',
+          position: 'bottom-right',
+          duration: null,
+          isClosable: true,
+        })       
       }
       console.log('Ocurrió un error en la cotización')
       console.log(error)

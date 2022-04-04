@@ -16,7 +16,7 @@ const FaqComponent = () => {
       <AccordionItem className={styles.accordion__item}>
         <AccordionItemHeading className={styles.accordion__heading}>
           <AccordionItemButton className={styles.accordion__button}>
-            ¿Por qué Cárbula?
+          {t('porqueCarbulaTitle')}
                     </AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel className={styles.accordion__panel}>
@@ -26,7 +26,7 @@ const FaqComponent = () => {
       <AccordionItem className={styles.accordion__item}>
         <AccordionItemHeading className={styles.accordion__heading}>
           <AccordionItemButton className={styles.accordion__button}>
-          ¿Cómo se define el valor de mi vehículo?
+          {t('valorVehiculoTitle')}
                     </AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel  className={styles.accordion__panel}>
@@ -36,8 +36,8 @@ const FaqComponent = () => {
       <AccordionItem className={styles.accordion__item}>
         <AccordionItemHeading className={styles.accordion__heading}>
           <AccordionItemButton className={styles.accordion__button}>
-          <span className={styles['desktop-only']}>¿La tasación incluye costos por su servicio?</span>
-          <span className={styles['mobile-only']}>¿La tasación incluye su servicio?</span>
+          <span className={styles['desktop-only']}>{t('tasacionTitleDesktop')}</span>
+          <span className={styles['mobile-only']}>{t('tasacionTitleMobile')}</span>
                     </AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel  className={styles.accordion__panel}>
@@ -47,7 +47,7 @@ const FaqComponent = () => {
       <AccordionItem className={styles.accordion__item}>
         <AccordionItemHeading className={styles.accordion__heading}>
           <AccordionItemButton className={styles.accordion__button}>
-          ¿Ustedes compran mi vehículo?
+          {t('ustedesCompranTitle')}
                     </AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel  className={styles.accordion__panel}>
@@ -57,7 +57,7 @@ const FaqComponent = () => {
       <AccordionItem className={styles.accordion__item}>
         <AccordionItemHeading className={styles.accordion__heading}>
           <AccordionItemButton className={styles.accordion__button}>
-          ¿Qué hace un Asesor Cárbula designado?
+          {t('queHaceAsesorTitle')}
                     </AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel  className={styles.accordion__panel}>
@@ -67,7 +67,7 @@ const FaqComponent = () => {
       <AccordionItem className={styles.accordion__item}>
         <AccordionItemHeading className={styles.accordion__heading}>
           <AccordionItemButton className={styles.accordion__button}>
-          ¿Qué sucede si vendo a una {t('consesionaria')}?
+          {t('siVendoConsesionariaTitle')}
                     </AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel  className={styles.accordion__panel}>
@@ -77,7 +77,7 @@ const FaqComponent = () => {
       <AccordionItem className={styles.accordion__item}>
         <AccordionItemHeading className={styles.accordion__heading}>
           <AccordionItemButton className={styles.accordion__button}>
-          ¿Cuándo recibo mi pago?
+          {t('cuandoMePaganTitle')}
                     </AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel  className={styles.accordion__panel}>

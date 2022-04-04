@@ -27,7 +27,7 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
     </div>
     <div className={styles.elements__container}>
       <div className={styles.text__area}>
-        <p style={renderColorStyle()}>Cárbula es la nueva forma de comprar o vender vehículos. Reinventamos esta tarea engorrosa para ofrecerle un servicio sencillo y confiable, tal como necesita el mercado actual.</p>
+        <p style={renderColorStyle()}>{t('nuestroProposito')}</p>
       </div>
       <div className={styles.buttons__container}>
         <Button link><Link style={renderColorStyle()} to="vender" duration={500} offset={-100}>Vender</Link></Button>

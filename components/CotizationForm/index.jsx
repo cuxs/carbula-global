@@ -193,23 +193,23 @@ const CotizationForm = ({
             rematado: 'No',
             external_id,
             country_code: COUNTRY_CODE,
-            mxDueniosAnteriores: '',
+            mxTipoDeFactura: '',
             mxEstadoMatricula: '',
           }}
         >
           {({ handleChange, errors, values, touched, handleSubmit, }) => (
             <form onSubmit={handleSubmit}>
               <div className='form-item'>
-                <label>¿Cuántos dueños ha tenido el auto? (Incluyéndote a ti)</label>
+                <label>¿Qué tipo de factura tiene el auto?</label>
                 <RadioInput
-                  touched={touched.mxDueniosAnteriores}
-                  value={values.mxDueniosAnteriores}
-                  name="mxDueniosAnteriores"
-                  options={['1 dueño', 'Entre 2 y 4 dueños', 'Más de 4 dueños', 'No lo sé']}
+                  touched={touched.mxTipoDeFactura}
+                  value={values.mxTipoDeFactura}
+                  name="mxTipoDeFactura"
+                  options={['Factura original', 'Refactura', 'Carta factura', 'Factura de aseguradora', 'Otro/No lo sé']}
                 />
-                {errors.mxDueniosAnteriores && touched.mxDueniosAnteriores && (
+                {errors.mxTipoDeFactura && touched.mxTipoDeFactura && (
                   <div className="form-error">
-                    {errors.mxDueniosAnteriores}
+                    {errors.mxTipoDeFactura}
                   </div>
                 )}
               </div>

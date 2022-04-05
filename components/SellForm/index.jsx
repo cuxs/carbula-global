@@ -180,6 +180,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       }
       if (error.message === 'Tiempo de espera agotado.'){
         toast({
+          id: 'toast-sellFrom-504',
           title: t('toast504Title'),
           description: t('toast504Description'),
           status: 'success',

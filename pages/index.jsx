@@ -83,8 +83,8 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   useEffect(() => {
     switch (step) {
       case 0:
-        setTitle([`Vendemos ${t('tu')} vehículo`, 'por hasta 25% más de dinero.'])
-        setSubtitle(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.'])
+        setTitle([`${t('titleVendemosL1')}`, `${t('titleVendemosL2')}`])
+        setSubtitle([t('subtitleVendemosL1'), t('subtitleVendemosL2'), t('subtitleVendemosL3'), t('subtitleVendemosL4')])
         break;
       case 1:
         setTitle([`Gracias por completar los datos de ${t('tu')} vehículo`])
@@ -111,7 +111,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
       ar: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" href="https://www.startupchile.org">STARTUP CHILE</a> y <a target="__blank" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> COMPROMETIDA <br /> EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
       cl: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://www.startupchile.org/">STARTUP CHILE</a> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
       uy: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://www.anii.org.uy/">ANII</a>, <a target="__blank" href="https://www.startupchile.org">STARTUP CHILE</a> y <a target="__blank" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
-      mx: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" href="https://www.startupchile.org/">STARTUP CHILE</a> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>
+      mx: <Fragment>SOMOS UN MARKETPLACE POTENCIADO POR EMBARCA, CORFO, ANNI, <a target="__blank" href="https://www.startupchile.org/">STARTUP CHILE</a>, <a target="__blank" href="https://www.seedstars.com/funds/international/">SEEDSTARS INTERNATIONAL</a> Y ESTAMOS COMPROMETIDOS A REINVENTAR LA MANERA DE COMPRAR Y VENDER AUTOS EN EL MUNDO.</Fragment>
     }
     return texts[COUNTRY_CODE]
   }
@@ -127,35 +127,35 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
         <SellForm step={step} setStep={setStep} setOverlayBackground={setOverlayBackground} zonas={zonas} referer={referer} COUNTRY_CODE={COUNTRY_CODE} />
         <section className={styles.section1__container}>
           <div className={styles.text__container}>
-            <h2 className={styles.section1__title}>Nosotros nos ocupamos de todo.</h2>
+            <h2 className={styles.section1__title}>{t('section1Title')}</h2>
+            <h3 className={styles.section1__title}>{t('section1TitleMotivos')}</h3>
             <div className={styles['benefits--desktop']}>
-              <h3>{upperFirst(t('tu'))} tiempo es valioso.</h3>
-              <p>{t('dedicate')}</p>
-              <h3>{upperFirst(t('tu'))} vehículo vale más.</h3>
-              <p>Sin especular y al mejor valor del mercado, vendiendo con nosotros usted gana hasta un 25% más de dinero.</p>
-              <h3>{upperFirst(t('tu'))} tranquilidad es lo principal.</h3>
-              <p>{upperFirst(t('te'))}  garantizamos la cobranza de los fondos, atendemos a los interesados y nos ocupamos de todos los trámites.</p>
+              <h3>{t('section1Subtitle1')}</h3>
+              <p>{t('section1Subtitle1Text')}</p>
+              <h3>{t('section1Subtitle2')}</h3>
+              <p>{t('section1Subtitle2Text')}</p>
+              <h3>{t('section1Subtitle3')}</h3>
+              <p>{t('section1Subtitle3Text')}</p>
             </div>
             <div className={styles['benefits--mobile']}>
               <Carousel dots infinite autoplay>
                 <div className={styles.carousel__step}>
                   <div className={styles.step__title}>
-                    <h3>{upperFirst(t('tu'))} tiempo es valioso.</h3>
+                    <h3>{t('section1Subtitle1')}</h3>
                   </div>
-                  <p>{t('dedicate')}</p>
+                  <p>{t('section1Subtitle1Text')}</p>
                 </div>
                 <div className={styles.carousel__step}>
                   <div className={styles.step__title}>
-                    <h3>{upperFirst(t('tu'))} auto vale más.</h3>
+                    <h3>{t('section1Subtitle2')}</h3>
                   </div>
-                  <p>Sin especular y al mejor valor del mercado, vendiendo con nosotros usted gana hasta un 25% más de dinero.</p>
+                  <p>{t('section1Subtitle2Text')}</p>
                 </div>
                 <div className={styles.carousel__step}>
                   <div className={styles.step__title}>
-
-                    <h3>{upperFirst(t('tu'))} tranquilidad es lo principal.</h3>
+                    <h3>{t('section1Subtitle3')}</h3>
                   </div>
-                  <p>{upperFirst(t('te'))}  garantizamos la cobranza de los fondos, atendemos a los interesados y nos ocupamos de todos los trámites.</p>
+                  <p>{t('section1Subtitle3Text')}</p>
                 </div>
               </Carousel>
             </div>
@@ -170,26 +170,28 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
         <section>
           <div className={styles.section2__container}>
             <div>
-              <h2 className={styles.text__secondary}>{t('contactanos')}</h2>
+              <h3 className={styles.text__secondary}>{t('contactanos')}</h3>
               <div className={styles.image} >
-                <Image src="/images/carbula_contacto.webp" width="465" height="448" alt="Contacto" />
+                <Image src="/images/carbula_contacto.png" width="465" height="448" alt="Contacto" />
               </div>
-              <p>Si tenés alguna pregunta o {t('necesitas')} ayuda,</p>
-              <p> no dudes en contactarnos. ¡Con gusto te ayudaremos!</p>
+              <div>
+                <p>{t('contactanosP1')}</p>
+                <p>{t('contactanosP2')}</p>
+              </div>
               <div className={styles.buttons__container}>
                 <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>
-                <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondary>Whatsapp</Button></a>
+                <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondary><b>Whatsapp</b></Button></a>
               </div>
             </div>
             <div>
-              <h2 className={styles.text__primary}>Dudas frecuentes</h2>
+              <h2 className={styles.text__primary}>{t('faq')}</h2>
               <FaqComponent />
             </div>
           </div>
         </section>
         <section className={styles.section3}>
           <div className={styles.section3__container}>
-            <h2 className={styles.text__primary}>¿Qué opinan nuestros clientes?</h2>
+            <h2 className={styles.text__primary}>{t('testimonios')}</h2>
             <NuestrosClientes country_code={COUNTRY_CODE} />
           </div>
           <div className={styles.somos__text}>{getSomosText()}</div>

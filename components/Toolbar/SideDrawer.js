@@ -20,12 +20,12 @@ const SideDrawer = ({ show, click, }) => {
       <img className={styles['side-drawer__logo']} src="/icons/carbula.svg" alt="logo"/>
       <div style={{ textAlign: 'center' }}>
         <ul>
-          <li><a href="/"><b>Vender</b></a></li>
+        <li><a href="/">Vender</a></li>
           <li>
             <a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Comprar</a>
           </li>
           <li>
-            <a href="https://blog.carbula.cl/blog" target="__blank">Blog</a>
+            <a href={'http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta'} target="__blank">Contacto</a>
           </li>
         </ul>
       </div>

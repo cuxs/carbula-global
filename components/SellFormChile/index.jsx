@@ -11,7 +11,7 @@ import { orderBy } from 'lodash';
 import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
-import { useSpring, animated, useTransition, config } from "react-spring";
+import { useSpring, useTransition, config } from "react-spring";
 import { checkYear, checkZone, getCampania, getSourceType, saveCotization } from '../../utils/helpers';
 
 
@@ -603,11 +603,11 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   return (
     <div className={styles.sellform__container}>
       {sellformTransition((style, item, t, i) => (
-        <animated.div style={style}>
+        <div style={style}>
           <div className={styles.sellform__card}>
             {formikForms[step]}
           </div>
-        </animated.div>
+        </div>
       ))
       }
     </div >

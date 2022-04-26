@@ -784,17 +784,14 @@ const CotizationForm = ({
             <p>{t('autosVendidosEnDias')} <span>{t('autosVendidosPreciosCompetitivos')} </span></p>
           </div>
           <div className={styles.card__prices}>
-            <div className={styles['price__row--grey']}>
-              <p>{t('precioValorDePublicacion')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>
-            </div>
-            <div className={styles['price__row--grey']}>
-              <p>{t('precioMargenParaNegociar')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(marginPrice, 0)}</p>
+            <div className={'styles.price__row'}>
+              <b><p>{t('precioDineroEnMano')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</p></b>
             </div>
             <div className={styles['price__row--grey']}>
               <p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p>
             </div>
-            <div className={styles.price__row}>
-              <p>{t('precioDineroEnMano')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</p>
+            <div className={styles['price__row--grey']}>
+              <p>{t('precioValorDePublicacion')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>
             </div>
           </div>
           <Button primary onClick={handlePriceStep}> Continuar</Button>

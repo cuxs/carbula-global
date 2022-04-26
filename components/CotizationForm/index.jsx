@@ -4,7 +4,7 @@ import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
 import ProgressBar from '../ProgressBar';
-import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES } from '../../utils/constants';
+import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES, IVA } from '../../utils/constants';
 import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
 import Iframe from 'react-iframe'
@@ -70,9 +70,10 @@ const CotizationForm = ({
       row.AUTOPRESSMIN < value && row.AUTOPRESSMAX > value
     ))
     if (cotizationRow) {
-      setPublicationPrice(value + cotizationRow.MARGEN + cotizationRow.FEE)
-      setMarginPrice(cotizationRow.MARGEN)
-      setCarbulaFee(cotizationRow.FEE)
+      const precio = value * 1/(1 - 4.8 * (1 + IVA[COUNTRY_CODE])/100);
+      setPublicationPrice(precio);
+      // setMarginPrice(cotizationRow.MARGEN)
+      setCarbulaFee(precio - value);
     }
   },[cotizationsJSON, setSelectedPrice])
 

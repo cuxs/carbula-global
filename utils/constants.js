@@ -54,5 +54,11 @@ module.exports = {
         "SCALE": 100,
         "BOUND": 8000
     }
+  },
+  IVA: {
+    ar: 0.21,
+    cl: 0.19,
+    mx: 0.16,
+    uy: 0.22 
   }
 }

@@ -1,5 +1,5 @@
 import format from 'format-number'
-import { SOURCES } from './constants'
+import { SOURCES, ROUNDING_BOUNDS } from './constants'
 import dayjs from 'dayjs'
 import { lowerCase } from 'lodash'
 
@@ -509,4 +509,18 @@ export const getFacebookLink = country_code=>{
     uy: 'https://www.facebook.com/C%C3%A1rbula-Uruguay-108353218349585/'
   }
   return urls[country_code]
+}
+
+export const thousands = (number, decimals, decPoint = ',', thousandsSep = '.') => {
+  if (number === 0) {
+    return '0,00';
+  }
+  return format({
+    round: decimals, integerSeparator: thousandsSep, decimal: ',', padRight: decimals,
+  })(number);
+}
+
+export const redondeo = (number) => {
+  //ROUNDING_BOUNDS[country_code]
+  return Math.trunc(number);
 }

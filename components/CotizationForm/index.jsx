@@ -1,10 +1,10 @@
 import React, { useState, Fragment, useCallback, useEffect } from 'react';
-import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX } from '../../utils/helpers';
+import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX, redondeo } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
 import ProgressBar from '../ProgressBar';
-import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES, IVA } from '../../utils/constants';
+import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES, IVA, CARBULA_FEE } from '../../utils/constants';
 import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
 import Iframe from 'react-iframe'
@@ -21,6 +21,7 @@ import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONar from '../../public/autopress-ar.json'
 import cotizationJSONuy from '../../public/autopress-uy.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
+import { round } from 'lodash';
 
 const CotizationForm = ({
   selectedPrice,
@@ -70,10 +71,13 @@ const CotizationForm = ({
       row.AUTOPRESSMIN < value && row.AUTOPRESSMAX > value
     ))
     if (cotizationRow) {
-      const precio = value * 1/(1 - 4.8 * (1 + IVA[COUNTRY_CODE])/100);
-      setPublicationPrice(precio);
+      const regularFee = value * (1 / (1 - (CARBULA_FEE[COUNTRY_CODE] * (1 + IVA[COUNTRY_CODE]) / 100)) -1);
+      const roundedFee = redondeo(regularFee);
+
+      setSelectedPrice(value);
+      setCarbulaFee(roundedFee);
+      setPublicationPrice(value + roundedFee);
       // setMarginPrice(cotizationRow.MARGEN)
-      setCarbulaFee(precio - value);
     }
   },[cotizationsJSON, setSelectedPrice])
 

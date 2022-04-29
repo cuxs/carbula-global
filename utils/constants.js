@@ -60,5 +60,17 @@ module.exports = {
     cl: 0.19,
     mx: 0.16,
     uy: 0.22 
+  },
+  CARBULA_FEE: {
+    ar: 4.8,
+    cl: 4,
+    mx: 4.8,
+    uy: 4.8 
+  },
+  ROUNDING_BOUNDS: {
+    ar: 0.21,
+    cl: 0.19,
+    mx: 0.16,
+    uy: 0.22 
   }
 }

@@ -68,9 +68,9 @@ module.exports = {
     uy: 4.8 
   },
   ROUNDING_BOUNDS: {
-    ar: 0.21,
-    cl: 0.19,
-    mx: 0.16,
-    uy: 0.22 
+    ar: 1000,
+    cl: 10000,
+    mx: 100,
+    uy: 10 
   }
 }

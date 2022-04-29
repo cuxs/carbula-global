@@ -520,7 +520,6 @@ export const thousands = (number, decimals, decPoint = ',', thousandsSep = '.') 
   })(number);
 }
 
-export const redondeo = (number) => {
-  //ROUNDING_BOUNDS[country_code]
-  return Math.trunc(number);
+export const redondeo = (amount, country_code) => {
+  return Math.round(amount/ROUNDING_BOUNDS[country_code])*ROUNDING_BOUNDS[country_code];
 }

@@ -72,7 +72,7 @@ const CotizationForm = ({
     ))
     if (cotizationRow) {
       const regularFee = value * (1 / (1 - (CARBULA_FEE[COUNTRY_CODE] * (1 + IVA[COUNTRY_CODE]) / 100)) -1);
-      const roundedFee = redondeo(regularFee);
+      const roundedFee = redondeo(regularFee, COUNTRY_CODE);
 
       setSelectedPrice(value);
       setCarbulaFee(roundedFee);

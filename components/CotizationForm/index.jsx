@@ -4,7 +4,7 @@ import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
 import ProgressBar from '../ProgressBar';
-import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES, IVA, CARBULA_FEE } from '../../utils/constants';
+import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES, IVA, CARBULA_FEE, CARBULA_FEE_MINIMUM } from '../../utils/constants';
 import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
 import Iframe from 'react-iframe'
@@ -72,7 +72,13 @@ const CotizationForm = ({
     ))
     if (cotizationRow) {
       const regularFee = value * (1 / (1 - (CARBULA_FEE[COUNTRY_CODE] * (1 + IVA[COUNTRY_CODE]) / 100)) -1);
-      const roundedFee = redondeo(regularFee, COUNTRY_CODE);
+      let roundedFee = redondeo(regularFee, COUNTRY_CODE);
+      let isMinimum = false;
+
+      if(roundedFee < CARBULA_FEE_MINIMUM[COUNTRY_CODE]){
+        roundedFee = CARBULA_FEE_MINIMUM[COUNTRY_CODE];
+        isMinimum = true;
+      }
 
       setSelectedPrice(value);
       setCarbulaFee(roundedFee);
@@ -793,7 +799,8 @@ const CotizationForm = ({
               <p>{t('precioDineroEnMano')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</p>
             </div>
             <div className={styles['price__row--grey']}>
-              <p>{t('precioComisiónCarbula')}</p><p>{CARBULA_FEE[COUNTRY_CODE]}% +IVA</p>
+            {/* <p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p> */}
+            <p>{t('precioComisiónCarbula')}</p>{this.isMinimum ? <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(CARBULA_FEE_MINIMUM[COUNTRY_CODE], 0)}</p> : <p>{CARBULA_FEE[COUNTRY_CODE]}% +IVA</p>}
             </div>
             <div className={styles['price__row--grey']}>
               <p>{t('precioValorDePublicacion')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>

@@ -248,6 +248,7 @@ export const getCalendlyURL = (country_code, email, name, phone) => {
     'mx': `https://calendly.com/carbulamex/visita?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}`,
     'uy': `https://calendly.com/carbula-uy/agendar-visita?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}&a1=${phone}`,
     'cl': `https://calendly.com/carbula-cl/agendar-inspeccion?month=${dayjs().format('YYYY-MM')}&hide_gdpr_banner=1&text_color=333333&primary_color=3074f1&email=${email}&name=${name}&a1=${phone}`
+    //BSAS
   }
   return urls[country_code]
 }

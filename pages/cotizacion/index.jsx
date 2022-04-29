@@ -126,7 +126,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
     let timeout;
     async function checkMeeting() {
       try {
-        const { data } = await checkScheduleMeeting(cotizationData.external_id, cotizationData.email, COUNTRY_CODE)
+        const { data } = await checkScheduleMeeting(cotizationData.external_id, cotizationData.email, COUNTRY_CODE) //BSAS - revisar la API
         if (!data.data || isEmpty(data.data) && shouldFetchMeetingData) {
           timeout = setTimeout(() => {
             checkMeeting()

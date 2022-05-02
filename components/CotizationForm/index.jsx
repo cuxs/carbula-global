@@ -7,21 +7,18 @@ import ProgressBar from '../ProgressBar';
 import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES, IVA, CARBULA_FEE, CARBULA_FEE_MINIMUM } from '../../utils/constants';
 import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
-import Iframe from 'react-iframe'
 import RadioInput from '../RadioInput';
 import FaqCotization from '../FaqCotization';
 import { updateLeadPrices, rejectSellTime, updateHubspotProperty } from '../../utils/fetches';
 import Modal from '../Modal';
 import NumberFormat from 'react-number-format';
 import { InlineWidget } from "react-calendly";
-import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONar from '../../public/autopress-ar.json'
 import cotizationJSONuy from '../../public/autopress-uy.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
-import { round } from 'lodash';
 
 const CotizationForm = ({
   selectedPrice,
@@ -68,14 +65,13 @@ const CotizationForm = ({
   }, [step])
 
   const handlePriceChange = useCallback((value) => {
-    setSelectedPrice(value)    
+    setSelectedPrice(value);  
     const regularFee = value * (1 / (1 - (CARBULA_FEE[COUNTRY_CODE] * (1 + IVA[COUNTRY_CODE]) / 100)) -1);
       let roundedFee = redondeo(regularFee, COUNTRY_CODE);
-      if(roundedFee <= CARBULA_FEE_MINIMUM[COUNTRY_CODE]){
+      if(roundedFee <= CARBULA_FEE_MINIMUM[COUNTRY_CODE]) {
         roundedFee = CARBULA_FEE_MINIMUM[COUNTRY_CODE];
         setIsMinimum(true);
-      }
-      else{
+      } else {
         setIsMinimum(false);
       }
 
@@ -783,11 +779,9 @@ const CotizationForm = ({
               <p>{t('precioDineroEnMano')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</p>
             </div>
             <div className={styles['price__row--grey']}>
-            {/* <p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p> */}
-            {/* <p>{t('precioComisiónCarbula')}</p>{this.isMinimum ? <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(CARBULA_FEE_MINIMUM[COUNTRY_CODE], 0)}</p> : <p>{CARBULA_FEE[COUNTRY_CODE]}% +IVA</p>} */}
-            {isMinimum
-              ? <Fragment><p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p></Fragment>
-              : <Fragment><p>{t('precioComisiónCarbula')}</p><p>{CARBULA_FEE[COUNTRY_CODE]}% +IVA</p></Fragment>}
+              { isMinimum
+                ? <Fragment><p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p></Fragment>
+                : <Fragment><p>{t('precioComisiónCarbula')}</p><p>{CARBULA_FEE[COUNTRY_CODE]}% +IVA</p></Fragment>}
             </div>
             <div className={styles['price__row--grey']}>
               <p>{t('precioValorDePublicacion')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>

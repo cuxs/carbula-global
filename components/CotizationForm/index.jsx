@@ -35,7 +35,8 @@ const CotizationForm = ({
   grantedPrice,
   variablePrices: { _publicationPrice,
     _marginPrice,
-    _carbulaFee, },
+    _carbulaFee, 
+    _isMinimum},
   external_id,
   brand,
   year,
@@ -58,6 +59,7 @@ const CotizationForm = ({
   const [publicationPrice, setPublicationPrice] = useState(_publicationPrice)
   const [marginPrice, setMarginPrice] = useState(_marginPrice);
   const [carbulaFee, setCarbulaFee] = useState(_carbulaFee);
+  const [isMinimum, setIsMinimum] = useState(_isMinimum);
   const [formValues, setFormValues] = useState({});
   const { t } = useTranslation('CotizationForm')
   const router = useRouter()
@@ -66,25 +68,20 @@ const CotizationForm = ({
   }, [step])
 
   const handlePriceChange = useCallback((value) => {
-    setSelectedPrice(value)
-    const cotizationRow = cotizationsJSON().find((row) => (
-      row.AUTOPRESSMIN < value && row.AUTOPRESSMAX > value
-    ))
-    if (cotizationRow) {
-      const regularFee = value * (1 / (1 - (CARBULA_FEE[COUNTRY_CODE] * (1 + IVA[COUNTRY_CODE]) / 100)) -1);
+    setSelectedPrice(value)    
+    const regularFee = value * (1 / (1 - (CARBULA_FEE[COUNTRY_CODE] * (1 + IVA[COUNTRY_CODE]) / 100)) -1);
       let roundedFee = redondeo(regularFee, COUNTRY_CODE);
-      let isMinimum = false;
-
-      if(roundedFee < CARBULA_FEE_MINIMUM[COUNTRY_CODE]){
+      if(roundedFee <= CARBULA_FEE_MINIMUM[COUNTRY_CODE]){
         roundedFee = CARBULA_FEE_MINIMUM[COUNTRY_CODE];
-        isMinimum = true;
+        setIsMinimum(true);
+      }
+      else{
+        setIsMinimum(false);
       }
 
       setSelectedPrice(value);
       setCarbulaFee(roundedFee);
       setPublicationPrice(value + roundedFee);
-      // setMarginPrice(cotizationRow.MARGEN)
-    }
   },[cotizationsJSON, setSelectedPrice])
 
   const getCotizationEdgePrices = ()=>{
@@ -93,17 +90,6 @@ const CotizationForm = ({
     return [min, max]
 
   }
-  // const preciosOptions = () => {
-  //   const precio = parseInt(selectedPrice, 10)
-  //   const limit = 4000000;
-  //   let variablePrice = precio - limit <= 200000 ? 200000 : precio - limit;
-  //   let preciosArray = []
-  //   while (variablePrice < precpio + limit) {
-  //     preciosArray.push({ label: `$ ${formatNumber(variablePrice + 150000, 0)}`, value: variablePrice + 150000 },)
-  //     variablePrice += 50000
-  //   }
-  //   return preciosArray;
-  // }
   const handleCondicionSubmit = (values, actions) => {
     try {
       updateHubspotProperty(values)
@@ -113,9 +99,6 @@ const CotizationForm = ({
     if (values.owners && values.owners === '5 o más') {
       return setStep('end-categoria')
     }
-    // if (values.carStatus && values.carStatus[0] === 'Con harto uso') {
-    //   return setStep('end-categoria')
-    // }
     if(COUNTRY_CODE !== 'mx'){
       if (values.prendado && values.prendado === 'Sí') {
         return setStep('end-prendado')
@@ -141,6 +124,7 @@ const CotizationForm = ({
       publicationPrice: _publicationPrice,
       marginPrice: _marginPrice,
       carbulaFee: _carbulaFee,
+      isMinimum: _isMinimum,
       grantedPrice,
       montoCliente: selectedPrice,
       marginPrice_client: marginPrice,
@@ -800,7 +784,10 @@ const CotizationForm = ({
             </div>
             <div className={styles['price__row--grey']}>
             {/* <p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p> */}
-            <p>{t('precioComisiónCarbula')}</p>{this.isMinimum ? <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(CARBULA_FEE_MINIMUM[COUNTRY_CODE], 0)}</p> : <p>{CARBULA_FEE[COUNTRY_CODE]}% +IVA</p>}
+            {/* <p>{t('precioComisiónCarbula')}</p>{this.isMinimum ? <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(CARBULA_FEE_MINIMUM[COUNTRY_CODE], 0)}</p> : <p>{CARBULA_FEE[COUNTRY_CODE]}% +IVA</p>} */}
+            {isMinimum
+              ? <Fragment><p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p></Fragment>
+              : <Fragment><p>{t('precioComisiónCarbula')}</p><p>{CARBULA_FEE[COUNTRY_CODE]}% +IVA</p></Fragment>}
             </div>
             <div className={styles['price__row--grey']}>
               <p>{t('precioValorDePublicacion')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>

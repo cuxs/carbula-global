@@ -1,20 +1,18 @@
 import React, { useState, Fragment, useCallback, useEffect } from 'react';
-import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX } from '../../utils/helpers';
+import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX, redondeo } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
 import ProgressBar from '../ProgressBar';
-import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES } from '../../utils/constants';
+import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES, IVA, CARBULA_FEE, CARBULA_FEE_MINIMUM } from '../../utils/constants';
 import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
-import Iframe from 'react-iframe'
 import RadioInput from '../RadioInput';
 import FaqCotization from '../FaqCotization';
 import { updateLeadPrices, rejectSellTime, updateHubspotProperty } from '../../utils/fetches';
 import Modal from '../Modal';
 import NumberFormat from 'react-number-format';
 import { InlineWidget } from "react-calendly";
-import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import cotizationJSONcl from '../../public/autopress-cl.json'
@@ -34,7 +32,8 @@ const CotizationForm = ({
   grantedPrice,
   variablePrices: { _publicationPrice,
     _marginPrice,
-    _carbulaFee, },
+    _carbulaFee, 
+    _isMinimum},
   external_id,
   brand,
   year,
@@ -57,6 +56,7 @@ const CotizationForm = ({
   const [publicationPrice, setPublicationPrice] = useState(_publicationPrice)
   const [marginPrice, setMarginPrice] = useState(_marginPrice);
   const [carbulaFee, setCarbulaFee] = useState(_carbulaFee);
+  const [isMinimum, setIsMinimum] = useState(_isMinimum);
   const [formValues, setFormValues] = useState({});
   const { t } = useTranslation('CotizationForm')
   const router = useRouter()
@@ -65,15 +65,19 @@ const CotizationForm = ({
   }, [step])
 
   const handlePriceChange = useCallback((value) => {
-    setSelectedPrice(value)
-    const cotizationRow = cotizationsJSON().find((row) => (
-      row.AUTOPRESSMIN < value && row.AUTOPRESSMAX > value
-    ))
-    if (cotizationRow) {
-      setPublicationPrice(value + cotizationRow.MARGEN + cotizationRow.FEE)
-      setMarginPrice(cotizationRow.MARGEN)
-      setCarbulaFee(cotizationRow.FEE)
-    }
+    setSelectedPrice(value);  
+    const regularFee = value * (1 / (1 - (CARBULA_FEE[COUNTRY_CODE] * (1 + IVA[COUNTRY_CODE]) / 100)) -1);
+      let roundedFee = redondeo(regularFee, COUNTRY_CODE);
+      if(roundedFee <= CARBULA_FEE_MINIMUM[COUNTRY_CODE]) {
+        roundedFee = CARBULA_FEE_MINIMUM[COUNTRY_CODE];
+        setIsMinimum(true);
+      } else {
+        setIsMinimum(false);
+      }
+
+      setSelectedPrice(value);
+      setCarbulaFee(roundedFee);
+      setPublicationPrice(value + roundedFee);
   },[cotizationsJSON, setSelectedPrice])
 
   const getCotizationEdgePrices = ()=>{
@@ -82,17 +86,6 @@ const CotizationForm = ({
     return [min, max]
 
   }
-  // const preciosOptions = () => {
-  //   const precio = parseInt(selectedPrice, 10)
-  //   const limit = 4000000;
-  //   let variablePrice = precio - limit <= 200000 ? 200000 : precio - limit;
-  //   let preciosArray = []
-  //   while (variablePrice < precpio + limit) {
-  //     preciosArray.push({ label: `$ ${formatNumber(variablePrice + 150000, 0)}`, value: variablePrice + 150000 },)
-  //     variablePrice += 50000
-  //   }
-  //   return preciosArray;
-  // }
   const handleCondicionSubmit = (values, actions) => {
     try {
       updateHubspotProperty(values)
@@ -102,9 +95,6 @@ const CotizationForm = ({
     if (values.owners && values.owners === '5 o más') {
       return setStep('end-categoria')
     }
-    // if (values.carStatus && values.carStatus[0] === 'Con harto uso') {
-    //   return setStep('end-categoria')
-    // }
     if(COUNTRY_CODE !== 'mx'){
       if (values.prendado && values.prendado === 'Sí') {
         return setStep('end-prendado')
@@ -130,6 +120,7 @@ const CotizationForm = ({
       publicationPrice: _publicationPrice,
       marginPrice: _marginPrice,
       carbulaFee: _carbulaFee,
+      isMinimum: _isMinimum,
       grantedPrice,
       montoCliente: selectedPrice,
       marginPrice_client: marginPrice,
@@ -784,17 +775,16 @@ const CotizationForm = ({
             <p>{t('autosVendidosEnDias')} <span>{t('autosVendidosPreciosCompetitivos')} </span></p>
           </div>
           <div className={styles.card__prices}>
-            <div className={styles['price__row--grey']}>
-              <p>{t('precioValorDePublicacion')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>
-            </div>
-            <div className={styles['price__row--grey']}>
-              <p>{t('precioMargenParaNegociar')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(marginPrice, 0)}</p>
-            </div>
-            <div className={styles['price__row--grey']}>
-              <p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p>
-            </div>
             <div className={styles.price__row}>
               <p>{t('precioDineroEnMano')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</p>
+            </div>
+            <div className={styles['price__row--grey']}>
+              { isMinimum
+                ? <Fragment><p>{t('precioComisiónCarbula')}</p><p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(carbulaFee, 0)}</p></Fragment>
+                : <Fragment><p>{t('precioComisiónCarbula')}</p><p>{CARBULA_FEE[COUNTRY_CODE]}% +IVA</p></Fragment>}
+            </div>
+            <div className={styles['price__row--grey']}>
+              <p>{t('precioValorDePublicacion')}</p> <p>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(publicationPrice, 0)}</p>
             </div>
           </div>
           <Button primary onClick={handlePriceStep}> Continuar</Button>

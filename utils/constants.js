@@ -54,5 +54,29 @@ module.exports = {
         "SCALE": 100,
         "BOUND": 8000
     }
+  },
+  IVA: {
+    ar: 0.21,
+    cl: 0.19,
+    mx: 0.16,
+    uy: 0.22 
+  },
+  CARBULA_FEE: {
+    ar: 4.8,
+    cl: 4,
+    mx: 4.8,
+    uy: 4.8 
+  },
+  CARBULA_FEE_MINIMUM: {
+    ar: 100000,
+    cl: 500000,
+    mx: 10000,
+    uy: 600
+  },
+  ROUNDING_BOUNDS: {
+    ar: 1000,
+    cl: 10000,
+    mx: 100,
+    uy: 10 
   }
 }

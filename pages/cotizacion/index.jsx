@@ -179,10 +179,10 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               <h2>Valor promedio</h2>
               <h3>para {COUNTRY_CODE === 'mx' ? 'tu' : 'su'} {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
             </animated.div>
-            {cotizationData.retake_price < cotizationData.granted_price && <animated.div style={priceProps} className={styles.price__comparison}>
-              {cotizationData.retake_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('priceComparison.unaConsesionaria')}</h4><h3>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(cotizationData.retake_price, 0)}</h3></div>}
+            <animated.div style={priceProps} className={styles.price__comparison}>
+              {cotizationData.retake_price && cotizationData.retake_price < cotizationData.granted_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('priceComparison.unaConsesionaria')}</h4><h3>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(cotizationData.retake_price, 0)}</h3></div>}
               <div className={styles.carbula__price}><h4>{t('priceComparison.withCarbula')}</h4><h3>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</h3></div>
-            </animated.div>}
+            </animated.div>
             <animated.div style={faqProps}>
               {width > 769 && <FaqCotization />}
             </animated.div>

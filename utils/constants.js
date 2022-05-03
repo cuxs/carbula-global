@@ -69,9 +69,9 @@ module.exports = {
   },
   CARBULA_FEE_MINIMUM: {
     ar: 100000,
-    cl: 400000,
+    cl: 500000,
     mx: 10000,
-    uy: 500
+    uy: 600
   },
   ROUNDING_BOUNDS: {
     ar: 1000,

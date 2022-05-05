@@ -436,6 +436,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
             _publicationPrice: cotizationData.precioPublicacion,
             _marginPrice: cotizationData.margen,
             _carbulaFee: cotizationData.comisionCarbula,
+            _isMinimum: cotizationData.isMinimum
           }}
           brand={cotizationData.brand}
           year={cotizationData.year}

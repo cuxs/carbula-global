@@ -2,7 +2,7 @@ import React from "react";
 import Link from 'next/link'
 import styles from './toolbar.module.scss'
 import classNames from 'classnames/bind';
-import { getCatalogoURL, getCountryCode } from "../../utils/helpers";
+import { getCatalogoURL, getCountryCode, getWhatsappNumber } from "../../utils/helpers";
 import {useRouter} from 'next/router';
 
 
@@ -25,7 +25,7 @@ const SideDrawer = ({ show, click, }) => {
             <a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Comprar</a>
           </li>
           <li>
-            <a href={'http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta'} target="__blank">Contacto</a>
+            <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank">Contacto</a>
           </li>
         </ul>
       </div>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import styles from './toolbar.module.scss';
 import classNames from 'classnames/bind';
 
-import { animated, useSpring } from 'react-spring';
+import { useSpring } from 'react-spring';
 import { getCatalogoURL, getCountryCode, getWhatsappNumber } from "../../utils/helpers";
 import {useRouter} from 'next/router';
 
@@ -38,7 +38,7 @@ const Toolbar = ({ drawerClickHandler }) => {
 
   return (
     <header className={toolbarClassName}>
-      <animated.div className={styles['toolbar__container-items']} style={props}>
+      <div className={styles['toolbar__container-items']} style={props}>
         <div><Link href="/">
           <div className={styles.toolbar__logo}>
             <img src="/images/logo.svg"  alt="logo"/>
@@ -50,7 +50,7 @@ const Toolbar = ({ drawerClickHandler }) => {
           <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank">Contacto</a>
           {/* <a href="https://blog.carbula.cl/blog" target="__blank">Blog</a> */}
         </div>
-      </animated.div>
+      </div>
       <div className={styles['toolbar__toggle-button']}>
         <DrawerToggleButton click={drawerClickHandler} />
       </div>

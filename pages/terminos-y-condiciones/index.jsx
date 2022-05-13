@@ -9,13 +9,13 @@ const TerminosCondiciones = () => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="Términos, condiciones y políticas de privacidad | Cárbula Argentina" />
+        <Head title="Políticas de privacidad | Cárbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
         <h1>Cárbula Autos Argentina</h1>
         </div>
         <div className={styles.terminos}>
-          <h4>Aceptación de los términos</h4>
+          <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
           <p>Al usar nuestra plataforma y los servicios que proponemos, usted acepta los términos y condiciones establecidos en el presente apartado. Estos Términos de uso ("Términos") rigen su acceso y uso de los servicios y propuestas (colectivamente, "Servicios") por www.carbula.com o www.carbula.com.ar, incluidas nuestras filiales y subsidiarias (colectivamente, “CÁRBULA”, "Cárbula", "nosotros”, "Nosotros" o "nuestro"). Estos Términos se aplican a todos los Servicios de CÁRBULA, incluido cualquier sitio web o aplicación móvil que ponemos a su disposición.Por favor, lea atentamente los términos de servicios detallados en este apartado: Al utilizar los servicios, acepta estar obligado por estos términos. Si no está de acuerdo con éstos términos, no puede acceder o utilizar los servicios que propone Cárbula S.A.S., CUIT Nº 30-71643870-4, con domicilio fiscal en Olegario Andrade 315, Mendoza, Argentina (en adelante “CÁRBULA”).</p>
           <p>Todas las referencias a "usted", "su", “vendedor”, “dueño directo” o “consignante”, según corresponda, se refieren a la persona que accede, participa y/o utiliza los servicios de CÁRBULA, de cualquier modo y/o manera. Si utiliza los Servicios en nombre de una entidad u otra persona, declara y garantiza que tiene la autoridad suficiente para obligar a esa entidad o persona que invoca. Su aceptación de los términos de servicios detallados en este apartado, se considerará una aceptación por parte de esa entidad o persona, y "usted" invoca a esa entidad, sus directores, funcionarios, empleados y/o a cualquier apoderado.</p>
           <h4>Elegibilidad y Foco</h4>
@@ -70,13 +70,13 @@ const TerminosCondiciones = () => {
   if (router.locale === 'es-CL') {
     return (
       <div>
-        <Head title="Términos, condiciones y políticas de privacidad | Cárbula Chile" />
+        <Head title="Políticas de privacidad | Cárbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
           <h1>Cárbula Autos Chile</h1>
         </div>
         <div className={styles.terminos}>
-          <h4>Aceptación de los términos</h4>
+         <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
           <p>Al usar nuestra plataforma y los servicios que proponemos, usted acepta los términos y condiciones establecidos en el presente apartado. Estos Términos de uso ("Términos") rigen su acceso y uso de los servicios y propuestas (colectivamente, "Servicios") por www.carbula.com o www.carbula.cl, incluidas nuestras filiales y subsidiarias (colectivamente, “CÁRBULA”, "Cárbula", "nosotros”, "Nosotros" o "nuestro"). Estos Términos se aplican a todos los Servicios de CÁRBULA, incluido cualquier sitio web o aplicación móvil que ponemos a su disposición.Por favor, lea atentamente los términos de servicios detallados en este apartado: Al utilizar los servicios, acepta estar obligado por estos términos. Si no está de acuerdo con éstos términos, no puede acceder o utilizar los servicios que propone Cárbula S.P.A., RUT Nº 77058168-0, con domicilio fiscal en La Capitanía 80, Oficina 108, Las Condes, Santiago de Chile y comercial en Monjitas 565, Santiago Centro, Santiago de Chile (en adelante “CÁRBULA”).</p>
           <p>Todas las referencias a "usted", "su", “vendedor”, “dueño directo” o “consignante”, según corresponda, se refieren a la persona que accede, participa y/o utiliza los servicios de CÁRBULA, de cualquier modo y/o manera. Si utiliza los Servicios en nombre de una entidad u otra persona, declara y garantiza que tiene la autoridad suficiente para obligar a esa entidad o persona que invoca. Su aceptación de los términos de servicios detallados en este apartado, se considerará una aceptación por parte de esa entidad o persona, y "usted" invoca a esa entidad, sus directores, funcionarios, empleados y/o a cualquier apoderado.</p>
           <h4>Elegibilidad y Foco</h4>
@@ -131,13 +131,13 @@ const TerminosCondiciones = () => {
   if (router.locale === 'es-MX') {
     return (
       <div>
-        <Head title="Términos, condiciones y políticas de privacidad | Cárbula México" />
+        <Head title="Políticas de privacidad | Cárbula Autos México" />
         <Nav />
         <div className={styles.header}>
         <h1>Cárbula Autos México</h1>
         </div>
         <div className={styles.terminos}>
-          <h4>Aceptación de los términos</h4>
+          <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
           <p>Al usar nuestra plataforma y los servicios que proponemos, usted acepta los términos y condiciones establecidos en el presente apartado. Estos Términos de uso ("Términos") rigen su acceso y uso de los servicios y propuestas (colectivamente, "Servicios") por www.carbula.com o www.carbula.cl, incluidas nuestras filiales y subsidiarias (colectivamente, “CÁRBULA”, "Cárbula", "nosotros”, "Nosotros" o "nuestro"). Estos Términos se aplican a todos los Servicios de CÁRBULA, incluido cualquier sitio web o aplicación móvil que ponemos a su disposición.Por favor, lea atentamente los términos de servicios detallados en este apartado: Al utilizar los servicios, acepta estar obligado por estos términos. Si no está de acuerdo con éstos términos, no puede acceder o utilizar los servicios que propone Cárbula S.P.A., RUT Nº 77058168-0, con domicilio fiscalen La Capitanía 80, Oficina 108, Las Condes, Santiago de Chile y comercial en Monjitas 565, Santiago Centro, Santiago de Chile (en adelante “CÁRBULA”).</p>
           <p>Todas las referencias a "usted", "su", “vendedor”, “dueño directo” o “consignante”, según corresponda, se refieren a la persona que accede, participa y/o utiliza los servicios de CÁRBULA, de cualquier modo y/o manera. Si utiliza los Servicios en nombre de una entidad u otra persona, declara y garantiza que tiene la autoridad suficiente para obligar a esa entidad o persona que invoca. Su aceptación de los términos de servicios detallados en este apartado, se considerará una aceptación por parte de esa entidad o persona, y "usted" invoca a esa entidad, sus directores, funcionarios, empleados y/o a cualquier apoderado.</p>
           <h4>Elegibilidad y Foco</h4>
@@ -191,13 +191,13 @@ const TerminosCondiciones = () => {
   }
   if (router.locale === 'es-UY') {
     return <div>
-        <Head title="Términos, condiciones y políticas de privacidad | Cárbula Uruguay" />
+        <Head title="Políticas de privacidad | Cárbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
       <h1>Cárbula Autos Uruguay</h1>
       </div>
       <div className={styles.terminos}>
-          <h4>Aceptación de los términos</h4>
+         <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
           <p>Al usar nuestra plataforma y los servicios que proponemos, usted acepta los términos y condiciones establecidos en el presente apartado. Estos Términos de uso ("Términos") rigen su acceso y uso de los servicios y propuestas (colectivamente, "Servicios") por www.carbula.com o www.carbula.com.ar, incluidas nuestras filiales y subsidiarias (colectivamente, “CÁRBULA”, "Cárbula", "nosotros”, "Nosotros" o "nuestro"). Estos Términos se aplican a todos los Servicios de CÁRBULA, incluido cualquier sitio web o aplicación móvil que ponemos a su disposición.Por favor, lea atentamente los términos de servicios detallados en este apartado: Al utilizar los servicios, acepta estar obligado por estos términos. Si no está de acuerdo con éstos términos, no puede acceder o utilizar los servicios que propone CÁRBULA S.A.S, RUT Nº 219033680012
           con domicilio fiscal en 18 de julio 1296, Montevideo, Uruguay (en adelante “CÁRBULA”).</p>
           <p>Todas las referencias a "usted", "su", “vendedor”, “dueño directo” o “consignante”, según corresponda, se refieren a la persona que accede, participa y/o utiliza los servicios de CÁRBULA, de cualquier modo y/o manera. Si utiliza los Servicios en nombre de una entidad u otra persona, declara y garantiza que tiene la autoridad suficiente para obligar a esa entidad o persona que invoca. Su aceptación de los términos de servicios detallados en este apartado, se considerará una aceptación por parte de esa entidad o persona, y "usted" invoca a esa entidad, sus directores, funcionarios, empleados y/o a cualquier apoderado.</p>

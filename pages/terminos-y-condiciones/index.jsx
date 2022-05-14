@@ -2,7 +2,6 @@ import styles from './terminos.module.scss'
 import Head from '../../components/head';
 import Nav from '../../components/nav';
 import { useRouter } from 'next/router';
-import { Divider } from 'antd';
 
 const TerminosCondiciones = () => {
   const router = useRouter()

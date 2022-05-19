@@ -57,9 +57,17 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   )
   const router = useRouter()
 
-  function parseGeodivision(countryCode){
+  let countryData = {geodivisions:[], locations:[]};
+
+  const setCountryData = (countryCode) => {
     const CountryData = require("../../public/country-" + countryCode + ".json")
 
+    countryData.geodivisions = parseGeodivision(CountryData)
+
+    Object.freeze(CountryData)
+  }
+
+  function parseGeodivision(CountryData){
     if (!CountryData) return [];
     return CountryData.COUNTRY_GEODIVISIONS.map(row => ({
       label: row.GEODIVISION_NAME,
@@ -245,32 +253,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
     }
   ]
 
-  // const CountryData = require("../../public/country-" + COUNTRY_CODE + ".json")
-  // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', CountryData);
-  // console.log('BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB', CountryData.COUNTRY_GEODIVISIONS[0].GEODIVISION_NAME);
-  
-  // let geodivisions = [];
-  // for (let i=0; i<3; i++){
-  //   geodivisions.push(CountryData.COUNTRY_GEODIVISIONS[i].GEODIVISION_NAME)
-  // }
-  // console.log('CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC', geodivisions)
-
-  // const getGeodivisions = () => {
-  //   let geodivisions = [];
-  //   for (let i=0; i<3; i++){
-  //     geodivisions.push(CountryData.COUNTRY_GEODIVISIONS[i].GEODIVISION_NAME)
-  //   }
-  //   return result
-  // }
-
-  // const getLocations = () => {
-  //   let locations = [];
-  //   for (let i in currentCountryData.COUNTRY_GEODIVISIONS){
-  //     locations.push(COUNTRY_GEODIVISIONS[i])
-  //   }
-  //   return locations
-  // }
-
   const renderMask = ()=>{
     const masks = {
       'ar': '+54 9 nnn nnnn nnnn',
@@ -280,6 +262,8 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
     }
     return masks[COUNTRY_CODE]
   }
+
+  setCountryData(COUNTRY_CODE);
 
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
@@ -549,7 +533,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
               <Select
                 onBlur={handleBlur}
                 name="location"
-                options={parseGeodivision(COUNTRY_CODE)}
+                options={countryData.geodivisions}
                 large
                 placeholder={t('inLocalidad')}
                 onChange={(option) => setFieldValue('location', option.value)}

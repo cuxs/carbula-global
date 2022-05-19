@@ -1,0 +1,362 @@
+{
+    "COUNTRY_GEODIVISIONS": [
+        {
+            "GEODIVISION_NAME": "Buenos Aires",
+            "GEODIVISION_CODENAME":"BA",
+            "GEODIVISION_LOCATIONS": [
+                {
+                    "LOCATION_NAME": "Caballito",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_BA_"
+                },
+                {
+                    "LOCATION_NAME": "Retiro",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_BA_"
+                },
+                {
+                    "LOCATION_NAME": "Constitución",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_BA_"
+                },
+                {
+                    "LOCATION_NAME": "Boedo",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_BA_"
+                },
+                {
+                    "LOCATION_NAME": "San Cristobal",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_BA_"
+                },
+                {
+                    "LOCATION_NAME": "Palermo",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Nuñez",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Colegiales",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Coghlan",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Balvanera",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "San Fernando",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "San Nicolás",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Parque Chas",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Villa Ortúzar",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Villa Urquiza",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Recoleta",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Paternal",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Saavedra",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Belgrano",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "San Telmo",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Puerto Madero",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Agronomía",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "San Isidro",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Villa Pueyrredón",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Villa Crespo",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Tigre",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Almagro",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Monserrat",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Chacarita",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                },
+                {
+                "LOCATION_NAME": "Vicente López",
+                "COVERED": false,
+                "CODE_NAME": "AR_BA_"
+                }
+            ]
+        },
+        {
+            "GEODIVISION_NAME": "Mendoza",
+            "GEODIVISION_CODENAME":"MZ",
+            "GEODIVISION_LOCATIONS": [
+                {
+                "LOCATION_NAME": "San Rafael - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Guaymallén - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Ciudad de Mendoza - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Godoy Cruz - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Junín - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Tunuyán - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Tupungato - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Malargüe - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Rivadavia - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Santa Rosa - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "La Paz - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Lavalle - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "General Alvear - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "San Carlos - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Maipú - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Las Heras - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                },
+                {
+                "LOCATION_NAME": "Luján de Cuyo - Mendoza",
+                "COVERED": false,
+                "CODE_NAME": "AR_MZ_"
+                }
+            ]
+        },
+        {
+            "GEODIVISION_NAME": "Otras",
+            "GEODIVISION_CODENAME":"OT",
+            "GEODIVISION_LOCATIONS": [
+                {
+                    "LOCATION_NAME": "Catamarca",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_CA"
+                },
+                {
+                    "LOCATION_NAME": "Chaco",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_CH"
+                },
+                {
+                    "LOCATION_NAME": "Chubut",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_CT"
+                },
+                {
+                    "LOCATION_NAME": "Córdoba",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_CB"
+                },
+                {
+                    "LOCATION_NAME": "Corrientes",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_CR"
+                },
+                {
+                    "LOCATION_NAME": "Entre Ríos",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_ER"
+                },
+                {
+                    "LOCATION_NAME": "Formosa",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_FO"
+                },
+                {
+                    "LOCATION_NAME": "Jujuy",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_JY"
+                },
+                {
+                    "LOCATION_NAME": "La Pampa",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_LP"
+                },
+                {
+                    "LOCATION_NAME": "La Rioja",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_LR"
+                },
+                {
+                    "LOCATION_NAME": "Misiones",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_MI"
+                },
+                {
+                    "LOCATION_NAME": "Neuquén",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_NQ"
+                },
+                {
+                    "LOCATION_NAME": "Río Negro",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_RN"
+                },
+                {
+                    "LOCATION_NAME": "Salta",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_SA"
+                },
+                {
+                    "LOCATION_NAME": "San Juan",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_SJ"
+                },
+                {
+                    "LOCATION_NAME": "San Luis",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_SL"
+                },
+                {
+                    "LOCATION_NAME": "Santa Cruz",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_SC"
+                },
+                {
+                    "LOCATION_NAME": "Santa Fe",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_SF"
+                },
+                {
+                    "LOCATION_NAME": "Santiago del Estero",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_SE"
+                },
+                {
+                    "LOCATION_NAME": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_TF"
+                },
+                {
+                    "LOCATION_NAME": "Tucumán",
+                    "COVERED": false,
+                    "CODE_NAME": "AR_OT_TU"
+                }
+            ]
+        }
+    ]
+}

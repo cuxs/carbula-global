@@ -13,6 +13,7 @@ import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, animated, useTransition, config } from "react-spring";
 import { checkYear, checkZone, getCampania, getSourceType, saveCotization, globalValidationData } from '../../utils/helpers';
+import { result } from 'lodash';
 
 const whereOptions = [
   { value: 'Por un conocido / amigo.', label: 'Por un conocido / amigo.' },
@@ -55,6 +56,16 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
     }
   )
   const router = useRouter()
+
+  function parseGeodivision(countryCode){
+    const CountryData = require("../../public/country-" + countryCode + ".json")
+
+    if (!CountryData) return [];
+    return CountryData.COUNTRY_GEODIVISIONS.map(row => ({
+      label: row.GEODIVISION_NAME,
+      value: row.GEODIVISION_CODENAME,
+    }))
+  }
 
   function parseMarcaModeloResponse(data) {
     if (!data) return []
@@ -233,6 +244,32 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       location: formData.location,
     }
   ]
+
+  // const CountryData = require("../../public/country-" + COUNTRY_CODE + ".json")
+  // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', CountryData);
+  // console.log('BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB', CountryData.COUNTRY_GEODIVISIONS[0].GEODIVISION_NAME);
+  
+  // let geodivisions = [];
+  // for (let i=0; i<3; i++){
+  //   geodivisions.push(CountryData.COUNTRY_GEODIVISIONS[i].GEODIVISION_NAME)
+  // }
+  // console.log('CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC', geodivisions)
+
+  // const getGeodivisions = () => {
+  //   let geodivisions = [];
+  //   for (let i=0; i<3; i++){
+  //     geodivisions.push(CountryData.COUNTRY_GEODIVISIONS[i].GEODIVISION_NAME)
+  //   }
+  //   return result
+  // }
+
+  // const getLocations = () => {
+  //   let locations = [];
+  //   for (let i in currentCountryData.COUNTRY_GEODIVISIONS){
+  //     locations.push(COUNTRY_GEODIVISIONS[i])
+  //   }
+  //   return locations
+  // }
 
   const renderMask = ()=>{
     const masks = {
@@ -491,7 +528,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
               </div>
             </div>
           </div>
-          <div className={styles.form__row}>
+          {/* <div className={styles.form__row}>
             <div className="form-item">
               <Select
                 onBlur={handleBlur}
@@ -506,8 +543,24 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                   {errors.location}
                 </div>
               )}
+            </div> */}
+            <div className={styles.form__row}>
+            <div className="form-item">
+              <Select
+                onBlur={handleBlur}
+                name="location"
+                options={parseGeodivision(COUNTRY_CODE)}
+                large
+                placeholder={t('inLocalidad')}
+                onChange={(option) => setFieldValue('location', option.value)}
+                
+              />
+              {errors.location && touched.location && (
+                <div className="form-error">
+                  {errors.location}
+                </div>
+              )}
             </div>
-
           </div>
           <p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>
           <div className={styles.buttons__container}>

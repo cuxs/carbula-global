@@ -57,14 +57,16 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   )
   const router = useRouter()
 
-  let countryData = {geodivisions:[], locations:[]};
+  let countryData = {geodivisions:[], locations:[], coverage:[]};
 
   const setCountryData = (countryCode) => {
-    const CountryData = require("../../public/country-" + countryCode + ".json")
+    const CountryData = require("../../public/country-" + countryCode + ".json");
 
-    countryData.geodivisions = parseGeodivision(CountryData)
+    countryData.geodivisions = parseGeodivision(CountryData);
+    countryData.locations = parseLocations(CountryData);
+    countryData.coverage = parseCoverage(CountryData);
 
-    Object.freeze(CountryData)
+    Object.freeze(CountryData);
   }
 
   function parseGeodivision(CountryData){
@@ -73,6 +75,22 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       label: row.GEODIVISION_NAME,
       value: row.GEODIVISION_CODENAME,
     }))
+  }
+
+  function parseLocations(CountryData){
+    if (!CountryData) return [];
+    return CountryData.COUNTRY_GEODIVISIONS.map((geodivision) => geodivision.GEODIVISION_LOCATIONS.map((location) => ({
+      label: location.LOCATION_NAME,
+      value: location.CODE_NAME,
+    })))
+  }
+
+  function parseCoverage(CountryData){
+    if (!CountryData) return [];
+    return CountryData.COUNTRY_GEODIVISIONS.map((geodivision) => geodivision.GEODIVISION_LOCATIONS.map((location) => ({
+      label: location.CODE_NAME,
+      value: location.COVERED,
+    })))
   }
 
   function parseMarcaModeloResponse(data) {

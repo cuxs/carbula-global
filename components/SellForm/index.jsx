@@ -34,6 +34,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const [yearDisabled, setYearDisabled] = useState(true);
   const [kmsDisabled, setKmsDisabled] = useState(true)
   const [versionDisabled, setVersionDisabled] = useState(true);
+  const [locationDisabled, setLocationDisabled] = useState(true);
   const [versionOptions, setVersionOptions] = useState([])
   const [versionLoading, setVersionLoading] = useState(false);
   const [userName, setUserName] = useState()
@@ -170,6 +171,11 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const getValidYeanInput = (typedYear) => {
     let currentYear = getCurrentYear()
     return typedYear > currentYear ? currentYear : typedYear
+  }
+
+  const handleGeolocationChange = async (selectedOptionValue) => {
+    setFieldValue('geodivision', selectedOptionValue);
+    setLocationDisabled(false);
   }
 
   const handleSubmitFirstStep = (values, actions) => {
@@ -550,10 +556,27 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
             <div className="form-item">
               <Select
                 onBlur={handleBlur}
-                name="location"
+                name="geodivision"
                 options={countryData.geodivisions}
                 large
-                placeholder={t('inLocalidad')}
+                placeholder={"Provincia"}
+                onChange={(option) => handleGeolocationChange(option.value)}
+                
+              />
+              {errors.location && touched.location && (
+                <div className="form-error">
+                  {errors.location}
+                </div>
+              )}
+            </div>
+            <div className="form-item">
+              <Select
+                onBlur={handleBlur}
+                name="location"
+                options={countryData.locations}
+                large
+                placeholder={"Localidad"}
+                disabled={locationDisabled}
                 onChange={(option) => setFieldValue('location', option.value)}
                 
               />

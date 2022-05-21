@@ -443,20 +443,20 @@ export const getPhoneNumber = (country_code) => {
 
 export const getTitleByCountry = (country_code) => {
   const ids = {
-    ar: 'Cárbula Argentina - La nueva forma de comprar o vender autos',
-    cl: 'Cárbula Chile - La nueva forma de comprar o vender autos',
-    mx: 'Cárbula México - La nueva forma de comprar o vender autos',
-    uy: 'Cárbula Uruguay - La nueva forma de comprar o vender autos',
+    ar: 'Compra y Venta de Autos Usados en Argentina | Cárbula',
+    cl: 'Compra y Venta de Autos Usados en Chile | Cárbula',
+    mx: 'Compra y Venta de Autos Usados en México | Cárbula',
+    uy: 'Compra y Venta de Autos Usados en Uruguay | Cárbula',
   }
   return ids[country_code]
 }
 
 export const getKeywordsByCountry = (country_code) => {
   const ids = {
-    ar: 'autos usados Argentina, autos usados Mendoza, compra y venta autos usados Argentina, compra y venta autos usados Mendoza, venta autos usados, compra por internet, compra online de vehículos, venta online de vehículos, autos usados hasta 150000 kilómetros, autos seminuevos Mendoza, autos seminuevos Argentina',
-    cl: 'autos usados Chile, autos usados Santiago de Chile, compra y venta autos usados Chile, compra y venta autos usados Santiago de Chile, venta autos usados, compra por internet, compra online de vehículos, venta online de vehículos, vehiculos usados hasta 150000 kilómetros, autos usados hasta 150000 kilómetros, autos seminuevos Chile, autos seminuevos Santiago de Chile',
-    mx: 'autos usados México, autos usados Ciudad de México, compra y venta autos usados México, compra y venta autos usados Ciudad de México, carros usados México, carros usados Ciudad de México, compra y venta carros usados México, compra y venta carros usados Ciudad de México, coches usados México, coches usados Ciudad de México, compra y venta coches usados México, compra y venta coches usados Ciudad de México, venta autos usados, compra por internet, compra online de vehículos, venta online de vehículos, carros usados hasta 150000 kilómetros, coches usados hasta 150000 kilómetros, vehículos usados hasta 150000 kilómetros, autos usados hasta 150000 kilómetros, autos seminuevos Ciudad de México, vehículos seminuevos Ciudad de México, coches seminuevos Ciudad de México, carros seminuevos Ciudad de México',
-    uy: 'autos usados Uruguay, autos usados Montevideo, compra y venta autos usados Uruguay, compra y venta autos usados Montevideo, venta autos usados, compra por internet, compra online de vehículos, venta online de vehículos, autos usados hasta 150000 kilómetros, autos seminuevos Uruguay, autos seminuevos Montevideo',
+    ar: 'cárbula argentina, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehículo, venta de autos, vender carro usado, compra y venta de autos',
+    cl: 'cárbula chile, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehículo, venta de autos, vender carro usado, compra y venta de autos',
+    mx: 'cárbula méxico, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehículo, venta de autos, vender carro usado, compra y venta de autos',
+    uy: 'cárbula uruguay, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehículo, venta de autos, vender carro usado, compra y venta de autos',
   }
   return ids[country_code]
 }
@@ -475,8 +475,8 @@ export const getHotjarId =country_code=>{
   const ids={
     ar: '2558732',
     cl: '2558126',
-    mx: '',
-    uy: ''
+    mx: '2745597',
+    uy: '2745589'
   }
   return ids[country_code]
 }

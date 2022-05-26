@@ -3,6 +3,15 @@ import Head from '../../components/head';
 import Nav from '../../components/nav';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      ...(await serverSideTranslations(context.locale, ['FooterInfo'])),
+    }
+  }
+}
 
 const TerminosCondiciones = () => {
   const router = useRouter()

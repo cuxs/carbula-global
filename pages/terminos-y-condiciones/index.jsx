@@ -2,9 +2,11 @@ import styles from './terminos.module.scss'
 import Head from '../../components/head';
 import Nav from '../../components/nav';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic'
 
 const TerminosCondiciones = () => {
   const router = useRouter()
+  const FooterInfo = dynamic(import('../../components/FooterInfo'))
   if (router.locale === 'es-AR') {
     return (
       <div>
@@ -63,6 +65,9 @@ const TerminosCondiciones = () => {
           <h4>Contactanos</h4>
           <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.com"><strong>hola@carbula.com</strong></a></i>
         </div>
+        <section>
+          <FooterInfo grey country_code={'AR'} />
+        </section>
       </div>
     )
   }
@@ -124,6 +129,9 @@ const TerminosCondiciones = () => {
           <h4>Contactanos</h4>
           <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.cl"><strong>hola@carbula.cl</strong></a></i>
         </div>
+        <section>
+          <FooterInfo grey country_code={'AR'} />
+        </section>
       </div>
     )
   }
@@ -185,6 +193,9 @@ const TerminosCondiciones = () => {
           <h4>Contactanos</h4>
           <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.mx"><strong>hola@carbula.mx</strong></a></i>
         </div>
+        <section>
+          <FooterInfo grey country_code={'MX'} />
+        </section>
       </div>
     )
   }
@@ -245,6 +256,9 @@ const TerminosCondiciones = () => {
           <h4>Contactanos</h4>
           <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.uy"><strong>hola@carbula.uy</strong></a></i>
         </div>
+        <section>
+          <FooterInfo grey country_code={'UY'} />
+        </section>
     </div>
   }
 }

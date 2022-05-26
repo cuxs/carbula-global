@@ -2,16 +2,27 @@ import styles from './comprar.module.scss'
 import Head from '../../components/head';
 import Nav from '../../components/nav';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      ...(await serverSideTranslations(context.locale, ['FooterInfo'])),
+    }
+  }
+}
 
 const ComoComprar = () => {
   const router = useRouter()
+  const FooterInfo = dynamic(import('../../components/FooterInfo'))
   if (router.locale === 'es-AR') {
     return (
       <div>
         <Head title="¿Cómo comprar un auto? | Cárbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
-        <a href="#"><h1>¿Cómo comprar un auto?</h1></a>
+        <a href="#"><h1>¿Cómo comprar un auto en Cárbula?</h1></a>
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -78,6 +89,10 @@ const ComoComprar = () => {
             </div>
           </div>
       </div>
+      <hr />
+      <section>
+          <FooterInfo grey country_code={'AR'} />
+        </section>
       </div>
     )
   }
@@ -154,6 +169,10 @@ const ComoComprar = () => {
             </div>
           </div>
       </div>
+      <hr />
+      <section>
+          <FooterInfo grey country_code={'CL'} />
+        </section>
       </div>
     )
   }
@@ -230,6 +249,10 @@ const ComoComprar = () => {
             </div>
           </div>
       </div>
+      <hr />
+      <section>
+          <FooterInfo grey country_code={'MX'} />
+        </section>
       </div>
     )
   }
@@ -305,6 +328,10 @@ const ComoComprar = () => {
             </div>
           </div>
       </div>
+      <hr />
+      <section>
+          <FooterInfo grey country_code={'UY'} />
+        </section>
     </div>
   }
 }

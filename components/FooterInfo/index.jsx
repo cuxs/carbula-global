@@ -29,12 +29,13 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
       <div className={styles.text__area}>
         <p style={renderColorStyle()}>{t('nuestroProposito')}</p>
       </div>
-      <div className={styles.buttons__container}>
-        <Button link><Link style={renderColorStyle()} to="vender" duration={500} offset={-100}>Vender</Link></Button>
-        <Button link><a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getCatalogoURL(country_code)} > Comprar</a></Button>
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="mailto:hola@carbula.com" >Contacto</a></Button>
+      <div className={styles.link__container}>
+        <Button link><a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getCatalogoURL(country_code)} >Catálogo de autos</a></Button>
+        {/*<Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="mailto:hola@carbula.com" >Contacto</a></Button> */}
         {/* <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="https://blog.carbula.cl/blog" >Blog</a></Button> */}
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href='/terminos-y-condiciones' >Términos y condiciones</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href='/terminos-y-condiciones'>Términos y condiciones</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href='/como-vender' >¿Cómo vender mi auto?</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href='/como-comprar' >¿Cómo comprar un auto?</a></Button>
       </div>
       <div className={styles.social__container}>
       <a

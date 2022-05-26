@@ -1,7 +1,10 @@
 @import "../../sass/variables.scss";
 
 .header {
-  background: linear-gradient(180deg, #3074f1 0%, #1758d0 100%), #3074f1;
+  /*background: linear-gradient(180deg, #3074f1 0%, #1758d0 100%), #3074f1;*/
+  background-image: url("/images/header.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 400px;
   display: flex;
   align-items: center;
@@ -9,7 +12,7 @@
   h1 {
     color: white;
     margin: 0px auto;
-    text-align: center
+    text-align: center;
   }
 }
 .comprar {
@@ -30,4 +33,13 @@
   .comprar {
     padding: 50px 40px ;
   }
+  .header {
+    height: 640px;
+    background-image: url("/images/header_mobile.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
+
+
+ 

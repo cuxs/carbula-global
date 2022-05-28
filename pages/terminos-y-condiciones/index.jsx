@@ -74,8 +74,9 @@ const TerminosCondiciones = () => {
           <h4>Contactanos</h4>
           <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.com"><strong>hola@carbula.com</strong></a></i>
         </div>
+        <hr></hr>
         <section>
-          <FooterInfo grey country_code={'AR'} />
+          <FooterInfo grey country_code={'ar'} />
         </section>
       </div>
     )
@@ -138,8 +139,9 @@ const TerminosCondiciones = () => {
           <h4>Contactanos</h4>
           <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.cl"><strong>hola@carbula.cl</strong></a></i>
         </div>
+        <hr></hr>
         <section>
-          <FooterInfo grey country_code={'AR'} />
+          <FooterInfo grey country_code={'cl'} />
         </section>
       </div>
     )
@@ -202,8 +204,9 @@ const TerminosCondiciones = () => {
           <h4>Contactanos</h4>
           <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.mx"><strong>hola@carbula.mx</strong></a></i>
         </div>
+        <hr></hr>
         <section>
-          <FooterInfo grey country_code={'MX'} />
+          <FooterInfo grey country_code={'mx'} />
         </section>
       </div>
     )
@@ -265,8 +268,9 @@ const TerminosCondiciones = () => {
           <h4>Contactanos</h4>
           <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.uy"><strong>hola@carbula.uy</strong></a></i>
         </div>
+        <hr></hr>
         <section>
-          <FooterInfo grey country_code={'UY'} />
+          <FooterInfo grey country_code={'uy'} />
         </section>
     </div>
   }

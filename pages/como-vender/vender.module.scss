@@ -1,0 +1,33 @@
+@import "../../sass/variables.scss";
+
+.header {
+  background: linear-gradient(180deg, #3074f1 0%, #1758d0 100%), #3074f1;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    color: white;
+    margin: 0px auto;
+    text-align: center
+  }
+}
+.vender {
+  padding: 100px 250px;
+  h4 {
+    font-size: 22px;
+    color: #4b4b4b;
+    margin-bottom: 0px;
+    font-weight: 600;
+  }
+  p, i {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #999999;
+  }
+}
+@media(max-width: 769px){
+  .vender {
+    padding: 50px 40px ;
+  }
+}

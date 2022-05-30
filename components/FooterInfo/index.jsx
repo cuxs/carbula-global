@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-scroll";
-import { getCatalogoURL, getFacebookLink, getInstagramLink } from '../../utils/helpers';
+import { getCatalogoURL, getTerminosCondiciones, getComoVender, getComoComprar, getFacebookLink, getInstagramLink } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './footerInfo.module.scss';
 
@@ -19,7 +19,7 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
     if(white) return `/icons/${file}-lightgreen.svg`;
     return `/icons/${file}.svg`;
   }
-  return (<div className={styles.footerInfo__container} id='contacto'>
+  return (<div className={styles.footerInfo__container}  id='contacto'> 
     <img src={renderImagSrc('carbula')} alt="logo" className={styles.footerInfo__logo} />
     <div className={styles.legal__texts}>
       <p style={renderColorStyle()} className={styles.razon__text}>{t('razonSocial')}</p>
@@ -29,12 +29,13 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
       <div className={styles.text__area}>
         <p style={renderColorStyle()}>{t('nuestroProposito')}</p>
       </div>
-      <div className={styles.buttons__container}>
-        <Button link><Link style={renderColorStyle()} to="vender" duration={500} offset={-100}>Vender</Link></Button>
-        <Button link><a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getCatalogoURL(country_code)} > Comprar</a></Button>
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="mailto:hola@carbula.com" >Contacto</a></Button>
+      <div className={styles.link__container}>
+        <Button link><a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getCatalogoURL(country_code)} >Catálogo de autos usados</a></Button>
+        {/*<Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="mailto:hola@carbula.com" >Contacto</a></Button> */}
         {/* <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="https://blog.carbula.cl/blog" >Blog</a></Button> */}
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href='/terminos-y-condiciones' >Términos y condiciones</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getTerminosCondiciones()} >Términos y condiciones</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getComoVender()} >¿Cómo vender mi auto?</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getComoComprar()} >¿Cómo comprar un auto?</a></Button>
       </div>
       <div className={styles.social__container}>
       <a

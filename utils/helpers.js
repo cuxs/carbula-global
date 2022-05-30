@@ -420,6 +420,18 @@ export const getCatalogoURL = (country_code) => {
   return catalogoUrl[country_code]
 }
 
+export const getTerminosCondiciones = () => {
+  return '/terminos-y-condiciones'
+}
+
+export const getComoVender = () => {
+  return '/como-vender'
+}
+
+export const getComoComprar = () => {
+  return '/como-comprar'
+}
+
 export const getWhatsappNumber = (country_code) => {
   const phoneNumbers = {
     ar: '+5492614864083',
@@ -439,7 +451,6 @@ export const getPhoneNumber = (country_code) => {
   }
   return phoneNumbers[country_code]
 }
-
 
 export const getTitleByCountry = (country_code) => {
   const ids = {

@@ -22,7 +22,7 @@ const ComoComprar = () => {
         <Head title="¿Cómo comprar un auto? | Cárbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
-        <a href="#"><h1>¿Cómo comprar un auto en Cárbula?</h1></a>
+        <a href="https://catalogo.carbula.ar/"><h1>¿Cómo comprar un auto en Cárbula?</h1></a>
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -102,7 +102,7 @@ const ComoComprar = () => {
         <Head title="¿Cómo comprar un auto? | Cárbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
-        <h1>¿Cómo comprar un auto?</h1>
+        <a href="https://catalogo.carbula.cl/"><h1>¿Cómo comprar un auto en Cárbula?</h1></a>
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -182,7 +182,7 @@ const ComoComprar = () => {
         <Head title="¿Cómo comprar un auto? | Cárbula Autos México" />
         <Nav />
         <div className={styles.header}>
-        <h1>¿Cómo comprar un auto?</h1>
+        <a href="https://catalogo.carbula.mx/"><h1>¿Cómo comprar un auto en Cárbula?</h1></a>
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -261,7 +261,7 @@ const ComoComprar = () => {
         <Head title="¿Cómo comprar un auto? | Cárbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
-      <h1>¿Cómo comprar un auto?</h1>
+      <a href="https://catalogo.carbula.uy/"><h1>¿Cómo comprar un auto en Cárbula?</h1></a>
       </div>
       <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

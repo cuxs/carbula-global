@@ -420,34 +420,16 @@ export const getCatalogoURL = (country_code) => {
   return catalogoUrl[country_code]
 }
 
-export const getTerminosCondiciones = (country_code) => {
-  const TerminosCondiciones = {
-    ar: 'https://www.carbula.ar/terminos-y-condiciones',
-    mx: 'https://www.carbula.mx/terminos-y-condiciones',
-    uy: 'https://www.carbula.uy/terminos-y-condiciones',
-    cl: 'https://www.carbula.cl/terminos-y-condiciones'
-  }
-  return TerminosCondiciones[country_code]
+export const getTerminosCondiciones = () => {
+  return '/terminos-y-condiciones'
 }
 
-export const getComoVender = (country_code) => {
-  const ComoVender = {
-    ar: 'https://www.carbula.ar/como-vender',
-    mx: 'https://www.carbula.mx/como-vender',
-    uy: 'https://www.carbula.uy/como-vender',
-    cl: 'https://www.carbula.cl/como-vender'
-  }
-  return ComoVender[country_code]
+export const getComoVender = () => {
+  return '/como-vender'
 }
 
-export const getComoComprar = (country_code) => {
-  const ComoComprar = {
-    ar: 'https://www.carbula.ar/como-comprar',
-    mx: 'https://www.carbula.mx/como-comprar',
-    uy: 'https://www.carbula.uy/como-comprar',
-    cl: 'https://www.carbula.cl/como-comprar'
-  }
-  return ComoComprar[country_code]
+export const getComoComprar = () => {
+  return '/como-comprar'
 }
 
 export const getWhatsappNumber = (country_code) => {

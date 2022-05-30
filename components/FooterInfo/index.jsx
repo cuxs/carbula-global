@@ -19,7 +19,7 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
     if(white) return `/icons/${file}-lightgreen.svg`;
     return `/icons/${file}.svg`;
   }
-  return (<div className={styles.footerInfo__container} id='contacto'>
+  return (<div className={styles.footerInfo__container}  id='contacto'> 
     <img src={renderImagSrc('carbula')} alt="logo" className={styles.footerInfo__logo} />
     <div className={styles.legal__texts}>
       <p style={renderColorStyle()} className={styles.razon__text}>{t('razonSocial')}</p>
@@ -30,12 +30,12 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
         <p style={renderColorStyle()}>{t('nuestroProposito')}</p>
       </div>
       <div className={styles.link__container}>
-        <Button link><a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getCatalogoURL(country_code)} >Catálogo de autos</a></Button>
+        <Button link><a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getCatalogoURL(country_code)} >Catálogo de autos usados</a></Button>
         {/*<Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="mailto:hola@carbula.com" >Contacto</a></Button> */}
         {/* <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="https://blog.carbula.cl/blog" >Blog</a></Button> */}
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getTerminosCondiciones(country_code)} >Términos y condiciones</a></Button>
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getComoVender(country_code)} >¿Cómo vender mi auto?</a></Button>
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getComoComprar(country_code)} >¿Cómo comprar un auto?</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getTerminosCondiciones()} >Términos y condiciones</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getComoVender()} >¿Cómo vender mi auto?</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getComoComprar()} >¿Cómo comprar un auto?</a></Button>
       </div>
       <div className={styles.social__container}>
       <a

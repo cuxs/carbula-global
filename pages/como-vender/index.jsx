@@ -95,7 +95,7 @@ const ComoVender = () => {
         <Head title="¿Cómo vender un auto? | Cárbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
-        <h1>¿Cómo vender un auto?</h1>
+        <h1>¿Cómo vender un auto en Cárbula?</h1>
         </div>
         <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -168,7 +168,7 @@ const ComoVender = () => {
         <Head title="¿Cómo vender un auto? | Cárbula Autos México" />
         <Nav />
         <div className={styles.header}>
-        <h1>¿Cómo vender un auto?</h1>
+        <h1>¿Cómo vender un auto en Cárbula?</h1>
         </div>
         <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -240,7 +240,7 @@ const ComoVender = () => {
         <Head title="¿Cómo vender un auto? | Cárbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
-      <h1>¿Cómo vender un auto?</h1>
+      <h1>¿Cómo vender un auto en Cárbula?</h1>
       </div>
       <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

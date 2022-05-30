@@ -91,7 +91,7 @@ const ComoComprar = () => {
       </div>
       <hr />
       <section>
-          <FooterInfo grey country_code={'AR'} />
+          <FooterInfo grey country_code={'ar'} />
         </section>
       </div>
     )
@@ -171,7 +171,7 @@ const ComoComprar = () => {
       </div>
       <hr />
       <section>
-          <FooterInfo grey country_code={'CL'} />
+          <FooterInfo grey country_code={'cl'} />
         </section>
       </div>
     )
@@ -251,7 +251,7 @@ const ComoComprar = () => {
       </div>
       <hr />
       <section>
-          <FooterInfo grey country_code={'MX'} />
+          <FooterInfo grey country_code={'mx'} />
         </section>
       </div>
     )
@@ -330,7 +330,7 @@ const ComoComprar = () => {
       </div>
       <hr />
       <section>
-          <FooterInfo grey country_code={'UY'} />
+          <FooterInfo grey country_code={'uy'} />
         </section>
     </div>
   }

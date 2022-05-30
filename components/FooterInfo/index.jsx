@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-scroll";
-import { getCatalogoURL, getFacebookLink, getInstagramLink } from '../../utils/helpers';
+import { getCatalogoURL, getTerminosCondiciones, getComoVender, getComoComprar, getFacebookLink, getInstagramLink } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './footerInfo.module.scss';
 
@@ -33,9 +33,9 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
         <Button link><a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getCatalogoURL(country_code)} >Catálogo de autos</a></Button>
         {/*<Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="mailto:hola@carbula.com" >Contacto</a></Button> */}
         {/* <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="https://blog.carbula.cl/blog" >Blog</a></Button> */}
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href='/terminos-y-condiciones'>Términos y condiciones</a></Button>
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href='/como-vender' >¿Cómo vender mi auto?</a></Button>
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href='/como-comprar' >¿Cómo comprar un auto?</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getTerminosCondiciones(country_code)} >Términos y condiciones</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getComoVender(country_code)} >¿Cómo vender mi auto?</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href={getComoComprar(country_code)} >¿Cómo comprar un auto?</a></Button>
       </div>
       <div className={styles.social__container}>
       <a

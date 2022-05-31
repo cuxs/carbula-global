@@ -2,12 +2,12 @@ import React from 'react'
 import NextHead from 'next/head'
 import { string } from 'prop-types'
 import { useRouter } from 'next/router'
-import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../utils/helpers'
+import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../../utils/helpers'
 
-const defaultDescription = 'Vende tu auto seminuevo por hasta 25% más de dinero. Compra tu auto usado de forma segura, simple y transparente.'
+const defaultDescription = 'Términos, condiciones de uso y políticas de privacidad de Cárbula para comprar y vender un auto usado.'
 
-const defaultOGURL = 'https://carbula.com'
-const defaultOGImage = '/images/carbula-autos.webp'
+const defaultOGURL = '/terminos-y-condiciones'
+const defaultOGImage = '/images/terminos-condiciones-carbula.webp'
 
 const Head = props => {
   const router = useRouter()
@@ -26,10 +26,10 @@ const Head = props => {
       <meta name="googlebot" content="index,follow"/>
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
       
-      <link rel="alternate" hrefLang="es-MX" href="https://carbula.mx" />
-      <link rel="alternate" hrefLang="es-CL" href="https://carbula.cl" />
-      <link rel="alternate" hrefLang="es-UY" href="https://carbula.uy" />
-      <link rel="alternate" hrefLang="es-AR" href="https://carbula.ar" />
+      <link rel="alternate" hrefLang="es-MX" href="https://carbula.mx/terminos-y-condiciones" />
+      <link rel="alternate" hrefLang="es-CL" href="https://carbula.cl/terminos-y-condiciones" />
+      <link rel="alternate" hrefLang="es-UY" href="https://carbula.uy/terminos-y-condiciones" />
+      <link rel="alternate" hrefLang="es-AR" href="https://carbula.ar/terminos-y-condiciones" />
       <link rel="icon" sizes="192x192" href="/icons/favicon_196.ico" />
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:url" content={props.url || defaultOGURL} />

@@ -2,12 +2,12 @@ import React from 'react'
 import NextHead from 'next/head'
 import { string } from 'prop-types'
 import { useRouter } from 'next/router'
-import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../utils/helpers'
+import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../../utils/helpers'
 
-const defaultDescription = 'Vende tu auto seminuevo por hasta 25% más de dinero. Compra tu auto usado de forma segura, simple y transparente.'
+const defaultDescription = 'Te ayudamos a vender tu auto de la forma más segura, simple y transparente. Ingresa tu auto en el cotizador.'
 
-const defaultOGURL = 'https://carbula.com'
-const defaultOGImage = '/images/carbula-autos.webp'
+const defaultOGURL = '/como-vender'
+const defaultOGImage = '/images/como-vender-carbula.webp'
 
 const Head = props => {
   const router = useRouter()
@@ -26,10 +26,10 @@ const Head = props => {
       <meta name="googlebot" content="index,follow"/>
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
       
-      <link rel="alternate" hrefLang="es-MX" href="https://carbula.mx" />
-      <link rel="alternate" hrefLang="es-CL" href="https://carbula.cl" />
-      <link rel="alternate" hrefLang="es-UY" href="https://carbula.uy" />
-      <link rel="alternate" hrefLang="es-AR" href="https://carbula.ar" />
+      <link rel="alternate" hrefLang="es-MX" href="https://carbula.mx/como-comprar" />
+      <link rel="alternate" hrefLang="es-CL" href="https://carbula.cl/como-comprar" />
+      <link rel="alternate" hrefLang="es-UY" href="https://carbula.uy/como-comprar" />
+      <link rel="alternate" hrefLang="es-AR" href="https://carbula.ar/como-comprar" />
       <link rel="icon" sizes="192x192" href="/icons/favicon_196.ico" />
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:url" content={props.url || defaultOGURL} />

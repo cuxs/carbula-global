@@ -45,9 +45,9 @@ const Toolbar = ({ drawerClickHandler }) => {
           </div></Link></div>
         <div className={styles.spacer} />
         <div className={styles.toolbar__items}>
-          <a href="/"><b>Vender</b></a>
-          <a href={getCatalogoURL(COUNTRY_CODE)}target="__blank">Comprar</a>
-          <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank">Contacto</a>
+          <a href={getCatalogoURL(COUNTRY_CODE)}target="__blank"><b>Comprar un auto</b></a>
+          <a href="/"><b>Vender mi auto</b></a>
+          <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><b>Contacto</b></a>
           {/* <a href="https://blog.carbula.cl/blog" target="__blank">Blog</a> */}
         </div>
       </div>

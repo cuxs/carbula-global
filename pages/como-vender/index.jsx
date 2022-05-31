@@ -1,5 +1,5 @@
 import styles from './vender.module.scss'
-import Head from '../../components/head';
+import Head from '../../components/CustomHeads/headComoVender';
 import Nav from '../../components/nav';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic'
@@ -19,10 +19,10 @@ const ComoVender = () => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="¿Cómo vender un auto? | Cárbula Autos Argentina" />
+        <Head title="¿Cómo vender mi auto? | Cárbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
-        <h1>¿Cómo vender un auto en Cárbula?</h1>
+        <h1>¿Cómo vender mi auto en Cárbula?</h1>
         </div>
         <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -92,10 +92,10 @@ const ComoVender = () => {
   if (router.locale === 'es-CL') {
     return (
       <div>
-        <Head title="¿Cómo vender un auto? | Cárbula Autos Chile" />
+        <Head title="¿Cómo vender mi auto? | Cárbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
-        <h1>¿Cómo vender un auto en Cárbula?</h1>
+        <h1>¿Cómo vender mi auto en Cárbula?</h1>
         </div>
         <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -165,10 +165,10 @@ const ComoVender = () => {
   if (router.locale === 'es-MX') {
     return (
       <div>
-        <Head title="¿Cómo vender un auto? | Cárbula Autos México" />
+        <Head title="¿Cómo vender mi auto? | Cárbula Autos México" />
         <Nav />
         <div className={styles.header}>
-        <h1>¿Cómo vender un auto en Cárbula?</h1>
+        <h1>¿Cómo vender mi auto en Cárbula?</h1>
         </div>
         <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -237,10 +237,10 @@ const ComoVender = () => {
   }
   if (router.locale === 'es-UY') {
     return <div>
-        <Head title="¿Cómo vender un auto? | Cárbula Autos Uruguay" />
+        <Head title="¿Cómo vender mi auto? | Cárbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
-      <h1>¿Cómo vender un auto en Cárbula?</h1>
+      <h1>¿Cómo vender mi auto en Cárbula?</h1>
       </div>
       <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

@@ -1,5 +1,5 @@
 import styles from './comprar.module.scss'
-import Head from '../../components/head';
+import Head from '../../components/CustomHeads/headComoComprar';
 import Nav from '../../components/nav';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic'

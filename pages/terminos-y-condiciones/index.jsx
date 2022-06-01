@@ -22,7 +22,7 @@ const TerminosCondiciones = () => {
         <Head title="Políticas de privacidad | Cárbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
-        <h1>Cárbula Autos Argentina</h1>
+        <h1>Políticas de privacidad Cárbula Argentina</h1>
         </div>
         <div className={styles.terminos}>
           <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
@@ -87,7 +87,7 @@ const TerminosCondiciones = () => {
         <Head title="Políticas de privacidad | Cárbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
-          <h1>Cárbula Autos Chile</h1>
+          <h1>Políticas de privacidad Cárbula Chile</h1>
         </div>
         <div className={styles.terminos}>
          <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
@@ -152,7 +152,7 @@ const TerminosCondiciones = () => {
         <Head title="Políticas de privacidad | Cárbula Autos México" />
         <Nav />
         <div className={styles.header}>
-        <h1>Cárbula Autos México</h1>
+        <h1>Políticas de privacidad Cárbula México</h1>
         </div>
         <div className={styles.terminos}>
           <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
@@ -216,7 +216,7 @@ const TerminosCondiciones = () => {
         <Head title="Políticas de privacidad | Cárbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
-      <h1>Cárbula Autos Uruguay</h1>
+      <h1>Políticas de privacidad Cárbula Uruguay</h1>
       </div>
       <div className={styles.terminos}>
          <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>

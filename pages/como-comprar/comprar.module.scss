@@ -1,16 +1,14 @@
 @import "../../sass/variables.scss";
 
 .header {
-  background: linear-gradient(180deg, #3074f1 0%, #1758d0 100%), #3074f1;
-  /*background-image: url("/images/header.webp");*/
+  background-image: url("/images/como-comprar-desktop.webp");
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 400px;
+  height: 460px;
   display: flex;
   align-items: center;
   justify-content: center;
   h1 {
-    color: white;
+    color: #fff;
     margin: 0px auto;
     text-align: center;
   }
@@ -33,13 +31,12 @@
   .comprar {
     padding: 50px 40px ;
   }
-  /*.header {
+  .header {
     height: 350px;
-    background: linear-gradient(180deg, #3074f1 0%, #1758d0 100%), #3074f1;
-    background-image: url("/images/header_mobile.webp");
+    background-image: url("/images/como-comprar-mobile.webp");
     background-size: cover;
     background-repeat: no-repeat;
-  }*/
+  }
 }
 
 

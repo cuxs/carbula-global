@@ -66,7 +66,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     return SellForms[COUNTRY_CODE]
   }),[])
   const router = useRouter();
-  const [title, setTitle] = useState([`Vendemos ${t('tu')} vehículo`, 'por hasta 25% más de dinero.'])
+  const [title, setTitle] = useState([`Vendemos ${t('tu')} auto de manera segura`, 'por hasta 25% más de dinero.'])
   const [subtitle, setSubtitle] = useState(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.']);
   const [step, setStep] = useState(0)
   const [overlayBackground, setOverlayBackground] = useState(false);
@@ -83,7 +83,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     switch (step) {
       case 0:
         setTitle([`${t('titleVendemosL1')}`, `${t('titleVendemosL2')}`])
-        setSubtitle([t('subtitleVendemosL1'), t('subtitleVendemosL2'), t('subtitleVendemosL3'), t('subtitleVendemosL4')])
+        setSubtitle([t('subtitleVendemosL1'), t('subtitleVendemosL2'), t('subtitleVendemosL3')])
         break;
       case 1:
         setTitle([`Gracias por completar los datos de ${t('tu')} vehículo`])

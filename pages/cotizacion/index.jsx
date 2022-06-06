@@ -136,7 +136,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
           setMeetFetched(true)
           setMeetData({
             date: dayjs(data.data.start_time).format('LLLL'),
-            address: COUNTRY_CODE === 'AR' ? '': data.data.body
+            address: data.data.body
           })
           setStep(step + 1)
         }

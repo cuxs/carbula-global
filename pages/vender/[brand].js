@@ -90,7 +90,7 @@ const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
         setSubtitle(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.'])
         break;
       case 1:
-        setTitle([`Gracias por completar los datos de ${t('tu')} vehículo`])
+        setTitle([`Estás más cerca de vender ${t('tu')} auto`])
         setSubtitle([t('contanos')])
         window.scrollTo(0, 0)
         break;

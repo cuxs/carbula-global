@@ -64,8 +64,9 @@
 }
 .somos__text {
   margin: 50px auto;
-  width: 90%;
+  width: 80%;
   text-align: center;
+  word-wrap: break-word;
 }
 .benefits--mobile {
   display: none;
@@ -167,7 +168,7 @@
   .section1__title {
     margin-top: 200px;
     width: 80%;
-    align: center;
+    display: inline-block;
   }
   .couple__image {
     margin: 30px 60px 50px 60px;

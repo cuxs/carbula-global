@@ -3,10 +3,11 @@
 .footerInfo__container {
   padding: 50px 0px 80px 0px;
   margin: 0px auto;
-  width: 70%;
+  width: 80%;
   p {
     margin-top: 20px;
-    font-size: 17px;
+    font-size: 1rem;
+    color: #4B4B4B !important;
   }
 }
 .text__area {
@@ -28,13 +29,12 @@
   justify-content: space-around;
 }
 .social__container--mobile{
-  display: none
+  display: none;
 }
 .social__container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
   a {
     text-decoration: none;
   }
@@ -51,7 +51,8 @@
     &:hover {
       text-decoration: underline;
     }
-    font-size: 16px;
+    font-size: 1rem;
+    color: #4B4B4B !important;
   }
 }
 .footerInfo__logo {
@@ -60,7 +61,8 @@
 }
 .social__link {
   display: flex;
-  font-size: 16px;
+  font-size: 1rem;
+  color: #4B4B4B !important;
   padding: 2px;
   &:hover {
     text-decoration: underline;
@@ -76,7 +78,7 @@
 .rut__text{
   margin-bottom: 20px;
   font-family: "ProximaNovaS";
-  font-size: 17px;
+  font-size: 1rem;
 }
 .legal__texts{
   display: flex;
@@ -87,20 +89,20 @@
 .razon__text{
   margin-top: 0px;
   font-family: "ProximaNovaS";
-  font-size: 17px;
+  font-size: 1rem;
 }
 .rut__text{
   margin-bottom: 20px;
-  font-size: 17px;
+  font-size: 1rem;
 }
 @media (max-width: 1441px) {
   .footerInfo__container {
-    margin: 0px 0px 0px 180px;
+    //margin: 0px 0px 0px 180px;*//
   }
 }
 @media (max-width: 1025px) {
   .footerInfo__container {
-    width: 90%;
+    width: 80%;
     margin: 0px auto;
   }
 }
@@ -114,7 +116,7 @@
 }
 @media (max-width: 680px){
   .legal__texts{
-    width: 70%;
+    width: 80%;
   }
 }
 @media (max-width: 590px){
@@ -153,19 +155,19 @@
     }
   }
   .razon__text{
-    font-size: 12px;
+    font-size: 1rem;
     display: none;
   }
   .rut__text{
-    font-size: 12px;
+    font-size: 1rem;
     display: none;
   }
 }
 @media (max-width: 320px) {
   .footerInfo__container{
-    width: 75%;
+    width: 80%;
   }
   .legal__texts{
-    width: 75%;
+    width: 80%;
   }
 }

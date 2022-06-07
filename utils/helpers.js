@@ -454,10 +454,10 @@ export const getPhoneNumber = (country_code) => {
 
 export const getTitleByCountry = (country_code) => {
   const ids = {
-    ar: 'Compra y Venta de Autos Usados en Argentina | Cárbula Autos',
-    cl: 'Compra y Venta de Autos Usados en Chile | Cárbula Autos',
-    mx: 'Compra y Venta de Autos Usados en México | Cárbula Autos',
-    uy: 'Compra y Venta de Autos Usados en Uruguay | Cárbula Autos',
+    ar: 'Compra y Venta Segura de Autos Usados en Argentina | Cárbula Autos',
+    cl: 'Compra y Venta Segura de Autos Usados en Chile | Cárbula Autos',
+    mx: 'Compra y Venta Segura de Autos Usados en México | Cárbula Autos',
+    uy: 'Compra y Venta Segura de Autos Usados en Uruguay | Cárbula Autos',
   }
   return ids[country_code]
 }

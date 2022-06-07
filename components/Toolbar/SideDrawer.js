@@ -20,9 +20,14 @@ const SideDrawer = ({ show, click, }) => {
       <img className={styles['side-drawer__logo']} src="/icons/carbula.svg" alt="Cárbula Autos"/>
       <div style={{ textAlign: 'center' }}>
         <ul>
-          <li><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Catálogo</a></li>
-          <li><a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20necesito%20financiar%20la%20compra%20de%20un%20auto`} target="__blank">Financiamiento</a></li>
-          <li><a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank">Contacto</a></li>
+          <li>
+            <a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Catálogo</a>
+          </li>
+          {/*<li><a href="/">Vender</a></li>*/}
+          <li><a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank">Financiamiento</a></li>
+          <li>
+            <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank">Contacto</a>
+          </li>
         </ul>
       </div>
     </nav>

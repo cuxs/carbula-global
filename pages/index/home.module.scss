@@ -94,7 +94,9 @@
     width: 500px;
     margin: 1em 0em 0em 0em;
     p {
-      color: $grey;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: $black;
       margin-bottom: 30px;
     }
   }

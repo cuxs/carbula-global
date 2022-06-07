@@ -1,17 +1,5 @@
 [
   {
-    "AUTOPRESSMIN": "-",
-    "AUTOPRESSMAX": "-",
-    "MARGEN": 100000,
-    "FEE": 350000
-  },
-  {
-    "AUTOPRESSMIN": "-",
-    "AUTOPRESSMAX": 200000,
-    "MARGEN": 100000,
-    "FEE": 350000
-  },
-  {
     "AUTOPRESSMIN": 200000,
     "AUTOPRESSMAX": 700000,
     "MARGEN": 100000,

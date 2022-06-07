@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
-import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, addContact } from "../../utils/fetches";
+import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy } from 'lodash';
@@ -258,7 +258,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     const formSteps = {
       0: <Fragment>
-        <div className={styles.division__container} hidden="true" className="hidden-lg hidden-xs">
+        <div className={"styles.division__container" + "hidden-lg hidden-xs"} hidden="true">
           <div className={styles.sellform__division} />
           <p>o</p>
           <div className={styles.sellform__division} />
@@ -538,7 +538,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         })}
       >
         {({ handleSubmit, handleChange, handleBlur, errors, values, touched }) => (
-          <form className={styles.patente__form} onSubmit={handleSubmit} hidden="true" className="hidden-lg hidden-xs">
+          <form className={"styles.patente__form" + "hidden-lg hidden-xs"} onSubmit={handleSubmit} hidden="true">
             <div className='form-item'>
               <input name='patente' onChange={handleChange} onBlur={handleBlur} value={values.patente} className={styles.patente__input} placeholder="Patente"></input>
               {errors.patente && touched.patente && (

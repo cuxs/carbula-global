@@ -258,7 +258,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     const formSteps = {
       0: <Fragment>
-        <div className={styles.division__container}>
+        <div className={"styles.division__container" + "hidden-lg hidden-xs"} hidden="true">
           <div className={styles.sellform__division} />
           <p>o</p>
           <div className={styles.sellform__division} />
@@ -538,7 +538,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         })}
       >
         {({ handleSubmit, handleChange, handleBlur, errors, values, touched }) => (
-          <form className={styles.patente__form} onSubmit={handleSubmit}>
+          <form className={"styles.patente__form" + "hidden-lg hidden-xs"} onSubmit={handleSubmit} hidden="true">
             <div className='form-item'>
               <input name='patente' onChange={handleChange} onBlur={handleBlur} value={values.patente} className={styles.patente__input} placeholder="Patente"></input>
               {errors.patente && touched.patente && (

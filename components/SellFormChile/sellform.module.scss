@@ -12,7 +12,7 @@
   left: 50%;
   transform: translate(-50%, 0);
   padding: 40px 65px 40px 65px;
-  width: 850px;
+  width: 650px;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.12);
@@ -30,6 +30,7 @@
     font-size: 15px;
     margin-left: -4px;
     margin-bottom: 2px;
+    /*display: none;*/
   }
 }
 .sellform__division {
@@ -37,6 +38,7 @@
   width: 20px;
   height: 60px;
   border-left: 1px solid $grey;
+  /*display: none;*/
 }
 .form__row {
   display: flex;
@@ -47,10 +49,12 @@
 .patente__input {
   width: 240px;
   border-radius: 0px;
+  /*display: none;*/
 }
 .buscar__button {
   button {
     transform: translate3d(0px, 8px, 0px);
+    /*display: none;*/
   }
   margin-top: 25px;
   .patente::before {
@@ -59,6 +63,7 @@
 }
 .submit__button {
   margin-top: 50px;
+  text-align: center;
 }
 .personal-data__form {
   .form__row {
@@ -71,18 +76,18 @@
     align-items: baseline;
   }
 }
-.personal-data__form-item {
+.personal-data__form-item{
   width: 100%;
   margin-left: 10px;
-  input {
-    width: 95%;
+  input{
+    width: 95%
   }
 }
 .terms {
   font-size: 12px;
   margin: 30px 0px;
 }
-.kms__input {
+.kms__input{
   width: 150px;
   margin-right: 20px;
   margin-left: 10px;
@@ -94,7 +99,7 @@
     flex-direction: column;
     padding: 40px 20px;
   }
-  .personal-data__form-item {
+  .personal-data__form-item{
     margin-left: 0px;
     margin-right: 10px;
   }
@@ -126,7 +131,7 @@
     margin: 30px 0px 30px 0px;
   }
 }
-@media (max-width: 690px) {
+@media (max-width: 690px){
   .patente {
     display: none !important;
   }
@@ -146,7 +151,7 @@
   .patente__input {
     width: 150px;
   }
-  .kms__input {
+  .kms__input{
     width: 80%;
     margin-left: 20px;
   }
@@ -156,7 +161,7 @@
 }
 
 @media (max-width: 376px) {
-  .kms__input {
+  .kms__input{
     width: 90%;
     margin-left: 20px;
   }
@@ -169,7 +174,7 @@
 @media (max-width: 320px) {
   .sellform__card {
     width: 95vw;
-    top: -500px;
+    top: -300px;
     padding: 40px 10px;
     box-sizing: border-box;
   }

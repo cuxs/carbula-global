@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
-import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, addContact } from "../../utils/fetches";
+import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy, set } from 'lodash';

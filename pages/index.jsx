@@ -66,8 +66,8 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     return SellForms[COUNTRY_CODE]
   }),[])
   const router = useRouter();
-  const [title, setTitle] = useState([`Vendemos ${t('tu')} vehículo`, 'por hasta 25% más de dinero.'])
-  const [subtitle, setSubtitle] = useState(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.']);
+  const [title, setTitle] = useState([`Vendemos ${t('tu')} auto de manera segura`, 'Gana hasta un 25% más.'])
+  const [subtitle, setSubtitle] = useState(['Garantizamos el cobro seguro de la venta. Nos encargamos de todo el proceso de venta.', 'Respondemos todas las consultas de los compradores.']);
   const [step, setStep] = useState(0)
   const [overlayBackground, setOverlayBackground] = useState(false);
 
@@ -83,11 +83,11 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     switch (step) {
       case 0:
         setTitle([`${t('titleVendemosL1')}`, `${t('titleVendemosL2')}`])
-        setSubtitle([t('subtitleVendemosL1'), t('subtitleVendemosL2'), t('subtitleVendemosL3'), t('subtitleVendemosL4')])
+        setSubtitle([t('subtitleVendemosL1'), t('subtitleVendemosL2'), t('subtitleVendemosL3')])
         break;
       case 1:
-        setTitle([`Gracias por completar los datos de ${t('tu')} vehículo`])
-        setSubtitle([t('contanos')])
+        setTitle([`Estás más cerca de vender ${t('tu')} auto`])
+        setSubtitle([`${t('contanos')}`, `${t('dedicate')}`])
         window.scrollTo(0, 0)
         break;
       default:
@@ -107,10 +107,10 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
 
   const getSomosText = () => {
     const texts = {
-      ar: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a> y <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> COMPROMETIDA <br /> EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
-      cl: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org/">STARTUP CHILE</a> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
-      uy: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANII</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a> y <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.</Fragment>,
-      mx: <Fragment>SOMOS UN MARKETPLACE POTENCIADO POR EMBARCA, CORFO, ANNI, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org/">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS INTERNATIONAL</a> Y ESTAMOS COMPROMETIDOS A REINVENTAR LA MANERA DE COMPRAR Y VENDER AUTOS EN EL MUNDO.</Fragment>
+      ar: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
+      cl: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
+      uy: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
+      mx: <Fragment>SOMOS UN MARKETPLACE POTENCIADO POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR AUTOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>
     }
     return texts[COUNTRY_CODE]
   }
@@ -126,7 +126,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
       <section className={styles.section1__container}>
         <div className={styles.text__container}>
           <h2 className={styles.section1__title}>{t('section1Title')}</h2>
-          <h3 className={styles.section1__title}>{t('section1TitleMotivos')}</h3>
+          {/*<h3 className={styles.section1__title}>{t('section1TitleMotivos')}</h3>*/}
           <div className={styles['benefits--desktop']}>
             <h3>{t('section1Subtitle1')}</h3>
             <p>{t('section1Subtitle1Text')}</p>
@@ -170,7 +170,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           <div>
             <h3 className={styles.text__secondary}>{t('contactanos')}</h3>
             <div className={styles.image} >
-              <Image src="/images/carbula_contacto.png" width="465" height="448" alt="Contacto" />
+              <Image src="/images/carbula_contacto.png" width="450" height="438" alt="Contacto" />
             </div>
             <div>
               <p>{t('contactanosP1')}</p>
@@ -182,14 +182,14 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
             </div>
           </div>
           <div>
-            <h2 className={styles.text__primary}>{t('faq')}</h2>
+            <h3 className={styles.text__primary}>{t('faq')}</h3>
             <FaqComponent />
           </div>
         </div>
       </section>
       <section className={styles.section3}>
         <div className={styles.section3__container}>
-          <h2 className={styles.text__primary}>{t('testimonios')}</h2>
+          <h3 className={styles.text__primary}>{t('testimonios')}</h3>
           <NuestrosClientes country_code={COUNTRY_CODE} />
         </div>
         <div className={styles.somos__text}>{getSomosText()}</div>

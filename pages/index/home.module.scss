@@ -9,7 +9,7 @@
   width: 500px;
   margin: 1em 0em 0em 250px;
   p {
-    color: $grey;
+    color: $black;
     margin-bottom: 30px;
   }
 }
@@ -30,14 +30,14 @@
     margin-bottom: 20px;
   }
   p {
-    color: $grey;
+    color: $black;
   }
   .text__primary {
     color: $primaryColor;
     margin-bottom: 40px;
   }
   .text__secondary {
-    color: $secondaryColor;
+    color: $primaryColor;
     margin-bottom: 40px;
   }
   .buttons__container {
@@ -59,12 +59,15 @@
   text-align: center;
   .text__primary {
     color: $primaryColor;
+    margin-top: 30px;
+    font-size: 2rem;
   }
 }
 .somos__text {
   margin: 50px auto;
-  width: 90%;
+  width: 80%;
   text-align: center;
+  word-wrap: break-word;
 }
 .benefits--mobile {
   display: none;
@@ -75,7 +78,7 @@
     margin: 1em 0em 0em 100px;
   }
   .section2__container {
-    margin: 5em 250px 0em 180px;
+    margin: 5em 180px 0em 180px;
   }
 }
 @media (max-width: 1025px) {
@@ -92,7 +95,9 @@
     width: 500px;
     margin: 1em 0em 0em 0em;
     p {
-      color: $grey;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: $black;
       margin-bottom: 30px;
     }
   }
@@ -164,10 +169,13 @@
 
 @media (max-width: 426px) {
   .section1__title {
-    margin-top: 200px;
+    margin-top: 50px;
+    width: 80%;
+    display: inline-block;
   }
   .couple__image {
     margin: 30px 60px 50px 60px;
+    display: none;
   }
   .section2__container {
     .image {
@@ -188,6 +196,7 @@
     margin: 0px 10px 0px 10px;
   }
   .section1__title {
-    margin-top:50px
+    margin-top: 50px;
+    
   }
 }

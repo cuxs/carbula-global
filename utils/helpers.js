@@ -472,6 +472,16 @@ export const getKeywordsByCountry = (country_code) => {
   return ids[country_code]
 }
 
+export const getGoogleSiteVerification = (country_code) => {
+  const ids = {
+    ar: 'sGIcw6SXevN6Ogzl-odByn6q4jnbBQlcpCDsKu9Kjl4',
+    cl: 'sGIcw6SXevN6Ogzl-odByn6q4jnbBQlcpCDsKu9Kjl4',
+    mx: 'sGIcw6SXevN6Ogzl-odByn6q4jnbBQlcpCDsKu9Kjl4',
+    uy: 'sGIcw6SXevN6Ogzl-odByn6q4jnbBQlcpCDsKu9Kjl4',
+  }
+  return ids[country_code]
+}
+
 export const getFacebookDomainVerification = (country_code) => {
   const ids = {
     ar: 'brd5b5y4sra61yxq5iecd6omyq4sis',

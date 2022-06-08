@@ -2,7 +2,7 @@ import React from 'react'
 import NextHead from 'next/head'
 import { string } from 'prop-types'
 import { useRouter } from 'next/router'
-import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../utils/helpers'
+import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification, getGoogleSiteVerification } from '../utils/helpers'
 
 const defaultDescription = 'Vende tu auto usado y gana hasta 25% más de dinero. Compra tu auto usado de forma segura, simple y transparente.'
 
@@ -24,6 +24,7 @@ const Head = props => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index,follow"/> 
       <meta name="googlebot" content="index,follow"/>
+      <meta name="google-site-verification" content={getGoogleSiteVerification(COUNTRY_CODE)} />
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
       
       <link rel="alternate" hrefLang="es-MX" href="https://carbula.mx" />

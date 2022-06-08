@@ -87,7 +87,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
         break;
       case 1:
         setTitle([`Estás más cerca de vender ${t('tu')} auto`])
-        setSubtitle([t('contanos')])
+        setSubtitle([`${t('contanos')}`, `${t('dedicate')}`])
         window.scrollTo(0, 0)
         break;
       default:

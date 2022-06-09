@@ -55,14 +55,13 @@
     transform: translate(-50%);
   }
   h3 {
-    word-wrap: break-word;
     text-align: center;
     color: #fff;
     font-weight: 500;
     font-size: 1.5rem;
     width: 50%;
     position: absolute;
-    top: 1200px;
+    top: 1270px;
     left: 50%;
     transform: translate(-50%);
   }
@@ -78,7 +77,6 @@
     h3 {
       top: 1100px;
       font-size: 20px;
-      word-wrap: break-word;
       width: 290px;
     }
   }
@@ -93,7 +91,6 @@
     h3 {
       top: 1100px;
       font-size: 20px;
-      word-wrap: break-word;
       width: 240px;
     }
   }
@@ -101,7 +98,7 @@
 @media (max-width: 376px) {
   .cargando__container {
     h3 {
-      font-size: 16px;
+      font-size: 18px;
       word-wrap: break-word;
     }
   }

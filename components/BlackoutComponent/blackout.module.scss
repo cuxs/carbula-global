@@ -23,12 +23,11 @@
   position: absolute;
   transition: 1s ease;
   border-radius: 50%;
-  background-color: black;
+  background-color: #0d2042;
   z-index: 1000;
-  width: 2000px;
+  width: 2300px;
   height: 1000px;
   padding-bottom: 1000px;
-
 }
 
 .cargando__container {
@@ -40,7 +39,7 @@
   margin: -10px;
   z-index: 2000;
   text-align: center;
-  img {
+    img {
     position: absolute;
     top: 900px;
     left: 50%;
@@ -107,18 +106,20 @@
     }
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 360px) {
   .cargando__container {
     img {
       top: 800px;
     }
     h2 {
-      width: 310px;
+      width: 290px;
       top: 890px;
       word-wrap: break-word;
+      text-transform: uppercase;
+      line-height: 2rem;
     }
     h3 {
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 100;
       word-wrap: break-word;
     }

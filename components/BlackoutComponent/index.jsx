@@ -27,11 +27,11 @@ const BlackoutComponent = ({ overlayBackground }) => {
 
   return (<span className={styles[blackOutClasses]} id="blackout">
     <div className={styles.cargando__container}>
-      <animated.img style={logoStyle} src="/images/logo.svg" alt="logo"/>
+      <animated.img style={logoStyle} src="/images/logo.svg" alt="Carbula Autos"/>
       <div className={styles.loading__spinner}>
-        <PuffLoader color="#3074F1" css={`position: absolute; top: 1000px;left:50%; transform: translate(-50%)`} />
+        <PuffLoader color="#00fbcd" css={`position: absolute; top: 1000px; left:50%; transform: translate(-50%)`} />
       </div>
-      <animated.h2 style={textStyle}>Estamos analizando el mercado en tiempo real con tecnología de punta</animated.h2>
+      <animated.h2 style={textStyle}>Analizando el mercado en tiempo real con Tecnología Cárbula</animated.h2>
       <animated.h3 style={text2Style}>{t('footer')}</animated.h3>
     </div>
   </span>)

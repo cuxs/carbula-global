@@ -47,22 +47,23 @@
     transform: translate(-50%);
   }
   h2 {
-    color: white;
+    color: #00fbcd;
     margin-bottom: 50px;
-    font-size: 60px;
+    font-size: 2.2rem;
     position: absolute;
     top: 1100px;
     left: 50%;
     transform: translate(-50%);
   }
   h3 {
+    word-wrap: break-word;
     text-align: center;
-    color: white;
+    color: #fff;
     font-weight: 500;
-    font-size: 30px;
-    width: 30%;
+    font-size: 1.5rem;
+    width: 50%;
     position: absolute;
-    top: 1270px;
+    top: 1200px;
     left: 50%;
     transform: translate(-50%);
   }
@@ -71,12 +72,14 @@
   .cargando__container {
     h2 {
       font-size: 20px;
+      word-wrap: break-word;
       top: 950px;
       width: 20%;
     }
     h3 {
       top: 1100px;
       font-size: 20px;
+      word-wrap: break-word;
       width: 290px;
     }
   }
@@ -91,6 +94,7 @@
     h3 {
       top: 1100px;
       font-size: 20px;
+      word-wrap: break-word;
       width: 240px;
     }
   }
@@ -99,6 +103,7 @@
   .cargando__container {
     h3 {
       font-size: 16px;
+      word-wrap: break-word;
     }
   }
 }
@@ -110,10 +115,12 @@
     h2 {
       width: 310px;
       top: 890px;
+      word-wrap: break-word;
     }
     h3 {
       font-size: 15px;
       font-weight: 100;
+      word-wrap: break-word;
     }
   }
 }

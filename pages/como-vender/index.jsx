@@ -95,7 +95,7 @@ const ComoVender = () => {
         <Head title="Vende tu auto de forma segura | Carbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
-        <h1>¿Cómo vender mi auto en Cárbula?</h1>
+        <h1>Vende tu auto de forma segura</h1>
         </div>
         <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

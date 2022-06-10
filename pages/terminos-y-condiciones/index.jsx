@@ -19,10 +19,10 @@ const TerminosCondiciones = () => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="Políticas de privacidad | Cárbula Autos Argentina" />
+        <Head title="Terminos y condiciones | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
-        <h1>Políticas de privacidad Cárbula Argentina</h1>
+        <h1>Términos y condiciones</h1>
         </div>
         <div className={styles.terminos}>
           <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
@@ -84,10 +84,10 @@ const TerminosCondiciones = () => {
   if (router.locale === 'es-CL') {
     return (
       <div>
-        <Head title="Políticas de privacidad | Cárbula Autos Chile" />
+        <Head title="Terminos y condiciones | Carbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
-          <h1>Políticas de privacidad Cárbula Chile</h1>
+        <h1>Términos y condiciones</h1>
         </div>
         <div className={styles.terminos}>
          <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
@@ -149,10 +149,10 @@ const TerminosCondiciones = () => {
   if (router.locale === 'es-MX') {
     return (
       <div>
-        <Head title="Políticas de privacidad | Cárbula Autos México" />
+        <Head title="Terminos y condiciones | Carbula Autos Mexico" />
         <Nav />
         <div className={styles.header}>
-        <h1>Políticas de privacidad Cárbula México</h1>
+        <h1>Términos y condiciones</h1>
         </div>
         <div className={styles.terminos}>
           <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
@@ -213,10 +213,10 @@ const TerminosCondiciones = () => {
   }
   if (router.locale === 'es-UY') {
     return <div>
-        <Head title="Políticas de privacidad | Cárbula Autos Uruguay" />
+        <Head title="Terminos y condiciones | Carbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
-      <h1>Políticas de privacidad Cárbula Uruguay</h1>
+      <h1>Términos y condiciones</h1>
       </div>
       <div className={styles.terminos}>
          <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>

@@ -4,7 +4,7 @@ import { string } from 'prop-types'
 import { useRouter } from 'next/router'
 import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../../utils/helpers'
 
-const defaultDescription = 'Te ayudamos a vender tu auto de la forma más segura, simple y transparente. Ingresa tu auto en el cotizador.'
+const defaultDescription = 'Ingresa los datos de tu auto en el cotizador ✓ Gana hasta un 25% mas ✓ Vende tu auto usado sin hacer nada'
 
 const defaultOGURL = '/como-vender'
 const defaultOGImage = '/images/como-vender-carbula.webp'

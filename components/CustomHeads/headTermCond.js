@@ -4,7 +4,7 @@ import { string } from 'prop-types'
 import { useRouter } from 'next/router'
 import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../../utils/helpers'
 
-const defaultDescription = 'Términos, condiciones de uso y políticas de privacidad de Cárbula para comprar y vender un auto usado.'
+const defaultDescription = 'Terminos, condiciones de uso y politicas de privacidad de Carbula para comprar y vender un auto usado'
 
 const defaultOGURL = '/terminos-y-condiciones'
 const defaultOGImage = '/images/terminos-condiciones-carbula.webp'

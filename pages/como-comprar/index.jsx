@@ -19,10 +19,10 @@ const ComoComprar = () => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="¿Cómo comprar un auto? | Cárbula Autos Argentina" />
+        <Head title="Compra un auto de forma segura | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
-        <a href="https://catalogo.carbula.ar/"><h1>¿Cómo comprar un auto en Cárbula?</h1></a>
+        <a href="https://catalogo.carbula.ar/"><h1>Compra un auto de forma segura</h1></a>
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -99,10 +99,10 @@ const ComoComprar = () => {
   if (router.locale === 'es-CL') {
     return (
       <div>
-        <Head title="¿Cómo comprar un auto? | Cárbula Autos Chile" />
+        <Head title="Compra un auto de forma segura | Carbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
-        <a href="https://catalogo.carbula.cl/"><h1>¿Cómo comprar un auto en Cárbula?</h1></a>
+        <a href="https://catalogo.carbula.cl/"><h1>Compra un auto de forma segura</h1></a>
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -179,10 +179,10 @@ const ComoComprar = () => {
   if (router.locale === 'es-MX') {
     return (
       <div>
-        <Head title="¿Cómo comprar un auto? | Cárbula Autos México" />
+        <Head title="Compra un auto de forma segura | Carbula Autos Mexico" />
         <Nav />
         <div className={styles.header}>
-        <a href="https://catalogo.carbula.mx/"><h1>¿Cómo comprar un auto en Cárbula?</h1></a>
+        <a href="https://catalogo.carbula.mx/"><h1>Compra un auto de forma segura</h1></a>
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -258,10 +258,10 @@ const ComoComprar = () => {
   }
   if (router.locale === 'es-UY') {
     return <div>
-        <Head title="¿Cómo comprar un auto? | Cárbula Autos Uruguay" />
+        <Head title="Compra un auto de forma segura | Carbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
-      <a href="https://catalogo.carbula.uy/"><h1>¿Cómo comprar un auto en Cárbula?</h1></a>
+      <a href="https://catalogo.carbula.uy/"><h1>Compra un auto de forma segura</h1></a>
       </div>
       <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

@@ -19,10 +19,10 @@ const ComoVender = () => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="¿Cómo vender mi auto? | Cárbula Autos Argentina" />
+        <Head title="Vende tu auto de forma segura | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
-        <h1>¿Cómo vender mi auto en Cárbula?</h1>
+        <h1>Vende tu auto de forma segura</h1>
         </div>
         <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -92,7 +92,7 @@ const ComoVender = () => {
   if (router.locale === 'es-CL') {
     return (
       <div>
-        <Head title="¿Cómo vender mi auto? | Cárbula Autos Chile" />
+        <Head title="Vende tu auto de forma segura | Carbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
         <h1>¿Cómo vender mi auto en Cárbula?</h1>
@@ -165,10 +165,10 @@ const ComoVender = () => {
   if (router.locale === 'es-MX') {
     return (
       <div>
-        <Head title="¿Cómo vender mi auto? | Cárbula Autos México" />
+        <Head title="Vende tu auto de forma segura | Carbula Autos Mexico" />
         <Nav />
         <div className={styles.header}>
-        <h1>¿Cómo vender mi auto en Cárbula?</h1>
+        <h1>Vende tu auto de forma segura</h1>
         </div>
         <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -237,10 +237,10 @@ const ComoVender = () => {
   }
   if (router.locale === 'es-UY') {
     return <div>
-        <Head title="¿Cómo vender mi auto? | Cárbula Autos Uruguay" />
+        <Head title="Vende tu auto de forma segura | Carbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
-      <h1>¿Cómo vender mi auto en Cárbula?</h1>
+      <h1>Vende tu auto de forma segura</h1>
       </div>
       <div className={styles.vender}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

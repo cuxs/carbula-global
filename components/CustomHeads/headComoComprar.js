@@ -4,7 +4,7 @@ import { string } from 'prop-types'
 import { useRouter } from 'next/router'
 import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../../utils/helpers'
 
-const defaultDescription = 'Con el respaldo de nuestra Certificación Cárbula y financiación a medida.'
+const defaultDescription = 'Adquire un auto de forma segura ✓ Con certificación Cárbula ✓ Financiación para autos usados'
 
 const defaultOGURL = '/como-comprar'
 const defaultOGImage = '/images/como-comprar-carbula.webp'

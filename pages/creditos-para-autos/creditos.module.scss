@@ -8,18 +8,45 @@
   align-items: center;
   justify-content: center;
   h1 {
+    font-size: 2.5rem;
+    line-height: 2rem;
     color: #fff;
-    margin: 0px auto;
     text-align: center;
   }
   h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
     color: #fff;
-    margin: 0px auto;
     text-align: center;
-     }
+  }
 }
-
+.buttons__container {
+  width: 100%;
+  margin: 0px auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.card {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.financiamiento {
+  padding: 50px 120px 0px;
+  h2 {
+    font-size: 1.5rem;
+    color: #999999;
+    margin-bottom: 0px;
+  }
+  p,
+  i {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #999999;
+  }
+}
 .creditos {
   padding: 100px 250px;
   h4 {
@@ -28,22 +55,28 @@
     margin-bottom: 0px;
     font-weight: 600;
   }
-  p, i {
+  p,
+  i {
     font-size: 18px;
     margin-bottom: 20px;
     color: #999999;
   }
 }
-@media(max-width: 769px){
+
+@media(max-width: 740px) {
   .creditos {
-    padding: 50px 40px ;
+    padding: 50px 40px;
   }
+
   .header {
     height: 350px;
     background-image: url("/images/como-vender-mobile.webp");
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+  .card {
+    padding: 40px 40px;
+    display: flex;
+  }
 }
-
-

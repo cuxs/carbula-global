@@ -1,6 +1,21 @@
+import {
+  Button,
+  Container,
+  Divider,
+  Card,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  List,
+  Menu,
+  Segment,
+  Sidebar,
+  Visibility,
+} from 'semantic-ui-react'
 
-import { Button } from 'semantic-ui-react'
-import styles from './creditos.module.scss'
+import styles from './creditos.module.scss' 
+
 import Head from '../../components/CustomHeads/headCreditosAutos';
 import Nav from '../../components/nav';
 import { useRouter } from 'next/router';
@@ -22,16 +37,93 @@ const CreditosAutos = () => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="Credito automotriz | Carbula Autos Argentina" />
+        <Head title="Credito automotriz Santander | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
-        <h2>Crédito automotriz</h2>
-        <h1>Comprá tu auto Cárbula con financiamiento</h1>
-        <div>
-        <Button primary>Primary</Button>
-        <Button secondary>Secondary</Button>
-         </div>
+        <Container>
+        <h2>Financiamiento</h2>
+        <h1>Comprá tu auto en cuotas con Cárbula y Santander</h1>
+        <Button>Click Here</Button>
+        </Container>
         </div>
+
+        <div className={styles.card}>
+        <Card.Group>
+    <Card>
+      <Card.Content>
+        <Image
+          floated='right'
+          size='mini'
+          src='/images/avatar/large/steve.jpg'
+        />
+        <Card.Header>Steve Sanders</Card.Header>
+        <Card.Meta>Friends of Elliot</Card.Meta>
+        <Card.Description>
+          Steve wants to add you to the group <strong>best friends</strong>
+        </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <div className='ui two buttons'>
+          <Button basic color='green'>
+            Approve
+          </Button>
+          <Button basic color='red'>
+            Decline
+          </Button>
+        </div>
+      </Card.Content>
+    </Card>
+    <Card>
+      <Card.Content>
+        <Image
+          floated='right'
+          size='mini'
+          src='/images/logo.svg'
+        />
+        <Card.Header>Molly Thomas</Card.Header>
+        <Card.Meta>New User</Card.Meta>
+        <Card.Description>
+          Molly wants to add you to the group <strong>musicians</strong>
+        </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <div className='ui two buttons'>
+          <Button basic color='green'>
+            Approve
+          </Button>
+          <Button basic color='red'>
+            Decline
+          </Button>
+        </div>
+      </Card.Content>
+    </Card>
+    <Card>
+      <Card.Content>
+        <Image
+          floated='right'
+          size='mini'
+          src='/images/avatar/large/jenny.jpg'
+        />
+        <Card.Header>Jenny Lawrence</Card.Header>
+        <Card.Meta>New User</Card.Meta>
+        <Card.Description>
+          Jenny requested permission to view your contact details
+        </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <div className='ui two buttons'>
+          <Button basic color='green'>
+            Approve
+          </Button>
+          <Button basic color='red'>
+            Decline
+          </Button>
+        </div>
+      </Card.Content>
+    </Card>
+  </Card.Group> 
+        </div>
+
         <div className={styles.creditos}>
           <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
           <p>Al usar nuestra plataforma y los servicios que proponemos, usted acepta los términos y condiciones establecidos en el presente apartado. Estos Términos de uso ("Términos") rigen su acceso y uso de los servicios y propuestas (colectivamente, "Servicios") por www.carbula.com o www.carbula.com.ar, incluidas nuestras filiales y subsidiarias (colectivamente, “CÁRBULA”, "Cárbula", "nosotros”, "Nosotros" o "nuestro"). Estos Términos se aplican a todos los Servicios de CÁRBULA, incluido cualquier sitio web o aplicación móvil que ponemos a su disposición.Por favor, lea atentamente los términos de servicios detallados en este apartado: Al utilizar los servicios, acepta estar obligado por estos términos. Si no está de acuerdo con éstos términos, no puede acceder o utilizar los servicios que propone Cárbula S.A.S., CUIT Nº 30-71643870-4, con domicilio fiscal en Olegario Andrade 315, Mendoza, Argentina (en adelante “CÁRBULA”).</p>

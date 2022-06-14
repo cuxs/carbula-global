@@ -10,9 +10,9 @@ import {
   Accordion,
   List,
   Menu,
-  Segment,
   Sidebar,
   Visibility,
+  Segment,
 } from 'semantic-ui-react'
 
 //import 'semantic-ui-css/semantic.min.css'
@@ -43,12 +43,12 @@ const CreditosAutos = () => {
           <Container>
             <h1>Comprá tu auto con financiamiento</h1>
             <div className={styles.buttons__container}>
-              <Button fluid>Simulá tu préstamo</Button>
+              <Button primary>Simulá tu préstamo</Button>
             </div>
           </Container>
         </div>
         <div className={styles.financiamiento}>
-          <h2>Banco Santander se une a Cárbula para que puedas financiar la compra de tu próximo usado. ¿Cómo podés hacerlo? En 3 simples pasos.</h2>
+          <h2><b>Banco Santander</b> se une a Cárbula para que puedas financiar la compra de tu próximo usado. ¿Cómo podés hacerlo? En 3 simples pasos.</h2>
         </div>
 
         <div className={styles.card}>
@@ -60,7 +60,7 @@ const CreditosAutos = () => {
                   size='mini'
                   src='/images/carbula-catalogo.webp'
                 />
-                <Card.Header>Pre calificá</Card.Header>
+                <Card.Header><b>PASO 1:</b> Pre-clasificá</Card.Header>
                 <Card.Description>
                   <p>Ingresá tu correo electrónico, teléfono, y CUIT o CUIL,
                     y pre-calificá para un préstamo Santander en tan solo 2 minutos</p>
@@ -68,7 +68,7 @@ const CreditosAutos = () => {
               </Card.Content>
               <Card.Content extra>
                 <List>
-                  <List.Item as='a'>Más información</List.Item>
+                  <List.Item as='a'><p>Más información</p></List.Item>
                 </List>
               </Card.Content>
             </Card>
@@ -79,14 +79,14 @@ const CreditosAutos = () => {
                   size='mini'
                   src='/images/carbula-catalogo.webp'
                 />
-                <Card.Header><h4>Elegí tu auto</h4></Card.Header>
+                <Card.Header><b>PASO 2:</b> Elegí tu auto</Card.Header>
                 <Card.Description>
                   <p>Encontrá tu próximo auto en nuestro catálogo. Si no sabés cuál elegir, te ofrecemos asesoramiento para descubrir el auto que mejor se adapta a tus necesidades.</p>
                 </Card.Description>
               </Card.Content>
               <Card.Content extra>
-              <List>
-                  <List.Item as='a'>Más información</List.Item>
+                <List>
+                  <List.Item as='a'><p>Más información</p></List.Item>
                 </List>
               </Card.Content>
             </Card>
@@ -97,24 +97,48 @@ const CreditosAutos = () => {
                   size='mini'
                   src='/images/carbula-catalogo.webp'
                 />
-                <Card.Header>Financiá tu vehículo</Card.Header>
+                <Card.Header><b>PASO 3:</b> Financiá tu vehículo</Card.Header>
                 <Card.Description>
                   <p>Accedé a un crédito Santander para financiar hasta el 95% del valor del auto de manera inmediata.</p>
                 </Card.Description>
               </Card.Content>
               <Card.Content extra>
-              <div className={styles.buttons__container}>
-              <Button fluid>Simulá tu préstamo</Button>
-            </div>
+                <div className={styles.buttons__container}>
+                  <Button fluid>Simulá tu préstamo</Button>
+                </div>
               </Card.Content>
             </Card>
           </Card.Group>
         </div>
 
-        <div className={styles.creditos}>
-          <h4>¿Por qué comprar en nuestra plataforma?</h4>
 
+        <div className={styles.creditos}>
+          <h3>¿Por qué comprar en nuestra plataforma?</h3>
+          <Grid container columns={3} doubling stackable>
+            <Grid.Column>
+              <Segment>
+                <Image src='/images/avatar.png' size='small' />
+                <h4>Confianza</h4>
+                <p>Brindamos operaciones de compra y venta 100% seguras.</p>
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <Image src='/images/avatar.png' size='small' />
+                <h4>Confianza</h4>
+                <p>Brindamos operaciones de compra y venta 100% seguras.</p>
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <Image src='/images/avatar.png' size='small' />
+                <h4>Confianza</h4>
+                <p>Brindamos operaciones de compra y venta 100% seguras.</p>
+              </Segment>
+            </Grid.Column>
+          </Grid>
         </div>
+
         <hr></hr>
         <section>
           <FooterInfo grey country_code={'ar'} />

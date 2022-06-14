@@ -28,8 +28,8 @@
     border-radius: 50px;
     outline: none;
     border: none;
-    background-color: black;
-    color: white;
+    background-color: #000;
+    color: #fff;
     font-family: ProximaNova;
     font-size: 18px;
     transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
@@ -40,17 +40,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  b {
+    color: #38ceb3;
+  }
 }
 
-.financiamiento {
-  padding: 100px 250px;
 
+.financiamiento {
+  padding: 50px 250px;
   h2 {
     font-size: 1.5rem;
     color: #999999;
     margin-bottom: 0px;
   }
-
   p,
   i {
     font-size: 18px;
@@ -60,7 +62,6 @@
 
   @media(max-width: 360px) {
     padding: 1.5rem;
-
     h2 {
       font-size: 1.2rem;
       line-height: 1.5rem;
@@ -72,14 +73,12 @@
 
 .creditos {
   padding: 100px 250px;
-
   h4 {
     font-size: 22px;
-    color: #4b4b4b;
+    color: #999999;
     margin-bottom: 0px;
     font-weight: 600;
   }
-
   p,
   i {
     font-size: 18px;
@@ -93,7 +92,7 @@
 
   .header {
     height: 350px;
-    background-image: url("/images/como-vender-mobile.webp");
+    background-image: url("/images/financiamiento-mobile.png");
     background-size: cover;
     background-repeat: no-repeat;
 

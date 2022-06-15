@@ -154,12 +154,9 @@ const CreditosAutos = () => {
           </div>
           </div>
         </div>
-        </div>
 
-        <div className={styles.faq}>
-        <h3>Preguntas Frecuentes</h3>
-        <FaqCreditosAutos/>
         </div>
+        <FaqCreditosAutos/>
         <hr></hr>
         <section>
           <FooterInfo grey country_code={'ar'} />

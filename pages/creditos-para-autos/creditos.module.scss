@@ -40,12 +40,7 @@
     color: #38ceb3;
   }
   overflow:hidden;
-  .small {
-  align-items: baseline;  
-  }
 }
-  
-
 .financiamiento {
   padding: 50px 250px;
   h2 {
@@ -89,15 +84,6 @@
     font-size: 18px;
     margin-bottom: 20px;
     color: #999999;
-  }
-}
-.faq {
-  padding: 100px 250px;
-  h3 {
-    font-size: 2rem;
-    color: #999999;
-    display: flex;
-    justify-content: center;
   }
 }
 @media(max-width: 768px){

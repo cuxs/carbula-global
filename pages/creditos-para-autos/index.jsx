@@ -13,10 +13,10 @@ import {
   Card,
   Grid,
   Header,
-  Icon,
   Image,
   Accordion,
   List,
+  Icon,
   Menu,
   Sidebar,
   Visibility,
@@ -47,6 +47,7 @@ const CreditosAutos = () => {
             </div>
           </Container>
         </div>
+        
         <div className={styles.financiamiento}>
           <h2><b>Banco Santander</b> se une a Cárbula para que puedas financiar la compra de tu próximo usado. ¿Cómo podés hacerlo? En 3 simples pasos.</h2>
         </div>
@@ -59,8 +60,8 @@ const CreditosAutos = () => {
                   floated='center'
                   size='small'
                   src='/images/carbula-santander.webp'
-                  alt=''
-                  title=''
+                  alt='Preclasificá para tu crédito Santander'
+                  title='Preclasificá para tu crédito Santander'
                 />
                 <Card.Header><b>PASO 1:</b> Pre-clasificá</Card.Header>
                 <Card.Description>
@@ -68,7 +69,7 @@ const CreditosAutos = () => {
                     y pre-calificá para un préstamo Santander en tan solo 2 minutos.</p>
                 </Card.Description>
               </Card.Content>
-              <Card.Content extra>
+              <Card.Content extra >
                 <List>
                   <List.Item as='a'><p>Más información</p></List.Item>
                 </List>
@@ -80,8 +81,8 @@ const CreditosAutos = () => {
                   floated='center'
                   size='small'
                   src='/images/carbula-autos-usados.webp'
-                  alt=''
-                  title=''
+                  alt='Elegí tu auto en el catálogo Cárbula Argentina'
+                  title='Elegí tu auto en el catálogo Cárbula Argentina'
                 />
                 <Card.Header><b>PASO 2:</b> Elegí tu auto</Card.Header>
                 <Card.Description>
@@ -100,8 +101,8 @@ const CreditosAutos = () => {
                   floated='center'
                   size='small'
                   src='/images/auto-carbula.webp'
-                  alt=''
-                  title=''
+                  alt='Financiá tu vehículo Cárbula, simulá tu préstamo Santander'
+                  title='Financiá tu vehículo Cárbula, simulá tu préstamo Santander'
                 />
                 <Card.Header><b>PASO 3:</b> Financiá tu vehículo</Card.Header>
                 <Card.Description>
@@ -117,32 +118,10 @@ const CreditosAutos = () => {
           </Card.Group>
         </div>
 
-
         <div className={styles.creditos}>
           <h3>¿Por qué comprar en nuestra plataforma?</h3>
-          <Grid container columns={3} doubling stackable>
-            <Grid.Column>
-              <Segment>
-                <Image src='/images/avatar.png' size='small' />
-                <h4>Confianza</h4>
-                <p>Brindamos operaciones de compra y venta 100% seguras.</p>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <Image src='/images/avatar.png' size='small' />
-                <h4>Confianza</h4>
-                <p>Brindamos operaciones de compra y venta 100% seguras.</p>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <Image src='/images/avatar.png' size='small' />
-                <h4>Confianza</h4>
-                <p>Brindamos operaciones de compra y venta 100% seguras.</p>
-              </Segment>
-            </Grid.Column>
-          </Grid>
+          <div class="ui cards"><div class="ui card"><div class="content"><div class="header">Project Report - April</div><div class="meta">ROI: 30%</div><div class="description">Leverage agile frameworks to provide a robust synopsis for high level overviews.</div></div></div><div class="ui card"><div class="content"><div class="header">Project Report - May</div><div class="meta">ROI: 34%</div><div class="description">Bring to the table win-win survival strategies to ensure proactive domination.</div></div></div><div class="ui card"><div class="content"><div class="header">Project Report - June</div><div class="meta">ROI: 27%</div><div class="description">Capitalise on low hanging fruit to identify a ballpark value added activity to beta test.</div></div></div></div>
+
         </div>
 
         <hr></hr>

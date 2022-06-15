@@ -8,13 +8,10 @@
   align-items: center;
   justify-content: center;
   h1 {
-    //font-size: 2.5rem;
-    //line-height: 2rem;
     color: #fff;
     text-align: center;
-  }
+     }
 }
-
 .buttons__container {
   width: 100%;
   margin: 0px auto;
@@ -35,7 +32,6 @@
     transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
   }
 }
-
 .card {
   display: flex;
   justify-content: center;
@@ -44,8 +40,6 @@
     color: #38ceb3;
   }
 }
-
-
 .financiamiento {
   padding: 50px 250px;
   h2 {
@@ -59,7 +53,6 @@
     margin-bottom: 20px;
     color: #999999;
   }
-
   @media(max-width: 360px) {
     padding: 1.5rem;
     h2 {
@@ -70,7 +63,6 @@
     }
   }
 }
-
 .creditos {
   padding: 100px 250px;
   h4 {
@@ -86,29 +78,18 @@
     color: #999999;
   }
 }
-
-@media(max-width: 769px) {
- 
-
+@media(max-width: 769px){
   .header {
     height: 350px;
     background-image: url("/images/financiamiento-mobile.png");
     background-size: cover;
     background-repeat: no-repeat;
-
     h1 {
-      font-size: 2rem;
+      font-size: 25px;
       line-height: 1.6rem;
       color: #fff;
       text-align: center;
     }
-  }
-
-  .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
   }
   .creditos {
     padding: 50px 40px;

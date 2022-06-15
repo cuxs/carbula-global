@@ -25,7 +25,6 @@ const Head = props => {
       <meta name="robots" content="index,follow"/> 
       <meta name="googlebot" content="index,follow"/>
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
-      
       <link rel="alternate" hrefLang="es-MX" href="https://carbula.mx/terminos-y-condiciones" />
       <link rel="alternate" hrefLang="es-CL" href="https://carbula.cl/terminos-y-condiciones" />
       <link rel="alternate" hrefLang="es-UY" href="https://carbula.uy/terminos-y-condiciones" />

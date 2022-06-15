@@ -283,7 +283,7 @@ a {
 @media (max-width: 690px) {
   button {
     width: 120px;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -313,7 +313,6 @@ a {
   }
 }
 
-
 /*--------------
       Card
 ---------------*/
@@ -329,7 +328,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 360px;
+  width: 350px;
   min-height: 0px;
   background: #FFFFFF;
   padding: 0em;
@@ -449,11 +448,11 @@ a {
   border: none;
   border-top: 1px solid rgba(34, 36, 38, 0.1);
   background: none;
-  margin: 0em;
+  margin: 1em;
   padding: 1em 1em;
   -webkit-box-shadow: none;
           box-shadow: none;
-  font-size: 1em;
+  font-size: 16px !important;
   border-radius: 0em;
 }
 .ui.cards > .card > .content:after,

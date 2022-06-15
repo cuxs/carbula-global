@@ -1,3 +1,11 @@
+
+//import 'semantic-ui-css/semantic.min.css'
+import styles from './creditos.module.scss'
+import Head from '../../components/CustomHeads/headCreditosAutos';
+import Nav from '../../components/nav';
+import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import {
   Button,
   Container,
@@ -15,14 +23,6 @@ import {
   Segment,
 } from 'semantic-ui-react'
 
-//import 'semantic-ui-css/semantic.min.css'
-import styles from './creditos.module.scss'
-import Head from '../../components/CustomHeads/headCreditosAutos';
-import Nav from '../../components/nav';
-import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-
 export async function getServerSideProps(context) {
   return {
     props: {
@@ -37,7 +37,7 @@ const CreditosAutos = () => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="Credito automotriz Santander | Carbula Autos Argentina" />
+        <Head title="Comprá tu auto con financiamiento Santander | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
           <Container>
@@ -57,8 +57,10 @@ const CreditosAutos = () => {
               <Card.Content>
                 <Image
                   floated='center'
-                  size='mini'
-                  src='/images/carbula-santander.png'
+                  size='small'
+                  src='/images/carbula-santander.webp'
+                  alt=''
+                  title=''
                 />
                 <Card.Header><b>PASO 1:</b> Pre-clasificá</Card.Header>
                 <Card.Description>
@@ -76,8 +78,10 @@ const CreditosAutos = () => {
               <Card.Content>
                 <Image
                   floated='center'
-                  size='mini'
-                  src='/images/carbula-autos-usados.png'
+                  size='small'
+                  src='/images/carbula-autos-usados.webp'
+                  alt=''
+                  title=''
                 />
                 <Card.Header><b>PASO 2:</b> Elegí tu auto</Card.Header>
                 <Card.Description>
@@ -94,8 +98,10 @@ const CreditosAutos = () => {
               <Card.Content>
                 <Image
                   floated='center'
-                  size='mini'
-                  src='/images/auto-carbula.png'
+                  size='small'
+                  src='/images/auto-carbula.webp'
+                  alt=''
+                  title=''
                 />
                 <Card.Header><b>PASO 3:</b> Financiá tu vehículo</Card.Header>
                 <Card.Description>

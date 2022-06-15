@@ -1,7 +1,7 @@
 @import "../../sass/variables.scss";
 
 .header {
-  background-image: url("/images/financiamiento-desktop.png");
+  background-image: url("/images/credito-desktop.webp");
   background-size: cover;
   height: 460px;
   display: flex;
@@ -81,7 +81,7 @@
 @media(max-width: 769px){
   .header {
     height: 350px;
-    background-image: url("/images/financiamiento-mobile.png");
+    background-image: url("/images/credito-mobile.webp");
     background-size: cover;
     background-repeat: no-repeat;
     h1 {

@@ -14,7 +14,6 @@ import {
   Grid,
   Header,
   Image,
-  Accordion,
   List,
   Icon,
   Menu,
@@ -22,6 +21,13 @@ import {
   Visibility,
   Segment,
 } from 'semantic-ui-react'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
 
 export async function getServerSideProps(context) {
   return {
@@ -33,6 +39,7 @@ export async function getServerSideProps(context) {
 
 const CreditosAutos = () => {
   const router = useRouter()
+  const FaqCreditosAutos = dynamic(import('../../components/FaqCreditosAutos'))
   const FooterInfo = dynamic(import('../../components/FooterInfo'))
   if (router.locale === 'es-AR') {
     return (
@@ -149,7 +156,7 @@ const CreditosAutos = () => {
         </div>
 
         </div>
-
+        <FaqCreditosAutos/>
         <hr></hr>
         <section>
           <FooterInfo grey country_code={'ar'} />
@@ -215,6 +222,7 @@ const CreditosAutos = () => {
           <h4>Contactanos</h4>
           <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.cl"><strong>hola@carbula.cl</strong></a></i>
         </div>
+        <FaqCreditosAutos/>
         <hr></hr>
         <section>
           <FooterInfo grey country_code={'cl'} />
@@ -280,6 +288,7 @@ const CreditosAutos = () => {
           <h4>Contactanos</h4>
           <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.mx"><strong>hola@carbula.mx</strong></a></i>
         </div>
+        <FaqCreditosAutos/>
         <hr></hr>
         <section>
           <FooterInfo grey country_code={'mx'} />
@@ -344,7 +353,8 @@ const CreditosAutos = () => {
         <h4>Contactanos</h4>
         <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.uy"><strong>hola@carbula.uy</strong></a></i>
       </div>
-      <hr></hr>
+      <FaqCreditosAutos/>
+      <hr></hr>      
       <section>
         <FooterInfo grey country_code={'uy'} />
       </section>

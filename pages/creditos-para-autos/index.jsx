@@ -58,12 +58,12 @@ const CreditosAutos = () => {
                 <Image
                   floated='center'
                   size='mini'
-                  src='/images/carbula-catalogo.webp'
+                  src='/images/carbula-santander.png'
                 />
                 <Card.Header><b>PASO 1:</b> Pre-clasificá</Card.Header>
                 <Card.Description>
                   <p>Ingresá tu correo electrónico, teléfono, y CUIT o CUIL,
-                    y pre-calificá para un préstamo Santander en tan solo 2 minutos</p>
+                    y pre-calificá para un préstamo Santander en tan solo 2 minutos.</p>
                 </Card.Description>
               </Card.Content>
               <Card.Content extra>
@@ -77,7 +77,7 @@ const CreditosAutos = () => {
                 <Image
                   floated='center'
                   size='mini'
-                  src='/images/carbula-catalogo.webp'
+                  src='/images/carbula-autos-usados.png'
                 />
                 <Card.Header><b>PASO 2:</b> Elegí tu auto</Card.Header>
                 <Card.Description>
@@ -95,7 +95,7 @@ const CreditosAutos = () => {
                 <Image
                   floated='center'
                   size='mini'
-                  src='/images/carbula-catalogo.webp'
+                  src='/images/auto-carbula.png'
                 />
                 <Card.Header><b>PASO 3:</b> Financiá tu vehículo</Card.Header>
                 <Card.Description>

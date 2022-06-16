@@ -119,7 +119,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
           </Card.Group>
         </div>
 
-        <div className={styles.creditos}>
+        {/*<div className={styles.creditos}>
           <Container centered>
           <h3>¿Por qué comprar en nuestra plataforma?</h3>
           <div class="card">
@@ -147,7 +147,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
           </div>
         </div>
         </Container>
-        </div>
+      </div>*/}
       
         <div className={styles.faq}>
         <FaqCreditosAutos/>

@@ -42,7 +42,7 @@
   overflow:hidden;
 }
 .financiamiento {
-  padding: 50px 250px;
+  padding: 60px 250px;
   h2 {
     font-size: 1.5rem;
     color: #999999;
@@ -93,7 +93,8 @@
 .faq {
   display: flex;
   justify-content: center;
-  padding: 50px 50px;
+  margin-top: 100px;
+  padding: 40px 50px;
   background-color: #acc7f929;
 }
 
@@ -121,6 +122,9 @@
   .card {
     p,
     i {font-size: 1rem;}
+  }
+  .faq {
+    margin-top: 50px;
   }
 }
 

@@ -35,7 +35,7 @@ export async function getServerSideProps(context) {
 
 const CreditosAutos = ({COUNTRY_CODE}) => {
   const router = useRouter()
-  const FaqCreditosAutos = dynamic(import('../../components/CreditosAutosFaq'))
+  const FaqCreditosAutos = dynamic(import('../../components/FaqCreditosAutos'))
   const FooterInfo = dynamic(import('../../components/FooterInfo'))
   if (router.locale === 'es-AR') {
     return (

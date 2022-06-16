@@ -127,12 +127,13 @@ const CreditosAutos = () => {
 
         <div className={styles.creditos}>
           <h3>¿Por qué comprar en nuestra plataforma?</h3>
+          <Container>
           <div class="ui cards"><div class="ui card">
           <div class="content">
           <div class="header">
           <Image src='/images/avatar.png'></Image>
-          </div><div class="header">ROI: 30%</div>
-          <div class="description">Leverage agile frameworks to provide a robust synopsis for high level overviews.</div>
+          </div><div class="header"><h4>Confianza</h4></div>
+          <div class="description">Brindamos operaciones de compra y venta 100% seguras.</div>
           </div>
           </div>
         </div>
@@ -140,8 +141,8 @@ const CreditosAutos = () => {
           <div class="content">
           <div class="header">
           <Image src='/images/avatar.png'></Image>
-          </div><div class="header">ROI: 30%</div>
-          <div class="description">Leverage agile frameworks to provide a robust synopsis for high level overviews.</div>
+          </div><div class="header"><h4>Simpleza</h4></div>
+          <div class="description">Comprar es conveniente gracias a los préstamos Santander.</div>
           </div>
           </div>
         </div>
@@ -149,15 +150,17 @@ const CreditosAutos = () => {
           <div class="content">
           <div class="header">
           <Image src='/images/avatar.png'></Image>
-          </div><div class="header">ROI: 30%</div>
-          <div class="description">Leverage agile frameworks to provide a robust synopsis for high level overviews.</div>
+          </div><div class="header"><h4>Garantía</h4></div>
+          <div class="description">Todos nuestros autos aprobaron una instancia de inspección mecánica.</div>
           </div>
           </div>
+        </div>
+        </Container>
         </div>
 
-        </div>
+        <div className={styles.faq}>
         <FaqCreditosAutos/>
-        <hr></hr>
+        </div>
         <section>
           <FooterInfo grey country_code={'ar'} />
         </section>

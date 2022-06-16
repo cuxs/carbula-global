@@ -45,13 +45,13 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
           <Container>
             <h1>Comprá tu auto con financiamiento</h1>
             <div className={styles.buttons__container}>
-            <a target="__blank" rel="noopener noreferrer" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo</Button></a>
+            <a target="__blank" rel="noopener noreferrer" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo <b>Santander</b></Button></a>
             </div>
           </Container>
         </div>
         
         <div className={styles.financiamiento}>
-          <h2><b>Banco Santander</b> se une a Cárbula para que puedas financiar la compra de tu próximo usado. ¿Cómo podés hacerlo? En 3 simples pasos.</h2>
+          <h2><img src={"/images/banco-santander-logo.svg"}/>se une a Cárbula para que puedas financiar la compra de tu próximo usado. ¿Cómo podés hacerlo? En 3 simples pasos.</h2>
         </div>
 
         <div className={styles.card}>
@@ -112,7 +112,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
               </Card.Content>
               <Card.Content extra>
                 <div className={styles.buttons__container}>
-                  <a target="__blank" rel="noopener noreferrer" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo</Button></a>
+                  <a target="__blank" rel="noopener noreferrer" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo <img src={"/images/banco-santander-iso.svg"}/></Button></a>
                 </div>
               </Card.Content>
             </Card>

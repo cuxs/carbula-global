@@ -152,7 +152,7 @@ const CreditosAutos = () => {
           </div>
         </div>
         </div>
-
+      
         <div className={styles.faq}>
         <FaqCreditosAutos/>
         </div>

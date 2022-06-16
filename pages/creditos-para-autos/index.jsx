@@ -73,7 +73,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
               </Card.Content>
               <Card.Content extra >
                 <List>
-                  <List.Item as='a'><p><a target="__blank" href={`https://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola%2C+necesito+información+sobre+el+préstamo+Santander`}><b>Más información</b></a></p></List.Item>
+                  <List.Item as='a'><p><a target="__blank" href={`https://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola%2C+necesito+información+sobre+el+préstamo+de+un+auto`}><b>Más información</b></a></p></List.Item>
                 </List>
               </Card.Content>
             </Card>
@@ -121,31 +121,33 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
         </div>
 
         <div className={styles.creditos}>
+          <Container centered>
           <h3>¿Por qué comprar en nuestra plataforma?</h3>
           <div class="card">
           <div class="content">
           <div class="header">
-          <Image src='/images/confianza-carbula.png'></Image>
+          <Image src='/images/confianza-carbula.png' size='medium' centered ></Image>
           </div><div class="header"><h4>Confianza</h4></div>
-          <div class="description">Brindamos operaciones de compra y venta 100% seguras.</div>
+          <div class="description">Brindamos operaciones de compra <br></br> y venta 100% seguras.</div>
           </div>
         </div>
         <div class="card">
           <div class="content">
           <div class="header">
-          <Image src='/images/simpleza-carbula.png'></Image>
+          <Image src='/images/simpleza-carbula.png' size='medium' centered ></Image>
           </div><div class="header"><h4>Simpleza</h4></div>
-          <div class="description">Comprar es conveniente gracias a los préstamos Santander.</div>
+          <div class="description">Comprar es conveniente gracias <br></br> a los préstamos Santander.</div>
           </div>
         </div>
         <div class="card">
           <div class="content">
           <div class="header">
-          <Image src='/images/inspeccion-carbula.png'></Image>
+          <Image src='/images/inspeccion-carbula.png' size='medium' centered></Image>
           </div><div class="header"><h4>Garantía</h4></div>
-          <div class="description">Todos nuestros autos aprobaron una instancia de inspección mecánica.</div>
+          <div class="description">Todos nuestros autos aprobaron una <br></br> instancia de inspección mecánica.</div>
           </div>
         </div>
+        </Container>
         </div>
       
         <div className={styles.faq}>

@@ -65,12 +65,14 @@
   }
 }
 .creditos {
-  padding: 100px 250px;
-
+  padding: 50px 250px;
+  display: flex;
+  justify-content: center;
   h3 {
     font-size: 2rem;
     color: #999999;
     margin-bottom: 50px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
   }
@@ -85,10 +87,6 @@
     font-size: 18px;
     margin-bottom: 20px;
     color: #999999;
-  }
-  .card {
-    display: inline-block;
-    justify-content: center;
   }
 }
 

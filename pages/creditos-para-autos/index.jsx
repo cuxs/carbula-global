@@ -21,23 +21,19 @@ import {
   Visibility,
   Segment,
 } from 'semantic-ui-react'
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
-} from 'react-accessible-accordion';
+import { SANTANDER_URL_PRODUCTION, SANTANDER_SPID_PRODUCTION, SANTANDER_OHASH } from '../../utils/constants';
+import { getCountryCode, getWhatsappNumber } from '../../utils/helpers';
 
 export async function getServerSideProps(context) {
   return {
     props: {
+      COUNTRY_CODE: getCountryCode(context.locale),
       ...(await serverSideTranslations(context.locale, ['FooterInfo'])),
     }
   }
 }
 
-const CreditosAutos = () => {
+const CreditosAutos = ({COUNTRY_CODE}) => {
   const router = useRouter()
   const FaqCreditosAutos = dynamic(import('../../components/FaqCreditosAutos'))
   const FooterInfo = dynamic(import('../../components/FooterInfo'))
@@ -78,7 +74,7 @@ const CreditosAutos = () => {
               </Card.Content>
               <Card.Content extra >
                 <List>
-                  <List.Item as='a'><p>Más información</p></List.Item>
+                  <List.Item as='a'><p><a target="__blank" href={`https://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola%2C+necesito+financiar+la+compra+de+un+auto`}>Más información</a></p></List.Item>
                 </List>
               </Card.Content>
             </Card>
@@ -98,7 +94,7 @@ const CreditosAutos = () => {
               </Card.Content>
               <Card.Content extra>
                 <List>
-                  <List.Item as='a'><p>Más información</p></List.Item>
+                  <List.Item as='a'><p><a target="__blank" href={`https://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola%2C+necesito+financiar+la+compra+de+un+auto`}>Más información</a></p></List.Item>
                 </List>
               </Card.Content>
             </Card>
@@ -118,7 +114,7 @@ const CreditosAutos = () => {
               </Card.Content>
               <Card.Content extra>
                 <div className={styles.buttons__container}>
-                  <Button fluid>Simulá tu préstamo</Button>
+                  <a target="__blank" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo</Button></a>
                 </div>
               </Card.Content>
             </Card>

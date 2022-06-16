@@ -12,7 +12,7 @@ const FaqCreditosAutos = () => {
       <AccordionItem className={styles.accordion__item}>
         <AccordionItemHeading className={styles.accordion__heading}>
           <AccordionItemButton className={styles.accordion__button}>
-            <span>¿Qué información necesito para acceder a la pre-calificación?</span>
+            <span>¿Qué información necesito para acceder a la precalificación?</span>
           </AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel className={styles.accordion__panel}>
@@ -47,16 +47,6 @@ const FaqCreditosAutos = () => {
         </AccordionItemHeading>
         <AccordionItemPanel  className={styles.accordion__panel}>
           <p>Financiamos hasta el 95% del valor del vehículo. El monto de tu préstamo dependerá de tu calificación crediticia.</p>
-        </AccordionItemPanel>
-      </AccordionItem>
-      <AccordionItem className={styles.accordion__item}>
-        <AccordionItemHeading className={styles.accordion__heading}>
-          <AccordionItemButton className={styles.accordion__button}>
-            <span>¿Tenés dudas?</span>
-          </AccordionItemButton>
-        </AccordionItemHeading>
-        <AccordionItemPanel  className={styles.accordion__panel}>
-          <p>Estamos acá para ayudarte (link a WA)</p>
         </AccordionItemPanel>
       </AccordionItem>
     </Accordion>

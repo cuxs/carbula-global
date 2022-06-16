@@ -1,4 +1,3 @@
-
 //import 'semantic-ui-css/semantic.min.css'
 import styles from './creditos.module.scss'
 import Head from '../../components/CustomHeads/headCreditosAutos';
@@ -40,13 +39,13 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="Comprá tu auto con financiamiento Santander | Carbula Autos Argentina" />
+        <Head title="Compra tu auto con financiamiento Santander | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
           <Container>
             <h1>Comprá tu auto con financiamiento</h1>
             <div className={styles.buttons__container}>
-              <Button primary>Simulá tu préstamo</Button>
+            <a target="__blank" rel="noopener noreferrer" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo</Button></a>
             </div>
           </Container>
         </div>
@@ -66,15 +65,15 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
                   alt='Preclasificá para tu crédito Santander'
                   title='Preclasificá para tu crédito Santander'
                 />
-                <Card.Header><b>PASO 1:</b> Pre-clasificá</Card.Header>
+                <Card.Header><b>PASO 1:</b> Precalificá</Card.Header>
                 <Card.Description>
                   <p>Ingresá tu correo electrónico, teléfono, y CUIT o CUIL,
-                    y pre-calificá para un préstamo Santander en tan solo 2 minutos.</p>
+                    y precalificá para un préstamo Santander en tan solo 2 minutos.</p>
                 </Card.Description>
               </Card.Content>
               <Card.Content extra >
                 <List>
-                  <List.Item as='a'><p><a target="__blank" href={`https://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola%2C+necesito+financiar+la+compra+de+un+auto`}>Más información</a></p></List.Item>
+                  <List.Item as='a'><p><a target="__blank" href={`https://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola%2C+necesito+información+sobre+el+préstamo+Santander`}><b>Más información</b></a></p></List.Item>
                 </List>
               </Card.Content>
             </Card>
@@ -94,7 +93,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
               </Card.Content>
               <Card.Content extra>
                 <List>
-                  <List.Item as='a'><p><a target="__blank" href={`https://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola%2C+necesito+financiar+la+compra+de+un+auto`}>Más información</a></p></List.Item>
+                  <List.Item as='a'><p><a target="__blank" href={`https://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola%2C+necesito+financiar+la+compra+de+un+auto`}><b>Más información</b></a></p></List.Item>
                 </List>
               </Card.Content>
             </Card>
@@ -114,7 +113,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
               </Card.Content>
               <Card.Content extra>
                 <div className={styles.buttons__container}>
-                  <a target="__blank" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo</Button></a>
+                  <a target="__blank" rel="noopener noreferrer" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo</Button></a>
                 </div>
               </Card.Content>
             </Card>

@@ -66,6 +66,7 @@
 }
 .creditos {
   padding: 100px 250px;
+
   h3 {
     font-size: 2rem;
     color: #999999;
@@ -85,7 +86,12 @@
     margin-bottom: 20px;
     color: #999999;
   }
+  .card {
+    display: inline-block;
+    justify-content: center;
+  }
 }
+
 .faq {
   display: flex;
   justify-content: center;

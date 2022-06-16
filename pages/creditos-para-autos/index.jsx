@@ -127,35 +127,30 @@ const CreditosAutos = () => {
 
         <div className={styles.creditos}>
           <h3>¿Por qué comprar en nuestra plataforma?</h3>
-          <Container>
-          <div class="ui cards"><div class="ui card">
+          <div class="card">
           <div class="content">
           <div class="header">
-          <Image src='/images/avatar.png'></Image>
+          <Image src='/images/confianza-carbula.png'></Image>
           </div><div class="header"><h4>Confianza</h4></div>
           <div class="description">Brindamos operaciones de compra y venta 100% seguras.</div>
           </div>
-          </div>
         </div>
-        <div class="ui cards"><div class="ui card">
+        <div class="card">
           <div class="content">
           <div class="header">
-          <Image src='/images/avatar.png'></Image>
+          <Image src='/images/simpleza-carbula.png'></Image>
           </div><div class="header"><h4>Simpleza</h4></div>
           <div class="description">Comprar es conveniente gracias a los préstamos Santander.</div>
           </div>
-          </div>
         </div>
-        <div class="ui cards"><div class="ui card">
+        <div class="card">
           <div class="content">
           <div class="header">
-          <Image src='/images/avatar.png'></Image>
+          <Image src='/images/inspeccion-carbula.png'></Image>
           </div><div class="header"><h4>Garantía</h4></div>
           <div class="description">Todos nuestros autos aprobaron una instancia de inspección mecánica.</div>
           </div>
-          </div>
         </div>
-        </Container>
         </div>
 
         <div className={styles.faq}>

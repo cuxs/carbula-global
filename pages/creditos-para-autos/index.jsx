@@ -67,8 +67,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
                 />
                 <Card.Header><b>PASO 1:</b> Precalificá</Card.Header>
                 <Card.Description>
-                  <p>Ingresá tu correo electrónico, teléfono, y CUIT o CUIL,
-                    y precalificá para un préstamo Santander en tan solo 2 minutos.</p>
+                  <p>Ingresá tu correo electrónico, teléfono, CUIT o CUIL y precalificá en tan solo 2 minutos.</p>
                 </Card.Description>
               </Card.Content>
               <Card.Content extra >
@@ -88,7 +87,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
                 />
                 <Card.Header><b>PASO 2:</b> Elegí tu auto</Card.Header>
                 <Card.Description>
-                  <p>Encontrá tu próximo auto en nuestro catálogo. Si no sabés cuál elegir, te ofrecemos asesoramiento para descubrir el auto que mejor se adapta a tus necesidades.</p>
+                  <p>Encontrá tu próximo auto en nuestro catálogo. Si no sabés cuál elegir, te ofrecemos asesoramiento.</p>
                 </Card.Description>
               </Card.Content>
               <Card.Content extra>
@@ -108,7 +107,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
                 />
                 <Card.Header><b>PASO 3:</b> Financiá tu vehículo</Card.Header>
                 <Card.Description>
-                  <p>Accedé a un crédito Santander para financiar hasta el 95% del valor del auto de manera inmediata.</p>
+                  <p>Accedé a un Crédito Santander para financiar hasta el 95% del valor del auto de manera inmediata.</p>
                 </Card.Description>
               </Card.Content>
               <Card.Content extra>

@@ -36,6 +36,7 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
         <Button link> <a style={renderColorStyle()} href={getTerminosCondiciones()} >> Términos y condiciones</a></Button>
         <Button link> <a style={renderColorStyle()} href={getComoVender()} >> ¿Cómo vender mi auto?</a></Button>
         <Button link> <a style={renderColorStyle()} href={getComoComprar()} >> ¿Cómo comprar un auto?</a></Button>
+        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="https://blog.carbula.com/">> Blog</a></Button>
       </div>
       <div className={styles.social__container}>
       <a

@@ -4,7 +4,7 @@ import { string } from 'prop-types'
 import { useRouter } from 'next/router'
 import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../../utils/helpers'
 
-const defaultDescription = 'Ingresa a la web: precalifica, elige tu auto usado y simula tu préstamo'
+const defaultDescription = 'Desde nuestra web ✓ precalifica ✓ elige tu auto usado ✓ simula tu préstamo'
 
 const defaultOGURL = '/creditos-para-autos'
 const defaultOGImage = '/images/creditos-para-autos-carbula.webp'

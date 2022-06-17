@@ -4,6 +4,7 @@ import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
+// import GoogleOneTapLogin from '../GoogleOneTapLogin';
 import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
@@ -509,6 +510,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
             </div>
 
           </div>
+          {/* <GoogleOneTapLogin/> */}
           <p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>
           <div className={styles.buttons__container}>
             <Button type="button" link onClick={handleBack}>Volver</Button>

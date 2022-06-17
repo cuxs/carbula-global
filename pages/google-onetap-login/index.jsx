@@ -6,6 +6,7 @@ import { Fragment, useState } from 'react';
 import { requestCode, verifyCode } from '../../utils/fetches';
 import { saveToken } from '../../utils/helpers';
 import { useRouter } from 'next/router';
+import GoogleOneTapLogin from '../GoogleOneTapLogin';
 
 const Acceso = () => {
   const router = useRouter()
@@ -65,6 +66,7 @@ const Acceso = () => {
             </div>
           </div>
         }
+        <GoogleOneTapLogin/>
       </div>
     </Fragment>
   )

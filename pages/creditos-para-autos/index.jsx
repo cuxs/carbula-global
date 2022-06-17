@@ -120,38 +120,41 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
           </Card.Group>
         </div>
 
-        <div className={styles.creditos}>
-          <Container centered>
-          <h3>¿Por qué comprar en nuestra plataforma?</h3>
-          <div class="card">
-          <div class="content">
-          <div class="header">
-          <Image src='/images/confianza-carbula.png' size='medium' centered ></Image>
-          </div><div class="header"><h4>Confianza</h4></div>
-          <div class="description">Brindamos operaciones de compra <br></br> y venta 100% seguras.</div>
+          <div className={styles.centered}>
+            <h3>¿Por qué comprar en nuestra plataforma?</h3>
+            <div className={styles.creditos}>
+              <div class="card">
+                <div class="content">
+                  <div class="header">
+                    <Image src='/images/confianza-carbula.png' size='medium' centered ></Image>
+                  </div>
+                  <div class="header"><h4>Confianza</h4></div>
+                  <div class="description">Brindamos operaciones de compra <br></br> y venta 100% seguras.</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="content">
+                  <div class="header">
+                    <Image src='/images/simpleza-carbula.png' size='medium' centered ></Image>
+                  </div>
+                  <div class="header"><h4>Simpleza</h4></div>
+                  <div class="description">Comprar es conveniente gracias <br></br> a los préstamos Santander.</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="content">
+                  <div class="header">
+                    <Image src='/images/inspeccion-carbula.png' size='medium' centered></Image>
+                  </div>
+                  <div class="header"><h4>Garantía</h4></div>
+                  <div class="description">Todos nuestros autos aprobaron una <br></br> instancia de inspección mecánica.</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="content">
-          <div class="header">
-          <Image src='/images/simpleza-carbula.png' size='medium' centered ></Image>
-          </div><div class="header"><h4>Simpleza</h4></div>
-          <div class="description">Comprar es conveniente gracias <br></br> a los préstamos Santander.</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="content">
-          <div class="header">
-          <Image src='/images/inspeccion-carbula.png' size='medium' centered></Image>
-          </div><div class="header"><h4>Garantía</h4></div>
-          <div class="description">Todos nuestros autos aprobaron una <br></br> instancia de inspección mecánica.</div>
-          </div>
-        </div>
-        </Container>
-        </div>
       
         <div className={styles.faq}>
-        <FaqCreditosAutos/>
+          <FaqCreditosAutos/>
         </div>
         <section>
           <FooterInfo grey country_code={'ar'} />

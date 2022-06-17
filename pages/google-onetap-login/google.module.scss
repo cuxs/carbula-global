@@ -1,0 +1,27 @@
+@import '../../sass/variables.scss';
+
+.acceso__container{
+  background-color: $primaryColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.code__input{
+  label{
+    color: white;;
+  }
+  input{
+    margin: 10px auto;
+    width: 200px;
+    display: block;
+    text-align: center;
+    font-size: 30px;
+  }
+}
+.button__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

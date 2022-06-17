@@ -7,7 +7,7 @@ switch (process.env.NODE_ENV) {
   default:  API_URL='https://api.carbula.com'; break;
 }
 
-module.exports = {
+module.exports = {  
   COUNTRY: {
     'ar': 'Argentina',
     'uy': 'Uruguay',
@@ -108,5 +108,8 @@ module.exports = {
     cl: "CL",
     mx: "MX",
     uy: "UY" 
-  }
+  },
+  GOOGLE_ONETAP_LOGIN_CLIENT_ID: "1036649065648-b720t3ik7500nro7k187gr7sjh5htvu3.apps.googleusercontent.com",
+  GOOGLE_ONETAP_LOGIN_CLIENT_SECRET_KEY: "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",
+  GOOGLE_ONETAP_LOGIN_DATA_URI: "/google-onetap-login"
 }

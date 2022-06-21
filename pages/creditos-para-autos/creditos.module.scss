@@ -64,7 +64,7 @@
     max-width: 200px;
     margin-right: 0.5em;
   }
-  @media(max-width: 360px) {
+  @media (max-width: 915px) {
     padding: 1.5rem;
     h2 {
       font-size: 1.2rem;
@@ -108,7 +108,7 @@
   background-color: #acc7f929;
 }
 
-@media(max-width: 768px){
+@media (max-width: 915px) {
   .header {
     height: 350px;
     background-image: url("/images/credito-mobile.webp");
@@ -135,6 +135,7 @@
     }
   }
   .card {
+    width: 100%;
     p,
     i {font-size: 1rem;}
   }

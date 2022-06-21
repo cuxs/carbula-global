@@ -343,6 +343,12 @@ a {
   z-index: '';
   overflow: hidden;
 }
+@media (max-width: 915px) {
+  .ui.card {
+    width: 100%;
+    padding: 0;
+  }
+}
 .ui.card {
   margin: 1em 0em;
 }

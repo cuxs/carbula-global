@@ -13,7 +13,7 @@ import { upperFirst } from 'lodash'
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-
+import { ChakraProvider } from '@chakra-ui/react'
 
 
 const BlackoutComponent = dynamic(import('../components/BlackoutComponent'))

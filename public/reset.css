@@ -343,12 +343,7 @@ a {
   z-index: '';
   overflow: hidden;
 }
-@media (max-width: 915px) {
-  .ui.card {
-    width: 100%;
-    padding: 0;
-  }
-}
+
 .ui.card {
   margin: 1em 0em;
 }
@@ -381,7 +376,7 @@ a {
   display: flex;
   margin: 0.875em 0.5em;
   float: none;
-}
+ }
 
 /* Clearing */
 .ui.cards:after,
@@ -1092,7 +1087,12 @@ a.ui.card:hover,
 
 
 /* Mobile Only */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 915px) {
+  .ui.cards {
+    padding: 0.5rem 0.5rem;
+    }
+  }
+
   .ui.two.doubling.cards {
     margin-left: 0em;
     margin-right: 0em;

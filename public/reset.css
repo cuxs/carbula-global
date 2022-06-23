@@ -184,6 +184,7 @@ button {
   font-family: ProximaNova;
   font-size: 18px;
   transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
+  z-index: 1;
 }
 
 button:disabled {

@@ -14,18 +14,30 @@
   h3 {
     font-size: 1.5rem;
     line-height: 1.8rem;
-    text-align: center;
+    text-align: left;
     color: #38ceb3;
-    width: 500px;
+    width: 960px;
   }
 }
 .quote__background{
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('/images/banner-comprar.jpg');
+  background-image: url('/images/banner-comprar.png');
   background-position: center;
   background-size: cover;
+  z-index: 0;
+}
+.submit__button {
+  width: auto;
+  margin-top: 50px;
+  text-align: center;
+  z-index: 0;
+}
+.buttons__container {
+  margin-top: 300px;
+  display: flex;
+  justify-content: space-around;
 }
 @media (max-width: 1025px) {
   .quote__container {
@@ -43,5 +55,10 @@
     h3{
       width: 80%;
     }
+  }
+  .buttons__container {
+    margin-top: 170px;
+    display: flex;
+    justify-content: space-around;
   }
 }

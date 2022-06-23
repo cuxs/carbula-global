@@ -1089,7 +1089,7 @@ a.ui.card:hover,
 /* Mobile Only */
 @media only screen and (max-width: 915px) {
   .ui.cards {
-    padding: 0.5rem 0.5rem;
+    padding: 0.85rem 0.85rem;
     }
   }
 

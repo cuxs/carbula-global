@@ -19,6 +19,7 @@
   margin-top: 0px;
   display: flex;
   justify-content: space-around;
+  vertical-align: middle;
   button {
     cursor: pointer;
     width: 420px;
@@ -34,8 +35,9 @@
     a,
     img {
      width: 40%;
-     padding-left: 0.2rem;
-     padding-top: 0.1rem;
+     padding-left: 0.5rem;
+     padding-bottom: 0.5rem;
+     vertical-align: middle;
     }
   }
 }
@@ -118,6 +120,7 @@
       line-height: 1.6rem;
       color: #fff;
       text-align: center;
+      padding: 50px;
     }
   }
   .financiamiento {
@@ -149,8 +152,8 @@
     justify-content: space-around;
     button {
       cursor: pointer;
-      width: 320px;
-      height: 50px;
+      width: 340px;
+      height: 55px;
       border-radius: 50px;
       outline: none;
       border: none;
@@ -161,7 +164,9 @@
       a,
       img {
        width: 40%;
-       vertical-align: top;
+       padding-left: 0.5rem;
+       padding-bottom: 0.5rem;
+       vertical-align: middle;
       }
     }
   }

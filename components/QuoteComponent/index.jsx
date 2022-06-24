@@ -16,7 +16,7 @@ const QuoteComponent = ({ text }) => {
     <h3>{text[1]}</h3>
     <h3>{text[2]}</h3>*/}
     <div className={styles.buttons__container}>
-    <Button type="submit" primary id="btnSellFormContinuar"><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Catálogo de Autos</a></Button>
+    <Button outlined><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Catálogo de autos</a></Button>a
      </div>
   </div>
   )

@@ -12,11 +12,8 @@ const QuoteComponent = ({ text }) => {
 
   return (<div className={styles.quote__container}>
     <div className={styles.quote__background} />
-    {/*<h3>{text[0]}</h3>
-    <h3>{text[1]}</h3>
-    <h3>{text[2]}</h3>*/}
     <div className={styles.buttons__container}>
-    <Button outlined><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Catálogo de autos</a></Button>
+    <Button><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Ver catálogo de autos</a></Button>
      </div>
   </div>
   )

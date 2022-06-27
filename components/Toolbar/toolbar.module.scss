@@ -12,7 +12,7 @@
   color: white;
   padding: 10px 20px;
   &.gradient {
-    background: rgba(0, 0, 0, 1);
+    background: rgb(0, 0, 0);
   }
   ul {
     list-style-type: none;
@@ -39,15 +39,16 @@
     cursor: pointer
   }
   button {
-    width: auto;
+    width: 220px;
+    margin-left: 15px;
     text-transform: uppercase;
     font-weight: bolder;
     font-size: 15px;
-    background-color: #33cc99;
+    background-color: #38ceb3;
     cursor: pointer;
     &:hover {
       color: #fff;
-      background-color: #33CC99e1;
+      background-color: #33bda3;
     }
   }
 }
@@ -264,7 +265,10 @@
   }
   .toolbar {
     height: 45px;
+    &.gradient {
+      background: rgba(0, 0, 0, 0.5);
   }
+}
   .toggle-button {
     height: 21px;
     .toggle-button__line {

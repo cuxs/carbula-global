@@ -16,14 +16,14 @@ const Head = props => {
     <NextHead>
       <title>{props.title || getTitleByCountry(COUNTRY_CODE)}</title>
       <meta charSet="UTF-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=no" />
       <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
       <meta http-equiv="Pragma" content="no-cache" />
       <meta http-equiv="Expires" content="0" />
       <meta name="description" content={props.description || defaultDescription} />
       <meta name="keywords" content={getKeywordsByCountry(COUNTRY_CODE)} />
-      <meta name="robots" content="all" />
-      <meta name="googlebot" content="all" />
+      <meta name="robots" content="index,follow"/> 
+      <meta name="googlebot" content="index,follow"/>
       <meta name="google-site-verification" content={getGoogleSiteVerification(COUNTRY_CODE)} />
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
       <link rel="alternate" hrefLang="es-MX" href="https://carbula.mx" />

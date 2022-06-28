@@ -17,9 +17,9 @@ const Head = props => {
       <title>{props.title || getTitleByCountry(COUNTRY_CODE)}</title>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta http-equiv="Cache-Control" content="max-age: 31536000, no-cache, no-store, must-revalidate" />
+      {/*<meta http-equiv="Cache-Control" content="max-age: 31536000, no-cache, no-store, must-revalidate" />*
       <meta http-equiv="Pragma" content="no-cache" />
-      <meta http-equiv="Expires" content="0" />
+      <meta http-equiv="Expires" content="0" />*/}
       <meta name="description" content={props.description || defaultDescription} />
       <meta name="keywords" content={getKeywordsByCountry(COUNTRY_CODE)} />
       <meta name="robots" content="index,follow"/> 

@@ -1,7 +1,6 @@
-user-agent: *
-disallow: 
-
-sitemap: https://www.carbula.ar/static-sitemap/sitemap-ar.xml
-sitemap: https://www.carbula.cl/static-sitemap/sitemap-cl.xml
-sitemap: https://www.carbula.mx/static-sitemap/sitemap-mx.xml
-sitemap: https://www.carbula.uy/static-sitemap/sitemap-uy.xml
+User-agent: *
+User-agent: Googlebot
+Sitemap: https://www.carbula.ar/static-sitemap/sitemap-ar.xml
+Sitemap: https://www.carbula.cl/static-sitemap/sitemap-cl.xml
+Sitemap: https://www.carbula.mx/static-sitemap/sitemap-mx.xml
+Sitemap: https://www.carbula.uy/static-sitemap/sitemap-uy.xml

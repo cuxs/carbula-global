@@ -23,6 +23,7 @@ const Head = props => {
       <meta name="description" content={props.description || defaultDescription} />
       <meta name="keywords" content={getKeywordsByCountry(COUNTRY_CODE)} />
       <meta name="robots" content="index,follow"/> 
+      <meta name="x-robots-tag" content="index,follow"/> 
       <meta name="googlebot" content="index,follow"/>
       <meta name="google-site-verification" content={getGoogleSiteVerification(COUNTRY_CODE)} />
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />

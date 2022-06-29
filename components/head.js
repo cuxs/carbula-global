@@ -6,7 +6,7 @@ import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDom
 
 const defaultDescription = 'Vende tu auto usado y gana hasta 25% más de dinero ✓ Compra tu auto usado de forma segura, simple y transparente ✓ Consulta por financiacion'
 
-const defaultOGURL = 'https://carbula.com'
+const defaultOGURL = 'https://www.carbula.${COUNTRY_CODE}/'
 const defaultOGImage = '/images/carbula-autos.webp'
 
 const Head = props => {
@@ -25,10 +25,10 @@ const Head = props => {
       <meta name="google-site-verification" content={getGoogleSiteVerification(COUNTRY_CODE)} />
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
       <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/`} />
-      <link rel="alternate" hrefLang="es-MX" href="https://carbula.mx" />
-      <link rel="alternate" hrefLang="es-CL" href="https://carbula.cl" />
-      <link rel="alternate" hrefLang="es-UY" href="https://carbula.uy" />
-      <link rel="alternate" hrefLang="es-AR" href="https://carbula.ar" />
+      <link rel="alternate" hrefLang="es-MX" href="https://www.carbula.mx" />
+      <link rel="alternate" hrefLang="es-CL" href="https://www.carbula.cl" />
+      <link rel="alternate" hrefLang="es-UY" href="https://www.carbula.uy" />
+      <link rel="alternate" hrefLang="es-AR" href="https://www.carbula.ar" />
       <link rel="icon" sizes="192x192" href="/icons/favicon_196.ico" />
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:url" content={props.url || defaultOGURL} />
@@ -41,7 +41,6 @@ const Head = props => {
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <link rel="stylesheet" href="/reset.min.css" />
-
     </NextHead>
   )
 }

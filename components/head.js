@@ -17,11 +17,12 @@ const Head = props => {
       <title>{props.title || getTitleByCountry(COUNTRY_CODE)}</title>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta http-equiv="Cache-Control" content="public, max-age=604800, immutable" />
       <meta name="description" content={props.description || defaultDescription} />
       <meta name="keywords" content={getKeywordsByCountry(COUNTRY_CODE)} />
-      <meta name="robots" content="index,follow"/> 
-      <meta name="x-robots-tag" content="index,follow"/> 
-      <meta name="googlebot" content="index,follow"/>
+      <meta name="robots" content="index,follow" /> 
+      <meta name="x-robots-tag" content="index,follow" /> 
+      <meta name="googlebot" content="index,follow" />
       <meta name="google-site-verification" content={getGoogleSiteVerification(COUNTRY_CODE)} />
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
       <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/`} />

@@ -39,7 +39,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="Compra tu auto en cuotas con financiamiento Santander | Carbula Autos Argentina" />
+        <Head title="Compra tu auto con financiamiento Santander | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
           <Container>

@@ -544,13 +544,12 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       )}
     </Formik>,
     'error-cobertura': <div>
-      <p>Hola {userName},</p>
+      <p><b>Hola {userName},</b></p>
       <br />
       <p>Gracias por utilizar nuestra plataforma.</p><br />
       <p>Lamentablemente, por el momento no estamos operando en su zona; esperamos poder hacerlo en el corto plazo.</p><br />
-      <p>Si lo podemos ayudar en alguna otra cosa, no deje de avisarnos a <a href="mailto:hola@carbula.com">hola@carbula.com</a> </p><br />
-      <p>¡Que esté muy bien!</p><br />
-      <p>El equipo de <b>Cárbula</b>.</p><br />
+      <p>Si necesita contactarnos, escribanos a <a href="mailto:hola@carbula.com">hola@carbula.com</a> </p><br />
+      <p><b>¡Que esté muy bien!</b></p><br />
       <Button noBorder onClick={() => setStep(0)}>Reintentar</Button>
     </div>,
     'error-year': <div>

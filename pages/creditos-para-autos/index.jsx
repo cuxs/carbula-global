@@ -20,7 +20,6 @@ import {
   Visibility,
   Segment,
 } from 'semantic-ui-react'
-import { SANTANDER_URL_PRODUCTION, SANTANDER_SPID_PRODUCTION, SANTANDER_OHASH } from '../../utils/constants';
 import { getCountryCode, getWhatsappNumber } from '../../utils/helpers';
 
 export async function getServerSideProps(context) {
@@ -45,7 +44,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
           <Container>
             <h1>Comprá tu auto con financiamiento</h1>
             <div className={styles.buttons__container}>
-            <a target="__blank" rel="noopener noreferrer" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo <img src={"/images/banco-santander-logo.png"}/></Button></a>
+            <a target="__blank" rel="noopener noreferrer" href={`${process.env.SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${process.env.SANTANDER_OHASH[COUNTRY_CODE]}&spid=${process.env.SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo <img src={"/images/banco-santander-logo.png"}/></Button></a>
             </div>
           </Container>
         </div>
@@ -112,7 +111,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
               </Card.Content>
               {/*<Card.Content extra>
                 <div className={styles.buttons__container}>
-                  <a target="__blank" rel="noopener noreferrer" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo <img src={"/images/banco-santander-iso.svg"}/></Button></a>
+                  <a target="__blank" rel="noopener noreferrer" href={`${process.env.SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${process.env.SANTANDER_OHASH[COUNTRY_CODE]}&spid=${process.env.SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo <img src={"/images/banco-santander-iso.svg"}/></Button></a>
                 </div>
           </Card.Content>*/}
             </Card>
@@ -120,7 +119,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
         </div>
 
         <div className={styles.buttons__container}>
-                  <a target="__blank" rel="noopener noreferrer" href={`${SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${SANTANDER_OHASH[COUNTRY_CODE]}&spid=${SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo <img src={"/images/banco-santander-logo.png"}/></Button></a>
+                  <a target="__blank" rel="noopener noreferrer" href={`${process.env.SANTANDER_URL_PRODUCTION[COUNTRY_CODE]}ohash=${process.env.SANTANDER_OHASH[COUNTRY_CODE]}&spid=${process.env.SANTANDER_SPID_PRODUCTION[COUNTRY_CODE]}`}><Button fluid>Simulá tu préstamo <img src={"/images/banco-santander-logo.png"}/></Button></a>
                 </div>
         {/*<div className={styles.creditos}>
           <Container centered>

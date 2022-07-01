@@ -7,7 +7,7 @@ switch (process.env.NODE_ENV) {
   default:  API_URL='https://api.carbula.com'; break;
 }
 
-module.exports = {
+module.exports = {  
   COUNTRY: {
     'ar': 'Argentina',
     'uy': 'Uruguay',
@@ -78,35 +78,5 @@ module.exports = {
     cl: 10000,
     mx: 100,
     uy: 10 
-  },
-  SANTANDER_URL_TESTING: {
-    ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicopro/#/home?",
-    cl: "CL",
-    mx: "MX",
-    uy: "UY" 
-  },
-  SANTANDER_SPID_TESTING: {
-    ar: "352454",
-    cl: "CL",
-    mx: "MX",
-    uy: "UY" 
-  },
-  SANTANDER_URL_PRODUCTION: {
-    ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicopro/#/home?",
-    cl: "CL",
-    mx: "MX",
-    uy: "UY"  
-  },
-  SANTANDER_SPID_PRODUCTION: {
-    ar: "352454",
-    cl: "CL",
-    mx: "MX",
-    uy: "UY" 
-  },
-  SANTANDER_OHASH: {
-    ar: "li3l6r7xzo",
-    cl: "CL",
-    mx: "MX",
-    uy: "UY" 
   }
 }

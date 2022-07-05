@@ -520,7 +520,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         {/* <GoogleOneTapLogin/> */}
         <div className={styles.sellform__container}>
           <div className={styles.checkbox}>
-            <input type="checkbox" id="last" name="last" required />
+            <input type="checkbox" id="last" name="last" />
             <label>Quiero recibir newsletters</label>
           </div>
           </div>

@@ -511,11 +511,15 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
 
           </div>
           {/* <GoogleOneTapLogin/> */}
-          <p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>
+          <div>
+            <input type="checkbox" id="last" name="last" required />
+            <label className={styles.terms}>Sí, quiero recibir newsletters</label>
+          </div>
           <div className={styles.buttons__container}>
             <Button type="button" link onClick={handleBack}>Volver</Button>
             <Button overlayEffect type="submit" primary>Cotizar</Button>
           </div>
+          <p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>
         </form>)
       default:
         break;

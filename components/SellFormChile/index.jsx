@@ -55,6 +55,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       email: '',
       phone: '',
       location: '',
+      cotizationUuid: ''
     }
   )
   const router = useRouter()
@@ -139,8 +140,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         country_code: COUNTRY_CODE
       }
       checkYear(values.year);
-      const uuid = submitCarForm(carData);
-      console.log(uuid)
+      const { data } = submitCarForm(carData);
+      console.log(data.uuid)
+      setFormData(...values, { cotizationUuid: data.uuid });
     } catch (e) {
       console.log("ERROR raro:", e)
     }

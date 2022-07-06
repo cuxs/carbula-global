@@ -130,7 +130,19 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
   const handleSubmitFirstStep = (values, actions) => {
     setFormData(values);
-    setStep(step + 1)
+    setStep(step + 1);
+    try {
+      const carData = {
+        formData,
+        country_code: COUNTRY_CODE
+      }
+      checkZone(values.location, zonas, COUNTRY_CODE);
+      checkYear(carAndContactData.year);
+      const { data } = submitFormAndGetCotization(carData);
+
+    } catch (e) {
+      console.log(e)
+    }
   }
   const handleSubmitPersonalDataStep = async (values, actions) => {
     const carAndContactData = {

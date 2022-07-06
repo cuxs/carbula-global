@@ -129,6 +129,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   }
 
   const handleSubmitFirstStep = (values, actions) => {
+    console.log("FIRST STEP!");
     setFormData(values);
     setStep(step + 1);
     try {

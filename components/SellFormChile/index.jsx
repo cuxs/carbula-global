@@ -39,6 +39,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   const [buscarPatenteLoading, setBuscarPatenteLoading] = useState(false);
   const [patenteMessage, setPatenteMessage] = useState(false)
   const [userName, setUserName] = useState()
+  const [cotizationUuid, setcotizationUuid] = useState()
   const [formData, setFormData] = useState(
     {
       brand: '',
@@ -54,8 +55,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       lastName: '',
       email: '',
       phone: '',
-      location: '',
-      uuid: ''
+      location: ''
     }
   )
   const router = useRouter()
@@ -139,18 +139,16 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       }
       checkYear(values.year);
       const { data } = await submitCarForm(carData);
-      console.log(formData)
-      setFormData(values, { uuid: data.uuid });
-      console.log(formData)
+      setcotizationUuid(data.uuid);
     } catch (e) {
       console.log("ERROR desconocido:", e)
     }
   }
   const handleSubmitPersonalDataStep = async (values, actions) => {
-    console.log(formData)
     const carAndContactData = {
       ...formData,
       ...values,
+      uuid: cotizationUuid,
       name: `${values.name} ${values.lastName}`,
       country_code: COUNTRY_CODE,
     }

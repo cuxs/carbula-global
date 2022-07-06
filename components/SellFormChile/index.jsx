@@ -130,6 +130,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
   const handleSubmitFirstStep = (values, actions) => {
     console.log("FIRST STEP!");
+    console.log("valores: ", values)
     setFormData(values);
     setStep(step + 1);
     try {
@@ -137,7 +138,6 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         formData,
         country_code: COUNTRY_CODE
       }
-      checkZone(values.location, zonas, COUNTRY_CODE);
       checkYear(carAndContactData.year);
       const { data } = submitCarForm(carData);
     } catch (e) {

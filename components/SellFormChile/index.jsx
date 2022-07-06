@@ -129,7 +129,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     }
   }
 
-  const handleSubmitFirstStep = (values, actions) => {
+  const handleSubmitFirstStep = async (values, actions) => {
     setFormData(values);
     setStep(step + 1);
     try {

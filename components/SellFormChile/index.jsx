@@ -55,7 +55,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       email: '',
       phone: '',
       location: '',
-      cotizationUuid: ''
+      uuid: ''
     }
   )
   const router = useRouter()

@@ -67,9 +67,7 @@ export const submitFormAndGetCotization = async (data) => {
 
 export const submitCarForm = async (data) => {
   try {
-    console.log("submitCarForm: ", JSON.stringify(data));
     const response = await axios.post(`${API_URL}/submitCarForm`, data)
-    console.log("submitCarForm Response", response)
     return response
   } catch (e) {
     console.log(e)

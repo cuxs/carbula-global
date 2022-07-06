@@ -65,6 +65,18 @@ export const submitFormAndGetCotization = async (data) => {
   }
 }
 
+export const submitCarForm = async (data) => {
+  try {
+    console.log("submitCarForm: ", JSON.stringify(data));
+    const response = await axios.post(`${API_URL}/submitCarForm`, data)
+    console.log("submitCarForm Response", response)
+    return response
+  } catch (e) {
+    console.log(e)
+    throw e.response ? new Error(e.response.data.message) : new Error(e.message)
+  }
+}
+
 export const searchCarByPlate = async (patente) => {
   try {
     const response = await axios.get(`${cotizadorPatenteUrl}/patente`, { params: { patente } })

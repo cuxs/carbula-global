@@ -139,10 +139,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       }
       checkZone(values.location, zonas, COUNTRY_CODE);
       checkYear(carAndContactData.year);
-      const { data } = submitFormAndGetCotization(carData);
-
+      const { data } = submitCarForm(carData);
     } catch (e) {
-      console.log(e)
+      console.log("ERROR raro:", e)
     }
   }
   const handleSubmitPersonalDataStep = async (values, actions) => {

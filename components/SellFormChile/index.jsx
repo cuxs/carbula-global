@@ -50,11 +50,11 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       year: '',
       kms: '',
       version: '',
-      name: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      location: '',
+      name: 'Prueba',
+      lastName: 'Prueba',
+      email: 'prueba@prueba.com',
+      phone: '0',
+      location: '123340b7-0633-423e-92c3-d77b63c61056',
     }
   )
   const router = useRouter()
@@ -128,10 +128,40 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     }
   }
 
-  const handleSubmitFirstStep = (values, actions) => {
+  const handleSubmitFirstStep = async (values, actions) => {
     setFormData(values);
+    getCotization(values)
     setStep(step + 1)
   }
+
+  const getCotization = async (values) => {
+    const carAndContactData = {
+      ...formData,
+      ...values,
+      name: `${values.name} ${values.lastName}`,
+      country_code: COUNTRY_CODE,
+    }
+    try {
+      checkYear(carAndContactData.year)
+      const dealSource = getSourceType(router.query, referer)
+      carAndContactData.hs_analytics_source = dealSource
+      carAndContactData.campania = getCampania(router.query)
+      const { data } = await submitFormAndGetCotization(carAndContactData)
+      const query = CryptoJS.AES.encrypt(JSON.stringify(data.data), 'cotizacion').toString()
+      saveCotization(query)
+      console.log(query)
+    } catch (e) {
+      if(e.message.indexOf('year')> -1){
+        router.replace({ pathname: '/', query: { cotizacion: 'aniofueradecobertura' } })
+        setStep('error-year')
+        carAndContactData.noGeneroNegocio= 'auto_antiguo' // para propiedad de hubspot
+        addContact(carAndContactData)
+        return setUserName(values.name)
+      }
+      console.log(e)
+    }
+  }
+
   const handleSubmitPersonalDataStep = async (values, actions) => {
     const carAndContactData = {
       ...formData,

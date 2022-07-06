@@ -130,8 +130,6 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   }
 
   const handleSubmitFirstStep = (values, actions) => {
-    console.log("FIRST STEP!");
-    console.log("valores: ", values)
     setFormData(values);
     setStep(step + 1);
     try {
@@ -141,10 +139,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       }
       checkYear(values.year);
       const { data } = submitCarForm(carData);
-      console.log(data.uuid)
-      setFormData(...values, { cotizationUuid: data.uuid });
+      setFormData(...values, { uuid: data.uuid });
     } catch (e) {
-      console.log("ERROR raro:", e)
+      console.log("ERROR desconocido:", e)
     }
   }
   const handleSubmitPersonalDataStep = async (values, actions) => {
@@ -161,6 +158,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       carAndContactData.hs_analytics_source = dealSource
       carAndContactData.campania = getCampania(router.query)
       setOverlayBackground(true)
+      console.log("submitFormAndGetCotization data: tiene uuid????? ", carAndContactData)
       const { data } = await submitFormAndGetCotization(carAndContactData)
       const query = CryptoJS.AES.encrypt(JSON.stringify(data.data), 'cotizacion').toString()
       saveCotization(query)

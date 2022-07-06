@@ -139,7 +139,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       }
       checkYear(values.year);
       const { data } = submitCarForm(carData);
-      setFormData(...values, { uuid: data.uuid });
+      setFormData(values, { uuid: data.uuid });
     } catch (e) {
       console.log("ERROR desconocido:", e)
     }

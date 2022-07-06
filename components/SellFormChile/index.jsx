@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
-import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
+import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm, searchCarByPlate, addContact } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy } from 'lodash';
@@ -138,8 +138,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         formData,
         country_code: COUNTRY_CODE
       }
-      checkYear(carAndContactData.year);
-      const { data } = submitCarForm(carData);
+      checkYear(values.year);
+      const uuid = submitCarForm(carData);
+      console.log(uuid)
     } catch (e) {
       console.log("ERROR raro:", e)
     }

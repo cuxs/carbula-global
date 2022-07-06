@@ -139,15 +139,15 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       }
       checkYear(values.year);
       const { data } = await submitCarForm(carData);
-      console.log(...formData)
+      console.log(formData)
       setFormData(values, { uuid: data.uuid });
-      console.log(...formData)
+      console.log(formData)
     } catch (e) {
       console.log("ERROR desconocido:", e)
     }
   }
   const handleSubmitPersonalDataStep = async (values, actions) => {
-    console.log(...formData)
+    console.log(formData)
     const carAndContactData = {
       ...formData,
       ...values,

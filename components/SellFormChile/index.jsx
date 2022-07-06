@@ -135,7 +135,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     setStep(step + 1);
     try {
       const carData = {
-        formData,
+        ...values,
         country_code: COUNTRY_CODE
       }
       checkYear(values.year);

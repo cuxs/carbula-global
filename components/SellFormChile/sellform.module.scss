@@ -182,7 +182,6 @@
 
 /* Checkbox Style */
 .checkbox {
-  margin: 20px 0px;
   position: relative;
   display: inline-block;
   -webkit-backface-visibility: hidden;
@@ -198,6 +197,7 @@
 
 /* HTML Checkbox */
 .checkbox input[type="checkbox"],
+.checkbox input[type="newsletter"],
 .checkbox input[type="radio"] {
   cursor: pointer;
   position: absolute;

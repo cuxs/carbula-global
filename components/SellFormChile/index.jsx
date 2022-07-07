@@ -55,6 +55,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       email: '',
       phone: '',
       location: '',
+      newsletter: '',
     }
   )
   const router = useRouter()
@@ -252,6 +253,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       email: formData.email,
       phone: formData.phone,
       location: formData.location,
+      newsletter: formData.newsletter,
     }
   ]
 
@@ -519,7 +521,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
         </div>
         <div>
-          <input type="checkbox" id="last" name="last" required />
+          <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
           <label className={styles.terms}>Sí, quiero recibir newsletters</label>
         </div>
         <div className={styles.buttons__container}>

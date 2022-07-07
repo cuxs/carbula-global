@@ -53,6 +53,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       email: '',
       phone: '',
       location: '',
+      newsletter: '',
     }
   )
   const router = useRouter()
@@ -232,6 +233,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       email: formData.email,
       phone: formData.phone,
       location: formData.location,
+      newsletter: formData.newsletter,
     }
   ]
 
@@ -512,7 +514,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           </div>
           {/* <GoogleOneTapLogin/> */}
           <div>
-            <input type="checkbox" id="last" name="last" required />
+            <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
             <label className={styles.terms}>Sí, quiero recibir newsletters</label>
           </div>
           <div className={styles.buttons__container}>

@@ -518,21 +518,12 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
               </div>
             )}
           </div>
-
-        </div>
-        <div>
-          <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
-          <label>Quiero recibir newsletters</label>
-        </div>
-        <div className={styles.buttons__container}>
-          <Button type="button" link onClick={handleBack}>Volver</Button>
-          <Button overlayEffect type="submit" primary>Cotizar</Button>
         </div>
         {/* <GoogleOneTapLogin/> */}
         <div className={styles.sellform__container}>
           <div className={styles.checkbox}>
-            <input type="checkbox" id="last" name="last" />
-            <label>Quiero recibir newsletters</label>
+          <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
+            <label className={styles.terms}>Sí, quiero recibir newsletters</label>
           </div>
           </div>
           <div className={styles.buttons__container}>

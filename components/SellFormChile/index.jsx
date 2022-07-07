@@ -55,6 +55,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       email: '',
       phone: '',
       location: '',
+      newsletter: '',
     }
   )
   const router = useRouter()
@@ -252,6 +253,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       email: formData.email,
       phone: formData.phone,
       location: formData.location,
+      newsletter: formData.newsletter,
     }
   ]
 
@@ -516,13 +518,19 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
               </div>
             )}
           </div>
-
         </div>
-        <p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>
-        <div className={styles.buttons__container}>
-          <Button type="button" link onClick={handleBack}>Volver</Button>
-          <Button overlayEffect type="submit" primary>Cotizar</Button>
-        </div>
+        {/* <GoogleOneTapLogin/> */}
+        <div className={styles.sellform__container}>
+          <div className={styles.checkbox}>
+            <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
+            <label className={styles.checkbox}>Quiero recibir newsletters</label>
+          </div>
+          </div>
+          <div className={styles.buttons__container}>
+            <Button type="button" link onClick={handleBack}>Volver</Button>
+            <Button overlayEffect type="submit" primary>Cotizar</Button>
+          </div>
+          {/*<p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>*/}
       </form>
     }
     return formSteps[step]

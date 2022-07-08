@@ -4,6 +4,7 @@ import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
+// import GoogleOneTapLogin from '../GoogleOneTapLogin';
 import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
@@ -52,6 +53,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       email: '',
       phone: '',
       location: '',
+      newsletter: '',
     }
   )
   const router = useRouter()
@@ -231,6 +233,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       email: formData.email,
       phone: formData.phone,
       location: formData.location,
+      newsletter: formData.newsletter,
     }
   ]
 
@@ -507,13 +510,19 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                 </div>
               )}
             </div>
-
           </div>
-          <p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>
+          {/* <GoogleOneTapLogin/> */}
+          <div className={styles.sellform__container}>
+          <div className={styles.checkbox}>
+            <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
+            <label className={styles.checkbox}>Quiero recibir newsletters</label>
+          </div>
+          </div>
           <div className={styles.buttons__container}>
             <Button type="button" link onClick={handleBack}>Volver</Button>
             <Button overlayEffect type="submit" primary>Cotizar</Button>
           </div>
+          {/*<p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>*/}
         </form>)
       default:
         break;
@@ -542,14 +551,13 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       )}
     </Formik>,
     'error-cobertura': <div>
-      <p>Hola {userName},</p>
+      <p><b>Hola {userName},</b></p>
       <br />
       <p>Gracias por utilizar nuestra plataforma.</p><br />
       <p>Lamentablemente, por el momento no estamos operando en su zona; esperamos poder hacerlo en el corto plazo.</p><br />
-      <p>Si lo podemos ayudar en alguna otra cosa, no deje de avisarnos a <a href="mailto:hola@carbula.cl">hola@carbula.cl</a> </p><br />
-      <p>¡Que esté muy bien!</p><br />
-      <p>El equipo de <b>Cárbula</b>.</p><br />
-      <Button primary onClick={() => setStep(0)}>Entendido</Button>
+      <p>Si necesita contactarnos, escribanos a <a href="mailto:hola@carbula.com">hola@carbula.com</a> </p><br />
+      <p><b>¡Que esté muy bien!</b></p><br />
+      <Button noBorder onClick={() => setStep(0)}>Reintentar</Button>
     </div>,
     'error-year': <div>
       <p>Estimado {userName},</p>

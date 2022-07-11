@@ -1,4 +1,3 @@
-//import 'semantic-ui-css/semantic.min.css'
 import styles from './creditos.module.scss'
 import Head from '../../components/CustomHeads/headCreditosAutos';
 import Nav from '../../components/nav';
@@ -49,7 +48,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
             </div>
           </Container>
         </div>
-        
+
         <div className={styles.financiamiento}>
           <h2>Trabajamos con Banco Santander para que puedas financiar la compra de tu próximo usado. ¿Cómo podés hacerlo? En 3 simples pasos.</h2>
         </div>
@@ -151,7 +150,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
         </div>
         </Container>
       </div>*/}
-      
+
         <div className={styles.faq}>
         <FaqCreditosAutos/>
         </div>

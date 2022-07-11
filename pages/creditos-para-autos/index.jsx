@@ -50,7 +50,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
         </div>
 
         <div className={styles.financiamiento}>
-          <h2>Trabajamos con Banco Santander para que puedas financiar la compra de tu próximo usado. ¿Cómo podés hacerlo? En 3 simples pasos.</h2>
+          <h2>Trabajamos con <b>Santander</b> para que puedas financiar con un préstamo prendario la compra de tu próximo usado. Hacelo en 3 simples pasos.</h2>
         </div>
 
         <div className={styles.card}>
@@ -64,9 +64,9 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
                   alt='Preclasificá para tu crédito Santander'
                   title='Preclasificá para tu crédito Santander'
                 />
-                <Card.Header><b>PASO 1:</b> Precalificá</Card.Header>
+                <Card.Header><b>PASO 1:</b> Calificá</Card.Header>
                 <Card.Description>
-                  <p>Ingresá tu correo electrónico, teléfono, CUIT o CUIL y precalificá en tan solo 2 minutos.</p>
+                  <p>Simulá el préstamo para el vehículo que querés, en 2 minutos y 100% online.</p>
                 </Card.Description>
               </Card.Content>
               {/*<Card.Content extra >
@@ -106,7 +106,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
                 />
                 <Card.Header><b>PASO 3:</b> Financiá tu vehículo</Card.Header>
                 <Card.Description>
-                  <p>Accedé a un Crédito Santander para financiar hasta el 95% del valor del auto de manera inmediata.</p>
+                  <p>Accedé a un préstamo prendario Santander, para financiar hasta el 95% del valor del auto de manera inmediata.</p>
                 </Card.Description>
               </Card.Content>
               {/*<Card.Content extra>

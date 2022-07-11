@@ -515,7 +515,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           <div className={styles.sellform__container}>
           <div className={styles.checkbox}>
             <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
-            <label>Quiero recibir newsletters</label>
+            <label for="newsletter">Quiero recibir newsletters</label>
           </div>
           </div>
           <div className={styles.buttons__container}>

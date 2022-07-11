@@ -10,9 +10,9 @@
   position: fixed;
   z-index: 1;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 20px;
   &.gradient {
-    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5)
   }
   ul {
     list-style-type: none;
@@ -37,19 +37,6 @@
     color: white;
     margin: 0px 20px;
     cursor: pointer
-  }
-  button {
-    width: auto;
-    margin-left: 15px;
-    text-transform: uppercase;
-    font-weight: bolder;
-    font-size: 15px;
-    background-color: #38ceb3;
-    cursor: pointer;
-    &:hover {
-      color: #fff;
-      background-color: #33bda3;
-    }
   }
 }
 
@@ -265,10 +252,7 @@
   }
   .toolbar {
     height: 45px;
-    &.gradient {
-      background: rgba(0, 0, 0, 0.5);
   }
-}
   .toggle-button {
     height: 21px;
     .toggle-button__line {

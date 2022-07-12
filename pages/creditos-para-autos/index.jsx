@@ -66,7 +66,7 @@ const CreditosAutos = ({COUNTRY_CODE}) => {
                 />
                 <Card.Header><b>PASO 1:</b> Calificá</Card.Header>
                 <Card.Description>
-                  <p>Simulá el préstamo para el vehículo que querés, en 2 minutos y 100% online.</p>
+                  <p>Simulá el préstamo para el vehículo que querés, en minutos y 100% online.</p>
                 </Card.Description>
               </Card.Content>
               {/*<Card.Content extra >

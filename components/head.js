@@ -6,8 +6,8 @@ import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDom
 
 const defaultDescription = 'Vende tu auto usado y gana hasta 25% más de dinero ✓ Compra tu auto usado de forma segura, simple y transparente ✓ Consulta por financiacion'
 
-const defaultOGURL = 'https://www.carbula.${COUNTRY_CODE}/'
-const defaultOGImage = '/images/carbula-autos.webp'
+const defaultOGURL = "https://www.carbula.${COUNTRY_CODE}/"
+const defaultOGImage = "/images/carbula_couple.webp"
 
 const Head = props => {
   const router = useRouter()

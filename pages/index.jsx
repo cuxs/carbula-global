@@ -125,7 +125,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
       <SellForm step={step} setStep={setStep} setOverlayBackground={setOverlayBackground} zonas={zonas} referer={referer} COUNTRY_CODE={COUNTRY_CODE} />
       <section className={styles.section1__container}>
         <div className={styles.text__container}>
-          <h2 className={styles.section1__title}>{t('section1Title')}</h2>
+          <h1 className={styles.section1__title}>{t('section1Title')}</h1>
           {/*<h3 className={styles.section1__title}>{t('section1TitleMotivos')}</h3>*/}
           <div className={styles['benefits--desktop']}>
             <h3>{t('section1Subtitle1')}</h3>

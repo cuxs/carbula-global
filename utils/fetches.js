@@ -64,6 +64,16 @@ export const submitFormAndGetCotization = async (data) => {
   }
 }
 
+export const submitCarForm = async (data) => {
+  try {
+    const response = await axios.post(`${API_URL}/submitCarForm`, data)
+    return response
+  } catch (e) {
+    console.log(e)
+    throw e.response ? new Error(e.response.data.message) : new Error(e.message)
+  }
+}
+
 export const updateLeadPrices = async (data) => {
   try {
     const response = await axios.post(`${API_URL}/updateLeadPrices`, data)

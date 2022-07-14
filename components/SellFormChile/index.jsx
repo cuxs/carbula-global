@@ -159,7 +159,6 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       carAndContactData.hs_analytics_source = dealSource
       carAndContactData.campania = getCampania(router.query)
       setOverlayBackground(true)
-      console.log("submitFormAndGetCotization data: tiene uuid????? ", carAndContactData)
       const { data } = await submitFormAndGetCotization(carAndContactData)
       const query = CryptoJS.AES.encrypt(JSON.stringify(data.data), 'cotizacion').toString()
       saveCotization(query)

@@ -66,7 +66,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     return SellForms[COUNTRY_CODE]
   }),[])
   const router = useRouter();
-  const [title, setTitle] = useState([`Vendemos ${t('tu')} auto de manera segura`, 'Gana hasta un 25% más.'])
+  const [title, setTitle] = useState([`Vende ${t('tu')} auto de manera segura`, 'Gana hasta un 25% más.'])
   const [subtitle, setSubtitle] = useState(['Garantizamos el cobro seguro de la venta. Nos encargamos de todo el proceso de venta.', 'Respondemos todas las consultas de los compradores.']);
   const [step, setStep] = useState(0)
   const [overlayBackground, setOverlayBackground] = useState(false);

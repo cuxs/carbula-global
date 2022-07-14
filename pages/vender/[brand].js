@@ -73,7 +73,7 @@ const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
     }
     return SellForms[COUNTRY_CODE]
   })
-  const [title, setTitle] = useState([`Vendemos ${t('tu')} ${brand}`, 'por hasta 25% más de dinero.'])
+  const [title, setTitle] = useState([`Vende ${t('tu')} ${brand}`, 'por hasta 25% más de dinero.'])
   const [subtitle, setSubtitle] = useState(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.']);
   const [step, setStep] = useState(0)
   const [overlayBackground, setOverlayBackground] = useState(false);
@@ -86,7 +86,7 @@ const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
   useEffect(() => {
     switch (step) {
       case 0:
-        setTitle([`Vendemos ${t('tu')} ${brand}`, 'por hasta 25% más de dinero.'])
+        setTitle([`Vende ${t('tu')} ${brand}`, 'por hasta 25% más de dinero.'])
         setSubtitle(['Publicamos en todos lados. Atendemos a los interesados.', 'Manejamos el papeleo. Garantizamos el cobro seguro.'])
         break;
       case 1:

@@ -36,8 +36,6 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   const [versionDisabled, setVersionDisabled] = useState(true);
   const [versionOptions, setVersionOptions] = useState([])
   const [versionLoading, setVersionLoading] = useState(false);
-  const [buscarPatenteLoading, setBuscarPatenteLoading] = useState(false);
-  const [patenteMessage, setPatenteMessage] = useState(false)
   const [userName, setUserName] = useState()
   const [cotizationUuid, setcotizationUuid] = useState()
   const [formData, setFormData] = useState(
@@ -55,7 +53,8 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       lastName: '',
       email: '',
       phone: '',
-      location: ''
+      location: '',
+      newsletter: ''
     }
   )
   const router = useRouter()
@@ -188,35 +187,6 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   const handleBack = async () => {
     await setStep(step - 1);
   }
-  const handlePatenteSubmit = async (values, actions) => {
-    try {
-      setBuscarPatenteLoading(true)
-      const { data } = await searchCarByPlate(values.patente);
-      if (data.mensaje === 'Fail' || !data.mensaje || !data.modeloId || !data.marcaId) {
-        setBuscarPatenteLoading(false)
-        return setPatenteMessage(true)
-      }
-      setPatenteMessage(false)
-      setFormData({
-        ...formData,
-        marcaModelo: `${data.marca} ${data.modelo}`,
-        year: data.anio,
-        idModelo: data.modeloId,
-        idMarca: data.marcaId,
-        brand: data.marca,
-        model: data.modelo
-      })
-      setYearDisabled(false);
-      setBuscarPatenteLoading(false)
-      setKmsDisabled(false)
-      handleYearChange({ idModelo: data.modeloId, value: data.anio })
-
-    } catch (e) {
-      setBuscarPatenteLoading(false)
-      console.log(e)
-    }
-  }
-
   const validationSchema = [
     object().shape({
       marcaModelo: mixed().required('Selecciona una marca y modelo.'),
@@ -265,6 +235,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       email: formData.email,
       phone: formData.phone,
       location: formData.location,
+      newsletter: formData.newsletter,
     }
   ]
 
@@ -529,13 +500,18 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
               </div>
             )}
           </div>
-
         </div>
-        <p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>
-        <div className={styles.buttons__container}>
-          <Button type="button" link onClick={handleBack}>Volver</Button>
-          <Button overlayEffect type="submit" primary>Cotizar</Button>
-        </div>
+        {/* <GoogleOneTapLogin/> */}
+        <div className={styles.sellform__container}>
+          <div className={styles.checkbox}>
+            <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
+            <label for="newsletter">Quiero recibir newsletters</label>
+          </div>
+          </div>
+          <div className={styles.buttons__container}>
+            <Button type="button" link onClick={handleBack}>Volver</Button>
+            <Button overlayEffect type="submit" primary>Cotizar</Button>
+          </div>
       </form>
     }
     return formSteps[step]
@@ -543,30 +519,6 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
   const formikForms = {
     0: <Fragment key={0}>
-      <Formik
-        onSubmit={handlePatenteSubmit}
-        initialValues={{ patente: '' }}
-        validationSchema={object().shape({
-          patente: string().matches(/[A-Za-z0-9]+/, 'Sólo combinacion de letras y números. Sin guiones.').required('Ingrese su patente')
-        })}
-      >
-        {({ handleSubmit, handleChange, handleBlur, errors, values, touched }) => (
-          <form className={"styles.patente__form" + "hidden-lg hidden-xs"} onSubmit={handleSubmit} hidden="true">
-            <div className='form-item'>
-              <input name='patente' onChange={handleChange} onBlur={handleBlur} value={values.patente} className={styles.patente__input} placeholder="Patente"></input>
-              {errors.patente && touched.patente && (
-                <div className="form-error">
-                  {errors.patente}
-                </div>
-              )}
-              {patenteMessage && <div className='form-error' style={{ position: 'relative', width: '70%' }}>
-                La patente no es válida. Inténtelo nuevamente o complete los datos de su vehículo manualmente
-              </div>}
-            </div>
-            <div className={styles.buscar__button}><Button type="submit" icon="/icons/lupa.svg" loading={buscarPatenteLoading}>Buscar <span className={styles.patente}>patente</span></Button></div>
-          </form>
-        )}
-      </Formik>
       <Formik
         enableReinitialize
         initialValues={initialValues[step]}
@@ -587,14 +539,13 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       )}
     </Formik>,
     'error-cobertura': <div>
-      <p>Hola {userName},</p>
+      <p><b>Hola {userName},</b></p>
       <br />
       <p>Gracias por utilizar nuestra plataforma.</p><br />
       <p>Lamentablemente, por el momento no estamos operando en su zona; esperamos poder hacerlo en el corto plazo.</p><br />
-      <p>Si lo podemos ayudar en alguna otra cosa, no deje de avisarnos a <a href="mailto:hola@carbula.cl">hola@carbula.cl</a> </p><br />
-      <p>¡Que esté muy bien!</p><br />
-      <p>El equipo de <b>Cárbula</b>.</p><br />
-      <Button primary onClick={() => setStep(0)}>Entendido</Button>
+      <p>Si necesita contactarnos, escribanos a <a href="mailto:hola@carbula.cl">hola@carbula.cl</a> </p><br />
+      <p><b>¡Que esté muy bien!</b></p><br />
+      <Button noBorder onClick={() => setStep(0)}>Reintentar</Button>
     </div>,
     'error-year': <div>
       <p>Estimado {userName},</p>

@@ -65,8 +65,8 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     return SellForms[COUNTRY_CODE]
   }),[])
   const router = useRouter();
-  const [title, setTitle] = useState([`Vende ${t('tu')} auto de manera segura`, 'Gana hasta un 25% más.'])
-  const [subtitle, setSubtitle] = useState(['Garantizamos el cobro seguro de la venta. Nos encargamos de todo el proceso de venta.', 'Respondemos todas las consultas de los compradores.']);
+  const [title, setTitle] = useState(['Con el Automovil Club Chile', 'Ahora puedes vender tu auto'])
+  const [subtitle, setSubtitle] = useState(['De forma rápida, segura y sin complicaciones', 'Respondemos todas las consultas de los compradores.']);
   const [step, setStep] = useState(0)
   const [overlayBackground, setOverlayBackground] = useState(false);
 
@@ -125,7 +125,6 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
       <section className={styles.section1__container}>
         <div className={styles.text__container}>
           <h1 className={styles.section1__title}>{t('section1Title')}</h1>
-          {/*<h3 className={styles.section1__title}>{t('section1TitleMotivos')}</h3>*/}
           <div className={styles['benefits--desktop']}>
             <h3>{t('section1Subtitle1')}</h3>
             <p>{t('section1Subtitle1Text')}</p>

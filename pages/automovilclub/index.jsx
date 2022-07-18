@@ -65,8 +65,8 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     return SellForms[COUNTRY_CODE]
   }),[])
   const router = useRouter();
-  const [title, setTitle] = useState(['Con el Automovil Club Chile', 'Ahora puedes vender tu auto'])
-  const [subtitle, setSubtitle] = useState(['De forma rápida, segura y sin complicaciones', 'Respondemos todas las consultas de los compradores.']);
+  const [title, setTitle] = useState([`Vende ${t('tu')} auto de manera segura`, 'Gana hasta un 25% más.'])
+  const [subtitle, setSubtitle] = useState(['Garantizamos el cobro seguro de la venta. Nos encargamos de todo el proceso de venta.', 'Respondemos todas las consultas de los compradores.']);
   const [step, setStep] = useState(0)
   const [overlayBackground, setOverlayBackground] = useState(false);
 
@@ -81,8 +81,8 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   useEffect(() => {
     switch (step) {
       case 0:
-        setTitle([`${t('titleVendemosL1')}`, `${t('titleVendemosL2')}`])
-        setSubtitle([t('subtitleVendemosL1'), t('subtitleVendemosL2'), t('subtitleVendemosL3')])
+        setTitle(['Con el Automovil Club Chile', 'Ahora puedes vender tu auto'])
+        setSubtitle(['De forma rápida, segura y sin complicaciones', 'Sin tener que salir de tu casa', 'Respondemos todas las consultas de los compradores.'])
         break;
       case 1:
         setTitle([`Estás más cerca de vender ${t('tu')} auto`])

@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import Head from '../../components/head'
 import Jumbotron from '../../components/Jumbotron'
-import styles from './comprar.module.scss'
+import styles from './../index/home.module.scss'
 import Image from 'next/image'
 import { getZonas } from '../../utils/fetches';
 import { useSpring, animated } from "react-spring";
@@ -15,14 +15,14 @@ import { useTranslation } from 'next-i18next';
 
 
 
-const BlackoutComponent = dynamic(import('../components/BlackoutComponent'))
+const BlackoutComponent = dynamic(import('../../components/BlackoutComponent'))
 const Carousel = dynamic(import('@brainhubeu/react-carousel'), { ssr: false })
-const NuestrosClientes = dynamic(import('../components/NuestrosClientes'))
-const FaqComponent = dynamic(import('../components/FaqComponent'))
-const QuoteComponent = dynamic(import('../components/QuoteComponent'))
-const FooterInfo = dynamic(import('../components/FooterInfo'))
-const Button = dynamic(import('../components/Button'))
-const Nav = dynamic(import('../components/nav'))
+const NuestrosClientes = dynamic(import('../../components/NuestrosClientes'))
+const FaqComponent = dynamic(import('../../components/FaqComponent'))
+const QuoteComponent = dynamic(import('../../components/QuoteComponent'))
+const FooterInfo = dynamic(import('../../components/FooterInfo'))
+const Button = dynamic(import('../../components/Button'))
+const Nav = dynamic(import('../../components/nav'))
 
 export async function getServerSideProps(context) {
   const { referer } = context.req.headers
@@ -57,10 +57,10 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   const { t } = useTranslation('common')
   const SellForm = useCallback(dynamic(() => {
     const SellForms = {
-      'ar': import('../components/SellForm'),
-      'cl': import('../components/SellFormChile'),
-      'uy': import('../components/SellForm'),
-      'mx': import('../components/SellForm'),
+      'ar': import('../../components/SellForm'),
+      'cl': import('../../components/SellFormChile'),
+      'uy': import('../../components/SellForm'),
+      'mx': import('../../components/SellForm'),
     }
     return SellForms[COUNTRY_CODE]
   }),[])

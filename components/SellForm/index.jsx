@@ -165,22 +165,17 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
     } catch (error) {
       setOverlayBackground(false)
       if (error.message.indexOf('cobertura') > -1) {
-        setOverlayBackground(true)
-        const { data } = await submitFormAndGetCotization(carAndContactData)
-        const query = CryptoJS.AES.encrypt(JSON.stringify(data.data), 'cotizacion').toString()
-        saveCotization(query)
-        setOverlayBackground(false)
         router.replace({ pathname: '/', query: { cotizacion: 'fueradecobertura' } })
         setStep('error-cobertura')
         carAndContactData.noGeneroNegocio = 'fuera_de_zona' // para propiedad de hubspot
-        addContact(carAndContactData)
+        submitFormAndGetCotization(carAndContactData)
         return setUserName(values.name)
       }
       if (error.message.indexOf('year') > -1) {
         router.replace({ pathname: '/', query: { cotizacion: 'aniofueradecobertura' } })
         setStep('error-year')
         carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
-        addContact(carAndContactData)
+        submitFormAndGetCotization(carAndContactData)
         return setUserName(values.name)
       }
       console.log('Ocurrió un error en la cotización')

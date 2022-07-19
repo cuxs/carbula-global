@@ -2,7 +2,7 @@ import React, { useState, Fragment, useEffect, useCallback } from 'react'
 import dynamic from 'next/dynamic'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import Head from '../../components/CustomHeads/headAutomovilClub';
-import Jumbotron from '../../components/Jumbotron'
+import Jumbotron from '../../components/JumbotronAutomovilClub'
 import styles from './../index/home.module.scss'
 import Image from 'next/image'
 import { getZonas } from '../../utils/fetches';
@@ -104,12 +104,6 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   }, [overlayBackground])
 
   const getSomosText = () => {
-    const texts = {
-      ar: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
-      cl: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
-      uy: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
-      mx: <Fragment>SOMOS UN MARKETPLACE POTENCIADO POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR AUTOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>
-    }
     return texts[COUNTRY_CODE]
   }
   return (
@@ -159,9 +153,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           <Image src="/images/carbula_couple.webp" width="690" height="640" alt="Pareja" />
         </div>
       </section>
-      <section>
-        <QuoteComponent text={['El mundo está cambiando.', 'La forma de vender y comprar', 'vehículos, también.']} />
-      </section>
+     
       <section>
         <div className={styles.section2__container}>
           <div>
@@ -184,14 +176,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           </div>
         </div>
       </section>
-      <section className={styles.section3}>
-        <div className={styles.section3__container}>
-          <h3 className={styles.text__primary}>{t('testimonios')}</h3>
-          <NuestrosClientes country_code={COUNTRY_CODE} />
-        </div>
-        <div className={styles.somos__text}>{getSomosText()}</div>
-        <hr />
-      </section>
+      <hr></hr>
       <section>
         <FooterInfo grey country_code={COUNTRY_CODE} />
       </section>

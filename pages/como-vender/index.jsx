@@ -144,7 +144,7 @@ const ComoVender = () => {
             <h4 itemprop="name">8. ¿El auto lo venden ustedes o yo?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p><b>Nosotros. Nos ocupamos 100% del proceso de venta, incluso de conseguir al comprador ideal.</b>Brindamos financiación y los mejores métodos de pago lo cuál es un gran atractivo para los potenciales interesados.</p>
+                <p><b>Nosotros. Nos ocupamos 100% del proceso de venta, incluso de conseguir al comprador ideal.</b> Brindamos financiación y los mejores métodos de pago lo cuál es un gran atractivo para los potenciales interesados.</p>
               </div>
             </div>
             <h4 itemprop="name">9. Listo. Quiero vender con ustedes.</h4>

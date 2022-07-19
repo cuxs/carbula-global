@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useEffect, useCallback } from 'react'
 import dynamic from 'next/dynamic'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-import Head from '../../components/CustomHeads/headAutomovilClubChile';
+import Head from '../../components/CustomHeads/headAutomovilClub';
 import Jumbotron from '../../components/Jumbotron'
 import styles from './../index/home.module.scss'
 import Image from 'next/image'
@@ -14,7 +14,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 
-
 const BlackoutComponent = dynamic(import('../../components/BlackoutComponent'))
 const Carousel = dynamic(import('@brainhubeu/react-carousel'), { ssr: false })
 const NuestrosClientes = dynamic(import('../../components/NuestrosClientes'))
@@ -22,7 +21,7 @@ const FaqComponent = dynamic(import('../../components/FaqComponent'))
 const QuoteComponent = dynamic(import('../../components/QuoteComponent'))
 const FooterInfo = dynamic(import('../../components/FooterInfo'))
 const Button = dynamic(import('../../components/Button'))
-const Nav = dynamic(import('../../components/nav'))
+const Nav = dynamic(import('../../components/CustomNav'))
 
 export async function getServerSideProps(context) {
   const { referer } = context.req.headers

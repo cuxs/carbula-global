@@ -53,7 +53,7 @@ const ComoVender = () => {
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección mecánica gratuita. La misma no tomará más de 40 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es agendar una inspección mecánica gratuita. La misma no tomará más de 60 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>
@@ -65,7 +65,7 @@ const ComoVender = () => {
             <h4 itemprop="name">7. ¿Y qué hago mientras venden mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p><b>Lo que quieras.</b> El auto es tuyo durante todo el proceso. Aprovechá ese tiempo para ir pensando cuál será tu próximo vehículo y disfrutá de no tener que ocuparte de nada. Vamos a vender tu auto desde la comodidad de tu casa en 20 días o menos.</p>
+                <p><b>Lo que quieras.</b> El auto es tuyo durante todo el proceso. Aprovechá ese tiempo para ir pensando cuál será tu próximo vehículo y disfrutá de no tener que ocuparte de nada. Vamos a vender tu auto desde la comodidad de tu casa.</p>
               </div>
             </div>
             <h4 itemprop="name">8. ¿El auto lo venden ustedes o yo?</h4>
@@ -108,7 +108,7 @@ const ComoVender = () => {
             <h4 itemprop="name">2. ¿Por qué lo debería vender a través de Cárbula?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Porque nos encargamos de la venta por vos.<b> Nos ocupamos de toda la gestión y de todos los trámites. Además, ofrecemos hasta un 25% más de dinero que en otros portales.</b> Brindamos una alternativa de venta eficiente, simple y transparente.</p>
+                <p>Porque nos encargamos de la venta por ti.<b> Nos ocupamos de toda la gestión y de todos los trámites. Además, ofrecemos hasta un 25% más de dinero que en otros portales.</b> Brindamos una alternativa de venta eficiente, simple y transparente.</p>
               </div>
             </div>
             <h4 itemprop="name">3. ¿Cómo hago para vender mi auto?</h4>
@@ -120,13 +120,13 @@ const ComoVender = () => {
             <h4 itemprop="name">4. ¿Qué pasa si no estoy de acuerdo con el precio del cotizador?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p><b>No hay ningún problema.</b> Podés indicarnos el valor que quisieras recibir por tu auto. Tené en cuenta que la inspección nos dará información concreta para conocer el estado real de tu auto, lo cuál ayudará a definir el precio final de venta.</p>
+                <p><b>No hay ningún problema.</b> Podés indicarnos el valor que quisieras recibir por tu auto. Ten en cuenta que la inspección nos dará información concreta para conocer el estado real de tu auto, lo cuál ayudará a definir el precio final de venta.</p>
               </div>
             </div>
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección mecánica gratuita. La misma no tomará más de 40 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es agendar una inspección mecánica gratuita. La misma no tomará más de 60 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>
@@ -138,7 +138,7 @@ const ComoVender = () => {
             <h4 itemprop="name">7. ¿Y qué hago mientras venden mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p><b>Lo que quieras.</b> El auto es tuyo durante todo el proceso. Aprovechá ese tiempo para ir pensando cuál será tu próximo vehículo y disfrutá de no tener que ocuparte de nada. Vamos a vender tu auto desde la comodidad de tu casa en 20 días o menos.</p>
+                <p><b>Lo que quieras.</b> El auto es tuyo durante todo el proceso. Aprovecha ese tiempo para ir pensando cuál será tu próximo vehículo y disfruta de no tener que ocuparte de nada. Vamos a vender tu auto desde la comodidad de tu casa.</p>
               </div>
             </div>
             <h4 itemprop="name">8. ¿El auto lo venden ustedes o yo?</h4>
@@ -181,37 +181,37 @@ const ComoVender = () => {
             <h4 itemprop="name">2. ¿Por qué lo debería vender a través de Cárbula?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Porque nos encargamos de la venta por vos. <b>Nos ocupamos de toda la gestión y de todos los trámites. Además, ofrecemos hasta un 25% más de dinero que en otros portales.</b> Brindamos una alternativa de venta eficiente, simple y transparente.</p>
+                <p>Porque nos encargamos de la venta por ti. <b>Nos ocupamos de toda la gestión y de todos los trámites. Además, ofrecemos hasta un 25% más de dinero que en otros portales.</b> Brindamos una alternativa de venta eficiente, simple y transparente.</p>
               </div>
             </div>
             <h4 itemprop="name">3. ¿Cómo hago para vender mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El primer paso es ingresar los datos de tu vehículo en nuestro cotizador. Allí, el algoritmo que recopila datos de autos según marca, modelo y kilometraje, te indicará cuál es el valor estimado de tu auto. Luego, hace falta coordinar una inspección mecánica gratuita.</p>
+                <p>El primer paso es ingresar los datos de tu vehículo en nuestro cotizador. Allí, el algoritmo que recopila datos de autos según marca, modelo y kilometraje, te indicará cuál es el valor estimado de tu auto. Luego, hace falta coordinar de forma gratuita una inspección mecánica virtual.</p>
               </div>
             </div>
             <h4 itemprop="name">4. ¿Qué pasa si no estoy de acuerdo con el precio del cotizador?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p><b>No hay ningún problema.</b> Podés indicarnos el valor que quisieras recibir por tu auto. Tené en cuenta que la inspección nos dará información concreta para conocer el estado real de tu auto, lo cuál ayudará a definir el precio final de venta.</p>
+                <p><b>No hay ningún problema.</b> Podés indicarnos el valor que quisieras recibir por tu auto. Ten en cuenta que la inspección nos dará información concreta para conocer el estado real de tu auto, lo cuál ayudará a definir el precio final de venta.</p>
               </div>
             </div>
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección mecánica gratuita. La misma no tomará más de 40 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es agendar una inspección mecánica virtual gratuita. La misma no tomará más de 60 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Lo inspeccionamos, le tomamos fotografías, lo publicamos en los portales con más alcance, promocionamos las publicaciones, se lo mostramos a los interesados, respondemos a todas las consultas, nos ocupamos de gestionar los trámites y de conseguir al comprador.</p>
+                <p>Lo inspeccionamos, lo publicamos en los portales con más alcance, promocionamos las publicaciones, se lo mostramos a los interesados, respondemos a todas las consultas, nos ocupamos de gestionar los trámites y de conseguir al comprador.</p>
               </div>
             </div>
             <h4 itemprop="name">7. ¿Y qué hago mientras venden mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p><b>Lo que quieras.</b> El auto es tuyo durante todo el proceso. Aprovechá ese tiempo para ir pensando cuál será tu próximo vehículo y disfrutá de no tener que ocuparte de nada. Vamos a vender tu auto desde la comodidad de tu casa en 20 días o menos.</p>
+                <p><b>Lo que quieras.</b> El auto es tuyo durante todo el proceso. Aprovecha ese tiempo para ir pensando cuál será tu próximo vehículo y disfruta de no tener que ocuparte de nada. Vamos a vender tu auto desde la comodidad de tu hogar.</p>
               </div>
             </div>
             <h4 itemprop="name">8. ¿El auto lo venden ustedes o yo?</h4>
@@ -271,7 +271,7 @@ const ComoVender = () => {
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección mecánica gratuita. La misma no tomará más de 40 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es agendar una inspección mecánica gratuita. La misma no tomará más de 60 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>

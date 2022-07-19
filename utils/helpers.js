@@ -147,8 +147,6 @@ export const checkZone = (location, allzones, country_code) => {
   };
 
   const selectedLocation = allzones.find((row) => row.value === location)
-  console.log('uncoveredZones: ', uncoveredZones[country_code])
-  console.log('location label:', selectedLocation.label)
   if (uncoveredZones[country_code].indexOf(selectedLocation.label) > -1) {
     throw new Error('Fuera de cobertura')
   }

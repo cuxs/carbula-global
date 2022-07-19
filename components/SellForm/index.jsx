@@ -164,7 +164,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       }, undefined, {shallow: true})
     } catch (error) {
       setOverlayBackground(false)
-      console.log("mensaje de error", error.message);
       if (error.message.indexOf('cobertura') > -1) {
         carAndContactData.noGeneroNegocio = 'fuera_de_zona' // para propiedad de hubspot
         submitFormAndGetCotization(carAndContactData)

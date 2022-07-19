@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useEffect, useCallback } from 'react'
 import dynamic from 'next/dynamic'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-import Head from '../../components/head'
+import Head from '../../components/CustomHeads/headAutomovilClubChile';
 import Jumbotron from '../../components/Jumbotron'
 import styles from './../index/home.module.scss'
 import Image from 'next/image'

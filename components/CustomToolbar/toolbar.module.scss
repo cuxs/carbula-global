@@ -64,7 +64,10 @@
     width: 160px;
   }
 }
-
+.powered {
+  width: 120px;
+  vertical-align: middle;
+}
 .spacer {
   flex: 1;
 }
@@ -266,7 +269,7 @@
   .toolbar {
     height: 45px;
     &.gradient {
-      background: rgba(0, 0, 0, 0.5);
+      background: #ffd701;
   }
 }
   .toggle-button {

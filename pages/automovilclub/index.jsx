@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { getZonas } from '../../utils/fetches';
 import { useSpring, animated } from "react-spring";
 import { hotjar } from 'react-hotjar'
-import {  getCountryCode, clearLocalStorage, getHotjarId, getPhoneNumber, getWhatsappNumber, getTitleByCountry } from '../../utils/helpers';
+import { getCountryCode, clearLocalStorage, getHotjarId, getPhoneNumber, getWhatsappNumber, getTitleByCountry } from '../../utils/helpers';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -17,7 +17,7 @@ import { useTranslation } from 'next-i18next';
 const BlackoutComponent = dynamic(import('../../components/BlackoutComponent'))
 const Carousel = dynamic(import('@brainhubeu/react-carousel'), { ssr: false })
 const NuestrosClientes = dynamic(import('../../components/NuestrosClientes'))
-const FaqComponent = dynamic(import('../../components/FaqComponent'))
+const FaqComponentAutomovilClub = dynamic(import('../../components/FaqComponentAutomovilClub'))
 const QuoteComponent = dynamic(import('../../components/QuoteComponent'))
 const FooterInfo = dynamic(import('../../components/FooterInfo'))
 const Button = dynamic(import('../../components/Button'))
@@ -64,8 +64,8 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     return SellForms[COUNTRY_CODE]
   }),[])
   const router = useRouter();
-  const [title, setTitle] = useState([`Vende ${t('tu')} auto de manera segura`, 'Gana hasta un 25% más.'])
-  const [subtitle, setSubtitle] = useState(['Garantizamos el cobro seguro de la venta. Nos encargamos de todo el proceso de venta.', 'Respondemos todas las consultas de los compradores.']);
+  const [title, setTitle] = useState(['Con el Automóvil Club Chile,', 'ahora puedes vender tu auto.'])
+  const [subtitle, setSubtitle] = useState(['Sin salir de tu casa, gana hasta un 25% más', 'De forma rápida, segura y sin complicaciones', 'Nos encargamos de todo el proceso de venta']);
   const [step, setStep] = useState(0)
   const [overlayBackground, setOverlayBackground] = useState(false);
 
@@ -80,8 +80,8 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
   useEffect(() => {
     switch (step) {
       case 0:
-        setTitle(['Con el Automovil Club Chile', 'Ahora puedes vender tu auto'])
-        setSubtitle(['De forma rápida, segura y sin complicaciones', 'Sin tener que salir de tu casa', 'Respondemos todas las consultas de los compradores.'])
+        setTitle(['Con el Automóvil Club Chile,', 'ahora puedes vender tu auto.'])
+        setSubtitle(['Sin salir de tu casa, gana hasta un 25% más', 'De forma rápida, segura y sin complicaciones', 'Nos encargamos de todo el proceso de venta'])
         break;
       case 1:
         setTitle([`Estás más cerca de vender ${t('tu')} auto`])
@@ -172,7 +172,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           </div>
           <div>
             <h3 className={styles.text__primary}>{t('faq')}</h3>
-            <FaqComponent />
+            <FaqComponentAutomovilClub />
           </div>
         </div>
       </section>

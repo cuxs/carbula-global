@@ -2,7 +2,7 @@
   //background-image: url("/images/carbula-header-desktop.webp");
   background-size: cover;
   background-position: bottom;
-  background-color: #000;
+  background-color: #0b4f9a;
   background-repeat: no-repeat;
   height: 460px;
   padding: 30px 60px;
@@ -37,7 +37,8 @@
 @media (max-width: 769px) {
   .jumbotron__container {
     height: 640px;
-    background-image: url("/images/carbula-header-mobile.webp");
+    //background-image: url("/images/carbula-header-mobile.webp");
+    background-color: #0b4f9a;
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: -100px;

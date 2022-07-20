@@ -168,17 +168,17 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     } catch (e) {
       setOverlayBackground(false)
       if (e.message.indexOf('cobertura') > -1) {
+        carAndContactData.noGeneroNegocio = 'fuera_de_zona' // para propiedad de hubspot
+        submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'fueradecobertura' } })
         setStep('error-cobertura')
-        carAndContactData.noGeneroNegocio= 'fuera_de_zona' // para propiedad de hubspot
-        addContact(carAndContactData)
         return setUserName(values.name)
       }
-      if(e.message.indexOf('year')> -1){
+      if(e.message.indexOf('year')> -1) {
+        carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
+        submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'aniofueradecobertura' } })
         setStep('error-year')
-        carAndContactData.noGeneroNegocio= 'auto_antiguo' // para propiedad de hubspot
-        addContact(carAndContactData)
         return setUserName(values.name)
       }
       console.log(e)

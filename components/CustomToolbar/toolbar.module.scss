@@ -51,6 +51,16 @@
       background-color: #33bda3;
     }
   }
+  img {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 50%;
+    img {
+      width: 25px;
+    }
+  }
 }
 
 .toolbar__logo {

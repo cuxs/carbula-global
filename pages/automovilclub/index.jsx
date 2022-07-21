@@ -37,7 +37,7 @@ export async function getServerSideProps(context) {
         zonas: parsedZonas,
         referer: referer ? referer : null,
         COUNTRY_CODE: getCountryCode(context.locale),
-        ...(await serverSideTranslations(context.locale, ['common', 'BlackoutComponent', 'FaqComponent', 'FooterInfo', 'SellForm'])),
+        ...(await serverSideTranslations(context.locale, ['commonAutomovilClub', 'BlackoutComponent', 'FaqComponentAutomovilClub', 'FooterInfo', 'SellForm'])),
       }
     }
   } catch (e) {
@@ -46,14 +46,14 @@ export async function getServerSideProps(context) {
       props: {
         referer: referer ? referer : null,
         COUNTRY_CODE: getCountryCode(context.locale),
-        ...(await serverSideTranslations(context.locale, ['common', 'BlackoutComponent', 'FaqComponent', 'SellForm'])),
+        ...(await serverSideTranslations(context.locale, ['commonAutomovilClub', 'BlackoutComponent', 'FaqComponentAutomovilClub', 'SellForm'])),
       }
     }
   }
 }
 
 const Home = ({ zonas, referer, COUNTRY_CODE }) => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('commonAutomovilClub')
   const SellForm = useCallback(dynamic(() => {
     const SellForms = {
       'ar': import('../../components/SellForm'),
@@ -117,6 +117,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
       <SellForm step={step} setStep={setStep} setOverlayBackground={setOverlayBackground} zonas={zonas} referer={referer} COUNTRY_CODE={COUNTRY_CODE} />
       <section className={styles.section1__container}>
         <div className={styles.text__container}>
+        <h3>{t('section1Subtitle4')}</h3>
           <h1 className={styles.section1__title}>{t('section1Title')}</h1>
           <div className={styles['benefits--desktop']}>
             <h3>{t('section1Subtitle1')}</h3>
@@ -150,7 +151,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           </div>
         </div>
         <div className={styles.couple__image}>
-          <Image src="/images/carbula_couple.webp" width="690" height="640" alt="Pareja" />
+          <Image src="/images/autos-usados.webp" width="690" height="640" alt="Pareja" />
         </div>
       </section>
      
@@ -176,7 +177,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           </div>
         </div>
       </section>
-      <hr></hr>
+      <br></br><br></br>
       <section>
         <FooterInfo grey country_code={COUNTRY_CODE} />
       </section>

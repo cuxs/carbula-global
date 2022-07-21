@@ -46,11 +46,8 @@ const Toolbar = ({ drawerClickHandler }) => {
           </div></Link></div>
         <div className={styles.spacer} />
         <div className={styles.toolbar__items}>
-          {/*<a href={getCatalogoURL(COUNTRY_CODE)}target="__blank"><b>Comprar un auto</b></a>*/}
-          <a href="/"><b>FAQs</b></a>
-          <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><b>Contacto</b></a>
-          <Button primary><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Comprar un auto</a></Button>
-          {/* <a href="https://blog.carbula.cl/blog" target="__blank">Blog</a> */}
+          <img src="/images/powered-carbula.svg" alt="Automóvil Club Chile logo"/>
+          <Button><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Comprar un auto</a></Button>
         </div>
       </div>
       <div className={styles['toolbar__toggle-button']}>

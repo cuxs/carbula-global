@@ -46,8 +46,8 @@ const Toolbar = ({ drawerClickHandler }) => {
           </div></Link></div>
         <div className={styles.spacer} />
         <div className={styles.toolbar__items}>
+          <small>Powered by</small>
           <img src="/images/powered-carbula.svg" alt="Automóvil Club Chile logo"/>
-          <Button><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Comprar un auto</a></Button>
         </div>
       </div>
       <div className={styles['toolbar__toggle-button']}>

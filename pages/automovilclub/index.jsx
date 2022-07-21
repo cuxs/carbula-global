@@ -150,8 +150,8 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
             </Carousel>
           </div>
         </div>
-        <div className={styles.couple__image}>
-          <Image src="/images/autos-usados.webp" width="690" height="640" alt="Pareja" />
+        <div className={styles.carbula__banner}>
+          <Image src="/images/banner-carbula.png" width="690" height="640" alt="Pareja" />
         </div>
       </section>
      

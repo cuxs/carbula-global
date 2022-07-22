@@ -98,7 +98,7 @@ module.exports = {
     uy: "UY"  
   },
   SANTANDER_SPID_PRODUCTION: {
-    ar: "352454",
+    ar: "350735",
     cl: "CL",
     mx: "MX",
     uy: "UY" 

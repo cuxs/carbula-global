@@ -464,15 +464,9 @@ export const getTitleByCountry = (country_code) => {
 
 export const getKeywordsByCountry = (country_code) => {
   const ids = {
-<<<<<<< HEAD
-    ar: 'carbula argentina, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos, carbula mendoza, comprar autos argentina, vender autos argentina, catalogo de autos, catalogo carbula, prestamos prendarios autos banco santander',
-    cl: 'carbula chile, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos, carbula chileautos, comprar autos chile, vender autos chile, catalogo de autos carbula, catalogo carbula',
-    mx: 'carbula mexico, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos mexico, quiero comprar autos mexico, quiero vender autos mexico, catalogo de autos carbula, catalogo carbula',
-=======
     ar: 'carbula argentina, autos usados argentina, autos en venta, compra y venta de autos usados, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos, carbula mendoza, comprar autos argentina, vender autos argentina, catalogo de autos, catalogo carbula',
     cl: 'carbula chile, autos usados chile, autos en venta, compra y venta de autos usados, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos, carbula chileautos, comprar autos chile, vender autos chile, catalogo de autos carbula, catalogo carbula',
     mx: 'carbula mexico, autos usados mexico, autos en venta, compra y venta de autos usados, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos mexico, quiero comprar autos mexico, quiero vender autos mexico, catalogo de autos carbula, catalogo carbula',
->>>>>>> main
     uy: 'carbula uruguay, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos uruguay, autos usados uruguay, compra de autos usados uruguay, venta de autos usados uruguay',
   }
   return ids[country_code]

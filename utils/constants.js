@@ -92,7 +92,7 @@ module.exports = {
     uy: "UY" 
   },
   SANTANDER_URL_PRODUCTION: {
-    ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicopro/#/home?",
+    ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicohml/#/home?",
     cl: "CL",
     mx: "MX",
     uy: "UY"  

@@ -115,7 +115,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
         <Jumbotron title={title} subtitle={subtitle} />
       </animated.div>
       <SellForm step={step} setStep={setStep} setOverlayBackground={setOverlayBackground} zonas={zonas} referer={referer} COUNTRY_CODE={COUNTRY_CODE} />
-      <section className={styles.section1__container}>
+      <section className={styles.section5__container}>
         <div className={styles.text__container}>
         <h3>{t('section1Subtitle4')}</h3>
           <h1 className={styles.section1__title}>{t('section1Title')}</h1>
@@ -150,25 +150,20 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
             </Carousel>
           </div>
         </div>
-        <div className={styles.carbula__banner}>
-          <Image src="/images/banner-carbula.png" width="690" height="640" alt="Pareja" />
+        <div className={styles.banner__carbula}>
+          <Image src="/images/banner-carbula.png" width="690" height="640" alt="Banner de Cárbula Chile" />
         </div>
       </section>
      
       <section>
-        <div className={styles.section2__container}>
+        <div className={styles.section6__container}>
           <div>
             <h3 className={styles.text__secondary}>{t('contactanos')}</h3>
             <div className={styles.image} >
               <Image src="/images/carbula_contacto.png" width="450" height="438" alt="Contacto" />
             </div>
-            <div>
-              <p>{t('contactanosP1')}</p>
-              <p>{t('contactanosP2')}</p>
-            </div>
             <div className={styles.buttons__container}>
-              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>
-              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondaryOutlined>Whatsapp</Button></a>
+              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondary>Whatsapp</Button></a>
             </div>
           </div>
           <div>

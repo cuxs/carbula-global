@@ -7,13 +7,13 @@ import classNames from 'classnames/bind';
 
 import { useSpring } from 'react-spring';
 import { getCatalogoURL, getCountryCode, getWhatsappNumber } from "../../utils/helpers";
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
 
 const Toolbar = ({ drawerClickHandler }) => {
   // const [isTop, setIsTop] = useState('');
   const router = useRouter()
-  const COUNTRY_CODE= getCountryCode(router.locale)
+  const COUNTRY_CODE = getCountryCode(router.locale)
   const [sideMenu, setSideMenu] = useState(false);
 
   const classNameContext = classNames.bind(styles)
@@ -42,12 +42,20 @@ const Toolbar = ({ drawerClickHandler }) => {
       <div className={styles['toolbar__container-items']} style={props}>
         <div><Link href="/">
           <div className={styles.toolbar__logo}>
-            <img src="/images/logo-achhi-negro.svg" alt="Automóvil Club Chile logo"/>
+            <img src="/images/logo-achhi-negro.svg" alt="Automóvil Club Chile logo" />
+          </div></Link></div>
+        <div><Link href="/">
+          <div className={styles.toolbar__powered}>
+            <p>Powered by</p>
+            <img src="/images/powered-carbula.svg" alt="Automóvil Club Chile logo" />
           </div></Link></div>
         <div className={styles.spacer} />
         <div className={styles.toolbar__items}>
-          <small>Powered by</small>
-          <img src="/images/powered-carbula.svg" alt="Automóvil Club Chile logo"/>
+          {/*<a href={getCatalogoURL(COUNTRY_CODE)}target="__blank"><b>Comprar un auto</b></a>*/}
+          <a href="/"><b>Vender mi auto</b></a>
+          <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><b>Contacto</b></a>
+          <Button><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Comprar un auto</a></Button>
+          {/* <a href="https://blog.carbula.cl/blog" target="__blank">Blog</a> */}
         </div>
       </div>
       <div className={styles['toolbar__toggle-button']}>

@@ -5,6 +5,13 @@
   justify-content: space-between;
   margin-top: 350px;
 }
+.section5__container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 350px;
+  background: rgb(240,240,240);
+  background: linear-gradient(0deg, rgba(240,240,240,1) 0%, rgba(255,255,255,1) 100%);
+}
 .text__container {
   width: 500px;
   margin: 1em 0em 0em 250px;
@@ -33,6 +40,30 @@
   display: flex;
   justify-content: space-between;
   margin: 5em 250px 0em 250px;
+  .image {
+    margin-bottom: 20px;
+  }
+  p {
+    color: $black;
+  }
+  .text__primary {
+    color: $primaryColor;
+    margin-bottom: 40px;
+  }
+  .text__secondary {
+    color: $primaryColor;
+    margin-bottom: 40px;
+  }
+  .buttons__container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.section6__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 5em 130px 0em 130px;
   .image {
     margin-bottom: 20px;
   }

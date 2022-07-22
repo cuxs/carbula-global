@@ -10,7 +10,6 @@
   position: fixed;
   z-index: 1;
   color: white;
-  padding: 12px 20px;
   &.gradient {
     background: #ffd701;
   }
@@ -48,11 +47,11 @@
     text-transform: uppercase;
     font-weight: bolder;
     font-size: 15px;
-    background-color: #38ceb3;
+    background-color: #000;
     cursor: pointer;
     &:hover {
       color: #fff;
-      background-color: #33bda3;
+      background-color: #0b4f9a;
     }
   }
   img {
@@ -70,13 +69,25 @@
   font-size: 1.5rem;
   width: 100%;
   img {
-    width: 160px;
+    width: 200px;
   }
 }
-.powered {
-  width: 120px;
-  vertical-align: middle;
+
+.toolbar__powered {
+  cursor: pointer;
+  margin-left: 50%;
+  width: 100%;
+  p {
+    font-size: 0.6rem;
+    color: #000;
+    letter-spacing: 0.1rem;
+  }
+  img {
+    width: 120px;
+    margin-bottom: 0.5rem;
+  }
 }
+
 .spacer {
   flex: 1;
 }
@@ -276,6 +287,7 @@
     width: 80%;
   }
   .toolbar {
+    padding: 10px 10px;
     height: 45px;
     &.gradient {
       background: #ffd701;
@@ -291,6 +303,25 @@
     &:hover {
       background: none;
       border: none;
+    }
+  }
+}
+
+@media (max-width: 412px) {
+ 
+  .toolbar__powered {
+    cursor: pointer;
+    margin-left: 10%;
+    width: 100%;
+    p {
+      font-size: 0.6rem;
+      color: #000;
+      letter-spacing: 0.1rem;
+      display: none;
+    }
+    img {
+      width: 100px;
+      margin-bottom: 0.5rem;
     }
   }
 }

@@ -27,7 +27,6 @@ const Head = props => {
       <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/`} />
       <link rel="alternate" hrefLang="es-MX" href="https://www.carbula.mx/terminos-y-condiciones" />
       <link rel="alternate" hrefLang="es-CL" href="https://www.carbula.cl/terminos-y-condiciones" />
-      <link rel="alternate" hrefLang="es-UY" href="https://www.carbula.uy/terminos-y-condiciones" />
       <link rel="alternate" hrefLang="es-AR" href="https://www.carbula.ar/terminos-y-condiciones" />    
       <link rel="icon" sizes="192x192" href="/icons/favicon_196.ico" />
       <link rel="icon" href="/favicon.ico" />

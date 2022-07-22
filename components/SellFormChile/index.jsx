@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
-import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
+import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm, searchCarByPlate, addContact } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy } from 'lodash';
@@ -37,6 +37,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   const [versionOptions, setVersionOptions] = useState([])
   const [versionLoading, setVersionLoading] = useState(false);
   const [userName, setUserName] = useState()
+  const [cotizationUuid, setcotizationUuid] = useState()
   const [formData, setFormData] = useState(
     {
       brand: '',
@@ -53,7 +54,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       email: '',
       phone: '',
       location: '',
-      newsletter: '',
+      newsletter: ''
     }
   )
   const router = useRouter()
@@ -127,14 +128,26 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     }
   }
 
-  const handleSubmitFirstStep = (values, actions) => {
+  const handleSubmitFirstStep = async (values, actions) => {
     setFormData(values);
-    setStep(step + 1)
+    setStep(step + 1);
+    try {
+      const carData = {
+        ...values,
+        country_code: COUNTRY_CODE
+      }
+      checkYear(values.year);
+      const { data } = await submitCarForm(carData);
+      setcotizationUuid(data.uuid);
+    } catch (e) {
+      console.log("ERROR desconocido:", e)
+    }
   }
   const handleSubmitPersonalDataStep = async (values, actions) => {
     const carAndContactData = {
       ...formData,
       ...values,
+      uuid: cotizationUuid,
       name: `${values.name} ${values.lastName}`,
       country_code: COUNTRY_CODE,
     }
@@ -155,17 +168,17 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     } catch (e) {
       setOverlayBackground(false)
       if (e.message.indexOf('cobertura') > -1) {
+        carAndContactData.noGeneroNegocio = 'fuera_de_zona' // para propiedad de hubspot
+        submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'fueradecobertura' } })
         setStep('error-cobertura')
-        carAndContactData.noGeneroNegocio= 'fuera_de_zona' // para propiedad de hubspot
-        addContact(carAndContactData)
         return setUserName(values.name)
       }
-      if(e.message.indexOf('year')> -1){
+      if(e.message.indexOf('year')> -1) {
+        carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
+        submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'aniofueradecobertura' } })
         setStep('error-year')
-        carAndContactData.noGeneroNegocio= 'auto_antiguo' // para propiedad de hubspot
-        addContact(carAndContactData)
         return setUserName(values.name)
       }
       console.log(e)

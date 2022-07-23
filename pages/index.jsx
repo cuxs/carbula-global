@@ -162,9 +162,6 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
         </div>
       </section>
       <section>
-        <QuoteComponent text={['El mundo está cambiando.', 'La forma de vender y comprar', 'vehículos, también.']} />
-      </section>
-      <section>
         <div className={styles.section2__container}>
           <div>
             <h3 className={styles.text__secondary}>{t('contactanos')}</h3>

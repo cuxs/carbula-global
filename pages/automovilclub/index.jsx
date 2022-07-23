@@ -154,16 +154,16 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           <Image src="/images/banner-carbula.png" width="690" height="640" alt="Banner de Cárbula Chile" />
         </div>
       </section>
-     
       <section>
-        <div className={styles.section6__container}>
+        <div className={styles.section2__container}>
           <div>
             <h3 className={styles.text__secondary}>{t('contactanos')}</h3>
             <div className={styles.image} >
               <Image src="/images/carbula_contacto.png" width="450" height="438" alt="Contacto" />
             </div>
             <div className={styles.buttons__container}>
-              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondary>Whatsapp</Button></a>
+              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>
+              <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondaryOutlined>Whatsapp</Button></a>
             </div>
           </div>
           <div>
@@ -172,7 +172,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           </div>
         </div>
       </section>
-      <br></br><br></br>
+      <br></br><br></br> <hr></hr>
       <section>
         <FooterInfo grey country_code={COUNTRY_CODE} />
       </section>

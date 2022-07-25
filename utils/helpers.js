@@ -14,16 +14,20 @@ export const formatNumber = (number, decimals, decPoint = ',', thousandsSep = '.
 
 export const globalValidationData= {
   ar: {
-    phoneMinNumber: 5491000000000
+    phoneMinNumber: 5491000000000,
+    phoneMaxNumber: 5499999999999
   },
   cl: {
-    phoneMinNumber: 56910000000
+    phoneMinNumber: 56910000000,
+    phoneMaxNumber: 56999999999
   },
   mx: {
-    phoneMinNumber: 521000000000
+    phoneMinNumber: 521000000000,
+    phoneMaxNumber: 529999999999
   },
   uy: {
-    phoneMinNumber: 59810000000
+    phoneMinNumber: 59810000000,
+    phoneMaxNumber: 59899999999
   }
 }
 

@@ -25,6 +25,7 @@
     "inNunmCel": "Teléfono o celular",
     "inNumCelInstrucciones": "Ej.: 99 123 456 (sin \"0\" a la izquierda).",
     "inNumCelMuyCorto": "Tu número debe ser más largo",
+    "inNumCelMuyLargo": "Tu número debe ser más corto",
     "inNumCelReq": "Ingresa tu teléfono.",
     "inLocalidad": "Seleccione su localidad",
     "inLocalidadReq": "¿De dónde eres?"

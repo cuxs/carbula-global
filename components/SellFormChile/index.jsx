@@ -214,6 +214,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       phone: number("Ingresa solo números")
         .positive()
         .min(globalValidationData[COUNTRY_CODE].phoneMinNumber, "Tu número debe ser más largo")
+        .max(globalValidationData[COUNTRY_CODE].phoneMaxNumber, "Tu número debe ser más corto")
         .required("Ingresa tu teléfono."),
     })
   ]

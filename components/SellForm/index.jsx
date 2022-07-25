@@ -212,6 +212,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       phone: number(t('inNumCelInstrucciones'))
         .positive()
         .min(globalValidationData[COUNTRY_CODE].phoneMinNumber, t('inNumCelMuyCorto'))
+        .max(globalValidationData[COUNTRY_CODE].phoneMaxNumber, t('inNumCelMuyLargo'))
         .required(t('inNumCelReq')),
     })
   ]

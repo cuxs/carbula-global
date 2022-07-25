@@ -12,7 +12,7 @@ import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, useTransition, config } from "react-spring";
-import { checkYear, checkZone, getCampania, getSourceType, saveCotization } from '../../utils/helpers';
+import { checkYear, checkZone, getCampania, getSourceType, saveCotization, globalValidationData } from '../../utils/helpers';
 
 
 const whereOptions = [
@@ -213,7 +213,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         .required("¿De dónde eres?"),
       phone: number("Ingresa solo números")
         .positive()
-        .min(4, "Tu número debe ser más largo")
+        .min(globalValidationData[COUNTRY_CODE].phoneMinNumber, "Tu número debe ser más largo")
         .required("Ingresa tu teléfono."),
     })
   ]

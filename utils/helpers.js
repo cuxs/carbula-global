@@ -26,7 +26,7 @@ export const globalValidationData= {
   mx: {
     phoneMinNumber: 5211000000000,
     phoneMaxNumber: 5219999999999,
-    phoneMask: '+52 n nn nnnn nnnn'
+    phoneMask: '+52 1 nn nnnn nnnn'
   },
   uy: {
     phoneMinNumber: 59810000000,

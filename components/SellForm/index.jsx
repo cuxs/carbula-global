@@ -238,16 +238,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
     }
   ]
 
-  const renderMask = ()=>{
-    const masks = {
-      'ar': '+54 9 nnn nnnn nnnn',
-      'uy': '+598 nnnn nnnn',
-      'mx': '+52 nnn nnn nnnn',
-      'cl': '+56 9 nnnn nnnn'
-    }
-    return masks[COUNTRY_CODE]
-  }
-
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
       case 0:
@@ -477,7 +467,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                   'a': '[A-Za-z]',
                   '*': '[A-Za-z0-9]'
                 }}
-                mask={renderMask()}
+                mask={globalValidationData[COUNTRY_CODE].phoneMask}
                 maskChar=" "
                 placeholder={t('inNunmCel')}
                 name="phone"

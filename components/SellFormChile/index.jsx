@@ -470,7 +470,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
                 'a': '[A-Za-z]',
                 '*': '[A-Za-z0-9]'
               }}
-              mask="+56 9 nnnn nnnn"
+              mask={globalValidationData[COUNTRY_CODE].phoneMask}
               maskChar=" "
               placeholder="Número WhatsApp"
               name="phone"

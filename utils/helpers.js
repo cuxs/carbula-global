@@ -15,19 +15,23 @@ export const formatNumber = (number, decimals, decPoint = ',', thousandsSep = '.
 export const globalValidationData= {
   ar: {
     phoneMinNumber: 5491000000000,
-    phoneMaxNumber: 5499999999999
+    phoneMaxNumber: 5499999999999,
+    phoneMask: '+54 9 nnnn nn nnnn'
   },
   cl: {
     phoneMinNumber: 56910000000,
-    phoneMaxNumber: 56999999999
+    phoneMaxNumber: 56999999999,
+    phoneMask: '+56 9 nnnn nnnn'
   },
   mx: {
-    phoneMinNumber: 521000000000,
-    phoneMaxNumber: 529999999999
+    phoneMinNumber: 5211000000000,
+    phoneMaxNumber: 5219999999999,
+    phoneMask: '+52 n nn nnnn nnnn'
   },
   uy: {
     phoneMinNumber: 59810000000,
-    phoneMaxNumber: 59899999999
+    phoneMaxNumber: 59899999999,
+    phoneMask: '+598 nnnn nnnn'
   }
 }
 

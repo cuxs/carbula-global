@@ -26,6 +26,7 @@
   "inNunmCel": "Número WhatsApp",
   "inNumCelInstrucciones": "",
   "inNumCelMuyCorto": "Tu número debe ser más largo",
+  "inNumCelMuyLargo": "Tu número debe ser más corto",
   "inNumCelReq": "Ingresa tu teléfono.",
   "inLocalidad": "Seleccione su localidad",
   "inLocalidadReq": "¿De dónde eres?"

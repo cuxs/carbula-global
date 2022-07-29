@@ -26,6 +26,7 @@
   "inNunmCel": "Número de teléfono",
   "inNumCelInstrucciones": "",
   "inNumCelMuyCorto": "Tu número debe ser más largo",
+  "inNumCelMuyLargo": "Tu número debe ser más corto",
   "inNumCelReq": "Ingresa tu teléfono.",
   "inLocalidad": "Localidad donde se encuentra el auto",
   "inLocalidadReq": "¿De dónde eres?"

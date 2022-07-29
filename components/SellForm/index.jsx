@@ -212,6 +212,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       phone: number(t('inNumCelInstrucciones'))
         .positive()
         .min(globalValidationData[COUNTRY_CODE].phoneMinNumber, t('inNumCelMuyCorto'))
+        .max(globalValidationData[COUNTRY_CODE].phoneMaxNumber, t('inNumCelMuyLargo'))
         .required(t('inNumCelReq')),
     })
   ]
@@ -236,16 +237,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       newsletter: formData.newsletter,
     }
   ]
-
-  const renderMask = ()=>{
-    const masks = {
-      'ar': '+54 9 nnn nnnn nnnn',
-      'uy': '+598 nnnn nnnn',
-      'mx': '+52 nnn nnn nnnn',
-      'cl': '+56 9 nnnn nnnn'
-    }
-    return masks[COUNTRY_CODE]
-  }
 
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
@@ -476,7 +467,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                   'a': '[A-Za-z]',
                   '*': '[A-Za-z0-9]'
                 }}
-                mask={renderMask()}
+                mask={globalValidationData[COUNTRY_CODE].phoneMask}
                 maskChar=" "
                 placeholder={t('inNunmCel')}
                 name="phone"

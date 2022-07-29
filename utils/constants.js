@@ -92,13 +92,13 @@ module.exports = {
     uy: "UY" 
   },
   SANTANDER_URL_PRODUCTION: {
-    ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicohml/#/home?",
+    ar: "https://autoloans.santanderautos.com.ar/portalsanriopublico/#/?",
     cl: "CL",
     mx: "MX",
     uy: "UY"  
   },
   SANTANDER_SPID_PRODUCTION: {
-    ar: "350735",
+    ar: "351149",
     cl: "CL",
     mx: "MX",
     uy: "UY" 

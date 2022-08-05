@@ -28,6 +28,7 @@ const SideDrawer = ({ show, click, }) => {
           <li>
             <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank">Contacto</a>
           </li>
+          <li><a href="https://blog.carbula.com" target="__blank" rel="noopener noreferrer">Blog</a></li>
         </ul>
       </div>
     </nav>

@@ -71,7 +71,17 @@
   width: 80%;
   text-align: center;
   word-wrap: break-word;
+  img{
+    width: auto;
+    height: auto;
+    margin: 1.5rem;
+    vertical-align: middle;
+    @media (max-width: 412px) {
+    align-items: initial;
+    }
+  }
 }
+
 .benefits--mobile {
   display: none;
 }

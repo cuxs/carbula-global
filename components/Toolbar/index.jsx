@@ -49,7 +49,6 @@ const Toolbar = ({ drawerClickHandler }) => {
           <a href={ COUNTRY_CODE==='ar' ? '/creditos-para-autos' : `http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20necesito%20financiar%20la%20compra%20de%20un%20auto`}><b>Financiar tu compra</b></a>
           <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><b>Contacto</b></a>
           <Button><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Comprar un auto</a></Button>
-          {/* <a href="https://blog.carbula.cl/blog" target="__blank">Blog</a> */}
         </div>
       </div>
       <div className={styles['toolbar__toggle-button']}>

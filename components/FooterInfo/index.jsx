@@ -27,7 +27,7 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
     </div>
     <div className={styles.elements__container}>
       <div className={styles.text__area}>
-        <p style={renderColorStyle()}>{t('nuestroProposito')}<br></br>{t('nuestraMision')}<br></br>{t('nuestrasPlazas')}</p>
+        <p style={renderColorStyle()}>{t('queSomos')}<br></br>{t('queHacemos')}<br></br>{t('nuestroClaim')}</p>
       </div>
       <div className={styles.link__container}>
         <Button link><a style={renderColorStyle()} target="__blank" href={getCatalogoURL(country_code)} > Catálogo de autos usados</a></Button>

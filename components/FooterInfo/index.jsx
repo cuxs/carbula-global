@@ -20,14 +20,14 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
     return `/icons/${file}.svg`;
   }
   return (<div className={styles.footerInfo__container}  id='contacto'> 
-    <img src={renderImagSrc('carbula')} alt="logo" className={styles.footerInfo__logo} />
+    <img src={renderImagSrc('carbula')} alt="Cárbula Autos" className={styles.footerInfo__logo} />
     <div className={styles.legal__texts}>
       <p style={renderColorStyle()} className={styles.razon__text}>{t('razonSocial')}</p>
       <p style={renderColorStyle()} className={styles.rut__text}>{t('cuit')}</p>
     </div>
     <div className={styles.elements__container}>
       <div className={styles.text__area}>
-        <p style={renderColorStyle()}>{t('nuestroProposito')}</p>
+        <p style={renderColorStyle()}>{t('queSomos')}<br></br>{t('queHacemos')}<br></br>{t('nuestroClaim')}</p>
       </div>
       <div className={styles.link__container}>
         <Button link><a style={renderColorStyle()} target="__blank" href={getCatalogoURL(country_code)} > Catálogo de autos usados</a></Button>

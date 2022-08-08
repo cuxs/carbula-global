@@ -37,6 +37,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const [versionOptions, setVersionOptions] = useState([])
   const [versionLoading, setVersionLoading] = useState(false);
   const [userName, setUserName] = useState()
+  const [cotizationUuid, setcotizationUuid] = useState()
   const [formData, setFormData] = useState(
     {
       brand: '',

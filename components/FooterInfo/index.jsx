@@ -20,7 +20,7 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
     return `/icons/${file}.svg`;
   }
   return (<div className={styles.footerInfo__container}  id='contacto'> 
-    <img src={renderImagSrc('carbula')} alt="Cárbula Autos" className={styles.footerInfo__logo} />
+    <img src={renderImagSrc('carbula')} alt="Cárbula Autos" title="Cárbula Autos" className={styles.footerInfo__logo} />
     <div className={styles.legal__texts}>
       <p style={renderColorStyle()} className={styles.razon__text}>{t('razonSocial')}</p>
       <p style={renderColorStyle()} className={styles.rut__text}>{t('cuit')}</p>
@@ -45,7 +45,7 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
           className={styles.social__link}
           href={getFacebookLink(country_code)}
         >
-          <img src={renderImagSrc('facebook')} alt="Facebook"/> Facebook
+          <img src={renderImagSrc('facebook')} alt="Facebook" title="Facebook Carbula"/> Facebook
         </a>
         <a
             style={renderColorStyle()}
@@ -53,16 +53,16 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
             className={styles.social__link}
             href={getInstagramLink(country_code)}
         >
-          <img src={renderImagSrc('instagram')} alt="Instagram"/> Instagram
+          <img src={renderImagSrc('instagram')} alt="Instagram" title="Instagram Carbula"/> Instagram
         </a>
         <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" className={styles.social__link} href="https://ar.linkedin.com/company/carbula">
-          <img src={renderImagSrc('linkedin')} alt="linkedin" /> Linkedin
+          <img src={renderImagSrc('linkedin')} alt="linkedin" title="Linkedin Carbula" /> Linkedin
         </a>
         <a href="https://www.youtube.com/channel/UCsscKp_WyTuyijoyPR58l1w" target="__blank" rel="noopener noreferrer" className={styles.social__link}>
-        <img src={renderImagSrc('icon-youtube')} alt="Youtube"/> Youtube  
+        <img src={renderImagSrc('icon-youtube')} alt="Youtube" title="Youtube Carbula"/> Youtube  
         </a>
         <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" className={styles.social__link} href="mailto:hola@carbula.com">
-          <img src={renderImagSrc('icon-mail')} alt="Email"/> hola@carbula.com
+          <img src={renderImagSrc('icon-mail')} alt="Email" title="Email Carbula"/> hola@carbula.com
         </a>
       </div>
       <div className={styles['social__container--mobile']}>
@@ -72,7 +72,7 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
           href={getFacebookLink(country_code)}
           style={renderColorStyle()}
         >
-          <img src={renderImagSrc('facebook')} alt="Facebook" />
+          <img src={renderImagSrc('facebook')} alt="Facebook" title="Facebook Carbula"/>
         </a>
         <a
           target="__blank" rel="noopener noreferrer"
@@ -80,13 +80,13 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
           href={getInstagramLink(country_code)}
           style={renderColorStyle()}
         >
-          <img src={renderImagSrc('instagram')} alt="Instagram" />
-        </a>
-        <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" className={styles.social__link} href="mailto:hola@carbula.com">
-          <img src={renderImagSrc('icon-mail')} alt="Email" />
+          <img src={renderImagSrc('instagram')} alt="Instagram" title="Instagram Carbula"/>
         </a>
         <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" className={styles.social__link} href="https://ar.linkedin.com/company/carbula">
-          <img src={renderImagSrc('linkedin')} alt="linkedin" />
+          <img src={renderImagSrc('linkedin')} alt="Linkedin" title="Linkedin Carbula" />
+        </a>
+        <a href="https://www.youtube.com/channel/UCsscKp_WyTuyijoyPR58l1w" target="__blank" rel="noopener noreferrer" className={styles.social__link}>
+        <img src={renderImagSrc('youtube')} alt="Youtube" title="Youtube Carbula"/>
         </a>
       </div>
     </div>

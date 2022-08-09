@@ -170,7 +170,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           <div>
             <h3 className={styles.text__secondary}>{t('contactanos')}</h3>
             <div className={styles.image} >
-              <Image src="/images/carbula_contacto.png" width="450" height="438" alt="Contacto" />
+              <Image src="/images/carbula_contacto.webp" width="450" height="438" alt="Contacto" />
             </div>
             <div>
               <p>{t('contactanosP1')}</p>

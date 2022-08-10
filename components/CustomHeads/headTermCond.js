@@ -24,7 +24,7 @@ const Head = props => {
       <meta name="x-robots-tag" content="index,follow" /> 
       <meta name="googlebot" content="index,follow" />
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />  
-      <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/`} />
+      <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/terminos-y-condiciones`} />
       <link rel="alternate" hrefLang="es-MX" href="https://www.carbula.mx/terminos-y-condiciones" />
       <link rel="alternate" hrefLang="es-CL" href="https://www.carbula.cl/terminos-y-condiciones" />
       <link rel="alternate" hrefLang="es-AR" href="https://www.carbula.ar/terminos-y-condiciones" />    

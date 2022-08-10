@@ -25,7 +25,7 @@ const Head = props => {
       <meta name="robots" content="index,follow"/> 
       <meta name="googlebot" content="index,follow"/>
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
-      <link rel="cannonical" hrefLang="es-AR" href="https://carbula.ar/creditos-para-autos" />
+      <link rel="cannonical" hrefLang="es-AR" href="https://www.carbula.ar/creditos-para-autos" />
       <link rel="icon" sizes="192x192" href="/icons/favicon_196.ico" />
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:url" content={props.url || defaultOGURL} />

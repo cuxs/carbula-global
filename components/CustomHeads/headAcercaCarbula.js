@@ -54,7 +54,8 @@ const Head = props => {
       <meta property="og:image" content={props.ogImage || defaultOGImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <link rel="stylesheet" href="/reset.min.css" />
+      <link rel="stylesheet" type="text/css" href="/reset.min.css" preload/>
+      <link rel="stylesheet" type="text/css" href="/semantic.min.css" />
     </NextHead>
   )
 }

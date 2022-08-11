@@ -4,7 +4,6 @@ import Nav from '../../components/nav';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-
 import {
   Button,
   Container,
@@ -19,6 +18,8 @@ import {
   Sidebar,
   Visibility,
   Segment,
+  Features,
+  FeaturesSection,
 } from 'semantic-ui-react';
 
 export async function getServerSideProps(context) {
@@ -40,13 +41,46 @@ const AcercaCarbula = () => {
       <div className={styles.header}>
         <Container>
           <h1>Sumate a la Experiencia Cárbula</h1>
-          <div className={styles.buttons__container}>
-          <a target="__blank" rel="noopener noreferrer" href=""><Button fluid>Querés comprar <img src={""}/></Button></a>
-          <a target="__blank" rel="noopener noreferrer" href=""><Button fluid>Querés vender <img src={""}/></Button></a>
-          </div>
         </Container>
       </div>
-        <div className={styles.comprar}>
+
+      <div className={styles.acerca}>
+      
+      <Container>
+        <roW>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="row">
+            <div class="eight wide column">
+              <h3 class="ui header">We Help Companies and Companions</h3>
+              <p>
+                We can give your company superpowers to do things that they
+                never thought possible. Let us delight your customers and
+                empower your needs...through pure data analytics.
+              </p>
+              <h3 class="ui header">We Make Bananas That Can Dance</h3>
+              <p>
+                Yes that's right, you thought it was the stuff of dreams, but
+                even bananas can be bioengineered.
+              </p>
+            </div>
+            <div class="six wide right floated column">
+              <Image class="ui large image" src="/images/auto-carbula.webp"></Image>
+            </div>
+          </div>
+          <div class="row">
+            <div class="center aligned column">
+              <a class="ui huge button">Check Them Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </roW>
+      </Container>
+        
+
+     
+
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
             <h4 itemprop="name">1. ¿Revisan los autos?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">

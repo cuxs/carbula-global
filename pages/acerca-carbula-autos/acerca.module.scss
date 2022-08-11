@@ -41,7 +41,7 @@
     }
   }
 }
-.comprar {
+.acerca {
   padding: 100px 250px;
   h4 {
     font-size: 22px;
@@ -54,9 +54,13 @@
     margin-bottom: 20px;
     color: #999999;
   }
+  .couple__image {
+    text-align: right;
+  }
 }
+
 @media(max-width: 769px){
-  .comprar {
+  .acerca {
     padding: 50px 40px ;
   }
   .header {

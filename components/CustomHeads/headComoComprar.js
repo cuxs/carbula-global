@@ -24,10 +24,10 @@ const Head = props => {
       <meta name="x-robots-tag" content="index,follow" /> 
       <meta name="googlebot" content="index,follow" />
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
-      <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/`} />
-      <link rel="alternate" hrefLang="es-MX" href="https://www.carbula.mx/como-vender" />
-      <link rel="alternate" hrefLang="es-CL" href="https://www.carbula.cl/como-vender" />
-      <link rel="alternate" hrefLang="es-AR" href="https://www.carbula.ar/como-vender" />
+      <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/como-comprar`} />
+      <link rel="alternate" hrefLang="es-MX" href="https://www.carbula.mx/como-comprar" />
+      <link rel="alternate" hrefLang="es-CL" href="https://www.carbula.cl/como-comprar" />
+      <link rel="alternate" hrefLang="es-AR" href="https://www.carbula.ar/como-comprar" />
       <link rel="icon" sizes="192x192" href="/icons/favicon_196.ico" />
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:url" content={props.url || defaultOGURL} />

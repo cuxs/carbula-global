@@ -164,7 +164,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
         </div>
       </section>
       <section>
-        <QuoteComponent />
+      <QuoteComponent />
       </section>
       <section>
         <div className={styles.section2__container}>

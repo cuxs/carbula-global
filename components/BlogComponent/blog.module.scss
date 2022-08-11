@@ -2,7 +2,7 @@
   margin-top: 100px;
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,21 +12,25 @@
     position: absolute;
   }
   h3 {
+    position: relative;
     font-size: 1.5rem;
     line-height: 1.8rem;
     text-align: left;
-    color: #38ceb3;
+    color: #fff;
     width: 960px;
+    z-index: 999;
   }
+   
 }
 .blog__background{
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('/images/banner-comprar-autos.webp');
+  background-image: url('/images/banner-blog-desktop.png');
   background-position: center;
   background-size: cover;
   z-index: 0;
+ 
 }
 .buttons__container {
   margin-top: 300px;

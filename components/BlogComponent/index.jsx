@@ -11,11 +11,10 @@ const BlogComponent = ({ text }) => {
   const COUNTRY_CODE= getCountryCode(router.locale)
 
   return (<div className={styles.blog__container}>
+    <h3>Todas las novedades y guías del mercado automotor en nuestro Blog</h3>
     <div className={styles.blog__background} />
     <div className={styles.buttons__container}>
-    <h2>Test</h2>
-    <p>Test</p>
-    <Button><a href={getCatalogoURL(COUNTRY_CODE)} target="__blank">Ver catálogo de autos</a></Button>
+    <Button><a href="https://blog.carbula.com/" target="__blank">Visitar blog</a></Button>
      </div>
   </div>
   )

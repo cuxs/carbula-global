@@ -5,7 +5,6 @@ import useSWR from 'swr'
 
 let source;
 const cotizadorUrl = 'https://cotizador.carbula.com/api/cotizador/listado';
-const cotizadorPatenteUrl = 'https://cotizador.carbula.com/api/cotizador';
 
 export const getMarcaModelo = async (query, COUNTRY_CODE) => {
   try {
@@ -65,9 +64,9 @@ export const submitFormAndGetCotization = async (data) => {
   }
 }
 
-export const searchCarByPlate = async (patente) => {
+export const submitCarForm = async (data) => {
   try {
-    const response = await axios.get(`${cotizadorPatenteUrl}/patente`, { params: { patente } })
+    const response = await axios.post(`${API_URL}/submitCarForm`, data)
     return response
   } catch (e) {
     console.log(e)
@@ -123,17 +122,6 @@ export const checkScheduleMeeting = async (external_id, email, COUNTRY_CODE) => 
     throw e.response ? new Error(e.response.data.message) : new Error(e.message)
   }
 }
-
-export const getLocationName = async (idZona) => {
-  try {
-    const response = await axios.get(`${cotizadorPatenteUrl}/nombre/zona`, { params: { idZona } })
-    return response
-  } catch (e) {
-    console.log(e)
-    throw e.response ? new Error(e.response.data.message) : new Error(e.message)
-  }
-}
-
 
 export const requestCode = async (data) => {
   try {

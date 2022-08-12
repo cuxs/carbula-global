@@ -21,6 +21,7 @@ const Carousel = dynamic(import('@brainhubeu/react-carousel'), { ssr: false })
 const NuestrosClientes = dynamic(import('../components/NuestrosClientes'))
 const FaqComponent = dynamic(import('../components/FaqComponent'))
 const QuoteComponent = dynamic(import('../components/QuoteComponent'))
+const BlogComponent = dynamic(import('../components/BlogComponent'))
 const FooterInfo = dynamic(import('../components/FooterInfo'))
 const Button = dynamic(import('../components/Button'))
 const Nav = dynamic(import('../components/nav'))
@@ -66,7 +67,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     return SellForms[COUNTRY_CODE]
   }),[])
   const router = useRouter();
-  const [title, setTitle] = useState([`Vendemos ${t('tu')} auto de manera segura`, 'Gana hasta un 25% más.'])
+  const [title, setTitle] = useState([`Vende ${t('tu')} auto de manera segura`, 'Gana hasta un 25% más.'])
   const [subtitle, setSubtitle] = useState(['Garantizamos el cobro seguro de la venta. Nos encargamos de todo el proceso de venta.', 'Respondemos todas las consultas de los compradores.']);
   const [step, setStep] = useState(0)
   const [overlayBackground, setOverlayBackground] = useState(false);
@@ -107,10 +108,10 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
 
   const getSomosText = () => {
     const texts = {
-      ar: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
-      cl: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
-      uy: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
-      mx: <Fragment>SOMOS UN MARKETPLACE POTENCIADO POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR AUTOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>
+      ar: <Fragment>STARTUP POTENCIADA POR <br></br> <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech"><img src={"/images/embarca-logo.webp"} alt="embarca logo" title="embarca logo"/></a>{""}<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo"><img src={"/images/corfo-logo.webp"} alt="corfo logo" title="corfo logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/"><img src={"/images/anii-logo.webp"} alt="anii logo" title="anii logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org"><img src={"/images/startup-chile-logo.webp"} alt="startup chile logo" title="startup chile logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/"><img src={"/images/seedstars-logo.webp"} alt="seedstars logo" title="seedstars logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://guil.cl/"><img src={"/images/guil-logo.webp"} alt="guil logo" title="guil logo"/></a></Fragment>,
+      cl: <Fragment>STARTUP POTENCIADA POR <br></br> <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech"><img src={"/images/embarca-logo.webp"} alt="embarca logo" title="embarca logo"/></a>{""}<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo"><img src={"/images/corfo-logo.webp"} alt="corfo logo" title="corfo logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/"><img src={"/images/anii-logo.webp"} alt="anii logo" title="anii logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org"><img src={"/images/startup-chile-logo.webp"} alt="startup chile logo" title="startup chile logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/"><img src={"/images/seedstars-logo.webp"} alt="seedstars logo" title="seedstars logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://guil.cl/"><img src={"/images/guil-logo.webp"} alt="guil logo" title="guil logo"/></a></Fragment>,
+      uy: <Fragment>STARTUP POTENCIADA POR <br></br> <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech"><img src={"/images/embarca-logo.webp"} alt="embarca logo" title="embarca logo"/></a>{""}<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo"><img src={"/images/corfo-logo.webp"} alt="corfo logo" title="corfo logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/"><img src={"/images/anii-logo.webp"} alt="anii logo" title="anii logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org"><img src={"/images/startup-chile-logo.webp"} alt="startup chile logo" title="startup chile logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/"><img src={"/images/seedstars-logo.webp"} alt="seedstars logo" title="seedstars logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://guil.cl/"><img src={"/images/guil-logo.webp"} alt="guil logo" title="guil logo"/></a></Fragment>,
+      mx: <Fragment>STARTUP POTENCIADA POR <br></br> <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech"><img src={"/images/embarca-logo.webp"} alt="embarca logo" title="embarca logo"/></a>{""}<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo"><img src={"/images/corfo-logo.webp"} alt="corfo logo" title="corfo logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/"><img src={"/images/anii-logo.webp"} alt="anii logo" title="anii logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org"><img src={"/images/startup-chile-logo.webp"} alt="startup chile logo" title="startup chile logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/"><img src={"/images/seedstars-logo.webp"} alt="seedstars logo" title="seedstars logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://guil.cl/"><img src={"/images/guil-logo.webp"} alt="guil logo" title="guil logo"/></a></Fragment>
     }
     return texts[COUNTRY_CODE]
   }
@@ -126,7 +127,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
         <SellForm step={step} setStep={setStep} setOverlayBackground={setOverlayBackground} zonas={zonas} referer={referer} COUNTRY_CODE={COUNTRY_CODE} />
         <section className={styles.section1__container}>
           <div className={styles.text__container}>
-            <h2 className={styles.section1__title}>{t('section1Title')}</h2>
+            <h1 className={styles.section1__title}>{t('section1Title')}</h1>
             {/*<h3 className={styles.section1__title}>{t('section1TitleMotivos')}</h3>*/}
             <div className={styles['benefits--desktop']}>
               <h3>{t('section1Subtitle1')}</h3>
@@ -162,16 +163,19 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           <div className={styles.couple__image}>
             <Image src="/images/carbula_couple.webp" width="690" height="640" alt="Pareja" />
           </div>
+          <div className={styles.couple__image}>
+            <Image src="/images/carbula_couple.webp" width="690" height="640" alt="Pareja vendiendo auto usado" title="Pareja vendiendo auto usado" />
+          </div>
         </section>
         <section>
-          <QuoteComponent text={['El mundo está cambiando.', 'La forma de vender y comprar', 'vehículos, también.']} />
+        <QuoteComponent />
         </section>
         <section>
           <div className={styles.section2__container}>
             <div>
               <h3 className={styles.text__secondary}>{t('contactanos')}</h3>
               <div className={styles.image} >
-                <Image src="/images/carbula_contacto.png" width="450" height="438" alt="Contacto" />
+              <Image src="/images/carbula_contacto.webp" width="450" height="438" alt="Contacto comercial de Cárbula" title="Contacto comercial de Cárbula" />
               </div>
               <div>
                 <p>{t('contactanosP1')}</p>
@@ -179,14 +183,13 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
               </div>
               <div className={styles.buttons__container}>
                 <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>
-                <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondary><b>Whatsapp</b></Button></a>
+                <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondaryOutlined>Whatsapp</Button></a>
               </div>
             </div>
-            <div>
-              <h3 className={styles.text__primary}>{t('faq')}</h3>
-              <FaqComponent />
-            </div>
           </div>
+        </section>
+        <section>
+          <BlogComponent />
         </section>
         <section className={styles.section3}>
           <div className={styles.section3__container}>
@@ -194,12 +197,12 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
             <NuestrosClientes country_code={COUNTRY_CODE} />
           </div>
           <div className={styles.somos__text}>{getSomosText()}</div>
-          <hr />
+        <hr />
         </section>
         <section>
           <FooterInfo grey country_code={COUNTRY_CODE} />
         </section>
-      </ChakraProvider>
+        </ChakraProvider>
     </Fragment>
   )
 }

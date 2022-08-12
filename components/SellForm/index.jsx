@@ -5,7 +5,7 @@ import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
 // import GoogleOneTapLogin from '../GoogleOneTapLogin';
-import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
+import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy, set } from 'lodash';
@@ -37,6 +37,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const [versionOptions, setVersionOptions] = useState([])
   const [versionLoading, setVersionLoading] = useState(false);
   const [userName, setUserName] = useState()
+  const [cotizationUuid, setcotizationUuid] = useState()
   const [formData, setFormData] = useState(
     {
       brand: '',
@@ -53,6 +54,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       email: '',
       phone: '',
       location: '',
+      newsletter: '',
     }
   )
   const router = useRouter()
@@ -125,25 +127,38 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       setVersionLoading(false)
     }
   }
-
+  
   const getCurrentYear = () => {
     let currentDate = new Date()
     return currentDate.getFullYear()
   }
-
+  
   const getValidYeanInput = (typedYear) => {
     let currentYear = getCurrentYear()
     return typedYear > currentYear ? currentYear : typedYear
   }
-
-  const handleSubmitFirstStep = (values, actions) => {
+  
+  const handleSubmitFirstStep = async (values, actions) => {
     setFormData(values);
-    setStep(step + 1)
+    setStep(step + 1);
+    try {
+      const carData = {
+        ...values,
+        country_code: COUNTRY_CODE
+      }
+      checkYear(values.year);
+      const { data } = await submitCarForm(carData);
+      setcotizationUuid(data.uuid);
+    } catch (e) {
+      console.log("ERROR desconocido:", e)
+    }
   }
+
   const handleSubmitPersonalDataStep = async (values, actions) => {
     const carAndContactData = {
       ...formData,
       ...values,
+      uuid: cotizationUuid,
       name: `${values.name} ${values.lastName}`,
       country_code: COUNTRY_CODE,
     }
@@ -164,17 +179,17 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
     } catch (error) {
       setOverlayBackground(false)
       if (error.message.indexOf('cobertura') > -1) {
+        carAndContactData.noGeneroNegocio = 'fuera_de_zona' // para propiedad de hubspot
+        submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'fueradecobertura' } })
         setStep('error-cobertura')
-        carAndContactData.noGeneroNegocio = 'fuera_de_zona' // para propiedad de hubspot
-        addContact(carAndContactData)
         return setUserName(values.name)
       }
       if (error.message.indexOf('year') > -1) {
+        carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
+        submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'aniofueradecobertura' } })
         setStep('error-year')
-        carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
-        addContact(carAndContactData)
         return setUserName(values.name)
       }
       console.log('Ocurrió un error en la cotización')
@@ -211,6 +226,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       phone: number(t('inNumCelInstrucciones'))
         .positive()
         .min(globalValidationData[COUNTRY_CODE].phoneMinNumber, t('inNumCelMuyCorto'))
+        .max(globalValidationData[COUNTRY_CODE].phoneMaxNumber, t('inNumCelMuyLargo'))
         .required(t('inNumCelReq')),
     })
   ]
@@ -232,18 +248,9 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       email: formData.email,
       phone: formData.phone,
       location: formData.location,
+      newsletter: formData.newsletter,
     }
   ]
-
-  const renderMask = ()=>{
-    const masks = {
-      'ar': '+54 9 nnn nnnn nnnn',
-      'uy': '+598 nnnn nnnn',
-      'mx': '+52 nnn nnn nnnn',
-      'cl': '+56 9 nnnn nnnn'
-    }
-    return masks[COUNTRY_CODE]
-  }
 
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
@@ -474,7 +481,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                   'a': '[A-Za-z]',
                   '*': '[A-Za-z0-9]'
                 }}
-                mask={renderMask()}
+                mask={globalValidationData[COUNTRY_CODE].phoneMask}
                 maskChar=" "
                 placeholder={t('inNunmCel')}
                 name="phone"
@@ -508,14 +515,19 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                 </div>
               )}
             </div>
-
           </div>
           {/* <GoogleOneTapLogin/> */}
-          <p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>
+          <div className={styles.sellform__container}>
+          <div className={styles.checkbox}>
+            <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
+            <label for="newsletter">Quiero recibir newsletters</label>
+          </div>
+          </div>
           <div className={styles.buttons__container}>
             <Button type="button" link onClick={handleBack}>Volver</Button>
             <Button overlayEffect type="submit" primary>Cotizar</Button>
           </div>
+          {/*<p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>*/}
         </form>)
       default:
         break;
@@ -544,14 +556,13 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       )}
     </Formik>,
     'error-cobertura': <div>
-      <p>Hola {userName},</p>
+      <p><b>Hola {userName},</b></p>
       <br />
       <p>Gracias por utilizar nuestra plataforma.</p><br />
       <p>Lamentablemente, por el momento no estamos operando en su zona; esperamos poder hacerlo en el corto plazo.</p><br />
-      <p>Si lo podemos ayudar en alguna otra cosa, no deje de avisarnos a <a href="mailto:hola@carbula.cl">hola@carbula.cl</a> </p><br />
-      <p>¡Que esté muy bien!</p><br />
-      <p>El equipo de <b>Cárbula</b>.</p><br />
-      <Button primary onClick={() => setStep(0)}>Entendido</Button>
+      <p>Si necesita contactarnos, escribanos a <a href="mailto:hola@carbula.com">hola@carbula.com</a> </p><br />
+      <p><b>¡Que esté muy bien!</b></p><br />
+      <Button noBorder onClick={() => setStep(0)}>Reintentar</Button>
     </div>,
     'error-year': <div>
       <p>Estimado {userName},</p>

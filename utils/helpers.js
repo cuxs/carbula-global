@@ -14,16 +14,24 @@ export const formatNumber = (number, decimals, decPoint = ',', thousandsSep = '.
 
 export const globalValidationData= {
   ar: {
-    phoneMinNumber: 4
+    phoneMinNumber: 5491000000000,
+    phoneMaxNumber: 5499999999999,
+    phoneMask: '+54 9 nnnn nn nnnn'
   },
   cl: {
-    phoneMinNumber: 4
+    phoneMinNumber: 56910000000,
+    phoneMaxNumber: 56999999999,
+    phoneMask: '+56 9 nnnn nnnn'
   },
   mx: {
-    phoneMinNumber: 4
+    phoneMinNumber: 5211000000000,
+    phoneMaxNumber: 5219999999999,
+    phoneMask: '+52 1 nn nnnn nnnn'
   },
   uy: {
-    phoneMinNumber: 59810000000
+    phoneMinNumber: 59810000000,
+    phoneMaxNumber: 59899999999,
+    phoneMask: '+598 nnnn nnnn'
   }
 }
 
@@ -259,37 +267,37 @@ export const getReviews = (country_code) => {
         author_name: 'Roberto Marcelo',
         text: 'Excelente atención. Vendieron mi vehículo y me contactaron con el dueño de mi nuevo auto. Todo muy ágil y coordinado. Los recomiendo. Diez puntos',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GgrZSAJNZM-CSkveM0nwJf_NBEiS_Kqxio8DWGYjcI=w120-h120-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Luli García',
         text: 'Ni una queja. Todo impecable, súper rápido. prácticamente no tuve que hacer nada. Se encargan de todo! Estoy muy conforme! Muchísimas gracias a todos los que trabajan en Cárbula :)',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjePaHDf84p6qxcXb1mHs9CgMdI2qYukcoghQ7HYiY=w120-h120-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Gerardo Tisera',
         text: 'IMPECABLE!!! verdaderamente un lujo en todos los aspectos, paciencia, transparencia y muy eficaz el servicio, para los que no sabemos de estas cosas es una tranquilidad poder contar con semejante nivel de profesionalismo!!!',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GhZBiBxLEA6zqbzq4rvoLdoBxFH9O6RBroRFxJ1kg=w120-h120-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Maribel Plaza',
         text: 'Excelente atención, estuvieron siempre dispuestos a resolver mis inquietudes y me acompañaron en todo el proceso de venta de mi auto. Quedé muy conforme con la negociación ya que recibí más dinero del mínimo acordado.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Gg9Vh_6ENYIdlyVRGvU2JGqoacL2z2Vdk-GuthdBQ=w120-h120-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Daniel Mangione',
         text: 'Muy buena experiencia, una alternativa segura y confiable. Es para desentenderse de trámites y búsquedas. Excelente atención el personal de Carbula. 💯 % recomendable.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a/AATXAJwR5OODZqSf7ORcGrvxoUt5xjA_d61sgT079BTx=w120-h120-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Karen Daffra',
         text: 'Excelente servicio!! Vendí mi auto en dos días, se encargaron de hacer absolutamente todo  y cada vez que tuve alguna duda me contestaron con información útil y súper rápido!  100 % recomendable!!',
         profile_photo_url: 'https://lh3.googleusercontent.com/a/AATXAJxV2uEHDLYCnvpF-MNqzZAJlwcis5TEClPGgRtE=w120-h120-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5,  "width": 50, "height": 50, 
       },
     ],
     cl: [
@@ -297,13 +305,13 @@ export const getReviews = (country_code) => {
         author_name: 'Juan Bustamante',
         text: 'Cierre de venta sumamente rapido ( 1 semana desde publicacion) .Procedimiento de venta expedito 1hora en tu misma casa todo efectuado con transferencias electronicas y todo a un buen precio me atrevo a recomendarlo.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Ghb4D2t2PIEDHTZ8dGcpoQc5Xn2MZ8M1COZD849=w36-h36-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Carola L',
         text: 'No tenía experiencia en ventas de vehículos y me ayudaron demasiado, además poseen una gran agilidad y rapidez en esto, siempre estuvieron en contacto y con una gran transparencia. Totalmente recomendado para los que quieran vender sus vehículos o comprarlos',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Gg6K5mtfV53TMlMqbB8wtzvkqdxzoBxZzczBwZ6e1I=w36-h36-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Pablo Ceballos',
@@ -315,19 +323,19 @@ export const getReviews = (country_code) => {
         author_name: 'Gabriela Peñaloza',
         text: 'Excelente Servicio muy rápido y sencillo el proceso para vender el auto. Todo digitalizado. La atención de primera nos apoyaron en cualquier duda. El auto lo vendieron en solo 2 días una maravilla. 100% recomendado.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjcwZUS2myjtBUIyRMELcRHpus6NWJDphjLAgK2=w60-h60-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Karina Alejandra Quinteros',
         text: 'Excelente servicio! Le sacaron fotografías a mi Subaru New XV el día martes, lo publicaron el miércoles y el día viernes ya estaba vendido!. Todo fue en mi domicilio, sin tener que ir a la notaria para hacer el trámite de transferencia ya que se realizó on-line. Recomiendo de todas maneras.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjJ-2BH5-qq1F67n7M1dA1Nl9P_sJBhvY43SqrIAQ=w60-h60-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Carlos Vilches',
         text: 'Excelente servicio y atención. Un sistema personalizado y que por lejos supera la compra de otros sitios. Muy agradecido de la gestión. Demoró un poco más de una semana vender mi auto.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GhYGERvwGQ5UNVLX5wknqJWC7KeVA4o4ZTHD5h6=w60-h60-p-rp-mo-ba3-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
     ],
     uy: [
@@ -335,37 +343,37 @@ export const getReviews = (country_code) => {
         author_name: 'Juan Bustamante',
         text: 'Cierre de venta sumamente rapido ( 1 semana desde publicacion) .Procedimiento de venta expedito 1hora en tu misma casa todo efectuado con transferencias electronicas y todo a un buen precio me atrevo a recomendarlo.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Ghb4D2t2PIEDHTZ8dGcpoQc5Xn2MZ8M1COZD849=w36-h36-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Carola L',
         text: 'No tenía experiencia en ventas de vehículos y me ayudaron demasiado, además poseen una gran agilidad y rapidez en esto, siempre estuvieron en contacto y con una gran transparencia. Totalmente recomendado para los que quieran vender sus vehículos o comprarlos',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Gg6K5mtfV53TMlMqbB8wtzvkqdxzoBxZzczBwZ6e1I=w36-h36-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Pablo Ceballos',
         text: 'Compre hace muy poco mi vehículo junto a Cárbula, y nada que decir, excelente servicio, muy buena y rápida gestión de nuestro ejecutivo, en 24 hrs concretamos compra. Todo fue bastante claro y transparente. Muy recomendable el servicio. ¡Muchas gracias!',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjWCnGhbeqsXedfgJKrAPP9O5O5XouW9Nuf2570OA=w60-h60-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Gabriela Peñaloza',
         text: 'Excelente Servicio muy rápido y sencillo el proceso para vender el auto. Todo digitalizado. La atención de primera nos apoyaron en cualquier duda. El auto lo vendieron en solo 2 días una maravilla. 100% recomendado.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjcwZUS2myjtBUIyRMELcRHpus6NWJDphjLAgK2=w60-h60-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Karina Alejandra Quinteros',
         text: 'Excelente servicio! Le sacaron fotografías a mi Subaru New XV el día martes, lo publicaron el miércoles y el día viernes ya estaba vendido!. Todo fue en mi domicilio, sin tener que ir a la notaria para hacer el trámite de transferencia ya que se realizó on-line. Recomiendo de todas maneras.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjJ-2BH5-qq1F67n7M1dA1Nl9P_sJBhvY43SqrIAQ=w60-h60-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Carlos Vilches',
         text: 'Excelente servicio y atención. Un sistema personalizado y que por lejos supera la compra de otros sitios. Muy agradecido de la gestión. Demoró un poco más de una semana vender mi auto.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GhYGERvwGQ5UNVLX5wknqJWC7KeVA4o4ZTHD5h6=w60-h60-p-rp-mo-ba3-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
     ],
     mx: [
@@ -373,37 +381,37 @@ export const getReviews = (country_code) => {
         author_name: 'Juan Bustamante',
         text: 'Cierre de venta sumamente rapido ( 1 semana desde publicacion) .Procedimiento de venta expedito 1hora en tu misma casa todo efectuado con transferencias electronicas y todo a un buen precio me atrevo a recomendarlo.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Ghb4D2t2PIEDHTZ8dGcpoQc5Xn2MZ8M1COZD849=w36-h36-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Carola L',
         text: 'No tenía experiencia en ventas de vehículos y me ayudaron demasiado, además poseen una gran agilidad y rapidez en esto, siempre estuvieron en contacto y con una gran transparencia. Totalmente recomendado para los que quieran vender sus vehículos o comprarlos',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Gg6K5mtfV53TMlMqbB8wtzvkqdxzoBxZzczBwZ6e1I=w36-h36-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Pablo Ceballos',
         text: 'Compre hace muy poco mi vehículo junto a Cárbula, y nada que decir, excelente servicio, muy buena y rápida gestión de nuestro ejecutivo, en 24 hrs concretamos compra. Todo fue bastante claro y transparente. Muy recomendable el servicio. ¡Muchas gracias!',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjWCnGhbeqsXedfgJKrAPP9O5O5XouW9Nuf2570OA=w60-h60-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Gabriela Peñaloza',
         text: 'Excelente Servicio muy rápido y sencillo el proceso para vender el auto. Todo digitalizado. La atención de primera nos apoyaron en cualquier duda. El auto lo vendieron en solo 2 días una maravilla. 100% recomendado.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjcwZUS2myjtBUIyRMELcRHpus6NWJDphjLAgK2=w60-h60-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Karina Alejandra Quinteros',
         text: 'Excelente servicio! Le sacaron fotografías a mi Subaru New XV el día martes, lo publicaron el miércoles y el día viernes ya estaba vendido!. Todo fue en mi domicilio, sin tener que ir a la notaria para hacer el trámite de transferencia ya que se realizó on-line. Recomiendo de todas maneras.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjJ-2BH5-qq1F67n7M1dA1Nl9P_sJBhvY43SqrIAQ=w60-h60-p-rp-mo-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
       {
         author_name: 'Carlos Vilches',
         text: 'Excelente servicio y atención. Un sistema personalizado y que por lejos supera la compra de otros sitios. Muy agradecido de la gestión. Demoró un poco más de una semana vender mi auto.',
         profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GhYGERvwGQ5UNVLX5wknqJWC7KeVA4o4ZTHD5h6=w60-h60-p-rp-mo-ba3-br100',
-        "rating": 5,
+        "rating": 5, "width": 50, "height": 50, 
       },
     ],
   }
@@ -454,19 +462,19 @@ export const getPhoneNumber = (country_code) => {
 
 export const getTitleByCountry = (country_code) => {
   const ids = {
-    ar: 'Carbula Argentina | Compra y venta de autos usados | Sitio seguro',
-    cl: 'Carbula Chile | Compra y venta de autos usados | Sitio seguro',
-    mx: 'Carbula Mexico | Compra y venta de autos usados | Sitio seguro',
-    uy: 'Carbula Uruguay | Compra y venta de autos usados | Sitio seguro',
+    ar: 'Compra y venta de autos en Argentina | Sitio seguro | Carbula',
+    cl: 'Compra y venta de autos en Chile | Sitio seguro | Carbula',
+    mx: 'Compra y venta de autos en Mexico | Sitio seguro | Carbula',
+    uy: 'Compra y venta de autos en Uruguay | Sitio seguro | Carbula',
   }
   return ids[country_code]
 }
 
 export const getKeywordsByCountry = (country_code) => {
   const ids = {
-    ar: 'carbula argentina, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos, carbula mendoza, comprar autos argentina, vender autos argentina, catalogo de autos, catalogo carbula',
-    cl: 'carbula chile, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos, carbula chileautos, comprar autos chile, vender autos chile, catalogo de autos carbula, catalogo carbula',
-    mx: 'carbula mexico, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos mexico, quiero comprar autos mexico, quiero vender autos mexico, catalogo de autos carbula, catalogo carbula',
+    ar: 'carbula autos, carbula mendoza, catalogo de autos usados mendoza, auto venta mendoza, compra y venta de autos usados, venta de autos usados mendoza, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, comprar autos argentina, vender autos argentina, vende tu usado, crédito para autos Santander, crédito automotriz, crédito prendario, vendemos tu auto mendoza, cotizar mi auto para vender',
+    cl: 'carbula autos, carbula chile, catalogo de autos usados chile, autos usados chile, autos en venta, compra y venta de autos usados, venta de autos usados chile, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, compra y venta de autos, carbula autos, carbula chileautos, comprar autos chile, vender autos chile, carro en venta usados, coches venda, crédito para autos, crédito automotriz, vendemos tu auto chile, cotizar mi auto para vender',
+    mx: 'carbula autos, carbula mexico, catalogo de autos usados mexico, autos usados mexico, autos en venta, compra y venta de autos usados, venta de autos usados mexico, compra y venta de autos segunda mano, comprar y vender tu vehiculo, venta de autos, compra y venta de autos, carbula autos, carbula seminuevos, comprar autos mexico, vender autos mexico, auto venta, carro en venta usados, coches venda, crédito prendario',
     uy: 'carbula uruguay, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos uruguay, autos usados uruguay, compra de autos usados uruguay, venta de autos usados uruguay',
   }
   return ids[country_code]

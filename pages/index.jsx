@@ -21,7 +21,6 @@ const Carousel = dynamic(import('@brainhubeu/react-carousel'), { ssr: false })
 const NuestrosClientes = dynamic(import('../components/NuestrosClientes'))
 const FaqComponent = dynamic(import('../components/FaqComponent'))
 const QuoteComponent = dynamic(import('../components/QuoteComponent'))
-const BlogComponent = dynamic(import('../components/BlogComponent'))
 const FooterInfo = dynamic(import('../components/FooterInfo'))
 const Button = dynamic(import('../components/Button'))
 const Nav = dynamic(import('../components/nav'))
@@ -164,7 +163,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
         </div>
       </section>
       <section>
-      <QuoteComponent />
+        <QuoteComponent text={['El mundo está cambiando.', 'La forma de vender y comprar', 'vehículos, también.']} />
       </section>
       <section>
         <div className={styles.section2__container}>
@@ -187,9 +186,6 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
             <FaqComponent />
           </div>
         </div>
-      </section>
-      <section>
-        <BlogComponent />
       </section>
       <section className={styles.section3}>
         <div className={styles.section3__container}>

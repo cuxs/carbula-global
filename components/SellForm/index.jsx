@@ -5,7 +5,7 @@ import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
 // import GoogleOneTapLogin from '../GoogleOneTapLogin';
-import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm } from "../../utils/fetches";
+import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy, set } from 'lodash';
@@ -37,7 +37,6 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const [versionOptions, setVersionOptions] = useState([])
   const [versionLoading, setVersionLoading] = useState(false);
   const [userName, setUserName] = useState()
-  const [cotizationUuid, setcotizationUuid] = useState()
   const [formData, setFormData] = useState(
     {
       brand: '',
@@ -127,38 +126,25 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       setVersionLoading(false)
     }
   }
-  
+
   const getCurrentYear = () => {
     let currentDate = new Date()
     return currentDate.getFullYear()
   }
-  
+
   const getValidYeanInput = (typedYear) => {
     let currentYear = getCurrentYear()
     return typedYear > currentYear ? currentYear : typedYear
   }
-  
-  const handleSubmitFirstStep = async (values, actions) => {
-    setFormData(values);
-    setStep(step + 1);
-    try {
-      const carData = {
-        ...values,
-        country_code: COUNTRY_CODE
-      }
-      checkYear(values.year);
-      const { data } = await submitCarForm(carData);
-      setcotizationUuid(data.uuid);
-    } catch (e) {
-      console.log("ERROR desconocido:", e)
-    }
-  }
 
+  const handleSubmitFirstStep = (values, actions) => {
+    setFormData(values);
+    setStep(step + 1)
+  }
   const handleSubmitPersonalDataStep = async (values, actions) => {
     const carAndContactData = {
       ...formData,
       ...values,
-      uuid: cotizationUuid,
       name: `${values.name} ${values.lastName}`,
       country_code: COUNTRY_CODE,
     }

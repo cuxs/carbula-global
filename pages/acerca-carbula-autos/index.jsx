@@ -35,7 +35,7 @@ const AcercaCarbula = () => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="Compra tu auto con financiamiento Santander | Carbula Autos Argentina" />
+        <Head title="Sumate a la Experiencia Cárbula | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
           <Container>
@@ -99,14 +99,14 @@ const AcercaCarbula = () => {
               </Grid>
               <Grid centered>
               <Grid.Column mobile={16} tablet={16} computer={4}>
-                  <Card fluid className="carCard">
+                  <Card>
                     <Card.Content>
                       <Card.Description>
                         <Grid>
                           <Grid.Column mobile={16} tablet={10} computer={16}>
                             <div class="ui list">
                               <div class="item">
-                              <i class="ban icon"></i>
+                              <i class="american sign language interpreting icon"></i>
                                 <div class="content">
                                 <h3>Control antifraude</h3>
                                 <p>Compra de forma segura, tu seguridad nos importa.</p>
@@ -120,7 +120,7 @@ const AcercaCarbula = () => {
                   </Card>
                 </Grid.Column>
                 <Grid.Column mobile={16} tablet={16} computer={4}>
-                  <Card fluid className="carCard">
+                  <Card>
                     <Card.Content>
                       <Card.Description>
                         <Grid>
@@ -141,7 +141,7 @@ const AcercaCarbula = () => {
                   </Card>
                 </Grid.Column>
                 <Grid.Column mobile={16} tablet={16} computer={4}>
-                  <Card fluid className="carCard">
+                  <Card>
                     <Card.Content>
                       <Card.Description>
                         <Grid>
@@ -162,14 +162,14 @@ const AcercaCarbula = () => {
                   </Card>
                 </Grid.Column>
                 <Grid.Column mobile={16} tablet={16} computer={4}>
-                  <Card fluid className="carCard">
+                  <Card>
                     <Card.Content>
                       <Card.Description>
                         <Grid>
                           <Grid.Column mobile={16} tablet={10} computer={16}>
                             <div class="ui list">
                               <div class="item">
-                              <i class="big car icon bgGreen"></i>
+                                <i class="big car"></i>
                                 <div class="content">
                                 <h3>Garantía Cárbula + Autofact</h3>
                                 <p>Brindamos los informes más completos y efectivos del mercado</p>
@@ -188,6 +188,7 @@ const AcercaCarbula = () => {
 
         </div>
         <hr />
+
         <section>
           <FooterInfo grey country_code={'ar'} />
         </section>

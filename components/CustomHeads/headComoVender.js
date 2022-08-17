@@ -7,7 +7,7 @@ import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDom
 const defaultDescription = 'Ingresa los datos de tu auto en el cotizador ✓ Gana hasta un 25% mas ✓ Vende tu auto usado sin hacer nada'
 
 const defaultOGURL = '/como-vender'
-const defaultOGImage = '/images/como-vender-carbula.webp'
+const defaultOGImage = '/images/carbula-autos.webp'
 
 const Head = props => {
   const router = useRouter()

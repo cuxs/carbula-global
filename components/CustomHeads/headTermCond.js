@@ -7,7 +7,7 @@ import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDom
 const defaultDescription = 'Terminos, condiciones de uso y politicas de privacidad de Carbula para comprar y vender un auto usado'
 
 const defaultOGURL = '/terminos-y-condiciones'
-const defaultOGImage = '/images/terminos-condiciones-carbula.webp'
+const defaultOGImage = '/images/carbula-autos.webp'
 
 const Head = props => {
   const router = useRouter()

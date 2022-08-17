@@ -108,5 +108,9 @@ module.exports = {
     cl: "CL",
     mx: "MX",
     uy: "UY" 
+  },
+  TRACKING_URLS: {
+    datos_del_vehiculo: '/datos_del_vehiculo',
+    datos_del_usuario: '/datos_del_usuario',
   }
 }

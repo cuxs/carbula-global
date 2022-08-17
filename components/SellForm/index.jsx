@@ -6,7 +6,7 @@ import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
 // import GoogleOneTapLogin from '../GoogleOneTapLogin';
 import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm } from "../../utils/fetches";
-import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
+import { MIN_TEXT_SEARCH_LENGTH, TRACKING_URLS } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy, set } from 'lodash';
 import { mixed, object, number, string } from 'yup';
@@ -107,6 +107,9 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
 
   const handleMarcaModeloInputChange = (text,) => setMarcaModeloText(text)
   const handleMarcaModeloOnChange = async (option) => {
+    if(router.pathname === "/"){
+      history.pushState('datos_del_vehiculo', 'datos_del_vehiculo', TRACKING_URLS.datos_del_vehiculo)
+    }
     try {
       setYearLoading(true);
       const { data } = await getYears(option.value, option.nombreModelo, COUNTRY_CODE)

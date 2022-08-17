@@ -108,7 +108,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const handleMarcaModeloInputChange = (text,) => setMarcaModeloText(text)
   const handleMarcaModeloOnChange = async (option) => {
     if(router.pathname === "/"){
-      history.pushState('datos_del_vehiculo', 'datos_del_vehiculo', TRACKING_URLS.datos_del_vehiculo)
+      history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
     }
     try {
       setYearLoading(true);
@@ -258,6 +258,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
       case 0:
+        history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
         return (
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
@@ -449,6 +450,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           </Fragment>
         )
       case 1:
+        history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url)
         return (<form className={styles['personal-data__form']} onSubmit={handleSubmit}>
           <div className={styles.form__row} >
             <div className={styles['personal-data__form-item']}>

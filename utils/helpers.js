@@ -462,19 +462,19 @@ export const getPhoneNumber = (country_code) => {
 
 export const getTitleByCountry = (country_code) => {
   const ids = {
-    ar: 'Carbula Argentina | Compra y venta de autos usados | Sitio seguro',
-    cl: 'Carbula Chile | Compra y venta de autos usados | Sitio seguro',
-    mx: 'Carbula Mexico | Compra y venta de autos usados | Sitio seguro',
-    uy: 'Carbula Uruguay | Compra y venta de autos usados | Sitio seguro',
+    ar: 'Compra y venta de autos en Argentina | Sitio seguro | Carbula',
+    cl: 'Compra y venta de autos en Chile | Sitio seguro | Carbula',
+    mx: 'Compra y venta de autos en Mexico | Sitio seguro | Carbula',
+    uy: 'Compra y venta de autos en Uruguay | Sitio seguro | Carbula',
   }
   return ids[country_code]
 }
 
 export const getKeywordsByCountry = (country_code) => {
   const ids = {
-    ar: 'carbula, carbula argentina, carbula autos, carbula mendoza, catalogo de autos usados argentina, autos en venta, compra y venta de autos usados, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, comprar autos argentina, vender autos argentina',
-    cl: 'carbula, carbula chile, carbula autos, catalogo de autos usados chile, autos usados chile, autos en venta, compra y venta de autos usados, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, compra y venta de autos, carbula autos, carbula chileautos, comprar autos chile, vender autos chile',
-    mx: 'carbula, carbula mexico, carbula autos, catalogo de autos usados mexico, autos usados mexico, autos en venta, compra y venta de autos usados, compra y venta de autos segunda mano, comprar y vender tu vehiculo, venta de autos, compra y venta de autos, carbula autos, carbula seminuevos, comprar autos mexico, vender autos mexico',
+    ar: 'carbula autos, carbula mendoza, catalogo de autos usados mendoza, auto venta mendoza, compra y venta de autos usados, venta de autos usados mendoza, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, comprar autos argentina, vender autos argentina, vende tu usado, crédito para autos Santander, crédito automotriz, crédito prendario, vendemos tu auto mendoza, cotizar mi auto para vender',
+    cl: 'carbula autos, carbula chile, catalogo de autos usados chile, autos usados chile, autos en venta, compra y venta de autos usados, venta de autos usados chile, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, compra y venta de autos, carbula autos, carbula chileautos, comprar autos chile, vender autos chile, carro en venta usados, coches venda, crédito para autos, crédito automotriz, vendemos tu auto chile, cotizar mi auto para vender',
+    mx: 'carbula autos, carbula mexico, catalogo de autos usados mexico, autos usados mexico, autos en venta, compra y venta de autos usados, venta de autos usados mexico, compra y venta de autos segunda mano, comprar y vender tu vehiculo, venta de autos, compra y venta de autos, carbula autos, carbula seminuevos, comprar autos mexico, vender autos mexico, auto venta, carro en venta usados, coches venda, crédito prendario',
     uy: 'carbula uruguay, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos uruguay, autos usados uruguay, compra de autos usados uruguay, venta de autos usados uruguay',
   }
   return ids[country_code]

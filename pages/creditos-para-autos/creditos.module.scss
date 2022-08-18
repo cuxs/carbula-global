@@ -1,0 +1,174 @@
+@import "../../sass/variables.scss";
+
+.header {
+  background-image: url("/images/credito-desktop.webp");
+  background-size: cover;
+  height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px;
+     }
+}
+.buttons__container {
+  width: 100%;
+  margin: 0px auto;
+  margin-top: 0px;
+  display: flex;
+  justify-content: space-around;
+  vertical-align: middle;
+  button {
+    cursor: pointer;
+    width: 420px;
+    height: 60px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-family: ProximaNova;
+    font-size: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    a,
+    img {
+     width: 40%;
+     padding-left: 0.5rem;
+     padding-bottom: 0.5rem;
+     vertical-align: middle;
+    }
+  }
+}
+.card {
+  display: flex;
+  justify-content: center;
+  b {
+    color: #38ceb3;
+  }
+  overflow:hidden;
+}
+.financiamiento {
+  padding: 60px 250px;
+  h2 {
+    font-size: 1.5rem;
+    color: #999999;
+  }
+  p,
+  i {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #999999;
+  }
+  img {
+    max-width: 200px;
+    margin-right: 0.5em;
+  }
+  @media (max-width: 915px) {
+    padding: 1.5rem;
+    h2 {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      color: #999999;
+      margin-bottom: 0px;
+    }
+  }
+}
+.creditos {
+  padding: 50px 250px;
+  display: flex;
+  justify-content: center;
+  h3 {
+    font-size: 2rem;
+    color: #999999;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  h4 {
+    font-size: 22px;
+    color: #999999;
+    margin-bottom: 0px;
+    font-weight: 600;
+  }
+  p,
+  i {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #999999;
+  }
+}
+
+.faq {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  padding: 40px 50px;
+  background-color: #acc7f929;
+}
+
+@media (max-width: 915px) {
+  .header {
+    height: 350px;
+    background-image: url("/images/credito-mobile.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    h1 {
+      font-size: 25px;
+      line-height: 1.6rem;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+  }
+  .financiamiento {
+    img {
+      max-width: 45%;
+    }
+  }
+  .creditos {
+    padding: 50px 40px;
+    h3 {
+      font-size: 25px;
+      line-height: 1.8rem;
+      text-align: center;
+    }
+  }
+  .card {
+    width: 100%;
+    p,
+    i {font-size: 1rem;}
+  }
+  .faq {
+    margin-top: 50px;
+  }
+  .buttons__container {
+    width: 100%;
+    margin: 0px auto;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-around;
+    button {
+      cursor: pointer;
+      width: 340px;
+      height: 60px;
+      border-radius: 50px;
+      outline: none;
+      border: none;
+      background-color: #000;
+      color: #fff;
+      font-family: ProximaNova;
+      font-size: 18px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      a,
+      img {
+       width: 40%;
+       padding-left: 0.5rem;
+       padding-bottom: 0.5rem;
+       vertical-align: middle;
+      }
+    }
+  }
+}

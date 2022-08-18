@@ -4,9 +4,9 @@ import { string } from 'prop-types'
 import { useRouter } from 'next/router'
 import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../../utils/helpers'
 
-const defaultDescription = 'Adquire un auto de forma segura ✓ Con certificación Cárbula ✓ Financiación para autos usados'
+const defaultDescription = 'Desde nuestra web ✓ califica ✓ elige tu auto usado ✓ financia tu compra'
 
-const defaultOGURL = '/como-comprar'
+const defaultOGURL = '/creditos-para-autos'
 const defaultOGImage = '/images/carbula-autos.webp'
 
 const Head = props => {
@@ -14,32 +14,34 @@ const Head = props => {
   const COUNTRY_CODE = getCountryCode(router.locale)
   return (
     <NextHead>
-      <title>{props.title || getTitleByCountry(COUNTRY_CODE)}</title>
       <meta charSet="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta http-equiv="Cache-Control" content="public, max-age=604800, immutable" />
-      <meta name="description" content={props.description || defaultDescription} />
+      <title>{props.title || getTitleByCountry(COUNTRY_CODE)}</title>
+      <meta
+        name="description"
+        content={props.description || defaultDescription}
+      />
       <meta name="keywords" content={getKeywordsByCountry(COUNTRY_CODE)} />
-      <meta name="robots" content="index,follow" /> 
-      <meta name="x-robots-tag" content="index,follow" /> 
-      <meta name="googlebot" content="index,follow" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="robots" content="index,follow"/> 
+      <meta name="googlebot" content="index,follow"/>
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
-      <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/como-comprar`} />
-      <link rel="alternate" hrefLang="es-MX" href="https://www.carbula.mx/como-comprar" />
-      <link rel="alternate" hrefLang="es-CL" href="https://www.carbula.cl/como-comprar" />
-      <link rel="alternate" hrefLang="es-AR" href="https://www.carbula.ar/como-comprar" />
+      <link rel="cannonical" hrefLang="es-AR" href="https://www.carbula.ar/creditos-para-autos" />
       <link rel="icon" sizes="192x192" href="/icons/favicon_196.ico" />
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:url" content={props.url || defaultOGURL} />
       <meta property="og:title" content={props.title || ''} />
-      <meta property="og:description" content={props.description || defaultDescription} />
+      <meta
+        property="og:description"
+        content={props.description || defaultDescription}
+      />
       <meta name="twitter:site" content={props.url || defaultOGURL} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content={props.ogImage || defaultOGImage} />
       <meta property="og:image" content={props.ogImage || defaultOGImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <link rel="stylesheet" href="/reset.min.css" />
+      <link rel="stylesheet" href="/reset.css" />
+
     </NextHead>
   )
 }

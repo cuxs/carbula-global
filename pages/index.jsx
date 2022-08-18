@@ -1,6 +1,6 @@
-import React, { useState, Fragment, useEffect, useCallback } from 'react'
+import React, { useState, Fragment, useEffect, useMemo, useCallback } from 'react'
 import dynamic from 'next/dynamic'
-import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import Head from '../components/head'
 import Jumbotron from '../components/Jumbotron'
 import styles from './index/home.module.scss'
@@ -8,7 +8,8 @@ import Image from 'next/image'
 import { getZonas } from '../utils/fetches';
 import { useSpring, animated } from "react-spring";
 import { hotjar } from 'react-hotjar'
-import {  getCountryCode, clearLocalStorage, getHotjarId, getPhoneNumber, getWhatsappNumber, getTitleByCountry } from '../utils/helpers';
+import { clearCotization, getCountryCode, clearLocalStorage, getHotjarId, getPhoneNumber, getWhatsappNumber, getTitleByCountry } from '../utils/helpers';
+import { upperFirst } from 'lodash'
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -20,6 +21,7 @@ const Carousel = dynamic(import('@brainhubeu/react-carousel'), { ssr: false })
 const NuestrosClientes = dynamic(import('../components/NuestrosClientes'))
 const FaqComponent = dynamic(import('../components/FaqComponent'))
 const QuoteComponent = dynamic(import('../components/QuoteComponent'))
+const BlogComponent = dynamic(import('../components/BlogComponent'))
 const FooterInfo = dynamic(import('../components/FooterInfo'))
 const Button = dynamic(import('../components/Button'))
 const Nav = dynamic(import('../components/nav'))
@@ -106,10 +108,10 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
 
   const getSomosText = () => {
     const texts = {
-      ar: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
-      cl: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
-      uy: <Fragment>SOMOS UNA STARTUP POTENCIADA POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR VEHÍCULOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>,
-      mx: <Fragment>SOMOS UN MARKETPLACE POTENCIADO POR <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech">EMBARCA</a>,<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo">CORFO</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/">ANNI</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org">STARTUP CHILE</a>, <a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/">SEEDSTARS</a> y <a target="__blank" rel="noopener noreferrer" href="https://guil.cl/">GÜIL MOBILITY VENTURES</a>. <br></br> COMPROMETIDA EN REINVENTAR LA ANTIGUA Y ENGORROSA EXPERIENCIA A LA HORA DE VENDER O COMPRAR AUTOS.<br></br><b>VENDEMOS DE MANERA 100% SEGURA.</b></Fragment>
+      ar: <Fragment>STARTUP POTENCIADA POR <br></br> <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech"><img src={"/images/embarca-logo.webp"} alt="embarca logo" title="embarca logo"/></a>{""}<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo"><img src={"/images/corfo-logo.webp"} alt="corfo logo" title="corfo logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/"><img src={"/images/anii-logo.webp"} alt="anii logo" title="anii logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org"><img src={"/images/startup-chile-logo.webp"} alt="startup chile logo" title="startup chile logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/"><img src={"/images/seedstars-logo.webp"} alt="seedstars logo" title="seedstars logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://guil.cl/"><img src={"/images/guil-logo.webp"} alt="guil logo" title="guil logo"/></a></Fragment>,
+      cl: <Fragment>STARTUP POTENCIADA POR <br></br> <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech"><img src={"/images/embarca-logo.webp"} alt="embarca logo" title="embarca logo"/></a>{""}<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo"><img src={"/images/corfo-logo.webp"} alt="corfo logo" title="corfo logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/"><img src={"/images/anii-logo.webp"} alt="anii logo" title="anii logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org"><img src={"/images/startup-chile-logo.webp"} alt="startup chile logo" title="startup chile logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/"><img src={"/images/seedstars-logo.webp"} alt="seedstars logo" title="seedstars logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://guil.cl/"><img src={"/images/guil-logo.webp"} alt="guil logo" title="guil logo"/></a></Fragment>,
+      uy: <Fragment>STARTUP POTENCIADA POR <br></br> <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech"><img src={"/images/embarca-logo.webp"} alt="embarca logo" title="embarca logo"/></a>{""}<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo"><img src={"/images/corfo-logo.webp"} alt="corfo logo" title="corfo logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/"><img src={"/images/anii-logo.webp"} alt="anii logo" title="anii logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org"><img src={"/images/startup-chile-logo.webp"} alt="startup chile logo" title="startup chile logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/"><img src={"/images/seedstars-logo.webp"} alt="seedstars logo" title="seedstars logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://guil.cl/"><img src={"/images/guil-logo.webp"} alt="guil logo" title="guil logo"/></a></Fragment>,
+      mx: <Fragment>STARTUP POTENCIADA POR <br></br> <a target="__blank" rel="noopener noreferrer" href="https://embarca.tech"><img src={"/images/embarca-logo.webp"} alt="embarca logo" title="embarca logo"/></a>{""}<a target="__blank" href="https://www.corfo.cl/sites/cpp/homecorfo"><img src={"/images/corfo-logo.webp"} alt="corfo logo" title="corfo logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.anii.org.uy/"><img src={"/images/anii-logo.webp"} alt="anii logo" title="anii logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.startupchile.org"><img src={"/images/startup-chile-logo.webp"} alt="startup chile logo" title="startup chile logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://www.seedstars.com/funds/international/"><img src={"/images/seedstars-logo.webp"} alt="seedstars logo" title="seedstars logo"/></a>{""}<a target="__blank" rel="noopener noreferrer" href="https://guil.cl/"><img src={"/images/guil-logo.webp"} alt="guil logo" title="guil logo"/></a></Fragment>
     }
     return texts[COUNTRY_CODE]
   }
@@ -158,15 +160,18 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           </div>
         </div>
         <div className={styles.couple__image}>
-          <Image src="/images/carbula_couple.webp" width="690" height="640" alt="Pareja" />
+          <Image src="/images/carbula_couple.webp" width="690" height="640" alt="Pareja vendiendo auto usado" title="Pareja vendiendo auto usado" />
         </div>
+      </section>
+      <section>
+      <QuoteComponent />
       </section>
       <section>
         <div className={styles.section2__container}>
           <div>
             <h3 className={styles.text__secondary}>{t('contactanos')}</h3>
             <div className={styles.image} >
-              <Image src="/images/carbula_contacto.png" width="450" height="438" alt="Contacto" />
+              <Image src="/images/carbula_contacto.webp" width="450" height="438" alt="Contacto comercial de Cárbula" title="Contacto comercial de Cárbula" />
             </div>
             <div>
               <p>{t('contactanosP1')}</p>
@@ -182,6 +187,9 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
             <FaqComponent />
           </div>
         </div>
+      </section>
+      <section>
+        <BlogComponent />
       </section>
       <section className={styles.section3}>
         <div className={styles.section3__container}>

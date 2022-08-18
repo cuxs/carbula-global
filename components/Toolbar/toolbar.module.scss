@@ -12,7 +12,7 @@
   color: white;
   padding: 12px 20px;
   &.gradient {
-    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0);
   }
   ul {
     list-style-type: none;
@@ -267,8 +267,8 @@
     height: 45px;
     &.gradient {
       background: rgba(0, 0, 0, 0.5);
+    }
   }
-}
   .toggle-button {
     height: 21px;
     .toggle-button__line {

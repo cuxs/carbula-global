@@ -39,7 +39,7 @@
 .section2__container {
   display: flex;
   justify-content: space-between;
-  margin: 5em 250px 0em 250px;
+  margin: 5em 250px 90px 250px;
   .image {
     margin-bottom: 20px;
   }
@@ -106,7 +106,19 @@
   width: 80%;
   text-align: center;
   word-wrap: break-word;
+  img{
+    width: auto;
+    height: auto;
+    margin: 1.5rem;
+    vertical-align: middle;
+    @media (max-width: 412px) {
+    margin: auto;
+    padding-block: 1.5rem;
+    display: flex;
+    }
+  }
 }
+
 .benefits--mobile {
   display: none;
 }
@@ -116,7 +128,7 @@
     margin: 1em 0em 0em 100px;
   }
   .section2__container {
-    margin: 5em 180px 0em 180px;
+    margin: 5em 180px 90px 180px;
   }
 }
 @media (max-width: 1025px) {

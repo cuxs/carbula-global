@@ -21,13 +21,13 @@ module.exports = {
       uy: "UY" 
     },
     SANTANDER_URL_PRODUCTION: {
-      ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicopro/#/home?",
+      ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicohml/#/home",
       cl: "CL",
       mx: "MX",
       uy: "UY"  
     },
     SANTANDER_SPID_PRODUCTION: {
-      ar: "352454",
+      ar: "350735",
       cl: "CL",
       mx: "MX",
       uy: "UY" 

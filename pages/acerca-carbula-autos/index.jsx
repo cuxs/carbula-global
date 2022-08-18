@@ -19,6 +19,7 @@ import {
   Visibility,
   Segment,
   Items,
+  Footer,
 } from 'semantic-ui-react';
 
 export async function getServerSideProps(context) {
@@ -39,62 +40,57 @@ const AcercaCarbula = () => {
         <Nav />
         <div className={styles.header}>
           <Container>
-            <h1>Sumate a la Experiencia Cárbula</h1>
+            <h2>Sumate a la Experiencia Cárbula</h2>
           </Container>
         </div>
 
         <div className={styles.acerca}>
 
-          <Container>
+        <Container>
+        <div className={styles.nosotros}>
             <div class="ui vertical stripe segment">
               <div class="ui middle aligned stackable grid container">
                 <div class="row">
                   <div class="eight wide column">
-                    <h3 class="ui header">¿Qué es Cárbula?</h3>
-                    <p>
-                      Somos un marketplace de compra y venta de autos usados para vender de manera más eficiente y transparente. Generamos un entorno de intermediación, uniendo gente que quiere vender con gente que busca comprar autos usados.
-                      Le permitimos a los dueños vender su auto por hasta un 25% más de dinero sin salir de su casa en 20 días o menos, brindando operaciones seguras, simples y cómodas.              </p>
+                    <h3>¿Qué es Cárbula?</h3>
+                    <p>Somos un marketplace de compra y venta de autos usados para vender de manera más eficiente y transparente. Generamos un entorno de intermediación, uniendo gente que quiere vender con gente que busca comprar autos usados.</p>
+                    <p>Le permitimos a los dueños vender su auto por hasta un 25% más de dinero sin salir de su casa en 20 días o menos, brindando operaciones seguras, simples y cómodas.              </p>
                   </div>
                   <div class="six wide right floated column">
-                    <Image class="ui large image" src="/images/auto-carbula.webp"></Image>
+                    <Image src="/images/auto-carbula.webp"></Image>
                   </div>
                 </div>
               </div>
             </div>
-          </Container>
+         </div>
+            </Container>
 
-          <Divider></Divider>
-
-          <Container>
+            <Divider hidden />
+            
+            <Container>
+            <div className={styles.mision}>
             <div class="ui vertical stripe segment">
               <div class="ui middle aligned stackable grid container">
                 <div class="row">
                   <div class="six wide right floated column">
-                    <Image class="ui large image" src="/images/auto-carbula.webp"></Image>
+                    <Image src="/images/auto-carbula.webp"></Image>
                   </div>
                   <div class="eight wide column">
-                    <h3 class="ui header">Misión</h3>
-                    <p>
-                      Transformar la compra y venta de autos en algo placentero. Buscamos impactar positivamente en la vida de millones de personas que compran y venden su auto de manera diaria perdiendo tiempo, gastando más dinero del que debieran, y desarrollando patrones de estrés y ansiedad durante la transacción.
-                    </p>
-                    <h3 class="ui header">Visión</h3>
-                    <p>
-                      Convertirnos en los máximos exponentes en el rubro de compra y venta de vehículos usados y tener presencia en al menos 30 ciudades latinoamericanas en los próximos 5 años.
-                    </p>
+                    <h3>Misión</h3>
+                    <p>Transformar la compra y venta de autos en algo placentero. Buscamos impactar positivamente en la vida de millones de personas que compran y venden su auto de manera diaria perdiendo tiempo, gastando más dinero del que debieran, y desarrollando patrones de estrés y ansiedad durante la transacción.</p>
+                    <h3>Visión</h3>
+                    <p>Convertirnos en los máximos exponentes en el rubro de compra y venta de vehículos usados y tener presencia en al menos 30 ciudades latinoamericanas en los próximos 5 años.</p>
                   </div>
                 </div>
-
               </div>
             </div>
-          </Container>
-
-          <Divider hidden />
-
-          <Container>
-            <div>
+            </div>
+            </Container>
+            
+            <div className={styles.valores}>
               <Grid centered>
+              <h3>Valores Cárbula</h3>
                 <Grid.Column mobile={16} tablet={8} computer={16}>
-                  <h4>1. ¿Revisan los autos?</h4>
                 </Grid.Column>
               </Grid>
               <Grid centered>
@@ -106,10 +102,10 @@ const AcercaCarbula = () => {
                           <Grid.Column mobile={16} tablet={10} computer={16}>
                             <div class="ui list">
                               <div class="item">
-                              <i class="american sign language interpreting icon"></i>
+                              <Icon name='remove circle' link size='huge' />
                                 <div class="content">
-                                <h3>Control antifraude</h3>
-                                <p>Compra de forma segura, tu seguridad nos importa.</p>
+                                <h3>Seguridad</h3>
+                                <p> Proporcionamos operaciones online 100% seguras tanto para compradores como para vendedores de vehículos. </p>
                                 </div>
                               </div>
                             </div>
@@ -129,8 +125,8 @@ const AcercaCarbula = () => {
                               <div class="item">
                               <i class="big car icon bgGreen"></i>
                                 <div class="content">
-                                <h3>Garantía Cárbula + Autofact</h3>
-                                <p>Brindamos los informes más completos y efectivos del mercado</p>
+                                <h3>Transparencia</h3>
+                                <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Cuando los clientes utilizan nuestra plataforma no hay sorpresas ni costos extras a último momento. </p>
                                 </div>
                               </div>
                             </div>
@@ -150,8 +146,8 @@ const AcercaCarbula = () => {
                               <div class="item">
                               <i class="big car icon bgGreen"></i>
                                 <div class="content">
-                                <h3>Garantía Cárbula + Autofact</h3>
-                                <p>Brindamos los informes más completos y efectivos del mercado</p>
+                                <h3>Innovación</h3>
+                                <p>Aplicamos la tecnología al servicio de la compra y venta de vehículos para generar la mejor experiencia posible.</p>
                                 </div>
                               </div>
                             </div>
@@ -171,8 +167,8 @@ const AcercaCarbula = () => {
                               <div class="item">
                                 <i class="big car"></i>
                                 <div class="content">
-                                <h3>Garantía Cárbula + Autofact</h3>
-                                <p>Brindamos los informes más completos y efectivos del mercado</p>
+                                <h3>Simpleza</h3>
+                                <p>Somos una empresa de base tecnológica con el único propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
                                 </div>
                               </div>
                             </div>
@@ -183,10 +179,9 @@ const AcercaCarbula = () => {
                   </Card>
                 </Grid.Column>
               </Grid>
-            </div>
-          </Container>
-
+              </div>
         </div>
+        
         <hr />
 
         <section>

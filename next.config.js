@@ -1,3 +1,4 @@
+const { locale } = require('dayjs');
 const { i18n } = require('./next-i18next.config');
 module.exports = {
   reactStrictMode: true,
@@ -8,18 +9,21 @@ module.exports = {
     ignoreDuringBuilds: true,
   },
   async redirects() {
-    return [
-      {
-        source: "/datos_del_vehiculo",
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: "/datos_del_usuario",
-        destination: '/',
-        permanent: true,
-      },
-    ]
+    const env = process.env.NODE_ENV
+    if(env != "development"){
+      return [
+        {
+          source: "/datos_del_vehiculo",
+          destination: `/`,
+          permanent: true,
+        },
+        {
+          source: "/datos_del_usuario",
+          destination: `/`,
+          permanent: true,
+        },
+      ]
+    }
   },
   env: {
     SANTANDER_URL_TESTING: {

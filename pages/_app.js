@@ -9,6 +9,7 @@ import { appWithTranslation } from 'next-i18next';
 import { getGTMid } from '../utils/helpers';
 import '../sass/carousel.scss';
 import '../sass/odometer.scss';
+import { useRouter } from "next/router";
 
 dayjs.extend(calendar)
 dayjs.extend(updateLocale)
@@ -30,7 +31,6 @@ dayjs.updateLocale('es', {
     "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"
   ]
 })
-
 
 // This default export is required in a new `pages/_app.js` file.
 function MyApp({ Component, pageProps }) {

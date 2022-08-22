@@ -7,6 +7,20 @@ module.exports = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/datos_del_vehiculo",
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: "/datos_del_usuario",
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
   env: {
     SANTANDER_URL_TESTING: {
       ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicopro/#/home?",
@@ -40,6 +54,6 @@ module.exports = {
     },
     GOOGLE_ONETAP_LOGIN_CLIENT_ID: "1036649065648-b720t3ik7500nro7k187gr7sjh5htvu3.apps.googleusercontent.com",
     GOOGLE_ONETAP_LOGIN_CLIENT_SECRET_KEY: "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",
-    GOOGLE_ONETAP_LOGIN_DATA_URI: "/google-onetap-login"
-  }
+    GOOGLE_ONETAP_LOGIN_DATA_URI: "/google-onetap-login",
+  },
 }

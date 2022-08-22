@@ -5,7 +5,7 @@ import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
 import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm } from "../../utils/fetches";
-import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
+import { MIN_TEXT_SEARCH_LENGTH, TRACKING_URLS } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy } from 'lodash';
 import { mixed, object, number, string } from 'yup';
@@ -107,6 +107,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
   const handleMarcaModeloInputChange = (text,) => setMarcaModeloText(text)
   const handleMarcaModeloOnChange = async (option) => {
+    if(router.pathname === "/"){
+      history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
+    }
     try {
       setYearLoading(true);
       const { data } = await getYears(option.value, option.nombreModelo, COUNTRY_CODE)
@@ -243,7 +246,8 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     const formSteps = {
-      0: <Fragment>
+      0: 
+      <Fragment>
         <div className={"styles.division__container" + "hidden-lg hidden-xs"} hidden="true">
           <div className={styles.sellform__division} />
           <p>o</p>
@@ -436,85 +440,88 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
           </div>
         </form>
       </Fragment>,
-      1: <form className={styles['personal-data__form']} onSubmit={handleSubmit}>
-        <div className={styles.form__row} >
-          <div className={styles['personal-data__form-item']}>
-            <input placeholder="Nombre" name="name" onChange={handleChange} onBlur={handleBlur} />
-            {errors.name && touched.name && (
-              <div className="form-error">
-                {errors.name}
-              </div>
-            )}
+      1: 
+      <Fragment>
+        <form className={styles['personal-data__form']} onSubmit={handleSubmit}>
+          <div className={styles.form__row} >
+            <div className={styles['personal-data__form-item']}>
+              <input placeholder="Nombre" name="name" onChange={handleChange} onBlur={handleBlur} />
+              {errors.name && touched.name && (
+                <div className="form-error">
+                  {errors.name}
+                </div>
+              )}
+            </div>
+            <div className={styles['personal-data__form-item']}>
+              <input placeholder="Apellido" name="lastName" onChange={handleChange} onBlur={handleBlur} />
+              {errors.lastName && touched.lastName && (
+                <div className="form-error">
+                  {errors.lastName}
+                </div>
+              )}
+            </div>
           </div>
-          <div className={styles['personal-data__form-item']}>
-            <input placeholder="Apellido" name="lastName" onChange={handleChange} onBlur={handleBlur} />
-            {errors.lastName && touched.lastName && (
-              <div className="form-error">
-                {errors.lastName}
-              </div>
-            )}
+          <div className={styles.form__row}>
+            <div className={styles['personal-data__form-item']}>
+              <input type="email" placeholder="Email" name="email" onChange={handleChange} onBlur={handleBlur} />
+              {errors.email && touched.email && (
+                <div className="form-error">
+                  {errors.email}
+                </div>
+              )}
+            </div>
+            <div className={styles['personal-data__form-item']}>
+              <InputMask
+                formatChars={{
+                  'n': '[0-9]',
+                  'a': '[A-Za-z]',
+                  '*': '[A-Za-z0-9]'
+                }}
+                mask={globalValidationData[COUNTRY_CODE].phoneMask}
+                maskChar=" "
+                placeholder="Número WhatsApp"
+                name="phone"
+                inputMode="numeric"
+                onBlur={handleBlur}
+                onChange={handleChange}
+              />
+              {errors.phone && touched.phone && (
+                <div className="form-error">
+                  {errors.phone}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-        <div className={styles.form__row}>
-          <div className={styles['personal-data__form-item']}>
-            <input type="email" placeholder="Email" name="email" onChange={handleChange} onBlur={handleBlur} />
-            {errors.email && touched.email && (
-              <div className="form-error">
-                {errors.email}
-              </div>
-            )}
+          <div className={styles.form__row}>
+            <div className="form-item">
+              <Select
+                onBlur={handleBlur}
+                name="location"
+                options={zonas}
+                large
+                placeholder="Seleccione su comuna"
+                onChange={(option) => setFieldValue('location', option.value)}
+              />
+              {errors.location && touched.location && (
+                <div className="form-error">
+                  {errors.location}
+                </div>
+              )}
+            </div>
           </div>
-          <div className={styles['personal-data__form-item']}>
-            <InputMask
-              formatChars={{
-                'n': '[0-9]',
-                'a': '[A-Za-z]',
-                '*': '[A-Za-z0-9]'
-              }}
-              mask={globalValidationData[COUNTRY_CODE].phoneMask}
-              maskChar=" "
-              placeholder="Número WhatsApp"
-              name="phone"
-              inputMode="numeric"
-              onBlur={handleBlur}
-              onChange={handleChange}
-            />
-            {errors.phone && touched.phone && (
-              <div className="form-error">
-                {errors.phone}
-              </div>
-            )}
-          </div>
-        </div>
-        <div className={styles.form__row}>
-          <div className="form-item">
-            <Select
-              onBlur={handleBlur}
-              name="location"
-              options={zonas}
-              large
-              placeholder="Seleccione su comuna"
-              onChange={(option) => setFieldValue('location', option.value)}
-            />
-            {errors.location && touched.location && (
-              <div className="form-error">
-                {errors.location}
-              </div>
-            )}
-          </div>
-        </div>
-        {/* <GoogleOneTapLogin/> */}
-        <div className={styles.sellform__container}>
-          <div className={styles.checkbox}>
-            <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
-            <label for="newsletter">Quiero recibir newsletters</label>
-          </div>
-          </div>
-          <div className={styles.buttons__container}>
-            <Button type="button" link onClick={handleBack}>Volver</Button>
-            <Button overlayEffect type="submit" primary>Cotizar</Button>
-          </div>
-      </form>
+          {/* <GoogleOneTapLogin/> */}
+          <div className={styles.sellform__container}>
+            <div className={styles.checkbox}>
+              <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
+              <label for="newsletter">Quiero recibir newsletters</label>
+            </div>
+            </div>
+            <div className={styles.buttons__container}>
+              <Button type="button" link onClick={handleBack}>Volver</Button>
+              <Button overlayEffect type="submit" primary>Cotizar</Button>
+            </div>
+        </form>
+      </Fragment>
     }
     return formSteps[step]
   }
@@ -565,6 +572,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     delay: 0,
     config: config.molasses
   })
+
+  if(step === 0) {history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)}
+  if(step === 1) {history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url)}
 
   return (
     <div className={styles.sellform__container}>

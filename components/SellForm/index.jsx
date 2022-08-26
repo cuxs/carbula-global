@@ -195,6 +195,10 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         setStep('error-year')
         return setUserName(values.name)
       }
+      else{
+        setStep('error-global')
+        return setUserName(values.name)
+      }
       console.log('Ocurrió un error en la cotización')
       console.log(error)
     }
@@ -574,6 +578,13 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       <br />
       <p>Por el momento <b>no</b> estamos trabajando con vehículos que tengan más de 10 años de antigüedad. </p>
       <p>Gracias por la visita :)</p>
+    </div>,
+    'error-global': <div>
+      <p>Estimado {userName},</p>
+      <br />
+      <p>Hemos recibido sus datos correctamente. Sin embargo, de momento no hemos podido proceder de forma automatizada, un representante de Cárbula lo contactará personalmente a la brevedad.</p>
+      <p>Gracias por la visita :)</p>
+      <Button noBorder onClick={() => setStep(0)}>Aceptar</Button>
     </div>
   }
   const sellformTransition = useTransition(step, {

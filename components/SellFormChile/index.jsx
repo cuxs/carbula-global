@@ -554,24 +554,35 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     'error-cobertura': <div>
       <p><b>Hola {userName},</b></p>
       <br />
-      <p>Gracias por utilizar nuestra plataforma.</p><br />
-      <p>Lamentablemente, por el momento no estamos operando en su zona; esperamos poder hacerlo en el corto plazo.</p><br />
-      <p>Si necesita contactarnos, escribanos a <a href="mailto:hola@carbula.cl">hola@carbula.cl</a> </p><br />
-      <p><b>¡Que esté muy bien!</b></p><br />
+      <p>Gracias por utilizar nuestra plataforma.</p>
+      <br />
+      <p>Lamentablemente, por el momento no estamos operando en su zona; esperamos poder hacerlo en el corto plazo.</p>
+      <br />
+      <p>Si necesita contactarnos, escribanos a <a href="mailto:hola@carbula.cl">hola@carbula.cl</a></p>
+      <br />
+      <p>¡Que esté muy bien! :)</p>
+      <br />
       <Button noBorder onClick={() => setStep(0)}>Reintentar</Button>
     </div>,
     'error-year': <div>
-      <p>Estimado {userName},</p>
-      <br/>
-      <p>Por el momento <b>no</b> estamos trabajando con vehículos que tengan más de 10 años de antigüedad. </p>
+      <p><b>Estimado {userName},</b></p>
+      <br />
+      <p>Por el momento, <b>no estamos trabajando</b> con vehículos que tengan más de 10 años de antigüedad.</p>
+      <br />
       <p>Gracias por la visita :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">¿Querés ver nuestro catálogo?</a></Button>
     </div>,
     'error-global': <div>
-      <p>Estimado {userName},</p>
+      <p><b>Estimado {userName},</b></p>
       <br />
-      <p>Hemos recibido sus datos correctamente. Sin embargo, de momento no hemos podido proceder de forma automatizada, un representante de Cárbula lo contactará personalmente a la brevedad.</p>
-      <p>Gracias por la visita :)</p>
-      <Button noBorder onClick={() => setStep(0)}>Aceptar</Button>
+      <p><b>Hemos recibido sus datos correctamente.</b></p>
+      <br />
+      <p>Sin embargo, de momento no hemos podido proceder de forma automatizada su cotización.</p>
+      <br /> 
+      <p>Un representante de Cárbula lo contactará a la brevedad :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">¿Querés ver nuestro catálogo?</a></Button>
     </div>
   }
   const sellformTransition = useTransition(step, {

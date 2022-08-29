@@ -107,7 +107,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
   const handleMarcaModeloInputChange = (text,) => setMarcaModeloText(text)
   const handleMarcaModeloOnChange = async (option) => {
-    if(router.pathname === "/"){
+    if (router.pathname === "/") {
       history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
     }
     try {
@@ -146,7 +146,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       console.log("ERROR desconocido:", e)
     }
   }
-  
+
   const handleSubmitPersonalDataStep = async (values, actions) => {
     const carAndContactData = {
       ...formData,
@@ -168,7 +168,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       router.push({
         pathname: 'cotizacion',
         query: { paso: 'paso-1' }
-      }, undefined, {shallow: true})
+      }, undefined, { shallow: true })
     } catch (e) {
       setOverlayBackground(false)
       if (e.message.indexOf('cobertura') > -1) {
@@ -178,11 +178,15 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         setStep('error-cobertura')
         return setUserName(values.name)
       }
-      if(e.message.indexOf('year')> -1) {
+      if (e.message.indexOf('year') > -1) {
         carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
         submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'aniofueradecobertura' } })
         setStep('error-year')
+        return setUserName(values.name)
+      }
+      else {
+        setStep('error-global')
         return setUserName(values.name)
       }
       console.log(e)
@@ -209,8 +213,8 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         .min(2, "Muy corto."),
       email: mixed()
         .test('isValidEmail',
-        "Ingrese un email válido. (.com o .cl)",
-        value=>/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.(com|cl(?:\.[a-z]{2})?)$/.test(value)
+          "Ingrese un email válido. (.com o .cl)",
+          value => /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.(com|cl(?:\.[a-z]{2})?)$/.test(value)
         )
         .required("Ingresa tu email."),
       location: mixed()
@@ -246,282 +250,282 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     const formSteps = {
-      0: 
-      <Fragment>
-        <div className={"styles.division__container" + "hidden-lg hidden-xs"} hidden="true">
-          <div className={styles.sellform__division} />
-          <p>o</p>
-          <div className={styles.sellform__division} />
-        </div>
-        <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
-          <div className={styles.form__row}>
-            <div className='form-item'>
-              <Select
-                onBlur={handleBlur}
-                name='marcaModelo'
-                options={marcaModeloOptions}
-                large
-                placeholder={formData.marcaModelo ? formData.marcaModelo : 'Marca y modelo'}
-                onInputChange={handleMarcaModeloInputChange}
-                onChange={(option) => {
-                  handleMarcaModeloOnChange(option)
-                  setFieldValue('marcaModelo', `${option.nombreMarca} ${option.nombreModelo}`)
-                  setFieldValue('brand', option.nombreMarca)
-                  setFieldValue('model', option.nombreModelo)
-                  setFieldValue('idMarca', option.value)
-                }
-                }
-                isLoading={isMarcaModeloLoading}
-                renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('inMarcaYmodeloNoEncontrado') : 'Escribe...'}
-              />
-              {errors.marcaModelo && touched.marcaModelo && (
-                <div className="form-error">
-                  {errors.marcaModelo}
-                </div>
-              )}
-            </div>
-            <div className='form-item'>
-              <Select
-                onBlur={handleBlur}
-                name="year"
-                options={yearOptions}
-                placeholder={formData.year ? formData.year : 'Año'}
-                isLoading={isYearLoading}
-                onChange={(option) => {
-                  handleYearChange(option)
-                  setFieldValue('year', option.value)
-                  setFieldValue('idModelo', option.idModelo)
-                }}
-                disabled={yearDisabled}
-                renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'}
+      0:
+        <Fragment>
+          <div className={"styles.division__container" + "hidden-lg hidden-xs"} hidden="true">
+            <div className={styles.sellform__division} />
+            <p>o</p>
+            <div className={styles.sellform__division} />
+          </div>
+          <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
+            <div className={styles.form__row}>
+              <div className='form-item'>
+                <Select
+                  onBlur={handleBlur}
+                  name='marcaModelo'
+                  options={marcaModeloOptions}
+                  large
+                  placeholder={formData.marcaModelo ? formData.marcaModelo : 'Marca y modelo'}
+                  onInputChange={handleMarcaModeloInputChange}
+                  onChange={(option) => {
+                    handleMarcaModeloOnChange(option)
+                    setFieldValue('marcaModelo', `${option.nombreMarca} ${option.nombreModelo}`)
+                    setFieldValue('brand', option.nombreMarca)
+                    setFieldValue('model', option.nombreModelo)
+                    setFieldValue('idMarca', option.value)
+                  }
+                  }
+                  isLoading={isMarcaModeloLoading}
+                  renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('inMarcaYmodeloNoEncontrado') : 'Escribe...'}
+                />
+                {errors.marcaModelo && touched.marcaModelo && (
+                  <div className="form-error">
+                    {errors.marcaModelo}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
+                <Select
+                  onBlur={handleBlur}
+                  name="year"
+                  options={yearOptions}
+                  placeholder={formData.year ? formData.year : 'Año'}
+                  isLoading={isYearLoading}
+                  onChange={(option) => {
+                    handleYearChange(option)
+                    setFieldValue('year', option.value)
+                    setFieldValue('idModelo', option.idModelo)
+                  }}
+                  disabled={yearDisabled}
+                  renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'}
 
-              />
-              {errors.year && touched.year && (
-                <div className="form-error">
-                  {errors.year}
-                </div>
-              )}
+                />
+                {errors.year && touched.year && (
+                  <div className="form-error">
+                    {errors.year}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-          <div className={styles.form__row}>
-            <div className='form-item'>
-            <InputMask
-                formatChars={{
-                  'n': '[0-9]'
-                }}
-                mask={"nnnnnn"}
-                maskChar=""
-                onBlur={handleBlur}
-                name="kms"
-                type="text"
-                placeholder="Kms"
-                inputMode="numeric"
-                className={styles.kms__input}
-                onChange={handleChange}
-                disabled={kmsDisabled} />
-              {errors.kms && touched.kms && (
-                <div className="form-error">
-                  {errors.kms}
-                </div>
-              )}
+            <div className={styles.form__row}>
+              <div className='form-item'>
+                <InputMask
+                  formatChars={{
+                    'n': '[0-9]'
+                  }}
+                  mask={"nnnnnn"}
+                  maskChar=""
+                  onBlur={handleBlur}
+                  name="kms"
+                  type="text"
+                  placeholder="Kms"
+                  inputMode="numeric"
+                  className={styles.kms__input}
+                  onChange={handleChange}
+                  disabled={kmsDisabled} />
+                {errors.kms && touched.kms && (
+                  <div className="form-error">
+                    {errors.kms}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
+                <Select
+                  onBlur={handleBlur}
+                  name="version"
+                  onChange={(option) => {
+                    setFieldValue('version', option.label)
+                    setFieldValue('idVersion', option.value)
+                  }}
+                  options={versionOptions}
+                  isLoading={versionLoading}
+                  disabled={versionDisabled}
+                  large
+                  placeholder="Versión" />
+                {errors.version && touched.version && (
+                  <div className="form-error">
+                    {errors.version}
+                  </div>
+                )}
+              </div>
             </div>
-            <div className='form-item'>
-              <Select
-                onBlur={handleBlur}
-                name="version"
-                onChange={(option) => {
-                  setFieldValue('version', option.label)
-                  setFieldValue('idVersion', option.value)
-                }}
-                options={versionOptions}
-                isLoading={versionLoading}
-                disabled={versionDisabled}
-                large
-                placeholder="Versión" />
-              {errors.version && touched.version && (
-                <div className="form-error">
-                  {errors.version}
-                </div>
-              )}
+            <div className={styles.submit__button}>
+              <Button type="submit" primary>Continuar</Button>
             </div>
-          </div>
-          <div className={styles.submit__button}>
-            <Button type="submit" primary>Continuar</Button>
-          </div>
-        </form>
-        <form className={styles['fields--mobile']} onSubmit={handleSubmit}>
-          <div className={styles.form__row}>
-            <div className='form-item'>
-              <Select
-                onBlur={handleBlur}
-                options={marcaModeloOptions}
-                name='marcaModelo'
-                large
-                placeholder={formData.marcaModelo ? formData.marcaModelo : 'Marca y modelo'}
-                onInputChange={handleMarcaModeloInputChange}
-                onChange={(option) => {
-                  handleMarcaModeloOnChange(option)
-                  setFieldValue('marcaModelo', `${option.nombreMarca} ${option.nombreModelo}`)
-                  setFieldValue('brand', option.nombreMarca)
-                  setFieldValue('model', option.nombreModelo)
-                  setFieldValue('idMarca', option.value)
+          </form>
+          <form className={styles['fields--mobile']} onSubmit={handleSubmit}>
+            <div className={styles.form__row}>
+              <div className='form-item'>
+                <Select
+                  onBlur={handleBlur}
+                  options={marcaModeloOptions}
+                  name='marcaModelo'
+                  large
+                  placeholder={formData.marcaModelo ? formData.marcaModelo : 'Marca y modelo'}
+                  onInputChange={handleMarcaModeloInputChange}
+                  onChange={(option) => {
+                    handleMarcaModeloOnChange(option)
+                    setFieldValue('marcaModelo', `${option.nombreMarca} ${option.nombreModelo}`)
+                    setFieldValue('brand', option.nombreMarca)
+                    setFieldValue('model', option.nombreModelo)
+                    setFieldValue('idMarca', option.value)
 
-                }}
-                isLoading={isMarcaModeloLoading}
-                renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('inMarcaYmodeloNoEncontrado') : 'Escribe...'} />
-              {errors.marcaModelo && touched.marcaModelo && (
-                <div className="form-error">
-                  {errors.marcaModelo}
-                </div>
-              )}
+                  }}
+                  isLoading={isMarcaModeloLoading}
+                  renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('inMarcaYmodeloNoEncontrado') : 'Escribe...'} />
+                {errors.marcaModelo && touched.marcaModelo && (
+                  <div className="form-error">
+                    {errors.marcaModelo}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-          <div className={styles.form__row}>
-            <div className='form-item'>
-              <Select
-                onBlur={handleBlur}
-                options={yearOptions}
-                placeholder={formData.year ? formData.year : 'Año'}
-                isLoading={isYearLoading}
-                onChange={(option) => {
-                  handleYearChange(option)
-                  setFieldValue('year', option.value)
-                  setFieldValue('idModelo', option.idModelo)
+            <div className={styles.form__row}>
+              <div className='form-item'>
+                <Select
+                  onBlur={handleBlur}
+                  options={yearOptions}
+                  placeholder={formData.year ? formData.year : 'Año'}
+                  isLoading={isYearLoading}
+                  onChange={(option) => {
+                    handleYearChange(option)
+                    setFieldValue('year', option.value)
+                    setFieldValue('idModelo', option.idModelo)
 
-                }}
-                disabled={yearDisabled}
-                renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'} />
-              {errors.year && touched.year && (
-                <div className="form-error">
-                  {errors.year}
-                </div>
-              )}
+                  }}
+                  disabled={yearDisabled}
+                  renderNoOptionMessage={() => 'Solamente recibimos vehículos que no superen los 10 años de antigüedad'} />
+                {errors.year && touched.year && (
+                  <div className="form-error">
+                    {errors.year}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
+                <input
+                  onBlur={handleBlur}
+                  name="kms"
+                  className={styles.kms__input}
+                  type="text"
+                  placeholder="Kms"
+                  inputMode="numeric"
+                  onChange={handleChange}
+                  disabled={kmsDisabled} />
+                {errors.kms && touched.kms && (
+                  <div className="form-error">
+                    {errors.kms}
+                  </div>
+                )}
+              </div>
             </div>
-            <div className='form-item'>
-              <input
-                onBlur={handleBlur}
-                name="kms"
-                className={styles.kms__input}
-                type="text"
-                placeholder="Kms"
-                inputMode="numeric"
-                onChange={handleChange}
-                disabled={kmsDisabled} />
-              {errors.kms && touched.kms && (
-                <div className="form-error">
-                  {errors.kms}
-                </div>
-              )}
+            <div className={styles.form__row}>
+              <div className='form-item'>
+                <Select
+                  name="version"
+                  onChange={(option) => {
+                    setFieldValue('version', option.label)
+                    setFieldValue('idVersion', option.value)
+                  }}
+                  onBlur={handleBlur}
+                  options={versionOptions}
+                  isLoading={versionLoading}
+                  disabled={versionDisabled}
+                  large
+                  placeholder="Versión" />
+                {errors.version && touched.version && (
+                  <div className="form-error">
+                    {errors.version}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-          <div className={styles.form__row}>
-            <div className='form-item'>
-              <Select
-                name="version"
-                onChange={(option) => {
-                  setFieldValue('version', option.label)
-                  setFieldValue('idVersion', option.value)
-                }}
-                onBlur={handleBlur}
-                options={versionOptions}
-                isLoading={versionLoading}
-                disabled={versionDisabled}
-                large
-                placeholder="Versión" />
-              {errors.version && touched.version && (
-                <div className="form-error">
-                  {errors.version}
-                </div>
-              )}
+            <div className={styles.submit__button}>
+              <Button type="submit" primary>Continuar</Button>
             </div>
-          </div>
-          <div className={styles.submit__button}>
-            <Button type="submit" primary>Continuar</Button>
-          </div>
-        </form>
-      </Fragment>,
-      1: 
-      <Fragment>
-        <form className={styles['personal-data__form']} onSubmit={handleSubmit}>
-          <div className={styles.form__row} >
-            <div className={styles['personal-data__form-item']}>
-              <input placeholder="Nombre" name="name" onChange={handleChange} onBlur={handleBlur} />
-              {errors.name && touched.name && (
-                <div className="form-error">
-                  {errors.name}
-                </div>
-              )}
+          </form>
+        </Fragment>,
+      1:
+        <Fragment>
+          <form className={styles['personal-data__form']} onSubmit={handleSubmit}>
+            <div className={styles.form__row} >
+              <div className={styles['personal-data__form-item']}>
+                <input placeholder="Nombre" name="name" onChange={handleChange} onBlur={handleBlur} />
+                {errors.name && touched.name && (
+                  <div className="form-error">
+                    {errors.name}
+                  </div>
+                )}
+              </div>
+              <div className={styles['personal-data__form-item']}>
+                <input placeholder="Apellido" name="lastName" onChange={handleChange} onBlur={handleBlur} />
+                {errors.lastName && touched.lastName && (
+                  <div className="form-error">
+                    {errors.lastName}
+                  </div>
+                )}
+              </div>
             </div>
-            <div className={styles['personal-data__form-item']}>
-              <input placeholder="Apellido" name="lastName" onChange={handleChange} onBlur={handleBlur} />
-              {errors.lastName && touched.lastName && (
-                <div className="form-error">
-                  {errors.lastName}
-                </div>
-              )}
+            <div className={styles.form__row}>
+              <div className={styles['personal-data__form-item']}>
+                <input type="email" placeholder="Email" name="email" onChange={handleChange} onBlur={handleBlur} />
+                {errors.email && touched.email && (
+                  <div className="form-error">
+                    {errors.email}
+                  </div>
+                )}
+              </div>
+              <div className={styles['personal-data__form-item']}>
+                <InputMask
+                  formatChars={{
+                    'n': '[0-9]',
+                    'a': '[A-Za-z]',
+                    '*': '[A-Za-z0-9]'
+                  }}
+                  mask={globalValidationData[COUNTRY_CODE].phoneMask}
+                  maskChar=" "
+                  placeholder="Número WhatsApp"
+                  name="phone"
+                  inputMode="numeric"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+                {errors.phone && touched.phone && (
+                  <div className="form-error">
+                    {errors.phone}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-          <div className={styles.form__row}>
-            <div className={styles['personal-data__form-item']}>
-              <input type="email" placeholder="Email" name="email" onChange={handleChange} onBlur={handleBlur} />
-              {errors.email && touched.email && (
-                <div className="form-error">
-                  {errors.email}
-                </div>
-              )}
+            <div className={styles.form__row}>
+              <div className="form-item">
+                <Select
+                  onBlur={handleBlur}
+                  name="location"
+                  options={zonas}
+                  large
+                  placeholder="Seleccione su comuna"
+                  onChange={(option) => setFieldValue('location', option.value)}
+                />
+                {errors.location && touched.location && (
+                  <div className="form-error">
+                    {errors.location}
+                  </div>
+                )}
+              </div>
             </div>
-            <div className={styles['personal-data__form-item']}>
-              <InputMask
-                formatChars={{
-                  'n': '[0-9]',
-                  'a': '[A-Za-z]',
-                  '*': '[A-Za-z0-9]'
-                }}
-                mask={globalValidationData[COUNTRY_CODE].phoneMask}
-                maskChar=" "
-                placeholder="Número WhatsApp"
-                name="phone"
-                inputMode="numeric"
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              {errors.phone && touched.phone && (
-                <div className="form-error">
-                  {errors.phone}
-                </div>
-              )}
-            </div>
-          </div>
-          <div className={styles.form__row}>
-            <div className="form-item">
-              <Select
-                onBlur={handleBlur}
-                name="location"
-                options={zonas}
-                large
-                placeholder="Seleccione su comuna"
-                onChange={(option) => setFieldValue('location', option.value)}
-              />
-              {errors.location && touched.location && (
-                <div className="form-error">
-                  {errors.location}
-                </div>
-              )}
-            </div>
-          </div>
-          {/* <GoogleOneTapLogin/> */}
-          <div className={styles.sellform__container}>
-            <div className={styles.checkbox}>
-              <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
-              <label for="newsletter">Quiero recibir newsletters</label>
-            </div>
+            {/* <GoogleOneTapLogin/> */}
+            <div className={styles.sellform__container}>
+              <div className={styles.checkbox}>
+                <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
+                <label for="newsletter">Quiero recibir newsletters</label>
+              </div>
             </div>
             <div className={styles.buttons__container}>
               <Button type="button" link onClick={handleBack}>Volver</Button>
               <Button overlayEffect type="submit" primary>Cotizar</Button>
             </div>
-        </form>
-      </Fragment>
+          </form>
+        </Fragment>
     }
     return formSteps[step]
   }
@@ -550,17 +554,33 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     'error-cobertura': <div>
       <p><b>Hola {userName},</b></p>
       <br />
-      <p>Gracias por utilizar nuestra plataforma.</p><br />
-      <p>Lamentablemente, por el momento no estamos operando en su zona; esperamos poder hacerlo en el corto plazo.</p><br />
-      <p>Si necesita contactarnos, escribanos a <a href="mailto:hola@carbula.cl">hola@carbula.cl</a> </p><br />
-      <p><b>¡Que esté muy bien!</b></p><br />
+      <p>Lamentablemente, <b>por el momento no estamos operando en su zona</b>, esperamos poder hacerlo en el corto plazo.</p>
+      <br />
+      <p>Si necesita contactarnos, escribanos a <a href="mailto:hola@carbula.com">hola@carbula.com</a></p>
+      <br />
+      <p>¡Que esté muy bien! :)</p>
+      <br />
       <Button noBorder onClick={() => setStep(0)}>Reintentar</Button>
     </div>,
     'error-year': <div>
-      <p>Estimado {userName},</p>
-      <br/>
-      <p>Por el momento <b>no</b> estamos trabajando con vehículos que tengan más de 10 años de antigüedad. </p>
+      <p><b>Estimado {userName},</b></p>
+      <br />
+      <p>Por el momento, <b>no estamos trabajando con vehículos que tengan más de 10 años de antigüedad.</b></p>
+      <br />
       <p>Gracias por la visita :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
+    </div>,
+    'error-global': <div>
+      <p><b>Estimado {userName},</b></p>
+      <br />
+      <p><b>Hemos recibido sus datos correctamente.</b></p>
+      <br />
+      <p>Sin embargo, de momento no hemos podido proceder de forma automatizada su cotización.</p>
+      <br />
+      <p>Un representante de Cárbula lo contactará a la brevedad :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
     </div>
   }
   const sellformTransition = useTransition(step, {
@@ -573,8 +593,8 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     config: config.molasses
   })
 
-  if(step === 0) {history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)}
-  if(step === 1) {history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url)}
+  if (step === 0) { history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url) }
+  if (step === 1) { history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url) }
 
   return (
     <div className={styles.sellform__container}>

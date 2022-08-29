@@ -107,7 +107,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
 
   const handleMarcaModeloInputChange = (text,) => setMarcaModeloText(text)
   const handleMarcaModeloOnChange = async (option) => {
-    if(router.pathname === "/"){
+    if (router.pathname === "/") {
       history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
     }
     try {
@@ -130,17 +130,17 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       setVersionLoading(false)
     }
   }
-  
+
   const getCurrentYear = () => {
     let currentDate = new Date()
     return currentDate.getFullYear()
   }
-  
+
   const getValidYeanInput = (typedYear) => {
     let currentYear = getCurrentYear()
     return typedYear > currentYear ? currentYear : typedYear
   }
-  
+
   const handleSubmitFirstStep = async (values, actions) => {
     setFormData(values);
     setStep(step + 1);
@@ -178,7 +178,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       router.push({
         pathname: '/cotizacion',
         query: { paso: 'paso-1' }
-      }, undefined, {shallow: true})
+      }, undefined, { shallow: true })
     } catch (error) {
       setOverlayBackground(false)
       if (error.message.indexOf('cobertura') > -1) {
@@ -193,6 +193,10 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'aniofueradecobertura' } })
         setStep('error-year')
+        return setUserName(values.name)
+      }
+      else {
+        setStep('error-global')
         return setUserName(values.name)
       }
       console.log('Ocurrió un error en la cotización')
@@ -277,7 +281,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
                       setFieldValue('brand', option.nombreMarca)
                       setFieldValue('model', option.nombreModelo)
                       setFieldValue('idMarca', option.value)
-                      }
+                    }
                     }
                     isLoading={isMarcaModeloLoading}
                     renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('inMarcaYmodeloNoEncontrado') : t('inMarcaYmodeloRnom')}
@@ -450,7 +454,12 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           </Fragment>
         )
       case 1:
-        history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url)
+        try{
+          history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url)
+        } catch(e){
+          console.log("Error: ", e)
+        }
+        
         return (<form className={styles['personal-data__form']} onSubmit={handleSubmit}>
           <div className={styles.form__row} >
             <div className={styles['personal-data__form-item']}>
@@ -523,10 +532,10 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           </div>
           {/* <GoogleOneTapLogin/> */}
           <div className={styles.sellform__container}>
-          <div className={styles.checkbox}>
-            <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
-            <label for="newsletter">Quiero recibir newsletters</label>
-          </div>
+            <div className={styles.checkbox}>
+              <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
+              <label for="newsletter">Quiero recibir newsletters</label>
+            </div>
           </div>
           <div className={styles.buttons__container}>
             <Button type="button" link onClick={handleBack}>Volver</Button>
@@ -563,17 +572,33 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
     'error-cobertura': <div>
       <p><b>Hola {userName},</b></p>
       <br />
-      <p>Gracias por utilizar nuestra plataforma.</p><br />
-      <p>Lamentablemente, por el momento no estamos operando en su zona; esperamos poder hacerlo en el corto plazo.</p><br />
-      <p>Si necesita contactarnos, escribanos a <a href="mailto:hola@carbula.com">hola@carbula.com</a> </p><br />
-      <p><b>¡Que esté muy bien!</b></p><br />
+      <p>Lamentablemente, <b>por el momento no estamos operando en su zona</b>, esperamos poder hacerlo en el corto plazo.</p>
+      <br />
+      <p>Si necesita contactarnos, escribanos a <a href="mailto:hola@carbula.com">hola@carbula.com</a></p>
+      <br />
+      <p>¡Que esté muy bien! :)</p>
+      <br />
       <Button noBorder onClick={() => setStep(0)}>Reintentar</Button>
     </div>,
     'error-year': <div>
-      <p>Estimado {userName},</p>
+      <p><b>Estimado {userName},</b></p>
       <br />
-      <p>Por el momento <b>no</b> estamos trabajando con vehículos que tengan más de 10 años de antigüedad. </p>
+      <p>Por el momento, <b>no estamos trabajando con vehículos que tengan más de 10 años de antigüedad.</b></p>
+      <br />
       <p>Gracias por la visita :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
+    </div>,
+    'error-global': <div>
+      <p><b>Estimado {userName},</b></p>
+      <br />
+      <p><b>Hemos recibido sus datos correctamente.</b></p>
+      <br />
+      <p>Sin embargo, de momento no hemos podido proceder de forma automatizada su cotización.</p>
+      <br />
+      <p>Un representante de Cárbula lo contactará a la brevedad :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
     </div>
   }
   const sellformTransition = useTransition(step, {

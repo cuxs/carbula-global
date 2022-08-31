@@ -132,7 +132,7 @@ const ComoVender = () => {
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Lo publicamos en los portales con más alcance, promocionamos las publicaciones, se lo mostramos a los interesados, respondemos a todas las consultas, nos ocupamos de gestionar los trámites y de conseguir al comprador.</p>
+                <p>Lo publicamos en los portales con mayor alcance, promocionamos las publicaciones, se lo mostramos a los interesados, respondemos a todas las consultas, nos ocupamos de gestionar el papeleo y de conseguir al comprador.</p>
               </div>
             </div>
             <h4 itemprop="name">7. ¿Y qué hago mientras venden mi auto?</h4>

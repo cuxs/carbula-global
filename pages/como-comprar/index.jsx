@@ -41,7 +41,7 @@ const ComoComprar = () => {
             <h4 itemprop="name">3. Me interesa un vehículo en particular, ¿qué hago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                  <p>Primero, dentro de la publicación hacé click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado para compartirte).</p>
+                  <p>Primero, dentro de la publicación hacé click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado). Si te interesa, <a href="https://blog.carbula.com/informes-y-transferencias-autofact-conoce-estos-servicios" target="__blank" rel="noopener noreferrer">podés leer más aquí</a>.</p>
                   <p>El segundo paso es agendar una visita.</p>
               </div>
             </div>
@@ -115,13 +115,13 @@ const ComoComprar = () => {
             <h4 itemprop="name">2. ¿Qué tipo de autos tienen?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Contamos con una amplia variedad de modelos y marcas. Todos nuestros vehículos tienen menos de 10 años de antigüedad, poseen menos de 150.000 kilómetros, aprobaron la inspección técnica y <b>están listos para que sean tuyos.</b></p>
+                <p>Contamos con una amplia variedad de modelos y marcas. Todos nuestros vehículos tienen menos de 10 años de antigüedad, poseen menos de 150.000 kilómetros, aprobaron la inspección y <b>están listos para que sean tuyos.</b></p>
               </div>
             </div>
             <h4 itemprop="name">3. Me interesa un vehículo en particular, ¿qué hago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                  <p>Primero, dentro de la publicación hacé click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado para compartirte).</p>
+                  <p>Primero, dentro de la publicación haz click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado). Si te interesa, <a href="https://blog.carbula.com/informes-y-transferencias-autofact-conoce-estos-servicios" target="__blank" rel="noopener noreferrer">podés leer más aquí</a>.</p>
                   <p>El segundo paso es agendar una visita.</p>
               </div>
             </div>
@@ -140,7 +140,7 @@ const ComoComprar = () => {
             <h4 itemprop="name">6. ¿Qué métodos de pago aceptan?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Aceptamos efectivo o transferencia bancaria. Asimismo, siempre buscamos acordar el método de pago en base a lo que le resulte más conveniente tanto a la parte compradora como vendedora.</p>
+                <p>Aceptamos efectivo, tarjeta de crédito, Vale Vista o transferencia bancaria. Asimismo, siempre buscamos acordar el método de pago en base a lo que le resulte más conveniente tanto a la parte compradora como vendedora.</p>
               </div>
             </div>
             <h4 itemprop="name">7. ¿Brindan financiación?</h4>
@@ -195,13 +195,13 @@ const ComoComprar = () => {
             <h4 itemprop="name">2. ¿Qué tipo de autos tienen?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Contamos con una amplia variedad de modelos y marcas. Todos nuestros vehículos tienen menos de 10 años de antigüedad, poseen menos de 150.000 kilómetros, aprobaron la inspección técnica y <b>están listos para que sean tuyos.</b></p>
+                <p>Contamos con una amplia variedad de modelos y marcas. Todos nuestros vehículos tienen menos de 10 años de antigüedad, poseen menos de 150.000 kilómetros, aprobaron la inspección y <b>están listos para que sean tuyos.</b></p>
               </div>
             </div>
             <h4 itemprop="name">3. Me interesa un vehículo en particular, ¿qué hago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                  <p>Primero, dentro de la publicación hacé click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado para compartirte).</p>
+                  <p>Primero, dentro de la publicación hacé click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado). Si te interesa, <a href="https://blog.carbula.com/informes-y-transferencias-autofact-conoce-estos-servicios" target="__blank" rel="noopener noreferrer">podés leer más aquí</a>.</p>
                   <p>El segundo paso es agendar una visita.</p>
               </div>
             </div>

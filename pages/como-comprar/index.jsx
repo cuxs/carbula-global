@@ -158,7 +158,7 @@ const ComoComprar = () => {
             <h4 itemprop="name">9. ¿Cómo es el proceso de compra?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Simple y transparente. Durante la venta, nuestro asesor coordinará el intercambio con el vendedor. Nosotros te acompañaremos durante todo el trámite para que luego de la visita, el auto sea tuyo en los próximos días.</p>
+                <p>Simple y transparente. Durante la venta, nuestro asesor coordinará el intercambio con el vendedor. Nosotros te acompañaremos durante toda la gestión para que luego de la visita, el auto sea tuyo en los próximos días.</p>
               </div>
             </div>
             <h4 itemprop="name">10. Listo, quiero comprar con ustedes.</h4>

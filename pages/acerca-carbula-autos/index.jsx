@@ -9,6 +9,9 @@ import {
   Container,
   Divider,
   Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
   Grid,
   Header,
   Image,
@@ -165,7 +168,7 @@ const AcercaCarbula = () => {
                           <Grid.Column mobile={16} tablet={10} computer={16}>
                             <div class="ui list">
                               <div class="item">
-                                <i class="big car"></i>
+                                <i class="ui big car"></i>
                                 <div class="content">
                                 <h3>Simpleza</h3>
                                 <p>Somos una empresa de base tecnológica con el único propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>

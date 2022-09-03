@@ -68,7 +68,7 @@
     text-decoration: underline;
   }
   img {
-    width: 20px;
+    width: 24px;
     margin-right: 10px;
   }
 }
@@ -94,11 +94,6 @@
 .rut__text{
   margin-bottom: 20px;
   font-size: 1rem;
-}
-@media (max-width: 1441px) {
-  .footerInfo__container {
-    //margin: 0px 0px 0px 180px;*//
-  }
 }
 @media (max-width: 1025px) {
   .footerInfo__container {

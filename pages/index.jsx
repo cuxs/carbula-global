@@ -173,12 +173,12 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
             <div className={styles.image} >
               <Image src="/images/carbula_contacto.webp" width="450" height="438" alt="Contacto comercial de Cárbula" title="Contacto comercial de Cárbula" />
             </div>
-            <div>
+           {/*} <div>
               <p>{t('contactanosP1')}</p>
               <p>{t('contactanosP2')}</p>
-            </div>
+          </div>*/}
             <div className={styles.buttons__container}>
-              <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>
+              {/*<a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>*/}
               <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondaryOutlined>Whatsapp</Button></a>
             </div>
           </div>

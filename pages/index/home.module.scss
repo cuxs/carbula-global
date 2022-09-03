@@ -44,8 +44,8 @@
     margin-bottom: 40px;
   }
   .buttons__container {
+    width: 250px;
     margin-top: 20px;
-    display: flex;
     justify-content: space-around;
   }
 }
@@ -167,7 +167,7 @@
     text-align: center;
   }
   .buttons__container {
-    width: 65%;
+    width: 100%;
     margin: 0px auto;
   }
   // ============================================

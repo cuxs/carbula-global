@@ -199,31 +199,31 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     object().shape({
       marcaModelo: mixed().required('Selecciona una marca y modelo.'),
       year: mixed().required('Selecciona un año.'),
-      kms: number().max(150000, 'Solo recibimos vehículos con menos de 150.000kms').required('Completa este dato.'),
+      kms: number().max(150000, 'Solo recibimos vehículos con menos de 150.000 kms').required('Completa este dato.'),
       version: mixed().required('Selecciona una versión.')
     }),
     object().shape({
       name: string("Solo letras.")
         .ensure()
-        .required("Necesitamos tu nombre.")
+        .required("Escribe tu nombre.")
         .min(2, "Muy corto."),
       lastName: string("Solo letras.")
         .ensure()
-        .required("Necesitamos tu apellido.")
+        .required("Escribe tu apellido.")
         .min(2, "Muy corto."),
       email: mixed()
         .test('isValidEmail',
           "Ingrese un email válido. (.com o .cl)",
           value => /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.(com|cl(?:\.[a-z]{2})?)$/.test(value)
         )
-        .required("Ingresa tu email."),
+        .required("Escribe tu email"),
       location: mixed()
         .required("¿De dónde eres?"),
       phone: number("Ingresa solo números")
         .positive()
         .min(globalValidationData[COUNTRY_CODE].phoneMinNumber, "Tu número debe ser más largo")
         .max(globalValidationData[COUNTRY_CODE].phoneMaxNumber, "Tu número debe ser más corto")
-        .required("Ingresa tu teléfono."),
+        .required("Escribe tu teléfono."),
     })
   ]
   const initialValues = [

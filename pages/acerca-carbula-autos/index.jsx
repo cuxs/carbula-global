@@ -54,7 +54,7 @@ const AcercaCarbula = () => {
                 <div class="row">
                   <div class="eight wide column">
                     <h3>¿Qué es Cárbula?</h3>
-                    <p>Somos un marketplace de compra y venta de autos usados para vender de manera más eficiente y transparente. Generamos un entorno de intermediación, uniendo gente que quiere vender con gente que busca comprar autos usados.</p>
+                    <p>Somos un marketplace de compra y venta de autos usados para <a href="https://www.carbula.ar/"><b>para vender de manera más eficiente y transparente.</b></a> Generamos un entorno de intermediación, uniendo gente que quiere vender con gente que busca comprar autos usados.</p>
                     <p>Le permitimos a los dueños vender su auto por hasta un <b>25% más de dinero</b> sin salir de su casa, brindando operaciones seguras, simples y cómodas.</p>
                   </div>
                   <div class="eight wide right floated column">
@@ -119,7 +119,7 @@ const AcercaCarbula = () => {
                   <Card.Content>
                     <Card.Header>🔎Transparencia</Card.Header>
                     <Card.Description>
-                      <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Cuando los clientes utilizan nuestra plataforma no hay sorpresas ni costos extras a último momento.</p>
+                      <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Sin sorpresas ni costos extras.</p>
                     </Card.Description>
                   </Card.Content>
                 </Card>
@@ -137,9 +137,9 @@ const AcercaCarbula = () => {
                 <Grid.Column mobile={16} tablet={16} computer={4}>
                 <Card>
                   <Card.Content>
-                    <Card.Header>💡 Simpleza</Card.Header>
+                    <Card.Header>👍 Simpleza</Card.Header>
                     <Card.Description>
-                      <p>Somos una empresa de base tecnológica con el único propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
+                      <p>Somos una empresa de base tecnológica, con el propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
                     </Card.Description>
                   </Card.Content>
                 </Card>
@@ -153,7 +153,7 @@ const AcercaCarbula = () => {
           </Grid>
           <Divider hidden />
           <div class="ui text container">
-          <img src={"/images/gobierno-mendoza.png"} size='tiny' alt='Diario Los Andes' title='Logo de Diario Los Andes'></img> 
+          <img src={"/images/gobierno-mendoza.png"} size='tiny' alt='Gobierno de Mendoza' title='Logo de Gobierno de Mendoza'></img> 
             <p>A través de Mendoza Emprende, la empresa de base tecnológica, que se encarga de facilitar la venta y la compra de autos de segunda mano entre particulares...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.mendoza.gov.ar/prensa/carbula-el-emprendimiento-mendocino-que-se-internacionalizo/">Leer más</a>
             <div class="ui divider"></div>
@@ -161,11 +161,11 @@ const AcercaCarbula = () => {
             <p>Se trata de Cárbura, una startup que conecta vendedores con compradores de vehículos usados. En menos de un año procesaron 500 mil dólares...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.elsol.com.ar/un-emprendimiento-mendocino-se-expandira-a-chile">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-ecocuyo.png"} size='tiny' alt='' title=''></img> 
+            <img src={"/images/diario-ecocuyo.png"} size='tiny' alt='Diario Ecocuyo' title='Diario Ecocuyo'></img> 
             <p>Cárbula es un sitio que facilita la venta y compra de autos usados de "dueño a dueño", sin intervención de agencias como intermediarias de la operación. Lleva más de 200 autos vendidos.</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://ecocuyo.com/carbula-de-la-mano-de-dos-mendocinos-llega-una-nueva-forma-de-comprar-y-vender-autos/">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-jornada.png"} size='tiny' alt='' title=''></img> 
+            <img src={"/images/diario-jornada.png"} size='tiny' alt='Diario Jornada' title='Diario Jornada'></img> 
             <p>Cárbula es una plataforma de servicios diseñada para que la gente pueda vender y comprar autos usados de una forma fácil, segura y al mejor valor del mercado...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://jornadaonline.com/jornada/2020-9-17-8-47-57-te-contamos-como-funciona-carbula-la-app-mendocina-que-ofrece-una-nueva-forma-de-vender-autos">Leer más</a>
           </div>
@@ -181,7 +181,7 @@ const AcercaCarbula = () => {
   if (router.locale === 'es-CL') {
     return (
       <div>
-        <Head title="Compra un auto de forma segura | Carbula Autos Chile" />
+        <Head title="Sumate a la experiencia Cárbula | Carbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
           <Container>
@@ -196,7 +196,7 @@ const AcercaCarbula = () => {
                 <div class="row">
                   <div class="eight wide column">
                     <h3>¿Qué es Cárbula?</h3>
-                    <p>Somos un marketplace de compra y venta de autos usados para vender de manera más eficiente y transparente. Generamos un entorno de intermediación, uniendo gente que quiere vender con gente que busca comprar autos usados.</p>
+                    <p>Somos un marketplace de compra y venta de autos usados <a href="https://www.carbula.cl/"><b>para vender de manera más eficiente y transparente.</b></a> Generamos un entorno de intermediación, uniendo gente que quiere vender con gente que busca comprar autos usados.</p>
                     <p>Le permitimos a los dueños vender su auto por hasta un <b>25% más de dinero</b> sin salir de su casa, brindando operaciones seguras, simples y cómodas.</p>
                   </div>
                   <div class="eight wide right floated column">
@@ -261,7 +261,7 @@ const AcercaCarbula = () => {
                   <Card.Content>
                     <Card.Header>🔎Transparencia</Card.Header>
                     <Card.Description>
-                      <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Cuando los clientes utilizan nuestra plataforma no hay sorpresas ni costos extras a último momento.</p>
+                    <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Sin sorpresas ni costos extras.</p>
                     </Card.Description>
                   </Card.Content>
                 </Card>
@@ -279,9 +279,9 @@ const AcercaCarbula = () => {
                 <Grid.Column mobile={16} tablet={16} computer={4}>
                 <Card>
                   <Card.Content>
-                    <Card.Header>💡 Simpleza</Card.Header>
+                    <Card.Header>👍 Simpleza</Card.Header>
                     <Card.Description>
-                      <p>Somos una empresa de base tecnológica con el único propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
+                    <p>Somos una empresa de base tecnológica, con el propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
                     </Card.Description>
                   </Card.Content>
                 </Card>
@@ -299,17 +299,17 @@ const AcercaCarbula = () => {
             <p>La plataforma de venta de autos usados diseñó una estrategia tecnológica enfocada en quien busca vender su auto de manera rápida sin invertir tiempo...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.lacuarta.com/cronica/noticia/carbula-auto-usado/555034/">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-elsol.png"} size='tiny' alt='Diario El Sol' title='Diario El Sol'></img> 
-            <p>Se trata de Cárbura, una startup que conecta vendedores con compradores de vehículos usados. En menos de un año procesaron 500 mil dólares...</p>
-            <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.elsol.com.ar/un-emprendimiento-mendocino-se-expandira-a-chile">Leer más</a>
+            <img src={"/images/diario-t13.png"} size='tiny' alt='Diario T13' title='Diario T13'></img> 
+            <p>Según el último informe de Cavem, en septiembre del 2020 se vendieron 130.068 vehículos, números superiores a meses anteriores...</p>
+            <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.t13.cl/noticia/nacional/inteligencia-artificial-venta-auto-usado-18-11-2020">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-ecocuyo.png"} size='tiny' alt='' title=''></img> 
-            <p>Cárbula es un sitio que facilita la venta y compra de autos usados de "dueño a dueño", sin intervención de agencias como intermediarias de la operación. Lleva más de 200 autos vendidos.</p>
-            <a class="link" target="__blank" rel="noopener noreferrer" href="https://ecocuyo.com/carbula-de-la-mano-de-dos-mendocinos-llega-una-nueva-forma-de-comprar-y-vender-autos/">Leer más</a>
+            <img src={"/images/diario-elmostrador.png"} size='tiny' alt='Diario El Mostrador' title='Diario El Mostrador'></img> 
+            <p>Según estudio, un 20% de las personas que retiraron el primer 10% de su fondo de pensiones, lo utilizó o lo piensa utilizar en comprar un automóvil...</p>
+            <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.elmostrador.cl/generacion-m/2020/11/20/los-principales-factores-del-aumento-en-la-compra-y-venta-de-autos-usados-en-chile/">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-jornada.png"} size='tiny' alt='' title=''></img> 
-            <p>Cárbula es una plataforma de servicios diseñada para que la gente pueda vender y comprar autos usados de una forma fácil, segura y al mejor valor del mercado...</p>
-            <a class="link" target="__blank" rel="noopener noreferrer" href="https://jornadaonline.com/jornada/2020-9-17-8-47-57-te-contamos-como-funciona-carbula-la-app-mendocina-que-ofrece-una-nueva-forma-de-vender-autos">Leer más</a>
+            <img src={"/images/diario-eldinamo.png"} size='tiny' alt='Diario El Dinamo' title='Diario El Dinamo'></img> 
+            <p>La idea es que el vendedor se desligue de los tediosos papeleos y procesos que hay que realizar para vender un vehículo de segunda mano...</p>
+            <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.eldinamo.cl/emprend/Plataforma-utiliza-estrategia-tecnologica-para-vender-autos-usados-en-corto-plazo-20201023-0067.html">Leer más</a>
           </div>
         </div>
         </div>
@@ -323,7 +323,7 @@ const AcercaCarbula = () => {
   if (router.locale === 'es-MX') {
     return (
       <div>
-        <Head title="Compra un auto de forma segura | Carbula Autos Mexico" />
+        <Head title="Sumate a la experiencia Cárbula | Carbula Autos Mexico" />
         <Nav />
         <div className={styles.header}>
           <Container>
@@ -338,7 +338,7 @@ const AcercaCarbula = () => {
                 <div class="row">
                   <div class="eight wide column">
                     <h3>¿Qué es Cárbula?</h3>
-                    <p>Somos un marketplace de compra y venta de autos usados para vender de manera más eficiente y transparente. Generamos un entorno de intermediación, uniendo gente que quiere vender con gente que busca comprar autos usados.</p>
+                    <p>Somos un marketplace de compra y venta de autos usados <a href="https://www.carbula.mx/"><b>para vender de manera más eficiente y transparente.</b></a> Generamos un entorno de intermediación, uniendo gente que quiere vender con gente que busca comprar autos usados.</p>
                     <p>Le permitimos a los dueños vender su auto por hasta un <b>25% más de dinero</b> sin salir de su casa, brindando operaciones seguras, simples y cómodas.</p>
                   </div>
                   <div class="eight wide right floated column">
@@ -403,7 +403,7 @@ const AcercaCarbula = () => {
                   <Card.Content>
                     <Card.Header>🔎Transparencia</Card.Header>
                     <Card.Description>
-                      <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Cuando los clientes utilizan nuestra plataforma no hay sorpresas ni costos extras a último momento.</p>
+                    <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Sin sorpresas ni costos extras.</p>
                     </Card.Description>
                   </Card.Content>
                 </Card>
@@ -421,9 +421,9 @@ const AcercaCarbula = () => {
                 <Grid.Column mobile={16} tablet={16} computer={4}>
                 <Card>
                   <Card.Content>
-                    <Card.Header>💡 Simpleza</Card.Header>
+                    <Card.Header>👍 Simpleza</Card.Header>
                     <Card.Description>
-                      <p>Somos una empresa de base tecnológica con el único propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
+                    <p>Somos una empresa de base tecnológica, con el propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
                     </Card.Description>
                   </Card.Content>
                 </Card>

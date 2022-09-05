@@ -22,7 +22,7 @@ import {
 const defaultDescription = 'Adquire un auto de forma segura ✓ Con certificación Cárbula ✓ Financiación para autos usados'
 
 const defaultOGURL = '/como-comprar'
-const defaultOGImage = '/images/como-comprar-carbula.webp'
+const defaultOGImage = '/images/carbula-autos.webp'
 
 const Head = props => {
   const router = useRouter()

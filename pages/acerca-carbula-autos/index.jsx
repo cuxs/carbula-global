@@ -75,6 +75,9 @@ const AcercaCarbula = () => {
             </Container>
 
             <Divider hidden />
+            <Divider />
+            <Divider hidden />
+            <Divider hidden />
             
             <Container>
             <div className={styles.mision}>
@@ -102,11 +105,15 @@ const AcercaCarbula = () => {
             </div>
             </Container>
             
+            <Divider hidden />
+            <Divider />
+            <Divider hidden />
+
             <div className={styles.valores}>
               <Grid centered>
               <h3>Valores Cárbula</h3>
               </Grid>
-              <Grid row>
+              <Grid>
               <Grid.Column mobile={16} tablet={16} computer={4}>
               <Card>
                   <Card.Content>
@@ -177,6 +184,12 @@ const AcercaCarbula = () => {
                 </Grid.Column>
               </Grid>
               </div>
+            <Divider hidden />
+            <Divider />
+            <Divider hidden />
+
+
+
         </div>
         
         <hr />

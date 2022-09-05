@@ -57,6 +57,9 @@
 }
 
 .nosotros {
+  margin-bottom: 80px;
+  display: block;
+  
   h3 {
     font-size: 1.5rem;
     line-height: 1.5rem;
@@ -79,6 +82,10 @@
 }
 
 .valores {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: block;
+
   h3 {
     font-size: 1.5rem;
     line-height: 1.5rem;
@@ -100,7 +107,6 @@
    }
 }
 
-
 .card {
   display: flex;
   justify-content: center;
@@ -111,6 +117,10 @@
 }
 
 .mision {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: block;
+
   h3 {
     font-size: 1.5rem;
     line-height: 1.5rem;
@@ -132,7 +142,7 @@
    }
 }
 
-.valores {
+.prensa {
   margin-top: 100px;
   display: block;
   
@@ -149,12 +159,7 @@
     font-size: 1rem;
     line-height: 1.5rem;
   }
-  img {
-    width: 100%;
-    padding-left: 0.5rem;
-    padding-bottom: 0.5rem;
-    vertical-align: middle;
-   }
+  
 }
 
 @media(max-width: 769px){

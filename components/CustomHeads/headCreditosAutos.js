@@ -7,7 +7,7 @@ import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDom
 const defaultDescription = 'Desde nuestra web ✓ califica ✓ elige tu auto usado ✓ financia tu compra'
 
 const defaultOGURL = '/creditos-para-autos'
-const defaultOGImage = '/images/carbula-autos.webp'
+const defaultOGImage = '/images/creditos-para-autos-carbula.webp'
 
 const Head = props => {
   const router = useRouter()

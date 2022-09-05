@@ -77,36 +77,40 @@ module.exports = {
     ar: 1000,
     cl: 10000,
     mx: 100,
-    uy: 10 
+    uy: 10
   },
   SANTANDER_URL_TESTING: {
     ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicopro/#/home?",
     cl: "CL",
     mx: "MX",
-    uy: "UY" 
+    uy: "UY"
   },
   SANTANDER_SPID_TESTING: {
     ar: "352454",
     cl: "CL",
     mx: "MX",
-    uy: "UY" 
+    uy: "UY"
   },
   SANTANDER_URL_PRODUCTION: {
     ar: "https://autoloans.santanderautos.com.ar/portalsanriopublico/#/?",
     cl: "CL",
     mx: "MX",
-    uy: "UY"  
+    uy: "UY"
   },
   SANTANDER_SPID_PRODUCTION: {
     ar: "351149",
     cl: "CL",
     mx: "MX",
-    uy: "UY" 
+    uy: "UY"
   },
   SANTANDER_OHASH: {
     ar: "li3l6r7xzo",
     cl: "CL",
     mx: "MX",
-    uy: "UY" 
+    uy: "UY"
+  },
+  TRACKING_URLS: {
+    datos_del_vehiculo: {url:'/datos_del_vehiculo', data:'datos_del_vehiculo'},
+    datos_del_usuario: {url: '/datos_del_usuario', data: 'datos_del_usuario'},
   }
 }

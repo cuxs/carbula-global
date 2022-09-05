@@ -237,8 +237,8 @@ const CotizationForm = ({
         <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
         <h4 className={styles.text__primary}>{t('step1.h4')} </h4>
         <hr />
-        <p>No lo {t('olvide')}, en Cárbula <b>no compramos {t('tu')} auto</b>. {t('loQueHacemos')}
-          <br /><br /><b>Le haremos unas preguntas del vehículo:</b></p>
+        <p>No lo {t('olvides')}, en Cárbula <b>no compramos {t('tu')} auto</b>. {t('loQueHacemos')}
+          <br /><br /><b>Te haremos unas preguntas del vehículo:</b></p>
         <Formik
           onSubmit={handleCondicionSubmit}
           validationSchema={object().shape({
@@ -311,12 +311,11 @@ const CotizationForm = ({
   const Step1Mobile = () => (
     <div className={styles['secondary-steps__container']}>
       <h2 className={`${styles.text__primary} ${styles.main__title}`}>¡Gracias {name}!</h2>
-      <h4 className={styles.text__primary}>Ahora cuéntenos un poco más acerca de su vehículo. </h4>
+      <h4 className={styles.text__primary}>Ahora cuéntanos un poco más acerca de tu auto.</h4>
       <hr />
-      <p>No lo olvide, en Cárbula <b>no compramos su auto</b>. Lo que hacemos
-        es venderlo por usted en 20 días o menos y garantizar hasta un 25% más
-        de dinero que una automotora tradicional.
-        <br /><br /><b>Le haremos unas preguntas de sobre vehículo:</b></p>
+      <p>No lo olvides, <b>en Cárbula no compramos tu auto.</b>
+      Lo que hacemos es venderlo por ti, encargarnos de absolutamente todo y garantizar hasta un 25% más de dinero que una automotora tradicional.
+        <br /><br /><b>Te haremos unas preguntas del vehículo:</b></p>
       <Formik
         onSubmit={handleCondicionSubmit}
         validationSchema={object().shape({

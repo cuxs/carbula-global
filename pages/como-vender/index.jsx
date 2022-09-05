@@ -41,7 +41,7 @@ const ComoVender = () => {
             <h4 itemprop="name">3. ¿Cómo hago para vender mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El primer paso es ingresar los datos de tu vehículo en nuestro cotizador. Allí, el algoritmo que recopila datos de autos según marca, modelo y kilometraje, te indicará cuál es el valor estimado de tu auto. Luego, hace falta coordinar una inspección mecánica gratuita.</p>
+                <p>El primer paso es ingresar los datos de tu vehículo en nuestro cotizador. Allí, el algoritmo que recopila datos de autos según marca, modelo y kilometraje, te indicará cuál es el valor estimado de tu auto. Luego, hace falta coordinar una inspección virtual.</p>
               </div>
             </div>
             <h4 itemprop="name">4. ¿Qué pasa si no estoy de acuerdo con el precio del cotizador?</h4>
@@ -53,13 +53,13 @@ const ComoVender = () => {
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección mecánica gratuita. La misma no tomará más de 60 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es agendar una inspección virtual gratuita. La misma no tomará más de 20 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Lo inspeccionamos, le tomamos fotografías, lo publicamos en los portales con más alcance, promocionamos las publicaciones, se lo mostramos a los interesados, respondemos a todas las consultas, nos ocupamos de gestionar los trámites y de conseguir al comprador.</p>
+                <p>Lo publicamos en los portales con más alcance, promocionamos las publicaciones, se lo mostramos a los interesados, respondemos a todas las consultas, nos ocupamos de gestionar los trámites y de conseguir al comprador.</p>
               </div>
             </div>
             <h4 itemprop="name">7. ¿Y qué hago mientras venden mi auto?</h4>
@@ -77,7 +77,7 @@ const ComoVender = () => {
             <h4 itemprop="name">9. Listo. Quiero vender con ustedes.</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p><b>Perfecto.</b> Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la Experiencia Cárbula. Hacé click en nuestro cotizador para comenzar el proceso de venta y ¡listo!, nuestros asesores se encargarán del resto.</p>
+                <p><b>Perfecto.</b> Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la experiencia Cárbula. Hacé click en nuestro cotizador para comenzar el proceso de venta y ¡listo!, nuestros asesores se encargarán del resto.</p>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ const ComoVender = () => {
             <h4 itemprop="name">3. ¿Cómo hago para vender mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El primer paso es ingresar los datos de tu vehículo en nuestro cotizador. Allí, el algoritmo que recopila datos de autos según marca, modelo y kilometraje, te indicará cuál es el valor estimado de tu auto. Luego, hace falta coordinar una inspección mecánica gratuita.</p>
+              <p>El primer paso es ingresar los datos de tu vehículo en nuestro cotizador. Allí, el algoritmo que recopila datos de autos según marca, modelo y kilometraje, te indicará cuál es el valor estimado de tu auto. Luego, hace falta coordinar una inspección virtual.</p>
               </div>
             </div>
             <h4 itemprop="name">4. ¿Qué pasa si no estoy de acuerdo con el precio del cotizador?</h4>
@@ -126,13 +126,13 @@ const ComoVender = () => {
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección mecánica gratuita. La misma no tomará más de 60 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es agendar una inspección virtual gratuita. La misma no tomará más de 20 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Lo inspeccionamos, le tomamos fotografías, lo publicamos en los portales con más alcance, promocionamos las publicaciones, se lo mostramos a los interesados, respondemos a todas las consultas, nos ocupamos de gestionar los trámites y de conseguir al comprador.</p>
+                <p>Lo publicamos en los portales con mayor alcance, promocionamos las publicaciones, se lo mostramos a los interesados, respondemos a todas las consultas, nos ocupamos de gestionar el papeleo y de conseguir al comprador.</p>
               </div>
             </div>
             <h4 itemprop="name">7. ¿Y qué hago mientras venden mi auto?</h4>
@@ -150,7 +150,7 @@ const ComoVender = () => {
             <h4 itemprop="name">9. Listo. Quiero vender con ustedes.</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p><b>Perfecto.</b> Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la Experiencia Cárbula. Hacé click en nuestro cotizador para comenzar el proceso de venta y ¡listo!, nuestros asesores se encargarán del resto.</p>
+                <p><b>Perfecto.</b> Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la experiencia Cárbula. Hacé click en nuestro cotizador para comenzar el proceso de venta y ¡listo!, nuestros asesores se encargarán del resto.</p>
               </div>
             </div>
           </div>
@@ -199,13 +199,13 @@ const ComoVender = () => {
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección mecánica virtual gratuita. La misma no tomará más de 60 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es agendar una inspección virtual gratuita. La misma no tomará más de 20 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>Lo inspeccionamos, lo publicamos en los portales con más alcance, promocionamos las publicaciones, se lo mostramos a los interesados, respondemos a todas las consultas, nos ocupamos de gestionar los trámites y de conseguir al comprador.</p>
+                <p>Lo publicamos en los portales con más alcance, promocionamos las publicaciones, se lo mostramos a los interesados, respondemos a todas las consultas, nos ocupamos de gestionar los trámites y de conseguir al comprador.</p>
               </div>
             </div>
             <h4 itemprop="name">7. ¿Y qué hago mientras venden mi auto?</h4>
@@ -223,7 +223,7 @@ const ComoVender = () => {
             <h4 itemprop="name">9. Listo. Quiero vender con ustedes.</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p><b>Perfecto.</b> Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la Experiencia Cárbula. Hacé click en nuestro cotizador para comenzar el proceso de venta y ¡listo!, nuestros asesores se encargarán del resto.</p>
+                <p><b>Perfecto.</b> Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la experiencia Cárbula. Hacé click en nuestro cotizador para comenzar el proceso de venta y ¡listo!, nuestros asesores se encargarán del resto.</p>
               </div>
             </div>
           </div>
@@ -295,7 +295,7 @@ const ComoVender = () => {
             <h4 itemprop="name">9. Listo. Quiero vender con ustedes.</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p><b>Perfecto.</b> Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la Experiencia Cárbula. Hacé click en nuestro cotizador para comenzar el proceso de venta y ¡listo!, nuestros asesores se encargarán del resto.</p>
+                <p><b>Perfecto.</b> Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la experiencia Cárbula. Hacé click en nuestro cotizador para comenzar el proceso de venta y ¡listo!, nuestros asesores se encargarán del resto.</p>
               </div>
             </div>
           </div>

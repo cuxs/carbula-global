@@ -117,13 +117,6 @@ const AcercaCarbula = () => {
               <Grid.Column mobile={16} tablet={16} computer={4}>
               <Card>
                   <Card.Content>
-                    <Image
-                      floated='center'
-                      size='small'
-                      src='/images/transparencia-carbula.png'
-                      alt='Preclasificá para tu crédito Santander'
-                      title='Preclasificá para tu crédito Santander'
-                    />
                     <Card.Header>Seguridad</Card.Header>
                     <Card.Description>
                       <p>Proporcionamos operaciones online 100% seguras tanto para compradores como para vendedores de vehículos.</p>
@@ -134,13 +127,6 @@ const AcercaCarbula = () => {
                 <Grid.Column mobile={16} tablet={16} computer={4}>
                 <Card>
                   <Card.Content>
-                    <Image
-                      floated='center'
-                      size='small'
-                      src='/images/transparencia-carbula.png'
-                      alt='Preclasificá para tu crédito Santander'
-                      title='Preclasificá para tu crédito Santander'
-                    />
                     <Card.Header>Transparencia</Card.Header>
                     <Card.Description>
                       <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Cuando los clientes utilizan nuestra plataforma no hay sorpresas ni costos extras a último momento.</p>
@@ -151,13 +137,6 @@ const AcercaCarbula = () => {
                 <Grid.Column mobile={16} tablet={16} computer={4}>
                 <Card>
                   <Card.Content>
-                    <Image
-                      floated='center'
-                      size='small'
-                      src='/images/transparencia-carbula.png'
-                      alt='Preclasificá para tu crédito Santander'
-                      title='Preclasificá para tu crédito Santander'
-                    />
                     <Card.Header>Innovación</Card.Header>
                     <Card.Description>
                       <p>Aplicamos la tecnología al servicio de la compra y venta de vehículos para generar la mejor experiencia posible.</p>
@@ -168,13 +147,6 @@ const AcercaCarbula = () => {
                 <Grid.Column mobile={16} tablet={16} computer={4}>
                 <Card>
                   <Card.Content>
-                    <Image
-                      floated='center'
-                      size='small'
-                      src='/images/transparencia-carbula.png'
-                      alt='Preclasificá para tu crédito Santander'
-                      title='Preclasificá para tu crédito Santander'
-                    />
                     <Card.Header>Simpleza</Card.Header>
                     <Card.Description>
                       <p>Somos una empresa de base tecnológica con el único propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
@@ -184,12 +156,6 @@ const AcercaCarbula = () => {
                 </Grid.Column>
               </Grid>
               </div>
-            <Divider hidden />
-            <Divider />
-            <Divider hidden />
-
-
-
         </div>
         
         <hr />

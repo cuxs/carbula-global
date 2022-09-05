@@ -78,6 +78,38 @@
    }
 }
 
+.valores {
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #3074f1;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  p, i {
+    font-family: ProximaNova;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.6rem;
+  }
+  img {
+    width: 50%;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    vertical-align: middle;
+   }
+}
+
+
+.card {
+  display: flex;
+  justify-content: center;
+  b {
+    color: #38ceb3;
+  }
+  overflow:hidden;
+}
+
 .mision {
   h3 {
     font-size: 1.5rem;
@@ -126,6 +158,11 @@
 }
 
 @media(max-width: 769px){
+  .card {
+    width: 100%;
+    p,
+    i {font-size: 1rem;}
+  }
   .acerca {
     padding: 50px 40px ;
   }
@@ -163,9 +200,3 @@
     }
   }
 }
-
-
-
-
-
- 

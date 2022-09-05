@@ -39,11 +39,11 @@ const AcercaCarbula = () => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="Sumate a la Experiencia Cárbula | Carbula Autos Argentina" />
+        <Head title="Sumate a la experiencia Cárbula | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
           <Container>
-            <h2>Sumate a la Experiencia Cárbula</h2>
+            <h2>Sumate a la experiencia Cárbula</h2>
           </Container>
         </div>
 
@@ -57,10 +57,16 @@ const AcercaCarbula = () => {
                   <div class="eight wide column">
                     <h3>¿Qué es Cárbula?</h3>
                     <p>Somos un marketplace de compra y venta de autos usados para vender de manera más eficiente y transparente. Generamos un entorno de intermediación, uniendo gente que quiere vender con gente que busca comprar autos usados.</p>
-                    <p>Le permitimos a los dueños vender su auto por hasta un 25% más de dinero sin salir de su casa en 20 días o menos, brindando operaciones seguras, simples y cómodas.              </p>
+                    <p>Le permitimos a los dueños vender su auto por hasta un 25% más de dinero sin salir de su casa, brindando operaciones seguras, simples y cómodas.              </p>
                   </div>
-                  <div class="six wide right floated column">
-                    <Image src="/images/auto-carbula.webp"></Image>
+                  <div class="eight wide right floated column">
+                  <Image
+                      floated='right'
+                      size='medium'
+                      src='/images/mision-carbula.png'
+                      alt='Preclasificá para tu crédito Santander'
+                      title='Preclasificá para tu crédito Santander'
+                    />
                   </div>
                 </div>
               </div>
@@ -75,8 +81,14 @@ const AcercaCarbula = () => {
             <div class="ui vertical stripe segment">
               <div class="ui middle aligned stackable grid container">
                 <div class="row">
-                  <div class="six wide right floated column">
-                    <Image src="/images/auto-carbula.webp"></Image>
+                <div class="eight wide left floated column">
+                  <Image
+                      floated='left'
+                      size='medium'
+                      src='/images/acerca-carbula.png'
+                      alt='Preclasificá para tu crédito Santander'
+                      title='Preclasificá para tu crédito Santander'
+                    />
                   </div>
                   <div class="eight wide column">
                     <h3>Misión</h3>
@@ -93,93 +105,75 @@ const AcercaCarbula = () => {
             <div className={styles.valores}>
               <Grid centered>
               <h3>Valores Cárbula</h3>
-                <Grid.Column mobile={16} tablet={8} computer={16}>
-                </Grid.Column>
               </Grid>
-              <Grid centered>
+              <Grid row>
               <Grid.Column mobile={16} tablet={16} computer={4}>
-                  <Card>
-                    <Card.Content>
-                      <Card.Description>
-                        <Grid>
-                          <Grid.Column mobile={16} tablet={10} computer={16}>
-                            <div class="ui list">
-                              <div class="item">
-                              <Icon name='remove circle' link size='huge' />
-                                <div class="content">
-                                <h3>Seguridad</h3>
-                                <p> Proporcionamos operaciones online 100% seguras tanto para compradores como para vendedores de vehículos. </p>
-                                </div>
-                              </div>
-                            </div>
-                          </Grid.Column>
-                        </Grid>
-                      </Card.Description>
-                    </Card.Content>
-                  </Card>
+              <Card>
+                  <Card.Content>
+                    <Image
+                      floated='center'
+                      size='small'
+                      src='/images/transparencia-carbula.png'
+                      alt='Preclasificá para tu crédito Santander'
+                      title='Preclasificá para tu crédito Santander'
+                    />
+                    <Card.Header>Seguridad</Card.Header>
+                    <Card.Description>
+                      <p>Proporcionamos operaciones online 100% seguras tanto para compradores como para vendedores de vehículos.</p>
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
                 </Grid.Column>
                 <Grid.Column mobile={16} tablet={16} computer={4}>
-                  <Card>
-                    <Card.Content>
-                      <Card.Description>
-                        <Grid>
-                          <Grid.Column mobile={16} tablet={10} computer={16}>
-                            <div class="ui list">
-                              <div class="item">
-                              <i class="big car icon bgGreen"></i>
-                                <div class="content">
-                                <h3>Transparencia</h3>
-                                <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Cuando los clientes utilizan nuestra plataforma no hay sorpresas ni costos extras a último momento. </p>
-                                </div>
-                              </div>
-                            </div>
-                          </Grid.Column>
-                        </Grid>
-                      </Card.Description>
-                    </Card.Content>
-                  </Card>
+                <Card>
+                  <Card.Content>
+                    <Image
+                      floated='center'
+                      size='small'
+                      src='/images/transparencia-carbula.png'
+                      alt='Preclasificá para tu crédito Santander'
+                      title='Preclasificá para tu crédito Santander'
+                    />
+                    <Card.Header>Transparencia</Card.Header>
+                    <Card.Description>
+                      <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Cuando los clientes utilizan nuestra plataforma no hay sorpresas ni costos extras a último momento.</p>
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
                 </Grid.Column>
                 <Grid.Column mobile={16} tablet={16} computer={4}>
-                  <Card>
-                    <Card.Content>
-                      <Card.Description>
-                        <Grid>
-                          <Grid.Column mobile={16} tablet={10} computer={16}>
-                            <div class="ui list">
-                              <div class="item">
-                              <i class="big car icon bgGreen"></i>
-                                <div class="content">
-                                <h3>Innovación</h3>
-                                <p>Aplicamos la tecnología al servicio de la compra y venta de vehículos para generar la mejor experiencia posible.</p>
-                                </div>
-                              </div>
-                            </div>
-                          </Grid.Column>
-                        </Grid>
-                      </Card.Description>
-                    </Card.Content>
-                  </Card>
+                <Card>
+                  <Card.Content>
+                    <Image
+                      floated='center'
+                      size='small'
+                      src='/images/transparencia-carbula.png'
+                      alt='Preclasificá para tu crédito Santander'
+                      title='Preclasificá para tu crédito Santander'
+                    />
+                    <Card.Header>Innovación</Card.Header>
+                    <Card.Description>
+                      <p>Aplicamos la tecnología al servicio de la compra y venta de vehículos para generar la mejor experiencia posible.</p>
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
                 </Grid.Column>
                 <Grid.Column mobile={16} tablet={16} computer={4}>
-                  <Card>
-                    <Card.Content>
-                      <Card.Description>
-                        <Grid>
-                          <Grid.Column mobile={16} tablet={10} computer={16}>
-                            <div class="ui list">
-                              <div class="item">
-                                <i class="ui big car"></i>
-                                <div class="content">
-                                <h3>Simpleza</h3>
-                                <p>Somos una empresa de base tecnológica con el único propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
-                                </div>
-                              </div>
-                            </div>
-                          </Grid.Column>
-                        </Grid>
-                      </Card.Description>
-                    </Card.Content>
-                  </Card>
+                <Card>
+                  <Card.Content>
+                    <Image
+                      floated='center'
+                      size='small'
+                      src='/images/transparencia-carbula.png'
+                      alt='Preclasificá para tu crédito Santander'
+                      title='Preclasificá para tu crédito Santander'
+                    />
+                    <Card.Header>Simpleza</Card.Header>
+                    <Card.Description>
+                      <p>Somos una empresa de base tecnológica con el único propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
                 </Grid.Column>
               </Grid>
               </div>

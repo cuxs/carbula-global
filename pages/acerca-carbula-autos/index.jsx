@@ -117,7 +117,7 @@ const AcercaCarbula = () => {
               <Grid.Column mobile={16} tablet={16} computer={4}>
               <Card>
                   <Card.Content>
-                    <Card.Header>Seguridad</Card.Header>
+                    <Card.Header>🔒 Seguridad</Card.Header>
                     <Card.Description>
                       <p>Proporcionamos operaciones online 100% seguras tanto para compradores como para vendedores de vehículos.</p>
                     </Card.Description>
@@ -127,7 +127,7 @@ const AcercaCarbula = () => {
                 <Grid.Column mobile={16} tablet={16} computer={4}>
                 <Card>
                   <Card.Content>
-                    <Card.Header>Transparencia</Card.Header>
+                    <Card.Header>🔎Transparencia</Card.Header>
                     <Card.Description>
                       <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Cuando los clientes utilizan nuestra plataforma no hay sorpresas ni costos extras a último momento.</p>
                     </Card.Description>
@@ -137,7 +137,7 @@ const AcercaCarbula = () => {
                 <Grid.Column mobile={16} tablet={16} computer={4}>
                 <Card>
                   <Card.Content>
-                    <Card.Header>Innovación</Card.Header>
+                    <Card.Header>💡 Innovación</Card.Header>
                     <Card.Description>
                       <p>Aplicamos la tecnología al servicio de la compra y venta de vehículos para generar la mejor experiencia posible.</p>
                     </Card.Description>
@@ -147,7 +147,7 @@ const AcercaCarbula = () => {
                 <Grid.Column mobile={16} tablet={16} computer={4}>
                 <Card>
                   <Card.Content>
-                    <Card.Header>Simpleza</Card.Header>
+                    <Card.Header>💡 Simpleza</Card.Header>
                     <Card.Description>
                       <p>Somos una empresa de base tecnológica con el único propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
                     </Card.Description>

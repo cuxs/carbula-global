@@ -437,9 +437,9 @@ const AcercaCarbula = () => {
           </Grid>
           <Divider hidden />
           <div class="ui text container">
-          <img src={"/images/gobierno-mendoza.png"} size='tiny' alt='Diario Los Andes' title='Logo de Diario Los Andes'></img> 
-            <p>A través de Mendoza Emprende, la empresa de base tecnológica, que se encarga de facilitar la venta y la compra de autos de segunda mano entre particulares...</p>
-            <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.mendoza.gov.ar/prensa/carbula-el-emprendimiento-mendocino-que-se-internacionalizo/">Leer más</a>
+          <img src={"/images/diario-financiero.png"} size='tiny' alt='Diario Financiero' title='Logo de Diario Financiero'></img> 
+            <p>Startup que acelera venta de autos usados con inteligencia artificial llegará a México...</p>
+            <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.df.cl/df-lab/innovacion-y-startups/startup-que-acelera-venta-de-autos-usados-con-inteligencia-artificial">Leer más</a>
           </div>
         </div>
         </div>

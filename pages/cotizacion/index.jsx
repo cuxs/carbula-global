@@ -177,7 +177,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
           <Fragment>
             <animated.div style={titleProps}>
               <h2>Valor promedio</h2>
-              <h3>para {COUNTRY_CODE === 'cl' ? 'tu' : 'su'} {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
+              <h3>para {COUNTRY_CODE === 'mx' ? 'tu' : 'su'} {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
             </animated.div>
             <animated.div style={priceProps} className={styles.price__comparison}>
               {cotizationData.retake_price && cotizationData.retake_price < cotizationData.granted_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('priceComparison.unaConsesionaria')}</h4><h3>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(cotizationData.retake_price, 0)}</h3></div>}
@@ -199,7 +199,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
-                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
               </div>
             </div>
           </Fragment>
@@ -215,7 +215,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
-                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
               </div>
             </div>
           </Fragment>
@@ -229,7 +229,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
-                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
               </div>
             </div>
           </div>
@@ -289,7 +289,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                   <span>2º</span><p>{t('stepOneTitle')}</p>
                 </div>
                 <div className={styles.step__row}>
-                  <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                  <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
                 </div>
               </div>
             </div>
@@ -325,7 +325,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
-                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
               </div>
             </div>
           </div>
@@ -342,7 +342,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
-                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
               </div>
             </div>
           </div>
@@ -359,7 +359,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
-                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
               </div>
             </div>
           </div>
@@ -401,7 +401,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               <span>2º</span><p>{t('stepOneTitle')}</p>
             </div>
             <div className={styles.step__row}>
-              <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+              <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
             </div>
           </div>
         </Fragment>

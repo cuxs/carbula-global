@@ -22,7 +22,6 @@ import {
   Visibility,
   Segment,
   Items,
-  Footer,
 } from 'semantic-ui-react';
 
 export async function getServerSideProps(context) {
@@ -153,19 +152,19 @@ const AcercaCarbula = () => {
           </Grid>
           <Divider hidden />
           <div class="ui text container">
-          <img src={"/images/gobierno-mendoza.png"} size='tiny' alt='Gobierno de Mendoza' title='Logo de Gobierno de Mendoza'></img> 
+          <img src={"/images/gobierno-mendoza.webp"} size='tiny' alt='Gobierno de Mendoza' title='Logo de Gobierno de Mendoza'></img> 
             <p>A través de Mendoza Emprende, la empresa de base tecnológica, que se encarga de facilitar la venta y la compra de autos de segunda mano entre particulares...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.mendoza.gov.ar/prensa/carbula-el-emprendimiento-mendocino-que-se-internacionalizo/">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-elsol.png"} size='tiny' alt='Diario El Sol' title='Diario El Sol'></img> 
+            <img src={"/images/diario-elsol.webp"} size='tiny' alt='Diario El Sol' title='Diario El Sol'></img> 
             <p>Se trata de Cárbura, una startup que conecta vendedores con compradores de vehículos usados. En menos de un año procesaron 500 mil dólares...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.elsol.com.ar/un-emprendimiento-mendocino-se-expandira-a-chile">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-ecocuyo.png"} size='tiny' alt='Diario Ecocuyo' title='Diario Ecocuyo'></img> 
+            <img src={"/images/diario-ecocuyo.webp"} size='tiny' alt='Diario Ecocuyo' title='Diario Ecocuyo'></img> 
             <p>Cárbula es un sitio que facilita la venta y compra de autos usados de "dueño a dueño", sin intervención de agencias como intermediarias de la operación. Lleva más de 200 autos vendidos.</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://ecocuyo.com/carbula-de-la-mano-de-dos-mendocinos-llega-una-nueva-forma-de-comprar-y-vender-autos/">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-jornada.png"} size='tiny' alt='Diario Jornada' title='Diario Jornada'></img> 
+            <img src={"/images/diario-jornada.webp"} size='tiny' alt='Diario Jornada' title='Diario Jornada'></img> 
             <p>Cárbula es una plataforma de servicios diseñada para que la gente pueda vender y comprar autos usados de una forma fácil, segura y al mejor valor del mercado...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://jornadaonline.com/jornada/2020-9-17-8-47-57-te-contamos-como-funciona-carbula-la-app-mendocina-que-ofrece-una-nueva-forma-de-vender-autos">Leer más</a>
           </div>
@@ -295,19 +294,19 @@ const AcercaCarbula = () => {
           </Grid>
           <Divider hidden />
           <div class="ui text container">
-          <img src={"/images/diario-lacuarta.png"} size='tiny' alt='Diario La Cuarta' title='Logo de Diario La Cuarta'></img> 
+          <img src={"/images/diario-lacuarta.webp"} size='tiny' alt='Diario La Cuarta' title='Logo de Diario La Cuarta'></img> 
             <p>La plataforma de venta de autos usados diseñó una estrategia tecnológica enfocada en quien busca vender su auto de manera rápida sin invertir tiempo...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.lacuarta.com/cronica/noticia/carbula-auto-usado/555034/">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-t13.png"} size='tiny' alt='Diario T13' title='Diario T13'></img> 
+            <img src={"/images/diario-t13.webp"} size='tiny' alt='Diario T13' title='Diario T13'></img> 
             <p>Según el último informe de Cavem, en septiembre del 2020 se vendieron 130.068 vehículos, números superiores a meses anteriores...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.t13.cl/noticia/nacional/inteligencia-artificial-venta-auto-usado-18-11-2020">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-elmostrador.png"} size='tiny' alt='Diario El Mostrador' title='Diario El Mostrador'></img> 
+            <img src={"/images/diario-elmostrador.webp"} size='tiny' alt='Diario El Mostrador' title='Diario El Mostrador'></img> 
             <p>Según estudio, un 20% de las personas que retiraron el primer 10% de su fondo de pensiones, lo utilizó o lo piensa utilizar en comprar un automóvil...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.elmostrador.cl/generacion-m/2020/11/20/los-principales-factores-del-aumento-en-la-compra-y-venta-de-autos-usados-en-chile/">Leer más</a>
             <div class="ui divider"></div>
-            <img src={"/images/diario-eldinamo.png"} size='tiny' alt='Diario El Dinamo' title='Diario El Dinamo'></img> 
+            <img src={"/images/diario-eldinamo.webp"} size='tiny' alt='Diario El Dinamo' title='Diario El Dinamo'></img> 
             <p>La idea es que el vendedor se desligue de los tediosos papeleos y procesos que hay que realizar para vender un vehículo de segunda mano...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.eldinamo.cl/emprend/Plataforma-utiliza-estrategia-tecnologica-para-vender-autos-usados-en-corto-plazo-20201023-0067.html">Leer más</a>
           </div>
@@ -437,7 +436,7 @@ const AcercaCarbula = () => {
           </Grid>
           <Divider hidden />
           <div class="ui text container">
-          <img src={"/images/diario-financiero.png"} size='tiny' alt='Diario Financiero' title='Logo de Diario Financiero'></img> 
+          <img src={"/images/diario-financiero.webp"} size='tiny' alt='Diario Financiero' title='Logo de Diario Financiero'></img> 
             <p>Startup que acelera venta de autos usados con inteligencia artificial llegará a México...</p>
             <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.df.cl/df-lab/innovacion-y-startups/startup-que-acelera-venta-de-autos-usados-con-inteligencia-artificial">Leer más</a>
           </div>

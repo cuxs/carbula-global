@@ -269,6 +269,20 @@ const CotizationForm = ({
                 )}
               </div>
               <div className='form-item'>
+                <label>¿Desea recibir una permuta como parte de pago? </label>
+                <RadioInput
+                  touched={touched.permuta}
+                  value={values.permuta}
+                  name="permuta"
+                  options={['Sí', 'No']}
+                />
+                {errors.permuta && touched.permuta && (
+                  <div className="form-error">
+                    {errors.permuta}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
                 <label>¿Ha sido rematado por algún motivo? </label>
                 <RadioInput
                   touched={touched.rematado}
@@ -279,6 +293,20 @@ const CotizationForm = ({
                 {errors.rematado && touched.rematado && (
                   <div className="form-error">
                     {errors.rematado}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
+                <label>¿Desea recibir una permuta como parte de pago? </label>
+                <RadioInput
+                  touched={touched.permuta}
+                  value={values.permuta}
+                  name="permuta"
+                  options={['Sí', 'No']}
+                />
+                {errors.permuta && touched.permuta && (
+                  <div className="form-error">
+                    {errors.permuta}
                   </div>
                 )}
               </div>
@@ -343,6 +371,20 @@ const CotizationForm = ({
                 </div>
               )}
             </div>
+            <div className='form-item'>
+                <label>¿Desea recibir una permuta como parte de pago? </label>
+                <RadioInput
+                  touched={touched.permuta}
+                  value={values.permuta}
+                  name="permuta"
+                  options={['Sí', 'No']}
+                />
+                {errors.permuta && touched.permuta && (
+                  <div className="form-error">
+                    {errors.permuta}
+                  </div>
+                )}
+              </div>
             <div className={styles['buttons__container--horizontal']}>
               <Button primary type='submit'>Siguiente</Button>
               <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
@@ -451,6 +493,20 @@ const CotizationForm = ({
               </div>
             )}
           </div>
+          <div className='form-item'>
+                <label>¿Desea recibir una permuta como parte de pago? </label>
+                <RadioInput
+                  touched={touched.permuta}
+                  value={values.permuta}
+                  name="permuta"
+                  options={['Sí', 'No']}
+                />
+                {errors.permuta && touched.permuta && (
+                  <div className="form-error">
+                    {errors.permuta}
+                  </div>
+                )}
+              </div>
           <div className={styles['buttons__container--horizontal']}>
             <Button primary type='submit'>Siguiente</Button>
             <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
@@ -604,6 +660,20 @@ const CotizationForm = ({
               </div>
             )}
           </div>
+          <div className='form-item'>
+                <label>¿Desea recibir una permuta como parte de pago? </label>
+                <RadioInput
+                  touched={touched.permuta}
+                  value={values.permuta}
+                  name="permuta"
+                  options={['Sí', 'No']}
+                />
+                {errors.permuta && touched.permuta && (
+                  <div className="form-error">
+                    {errors.permuta}
+                  </div>
+                )}
+              </div>
           <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
         </form>
       )}

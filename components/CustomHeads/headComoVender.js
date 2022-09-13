@@ -4,10 +4,10 @@ import { string } from 'prop-types'
 import { useRouter } from 'next/router'
 import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../../utils/helpers'
 
-const defaultDescription = 'Ingresa los datos de tu auto en el cotizador ✓ Gana hasta un 25% mas ✓ Vende tu auto usado sin hacer nada'
+const defaultDescription = 'Ingresa los datos de tu auto en el cotizador ✓ Solicita tu inspeccion virtual en cualquier momento del dia ✓ Vende tu auto usado sin hacer nada'
 
 const defaultOGURL = '/como-vender'
-const defaultOGImage = '/images/como-vender-carbula.webp'
+const defaultOGImage = '/images/carbula-autos.webp'
 
 const Head = props => {
   const router = useRouter()

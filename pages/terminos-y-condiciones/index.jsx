@@ -107,7 +107,15 @@ const TerminosCondiciones = () => {
           <h4>Posesión física del vehículo</h4>
           <p>El dueño directo o vendedor no se compromete a otorgar la posesión física del vehículo a CÁRBULA, sin perjuicio de que autoriza a exhibirlo cuando CÁRBULA así lo disponga, prestando la colaboración necesaria para tal fin.</p>
           <h4>Autorización</h4>
-          <p>El dueño directo o vendedor autoriza a CÁRBULA a realizar todas las acciones vinculadas a la gestión de venta del vehículo.</p>
+          <p>Durante el proceso de venta, el consignante manifiesta estar en conocimiento de que al momento de concretar la venta efectiva del vehículo, será responsabilidad suya poner a disposición de CÁRBULA los siguientes documentos:</p>
+          <p><ul>
+            <ol>A) Título que acredita la propiedad del vehículo.</ol>
+            <ol>B) Estado de multas vehiculares al día.</ol>
+            <ol>C) Permiso de circulación vigente.</ol>
+            <ol>D) Revisión técnica vigente.</ol>
+            <ol>E) Si es necesario, alzamiento de prenda u otra documentación necesaria.</ol>
+          </ul>
+          </p>
           <h4>Información personal</h4>
           <p>CÁRBULA se compromete a no divulgar información personal del dueño directo o vendedor, sin autorización expresa del mismo.</p>
           <h4>Cesión de imágenes</h4>
@@ -118,8 +126,11 @@ const TerminosCondiciones = () => {
           <p>Al adherirse a estos términos de uso, y mientras desee estar vinculado a CÁRBULA, el usuario vendedor le otorga a CÁRBULA la autorización para realizar publicidad, comercialización y gestión de venta de su vehículo, hasta que expresamente comunique su desvinculación. </p>
           <h4>Monto estimado</h4>
           <p>CÁRBULA estima y propone un dinero en mano para el usuario vendedor, libre de cualquier costo adicional, al momento de la venta. Este monto estimado será consensuado con el dueño directo o vendedor y aceptado de manera expresa, ya sea con la aprobación mediante el agendamiento de inspección, firma del acuerdo de servicio, aceptación de los presentes Términos & Condiciones, mensajería (WhatsApp o similar) o correo electrónico, según corresponda y con la misma validez de las vías de confirmación elegidas. Cualquier ofrecimiento de interesados, diferente al monto autorizado por el vendedor, será consultado y analizado como caso puntual, para proceder con la venta.</p>
+          <h4>Compromiso del consignante</h4>
+          <p>Si el consignante vende el vehículo por otra vía o por cualquier otro motivo durante los primeros 30 días desde la <b>publicación del vehículo,</b> o el mismo deja de estar disponible para la gestión de venta por parte de CÁRBULA en el periodo mencionado, se debe abonar 50.000 CLP finales en concepto de cobertura de servicios prestados hasta el momento. Pasados los 30 días comprendidos en este párrafo, Cárbula sigue trabajando en la venta del vehículo con todos los recursos a su alcance, pero ya el usuario no debe abonar ninguna suma de dinero para abandonar la plataforma.</p>
           <h4>Reserva del vehículo</h4>
           <p>Al aceptar los presentes términos de uso, el vendedor le permite a CÁRBULA aceptar y firmar en su nombre, la reserva de venta del vehículo. Si la oferta, por algún motivo, es diferente al monto acordado, se necesitará una aprobación de forma expresa por parte del consignante -via Mail, SMS o WhatsApp-, para la aceptación de la reserva realizada por el potencial comprador.</p>
+          <p>Si el consignante vende el vehículo por otra vía o por cualquier otro motivo, el mismo deja de estar disponible para la gestión de venta por parte de CÁRBULA, <b>deberá comunicar a CÁRBULA esta novedad de forma inmediata.</b> Si no comunica la efectiva venta o la baja por cualquier otro motivo (Ejemplo: desiste de venderlo) y <b>CÁRBULA</b> reserva el vehículo con otro comprador, se debe pagar el 100% de la comisión estipulada con <b>Cárbula.</b> Para hacer efectivo el derecho de cobro, <b>CÁRBULA.</b> debe informar de forma expresa el comprobante de transferencia bancaria o depósito que acredite tal reserva.</p>
           <h4>Venta del vendedor</h4>
           <p>Si el vendedor logra vender el vehículo durante el período de validez del presente acuerdo, está obligado a avisar a CÁRBULA de manera inmediata. Si no comunica la efectiva venta y CÁRBULA reserva el vehículo con otro comprador, se debe pagar el 100% de la comisión estipulada con CÁRBULA.</p>
           <h4>Violación al trabajo realizado por CÁRBULA</h4>

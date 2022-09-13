@@ -199,7 +199,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
-                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
+                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
               </div>
             </div>
           </Fragment>
@@ -215,7 +215,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
-                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
+                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
               </div>
             </div>
           </Fragment>
@@ -229,7 +229,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
-                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
+                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
               </div>
             </div>
           </div>

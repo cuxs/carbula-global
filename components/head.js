@@ -4,7 +4,7 @@ import { string } from 'prop-types'
 import { useRouter } from 'next/router'
 import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification, getGoogleSiteVerification } from '../utils/helpers'
 
-const defaultDescription = 'Vende tu auto usado y gana hasta 25% más de dinero ✓ Compra tu auto usado de forma segura, simple y transparente ✓ Consulta por financiacion ✓ Solicita tu inspeccion virtual en cualquier momento del dia'
+const defaultDescription = 'Vende tu auto de forma segura y gana hasta 25% más de dinero ✓ Solicita tu inspeccion virtual en cualquier momento del dia'
 
 const defaultOGURL = 'https://www.carbula.${COUNTRY_CODE}/'
 const defaultOGImage = '/images/carbula-autos.webp'

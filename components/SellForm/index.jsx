@@ -6,7 +6,7 @@ import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
 // import GoogleOneTapLogin from '../GoogleOneTapLogin';
 import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
-import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
+import { MIN_TEXT_SEARCH_LENGTH, TRACKING_URLS } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy, set } from 'lodash';
 import { mixed, object, number, string } from 'yup';
@@ -106,6 +106,9 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
 
   const handleMarcaModeloInputChange = (text,) => setMarcaModeloText(text)
   const handleMarcaModeloOnChange = async (option) => {
+    if(router.pathname === "/"){
+      history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
+    }
     try {
       setYearLoading(true);
       const { data } = await getYears(option.value, option.nombreModelo, COUNTRY_CODE)
@@ -241,6 +244,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
       case 0:
+        history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
         return (
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
@@ -432,6 +436,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           </Fragment>
         )
       case 1:
+        history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url)
         return (<form className={styles['personal-data__form']} onSubmit={handleSubmit}>
           <div className={styles.form__row} >
             <div className={styles['personal-data__form-item']}>

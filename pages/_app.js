@@ -9,6 +9,7 @@ import { appWithTranslation } from 'next-i18next';
 import { getGTMid } from '../utils/helpers';
 import '../sass/carousel.scss';
 import '../sass/odometer.scss';
+import { useRouter } from "next/router";
 
 dayjs.extend(calendar)
 dayjs.extend(updateLocale)

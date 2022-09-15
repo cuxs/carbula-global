@@ -1,3 +1,4 @@
+const { locale } = require('dayjs');
 const { i18n } = require('./next-i18next.config');
 module.exports = {
   reactStrictMode: true,
@@ -42,18 +43,21 @@ module.exports = {
     GOOGLE_ONETAP_LOGIN_CLIENT_SECRET_KEY: "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",
     GOOGLE_ONETAP_LOGIN_DATA_URI: "/google-onetap-login",
     async redirects() {
-      return [
-        {
-          source: "/datos_del_vehiculo",
-          destination: '/',
-          permanent: true,
-        },
-        {
-          source: "/datos_del_usuario",
-          destination: '/',
-          permanent: true,
-        },
-      ]
+      const env = process.env.NODE_ENV
+      if(env != "development"){
+        return [
+          {
+            source: "/datos_del_vehiculo",
+            destination: `/`,
+            permanent: true,
+          },
+          {
+            source: "/datos_del_usuario",
+            destination: `/`,
+            permanent: true,
+          },
+        ]
+      }
     },
   }
 }

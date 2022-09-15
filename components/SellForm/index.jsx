@@ -106,7 +106,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
 
   const handleMarcaModeloInputChange = (text,) => setMarcaModeloText(text)
   const handleMarcaModeloOnChange = async (option) => {
-    if(router.pathname === "/"){
+    if (router.pathname === "/") {
       history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
     }
     try {
@@ -181,8 +181,12 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         setStep('error-year')
         return setUserName(values.name)
       }
-      console.log('Ocurrió un error en la cotización')
-      console.log(error)
+      else {
+        console.log('Ocurrió un error en la cotización')
+        console.log(error)
+        setStep('error-global')
+        return setUserName(values.name)
+      }
     }
   }
   const handleBack = async () => {
@@ -244,7 +248,11 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
       case 0:
-        history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
+        try{
+          history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url)
+        } catch(e){
+          console.log("Error: ", e)
+        }
         return (
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
@@ -560,6 +568,19 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       <br />
       <p>Por el momento <b>no</b> estamos trabajando con vehículos que tengan más de 10 años de antigüedad. </p>
       <p>Gracias por la visita :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
+    </div>,
+    'error-global': <div>
+      <p><b>Estimado {userName},</b></p>
+      <br />
+      <p><b>Hemos recibido sus datos correctamente.</b></p>
+      <br />
+      <p>Sin embargo, de momento no hemos podido proceder de forma automatizada su cotización.</p>
+      <br />
+      <p>Un representante de Cárbula lo contactará a la brevedad :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
     </div>
   }
   const sellformTransition = useTransition(step, {

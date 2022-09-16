@@ -5,7 +5,7 @@ import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
 import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm, searchCarByPlate, addContact } from "../../utils/fetches";
-import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
+import { MIN_TEXT_SEARCH_LENGTH, TRACKING_URLS } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy } from 'lodash';
 import { mixed, object, number, string } from 'yup';
@@ -107,6 +107,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
   const handleMarcaModeloInputChange = (text,) => setMarcaModeloText(text)
   const handleMarcaModeloOnChange = async (option) => {
+    if(router.pathname === "/"){
+      history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
+    }
     try {
       setYearLoading(true);
       const { data } = await getYears(option.value, option.nombreModelo, COUNTRY_CODE)
@@ -181,7 +184,11 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         setStep('error-year')
         return setUserName(values.name)
       }
-      console.log(e)
+      else {
+        console.log("ERROR: ", e)
+        setStep('error-global')
+        return setUserName(values.name)
+      }
     }
   }
   const handleBack = async () => {
@@ -206,7 +213,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       email: mixed()
         .test('isValidEmail',
         "Ingrese un email válido. (.com o .cl)",
-        value=>/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.(com|cl(?:\.[a-z]{2})?)$/.test(value)
+          value => /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.(com|cl(?:\.[a-z]{2})?)$/.test(value)
         )
         .required("Ingresa tu email."),
       location: mixed()
@@ -553,6 +560,19 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       <br/>
       <p>Por el momento <b>no</b> estamos trabajando con vehículos que tengan más de 10 años de antigüedad. </p>
       <p>Gracias por la visita :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
+    </div>,
+    'error-global': <div>
+      <p><b>Estimado {userName},</b></p>
+      <br />
+      <p><b>Hemos recibido sus datos correctamente.</b></p>
+      <br />
+      <p>Sin embargo, de momento no hemos podido proceder de forma automatizada su cotización.</p>
+      <br />
+      <p>Un representante de Cárbula lo contactará a la brevedad :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
     </div>
   }
   const sellformTransition = useTransition(step, {
@@ -564,6 +584,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     delay: 0,
     config: config.molasses
   })
+
+  if (step === 0) { history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url) }
+  if (step === 1) { history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url) }
 
   return (
     <div className={styles.sellform__container}>

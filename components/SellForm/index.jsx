@@ -6,7 +6,7 @@ import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
 // import GoogleOneTapLogin from '../GoogleOneTapLogin';
 import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, searchCarByPlate, addContact } from "../../utils/fetches";
-import { MIN_TEXT_SEARCH_LENGTH } from '../../utils/constants';
+import { MIN_TEXT_SEARCH_LENGTH, TRACKING_URLS } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy, set } from 'lodash';
 import { mixed, object, number, string } from 'yup';
@@ -106,6 +106,9 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
 
   const handleMarcaModeloInputChange = (text,) => setMarcaModeloText(text)
   const handleMarcaModeloOnChange = async (option) => {
+    if (router.pathname === "/") {
+      history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
+    }
     try {
       setYearLoading(true);
       const { data } = await getYears(option.value, option.nombreModelo, COUNTRY_CODE)
@@ -178,8 +181,12 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         setStep('error-year')
         return setUserName(values.name)
       }
-      console.log('Ocurrió un error en la cotización')
-      console.log(error)
+      else {
+        console.log('Ocurrió un error en la cotización')
+        console.log(error)
+        setStep('error-global')
+        return setUserName(values.name)
+      }
     }
   }
   const handleBack = async () => {
@@ -241,6 +248,11 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     switch (step) {
       case 0:
+        try{
+          history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url)
+        } catch(e){
+          console.log("Error: ", e)
+        }
         return (
           <Fragment>
             <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
@@ -432,6 +444,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
           </Fragment>
         )
       case 1:
+        history.pushState(TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.data, TRACKING_URLS.datos_del_usuario.url)
         return (<form className={styles['personal-data__form']} onSubmit={handleSubmit}>
           <div className={styles.form__row} >
             <div className={styles['personal-data__form-item']}>
@@ -555,6 +568,19 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
       <br />
       <p>Por el momento <b>no</b> estamos trabajando con vehículos que tengan más de 10 años de antigüedad. </p>
       <p>Gracias por la visita :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
+    </div>,
+    'error-global': <div>
+      <p><b>Estimado {userName},</b></p>
+      <br />
+      <p><b>Hemos recibido sus datos correctamente.</b></p>
+      <br />
+      <p>Sin embargo, de momento no hemos podido proceder de forma automatizada su cotización.</p>
+      <br />
+      <p>Un representante de Cárbula lo contactará a la brevedad :)</p>
+      <br />
+      <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
     </div>
   }
   const sellformTransition = useTransition(step, {

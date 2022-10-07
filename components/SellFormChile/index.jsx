@@ -185,7 +185,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         return setUserName(values.name)
       }
       else {
-        console.log("ERROR: ", e)
+        console.log(`ERROR: ${e}`)
+        console.log(error)
+        carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
         setStep('error-global')
         return setUserName(values.name)
       }

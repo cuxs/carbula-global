@@ -175,15 +175,16 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         return setUserName(values.name)
       }
       if (error.message.indexOf('year') > -1) {
-        carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
+        carAndContactData.noGeneroNegocio = 'negocio_con_error' // para propiedad de hubspot
         submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'aniofueradecobertura' } })
         setStep('error-year')
         return setUserName(values.name)
       }
       else {
-        console.log('Ocurrió un error en la cotización')
+        console.log(`ERROR: ${error}`)
         console.log(error)
+        carAndContactData.noGeneroNegocio = 'negocio_con_error' // para propiedad de hubspot
         setStep('error-global')
         return setUserName(values.name)
       }

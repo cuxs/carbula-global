@@ -196,7 +196,6 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       ...formData,
       error: unhandledError,
     }
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", errorData)
     try{
       console.log(`ERROR no contemplado: ${unhandledError}`)
       console.log(unhandledError)
@@ -206,7 +205,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       console.log("ERROR: ", err)
     }
     sendUnhandledErrorData(errorData)
-    // setStep('error-global')
+    setStep('error-global')
   }
   const handleBack = async () => {
     await setStep(step - 1);

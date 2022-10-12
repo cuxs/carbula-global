@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
-import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm, searchCarByPlate, addContact } from "../../utils/fetches";
+import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm, searchCarByPlate, addContact, sendUnhandledErrorData } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH, TRACKING_URLS } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy } from 'lodash';
@@ -140,10 +140,10 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         country_code: COUNTRY_CODE
       }
       checkYear(values.year);
-      const { data } = await submitCarForm(carData);
+      const { data } = await submitCarForm(carData).catch(err => {console.log("ERROR: ", err); setUnhandledError(carAndContactData, err.message)});
       setcotizationUuid(data.uuid);
     } catch (e) {
-      console.log("ERROR desconocido:", e)
+      setUnhandledError(carData, e.message)
     }
   }
   const handleSubmitPersonalDataStep = async (values, actions) => {
@@ -154,6 +154,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       name: `${values.name} ${values.lastName}`,
       country_code: COUNTRY_CODE,
     }
+    setFormData(carAndContactData)
     try {
       checkZone(values.location, zonas, COUNTRY_CODE)
       checkYear(carAndContactData.year)
@@ -161,7 +162,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       carAndContactData.hs_analytics_source = dealSource
       carAndContactData.campania = getCampania(router.query)
       setOverlayBackground(true)
-      const { data } = await submitFormAndGetCotization(carAndContactData)
+      const { data } = await submitFormAndGetCotization(carAndContactData).catch(err => {console.log("Cotization ERROR: ", err)})
       const query = CryptoJS.AES.encrypt(JSON.stringify(data.data), 'cotizacion').toString()
       saveCotization(query)
       router.push({
@@ -185,13 +186,26 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         return setUserName(values.name)
       }
       else {
-        console.log(`ERROR: ${e}`)
-        console.log(error)
-        carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
-        setStep('error-global')
+        setUnhandledError(carAndContactData, e.message)
         return setUserName(values.name)
       }
     }
+  }
+  const setUnhandledError = async(carAndContactData = "Sin datos", unhandledError = "Sin especificar") => {
+    const errorData = {
+      ...formData,
+      error: unhandledError,
+    }
+    try{
+      console.log(`ERROR no contemplado: ${unhandledError}`)
+      console.log(unhandledError)
+      carAndContactData.noGeneroNegocio = 'negocio_con_error' // para propiedad de hubspot)
+    }
+    catch(err){
+      console.log("ERROR: ", err)
+    }
+    sendUnhandledErrorData(errorData)
+    setStep('error-global')
   }
   const handleBack = async () => {
     await setStep(step - 1);

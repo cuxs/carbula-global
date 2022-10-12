@@ -175,20 +175,23 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         return setUserName(values.name)
       }
       if (error.message.indexOf('year') > -1) {
-        carAndContactData.noGeneroNegocio = 'negocio_con_error' // para propiedad de hubspot
+        carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
         submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'aniofueradecobertura' } })
         setStep('error-year')
         return setUserName(values.name)
       }
       else {
-        console.log(`ERROR: ${error}`)
-        console.log(error)
-        carAndContactData.noGeneroNegocio = 'negocio_con_error' // para propiedad de hubspot
-        setStep('error-global')
+        setUnhandledError (carAndContactData, unhandledError)
         return setUserName(values.name)
       }
     }
+  }
+  const setUnhandledError = (carAndContactData, unhandledError) => {
+    console.log(`ERROR no contemplado: ${unhandledError}`)
+    console.log(unhandledError)
+    carAndContactData.noGeneroNegocio = 'negocio_con_error' // para propiedad de hubspot
+    setStep('error-global')
   }
   const handleBack = async () => {
     await setStep(step - 1);

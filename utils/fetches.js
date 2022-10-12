@@ -141,6 +141,15 @@ export const verifyCode = async (data) => {
   }
 }
 
+export const sendUnhandledErrorData = async (data) => {
+  try {
+    const response = await axios.post(`${API_URL}/alertDealNotGenerated`, data)
+    return response
+  } catch (e) {
+    console.log("ERROR: ", e)
+  }
+}
+
 //=============================================================================
 
 const fetcher = (url, token, params) => {

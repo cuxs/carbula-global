@@ -12,7 +12,7 @@ import { mixed, object, number, string } from 'yup';
 import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, useTransition, config } from "react-spring";
-import { checkYear, checkZone, getCampania, getSourceType, saveCotization, globalValidationData } from '../../utils/helpers';
+import { checkYear, checkZone, getCampania, getSourceType, saveCotization, globalValidationData, getPhoneNumber, getWhatsappNumber } from '../../utils/helpers';
 
 
 const whereOptions = [
@@ -205,7 +205,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       console.log("ERROR: ", err)
     }
     sendUnhandledErrorData(errorData)
-    setStep('error-global')
+    (typeof errorData.email || typeof errorData.phone !== 'undefined') ? setStep('error-global') : setStep('error-undefined')
   }
   const handleBack = async () => {
     await setStep(step - 1);
@@ -578,6 +578,18 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       <p>Gracias por la visita :)</p>
       <br />
       <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
+    </div>,
+    'error-undefined': <div>
+      <p><b>Hola{typeof(userName) !== "undefined" ? ` ${userName},` : ","}</b></p>
+      <br />
+      <p>Muchas gracias por utilizar nuestra plataforma.</p><br />
+      <p>Lamentablemente, por el momento no hemos podido proceder con la marca y modelo seleccionados.</p><br />
+      <p>Si lo desea, puede escribanos a <a href="mailto:hola@carbula.cl">hola@carbula.cl</a> o bien: </p><br />
+      <div align='center'>
+        <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>
+        <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondary>Whatsapp</Button></a>
+        <br /><Button noBorder onClick={() => setStep(0)}>Reintentar</Button><br/>
+      </div>
     </div>,
     'error-global': <div>
       <p><b>Estimado {userName},</b></p>

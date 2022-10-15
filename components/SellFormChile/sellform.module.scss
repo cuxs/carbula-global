@@ -87,6 +87,11 @@
   font-size: 12px;
   margin: 30px 0px;
 }
+.portales {
+  font-size: 13px;
+  text-align: center;
+  margin: 30px 0px;
+}
 .kms__input{
   width: 150px;
   margin-right: 20px;
@@ -130,10 +135,20 @@
     width: 90%;
     margin: 30px 0px 30px 0px;
   }
+  .portales {
+    font-size: 13px;
+    text-align: center;
+    margin: 30px 0px;
+  }
 }
 @media (max-width: 690px){
   .patente {
     display: none !important;
+  }
+  .portales {
+    font-size: 14px;
+    text-align: center;
+    margin: 30px 0px;
   }
 }
 @media (max-width: 566px) {
@@ -158,6 +173,11 @@
   .hide__responsive {
     display: none;
   }
+  .portales {
+    font-size: 14px;
+    text-align: center;
+    margin: 30px 0px;
+  }
 }
 
 @media (max-width: 376px) {
@@ -170,6 +190,11 @@
       width: 120px;
     }
   }
+  .portales {
+    font-size: 14px;
+    text-align: center;
+    margin: 30px 0px;
+  }
 }
 @media (max-width: 320px) {
   .sellform__card {
@@ -177,6 +202,11 @@
     top: -300px;
     padding: 40px 10px;
     box-sizing: border-box;
+  }
+  .portales {
+    font-size: 14px;
+    text-align: center;
+    margin: 30px 0px;
   }
 }
 

@@ -366,6 +366,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
           <div className={styles.submit__button}>
             <Button type="submit" primary>Continuar</Button>
           </div>
+          <div className={styles.portales}>Publicaremos y anunciaremos en nuestro portal y en los más visitados del país: <b>ChileAutos, Yapo, Mercado Libre.</b></div>
         </form>
         <form className={styles['fields--mobile']} onSubmit={handleSubmit}>
           <div className={styles.form__row}>
@@ -456,7 +457,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
           <div className={styles.submit__button}>
             <Button type="submit" primary>Continuar</Button>
           </div>
+          <div className={styles.portales}>Publicaremos y anunciaremos en nuestro portal y en los más visitados del país: <b>ChileAutos, Yapo, Mercado Libre.</b></div>
         </form>
+
       </Fragment>,
       1: <form className={styles['personal-data__form']} onSubmit={handleSubmit}>
         <div className={styles.form__row} >

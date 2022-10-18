@@ -150,6 +150,16 @@ export const sendUnhandledErrorData = async (data) => {
   }
 }
 
+export const generateInspection = async (data) => {
+  try {
+    const response = await axios.post(`${API_URL}/inspection/new`, data).catch(err => {console.log("ERROR: ", err)})
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaa", response)
+    return response
+  } catch (e) {
+    console.log("ERROR: ", e)
+  }
+}
+
 //=============================================================================
 
 const fetcher = (url, token, params) => {

@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
-import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm, searchCarByPlate, addContact, sendUnhandledErrorData } from "../../utils/fetches";
+import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm, searchCarByPlate, addContact, sendUnhandledErrorData, generateInspection } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH, TRACKING_URLS } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy } from 'lodash';
@@ -38,6 +38,11 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   const [versionLoading, setVersionLoading] = useState(false);
   const [userName, setUserName] = useState()
   const [cotizationUuid, setcotizationUuid] = useState()
+  const [inspectionId, setInspectionId] = useState("")
+  const [inspectionURL, setInspectionURL] = useState("")
+  const [inspectionDataIdentification, setInspectionDataIdentification] = useState("")
+  const [inspectionDataPlate, setInspectionDataPlate] = useState("")
+  const [inspectionDataColor, setInspectionDataColor] = useState("")
   const [formData, setFormData] = useState(
     {
       brand: '',
@@ -54,7 +59,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       email: '',
       phone: '',
       location: '',
-      newsletter: ''
+      newsletter: '',
+      inspectionId: '',
+      inspectionURL: '',
     }
   )
   const router = useRouter()
@@ -140,10 +147,10 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         country_code: COUNTRY_CODE
       }
       checkYear(values.year);
-      const { data } = await submitCarForm(carData).catch(err => {console.log("ERROR: ", err); setUnhandledError(carAndContactData, err.message)});
+      const { data } = await submitCarForm(carData).catch(err => {console.log("ERROR: ", err); setUnhandledError(err.message, carData)});
       setcotizationUuid(data.uuid);
     } catch (e) {
-      setUnhandledError(carData, e.message)
+      setUnhandledError(e.message)
     }
   }
   const handleSubmitPersonalDataStep = async (values, actions) => {
@@ -154,7 +161,9 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       name: `${values.name} ${values.lastName}`,
       country_code: COUNTRY_CODE,
     }
-    setFormData(carAndContactData)
+    await setInspectionData(carAndContactData)
+    carAndContactData.inspectionId = inspectionId
+    carAndContactData.inspectionURL = inspectionURL
     try {
       checkZone(values.location, zonas, COUNTRY_CODE)
       checkYear(carAndContactData.year)
@@ -186,12 +195,12 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         return setUserName(values.name)
       }
       else {
-        setUnhandledError(carAndContactData, e.message)
+        setUnhandledError(e.message, carAndContactData)
         return setUserName(values.name)
       }
     }
   }
-  const setUnhandledError = async(carAndContactData = "Sin datos", unhandledError = "Sin especificar") => {
+  const setUnhandledError = async(unhandledError = "Sin especificar", carAndContactData = {}) => {
     const errorData = {
       ...formData,
       error: unhandledError,
@@ -205,7 +214,34 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       console.log("ERROR: ", err)
     }
     sendUnhandledErrorData(errorData)
-    (typeof errorData.email || typeof errorData.phone !== 'undefined') ? setStep('error-global') : setStep('error-undefined')
+    typeof errorData.email !== 'undefined'|| typeof errorData.phone !== 'undefined' ? setStep('error-global') : setStep('error-undefined')
+  }
+  const setInspectionData = async (carAndContactData) => {
+    try{
+      const inspectionData = {
+        "email": carAndContactData.email,
+        "locale": `es_${COUNTRY_CODE.toUpperCase()}`,
+        "firstName": carAndContactData.name,
+        "lastName": carAndContactData.lastName,
+        "phone": carAndContactData.phone,
+        "identification": typeof(carAndContactData.inspectionDataIdentification) !== "undefined" ? carAndContactData.inspectionDataIdentification : "Sin especificar",
+        "internalId": carAndContactData.uuid,
+        "plate": typeof(carAndContactData.inspectionDataPlate) !== "undefined" ? carAndContactData.inspectionDataPlate : "Sin especificar",
+        "make": carAndContactData.brand,
+        "model": carAndContactData.model,
+        "version": carAndContactData.version,
+        "color": typeof(carAndContactData.inspectionDataColor) !== "undefined" ? carAndContactData.inspectionDataColor : "white",
+      }
+      await generateInspection(inspectionData)
+      .then(res => {setInspectionId(res.data.productId); setInspectionURL(res.data.magicLink)})
+      .catch(err => {console.log("ERROR: ", err)})
+      console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB", formData)
+    }
+    catch(err){
+      console.log("ERROR: ", err)
+      setInspectionId("No se pudo especificar")
+      setInspectionURL("No se pudo especificar")
+    }
   }
   const handleBack = async () => {
     await setStep(step - 1);
@@ -260,6 +296,8 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       phone: formData.phone,
       location: formData.location,
       newsletter: formData.newsletter,
+      inspectionId: formData.inspectionId,
+      inspectionURL: formData.inspectionURL
     }
   ]
 

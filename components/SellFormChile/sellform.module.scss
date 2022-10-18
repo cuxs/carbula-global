@@ -89,9 +89,11 @@
 }
 .portales {
   font-size: 14px;
+  width: 400px;
   text-align: center;
   padding-top: 30px;
-  margin-left: 10px;
+  margin-left: 35px;
+  margin-right: 35px;
 }
 .kms__input{
   width: 150px;
@@ -138,9 +140,11 @@
   }
   .portales {
     font-size: 14px;
-    text-align: center;
-    padding-top: 30px;
-    margin-left: 10px;
+      width: 400px;
+      text-align: center;
+      padding-top: 30px;
+      margin-left: 35px;
+      margin-right: 35px;
   }
 }
 @media (max-width: 690px){
@@ -149,9 +153,10 @@
   }
   .portales {
     font-size: 14px;
+    width: 240px;
     text-align: center;
     padding-top: 30px;
-    margin-left: 10px;
+   
   }
 }
 @media (max-width: 566px) {
@@ -178,9 +183,9 @@
   }
   .portales {
     font-size: 14px;
+    width: 240px;
     text-align: center;
     padding-top: 30px;
-    margin-left: 10px;
   }
 }
 
@@ -196,9 +201,9 @@
   }
   .portales {
     font-size: 14px;
+    width: 220px;
     text-align: center;
     padding-top: 30px;
-    margin-left: 10px;
   }
 }
 @media (max-width: 320px) {
@@ -210,10 +215,9 @@
   }
   .portales {
     font-size: 14px;
+    width: 220px;
     text-align: center;
     padding-top: 30px;
-    margin-left: 10px;
-    width: 270px;
   }
 }
 

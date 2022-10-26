@@ -5,8 +5,8 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from 'react-accessible-accordion';
-import styles from "./PreguntasFrecuentes.module.scss";
-const PreguntasFrecuentes = () => {
+import styles from "./faq.module.scss";
+const FaqPreguntasFrecuentes = () => {
   return (
     <Accordion allowZeroExpanded className={styles.accordion}>
       <AccordionItem className={styles.accordion__item}>
@@ -53,4 +53,4 @@ const PreguntasFrecuentes = () => {
   )
 }
 
-export default PreguntasFrecuentes;
+export default FaqPreguntasFrecuentes;

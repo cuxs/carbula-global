@@ -27,7 +27,7 @@ const PreguntasFrecuentes = () => {
         
         <div className={styles.container}>
         <div className={styles.preguntas}>
-        <PreguntasFrecuentes/>
+        <FaqPreguntasFrecuentes/>
         </div>
       </div>
       <hr />
@@ -48,7 +48,7 @@ const PreguntasFrecuentes = () => {
         
         <div className={styles.container}>
         <div className={styles.preguntas}>
-        <PreguntasFrecuentes/>
+        <FaqPreguntasFrecuentes/>
         </div>
       </div>
       <hr />
@@ -68,7 +68,7 @@ const PreguntasFrecuentes = () => {
         </div>
         <div className={styles.container}>
         <div className={styles.preguntas}>
-        <PreguntasFrecuentes/>
+        <FaqPreguntasFrecuentes/>
         </div>
       </div>
       <hr />
@@ -87,7 +87,7 @@ const PreguntasFrecuentes = () => {
       </div>
       <div className={styles.container}>
       <div className={styles.faq}>
-        <PreguntasFrecuentes/>
+        <FaqPreguntasFrecuentes/>
         </div>
       </div>
       <hr />

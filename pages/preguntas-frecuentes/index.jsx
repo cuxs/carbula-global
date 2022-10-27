@@ -47,7 +47,6 @@ const PreguntasFrecuentes = () => {
         <FaqPreguntasFrecuentesVender/>
         </div>
         <h4>Preguntas frecuentes sobre comprar</h4>
-
         <div className={styles.preguntas}>
         <FaqPreguntasFrecuentesComprar/>
         </div>
@@ -67,10 +66,13 @@ const PreguntasFrecuentes = () => {
         <div className={styles.header}>
         <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
         </div>
-        
         <div className={styles.container}>
+        <h4>Preguntas frecuentes sobre vender</h4>
         <div className={styles.preguntas}>
         <FaqPreguntasFrecuentesVender/>
+        </div>
+        <h4>Preguntas frecuentes sobre comprar</h4>
+        <div className={styles.preguntas}>
         <FaqPreguntasFrecuentesComprar/>
         </div>
       </div>
@@ -90,8 +92,12 @@ const PreguntasFrecuentes = () => {
         <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
         </div>
         <div className={styles.container}>
+        <h4>Preguntas frecuentes sobre vender</h4>
         <div className={styles.preguntas}>
         <FaqPreguntasFrecuentesVender/>
+        </div>
+        <h4>Preguntas frecuentes sobre comprar</h4>
+        <div className={styles.preguntas}>
         <FaqPreguntasFrecuentesComprar/>
         </div>
       </div>
@@ -107,11 +113,15 @@ const PreguntasFrecuentes = () => {
         <Head title="Compra un auto de forma segura | Carbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
-      <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
-      </div>
-      <div className={styles.container}>
-      <div className={styles.faq}>
+        <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
+        </div>
+        <div className={styles.container}>
+        <h4>Preguntas frecuentes sobre vender</h4>
+        <div className={styles.preguntas}>
         <FaqPreguntasFrecuentesVender/>
+        </div>
+        <h4>Preguntas frecuentes sobre comprar</h4>
+        <div className={styles.preguntas}>
         <FaqPreguntasFrecuentesComprar/>
         </div>
       </div>

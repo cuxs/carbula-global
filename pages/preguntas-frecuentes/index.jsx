@@ -15,7 +15,8 @@ export async function getServerSideProps(context) {
 
 const PreguntasFrecuentes = () => {
   const router = useRouter()
-  const FaqPreguntasFrecuentes = dynamic(import('../../components/FaqPreguntasFrecuentes'))
+  const FaqPreguntasFrecuentesVender = dynamic(import('../../components/FaqPreguntasFrecuentesVender'))
+  const FaqPreguntasFrecuentesComprar = dynamic(import('../../components/FaqPreguntasFrecuentesComprar'))
   const FooterInfo = dynamic(import('../../components/FooterInfo'))
   if (router.locale === 'es-AR') {
     return (
@@ -28,7 +29,8 @@ const PreguntasFrecuentes = () => {
         
         <div className={styles.container}>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentes/>
+        <FaqPreguntasFrecuentesVender/>
+        <FaqPreguntasFrecuentesComprar/>
         </div>
       </div>
       <hr />
@@ -49,7 +51,8 @@ const PreguntasFrecuentes = () => {
         
         <div className={styles.container}>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentes/>
+        <FaqPreguntasFrecuentesVender/>
+        <FaqPreguntasFrecuentesComprar/>
         </div>
       </div>
       <hr />
@@ -69,7 +72,8 @@ const PreguntasFrecuentes = () => {
         </div>
         <div className={styles.container}>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentes/>
+        <FaqPreguntasFrecuentesVender/>
+        <FaqPreguntasFrecuentesComprar/>
         </div>
       </div>
       <hr />
@@ -88,7 +92,8 @@ const PreguntasFrecuentes = () => {
       </div>
       <div className={styles.container}>
       <div className={styles.faq}>
-        <FaqPreguntasFrecuentes/>
+        <FaqPreguntasFrecuentesVender/>
+        <FaqPreguntasFrecuentesComprar/>
         </div>
       </div>
       <hr />

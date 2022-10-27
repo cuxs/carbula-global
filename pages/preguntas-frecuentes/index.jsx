@@ -39,7 +39,7 @@ const PreguntasFrecuentes = () => {
         <Head title="Preguntas frecuentes | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
-        <a href="https://catalogo.carbula.ar/"><h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1></a>
+        <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
         </div>
         <div className={styles.container}>
         <h4>Preguntas frecuentes sobre vender</h4>
@@ -65,7 +65,7 @@ const PreguntasFrecuentes = () => {
         <Head title="Preguntas frecuentes | Carbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
-        <a href="https://catalogo.carbula.cl/"><h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1></a>
+        <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
         </div>
         
         <div className={styles.container}>
@@ -87,7 +87,7 @@ const PreguntasFrecuentes = () => {
         <Head title="Preguntas frecuentes | Carbula Autos México" />
         <Nav />
         <div className={styles.header}>
-        <a href="https://catalogo.carbula.mx/"><h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1></a>
+        <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
         </div>
         <div className={styles.container}>
         <div className={styles.preguntas}>
@@ -107,7 +107,7 @@ const PreguntasFrecuentes = () => {
         <Head title="Compra un auto de forma segura | Carbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
-      <a href="https://catalogo.carbula.uy/"><h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1></a>
+      <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
       </div>
       <div className={styles.container}>
       <div className={styles.faq}>

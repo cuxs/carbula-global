@@ -3,7 +3,7 @@
 .accordion {
   border-radius: 2px;
   width: 80%;
-  margin-top: 40px;
+  /*margin-top: 40px;*/
   margin-right: 40px;
 }
 .accordion__heading {
@@ -90,16 +90,16 @@
     }
   }
   .mobile-only{
-    display:inline
+    display:inline;
   }
   .desktop-only{
-    display:none
+    display:none;
   }
 }
 @media (max-width: 426px) {
   .accordion {
     border-radius: 2px;
-    width: 80%;
+    width: 100%;
     margin: 70px auto 80px auto;
   }
   .accordion__button {
@@ -108,6 +108,6 @@
 }
 @media (max-width: 376px) {
   .accordion {
-    width: 90%;
+    width: 100%;
   }
 }

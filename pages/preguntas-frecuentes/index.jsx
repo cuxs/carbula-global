@@ -15,6 +15,7 @@ export async function getServerSideProps(context) {
 
 const PreguntasFrecuentes = () => {
   const router = useRouter()
+  const FaqPreguntasFrecuentes = dynamic(import('../../components/FaqPreguntasFrecuentes'))
   const FooterInfo = dynamic(import('../../components/FooterInfo'))
   if (router.locale === 'es-AR') {
     return (

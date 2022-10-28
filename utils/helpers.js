@@ -440,6 +440,10 @@ export const getComoComprar = () => {
   return '/como-comprar'
 }
 
+export const getPreguntasFrecuentes = () => {
+  return '/preguntas-frecuentes'
+}
+
 export const getWhatsappNumber = (country_code) => {
   const phoneNumbers = {
     ar: '+5492614864083',

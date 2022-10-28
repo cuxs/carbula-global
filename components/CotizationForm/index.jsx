@@ -45,7 +45,6 @@ const CotizationForm = ({
   locationName,
   COUNTRY_CODE }) => {
 
-  const [inspectionId, setInspectionId] = useState("")
   const [inspectionURL, setInspectionURL] = useState("")
 
   const cotizationsJSON = useCallback(() => {
@@ -164,7 +163,7 @@ const CotizationForm = ({
         "email": carAndContactData.email,
         "locale": `es_${COUNTRY_CODE.toUpperCase()}`,
         "firstName": carAndContactData.name,
-        "lastName": carAndContactData.lastName,
+        "lastName": typeof(carAndContactData.lastName) !== "undefined" ? carAndContactData.lastName : carAndContactData.name,
         "phone": carAndContactData.phone,
         "identification": typeof(carAndContactData.inspectionDataIdentification) !== "undefined" ? carAndContactData.inspectionDataIdentification : "Sin especificar",
         "internalId": carAndContactData.uuid,
@@ -177,8 +176,7 @@ const CotizationForm = ({
       }
       console.log("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY", inspectionData)
       await generateInspectionHS(inspectionData)
-      // .then(res => {setInspectionId(res.data.productId); setInspectionURL(res.data.magicLink); window.location.replace(res.data.magicLink)})
-      .then(res => {setInspectionId(res.data.productId); setInspectionURL(res.data.magicLink)})
+      .then(res => {setInspectionURL(res)})
       .catch(err => {console.log("ERROR: ", err)})
     }
     catch(err){
@@ -653,7 +651,18 @@ const CotizationForm = ({
       )}
     </Formik>
   </div>
-  const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
+  // const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
+
+  const Step4 = () => <div className={styles['meeting-info']}>
+    <p>Estimado {name},</p>
+    <br/>
+    <p>Muchas gracias por utilizar nostros servicios. Para proceder, le solicitamos que realice una <b>inspección virtual</b> desde un dispositivo móvil. </p>
+    <p>Puede hacerlo presionando el botón de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
+    <br />
+    <Button><a href={inspectionURL}>Inspección virtual</a></Button>
+    <br /><br />
+    <Button><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
+  </div>
 
   const Step5Mobile = () => <div className={styles['secondary-steps__container']}>
     <Formik
@@ -844,14 +853,15 @@ const CotizationForm = ({
         }
         return <Step4 />
       case 3:
-        if (width < 769) {
-          return <Step4 />
-        }
-        return <Step5 />
+        // if (width < 769) {
+        //   return <Step4 />
+        // }
+        // return <Step5 />
+        return <Step4 />
       case 4:
-        if (width < 769) {
-          return <Step5 />
-        }
+        // if (width < 769) {
+        //   return <Step5 />
+        // }
         return <div />
       case 'end-venta': return (
         <div>

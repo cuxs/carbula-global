@@ -114,7 +114,7 @@ const ComoVender = () => {
             <h4 itemprop="name">3. ¿Cómo hago para vender mi auto?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-              <p>El primer paso es ingresar los datos de tu vehículo en nuestro cotizador. Allí, el algoritmo que recopila datos de autos según marca, modelo y kilometraje, te indicará cuál es el valor estimado de tu auto. Luego, hace falta coordinar una inspección virtual.</p>
+                <p>El primer paso es ingresar los datos de tu vehículo en nuestro cotizador. Allí, el algoritmo que recopila datos de autos según marca, modelo y kilometraje, te indicará cuál es el valor estimado de tu auto. Luego, hace falta coordinar una inspección virtual.</p>
               </div>
             </div>
             <h4 itemprop="name">4. ¿Qué pasa si no estoy de acuerdo con el precio del cotizador?</h4>

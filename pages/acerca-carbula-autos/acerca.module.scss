@@ -1,0 +1,207 @@
+@import "../../sass/variables.scss";
+
+.header {
+  background-image: url("/images/acerca-de-carbula-autos-desktop.webp");
+  background-size: cover;
+  height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    color: #fff;
+    margin: 0px auto;
+    text-align: center;
+  }
+}
+.buttons__container {
+  width: 100%;
+  margin: 0px auto;
+  margin-top: 0px;
+  display: flex;
+  justify-content: space-around;
+  vertical-align: middle;
+  button {
+    cursor: pointer;
+    width: 420px;
+    height: 60px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-family: ProximaNova;
+    font-size: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    a,
+    img {
+     width: 40%;
+     padding-left: 0.5rem;
+     padding-bottom: 0.5rem;
+     vertical-align: middle;
+    }
+  }
+}
+.acerca {
+  padding: 100px 250px;
+  h4 {
+    font-size: 22px;
+    color: #4b4b4b;
+    margin-bottom: 0px;
+    font-weight: 600;
+  }
+  p, i {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #999999;
+  }
+}
+
+.nosotros {
+  margin-bottom: 80px;
+  display: block;
+  
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #3074f1;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  p, i {
+    font-family: ProximaNova;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.6rem;
+  }
+  img {
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    vertical-align: middle;
+   }
+}
+
+.valores {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: block;
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #3074f1;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  p, i {
+    font-family: ProximaNova;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.6rem;
+  }
+  img {
+    width: 50%;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    vertical-align: middle;
+   }
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  b {
+    color: #38ceb3;
+  }
+  overflow:hidden;
+}
+
+.mision {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: block;
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #3074f1;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  p, i {
+    font-family: ProximaNova;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.6rem;
+  }
+  img {
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    vertical-align: middle;
+   }
+}
+
+.prensa {
+  margin-top: 100px;
+  display: block;
+  
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #3074f1;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  p, i {
+    font-family: ProximaNova;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+}
+
+@media(max-width: 769px){
+  .card {
+    width: 100%;
+    p,
+    i {font-size: 1rem;}
+  }
+  .acerca {
+    padding: 50px 40px ;
+  }
+  .header {
+    height: 350px;
+    background-image: url("/images/acerca-de-carbula-autos-mobile.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .buttons__container {
+    width: 100%;
+    margin: 0px auto;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-around;
+    button {
+      cursor: pointer;
+      width: 340px;
+      height: 60px;
+      border-radius: 50px;
+      outline: none;
+      border: none;
+      background-color: #000;
+      color: #fff;
+      font-family: ProximaNova;
+      font-size: 18px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      a,
+      img {
+       width: 40%;
+       padding-left: 0.5rem;
+       padding-bottom: 0.5rem;
+       vertical-align: middle;
+      }
+    }
+  }
+}

@@ -32,6 +32,7 @@ dayjs.updateLocale('es', {
   ]
 })
 
+
 // This default export is required in a new `pages/_app.js` file.
 function MyApp({ Component, pageProps }) {
   useEffect(() => {

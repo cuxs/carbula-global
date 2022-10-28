@@ -359,7 +359,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
-                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
               </div>
             </div>
           </div>

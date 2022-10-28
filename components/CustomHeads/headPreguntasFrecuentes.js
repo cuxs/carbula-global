@@ -4,7 +4,7 @@ import { string } from 'prop-types'
 import { useRouter } from 'next/router'
 import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../../utils/helpers'
 
-const defaultDescription = 'Ingresa los datos de tu auto en el cotizador ✓ Solicita tu inspeccion virtual en cualquier momento del dia ✓ Vende tu auto usado sin hacer nada'
+const defaultDescription = 'Preguntas y respuestas para comprar y vender autos seminuevos ✓ Consejos para una compra y venta segura de tu vehículo'
 
 const defaultOGURL = '/preguntas-frecuentes'
 const defaultOGImage = '/images/carbula-autos.webp'

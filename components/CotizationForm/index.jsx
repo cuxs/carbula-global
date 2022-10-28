@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useCallback, useEffect } from 'react';
-import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX, redondeo } from '../../utils/helpers';
+import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX, redondeo, getCotization } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
@@ -9,7 +9,7 @@ import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
 import RadioInput from '../RadioInput';
 import FaqCotization from '../FaqCotization';
-import { updateLeadPrices, rejectSellTime, updateHubspotProperty } from '../../utils/fetches';
+import { updateLeadPrices, rejectSellTime, updateHubspotProperty, generateInspectionHS } from '../../utils/fetches';
 import Modal from '../Modal';
 import NumberFormat from 'react-number-format';
 import { InlineWidget } from "react-calendly";
@@ -19,6 +19,7 @@ import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONar from '../../public/autopress-ar.json'
 import cotizationJSONuy from '../../public/autopress-uy.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
+import CryptoJS from 'crypto-js'
 
 const CotizationForm = ({
   selectedPrice,
@@ -43,6 +44,9 @@ const CotizationForm = ({
   meetData,
   locationName,
   COUNTRY_CODE }) => {
+
+  const [inspectionId, setInspectionId] = useState("")
+  const [inspectionURL, setInspectionURL] = useState("")
 
   const cotizationsJSON = useCallback(() => {
     const cotizationsJSONs = {
@@ -88,6 +92,7 @@ const CotizationForm = ({
   }
   const handleCondicionSubmit = (values, actions) => {
     try {
+      setInspectionData()
       updateHubspotProperty(values)
     } catch (e) {
       console.log(e)
@@ -141,6 +146,45 @@ const CotizationForm = ({
       setStep('end-venta')
     } catch (e) {
       console.log(e)
+    }
+  }
+
+  const getCotizationData = () => {
+    const cotizationCrypted = getCotization()
+    const bytes = CryptoJS.AES.decrypt(cotizationCrypted, 'cotizacion')
+    const cotizationDataJSON = bytes.toString(CryptoJS.enc.Utf8);
+    const cotizationObject = JSON.parse(cotizationDataJSON)
+    return cotizationObject
+  }
+
+  const setInspectionData = async () => {
+    const carAndContactData = getCotizationData()
+    try{
+      const inspectionData = {
+        "email": carAndContactData.email,
+        "locale": `es_${COUNTRY_CODE.toUpperCase()}`,
+        "firstName": carAndContactData.name,
+        "lastName": carAndContactData.lastName,
+        "phone": carAndContactData.phone,
+        "identification": typeof(carAndContactData.inspectionDataIdentification) !== "undefined" ? carAndContactData.inspectionDataIdentification : "Sin especificar",
+        "internalId": carAndContactData.uuid,
+        "plate": typeof(carAndContactData.inspectionDataPlate) !== "undefined" ? carAndContactData.inspectionDataPlate : "Sin especificar",
+        "make": carAndContactData.brand,
+        "model": carAndContactData.model,
+        "version": carAndContactData.version,
+        "color": typeof(carAndContactData.inspectionDataColor) !== "undefined" ? carAndContactData.inspectionDataColor : "white",
+        "external_id": carAndContactData.external_id
+      }
+      console.log("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY", inspectionData)
+      await generateInspectionHS(inspectionData)
+      // .then(res => {setInspectionId(res.data.productId); setInspectionURL(res.data.magicLink); window.location.replace(res.data.magicLink)})
+      .then(res => {setInspectionId(res.data.productId); setInspectionURL(res.data.magicLink)})
+      .catch(err => {console.log("ERROR: ", err)})
+    }
+    catch(err){
+      console.log("ERROR: ", err)
+      setInspectionId("No se pudo especificar")
+      setInspectionURL("No se pudo especificar")
     }
   }
 

@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 import Button from '../Button';
 import styles from './sellform.module.scss';
 import Select from '../SelectComponent';
-import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm, searchCarByPlate, addContact, sendUnhandledErrorData, generateInspection } from "../../utils/fetches";
+import { getMarcaModelo, getYears, getVersions, submitFormAndGetCotization, submitCarForm, searchCarByPlate, addContact, sendUnhandledErrorData, generateInspectionHS } from "../../utils/fetches";
 import { MIN_TEXT_SEARCH_LENGTH, TRACKING_URLS } from '../../utils/constants';
 import { Formik } from 'formik';
 import { orderBy } from 'lodash';
@@ -62,6 +62,8 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       newsletter: '',
       inspectionId: '',
       inspectionURL: '',
+      external_id: '',
+      uuid: '',
     }
   )
   const router = useRouter()
@@ -154,16 +156,19 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     }
   }
   const handleSubmitPersonalDataStep = async (values, actions) => {
+    console.log("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWw", values)
     const carAndContactData = {
       ...formData,
       ...values,
       uuid: cotizationUuid,
+      external_id: cotizationUuid,
       name: `${values.name} ${values.lastName}`,
       country_code: COUNTRY_CODE,
     }
-    await setInspectionData(carAndContactData)
-    carAndContactData.inspectionId = inspectionId
-    carAndContactData.inspectionURL = inspectionURL
+    // console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx", carAndContactData)
+    // await setInspectionData(carAndContactData)
+    // carAndContactData.inspectionId = inspectionId
+    // carAndContactData.inspectionURL = inspectionURL
     try {
       checkZone(values.location, zonas, COUNTRY_CODE)
       checkYear(carAndContactData.year)
@@ -172,6 +177,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       carAndContactData.campania = getCampania(router.query)
       setOverlayBackground(true)
       const { data } = await submitFormAndGetCotization(carAndContactData).catch(err => {console.log("Cotization ERROR: ", err)})
+      carAndContactData.external_id = data.data.external_id
       const query = CryptoJS.AES.encrypt(JSON.stringify(data.data), 'cotizacion').toString()
       saveCotization(query)
       router.push({
@@ -216,33 +222,33 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     sendUnhandledErrorData(errorData)
     typeof errorData.email !== 'undefined'|| typeof errorData.phone !== 'undefined' ? setStep('error-global') : setStep('error-undefined')
   }
-  const setInspectionData = async (carAndContactData) => {
-    try{
-      const inspectionData = {
-        "email": carAndContactData.email,
-        "locale": `es_${COUNTRY_CODE.toUpperCase()}`,
-        "firstName": carAndContactData.name,
-        "lastName": carAndContactData.lastName,
-        "phone": carAndContactData.phone,
-        "identification": typeof(carAndContactData.inspectionDataIdentification) !== "undefined" ? carAndContactData.inspectionDataIdentification : "Sin especificar",
-        "internalId": carAndContactData.uuid,
-        "plate": typeof(carAndContactData.inspectionDataPlate) !== "undefined" ? carAndContactData.inspectionDataPlate : "Sin especificar",
-        "make": carAndContactData.brand,
-        "model": carAndContactData.model,
-        "version": carAndContactData.version,
-        "color": typeof(carAndContactData.inspectionDataColor) !== "undefined" ? carAndContactData.inspectionDataColor : "white",
-      }
-      await generateInspection(inspectionData)
-      .then(res => {setInspectionId(res.data.productId); setInspectionURL(res.data.magicLink)})
-      .catch(err => {console.log("ERROR: ", err)})
-      console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB", formData)
-    }
-    catch(err){
-      console.log("ERROR: ", err)
-      setInspectionId("No se pudo especificar")
-      setInspectionURL("No se pudo especificar")
-    }
-  }
+  // const setInspectionData = async (carAndContactData) => {
+  //   try{
+  //     const inspectionData = {
+  //       "email": carAndContactData.email,
+  //       "locale": `es_${COUNTRY_CODE.toUpperCase()}`,
+  //       "firstName": carAndContactData.name,
+  //       "lastName": carAndContactData.lastName,
+  //       "phone": carAndContactData.phone,
+  //       "identification": typeof(carAndContactData.inspectionDataIdentification) !== "undefined" ? carAndContactData.inspectionDataIdentification : "Sin especificar",
+  //       "internalId": carAndContactData.uuid,
+  //       "plate": typeof(carAndContactData.inspectionDataPlate) !== "undefined" ? carAndContactData.inspectionDataPlate : "Sin especificar",
+  //       "make": carAndContactData.brand,
+  //       "model": carAndContactData.model,
+  //       "version": carAndContactData.version,
+  //       "color": typeof(carAndContactData.inspectionDataColor) !== "undefined" ? carAndContactData.inspectionDataColor : "white",
+  //       "external_id": carAndContactData.external_id
+  //     }
+  //     await generateInspectionHS(inspectionData)
+  //     .then(res => {setInspectionId(res.data.productId); setInspectionURL(res.data.magicLink)})
+  //     .catch(err => {console.log("ERROR: ", err)})
+  //   }
+  //   catch(err){
+  //     console.log("ERROR: ", err)
+  //     setInspectionId("No se pudo especificar")
+  //     setInspectionURL("No se pudo especificar")
+  //   }
+  // }
   const handleBack = async () => {
     await setStep(step - 1);
   }

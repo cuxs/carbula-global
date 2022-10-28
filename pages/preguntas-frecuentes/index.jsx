@@ -30,8 +30,10 @@ export async function getServerSideProps(context) {
 
 const PreguntasFrecuentes = () => {
   const router = useRouter()
-  const FaqPreguntasFrecuentesVender = dynamic(import('../../components/FaqPreguntasFrecuentesVender'))
-  const FaqPreguntasFrecuentesComprar = dynamic(import('../../components/FaqPreguntasFrecuentesComprar'))
+  const FaqPreguntasFrecuentesVenderGenerales = dynamic(import('../../components/FaqPreguntasFrecuentesVenderGenerales'))
+  const FaqPreguntasFrecuentesComprarGenerales = dynamic(import('../../components/FaqPreguntasFrecuentesComprarGenerales'))
+  const FaqPreguntasFrecuentesVenderChile = dynamic(import('../../components/FaqPreguntasFrecuentesVenderChile'))
+  const FaqPreguntasFrecuentesComprarChile = dynamic(import('../../components/FaqPreguntasFrecuentesComprarChile'))
   const FooterInfo = dynamic(import('../../components/FooterInfo'))
   if (router.locale === 'es-AR') {
     return (
@@ -44,11 +46,11 @@ const PreguntasFrecuentes = () => {
         <div className={styles.container}>
         <h4>Preguntas frecuentes sobre vender</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesVender/>
+        <FaqPreguntasFrecuentesVenderGenerales/>
         </div>
         <h4>Preguntas frecuentes sobre comprar</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesComprar/>
+        <FaqPreguntasFrecuentesComprarGenerales/>
         </div>
       </div>
       <hr />
@@ -69,11 +71,11 @@ const PreguntasFrecuentes = () => {
         <div className={styles.container}>
         <h4>Preguntas frecuentes sobre vender</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesVender/>
+        <FaqPreguntasFrecuentesVenderChile/>
         </div>
         <h4>Preguntas frecuentes sobre comprar</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesComprar/>
+        <FaqPreguntasFrecuentesComprarChile/>
         </div>
       </div>
       <hr />
@@ -94,11 +96,11 @@ const PreguntasFrecuentes = () => {
         <div className={styles.container}>
         <h4>Preguntas frecuentes sobre vender</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesVender/>
+        <FaqPreguntasFrecuentesVenderGenerales/>
         </div>
         <h4>Preguntas frecuentes sobre comprar</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesComprar/>
+        <FaqPreguntasFrecuentesComprarGenerales/>
         </div>
       </div>
       <hr />
@@ -118,11 +120,11 @@ const PreguntasFrecuentes = () => {
         <div className={styles.container}>
         <h4>Preguntas frecuentes sobre vender</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesVender/>
+        <FaqPreguntasFrecuentesVenderGenerales/>
         </div>
         <h4>Preguntas frecuentes sobre comprar</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesComprar/>
+        <FaqPreguntasFrecuentesComprarGenerales/>
         </div>
       </div>
       <hr />

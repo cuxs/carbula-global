@@ -38,7 +38,7 @@ const PreguntasFrecuentes = () => {
   if (router.locale === 'es-AR') {
     return (
       <div>
-        <Head title="Preguntas frecuentes | Carbula Autos Argentina" />
+        <Head title="Preguntas frecuentes para comprar y vender autos seminuevos | Carbula Autos Argentina" />
         <Nav />
         <div className={styles.header}>
         <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
@@ -63,7 +63,7 @@ const PreguntasFrecuentes = () => {
   if (router.locale === 'es-CL') {
     return (
       <div>
-        <Head title="Preguntas frecuentes | Carbula Autos Chile" />
+        <Head title="Preguntas frecuentes para comprar y vender autos seminuevos | Carbula Autos Chile" />
         <Nav />
         <div className={styles.header}>
         <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
@@ -88,7 +88,7 @@ const PreguntasFrecuentes = () => {
   if (router.locale === 'es-MX') {
     return (
       <div>
-        <Head title="Preguntas frecuentes | Carbula Autos México" />
+        <Head title="Preguntas frecuentes para comprar y vender autos seminuevos | Carbula Autos México" />
         <Nav />
         <div className={styles.header}>
         <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
@@ -112,7 +112,7 @@ const PreguntasFrecuentes = () => {
   }
   if (router.locale === 'es-UY') {
     return <div>
-        <Head title="Compra un auto de forma segura | Carbula Autos Uruguay" />
+        <Head title="Preguntas frecuentes para comprar y vender autos seminuevos | Carbula Autos Uruguay" />
       <Nav />
       <div className={styles.header}>
         <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>

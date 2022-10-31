@@ -3,25 +3,10 @@ import NextHead from 'next/head'
 import { string } from 'prop-types'
 import { useRouter } from 'next/router'
 import { getCountryCode, getTitleByCountry, getKeywordsByCountry, getFacebookDomainVerification } from '../../utils/helpers'
-import {
-  Button,
-  Container,
-  Divider,
-  Card,
-  Grid,
-  Header,
-  Image,
-  List,
-  Icon,
-  Menu,
-  Sidebar,
-  Visibility,
-  Segment,
-} from 'semantic-ui-react';
 
-const defaultDescription = 'Adquire un auto de forma segura ✓ Con certificación Cárbula ✓ Financiación para autos usados'
+const defaultDescription = 'Cárbula es una plataforma que permite vender y comprar autos usados de forma simple, 100% segura y cómoda'
 
-const defaultOGURL = '/como-comprar'
+const defaultOGURL = '/acerca-carbula-autos'
 const defaultOGImage = '/images/carbula-autos.webp'
 
 const Head = props => {
@@ -40,9 +25,9 @@ const Head = props => {
       <meta name="googlebot" content="index,follow" />
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
       <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/`} />
-      <link rel="alternate" hrefLang="es-MX" href="https://www.carbula.mx/como-vender" />
-      <link rel="alternate" hrefLang="es-CL" href="https://www.carbula.cl/como-vender" />
-      <link rel="alternate" hrefLang="es-AR" href="https://www.carbula.ar/como-vender" />
+      <link rel="alternate" hrefLang="es-MX" href="https://www.carbula.mx/acerca-carbula-autos" />
+      <link rel="alternate" hrefLang="es-CL" href="https://www.carbula.cl/acerca-carbula-autos" />
+      <link rel="alternate" hrefLang="es-AR" href="https://www.carbula.ar/acerca-carbula-autos" />
       <link rel="icon" sizes="192x192" href="/icons/favicon_196.ico" />
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:url" content={props.url || defaultOGURL} />

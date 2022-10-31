@@ -444,6 +444,10 @@ export const getPreguntasFrecuentes = () => {
   return '/preguntas-frecuentes'
 }
 
+export const getAcercaCarbula = () => {
+  return '/acerca-carbula-autos'
+}
+
 export const getWhatsappNumber = (country_code) => {
   const phoneNumbers = {
     ar: '+5492614864083',

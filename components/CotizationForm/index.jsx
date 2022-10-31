@@ -174,7 +174,6 @@ const CotizationForm = ({
         "color": typeof(carAndContactData.inspectionDataColor) !== "undefined" ? carAndContactData.inspectionDataColor : "white",
         "external_id": carAndContactData.external_id
       }
-      console.log("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY", inspectionData)
       await generateInspectionHS(inspectionData)
       .then(res => {setInspectionURL(res)})
       .catch(err => {console.log("ERROR: ", err)})

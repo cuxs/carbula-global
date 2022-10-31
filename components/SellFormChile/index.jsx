@@ -156,7 +156,6 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     }
   }
   const handleSubmitPersonalDataStep = async (values, actions) => {
-    console.log("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWw", values)
     const carAndContactData = {
       ...formData,
       ...values,
@@ -165,10 +164,6 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       name: `${values.name} ${values.lastName}`,
       country_code: COUNTRY_CODE,
     }
-    // console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx", carAndContactData)
-    // await setInspectionData(carAndContactData)
-    // carAndContactData.inspectionId = inspectionId
-    // carAndContactData.inspectionURL = inspectionURL
     try {
       checkZone(values.location, zonas, COUNTRY_CODE)
       checkYear(carAndContactData.year)

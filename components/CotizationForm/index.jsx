@@ -20,6 +20,7 @@ import cotizationJSONar from '../../public/autopress-ar.json'
 import cotizationJSONuy from '../../public/autopress-uy.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
 import CryptoJS from 'crypto-js'
+import QRCode from "react-qr-code"
 
 const CotizationForm = ({
   selectedPrice,
@@ -656,11 +657,20 @@ const CotizationForm = ({
     <p>Estimado {name},</p>
     <br/>
     <p>Muchas gracias por utilizar nostros servicios. Para proceder, le solicitamos que realice una <b>inspección virtual</b> desde un dispositivo móvil. </p>
-    <p>Puede hacerlo presionando el botón de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
-    <br />
-    <Button><a href={inspectionURL}>Inspección virtual</a></Button>
+    {width < 769 ? (<Setp4Mobile/>) : (<Setp4Desktop/>)}
     <br /><br />
     <Button><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
+  </div>
+
+  const Setp4Desktop = () => <div>
+    <p>Puede hacerlo escaneando el código QR de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
+    <QRCode value={inspectionURL} size="128"/>
+  </div>
+
+  const Setp4Mobile = () => <div>
+    <p>Puede hacerlo presionando el botón de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
+    <br /><br />
+    <Button><a href={inspectionURL}>Inspección virtual</a></Button>
   </div>
 
   const Step5Mobile = () => <div className={styles['secondary-steps__container']}>

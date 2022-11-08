@@ -3,9 +3,9 @@
 .primary {
   background-color: $primaryColor;
   &:hover {
-    background-color: white;
-    color: $primaryColor;
-    border: 3px solid $primaryColor;
+    background-color: $darkBlue;
+    color: white;
+    border: 3px solid $darkBlue;
   }
 }
 .primary--clicked {

@@ -297,12 +297,12 @@ const CotizationForm = ({
           {({ handleChange, errors, values, touched, handleSubmit, }) => (
             <form onSubmit={handleSubmit}>
               <div className='form-item'>
-                <label>¿Actualmente está con prenda?</label>
+                <label>1. Tu vehículo ¿actualmente está con prenda?</label>
                 <RadioInput
                   touched={touched.prendado}
                   value={values.prendado}
                   name="prendado"
-                  options={['Sí', 'No', 'No lo sé']}
+                  options={['Sí', 'No']}
                 />
                 {errors.prendado && touched.prendado && (
                   <div className="form-error">
@@ -311,12 +311,40 @@ const CotizationForm = ({
                 )}
               </div>
               <div className='form-item'>
-                <label>¿Ha sido rematado por algún motivo? </label>
+                <label>2. Tu vehículo ¿ha sido rematado por algún motivo? </label>
                 <RadioInput
                   touched={touched.rematado}
                   value={values.rematado}
                   name="rematado"
                   options={['Sí', 'No']}
+                />
+                {errors.rematado && touched.rematado && (
+                  <div className="form-error">
+                    {errors.rematado}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
+                <label>3. ¿Cuántos dueños ha tenido tu vehículo? </label>
+                <RadioInput
+                  touched={touched.rematado}
+                  value={values.rematado}
+                  name="rematado"
+                  options={['1', '2', '3', '4', '5+']}
+                />
+                {errors.rematado && touched.rematado && (
+                  <div className="form-error">
+                    {errors.rematado}
+                  </div>
+                )}
+              </div>
+              <div className='form-item'>
+                <label>4. ¿Cuál ha sido el uso dado a tu vehículo? </label>
+                <RadioInput
+                  touched={touched.rematado}
+                  value={values.rematado}
+                  name="rematado"
+                  options={['Particular', 'Comercial']}
                 />
                 {errors.rematado && touched.rematado && (
                   <div className="form-error">

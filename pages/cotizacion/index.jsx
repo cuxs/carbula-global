@@ -20,13 +20,14 @@ const Nav = dynamic(import('../../components/nav'))
 const Button = dynamic(import('../../components/Button'))
 const FooterInfo = dynamic(import('../../components/FooterInfo'))
 const CotizationForm = dynamic(import('../../components/CotizationForm'))
+const FaqProceso = dynamic(import('../../components/FaqProceso'))
 const FaqCotization = dynamic(import('../../components/FaqCotization'))
 
 export async function getServerSideProps(context) {
   return{
     props:{
       COUNTRY_CODE: getCountryCode(context.locale),
-      ...(await serverSideTranslations(context.locale, ['cotizacion', 'CotizationForm', 'FaqCotization', 'FooterInfo'])),
+      ...(await serverSideTranslations(context.locale, ['cotizacion', 'CotizationForm', 'FaqProceso', 'FaqCotization', 'FooterInfo'])),
 
     }
   }
@@ -184,7 +185,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               <div className={styles.carbula__price}><h4>{t('priceComparison.withCarbula')}</h4><h3>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(selectedPrice, 0)}</h3></div>
             </animated.div>
             <animated.div style={faqProps}>
-              {width > 769 && <FaqCotization />}
+              {width > 769 && <FaqProceso />}
             </animated.div>
           </Fragment>
         )

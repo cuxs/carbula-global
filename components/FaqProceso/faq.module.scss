@@ -1,0 +1,17 @@
+@import "../../sass/variables.scss";
+
+.textContainer{
+  margin-top: 25px;
+  max-height: 200px;
+  overflow-y: scroll;
+  color: white;
+}
+
+.separator{
+  margin-left: 0;
+  background: white;
+  color: white;
+  border-color: white;
+  width: 393px;
+  height: 1px;
+}

@@ -22,12 +22,13 @@ const FooterInfo = dynamic(import('../../components/FooterInfo'))
 const CotizationForm = dynamic(import('../../components/CotizationForm'))
 const FaqProceso = dynamic(import('../../components/FaqProceso'))
 const FaqCotization = dynamic(import('../../components/FaqCotization'))
+const FaqValoraciones = dynamic((import('../../components/FaqValoraciones')))
 
 export async function getServerSideProps(context) {
   return{
     props:{
       COUNTRY_CODE: getCountryCode(context.locale),
-      ...(await serverSideTranslations(context.locale, ['cotizacion', 'CotizationForm', 'FaqProceso', 'FaqCotization', 'FooterInfo'])),
+      ...(await serverSideTranslations(context.locale, ['cotizacion', 'CotizationForm', 'FaqProceso', 'FaqCotization', 'FaqValoraciones', 'FooterInfo'])),
 
     }
   }
@@ -177,8 +178,8 @@ const Cotizacion = ({COUNTRY_CODE}) => {
         case 0: return (
           <Fragment>
             <animated.div style={titleProps}>
-              <h2>Valor promedio</h2>
-              <h3>para {COUNTRY_CODE === 'cl' ? 'tu' : 'su'} {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
+              <h2>Precio promedio de publicación</h2>
+              <h3>actual en Región Metropolitana para {COUNTRY_CODE === 'cl' ? 'tu' : 'su'} {capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
             </animated.div>
             <animated.div style={priceProps} className={styles.price__comparison}>
               {cotizationData.retake_price && cotizationData.retake_price < cotizationData.granted_price && <div className={styles.automotora__price}><h4 className={styles.red}>{t('priceComparison.unaConsesionaria')}</h4><h3>{COUNTRY_CODE === 'mx' ? '' : CURRENCY[COUNTRY_CODE]}$ {formatNumber(cotizationData.retake_price, 0)}</h3></div>}
@@ -187,22 +188,18 @@ const Cotizacion = ({COUNTRY_CODE}) => {
             <animated.div style={faqProps}>
               {width > 769 && <FaqProceso />}
             </animated.div>
+            <FaqValoraciones />
           </Fragment>
         )
         case 1: return (
           <Fragment>
             <div className={styles['price-model__container']}>
+              <div className={styles.valorInicial}><h2>Valor inicial de publicación</h2></div>
               <h2>${formatNumber(selectedPrice, 0)}</h2>
-              <h3>{capitalize(cotizationData.brand)} {capitalize(cotizationData.model)} {capitalize(cotizationData.year)}</h3>
+              <a href="cotizacion?paso=paso-1"> ¿Deseas realizar nuevamente la cotización?</a>
             </div>
-            <div className={styles.steps__container}>
-              <div className={styles['step__row--active']}>
-                <span>1º</span><p>{t('stepOneTitle')}</p>
-              </div>
-              <div className={styles.step__row}>
-                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
-              </div>
-            </div>
+            <FaqCotization />
+            <FaqValoraciones />
           </Fragment>
         )
         case 2: return (
@@ -452,7 +449,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
       <div className={styles.footer__container}>
         <FooterInfo blue={step !== LAST_STEP_MOBILE} white={step === LAST_STEP_MOBILE} country_code={COUNTRY_CODE}/>
       </div>
-      {!startsWith(step, 'end') && <animated.div style={blueFooterProps} className={styles.footer__blue} />}
+      {/* {!startsWith(step, 'end') && <animated.div style={blueFooterProps} className={styles.footer__blue} />} */}
       {startsWith(step, 'end') && <animated.div style={redFooterProps} className={styles.footer__red} />}
     </div>
   )

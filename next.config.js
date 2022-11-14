@@ -45,19 +45,17 @@ module.exports = {
   },
   async redirects() {
     const env = process.env.NODE_ENV
-    if(env != "development"){
-      return [
-        {
-          source: "/datos_del_vehiculo",
-          destination: `/`,
-          permanent: true,
-        },
-        {
-          source: "/datos_del_usuario",
-          destination: `/`,
-          permanent: true,
-        },
-      ]
-    }
+    return env === "development" ? [] : [
+      {
+        source: "/datos_del_vehiculo",
+        destination: `/`,
+        permanent: true,
+      },
+      {
+        source: "/datos_del_usuario",
+        destination: `/`,
+        permanent: true,
+      },
+    ]
   }
 }

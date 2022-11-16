@@ -4,6 +4,7 @@ import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
 import ProgressBar from '../ProgressBar';
+import ProgressBarStep from '../ProgressBarStep';
 import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES, IVA, CARBULA_FEE, CARBULA_FEE_MINIMUM } from '../../utils/constants';
 import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
@@ -204,6 +205,9 @@ const CotizationForm = ({
     if (values.rematado && values.rematado === 'Sí') {
       return setStep('end-categoria')
     }
+    if(values.usage && values.usage === 'Comercial'){
+      return setStep('end-comercial')
+    }
     setStep(step + 1)
   }
 
@@ -327,33 +331,33 @@ const CotizationForm = ({
               <div className='form-item'>
                 <label>3. ¿Cuántos dueños ha tenido tu vehículo? </label>
                 <RadioInput
-                  touched={touched.rematado}
-                  value={values.rematado}
-                  name="rematado"
+                  touched={touched.owners}
+                  value={values.owners}
+                  name="owners"
                   options={['1', '2', '3', '4', '5+']}
                 />
-                {errors.rematado && touched.rematado && (
+                {errors.owners && touched.owners && (
                   <div className="form-error">
-                    {errors.rematado}
+                    {errors.owners}
                   </div>
                 )}
               </div>
               <div className='form-item'>
                 <label>4. ¿Cuál ha sido el uso dado a tu vehículo? </label>
                 <RadioInput
-                  touched={touched.rematado}
-                  value={values.rematado}
-                  name="rematado"
+                  touched={touched.usage}
+                  value={values.usage}
+                  name="usage"
                   options={['Particular', 'Comercial']}
                 />
-                {errors.rematado && touched.rematado && (
+                {errors.usage && touched.usage && (
                   <div className="form-error">
-                    {errors.rematado}
+                    {errors.usage}
                   </div>
                 )}
               </div>
               <div className={styles['buttons__container--horizontal']}>
-                <Button primary type='submit'>{t('stepTwoTitle')}</Button>
+                <Button primary type='submit'>Generar link inspección</Button>
                 <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
               </div>
             </form>
@@ -452,7 +456,7 @@ const CotizationForm = ({
             )}
           </div>
           <div className={styles['buttons__container--horizontal']}>
-            <Button primary type='submit'>{t('stepTwoTitle')}</Button>
+            <Button primary type='submit'>Generar link inspección</Button>
             <Button link type='button' onClick={() => setStep(step - 1)}>Atrás</Button>
           </div>
         </form>
@@ -938,17 +942,61 @@ const CotizationForm = ({
           </div>
         </div>
       )
+      case 'end-propietarios': return (
+        <div>
+          <div className={styles['error-card__container']}>
+            <img src="/icons/cancel.svg" alt='error' />
+            <hr />
+            <h4>En este momento no estamos vendiendo vehículos con más de  4 dueños. Agradecemos su tiempo y esperamos vender su próximo auto!</h4>
+          </div>
+        </div>
+      )
+      case 'end-comercial': return (
+        <div>
+          <div className={styles['error-card__container']}>
+            <img src="/icons/cancel.svg" alt='error' />
+            <hr />
+            <h3>Desafortunadamente, no vendemos vehículos de uso comercial. </h3>
+            <h4>Agradecemos su tiempo y esperamos vuelva pronto!</h4>
+          </div>
+        </div>
+      )
       default:
         break;
     }
   }
   const [min, max] = getCotizationEdgePrices()
+
+  const spbSteps=[
+    {
+      label: '',
+      subtitle: '',
+      name: 'step 1',
+    },
+    {
+      label: '',
+      subtitle: '',
+      name: 'step 2',
+    },
+    {
+      label: '',
+      subtitle: '',
+      name: 'step 3',
+    },
+    {
+      label: '',
+      subtitle: '',
+      name: 'hidden'
+    }
+  ]
+
   return (
     <div className={styles['cotization-form__container']}>
       <div
         className={styles.card__container}
       >
         <ProgressBar step={step} total={width < 769 ? LAST_STEP_MOBILE : LAST_STEP_DESKTOP} />
+        <ProgressBarStep spbSteps={spbSteps}/>
         {renderCardBody()}
       </div>
       {width < 769 && <FaqCotization />}

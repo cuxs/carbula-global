@@ -1,0 +1,17 @@
+@import "../../sass/variables.scss";
+
+.step{
+  margin-bottom: -75px;
+}
+
+.step:last-child{
+  display: none;
+}
+
+// .btnPrev{
+//   display: none;
+// }
+
+// .btnNext{
+//   display: none;
+// }

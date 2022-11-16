@@ -6943,6 +6943,11 @@
     "@react-spring/web" "~9.3.0"
     "@react-spring/zdog" "~9.3.0"
 
+"react-step-progress@^1.0.3":
+  "integrity" "sha512-AsebjdBZsoZzZuN50p24TMwKt8JVdyhsAPL/xvpY4c3dpQ9XBiRcZlADD0BoKP3iIxpEm+7ufwITmwY66FEfjQ=="
+  "resolved" "https://registry.npmjs.org/react-step-progress/-/react-step-progress-1.0.3.tgz"
+  "version" "1.0.3"
+
 "react-svg@^14.1.4":
   "integrity" "sha512-WNkT9+bb5ue9yH4tdnEaFq4iuxEo78Nr5Fl8bd0Tbddliyqm4yZmqnw/u2eFt541E1OOF9fDwu3PZoK3W/KWVA=="
   "resolved" "https://registry.npmjs.org/react-svg/-/react-svg-14.1.4.tgz"

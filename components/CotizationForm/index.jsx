@@ -4,7 +4,7 @@ import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
 import ProgressBar from '../ProgressBar';
-import ProgressBarStep from '../ProgressBarStep';
+// import ProgressBarStep from '../ProgressBarStep';
 import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES, IVA, CARBULA_FEE, CARBULA_FEE_MINIMUM } from '../../utils/constants';
 import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
@@ -108,8 +108,11 @@ const CotizationForm = ({
       if (values.rematado && values.rematado === 'Sí') {
         return setStep('end-rematado')
       }
-      if (values.prendado && values.prendado === 'Sí') {
-        return setStep('end-prendado')
+      if (values.owners && values.owners === '5+') {
+        return setStep('end-propietarios')
+      }
+      if (values.usage && values.usage === 'Comercial') {
+        return setStep('end-comercial')
       }
     }
     setFormValues({ ...formValues, ...values })
@@ -215,10 +218,11 @@ const CotizationForm = ({
     COUNTRY_CODE === 'mx' ?
     <Fragment>
       <div className={styles['secondary-steps__container']}>
-        <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
+        {/* <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
         <h4 className={styles.text__primary}>{t('step1.h4')} </h4>
         <hr />
-        <p>{t('loQueHacemos')}<br /><br /><b>Ahora cuéntanos un poco más acerca de tu auto.</b></p>
+        <p>{t('loQueHacemos')}<br /><br /><b>Ahora cuéntanos un poco más acerca de tu auto.</b></p> */}
+        <h3 className={styles.text__primary}>Por favor responde estas preguntas</h3>
         <Formik
           onSubmit={handleCondicionSubmit}
           validationSchema={object().shape({
@@ -280,11 +284,14 @@ const CotizationForm = ({
     :
     <Fragment>
       <div className={styles['secondary-steps__container']}>
-        <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
+        <h3 className={styles.text__primary}>Por favor responde estas preguntas</h3>
+        {/* <h3 className={styles.text__primary}>¡Gracias {name}!</h3>
         <h4 className={styles.text__primary}>{t('step1.h4')} </h4>
-        <hr />
+        <hr /> */}
+        <br />
         <p>No lo {t('olvides')}, en Cárbula <b>no compramos {t('tu')} auto</b>. {t('loQueHacemos')}
-          <br /><br /><b>Te haremos unas preguntas del vehículo:</b></p>
+        {/* <br /><br /><b>Te haremos unas preguntas del vehículo:</b></p> */}
+        </p>
         <Formik
           onSubmit={handleCondicionSubmit}
           validationSchema={object().shape({
@@ -384,9 +391,10 @@ const CotizationForm = ({
 
   const Step1Mobile = () => (
     <div className={styles['secondary-steps__container']}>
-      <h2 className={`${styles.text__primary} ${styles.main__title}`}>¡Gracias {name}!</h2>
+      {/* <h2 className={`${styles.text__primary} ${styles.main__title}`}>¡Gracias {name}!</h2>
       <h4 className={styles.text__primary}>Ahora cuéntanos un poco más acerca de tu auto.</h4>
-      <hr />
+      <hr /> */}
+      <h3 className={styles.text__primary}>Por favor responde estas preguntas</h3>
       <p>No lo olvides, <b>en Cárbula no compramos tu auto.</b>
       Lo que hacemos es venderlo por ti, encargarnos de absolutamente todo y garantizar hasta un 25% más de dinero que una automotora tradicional.
         <br /><br /><b>Te haremos unas preguntas del vehículo:</b></p>
@@ -967,28 +975,28 @@ const CotizationForm = ({
   }
   const [min, max] = getCotizationEdgePrices()
 
-  const spbSteps=[
-    {
-      label: '',
-      subtitle: '',
-      name: 'step 1',
-    },
-    {
-      label: '',
-      subtitle: '',
-      name: 'step 2',
-    },
-    {
-      label: '',
-      subtitle: '',
-      name: 'step 3',
-    },
-    {
-      label: '',
-      subtitle: '',
-      name: 'hidden'
-    }
-  ]
+  // const spbSteps=[
+  //   {
+  //     label: '',
+  //     subtitle: '',
+  //     name: 'step 1',
+  //   },
+  //   {
+  //     label: '',
+  //     subtitle: '',
+  //     name: 'step 2',
+  //   },
+  //   {
+  //     label: '',
+  //     subtitle: '',
+  //     name: 'step 3',
+  //   },
+  //   {
+  //     label: '',
+  //     subtitle: '',
+  //     name: 'hidden'
+  //   }
+  // ]
 
   return (
     <div className={styles['cotization-form__container']}>
@@ -996,7 +1004,7 @@ const CotizationForm = ({
         className={styles.card__container}
       >
         <ProgressBar step={step} total={width < 769 ? LAST_STEP_MOBILE : LAST_STEP_DESKTOP} />
-        <ProgressBarStep spbSteps={spbSteps}/>
+        {/* <ProgressBarStep spbSteps={spbSteps}/> */}
         {renderCardBody()}
       </div>
       {width < 769 && <FaqCotization />}

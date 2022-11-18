@@ -53,7 +53,7 @@ const ComoVender = () => {
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección virtual gratuita. La misma no tomará más de 20 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es generar un link de inspección virtual gratuita. La misma no tomará más de 20 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>
@@ -126,7 +126,7 @@ const ComoVender = () => {
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección virtual gratuita. La misma no tomará más de 20 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es generar un link de inspección gratuita. La misma no tomará más de 20 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>
@@ -199,7 +199,7 @@ const ComoVender = () => {
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección virtual gratuita. La misma no tomará más de 20 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es generar un link de inspección virtual gratuita. La misma no tomará más de 20 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>
@@ -271,7 +271,7 @@ const ComoVender = () => {
             <h4 itemprop="name">5. ¿Cuál es el próximo paso luego de cotizar?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
-                <p>El segundo paso es agendar una inspección mecánica gratuita. La misma no tomará más de 60 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
+                <p>El segundo paso es generar un link de inspección mecánica gratuita. La misma no tomará más de 60 minutos, y es en el día y horario que te resulte más conveniente. El encuentro nos ayudará a conocer el estado del vehículo para terminar de definir el precio.</p>
               </div>
             </div>
             <h4 itemprop="name">6. ¿Qué hacen con mi auto?</h4>

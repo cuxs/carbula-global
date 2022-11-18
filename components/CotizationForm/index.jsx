@@ -723,7 +723,7 @@ const CotizationForm = ({
       <p>{meetData.date}</p>
     </div>
     <hr />
-    <p className={styles['meeting-info__footer']}>Ahora que ya agendaste su inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.</p>
+    <p className={styles['meeting-info__footer']}>Ahora que ya generaste el link de inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.</p>
     <a href={getCatalogoURL(COUNTRY_CODE)}><Button primary>Ver catálogo</Button></a>
   </div>
 

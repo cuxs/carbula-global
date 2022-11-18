@@ -6948,6 +6948,13 @@
   "resolved" "https://registry.npmjs.org/react-step-progress/-/react-step-progress-1.0.3.tgz"
   "version" "1.0.3"
 
+"react-stepz@^1.0.2":
+  "integrity" "sha512-vGST7yNBDVtE9wDRyM1vwrQAikzaD91lnVq2aKHmfdvHAwrJKzUjNWI3nZrI4jFlPUaLDwc5zRlyJEq0YoKtug=="
+  "resolved" "https://registry.npmjs.org/react-stepz/-/react-stepz-1.0.2.tgz"
+  "version" "1.0.2"
+  dependencies:
+    "tiny-invariant" "^1.1.0"
+
 "react-svg@^14.1.4":
   "integrity" "sha512-WNkT9+bb5ue9yH4tdnEaFq4iuxEo78Nr5Fl8bd0Tbddliyqm4yZmqnw/u2eFt541E1OOF9fDwu3PZoK3W/KWVA=="
   "resolved" "https://registry.npmjs.org/react-svg/-/react-svg-14.1.4.tgz"
@@ -8052,6 +8059,11 @@
   "version" "2.0.12"
   dependencies:
     "setimmediate" "^1.0.4"
+
+"tiny-invariant@^1.1.0":
+  "integrity" "sha512-AD5ih2NlSssTCwsMznbvwMZpJ1cbhkGd2uueNxzv2jDlEeZdU04JQfRnggJQ8DrcVBGjAsCKwFBbDlVNtEMlzw=="
+  "resolved" "https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.3.1.tgz"
+  "version" "1.3.1"
 
 "tiny-warning@^1.0.2":
   "integrity" "sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA=="

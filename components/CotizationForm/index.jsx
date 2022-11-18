@@ -4,7 +4,7 @@ import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
 import ProgressBar from '../ProgressBar';
-// import ProgressBarStep from '../ProgressBarStep';
+import ProgressBarStep from '../ProgressBarStep';
 import { CURRENCY, LAST_STEP_DESKTOP, LAST_STEP_MOBILE, COUNTRY, SCALES, IVA, CARBULA_FEE, CARBULA_FEE_MINIMUM } from '../../utils/constants';
 import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
@@ -975,28 +975,24 @@ const CotizationForm = ({
   }
   const [min, max] = getCotizationEdgePrices()
 
-  // const spbSteps=[
-  //   {
-  //     label: '',
-  //     subtitle: '',
-  //     name: 'step 1',
-  //   },
-  //   {
-  //     label: '',
-  //     subtitle: '',
-  //     name: 'step 2',
-  //   },
-  //   {
-  //     label: '',
-  //     subtitle: '',
-  //     name: 'step 3',
-  //   },
-  //   {
-  //     label: '',
-  //     subtitle: '',
-  //     name: 'hidden'
-  //   }
-  // ]
+  const spbSteps=[
+    {
+      label: '',
+      name: 'step 1',
+    },
+    {
+      label: '',
+      name: 'step 2',
+    },
+    {
+      label: '',
+      name: 'step 3',
+    },
+    {
+      label: '',
+      name: 'hidden'
+    }
+  ]
 
   return (
     <div className={styles['cotization-form__container']}>
@@ -1005,6 +1001,7 @@ const CotizationForm = ({
       >
         <ProgressBar step={step} total={width < 769 ? LAST_STEP_MOBILE : LAST_STEP_DESKTOP} />
         {/* <ProgressBarStep spbSteps={spbSteps}/> */}
+        <ProgressBarStep />
         {renderCardBody()}
       </div>
       {width < 769 && <FaqCotization />}

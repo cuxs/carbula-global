@@ -656,7 +656,7 @@ const CotizationForm = ({
   const Step4 = () => <div className={styles['meeting-info']}>
     <p>Estimado {name},</p>
     <br/>
-    <p>Muchas gracias por utilizar nostros servicios. Para proceder, le solicitamos que realice una <b>inspección virtual</b> desde un dispositivo móvil. </p>
+    <p>Muchas gracias por utilizar nostros servicios. Para proceder, le solicitamos que realice una <b>inspección virtual</b> a su vehículo desde un dispositivo móvil. </p>
     {width < 769 ? (<Setp4Mobile/>) : (<Setp4Desktop/>)}
     <br /><br />
     <Button><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>

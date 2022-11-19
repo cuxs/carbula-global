@@ -656,7 +656,14 @@ const CotizationForm = ({
   const Step4 = () => <div className={styles['meeting-info']}>
     <p>Estimado {name},</p>
     <br/>
-    <p>Muchas gracias por utilizar nostros servicios. Para proceder, le solicitamos que realice una <b>inspección virtual</b> desde un dispositivo móvil. </p>
+    <p>Muchas gracias por utilizar nuestros servicios. Para proceder, le solicitamos que realice una <b>inspección virtual</b> a su vehículo desde un dispositivo móvil. </p>
+    <p align="left">
+      La inspección virtual es simple, solo necesitará:<br/>
+      - 20 o 30 minutos de su tiempo.<br/>
+      - Estar junto a su vehículo y que éste esté limpio (mejores fotos, mejores ventas).<br/>
+      - Tener la documentación a la mano.<br/>
+      - Tomar fotos con el celular horizontal.
+    </p>
     {width < 769 ? (<Setp4Mobile/>) : (<Setp4Desktop/>)}
     <br /><br />
     <Button><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
@@ -723,7 +730,7 @@ const CotizationForm = ({
       <p>{meetData.date}</p>
     </div>
     <hr />
-    <p className={styles['meeting-info__footer']}>Ahora que ya agendaste su inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.</p>
+    <p className={styles['meeting-info__footer']}>Ahora que ya generaste el link de inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.</p>
     <a href={getCatalogoURL(COUNTRY_CODE)}><Button primary>Ver catálogo</Button></a>
   </div>
 

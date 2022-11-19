@@ -18,7 +18,7 @@
   },
   "planLabel": "¿Cuál es su plan con la venta del auto?",
   "prendadoLabel": "¿Actualmente está con prenda?",
-  "inspectionSavedText": "Ahora que ya agendó su inspección, aproveche para conocer los autos que tenemos en venta.",
+  "inspectionSavedText": "Ahora que ya generó el link de inspección, aproveche para conocer los autos que tenemos en venta.",
   "tu": "su",
   "olvide": "olvide",
   "loQueHacemos": "Lo que hacemos es venderlo por usted y garantizar hasta un 25% más de dinero que una automotora tradicional.",
@@ -31,6 +31,6 @@
   "precioMargenParaNegociar": "Margen para negociar",
   "precioComisiónCarbula": "Comisión Cárbula",
   "precioDineroEnMano": "Dinero en mano",
-  "stepTwoTitle": "Agendar inspección",
+  "stepTwoTitle": "Generar link inspección",
   "errorPrendado": "¿Se encuenta prendado el vehículo?"
 }

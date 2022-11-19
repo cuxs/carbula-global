@@ -18,7 +18,7 @@
   },
   "planLabel": "¿Cuál es tu plan con la venta del auto?",
   "prendadoLabel": "¿Actualmente está prendado?",
-  "inspectionSavedText": "Ahora que ya agendaste su inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.",
+  "inspectionSavedText": "Ahora que ya generaste el link de inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.",
   "tu": "tu",
   "olvide": "olvides",
   "concesionarias": "concesionarias",
@@ -31,6 +31,6 @@
   "precioMargenParaNegociar": "Margen para negociar",
   "precioComisiónCarbula": "Comisión Cárbula",
   "precioDineroEnMano": "Dinero en mano",
-  "stepTwoTitle": "Agendar inspección",
+  "stepTwoTitle": "Generar link de inspección",
   "errorPrendado": "¿Se encuenta prendado el vehículo?"
 }

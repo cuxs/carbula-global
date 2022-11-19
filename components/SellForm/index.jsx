@@ -37,6 +37,7 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
   const [versionOptions, setVersionOptions] = useState([])
   const [versionLoading, setVersionLoading] = useState(false);
   const [userName, setUserName] = useState()
+  const [dealId, setDealId] = useState('')
   const [formData, setFormData] = useState(
     {
       brand: '',
@@ -182,12 +183,12 @@ const SellForm = ({ step, setStep, setOverlayBackground, zonas, referer, COUNTRY
         return setUserName(values.name)
       }
       else {
-        setUnhandledError (carAndContactData, unhandledError)
+        setUnhandledError (unhandledError, carAndContactData)
         return setUserName(values.name)
       }
     }
   }
-  const setUnhandledError = (carAndContactData, unhandledError) => {
+  const setUnhandledError = (unhandledError, carAndContactData) => {
     console.log(`ERROR no contemplado: ${unhandledError}`)
     console.log(unhandledError)
     carAndContactData.noGeneroNegocio = 'negocio_con_error' // para propiedad de hubspot

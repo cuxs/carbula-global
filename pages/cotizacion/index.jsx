@@ -199,7 +199,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
-                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>2º</span><p><span className={styles.agendar}>Generar link de</span> Inspección Virtual</p>
               </div>
             </div>
           </Fragment>
@@ -215,7 +215,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
-                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>2º</span><p><span className={styles.agendar}>Generar link de</span> Inspección Virtual</p>
               </div>
             </div>
           </Fragment>
@@ -229,7 +229,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>1º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
-                <span>2º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>2º</span><p><span className={styles.agendar}>Generar link de</span> Inspección Virtual</p>
               </div>
             </div>
           </div>
@@ -256,7 +256,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
           if (width < 769) {
             return <div className={styles['meeting-info']}>
               <h3>Felicitaciones</h3>
-              <h2>Agendó su inspección</h2>
+              <h2>Generó el link de inspección</h2>
               <hr />
               <div className={styles.meeting__row}>
                 <img src="/icons/calendar-white.svg" alt="calendario" />
@@ -289,7 +289,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                   <span>2º</span><p>{t('stepOneTitle')}</p>
                 </div>
                 <div className={styles.step__row}>
-                  <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                  <span>3º</span><p><span className={styles.agendar}>Generar link de</span> Inspección Virtual</p>
                 </div>
               </div>
             </div>
@@ -325,7 +325,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
-                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>3º</span><p><span className={styles.agendar}>Generar link de</span> Inspección Virtual</p>
               </div>
             </div>
           </div>
@@ -342,7 +342,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles.step__row}>
-                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+                <span>3º</span><p><span className={styles.agendar}>Generar link de</span> Inspección Virtual</p>
               </div>
             </div>
           </div>
@@ -359,7 +359,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
                 <span>2º</span><p>{t('stepOneTitle')}</p>
               </div>
               <div className={styles['step__row--active']}>
-                <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección</p>
+                <span>3º</span><p><span className={styles.agendar}>Generar link de</span> Inspección</p>
               </div>
             </div>
           </div>
@@ -367,7 +367,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
         case 9: if (width < 769) {
           return <div className={styles['meeting-info']}>
             <h3>Felicitaciones</h3>
-            <h2>Agendó su inspección</h2>
+            <h2>Generí el link de inspección</h2>
             <hr />
             <div className={styles.meeting__row}>
               <img src="/icons/calendar-white.svg" alt="calendario" />
@@ -401,7 +401,7 @@ const Cotizacion = ({COUNTRY_CODE}) => {
               <span>2º</span><p>{t('stepOneTitle')}</p>
             </div>
             <div className={styles.step__row}>
-              <span>3º</span><p><span className={styles.agendar}>Agendar</span> Inspección Virtual</p>
+              <span>3º</span><p><span className={styles.agendar}>Generar link de</span> Inspección Virtual</p>
             </div>
           </div>
         </Fragment>

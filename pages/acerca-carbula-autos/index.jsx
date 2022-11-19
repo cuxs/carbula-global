@@ -474,7 +474,7 @@ const AcercaCarbula = () => {
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
               <p>Primero, dentro de la publicación hace click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado).</p>
-              <p>El segundo paso es agendar una visita.</p>
+              <p>El segundo paso es generar un link de inspección.</p>
             </div>
           </div>
           <h4 itemprop="name">4. ¿En qué consiste la visita vehicular?</h4>

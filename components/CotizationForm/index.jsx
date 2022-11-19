@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useCallback, useEffect } from 'react';
-import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX, redondeo } from '../../utils/helpers';
+import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX, redondeo, getCotization } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
@@ -9,7 +9,7 @@ import { Formik, Field } from 'formik';
 import { object, mixed, number } from 'yup';
 import RadioInput from '../RadioInput';
 import FaqCotization from '../FaqCotization';
-import { updateLeadPrices, rejectSellTime, updateHubspotProperty } from '../../utils/fetches';
+import { updateLeadPrices, rejectSellTime, updateHubspotProperty, generateInspectionHS } from '../../utils/fetches';
 import Modal from '../Modal';
 import NumberFormat from 'react-number-format';
 import { InlineWidget } from "react-calendly";
@@ -19,6 +19,8 @@ import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONar from '../../public/autopress-ar.json'
 import cotizationJSONuy from '../../public/autopress-uy.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
+import CryptoJS from 'crypto-js'
+import QRCode from "react-qr-code"
 
 const CotizationForm = ({
   selectedPrice,
@@ -43,6 +45,8 @@ const CotizationForm = ({
   meetData,
   locationName,
   COUNTRY_CODE }) => {
+
+  const [inspectionURL, setInspectionURL] = useState("")
 
   const cotizationsJSON = useCallback(() => {
     const cotizationsJSONs = {
@@ -88,6 +92,7 @@ const CotizationForm = ({
   }
   const handleCondicionSubmit = (values, actions) => {
     try {
+      setInspectionData()
       updateHubspotProperty(values)
     } catch (e) {
       console.log(e)
@@ -141,6 +146,43 @@ const CotizationForm = ({
       setStep('end-venta')
     } catch (e) {
       console.log(e)
+    }
+  }
+
+  const getCotizationData = () => {
+    const cotizationCrypted = getCotization()
+    const bytes = CryptoJS.AES.decrypt(cotizationCrypted, 'cotizacion')
+    const cotizationDataJSON = bytes.toString(CryptoJS.enc.Utf8);
+    const cotizationObject = JSON.parse(cotizationDataJSON)
+    return cotizationObject
+  }
+
+  const setInspectionData = async () => {
+    const carAndContactData = getCotizationData()
+    try{
+      const inspectionData = {
+        "email": carAndContactData.email,
+        "locale": `es_${COUNTRY_CODE.toUpperCase()}`,
+        "firstName": carAndContactData.name,
+        "lastName": typeof(carAndContactData.lastName) !== "undefined" ? carAndContactData.lastName : carAndContactData.name,
+        "phone": carAndContactData.phone,
+        "identification": typeof(carAndContactData.inspectionDataIdentification) !== "undefined" ? carAndContactData.inspectionDataIdentification : "Sin especificar",
+        "internalId": carAndContactData.uuid,
+        "plate": typeof(carAndContactData.inspectionDataPlate) !== "undefined" ? carAndContactData.inspectionDataPlate : "Sin especificar",
+        "make": carAndContactData.brand,
+        "model": carAndContactData.model,
+        "version": carAndContactData.version,
+        "color": typeof(carAndContactData.inspectionDataColor) !== "undefined" ? carAndContactData.inspectionDataColor : "white",
+        "external_id": carAndContactData.external_id
+      }
+      await generateInspectionHS(inspectionData)
+      .then(res => {setInspectionURL(res)})
+      .catch(err => {console.log("ERROR: ", err)})
+    }
+    catch(err){
+      console.log("ERROR: ", err)
+      setInspectionId("No se pudo especificar")
+      setInspectionURL("No se pudo especificar")
     }
   }
 
@@ -609,7 +651,34 @@ const CotizationForm = ({
       )}
     </Formik>
   </div>
-  const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
+  // const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
+
+  const Step4 = () => <div className={styles['meeting-info']}>
+    <p>Estimado {name},</p>
+    <br/>
+    <p>Muchas gracias por utilizar nuestros servicios. Para proceder, le solicitamos que realice una <b>inspección virtual</b> a su vehículo desde un dispositivo móvil. </p>
+    <p align="left">
+      La inspección virtual es simple, solo necesitará:<br/>
+      - 20 o 30 minutos de su tiempo.<br/>
+      - Estar junto a su vehículo y que éste esté limpio (mejores fotos, mejores ventas).<br/>
+      - Tener la documentación a la mano.<br/>
+      - Tomar fotos con el celular horizontal.
+    </p>
+    {width < 769 ? (<Setp4Mobile/>) : (<Setp4Desktop/>)}
+    <br /><br />
+    <Button><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
+  </div>
+
+  const Setp4Desktop = () => <div>
+    <p>Puede hacerlo escaneando el código QR de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
+    <QRCode value={inspectionURL} size="128"/>
+  </div>
+
+  const Setp4Mobile = () => <div>
+    <p>Puede hacerlo presionando el botón de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
+    <br /><br />
+    <Button><a href={inspectionURL}>Inspección virtual</a></Button>
+  </div>
 
   const Step5Mobile = () => <div className={styles['secondary-steps__container']}>
     <Formik
@@ -661,7 +730,7 @@ const CotizationForm = ({
       <p>{meetData.date}</p>
     </div>
     <hr />
-    <p className={styles['meeting-info__footer']}>Ahora que ya agendaste su inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.</p>
+    <p className={styles['meeting-info__footer']}>Ahora que ya generaste el link de inspección, aprovechá para ver los autos que tenemos disponibles en nuestro catálogo.</p>
     <a href={getCatalogoURL(COUNTRY_CODE)}><Button primary>Ver catálogo</Button></a>
   </div>
 
@@ -800,14 +869,15 @@ const CotizationForm = ({
         }
         return <Step4 />
       case 3:
-        if (width < 769) {
-          return <Step4 />
-        }
-        return <Step5 />
+        // if (width < 769) {
+        //   return <Step4 />
+        // }
+        // return <Step5 />
+        return <Step4 />
       case 4:
-        if (width < 769) {
-          return <Step5 />
-        }
+        // if (width < 769) {
+        //   return <Step5 />
+        // }
         return <div />
       case 'end-venta': return (
         <div>

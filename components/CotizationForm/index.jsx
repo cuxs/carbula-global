@@ -656,7 +656,14 @@ const CotizationForm = ({
   const Step4 = () => <div className={styles['meeting-info']}>
     <p>Estimado {name},</p>
     <br/>
-    <p>Muchas gracias por utilizar nostros servicios. Para proceder, le solicitamos que realice una <b>inspección virtual</b> a su vehículo desde un dispositivo móvil. </p>
+    <p>Muchas gracias por utilizar nuestros servicios. Para proceder, le solicitamos que realice una <b>inspección virtual</b> a su vehículo desde un dispositivo móvil. </p>
+    <p align="left">
+      La inspección virtual es simple, solo necesitará:<br/>
+      - 20 o 30 minutos de su tiempo.<br/>
+      - Estar junto a su vehículo y que éste esté limpio (mejores fotos, mejores ventas).<br/>
+      - Tener la documentación a la mano.<br/>
+      - Tomar fotos con el celular horizontal.
+    </p>
     {width < 769 ? (<Setp4Mobile/>) : (<Setp4Desktop/>)}
     <br /><br />
     <Button><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>

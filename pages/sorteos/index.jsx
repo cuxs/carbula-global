@@ -42,9 +42,9 @@ const Sorteos = ({COUNTRY_CODE}) => {
         </div>
         <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFThkCEzDE&#x2F;view?utm_content=DAFThkCEzDE&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">[CHI] - Landing page sorteos</a> de Martín Salassa
       </div>
-      {/* <div className={styles.footer__container}>
+      <div className={styles.footer__container}>
         <FooterInfo/>
-      </div> */}
+      </div>
     </div>
   )
 }

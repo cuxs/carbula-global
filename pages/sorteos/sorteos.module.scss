@@ -1,0 +1,349 @@
+@import "../../sass/variables.scss";
+
+.canvaDiv{
+  // position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 56.2225%;
+  padding-bottom: 0;
+  // box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+  // margin-top: 1.6em;
+  // margin-bottom: 0.9em;
+  overflow: hidden;
+  border-radius: 8px;
+  will-change: transform;
+}
+
+.canvaIframe{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+  // padding: 0;
+  margin-top: 50px;
+}
+
+.cotization__container {
+  position: relative;
+  width: 100%;
+  height: 130vh;
+  background-color: #0d2042;
+  z-index: 1;
+}
+.cotization__container--success {
+  position: relative;
+  width: 100%;
+  height: 130vh;
+  background-color: #0d2042;
+}
+@keyframes changeColor {
+  from {
+    background-color: #0d2042;
+  }
+  to {
+    background-color: $green;
+  }
+}
+.car-detail__section {
+  position: absolute;
+  top: 170px;
+  left: 200px;
+  text-align: left;
+  z-index: 2;
+  width: 40%;
+  h2,
+  h3 {
+    color: white;
+    &:hover{
+      transform: scale(1.05) perspective(1000px)
+    }
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: all
+  }
+}
+.price__comparison {
+  display: flex;
+  margin-top: 40px;
+}
+
+.automotora__price,
+.carbula__price {
+  padding-left: 15px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.automotora__price {
+  border-left: 3px solid $red;
+  margin-right: 20px;
+  h4 {
+    color: $red;
+  }
+  h3 {
+    letter-spacing: 1.5px;
+  }
+}
+.carbula__price {
+  border-left: 3px solid $lightBlue;
+  margin-right: 20px;
+  h4 {
+    color: $lightBlue;
+  }
+  h3 {
+    letter-spacing: 1.5px;
+  }
+}
+%footer {
+  position: absolute;
+  bottom: 0px;
+  background-position-y: -10px;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  z-index: -1;
+}
+
+.footer__blue {
+  @extend %footer;
+  background-image: url("../../public/images/footer-blue.svg");
+}
+.footer__red {
+  @extend %footer;
+  background-image: url("../../public/images/footer-red.svg");
+}
+.steps__container {
+  margin-top: 50px;
+  width: 100%;
+  p {
+    color: white;
+    margin-bottom: 20px;
+    width: 70%;
+    font-weight: 100;
+  }
+  hr {
+    border-top: none;
+    margin-bottom: 20px;
+    width: 70%;
+    float: left;
+  }
+}
+.step__row {
+  margin-bottom: 20px;
+  color: $grey;
+  display: flex;
+  span {
+    width: 25px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  &--active {
+    margin-bottom: 20px;
+    display: flex;
+    color: white;
+    font-weight: 900;
+    p {
+      font-weight: 900;
+    }
+    span {
+      text-align: center;
+      border-bottom: 2px solid $primaryColor;
+      width: 25px;
+      margin-right: 10px;
+      height: 25px;
+    }
+  }
+}
+.step__row,
+.step__row--active {
+  .agendar {
+    border-bottom: none !important;
+    margin-right: 0px;
+  }
+}
+.footer__container {
+  display: none;
+}
+.end-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-top: 30px;
+  button {
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 20px;
+      margin-right: 5px;
+    }
+  }
+}
+.price-model__container {
+  margin: -50px auto 0px auto;
+}
+@media (max-width: 1281px) {
+  %footer {
+    background-repeat: no-repeat;
+    background-position-y: 10px;
+    width: 100%;
+    height: 110px;
+  }
+  .car-detail__section {
+    left: 150px;
+  }
+}
+@media (max-width: 916px) {
+  .car-detail__section {
+    position: relative;
+    top: unset;
+    left: unset;
+    height: unset;
+    width: 100%;
+    padding-top: 150px;
+    text-align: center;
+  }
+  .price__comparison {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  .price-model__container {
+    text-align: center;
+  }
+  .cotization__container {
+    height: 100% !important;
+    transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
+  }
+  .footer__blue,
+  .footer__red {
+    width: 100%;
+    height: 400px;
+  }
+  .footer__container {
+    display: block;
+    position: relative;
+    bottom: 0px;
+    z-index: 2;
+  }
+  .steps__container {
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+    margin: 40px auto;
+    p {
+      width: 100%;
+    }
+  }
+  .step__row {
+    margin-right: 5px;
+    span {
+      margin-right: 0px;
+    }
+    &--active {
+      margin-bottom: 20px;
+      display: flex;
+      color: white;
+      span {
+        text-align: center;
+        border-bottom: 2px solid $primaryColor;
+        width: 25px;
+        margin-right: 2px;
+        height: 25px;
+      }
+      p {
+        margin-right: 5px;
+      }
+    }
+  }
+  .meeting-info {
+    padding-top: 20px;
+    width: 90%;
+    margin: 0px auto;
+    h2 {
+      font-size: 30px;
+    }
+    p {
+      color: white;
+      margin-bottom: 30px;
+    }
+    hr {
+      width: 100%;
+      margin: 40px 0px;
+      border-top: none;
+    }
+    .end-buttons{
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+      margin: 0px auto;
+    }
+  }
+  .meeting__row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 60%;
+    margin: 50px auto;
+    img {
+      margin-right: 20px;
+    }
+    p {
+      margin-bottom: 0px;
+      color: white;
+      text-align: left;
+    }
+  }
+  .cotization__container--success {
+    height: auto !important;
+  }
+}
+@media (max-width: 571px) {
+  .footer__blue,
+  .footer__red {
+    width: 100%;
+    height: 500px;
+  }
+}
+@media (max-width: 550px) {
+  .meeting-info{
+    .end-buttons{
+      width: 90%;
+    }
+  }
+}
+@media (max-width: 501px){
+  .footer__blue,
+  .footer__red {
+    height: 700px;
+  }
+}
+@media (max-width: 475px) {
+  .steps__container {
+    width: 400px;
+  }
+  .car-detail__section {
+    width: 95%;
+    padding-top: 70px;
+  }
+}
+@media (max-width: 376px) {
+  .steps__container {
+    width: 320px;
+    margin: 30px auto;
+  }
+  .step__row,
+  .step__row--active {
+    .agendar {
+      display: none !important;
+    }
+  }
+  .footer__blue,
+  .footer__red {
+    height: 600px;
+  }
+}

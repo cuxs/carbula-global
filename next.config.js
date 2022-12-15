@@ -56,11 +56,6 @@ module.exports = {
         destination: `/`,
         permanent: true,
       },
-      {
-        source: "https://sorteos.carbula.*",
-        destination: `https://carbula-sorteos.my.canva.site/`,
-        permanent: true,
-      },
     ]
   }
 }

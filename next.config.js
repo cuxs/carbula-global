@@ -45,7 +45,13 @@ module.exports = {
   },
   async redirects() {
     const env = process.env.NODE_ENV
-    return env === "development" ? [] : [
+    return env === "development" ? [
+      {
+        source: "/",
+        destination: `https://carbula-sorteos.my.canva.site/`,
+        permanent: true,
+      },
+    ] : [
       {
         source: "/datos_del_vehiculo",
         destination: `/`,

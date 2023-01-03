@@ -680,7 +680,7 @@ const CotizationForm = ({
     {/* <p>Puede hacerlo presionando el botón de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
     <br /><br />
     <Button><a href={inspectionURL}>Inspección virtual</a></Button> */}
-    <Button><a href={inspectionURL}>Continuar</a></Button>
+    <Button><a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20soy%20${name}%20y%20quiero%20vender%20mi%20${brand}%20${model}%20${version}%20${year}`}><b>Continuar</b></a></Button>
   </div>
 
   const Step5Mobile = () => <div className={styles['secondary-steps__container']}>

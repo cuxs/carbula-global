@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useCallback, useEffect } from 'react';
-import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX, redondeo, getCotization } from '../../utils/helpers';
+import { formatNumber, getCalendlyURL, getCatalogoURL, estadosMX, redondeo, getCotization, getWhatsappNumber } from '../../utils/helpers';
 import Button from '../Button';
 import styles from './cotization-form.module.scss';
 import Select from '../SelectComponent';
@@ -175,13 +175,14 @@ const CotizationForm = ({
         "color": typeof(carAndContactData.inspectionDataColor) !== "undefined" ? carAndContactData.inspectionDataColor : "white",
         "external_id": carAndContactData.external_id
       }
-      await generateInspectionHS(inspectionData)
-      .then(res => {setInspectionURL(res)})
-      .catch(err => {console.log("ERROR: ", err)})
+      // await generateInspectionHS(inspectionData)
+      // .then(res => {setInspectionURL(res)})
+      // .catch(err => {console.log("ERROR: ", err)})
+      setInspectionURL("No se pudo especificar")
     }
     catch(err){
       console.log("ERROR: ", err)
-      setInspectionId("No se pudo especificar")
+      // setInspectionId("No se pudo especificar")
       setInspectionURL("No se pudo especificar")
     }
   }
@@ -654,7 +655,7 @@ const CotizationForm = ({
   // const Step4 = () => <InlineWidget url={getCalendlyURL(COUNTRY_CODE, email, name, phone)} />
 
   const Step4 = () => <div className={styles['meeting-info']}>
-    <p>Estimado {name},</p>
+    {/* <p>Estimado {name},</p>
     <br/>
     <p>Muchas gracias por utilizar nuestros servicios. Para proceder, le solicitamos que realice una <b>inspección virtual</b> a su vehículo desde un dispositivo móvil. </p>
     <p align="left">
@@ -663,21 +664,25 @@ const CotizationForm = ({
       - Estar junto a su vehículo y que éste esté limpio (mejores fotos, mejores ventas).<br/>
       - Tener la documentación a la mano.<br/>
       - Tomar fotos con el celular horizontal.
-    </p>
+    </p> */}
+    <h2><b>¡Gracias por utilizar<br/>nuestra plataforma!<br/><br/></b></h2>
+    <p>Ahora sigamos por Whatsapp</p>
     {width < 769 ? (<Setp4Mobile/>) : (<Setp4Desktop/>)}
     <br /><br />
-    <Button><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
+    {/* <Button><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button> */}
   </div>
 
   const Setp4Desktop = () => <div>
-    <p>Puede hacerlo escaneando el código QR de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
-    <QRCode value={inspectionURL} size="128"/>
+    {/* <p>Puede hacerlo escaneando el código QR de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
+    <QRCode value={inspectionURL} size="128"/> */}    
+    <Button><a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20soy%20${name}%20y%20quiero%20vender%20mi%20${brand}%20${model}%20${version}%20${year}`}><b>Clic aquí para continuar</b></a></Button>
   </div>
 
   const Setp4Mobile = () => <div>
-    <p>Puede hacerlo presionando el botón de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
+    {/* <p>Puede hacerlo presionando el botón de abajo. También le enviaremos el enlace por <b>correo electrónico a {email}</b></p>
     <br /><br />
-    <Button><a href={inspectionURL}>Inspección virtual</a></Button>
+    <Button><a href={inspectionURL}>Inspección virtual</a></Button> */}
+    <Button><a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20soy%20${name}%20y%20quiero%20vender%20mi%20${brand}%20${model}%20${version}%20${year}`}><b>Clic aquí para continuar</b></a></Button>
   </div>
 
   const Step5Mobile = () => <div className={styles['secondary-steps__container']}>

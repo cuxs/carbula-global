@@ -110,6 +110,31 @@ const PreguntasFrecuentes = () => {
       </div>
     )
   }
+  if (router.locale === 'es-PE') {
+    return (
+      <div>
+        <Head title="Preguntas frecuentes para comprar y vender autos seminuevos | Carbula Autos Perú" />
+        <Nav />
+        <div className={styles.header}>
+        <h1>¿Cómo vender y comprar de forma segura un auto seminuevo?</h1>
+        </div>
+        <div className={styles.container}>
+        <h4>Preguntas frecuentes sobre vender</h4>
+        <div className={styles.preguntas}>
+        <FaqPreguntasFrecuentesVenderChile/>
+        </div>
+        <h4>Preguntas frecuentes sobre comprar</h4>
+        <div className={styles.preguntas}>
+        <FaqPreguntasFrecuentesComprarChile/>
+        </div>
+      </div>
+      <hr />
+      <section>
+          <FooterInfo grey country_code={'pe'} />
+        </section>
+      </div>
+    )
+  }
   if (router.locale === 'es-UY') {
     return <div>
         <Head title="Preguntas frecuentes para comprar y vender autos seminuevos | Carbula Autos Uruguay" />

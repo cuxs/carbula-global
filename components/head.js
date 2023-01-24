@@ -26,6 +26,7 @@ const Head = props => {
       <meta name="google-site-verification" content={getGoogleSiteVerification(COUNTRY_CODE)} />
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
       <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/`} />
+      <link rel="alternate" hrefLang="es-PE" href="https://www.carbula.pe" />
       <link rel="alternate" hrefLang="es-MX" href="https://www.carbula.mx" />
       <link rel="alternate" hrefLang="es-CL" href="https://www.carbula.cl" />
       <link rel="alternate" hrefLang="es-AR" href="https://www.carbula.ar" />

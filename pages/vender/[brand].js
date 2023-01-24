@@ -70,6 +70,7 @@ const Home = ({ zonas, referer, brand, modelsExampleText, COUNTRY_CODE }) => {
       'cl': import('../../components/SellFormChile'),
       'uy': import('../../components/SellForm'),
       'mx': import('../../components/SellForm'),
+      'pe': import('../../components/SellFormGlobal'),
     }
     return SellForms[COUNTRY_CODE]
   })

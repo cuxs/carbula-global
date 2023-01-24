@@ -40,6 +40,7 @@ const Head = props => {
       <meta name="googlebot" content="index,follow" />
       <meta name="facebook-domain-verification" content={getFacebookDomainVerification(COUNTRY_CODE)} />
       <link rel="canonical" href={`https://www.carbula.${COUNTRY_CODE}/`} />
+      <link rel="alternate" hrefLang="es-PE" href="https://www.carbula.pe/como-vender" />
       <link rel="alternate" hrefLang="es-MX" href="https://www.carbula.mx/como-vender" />
       <link rel="alternate" hrefLang="es-CL" href="https://www.carbula.cl/como-vender" />
       <link rel="alternate" hrefLang="es-AR" href="https://www.carbula.ar/como-vender" />

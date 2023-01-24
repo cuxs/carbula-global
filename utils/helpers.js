@@ -28,6 +28,11 @@ export const globalValidationData= {
     phoneMaxNumber: 5219999999999,
     phoneMask: '+52 1 nn nnnn nnnn'
   },
+  pe: {
+    phoneMinNumber: 51100000000,
+    phoneMaxNumber: 51999999999,
+    phoneMask: '+51 nnn nnn nnn'
+  },
   uy: {
     phoneMinNumber: 59810000000,
     phoneMaxNumber: 59899999999,
@@ -338,6 +343,44 @@ export const getReviews = (country_code) => {
         "rating": 5, "width": 50, "height": 50, 
       },
     ],
+    pe: [
+      {
+        author_name: 'Juan Bustamante',
+        text: 'Cierre de venta sumamente rapido ( 1 semana desde publicacion) .Procedimiento de venta expedito 1hora en tu misma casa todo efectuado con transferencias electronicas y todo a un buen precio me atrevo a recomendarlo.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Ghb4D2t2PIEDHTZ8dGcpoQc5Xn2MZ8M1COZD849=w36-h36-p-rp-mo-br100',
+        "rating": 5, "width": 50, "height": 50, 
+      },
+      {
+        author_name: 'Carola L',
+        text: 'No tenía experiencia en ventas de vehículos y me ayudaron demasiado, además poseen una gran agilidad y rapidez en esto, siempre estuvieron en contacto y con una gran transparencia. Totalmente recomendado para los que quieran vender sus vehículos o comprarlos',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14Gg6K5mtfV53TMlMqbB8wtzvkqdxzoBxZzczBwZ6e1I=w36-h36-p-rp-mo-br100',
+        "rating": 5, "width": 50, "height": 50, 
+      },
+      {
+        author_name: 'Pablo Ceballos',
+        text: 'Compre hace muy poco mi vehículo junto a Cárbula, y nada que decir, excelente servicio, muy buena y rápida gestión de nuestro ejecutivo, en 24 hrs concretamos compra. Todo fue bastante claro y transparente. Muy recomendable el servicio. ¡Muchas gracias!',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjWCnGhbeqsXedfgJKrAPP9O5O5XouW9Nuf2570OA=w60-h60-p-rp-mo-br100',
+        "rating": 5,
+      },
+      {
+        author_name: 'Gabriela Peñaloza',
+        text: 'Excelente Servicio muy rápido y sencillo el proceso para vender el auto. Todo digitalizado. La atención de primera nos apoyaron en cualquier duda. El auto lo vendieron en solo 2 días una maravilla. 100% recomendado.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjcwZUS2myjtBUIyRMELcRHpus6NWJDphjLAgK2=w60-h60-p-rp-mo-br100',
+        "rating": 5, "width": 50, "height": 50, 
+      },
+      {
+        author_name: 'Karina Alejandra Quinteros',
+        text: 'Excelente servicio! Le sacaron fotografías a mi Subaru New XV el día martes, lo publicaron el miércoles y el día viernes ya estaba vendido!. Todo fue en mi domicilio, sin tener que ir a la notaria para hacer el trámite de transferencia ya que se realizó on-line. Recomiendo de todas maneras.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GjJ-2BH5-qq1F67n7M1dA1Nl9P_sJBhvY43SqrIAQ=w60-h60-p-rp-mo-br100',
+        "rating": 5, "width": 50, "height": 50, 
+      },
+      {
+        author_name: 'Carlos Vilches',
+        text: 'Excelente servicio y atención. Un sistema personalizado y que por lejos supera la compra de otros sitios. Muy agradecido de la gestión. Demoró un poco más de una semana vender mi auto.',
+        profile_photo_url: 'https://lh3.googleusercontent.com/a-/AOh14GhYGERvwGQ5UNVLX5wknqJWC7KeVA4o4ZTHD5h6=w60-h60-p-rp-mo-ba3-br100',
+        "rating": 5, "width": 50, "height": 50, 
+      },
+    ],
     uy: [
       {
         author_name: 'Juan Bustamante',
@@ -423,7 +466,8 @@ export const getCatalogoURL = (country_code) => {
     ar: 'https://catalogo.carbula.ar',
     mx: 'https://catalogo.carbula.mx',
     uy: 'https://catalogo.carbula.uy',
-    cl: 'https://catalogo.carbula.cl'
+    cl: 'https://catalogo.carbula.cl',
+    pe: 'https://catalogo.carbula.pe'
   }
   return catalogoUrl[country_code]
 }
@@ -460,6 +504,7 @@ export const getPhoneNumber = (country_code) => {
     mx: '+525541622979',
     uy: '+59899220055',
     cl: '+56228977930',
+    pe: '+56971417008'
   }
   return phoneNumbers[country_code]
 }
@@ -469,6 +514,7 @@ export const getTitleByCountry = (country_code) => {
     ar: 'Compra y venta de autos en Argentina | Sitio seguro | Carbula',
     cl: 'Compra y venta de autos en Chile | Sitio seguro | Carbula',
     mx: 'Compra y venta de autos en Mexico | Sitio seguro | Carbula',
+    pe: 'Compra y venta de autos en Perú | Sitio seguro | Carbula',
     uy: 'Compra y venta de autos en Uruguay | Sitio seguro | Carbula',
   }
   return ids[country_code]
@@ -479,6 +525,7 @@ export const getKeywordsByCountry = (country_code) => {
     ar: 'carbula autos, carbula mendoza, catalogo de autos usados mendoza, auto venta mendoza, compra y venta de autos usados, venta de autos usados mendoza, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, comprar autos argentina, vender autos argentina, vende tu usado, crédito para autos Santander, crédito automotriz, crédito prendario, vendemos tu auto mendoza, cotizar mi auto para vender, inspección virtual, datascience, machinelearning, vender auto usado Acura, vender auto usado Alfa Romeo, vender auto usado Audi, vender auto usado BAIC, vender auto usado BMW, vender auto usado Buick, vender auto usado Chevrolet, vender auto usado Cupra, vender auto usado Dodge, vender auto usado Fiat, vender auto usado Ford, vender auto usado GMC, vender auto usado Honda, vender auto usado Hyundai, vender auto usado Infiniti, vender auto usado JAC, vender auto usado Jaguar, vender auto usado Jeep, vender auto usado KIA, vender auto usado Lincoln, vender auto usado Mazda, vender auto usado Mercedes Benz, vender auto usado Mini Cooper, vender auto usado Mitsubishi, vender auto usado Nissan, vender auto usado Peugeot, vender auto usado Renault, vender auto usado Seat, vender auto usado Suzuki, vender auto usado Toyota, vender auto usado Volkswagen, vender auto usado Volvo',
     cl: 'carbula autos, carbula chile, catalogo de autos usados chile, autos usados chile, autos en venta, compra y venta de autos usados, venta de autos usados chile, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, compra y venta de autos, carbula autos, carbula chileautos, comprar autos chile, vender autos chile, carro en venta usados, coches venda, crédito para autos, crédito automotriz, vendemos tu auto chile, cotizar mi auto para vender, inspección virtual, datascience, machinelearning, vender auto usado Acura, vender auto usado Alfa Romeo, vender auto usado Audi, vender auto usado BAIC, vender auto usado BMW, vender auto usado Buick, vender auto usado Chevrolet, vender auto usado Cupra, vender auto usado Dodge, vender auto usado Fiat, vender auto usado Ford, vender auto usado GMC, vender auto usado Honda, vender auto usado Hyundai, vender auto usado Infiniti, vender auto usado JAC, vender auto usado Jaguar, vender auto usado Jeep, vender auto usado KIA, vender auto usado Lincoln, vender auto usado Mazda, vender auto usado Mercedes Benz, vender auto usado Mini Cooper, vender auto usado Mitsubishi, vender auto usado Nissan, vender auto usado Peugeot, vender auto usado Renault, vender auto usado Seat, vender auto usado Suzuki, vender auto usado Toyota, vender auto usado Volkswagen, vender auto usado Volvo',
     mx: 'carbula autos, carbula mexico, catalogo de autos usados mexico, autos usados mexico, autos en venta, compra y venta de autos usados, venta de autos usados mexico, compra y venta de autos segunda mano, comprar y vender tu vehiculo, venta de autos, compra y venta de autos, carbula autos, carbula seminuevos, comprar autos mexico, vender autos mexico, auto venta, carro en venta usados, coches venda, crédito prendario, inspección virtual, datascience, machinelearning, vender auto usado Acura, vender auto usado Alfa Romeo, vender auto usado Audi, vender auto usado BAIC, vender auto usado BMW, vender auto usado Buick, vender auto usado Chevrolet, vender auto usado Cupra, vender auto usado Dodge, vender auto usado Fiat, vender auto usado Ford, vender auto usado GMC, vender auto usado Honda, vender auto usado Hyundai, vender auto usado Infiniti, vender auto usado JAC, vender auto usado Jaguar, vender auto usado Jeep, vender auto usado KIA, vender auto usado Lincoln, vender auto usado Mazda, vender auto usado Mercedes Benz, vender auto usado Mini Cooper, vender auto usado Mitsubishi, vender auto usado Nissan, vender auto usado Peugeot, vender auto usado Renault, vender auto usado Seat, vender auto usado Suzuki, vender auto usado Toyota, vender auto usado Volkswagen, vender auto usado Volvo',
+    pe: 'carbula autos, carbula peru, catalogo de autos usados peru, autos usados peru, autos en venta, compra y venta de autos usados, venta de autos usados peru, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, compra y venta de autos, carbula autos, carbula chileautos, comprar autos peru, vender autos peru, carro en venta usados, coches venda, crédito para autos, crédito automotriz, vendemos tu auto peru, cotizar mi auto para vender, inspección virtual, datascience, machinelearning, vender auto usado Acura, vender auto usado Alfa Romeo, vender auto usado Audi, vender auto usado BAIC, vender auto usado BMW, vender auto usado Buick, vender auto usado Chevrolet, vender auto usado Cupra, vender auto usado Dodge, vender auto usado Fiat, vender auto usado Ford, vender auto usado GMC, vender auto usado Honda, vender auto usado Hyundai, vender auto usado Infiniti, vender auto usado JAC, vender auto usado Jaguar, vender auto usado Jeep, vender auto usado KIA, vender auto usado Lincoln, vender auto usado Mazda, vender auto usado Mercedes Benz, vender auto usado Mini Cooper, vender auto usado Mitsubishi, vender auto usado Nissan, vender auto usado Peugeot, vender auto usado Renault, vender auto usado Seat, vender auto usado Suzuki, vender auto usado Toyota, vender auto usado Volkswagen, vender auto usado Volvo',
     uy: 'carbula uruguay, marketplace de autos, compra y venta de autos seminuevos, comprar y vender tu vehiculo, venta de autos, vender carro usado, compra y venta de autos, carbula autos uruguay, autos usados uruguay, compra de autos usados uruguay, venta de autos usados uruguay',
   }
   return ids[country_code]
@@ -489,6 +536,7 @@ export const getGoogleSiteVerification = (country_code) => {
     ar: 'sGIcw6SXevN6Ogzl-odByn6q4jnbBQlcpCDsKu9Kjl4',
     cl: 'sGIcw6SXevN6Ogzl-odByn6q4jnbBQlcpCDsKu9Kjl4',
     mx: 'sGIcw6SXevN6Ogzl-odByn6q4jnbBQlcpCDsKu9Kjl4',
+    pe: 'sGIcw6SXevN6Ogzl-odByn6q4jnbBQlcpCDsKu9Kjl4',
     uy: 'sGIcw6SXevN6Ogzl-odByn6q4jnbBQlcpCDsKu9Kjl4',
   }
   return ids[country_code]
@@ -499,6 +547,7 @@ export const getFacebookDomainVerification = (country_code) => {
     ar: 'brd5b5y4sra61yxq5iecd6omyq4sis',
     cl: 'xttlstugadcn3syxvsdpcr2kpm0ajs',
     mx: 'xbbkq67yvogzf0656jxyzlwamjm4tp',
+    pe: 'xttlstugadcn3syxvsdpcr2kpm0ajs',
     uy: 'u9xibrmbxi98j13w4lv7b1baytrgvy',
   }
   return ids[country_code]
@@ -509,6 +558,7 @@ export const getHotjarId =country_code=>{
     ar: '2558732',
     cl: '2558126',
     mx: '2745597',
+    pe: '2558126',
     uy: '2745589'
   }
   return ids[country_code]
@@ -519,6 +569,7 @@ export const getGTMid= country_code=>{
     ar: 'GTM-WZS7KD7',
     cl: 'GTM-TCKHB87',
     mx: 'GTM-PDWPP7J',
+    pe: 'GTM-TCKHB87',
     uy: 'GTM-T4DFD26'
   }
   return ids[country_code]
@@ -529,6 +580,7 @@ export const getInstagramLink = country_code=>{
     ar: 'https://www.instagram.com/carbula.ar/',
     cl: 'https://www.instagram.com/carbula.cl/',
     mx: 'https://www.instagram.com/carbula.mx/',
+    pe: 'https://www.instagram.com/carbula.pe/',
     uy: 'https://www.instagram.com/carbula.uy/'
   }
   return urls[country_code]
@@ -539,6 +591,7 @@ export const getFacebookLink = country_code=>{
     ar: 'https://www.facebook.com/carbulaok',
     cl: 'https://www.facebook.com/carbula.cl/',
     mx: 'https://www.facebook.com/carbulamexico/',
+    pe: 'https://www.facebook.com/carbula.pe/',
     uy: 'https://www.facebook.com/C%C3%A1rbula-Uruguay-108353218349585/'
   }
   return urls[country_code]

@@ -150,12 +150,14 @@ export const checkZone = (location, allzones, country_code) => {
   ]
 
   const uncoveredZonesMX = ['']
+  const uncoveredZonesPE = ['']
   const uncoveredZonesUY = ['']
 
   const uncoveredZones = {
       ar: uncoveredZonesAR,
       cl: uncoveredZonesCL,
       mx: uncoveredZonesMX,
+      pe: uncoveredZonesPE,
       uy: uncoveredZonesUY
   };
 
@@ -608,4 +610,9 @@ export const thousands = (number, decimals, decPoint = ',', thousandsSep = '.') 
 
 export const redondeo = (amount, country_code) => {
   return Math.round(amount/ROUNDING_BOUNDS[country_code])*ROUNDING_BOUNDS[country_code];
+}
+
+export const countryCovered = (country_code) => {
+  const coveredLocations = ['ar', 'cl', 'mx', 'uy']
+  return coveredLocations.includes(country_code);
 }

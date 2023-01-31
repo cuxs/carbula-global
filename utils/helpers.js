@@ -613,6 +613,6 @@ export const redondeo = (amount, country_code) => {
 }
 
 export const countryCovered = (country_code) => {
-  const coveredLocations = ['ar', 'cl', 'mx', 'uy']
+  const coveredLocations = ['ar', 'cl', 'mx', 'pe', 'uy']
   return coveredLocations.includes(country_code);
 }

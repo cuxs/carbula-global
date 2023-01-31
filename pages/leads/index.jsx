@@ -121,6 +121,7 @@ const Leads = () => {
       cl: 'Chile',
       ar: 'Argentina',
       mx: 'México',
+      pe: 'Perú',
       uy: 'Uruguay'
     }
     return countries[value]

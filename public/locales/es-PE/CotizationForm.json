@@ -1,0 +1,36 @@
+{
+  "step1.h4": "Ahora cuéntenos un poco más acerca de su vehículo.",
+  "labelVender": "¿Qué tan apurado está en vender?",
+  "vender":{
+    "opcion1":"Muy apurado",
+    "opcion2":"Normal",
+    "opcion3":"No tengo apuro"
+  },
+  "prendaLabel": "¿Actualmente está con prenda?",
+  "statusLabel": "¿En qué estado se encuentra su auto?",
+  "carStatus":{
+    "option3":{
+      "detail":"tiene detalles menores que requieren reparación y/o sustitución de alguna pieza. Detalles menores de pintura y algún topón."
+    },
+    "option4":{
+      "detail":"le urge una reparación mecánica. Presenta luces en el tablero, su carrocería tiene topones y el interior necesita ser restaurado."
+    }
+  },
+  "planLabel": "¿Cuál es su plan con la venta del auto?",
+  "prendadoLabel": "¿Actualmente está con prenda?",
+  "inspectionSavedText": "Ahora que ya generó el link de inspección, aproveche para conocer los autos que tenemos en venta.",
+  "tu": "su",
+  "olvide": "olvide",
+  "loQueHacemos": "Lo que hacemos es venderlo por usted y garantizar hasta un 25% más de dinero que una automotora tradicional.",
+  "concesionarias": "automotoras",
+  "ventaInmediataText": "Para ayudarle a resolver la venta inmediata, le contaremos su situación a la sólida red de automotoras acreditadas que trabajan con nosotros para que le contacten al tiro.",
+  "cuantoDineroDesea": "¿Cuánto dinero desea ganar?",
+  "autosVendidosEnDias": "Vendemos 9 de cada 10 autos con nuestro precio sugerido.",
+  "autosVendidosPreciosCompetitivos": "Mientras más competitivo sea el precio de publicación que elijas, más rápido lograremos el objetivo.",
+  "precioValorDePublicacion": "Valor de publicación",
+  "precioMargenParaNegociar": "Margen para negociar",
+  "precioComisiónCarbula": "Comisión Cárbula",
+  "precioDineroEnMano": "Dinero en mano",
+  "stepTwoTitle": "Continuar",
+  "errorPrendado": "¿Se encuenta prendado el vehículo?"
+}

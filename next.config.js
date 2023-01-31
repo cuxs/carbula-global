@@ -13,30 +13,35 @@ module.exports = {
       ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicopro/#/home?",
       cl: "CL",
       mx: "MX",
+      pe: "PE",
       uy: "UY" 
     },
     SANTANDER_SPID_TESTING: {
       ar: "352454",
       cl: "CL",
       mx: "MX",
+      pe: "PE",
       uy: "UY" 
     },
     SANTANDER_URL_PRODUCTION: {
       ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicohml/#/home",
       cl: "CL",
       mx: "MX",
+      pe: "PE",
       uy: "UY"  
     },
     SANTANDER_SPID_PRODUCTION: {
       ar: "350735",
       cl: "CL",
       mx: "MX",
+      pe: "PE",
       uy: "UY" 
     },
     SANTANDER_OHASH: {
       ar: "li3l6r7xzo",
       cl: "CL",
       mx: "MX",
+      pe: "PE",
       uy: "UY" 
     },
     GOOGLE_ONETAP_LOGIN_CLIENT_ID: "1036649065648-b720t3ik7500nro7k187gr7sjh5htvu3.apps.googleusercontent.com",

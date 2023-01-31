@@ -222,6 +222,82 @@ const TerminosCondiciones = () => {
       </div>
     )
   }
+  if (router.locale === 'es-PE') {
+    return (
+      <div>
+        <Head title="Terminos y condiciones | Carbula Autos Perú" />
+        <Nav />
+        <div className={styles.header}>
+        <h1>Términos y condiciones</h1>
+        </div>
+        <div className={styles.terminos}>
+         <h4>Aceptación de los términos, condiciones y políticas de privacidad</h4>
+          <p>Al usar nuestra plataforma y los servicios que proponemos, usted acepta los términos y condiciones establecidos en el presente apartado. Estos Términos de uso ("Términos") rigen su acceso y uso de los servicios y propuestas (colectivamente, "Servicios") por www.carbula.com o www.carbula.cl, incluidas nuestras filiales y subsidiarias (colectivamente, “CÁRBULA”, "Cárbula", "nosotros”, "Nosotros" o "nuestro"). Estos Términos se aplican a todos los Servicios de CÁRBULA, incluido cualquier sitio web o aplicación móvil que ponemos a su disposición.Por favor, lea atentamente los términos de servicios detallados en este apartado: Al utilizar los servicios, acepta estar obligado por estos términos. Si no está de acuerdo con éstos términos, no puede acceder o utilizar los servicios que propone Cárbula S.P.A., RUT Nº 77058168-0, con domicilio fiscal en La Capitanía 80, Oficina 108, Las Condes, Santiago de Chile y comercial en Monjitas 565, Santiago Centro, Santiago de Chile (en adelante “CÁRBULA”).</p>
+          <p>Todas las referencias a "usted", "su", “vendedor”, “dueño directo” o “consignante”, según corresponda, se refieren a la persona que accede, participa y/o utiliza los servicios de CÁRBULA, de cualquier modo y/o manera. Si utiliza los Servicios en nombre de una entidad u otra persona, declara y garantiza que tiene la autoridad suficiente para obligar a esa entidad o persona que invoca. Su aceptación de los términos de servicios detallados en este apartado, se considerará una aceptación por parte de esa entidad o persona, y "usted" invoca a esa entidad, sus directores, funcionarios, empleados y/o a cualquier apoderado.</p>
+          <h4>Elegibilidad y Foco</h4>
+          <p>Al suscribirse para utilizar los servicios de CÁRBULA, usted declara que tiene 18 años de edad o más y comprende las obligaciones y acepta los términos establecidos en el presente apartado. Además, declara que la información proporcionada es de su propiedad y no está utilizando datos ajenos sin la debida autorización.</p>
+          <h4>Venta de vehículos en consignación</h4>
+          <p>CÁRBULA, a pedido del dueño directo o vendedor, se compromete a prestar servicios para la venta un vehículo de propiedad de este último a través de la modalidad “venta por consignación”. El vendedor otorga expresa autorización a CÁRBULA, para realizar todas las acciones vinculadas necesariamente con el fin de la venta del vehículo vinculado a la aceptación del servicio.</p>
+          <h4>Estimación del valor del vehículo</h4>
+          <p>Al ingresar la información del vehículo que pretende vender o comprar en nuestro sistema, ya sea en el sitio web, webapp o app, los USUARIOS obtendrán una estimación previa del precio al que se podrá vender o comprar el vehículo (el "Estimado"), calculado según parámetros generados por CÁRBULA.</p>
+          <p>CÁRBULA no se hace responsable de las discrepancias o diferencias en los precios generadas a partir de información inexacta, falsa o errónea proporcionada por los USUARIOS, influyendo en la estimación brindada por CÁRBULA.</p>
+          <p>Los usuarios entienden y aceptan que el valor estimado proporcionado en el Sitio no es vinculante, brindando solo un parámetro de referencia a los USUARIOS, ya que el precio de la operación dependerá de la aceptación de los USUARIOS y las las condiciones generales del vehículo, técnicas o documentales.</p>
+          <p>Una vez establecido el precio por el USUARIO, con fines de comercialización y logro del objetivo, Cárbula revisará periódicamente las publicaciones, sugiriendo nuevos ajustes que permitan la venta en el tiempo estipulado por ambas partes.</p>
+          <h4>Situación del vehículo involucrado en la comercialización</h4>
+          <p>Con la aceptación de los presentes términos de servicio, el dueño directo o vendedor manifiesta estar en conocimiento de que al momento de concretar la venta efectiva del vehículo, será “su” responsabilidad poner a disposición de CÁRBULA los siguientes documentos: a).Título que acredita la propiedad del vehículo, en original. b).Estado de infracciones vehiculares al día. c).Verificación técnica policial. d). Libre deuda de impuestos Nacionales y Provinciales.</p>
+          <h4>Posesión física del vehículo</h4>
+          <p>El dueño directo o vendedor no se compromete a otorgar la posesión física del vehículo a CÁRBULA, sin perjuicio de que autoriza a exhibirlo cuando CÁRBULA así lo disponga, prestando la colaboración necesaria para tal fin.</p>
+          <h4>Autorización</h4>
+          <p>Durante el proceso de venta, el consignante manifiesta estar en conocimiento de que al momento de concretar la venta efectiva del vehículo, será responsabilidad suya poner a disposición de CÁRBULA los siguientes documentos:</p>
+          <p><ul>
+            <ol>A) Título que acredita la propiedad del vehículo.</ol>
+            <ol>B) Estado de multas vehiculares al día.</ol>
+            <ol>C) Permiso de circulación vigente.</ol>
+            <ol>D) Revisión técnica vigente.</ol>
+            <ol>E) Si es necesario, alzamiento de prenda u otra documentación necesaria.</ol>
+          </ul>
+          </p>
+          <h4>Información personal</h4>
+          <p>CÁRBULA se compromete a no divulgar información personal del dueño directo o vendedor, sin autorización expresa del mismo.</p>
+          <h4>Cesión de imágenes</h4>
+          <p>CÁRBULA está autorizado a distribuir y utilizar las imágenes relacionadas con la venta, promoción y cierre de operaciones de los vehículos comercializados en la plataforma.</p>
+          <h4>Duración del vínculo con CÁRBULA</h4>
+          <p>El acuerdo entre CÁRBULA y el USUARIO que decide contratar los servicios, se mantendrá vigente hasta lograr la venta efectiva del vehículo o bien, hasta que el usuario decida de forma unilateral dar por concluida la utilización de los servicios de CÁRBULA, lo que ocurra primero.</p>
+          <p>A su vez, CÁRBULA podrá dar por finalizada la relación si así lo dispone, salvo en caso de haber recibido el monto de la venta del vehículo por parte de algún potencial comprador, en cuyo caso el acuerdo sólo podrá terminarse mediante la venta efectiva y completa del vehículo, incluyendo la transferencia de los fondos al vendedor.</p>
+          <p>Al adherirse a estos términos de uso, y mientras desee estar vinculado a CÁRBULA, el usuario vendedor le otorga a CÁRBULA la autorización para realizar publicidad, comercialización y gestión de venta de su vehículo, hasta que expresamente comunique su desvinculación. </p>
+          <h4>Monto estimado</h4>
+          <p>CÁRBULA estima y propone un dinero en mano para el usuario vendedor, libre de cualquier costo adicional, al momento de la venta. Este monto estimado será consensuado con el dueño directo o vendedor y aceptado de manera expresa, ya sea con la aprobación mediante el agendamiento de inspección, firma del acuerdo de servicio, aceptación de los presentes Términos & Condiciones, mensajería (WhatsApp o similar) o correo electrónico, según corresponda y con la misma validez de las vías de confirmación elegidas. Cualquier ofrecimiento de interesados, diferente al monto autorizado por el vendedor, será consultado y analizado como caso puntual, para proceder con la venta.</p>
+          <h4>Compromiso del consignante</h4>
+          <p>Si el consignante vende el vehículo por otra vía o por cualquier otro motivo durante los primeros 30 días desde la <b>publicación del vehículo,</b> o el mismo deja de estar disponible para la gestión de venta por parte de CÁRBULA en el periodo mencionado, se debe abonar 50.000 CLP finales en concepto de cobertura de servicios prestados hasta el momento. Pasados los 30 días comprendidos en este párrafo, Cárbula sigue trabajando en la venta del vehículo con todos los recursos a su alcance, pero ya el usuario no debe abonar ninguna suma de dinero para abandonar la plataforma.</p>
+          <h4>Reserva del vehículo</h4>
+          <p>Al aceptar los presentes términos de uso, el vendedor le permite a CÁRBULA aceptar y firmar en su nombre, la reserva de venta del vehículo. Si la oferta, por algún motivo, es diferente al monto acordado, se necesitará una aprobación de forma expresa por parte del consignante -via Mail, SMS o WhatsApp-, para la aceptación de la reserva realizada por el potencial comprador.</p>
+          <p>Si el consignante vende el vehículo por otra vía o por cualquier otro motivo, el mismo deja de estar disponible para la gestión de venta por parte de CÁRBULA, <b>deberá comunicar a CÁRBULA esta novedad de forma inmediata.</b> Si no comunica la efectiva venta o la baja por cualquier otro motivo (Ejemplo: desiste de venderlo) y <b>CÁRBULA</b> reserva el vehículo con otro comprador, se debe pagar el 100% de la comisión estipulada con <b>Cárbula.</b> Para hacer efectivo el derecho de cobro, <b>CÁRBULA.</b> debe informar de forma expresa el comprobante de transferencia bancaria o depósito que acredite tal reserva.</p>
+          <h4>Venta del vendedor</h4>
+          <p>Si el vendedor logra vender el vehículo durante el período de validez del presente acuerdo, está obligado a avisar a CÁRBULA de manera inmediata. Si no comunica la efectiva venta y CÁRBULA reserva el vehículo con otro comprador, se debe pagar el 100% de la comisión estipulada con CÁRBULA.</p>
+          <h4>Violación al trabajo realizado por CÁRBULA</h4>
+          <p>Si el vendedor logra vender el vehículo a un comprador que fue gestionado, curado y puesto en contacto a través de la gestión de CÁRBULA, cualquiera sea el momento en que la venta se materialice, deberá abonar el 100% de la comisión pactada, atendiendo a que la venta se realizó sobre la base del trabajo realizado por CÁRBULA.</p>
+          <h4>Responsabilidad de las partes</h4>
+          <p>Tanto VENDEDOR como COMPRADOR reconocen que el vehículo objeto de la transacción está siendo vendido por el usuario VENDEDOR, y no por CÁRBULA, que solo actúa como mero intermediario y facilitador de la operación de compra-venta, y no se hace responsable de ningún tipo de garantía sobre el vehículo. Si el COMPRADOR elige comprar un producto de garantía ADICIONAL ofrecido por CÁRBULA, el COMPRADOR reconoce que Cárbula es exclusivamente un intermediario en la venta de un producto de TERCEROS y que el uso de este por parte del COMPRADOR debe realizarse directamente con el TERCERO y no con CÁRBULA. El COMPRADOR también reconoce haber leído todas las especificaciones técnicas de dicho producto de garantía, que tiene un alcance limitado y que solo se aplica a determinados componentes del vehículo así como a determinadas situaciones de desperfecto o mal funcionamiento.</p>
+          <h4>General. Ley que rige</h4>
+          <p>Usted acepta que: (i) los Servicios se considerarán únicamente basados ​​en la República Argentina; y (ii) los Servicios no darán lugar a la jurisdicción personal sobre la empresa Cárbula, ya sea específica o general, en jurisdicciones distintas de la República Argentina. Estos Términos se regirán en todos los aspectos por las leyes de la República Argentina, sin tener en cuenta sus principios de conflicto de leyes. Se excluye expresamente la aplicación de la Convención de las Naciones Unidas sobre los Contratos de Compraventa Internacional de Mercaderías. Cualquier reclamo o disputa que surja en relación con los Servicios se decidirá exclusivamente por un tribunal de jurisdicción competente ubicado en la República Argentina, y usted acepta la jurisdicción personal y lugar en dichos tribunales y renuncia a todas y cada una de las defensas u objeciones jurisdiccionales y de lugar disponibles de otra manera.</p>
+          <h4>Renuncia</h4>
+          <p>Ninguna renuncia a ningún término de estos Términos se considerará una renuncia adicional o continua de dicho término o de cualquier otro término, y el hecho de que CÁRBULA no haga valer ningún derecho o disposición en virtud de estos Términos no constituirá una renuncia a dicho derecho o disposición.</p>
+          <h4>Fuerza mayor</h4>
+          <p>Ni CÁRBULA ni el usuario serán responsables ante el otro por cualquier retraso o falla en el cumplimiento de los Términos que surjan de una causa que esté fuera de su control y sin su culpa o negligencia. Dichas causas pueden incluir, entre otras, incendios, inundaciones, terremotos, huelgas, falta de disponibilidad de servicios públicos necesarios, apagones, actos de guerra declarada o no declarada, actos de agencias reguladoras o desastres nacionales.</p>
+          <h4>No hay terceros beneficiarios</h4>
+          <p>Usted acepta que, salvo que se indique expresamente lo contrario en estos Términos, no habrá terceros beneficiarios de estos Términos.</p>
+          <h4>Transferibilidad y asignabilidad</h4>
+          <p>Usted no puede transferir ni asignar estos Términos, ni los derechos y licencias otorgados en virtud del presente, pero CÁRBULA puede asignarlos sin restricciones. Cualquier intento de transferencia o asignación en violación del presente será nulo y sin efecto. Estos Términos obligan y redundan en beneficio de cada parte y los sucesores y cesionarios permitidos de la parte.</p>
+          <h4>Contactanos</h4>
+          <i>Si tiene alguna pregunta sobre estos Términos o los Servicios, comuníquese con nosotros por correo electrónico a <a href="mailto:hola@carbula.cl"><strong>hola@carbula.cl</strong></a></i>
+        </div>
+        <hr></hr>
+        <section>
+          <FooterInfo grey country_code={'pe'} />
+        </section>
+      </div>
+    )
+  }
   if (router.locale === 'es-UY') {
     return <div>
         <Head title="Terminos y condiciones | Carbula Autos Uruguay" />

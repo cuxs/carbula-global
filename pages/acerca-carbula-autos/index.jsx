@@ -318,7 +318,7 @@ const AcercaCarbula = () => {
         </section>
       </div>
     )
-  }
+  }  
   if (router.locale === 'es-MX') {
     return (
       <div>
@@ -445,6 +445,148 @@ const AcercaCarbula = () => {
         <hr/>
         <section>
           <FooterInfo grey country_code={'mx'} />
+        </section>
+      </div>
+    )
+  }
+  if (router.locale === 'es-PE') {
+    return (
+      <div>
+        <Head title="Sumate a la experiencia Cárbula | Carbula Autos Perú" />
+        <Nav />
+        <div className={styles.header}>
+          <Container>
+            <h2>Sumate a la experiencia Cárbula</h2>
+          </Container>
+        </div>
+        <div className={styles.acerca}>
+        <Container>
+        <div className={styles.nosotros}>
+            <div class="ui vertical stripe segment">
+              <div class="ui middle aligned stackable grid container">
+                <div class="row">
+                  <div class="eight wide column">
+                    <h3>¿Qué es Cárbula?</h3>
+                    <p>Somos un marketplace de compra y venta de autos usados <a href="https://www.carbula.pe/"><b>para vender de manera más eficiente y transparente.</b></a> Generamos un entorno de intermediación, uniendo gente que quiere vender con gente que busca comprar autos usados.</p>
+                    <p>Le permitimos a los dueños vender su auto por hasta un <b>25% más de dinero</b> sin salir de su casa, brindando operaciones seguras, simples y cómodas.</p>
+                  </div>
+                  <div class="eight wide right floated column">
+                  <Image
+                      floated='right'
+                      size='medium'
+                      src='/images/mision-carbula.webp'
+                      alt='¿Qué es Cárbula Autos?'
+                      title='¿Qué es Cárbula Autos?'
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+            </Container>
+            <Divider />
+            <Container>
+            <div className={styles.mision}>
+            <div class="ui vertical stripe segment">
+              <div class="ui middle aligned stackable grid container">
+                <div class="row">
+                <div class="eight wide left floated column">
+                  <Image
+                      floated='left'
+                      size='medium'
+                      src='/images/acerca-carbula.webp'
+                      alt='Misión y visión de Cárbula Autos'
+                      title='Misión y visión de Cárbula Autos'
+                    />
+                  </div>
+                  <div class="eight wide column">
+                    <h3>Misión</h3>
+                    <p>Transformar la compra y venta de autos en algo placentero. Buscamos impactar positivamente en la vida de millones de personas que compran y venden su auto de manera diaria perdiendo tiempo, gastando más dinero del que debieran, y desarrollando patrones de estrés y ansiedad durante la transacción.</p>
+                    <h3>Visión</h3>
+                    <p>Convertirnos en los máximos exponentes en el rubro de compra y venta de vehículos usados y tener presencia en al menos 30 ciudades latinoamericanas en los próximos 5 años.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            </Container>
+            <Divider />
+            <div className={styles.valores}>
+              <Grid centered>
+              <h3>Valores Cárbula</h3>
+              <Divider hidden />
+              </Grid>
+              <Grid>
+              <Grid.Column mobile={16} tablet={16} computer={4}>
+              <Card>
+                  <Card.Content>
+                    <Card.Header>🔒 Seguridad</Card.Header>
+                    <Card.Description>
+                      <p>Proporcionamos operaciones online 100% seguras tanto para compradores como para vendedores de vehículos.</p>
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+                </Grid.Column>
+                <Grid.Column mobile={16} tablet={16} computer={4}>
+                <Card>
+                  <Card.Content>
+                    <Card.Header>🔎Transparencia</Card.Header>
+                    <Card.Description>
+                    <p>Brindamos información veraz en cuánto al valor real de los vehículos en venta. Sin sorpresas ni costos extras.</p>
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+                </Grid.Column>
+                <Grid.Column mobile={16} tablet={16} computer={4}>
+                <Card>
+                  <Card.Content>
+                    <Card.Header>💡 Innovación</Card.Header>
+                    <Card.Description>
+                      <p>Aplicamos la tecnología al servicio de la compra y venta de vehículos para generar la mejor experiencia posible.</p>
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+                </Grid.Column>
+                <Grid.Column mobile={16} tablet={16} computer={4}>
+                <Card>
+                  <Card.Content>
+                    <Card.Header>👍 Simpleza</Card.Header>
+                    <Card.Description>
+                    <p>Somos una empresa de base tecnológica, con el propósito de ayudar al cliente a vender su auto de manera fácil y sin estrés.</p>
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+                </Grid.Column>
+              </Grid>
+              </div>
+            <Divider />
+          <div className={styles.prensa}>
+          <Grid centered>
+            <h3>Cárbula en la prensa</h3>
+          </Grid>
+          <Divider hidden />
+          <div class="ui text container">
+          <img src={"/images/diario-lacuarta.webp"} size='tiny' alt='Diario La Cuarta' title='Logo de Diario La Cuarta'></img> 
+            <p>La plataforma de venta de autos usados diseñó una estrategia tecnológica enfocada en quien busca vender su auto de manera rápida sin invertir tiempo...</p>
+            <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.lacuarta.com/cronica/noticia/carbula-auto-usado/555034/">Leer más</a>
+            <div class="ui divider"></div>
+            <img src={"/images/diario-t13.webp"} size='tiny' alt='Diario T13' title='Diario T13'></img> 
+            <p>Según el último informe de Cavem, en septiembre del 2020 se vendieron 130.068 vehículos, números superiores a meses anteriores...</p>
+            <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.t13.cl/noticia/nacional/inteligencia-artificial-venta-auto-usado-18-11-2020">Leer más</a>
+            <div class="ui divider"></div>
+            <img src={"/images/diario-elmostrador.webp"} size='tiny' alt='Diario El Mostrador' title='Diario El Mostrador'></img> 
+            <p>Según estudio, un 20% de las personas que retiraron el primer 10% de su fondo de pensiones, lo utilizó o lo piensa utilizar en comprar un automóvil...</p>
+            <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.elmostrador.cl/generacion-m/2020/11/20/los-principales-factores-del-aumento-en-la-compra-y-venta-de-autos-usados-en-chile/">Leer más</a>
+            <div class="ui divider"></div>
+            <img src={"/images/diario-eldinamo.webp"} size='tiny' alt='Diario El Dinamo' title='Diario El Dinamo'></img> 
+            <p>La idea es que el vendedor se desligue de los tediosos papeleos y procesos que hay que realizar para vender un vehículo de segunda mano...</p>
+            <a class="link" target="__blank" rel="noopener noreferrer" href="https://www.eldinamo.cl/emprend/Plataforma-utiliza-estrategia-tecnologica-para-vender-autos-usados-en-corto-plazo-20201023-0067.html">Leer más</a>
+          </div>
+        </div>
+        </div>
+        <hr/>
+        <section>
+          <FooterInfo grey country_code={'pe'} />
         </section>
       </div>
     )

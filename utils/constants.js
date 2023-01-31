@@ -12,7 +12,8 @@ module.exports = {
     'ar': 'Argentina',
     'uy': 'Uruguay',
     'mx': 'México',
-    'cl': 'Chile'
+    'cl': 'Chile',
+    'pe': 'Perú',
   },
   MIN_TEXT_SEARCH_LENGTH: 2,
   API_URL,
@@ -21,6 +22,7 @@ module.exports = {
     'ar': 'ARS',
     'uy': 'USD',
     'mx': 'MXN',
+    'pe': 'PEN'
   },
   LAST_STEP_MOBILE: 4,
   LAST_STEP_DESKTOP: 3,
@@ -49,6 +51,11 @@ module.exports = {
         "SCALE": 1000,
         "BOUND": 80000
     },
+    pe:
+    {
+    "SCALE": 50000,
+    "BOUND": 4000000
+    },
     uy:
     {
         "SCALE": 100,
@@ -59,54 +66,63 @@ module.exports = {
     ar: 0.21,
     cl: 0.19,
     mx: 0.16,
+    pe: 0.19,
     uy: 0.22 
   },
   CARBULA_FEE: {
     ar: 4.8,
     cl: 4,
     mx: 4.8,
+    pe: 4,
     uy: 4.8 
   },
   CARBULA_FEE_MINIMUM: {
     ar: 100000,
     cl: 500000,
     mx: 10000,
+    pe: 500000,
     uy: 600
   },
   ROUNDING_BOUNDS: {
     ar: 1000,
     cl: 10000,
     mx: 100,
+    pe: 10000,
     uy: 10 
   },
   SANTANDER_URL_TESTING: {
     ar: "https://sanrio.viverebrasil.com.br/portalsanriopublicopro/#/home?",
     cl: "CL",
     mx: "MX",
+    pe: "PE",
     uy: "UY" 
   },
   SANTANDER_SPID_TESTING: {
     ar: "352454",
     cl: "CL",
     mx: "MX",
+    pe: "PE",
     uy: "UY" 
   },
   SANTANDER_URL_PRODUCTION: {
     ar: "https://autoloans.santanderautos.com.ar/portalsanriopublico/#/?",
     cl: "CL",
     mx: "MX",
+    pe: "PE",
     uy: "UY"  
   },
   SANTANDER_SPID_PRODUCTION: {
     ar: "351149",
     cl: "CL",
     mx: "MX",
+    pe: "PE",
     uy: "UY" 
   },
   SANTANDER_OHASH: {
     ar: "li3l6r7xzo",
     cl: "CL",
     mx: "MX",
+    pe: "PE",
     uy: "UY" 
   },
   TRACKING_URLS: {

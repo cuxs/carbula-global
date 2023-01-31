@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { MIN_TEXT_SEARCH_LENGTH, API_URL } from './constants';
+import { countryCovered } from './helpers';
 import useSWR from 'swr'
 
 
@@ -13,7 +14,7 @@ export const getMarcaModelo = async (query, COUNTRY_CODE) => {
     }
     if (query.length < MIN_TEXT_SEARCH_LENGTH) return;
     source = axios.CancelToken.source();
-    const response = await axios.get(`${cotizadorUrl}/marcas-modelos1`, { params: { q: query, codigo: COUNTRY_CODE }, cancelToken: source.token })
+    const response = await axios.get(`${cotizadorUrl}/marcas-modelos1`, { params: { q: query, codigo: countryCovered(COUNTRY_CODE) ? COUNTRY_CODE : 'cl'}, cancelToken: source.token })
     return response
   } catch (e) {
     if (e.message === 'Cancelado') {
@@ -23,6 +24,7 @@ export const getMarcaModelo = async (query, COUNTRY_CODE) => {
   }
 }
 export const getYears = async (idMarca, nombreModelo, country_code) => {
+  country_code = countryCovered(country_code) ? country_code : 'cl'
   try {
     let endpoint = '/anioModeloML'
     if(country_code ==='cl'){
@@ -46,7 +48,7 @@ export const getVersions = async (idModelo, anio) => {
 }
 export const getZonas = async (COUNTRY_CODE) => {
   try {
-    const response = await axios.get(`${cotizadorUrl}/zonas`, { params: { codigo: COUNTRY_CODE } })
+    const response = await axios.get(`${cotizadorUrl}/zonas`, { params: { codigo: countryCovered(COUNTRY_CODE) ? COUNTRY_CODE : 'cl' } })
     return response
   } catch (e) {
     console.log(e)
@@ -115,7 +117,7 @@ export const addContact = async (data) => {
 export const checkScheduleMeeting = async (external_id, email, COUNTRY_CODE) => {
   try {
 
-    const response = await axios.get(`${API_URL}/checkScheduledMeeting`, { params: { dealId: external_id, email, country_code: COUNTRY_CODE } })
+    const response = await axios.get(`${API_URL}/checkScheduledMeeting`, { params: { dealId: external_id, email, country_code: countryCovered(COUNTRY_CODE) ? COUNTRY_CODE : 'cl' } })
     return response
   } catch (e) {
     console.log(e)

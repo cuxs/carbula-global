@@ -15,10 +15,11 @@ import NumberFormat from 'react-number-format';
 import { InlineWidget } from "react-calendly";
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
-import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONar from '../../public/autopress-ar.json'
-import cotizationJSONuy from '../../public/autopress-uy.json'
+import cotizationJSONcl from '../../public/autopress-cl.json'
 import cotizationJSONmx from '../../public/autopress-mx.json'
+import cotizationJSONpe from '../../public/autopress-pe.json'
+import cotizationJSONuy from '../../public/autopress-uy.json'
 import CryptoJS from 'crypto-js'
 import QRCode from "react-qr-code"
 
@@ -52,8 +53,9 @@ const CotizationForm = ({
     const cotizationsJSONs = {
       'ar': cotizationJSONar,
       'cl': cotizationJSONcl,
-      'uy': cotizationJSONuy,
       'mx': cotizationJSONmx,
+      'pe': cotizationJSONpe,
+      'uy': cotizationJSONuy,
     }
     return cotizationsJSONs[COUNTRY_CODE]
   },[])
@@ -344,9 +346,10 @@ const CotizationForm = ({
   const renderOwnerOptions = () => {
     const options = {
       'es-AR': ['1', '2', '3', '4 o más'],
-      'es-UY': ['1', '2', '3', '4 o más'],
       'es-CL': ['1', '2', '3', '4', '5 o más'],
       'es-MX': ['1', '2', '3', '4', '5 o más'],
+      'es-PE': ['1', '2', '3', '4', '5 o más'],
+      'es-UY': ['1', '2', '3', '4 o más']
     }
     return options[router.locale]
   }

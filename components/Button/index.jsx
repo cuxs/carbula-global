@@ -4,12 +4,13 @@ import { ReactSVG } from 'react-svg'
 import LoadingSpinner from '../LoadingSpinner';
 import { useEffect, useState } from 'react';
 
-const Button = ({ primary, outlined, icon, small, secondary, secondaryOutlined, link, light, noBorder, noBorderSecondary, overlayEffect, children, disabled, loading, type, onClick }) => {
+const Button = ({ primary, outlined, icon, small, long, secondary, secondaryOutlined, link, light, noBorder, noBorderSecondary, overlayEffect, children, disabled, loading, type, onClick }) => {
   const buttonClass = classnames({
     primary,
     outlined,
     icon,
     small,
+    long,
     secondary,
     'secondary--outlined': secondaryOutlined,
     link,

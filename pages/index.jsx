@@ -13,6 +13,7 @@ import { upperFirst } from 'lodash'
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import webinprogress from '../components/WebInProgress';
 
 
 
@@ -117,7 +118,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     }
     return texts[COUNTRY_CODE]
   }
-  return (
+  return COUNTRY_CODE=== 'ar' ? webinprogress(COUNTRY_CODE) : (
     <Fragment>
       <Head title={getTitleByCountry(COUNTRY_CODE)} />
       <BlackoutComponent overlayBackground={overlayBackground} />

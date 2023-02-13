@@ -1,0 +1,25 @@
+@import "../../sass/variables.scss";
+
+.webinprogress__container {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $primaryColor;
+}
+
+.p1 {
+  color: white;
+  font-size: 40px;
+  margin: 2px;
+  line-height : 45px;
+}
+
+.p2 {
+  color: white;
+  font-size: 20px;
+  margin: 1px;
+}

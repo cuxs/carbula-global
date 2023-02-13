@@ -15,7 +15,7 @@ const WebInProgress = (country_code) => {
       <Head title={getTitleByCountry(country_code)} />
       {/* <Nav /> */}
       <div className={styles.webinprogress__container}>
-        <img src="/icons/carbula.svg" alt="Cárbula Autos"/>
+        <img src="/icons/logo.svg" alt="Cárbula Autos"/>
         <p className={styles.p1}><b>Estamos preparando<br/>algo genial para #MDZ</b></p>
         <p className={styles.p2}>Pronto volveremos con más propuestas para mejorar la venta y compra de usados entre particulares</p>
       </div>

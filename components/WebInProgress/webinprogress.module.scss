@@ -11,6 +11,17 @@
   background-color: $primaryColor;
 }
 
+.contactinfo__container {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $primaryColor;
+}
+
 .p1 {
   color: white;
   font-size: 40px;

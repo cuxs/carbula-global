@@ -10,7 +10,7 @@ import { mixed, object, number, string } from 'yup'
 import { getTitleByCountry, globalValidationData } from '../../utils/helpers'
 import ContactForm from '../ContactForm'
 
-const WebInProgress = (country_code) => {
+const WebInProgress = (country_code, zonas) => {
   const { t } = useTranslation('WebInProgress')
   const [isOpen, setOpen] = useState(false)
   const toggleMenu = () => setOpen(!isOpen)
@@ -46,7 +46,7 @@ const WebInProgress = (country_code) => {
           <div className={styles.contactinfo__container}>
             <p><br/></p>
             <form className={styles['personal-data__form']} onSubmit={handleSubmit}>
-              <ContactForm COUNTRY_CODE={country_code}/>
+              <ContactForm COUNTRY_CODE={country_code} zonas={zonas}/>
               {/* <div className={styles.buttons__container}>
                 <Button type="submit" secondary>Enviar</Button>
               </div> */}

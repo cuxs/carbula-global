@@ -18,10 +18,10 @@ const whereOptions = [
   { value: 'Otro', label: 'Otro' },
 ]
 
-const ContactForm = ({ COUNTRY_CODE }) => {
+const ContactForm = ({ COUNTRY_CODE, zonas }) => {
   const { t } = useTranslation('SellForm')
   const step = 1
-  const zonas = getZonas(COUNTRY_CODE)
+  // const zonas = getZonas(COUNTRY_CODE)
   const [visitName, setVisitName] = useState('')
   const [visitLastName, setVisitLastName] = useState('')
   const [visitEmail, setVisitEmail] = useState('')
@@ -56,6 +56,7 @@ const ContactForm = ({ COUNTRY_CODE }) => {
         location: visitLocation,
         newsletter: visitNewsletter,
       }
+      console.log("Zonaaaaaaaaaaaaaaaaaaaaaaaaaaasas", zonas)
       setFormData(currentValues)
       console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", currentValues)
       addContact(currentValues)

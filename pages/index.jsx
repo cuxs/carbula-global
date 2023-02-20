@@ -118,7 +118,7 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
     }
     return texts[COUNTRY_CODE]
   }
-  return COUNTRY_CODE=== 'ar' ? webinprogress(COUNTRY_CODE) : (
+  return COUNTRY_CODE=== 'ar' ? webinprogress(COUNTRY_CODE, zonas) : (
     <Fragment>
       <Head title={getTitleByCountry(COUNTRY_CODE)} />
       <BlackoutComponent overlayBackground={overlayBackground} />

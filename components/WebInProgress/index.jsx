@@ -16,24 +16,7 @@ const WebInProgress = (country_code) => {
   const toggleMenu = () => setOpen(!isOpen)
   const Nav = dynamic(import('../nav'))
   
-  const [formData, setFormData] = useState(
-    {
-      name: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      location: '',
-      newsletter: '',
-    }
-  )
-
-  const handleSubmit = async (values, actions) => {
-    const carAndContactData = {
-      ...formData,
-      ...values,
-      name: `${values.name} ${values.lastName}`,
-      country_code: country_code,
-    }
+  const handleSubmit = async () => {    
     try {
       // checkZone(values.location, zonas, country_code)
       // checkYear(carAndContactData.year)

@@ -15,22 +15,6 @@ const WebInProgress = (country_code, zonas) => {
   const [isOpen, setOpen] = useState(false)
   const toggleMenu = () => setOpen(!isOpen)
   const Nav = dynamic(import('../nav'))
-  
-  const handleSubmit = async () => {    
-    try {
-      // checkZone(values.location, zonas, country_code)
-      // checkYear(carAndContactData.year)
-      // const dealSource = getSourceType(router.query, referer)
-      // carAndContactData.hs_analytics_source = dealSource
-      // carAndContactData.campania = getCampania(router.query)
-      // const { data } = await submitFormAndGetCotization(carAndContactData)
-      // const query = CryptoJS.AES.encrypt(JSON.stringify(data.data), 'cotizacion').toString()
-      // saveCotization(query)
-      alert("Todo OK")
-    } catch (error) {
-      console.log("ERROR: ", error)
-    }
-  }
 
   return (
     <Fragment>
@@ -45,11 +29,8 @@ const WebInProgress = (country_code, zonas) => {
         {isOpen && (
           <div className={styles.contactinfo__container}>
             <p><br/></p>
-            <form className={styles['personal-data__form']} onSubmit={handleSubmit}>
+            <form className={styles['personal-data__form']}>
               <ContactForm COUNTRY_CODE={country_code} zonas={zonas}/>
-              {/* <div className={styles.buttons__container}>
-                <Button type="submit" secondary>Enviar</Button>
-              </div> */}
             </form>
           </div>
         )}

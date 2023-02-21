@@ -60,6 +60,18 @@
     border: 3px solid $primaryColor;
   }
 }
+.long {
+  width: auto;
+  height: 50px;
+  background-color: $primaryColor;
+  color: white;
+  border: 5px solid $primaryColor;
+  &:hover {
+    background-color: white;
+    color: $primaryColor;    
+    border: 5px solid $primaryColor;
+  }
+}
 .secondary {
   background-color: $secondaryColor;
   &:hover {

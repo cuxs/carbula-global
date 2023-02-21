@@ -71,7 +71,7 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
     await setStep(step - 1);
   }
 
-  const setLocationValue = (selectedLocation) => {
+  const setFieldValue = (selectedLocation) => {
     setVisitLocation(selectedLocation)
   }
 
@@ -195,7 +195,7 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
                 options={zonas}
                 large
                 placeholder={t('inLocalidad')}
-                onChange={(option) => setLocationValue(option.value)}
+                onChange={(option) => setFieldValue(option.value)}
               />
               {errors.location && touched.location && (
                 <div className="form-error">

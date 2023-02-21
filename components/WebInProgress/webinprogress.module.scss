@@ -27,10 +27,23 @@
   font-size: 40px;
   margin: 2px;
   line-height : 45px;
+  max-width: 85%;
 }
 
 .p2 {
   color: white;
   font-size: 20px;
   margin: 1px;
+  max-width: 85%;
+}
+
+@media (max-width: 785px){
+  .webinprogress__btn{
+    margin: -65px !important;
+  }
+
+  .contactinfo__container {
+    margin-top: 265px !important;
+    padding: 0;
+  }
 }

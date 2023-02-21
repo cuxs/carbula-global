@@ -56,9 +56,7 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
         location: visitLocation,
         newsletter: visitNewsletter,
       }
-      console.log("Zonaaaaaaaaaaaaaaaaaaaaaaaaaaasas", zonas)
       setFormData(currentValues)
-      console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", currentValues)
       addContact(currentValues)
       alert("Datos enviados correctamente.")
     }
@@ -194,7 +192,6 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
           </div>
           </div>
           <div className={styles.buttons__container}>
-            <Button type="button" link onClick={handleBack}>Volver</Button>
             <Button overlayEffect type="button" onClick={handleSubmitOK} primary>Enviar</Button>
           </div>
           {/*<p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>*/}

@@ -6,7 +6,7 @@ import styles from './contactform.module.scss';
 import Select from '../SelectComponent';
 import { getZonas, addContact } from "../../utils/fetches";
 import { Formik } from 'formik';
-import { mixed, object, number, string } from 'yup'
+import { mixed, object, number, string, isSchema } from 'yup'
 import { useTransition, config } from "react-spring"
 import { globalValidationData } from '../../utils/helpers'
 
@@ -28,6 +28,7 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
   const [visitPhone, setVisitPhone] = useState('')
   const [visitLocation, setVisitLocation] = useState('')
   const [visitNewsletter, setVisitNewsletter] = useState('')
+  const [btnDisabled, setBtnDisabled] = useState(true)
   const [formData, setFormData] = useState(
     {
       name: '',
@@ -48,17 +49,18 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
 
   const handleSubmitOK = () => {
     try{
-      const currentValues = {
-        name: visitName,
-        lastName: visitLastName,
-        email: visitEmail,
-        phone: visitPhone,
-        location: visitLocation,
-        newsletter: visitNewsletter,
-      }
-      setFormData(currentValues)
-      addContact(currentValues)
-      alert("Datos enviados correctamente.")
+      // const currentValues = {
+      //   name: visitName,
+      //   lastName: visitLastName,
+      //   email: visitEmail,
+      //   phone: visitPhone,
+      //   location: visitLocation,
+      //   newsletter: visitNewsletter,
+      // }
+      // setFormData(currentValues)
+      // addContact(currentValues)
+      // alert("Datos enviados correctamente.")
+      validationSchema()
     }
     catch(err){
       console.log("ERROR al guardar contacto: ", err)
@@ -69,6 +71,25 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
   const handleBack = async () => {
     await setStep(step - 1);
   }
+
+  const setFieldValue = (selectedLocation) => {
+    setVisitLocation(selectedLocation)
+  }
+
+  const checkData = () => {
+    if (
+      visitName != '' &&
+      visitLastName != '' &&
+      visitEmail != '' &&
+      visitPhone != '' &&
+      visitLocation != ''
+      ) {
+        setBtnDisabled(false)
+      } else{
+        setBtnDisabled(true)
+      }
+  }
+
   const validationSchema = [
     0,
     object().shape({
@@ -107,7 +128,7 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
     }
   ]
 
-  const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
+  const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched) => {
     switch (step) {
       case 0:
         return (<Fragment></Fragment>)
@@ -116,7 +137,7 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
         return (<form className={styles['personal-data__form']} onSubmit={handleSubmit}>
           <div className={styles.form__row} >
             <div className={styles['personal-data__form-item']}>
-              <input placeholder={t('inNombre')} name="name" onChange={e => setVisitName(e.currentTarget.value)} onKeyUp={handleChange} onBlur={handleBlur} />
+              <input placeholder={t('inNombre')} name="name" onChange={e => setVisitName(e.currentTarget.value)} onKeyUp={handleChange} onKeyDown={checkData()} onBlur={handleBlur} />
               {errors.name && touched.name && (
                 <div className="form-error">
                   {errors.name}
@@ -175,7 +196,7 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
                 options={zonas}
                 large
                 placeholder={t('inLocalidad')}
-                onChange={(option) => setFieldValue('location', option.value)}
+                onChange={(option) => setFieldValue(option.value)}
               />
               {errors.location && touched.location && (
                 <div className="form-error">
@@ -192,7 +213,7 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
           </div>
           </div>
           <div className={styles.buttons__container}>
-            <Button overlayEffect type="button" onClick={handleSubmitOK} primary>Enviar</Button>
+            <Button overlayEffect type="button" onClick={handleSubmitOK} primary disabled={btnDisabled}>Enviar</Button>
           </div>
           {/*<p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>*/}
         </form>)

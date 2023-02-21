@@ -49,18 +49,17 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
 
   const handleSubmitOK = () => {
     try{
-      // const currentValues = {
-      //   name: visitName,
-      //   lastName: visitLastName,
-      //   email: visitEmail,
-      //   phone: visitPhone,
-      //   location: visitLocation,
-      //   newsletter: visitNewsletter,
-      // }
-      // setFormData(currentValues)
-      // addContact(currentValues)
-      // alert("Datos enviados correctamente.")
-      validationSchema()
+      const currentValues = {
+        name: visitName,
+        lastName: visitLastName,
+        email: visitEmail,
+        phone: visitPhone,
+        location: visitLocation,
+        newsletter: visitNewsletter,
+      }
+      setFormData(currentValues)
+      addContact(currentValues)
+      alert("Datos enviados correctamente.")
     }
     catch(err){
       console.log("ERROR al guardar contacto: ", err)
@@ -72,7 +71,7 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
     await setStep(step - 1);
   }
 
-  const setFieldValue = (selectedLocation) => {
+  const setLocationValue = (selectedLocation) => {
     setVisitLocation(selectedLocation)
   }
 

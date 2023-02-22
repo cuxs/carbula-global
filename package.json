@@ -34,6 +34,7 @@
     "react-qr-code": "^2.0.8",
     "react-scroll": "^1.8.4",
     "react-select": "^4.3.1",
+    "react-simplert": "^0.0.2",
     "react-spinners": "^0.11.0",
     "react-spring": "^9.3.2",
     "react-svg": "^14.1.4",

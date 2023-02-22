@@ -9,6 +9,7 @@ import { Formik } from 'formik';
 import { mixed, object, number, string, isSchema } from 'yup'
 import { useTransition, config } from "react-spring"
 import { globalValidationData } from '../../utils/helpers'
+import Simplert from 'react-simplert'
 
 const whereOptions = [
   { value: 'Por un conocido / amigo.', label: 'Por un conocido / amigo.' },
@@ -29,6 +30,7 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
   const [visitLocation, setVisitLocation] = useState('')
   const [visitNewsletter, setVisitNewsletter] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
+  const [showAlert, setShowAlert] = useState(false)
   const [formData, setFormData] = useState(
     {
       name: '',
@@ -48,23 +50,24 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
   }
 
   const handleSubmitOK = () => {
-    try{
-      const currentValues = {
-        name: visitName,
-        lastName: visitLastName,
-        email: visitEmail,
-        phone: visitPhone,
-        location: visitLocation,
-        newsletter: visitNewsletter,
-      }
-      setFormData(currentValues)
-      addContact(currentValues)
-      alert("Datos enviados correctamente.")
-    }
-    catch(err){
-      console.log("ERROR al guardar contacto: ", err)
-      alert("Se ha producido un error, por favor intente más tarde.")
-    }
+    // try{
+    //   const currentValues = {
+    //     name: visitName,
+    //     lastName: visitLastName,
+    //     email: visitEmail,
+    //     phone: visitPhone,
+    //     location: visitLocation,
+    //     newsletter: visitNewsletter,
+    //   }
+    //   setFormData(currentValues)
+    //   addContact(currentValues)
+    //   alert("Datos enviados correctamente.")
+    // }
+    // catch(err){
+    //   console.log("ERROR al guardar contacto: ", err)
+    //   alert("Se ha producido un error, por favor intente más tarde.")
+    // }
+    setShowAlert(true)
   }
 
   const handleBack = async () => {
@@ -214,6 +217,12 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
           <div className={styles.buttons__container}>
             <Button overlayEffect type="button" onClick={handleSubmitOK} primary disabled={btnDisabled}>Enviar</Button>
           </div>
+          <Simplert 
+              showSimplert={ showAlert }
+              type='success'
+              title="ABC"
+              message="Abc123"
+          />
           {/*<p className={styles.terms}>Al enviar este formulario, usted acepta los <a href="/terminos-y-condiciones" target="__blank">Términos de Servicio</a> y la <a href="/terminos-y-condiciones" target="__blank">Política de Privacidad de Cárbula</a>.</p>*/}
         </form>)
       default:

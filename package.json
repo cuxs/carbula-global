@@ -43,6 +43,7 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
     "sharp": "^0.29.3",
+    "sweetalert": "^2.1.2",
     "swr": "^1.1.0",
     "yup": "^0.32.11"
   },

@@ -9,6 +9,7 @@ import { Formik } from 'formik';
 import { mixed, object, number, string, isSchema } from 'yup'
 import { useTransition, config } from "react-spring"
 import { globalValidationData } from '../../utils/helpers'
+import swal from 'sweetalert'
 
 const whereOptions = [
   { value: 'Por un conocido / amigo.', label: 'Por un conocido / amigo.' },
@@ -48,23 +49,30 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
   }
 
   const handleSubmitOK = () => {
-    try{
-      const currentValues = {
-        name: visitName,
-        lastName: visitLastName,
-        email: visitEmail,
-        phone: visitPhone,
-        location: visitLocation,
-        newsletter: visitNewsletter,
-      }
-      setFormData(currentValues)
-      addContact(currentValues)
-      alert("Datos enviados correctamente.")
-    }
-    catch(err){
-      console.log("ERROR al guardar contacto: ", err)
-      alert("Se ha producido un error, por favor intente más tarde.")
-    }
+    // try{
+    //   const currentValues = {
+    //     name: visitName,
+    //     lastName: visitLastName,
+    //     email: visitEmail,
+    //     phone: visitPhone,
+    //     location: visitLocation,
+    //     newsletter: visitNewsletter,
+    //   }
+    //   setFormData(currentValues)
+    //   addContact(currentValues)
+    //   alert("Datos enviados correctamente.")
+    // }
+    // catch(err){
+    //   console.log("ERROR al guardar contacto: ", err)
+    //   alert("Se ha producido un error, por favor intente más tarde.")
+    // }
+    // swal("Gracias", "Los datos se enviaron correctamente.", "success")
+    swal({
+      title: "Gracias",
+      text: "Los datos se enviaron correctamente.",
+      icon: "success",
+      button: "Aceptar",
+    })
   }
 
   const handleBack = async () => {

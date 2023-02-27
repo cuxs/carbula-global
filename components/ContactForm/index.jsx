@@ -1,15 +1,15 @@
 import React, { Fragment, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import InputMask from 'react-input-mask';
+import swal from 'sweetalert'
 import Button from '../Button';
-import styles from './contactform.module.scss';
 import Select from '../SelectComponent';
 import { getZonas, addContact } from "../../utils/fetches";
 import { Formik } from 'formik';
 import { mixed, object, number, string, isSchema } from 'yup'
 import { useTransition, config } from "react-spring"
 import { globalValidationData } from '../../utils/helpers'
-import swal from 'sweetalert'
+import styles from './contactform.module.scss';
 
 const whereOptions = [
   { value: 'Por un conocido / amigo.', label: 'Por un conocido / amigo.' },
@@ -49,30 +49,33 @@ const ContactForm = ({ COUNTRY_CODE, zonas }) => {
   }
 
   const handleSubmitOK = () => {
-    // try{
-    //   const currentValues = {
-    //     name: visitName,
-    //     lastName: visitLastName,
-    //     email: visitEmail,
-    //     phone: visitPhone,
-    //     location: visitLocation,
-    //     newsletter: visitNewsletter,
-    //   }
-    //   setFormData(currentValues)
-    //   addContact(currentValues)
-    //   alert("Datos enviados correctamente.")
-    // }
-    // catch(err){
-    //   console.log("ERROR al guardar contacto: ", err)
-    //   alert("Se ha producido un error, por favor intente más tarde.")
-    // }
-    // swal("Gracias", "Los datos se enviaron correctamente.", "success")
-    swal({
-      title: "Gracias",
-      text: "Los datos se enviaron correctamente.",
-      icon: "success",
-      button: "Aceptar",
-    })
+    try{
+      const currentValues = {
+        name: visitName,
+        lastName: visitLastName,
+        email: visitEmail,
+        phone: visitPhone,
+        location: visitLocation,
+        newsletter: visitNewsletter,
+      }
+      setFormData(currentValues)
+      addContact(currentValues)
+      swal({
+        title: "Gracias",
+        text: "Los datos se enviaron correctamente.",
+        icon: "success",
+        button: "Aceptar",
+      })
+    }
+    catch(err){
+      console.log("ERROR al guardar contacto: ", err)
+      swal({
+        title: "Se ha producido un error",
+        text: "Por favor intente más tarde.",
+        icon: "error",
+        button: "Aceptar",
+      })
+    }
   }
 
   const handleBack = async () => {

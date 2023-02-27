@@ -1,11 +1,9 @@
 @import "../../sass/variables.scss";
+@import "../../sass/sweetalert.scss";
 
 .form__container {
   position: relative;
   perspective: 1000px;
-}
-.swal-footer {
-  text-align: center !important;
 }
 .sellform__container {
   margin-top: -350px;

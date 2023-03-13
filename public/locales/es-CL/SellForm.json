@@ -29,5 +29,7 @@
   "inNumCelMuyLargo": "Tu número debe ser más corto",
   "inNumCelReq": "Ingresa tu teléfono.",
   "inLocalidad": "Seleccione su localidad",
-  "inLocalidadReq": "¿De dónde eres?"
+  "inLocalidadReq": "¿De dónde eres?",
+  "PortalesA": "Publicaremos y anunciaremos en nuestro portal y en los más visitados del país: ",
+  "PortalesB": "ChileAutos, Yapo, Mercado Libre."
 }

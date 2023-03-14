@@ -6,7 +6,8 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion';
 import styles from "./faq.module.scss";
-const FaqPreguntasFrecuentes = () => {
+import { getCountryName } from '../../utils/helpers';
+const FaqPreguntasFrecuentes = (country_code) => {
   return (
     <Accordion allowZeroExpanded className={styles.accordion}>
       <AccordionItem className={styles.accordion__item}>
@@ -189,17 +190,12 @@ const FaqPreguntasFrecuentes = () => {
           </div>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              <ul><ol>4.Realizar operaciones digitales, con cifrado de extremo a extremo, para la protección de tus datos personales. </ol></ul>
+              <ul><ol>4.Que tengan menos de 5 dueños. </ol></ul>
             </div>
           </div>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              <ul><ol>5.Que tengan menos de 5 dueños. </ol></ul>
-            </div>
-          </div>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <ul><ol>6.Que sean de uso particular.</ol></ul>
+              <ul><ol>5.Que sean de uso particular.</ol></ul>
             </div>
           </div>
         </AccordionItemPanel>
@@ -222,7 +218,7 @@ const FaqPreguntasFrecuentes = () => {
           </div>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              <ul><ol>Una vez aprobado el protocolo de inspección, tu auto pasará a formar parte de nuestro stock y comenzaremos a publicarlo en los portales más importantes de Chile y a pagar anuncios premium para atraer al comprador ideal.</ol></ul>
+              <ul><ol>Una vez aprobado el protocolo de inspección, tu auto pasará a formar parte de nuestro stock y comenzaremos a publicarlo en los portales más importantes de {getCountryName(country_code)} y a pagar anuncios premium para atraer al comprador ideal.</ol></ul>
             </div>
           </div>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
@@ -245,7 +241,7 @@ const FaqPreguntasFrecuentes = () => {
         <AccordionItemPanel className={styles.accordion__panel}>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              <ul><ol>Somos una plataforma de compra y venta de vehículos usados que lleva más de 1000 operaciones concretadas y contamos con el apoyo de los inversionistas más activos de la región (CORFO, Start-Up Chile, Grupo Kauffman, Güil Ventures, Seedstars International, ANII y Embarca).</ol></ul>
+              <ul><ol>Somos una plataforma de compra y venta de vehículos usados que lleva más de 1000 operaciones concretadas y contamos con el apoyo de los inversionistas más activos de la región (CORFO, Start-Up Chile, Grupo Kauffman, Güil Ventures, Seedstars International, ANII, Embarca, Start-Up Perú, ProInnóvarte y UTEC Ventures).</ol></ul>
             </div>
           </div>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">

@@ -7,7 +7,7 @@ import {
 } from 'react-accessible-accordion';
 import styles from "./faq.module.scss";
 import { getCountryName } from '../../utils/helpers';
-const FaqPreguntasFrecuentes = (country_code) => {
+const FaqPreguntasFrecuentes = ({country_code}) => {
   return (
     <Accordion allowZeroExpanded className={styles.accordion}>
       <AccordionItem className={styles.accordion__item}>

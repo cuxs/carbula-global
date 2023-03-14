@@ -145,17 +145,12 @@ const FaqPreguntasFrecuentes = () => {
           </div>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              <ul><ol>4.Realizar operaciones digitales, con cifrado de extremo a extremo, para la protección de tus datos personales. </ol></ul>
+              <ul><ol>4.Darte el 100% de la información sobre cómo se encuentra el mercado para recomendarte el precio más competitivo. </ol></ul>
             </div>
           </div>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              <ul><ol>5.Darte el 100% de la información sobre cómo se encuentra el mercado para recomendarte el precio más competitivo. </ol></ul>
-            </div>
-          </div>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <ul><ol>6.Vender tu auto en una de las <a href='https://bit.ly/3SFPe0R'>plataformas mejor valoradas de Chile en Google.</a></ol></ul>
+              <ul><ol>5.Vender tu auto en una de las <a href='https://bit.ly/3SFPe0R'>plataformas mejor valoradas de Chile en Google.</a></ol></ul>
             </div>
           </div>
         </AccordionItemPanel>
@@ -245,7 +240,7 @@ const FaqPreguntasFrecuentes = () => {
         <AccordionItemPanel className={styles.accordion__panel}>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              <ul><ol>Somos una plataforma de compra y venta de vehículos usados que lleva más de 1000 operaciones concretadas y contamos con el apoyo de los inversionistas más activos de la región (CORFO, Start-Up Chile, Grupo Kauffman, Güil Ventures, Seedstars International, ANII y Embarca).</ol></ul>
+              <ul><ol>Somos una plataforma de compra y venta de vehículos usados que lleva más de 1000 operaciones concretadas y contamos con el apoyo de los inversionistas más activos de la región (CORFO, Start-Up Chile, Grupo Kauffman, Güil Ventures, Seedstars International, ANII, Embarca, Start-Up Perú, ProInnóvarte y UTEC Ventures).</ol></ul>
             </div>
           </div>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">

@@ -616,3 +616,14 @@ export const countryCovered = (country_code) => {
   const coveredLocations = ['ar', 'cl', 'mx', 'pe', 'uy']
   return coveredLocations.includes(country_code);
 }
+
+export const getCountryName = (country_code) => {
+  const ids = {
+    ar: 'Argentina',
+    cl: 'Chile',
+    mx: 'México',
+    pe: 'Perú',
+    uy: 'Uruguay',
+  }
+  return ids[country_code]
+}

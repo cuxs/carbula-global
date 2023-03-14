@@ -46,7 +46,7 @@ const PreguntasFrecuentes = () => {
         <div className={styles.container}>
         <h4>Preguntas frecuentes sobre vender</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesVenderGenerales/>
+        <FaqPreguntasFrecuentesVenderGenerales country_code={'ar'}/>
         </div>
         <h4>Preguntas frecuentes sobre comprar</h4>
         <div className={styles.preguntas}>
@@ -96,7 +96,7 @@ const PreguntasFrecuentes = () => {
         <div className={styles.container}>
         <h4>Preguntas frecuentes sobre vender</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesVenderGenerales/>
+        <FaqPreguntasFrecuentesVenderGenerales country_code={'mx'}/>
         </div>
         <h4>Preguntas frecuentes sobre comprar</h4>
         <div className={styles.preguntas}>
@@ -121,11 +121,11 @@ const PreguntasFrecuentes = () => {
         <div className={styles.container}>
         <h4>Preguntas frecuentes sobre vender</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesVenderChile/>
+        <FaqPreguntasFrecuentesVenderGenerales country_code={'pe'}/>
         </div>
         <h4>Preguntas frecuentes sobre comprar</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesComprarChile/>
+        <FaqPreguntasFrecuentesComprarGenerales/>
         </div>
       </div>
       <hr />
@@ -145,7 +145,7 @@ const PreguntasFrecuentes = () => {
         <div className={styles.container}>
         <h4>Preguntas frecuentes sobre vender</h4>
         <div className={styles.preguntas}>
-        <FaqPreguntasFrecuentesVenderGenerales/>
+        <FaqPreguntasFrecuentesVenderGenerales country_code={'uy'}/>
         </div>
         <h4>Preguntas frecuentes sobre comprar</h4>
         <div className={styles.preguntas}>

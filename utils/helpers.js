@@ -495,7 +495,8 @@ export const getWhatsappNumber = (country_code) => {
     ar: '+5492614864083',
     mx: '+525541622979',
     uy: '+59899220055',
-    cl: '+56971417008',
+    cl: '+56935317622',
+    pe: '+56935317622'
   }
   return phoneNumbers[country_code]
 }

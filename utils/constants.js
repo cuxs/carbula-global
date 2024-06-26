@@ -70,11 +70,11 @@ module.exports = {
     uy: 0.22 
   },
   CARBULA_FEE: {
-    ar: 4.8,
-    cl: 4,
-    mx: 4.8,
-    pe: 4,
-    uy: 4.8 
+    ar: 5,
+    cl: 5,
+    mx: 5,
+    pe: 5,
+    uy: 5
   },
   CARBULA_FEE_MINIMUM: {
     ar: 100000,

@@ -207,3 +207,11 @@ export const createHubspotLead = async (data, token) => {
     throw e.response ? new Error(e.response.data.message) : new Error(e.message)
   }
 }
+
+export const pixelPageview = () => {
+  window.fbq("track", "PageView");
+};
+
+export const pixelEvent = (name, options = {}) => {
+  window.fbq("track", name, options);
+};

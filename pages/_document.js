@@ -1,6 +1,7 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { getCountryCode, getGTMid } from '../utils/helpers'
 import Script from 'next/script'
+import { FB_PIXEL_ID } from '../utils/constants'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -13,7 +14,16 @@ class MyDocument extends Document {
 
     return (
       <Html lang="es">
-        <Head />
+        <Head>
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+            />
+          </noscript>
+        </Head>
         <body>
           <Main />
           <NextScript />

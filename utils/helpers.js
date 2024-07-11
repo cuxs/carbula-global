@@ -503,11 +503,11 @@ export const getWhatsappNumber = (country_code) => {
 
 export const getPhoneNumber = (country_code) => {
   const phoneNumbers = {
-    ar: '+5492613013473',
-    mx: '+525541622979',
-    uy: '+59899220055',
-    cl: '+56228977930',
-    pe: '+56971417008'
+    ar: '+56971550647',
+    mx: '+56971550647',
+    uy: '+56971550647',
+    cl: '+56971550647',
+    pe: '+56971550647'
   }
   return phoneNumbers[country_code]
 }

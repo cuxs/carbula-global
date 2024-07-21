@@ -492,11 +492,11 @@ export const getPreguntasFrecuentes = () => {
 
 export const getWhatsappNumber = (country_code) => {
   const phoneNumbers = {
-    ar: '+5492614864083',
-    mx: '+525541622979',
-    uy: '+59899220055',
-    cl: '+56935317622',
-    pe: '+56935317622'
+    ar: '+56971550647',
+    mx: '+56971550647',
+    uy: '+56971550647',
+    cl: '+56971550647',
+    pe: '+56971550647'
   }
   return phoneNumbers[country_code]
 }

@@ -28,7 +28,9 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        <Script defer type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></Script>
+        {/* script chat 
+            <Script defer type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></Script>
+        */}    
         <Script defer type="text/javascript" id="hs-script-loader" src="//js.hs-scripts.com/8886399.js"></Script>
 
       </Html>

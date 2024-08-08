@@ -7,12 +7,10 @@ import localizedFormat from 'dayjs/plugin/localizedFormat'
 import es from 'dayjs/locale/es'
 import { appWithTranslation } from 'next-i18next';
 import { getGTMid } from '../utils/helpers';
-import { FB_PIXEL_ID } from "../utils/constants";
-import { pixelPageview, pixelEvent } from "../utils/fetches";
 import '../sass/carousel.scss';
 import '../sass/odometer.scss';
-import { useRouter } from "next/router";
-import Script from "next/script";
+import { FB_PIXEL_ID } from "../utils/constants";
+
 
 dayjs.extend(calendar)
 dayjs.extend(updateLocale)
@@ -39,38 +37,39 @@ dayjs.updateLocale('es', {
 // This default export is required in a new `pages/_app.js` file.
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
+    // Initialize Google Tag Manager
     TagManager.initialize({ gtmId: getGTMid(pageProps.COUNTRY_CODE) });
-    pixelPageview();
 
-    const handleRouteChange = () => {
-      pixelPageview();
+    // Initialize Facebook Pixel
+    if (typeof window !== 'undefined') {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', FB_PIXEL_ID); // Reemplaza 'YOUR_PIXEL_ID' con tu ID de píxel
+      fbq('track', 'PageView');
+
+      // Create a global fbq function to track events
+      window.fbq = window.fbq || function() { (window.fbq.q = window.fbq.q || []).push(arguments) };
     }
-
   }, [pageProps.COUNTRY_CODE]);
+
+  const handleEvent = (eventName) => {
+    if (window.fbq) {
+      window.fbq('track', eventName);
+    }
+  };
 
   return (
     <>
       {/* Global Site Code Pixel - Facebook Pixel */}
-      <Script
-        id="fb-pixel"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', ${FB_PIXEL_ID});
-          `,
-        }}
-      />
-      <Component {...pageProps} />
+      <Component {...pageProps} handleEvent={handleEvent} />
     </>
   );
 }
 
-export default appWithTranslation(MyApp)
+export default appWithTranslation(MyApp);

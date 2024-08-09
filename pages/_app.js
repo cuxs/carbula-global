@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }) {
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', FB_PIXEL_ID); // Reemplaza 'YOUR_PIXEL_ID' con tu ID de píxel
+      fbq('init', process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID); // Reemplaza 'YOUR_PIXEL_ID' con tu ID de píxel
       fbq('track', 'PageView');
 
       // Create a global fbq function to track events

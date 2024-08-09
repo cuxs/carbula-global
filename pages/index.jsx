@@ -14,8 +14,6 @@ import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import webinprogress from '../components/WebInProgress';
-import { FB_PIXEL_ID } from '../utils/constants';
-
 
 
 const BlackoutComponent = dynamic(import('../components/BlackoutComponent'))
@@ -58,7 +56,6 @@ export async function getServerSideProps(context) {
 }
 
 const Home = ({ zonas, referer, COUNTRY_CODE }) => {
-  console.log(FB_PIXEL_ID)
   const { t } = useTranslation('common')
   const SellForm = useCallback(dynamic(() => {
     const SellForms = {

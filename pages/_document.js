@@ -1,7 +1,6 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { getCountryCode, getGTMid } from '../utils/helpers'
 import Script from 'next/script'
-import { FB_PIXEL_ID } from '../utils/constants'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -16,7 +15,7 @@ class MyDocument extends Document {
       <Html lang="es">
         <Head>
           {/* Código de Facebook Pixel */}
-          {FB_PIXEL_ID && (
+          {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID && (
             <>
               <script
                 dangerouslySetInnerHTML={{
@@ -29,7 +28,7 @@ class MyDocument extends Document {
                     t.src=v;s=b.getElementsByTagName(e)[0];
                     s.parentNode.insertBefore(t,s)}(window, document,'script',
                     'https://connect.facebook.net/en_US/fbevents.js');
-                    fbq('init', '${FB_PIXEL_ID}');
+                    fbq('init', '${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
                     fbq('track', 'PageView');
                   `,
                 }}
@@ -38,7 +37,7 @@ class MyDocument extends Document {
                 <img
                   height="1"
                   width="1"
-                  src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+                  src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`}
                 />
               </noscript>
             </>

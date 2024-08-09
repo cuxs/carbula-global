@@ -130,5 +130,3 @@ module.exports = {
     datos_del_usuario: {url: '/datos_del_usuario', data: 'datos_del_usuario'},
   }
 }
-
-export const FB_PIXEL_ID = process.env.FACEBOOK_PIXEL_ID;

@@ -26,62 +26,56 @@ const ComoComprar = () => {
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h4 itemprop="name">1. ¿Revisan los autos?</h4>
-            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div itemprop="text">
-              <p>Sí, todos los autos de catálogo pasaron por un protocolo de inspección. Solo trabajamos con autos que aprueben el proceso de inspección.</p>
-              </div>
-            </div>
-            <h4 itemprop="name">2. ¿Qué tipo de autos tienen?</h4>
+            <h4 itemprop="name">1. ¿Qué tipo de autos tienen?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Contamos con una amplia variedad de modelos y marcas. Todos nuestros vehículos tienen menos de 10 años de antigüedad, poseen menos de 150.000 kilómetros, aprobaron la inspección técnica y <b>están listos para que sean tuyos.</b></p>
               </div>
             </div>
-            <h4 itemprop="name">3. Me interesa un vehículo en particular, ¿qué hago?</h4>
+            <h4 itemprop="name">2. Me interesa un vehículo en particular, ¿qué hago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
               <p>Primero, dentro de la publicación hacé click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado). Si te interesa, <a href="https://blog.carbula.com/informes-y-transferencias-autofact-conoce-estos-servicios" target="__blank" rel="noopener noreferrer">podés leer más aquí</a>.</p>
                   <p>El segundo paso es generar un link de inspección.</p>
               </div>
             </div>
-            <h4 itemprop="name">4. ¿En qué consiste la visita vehicular?</h4>
+            <h4 itemprop="name">3. ¿En qué consiste la visita vehicular?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Es una cita en el día y horario que te quede más conveniente para que conozcas tu futuro auto. Uno de nuestros asesores estará allí para despejar todas tus dudas y acompañarte durante el encuentro.</p>
               </div>
             </div>
-            <h4 itemprop="name">5. Todavía no sé qué auto quiero</h4>
+            <h4 itemprop="name">4. Todavía no sé qué auto quiero</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
               <p>No hay ningún problema. Queremos que tengas la mejor experiencia posible, por eso nuestros asesores te brindarán asesoramiento personalizado para ayudarte a elegir tu vehículo ideal.</p>
               </div>
             </div>
-            <h4 itemprop="name">6. ¿Qué métodos de pago aceptan?</h4>
+            <h4 itemprop="name">5. ¿Qué métodos de pago aceptan?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Aceptamos efectivo o transferencia bancaria. Asimismo, siempre buscamos acordar el método de pago en base a lo que le resulte más conveniente tanto a la parte compradora como vendedora.</p>
               </div>
             </div>
-            <h4 itemprop="name">7. ¿Brindan financiación?</h4>
+            <h4 itemprop="name">6. ¿Brindan financiación?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
               <p>Sí. Financiamos hasta el 95% del valor de tu vehículo y <a href="/creditos-para-autos">trabajamos con Banco Santander,</a> líder en préstamos prendarios, para que puedas acceder a tu nuevo auto de la mejor manera.</p>
               </div>
             </div>
-            <h4 itemprop="name">8. ¿Aceptan mi auto cómo método de pago?</h4>
+            <h4 itemprop="name">7. ¿Aceptan mi auto cómo método de pago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
               <p>Sí, siempre que tu auto cumpla con los requisitos necesarios para formar parte de nuestro catálogo. Se le realizará una inspección para conocer su estado y definir su valor real.</p>
               </div>
             </div>
-            <h4 itemprop="name">9. ¿Cómo es el proceso de compra?</h4>
+            <h4 itemprop="name">8. ¿Cómo es el proceso de compra?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
               <p>Simple y transparente. Durante la venta, nuestro asesor coordinará el intercambio con el vendedor. Nosotros te acompañaremos durante todo el trámite para que luego de la visita, el auto sea tuyo en los próximos días.</p>
               </div>
             </div>
-            <h4 itemprop="name">10. Listo, quiero comprar con ustedes.</h4>
+            <h4 itemprop="name">9. Listo, quiero comprar con ustedes.</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Perfecto. Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la experiencia Cárbula. <a href="https://catalogo.carbula.ar/" target="__blank">Hacé click en nuestro catálogo</a> para conocer todos los vehículos disponibles y nuestros asesores se encargarán del resto.</p>
@@ -106,62 +100,56 @@ const ComoComprar = () => {
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h4 itemprop="name">1. ¿Revisan los autos?</h4>
-            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div itemprop="text">
-                <p>Sí, todos los autos de catálogo pasaron por un protocolo de inspección. Solo trabajamos con autos que aprueben el proceso de inspección.</p>
-              </div>
-            </div>
-            <h4 itemprop="name">2. ¿Qué tipo de autos tienen?</h4>
+            <h4 itemprop="name">1. ¿Qué tipo de autos tienen?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
               <p>Contamos con una amplia variedad de modelos y marcas. Todos nuestros vehículos tienen menos de 10 años de antigüedad, poseen menos de 150.000 kilómetros, aprobaron la inspección y <b>están listos para que sean tuyos.</b></p>
               </div>
             </div>
-            <h4 itemprop="name">3. Me interesa un vehículo en particular, ¿qué hago?</h4>
+            <h4 itemprop="name">2. Me interesa un vehículo en particular, ¿qué hago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Primero, dentro de la publicación haz click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado). Si te interesa, <a href="https://blog.carbula.com/informes-y-transferencias-autofact-conoce-estos-servicios" target="__blank" rel="noopener noreferrer">podés leer más aquí</a>.</p>
                 <p>El segundo paso es generar un link de inspección.</p>
               </div>
             </div>
-            <h4 itemprop="name">4. ¿En qué consiste la visita vehicular?</h4>
+            <h4 itemprop="name">3. ¿En qué consiste la visita vehicular?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Es una cita en el día y horario que te quede más conveniente para que conozcas tu futuro auto. Uno de nuestros asesores estará allí para despejar todas tus dudas y acompañarte durante el encuentro.</p>
               </div>
             </div>
-            <h4 itemprop="name">5. Todavía no sé qué auto quiero</h4>
+            <h4 itemprop="name">4. Todavía no sé qué auto quiero</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>No hay ningún problema. Queremos que tengas la mejor experiencia posible, por eso nuestros asesores te brindarán asesoramiento personalizado para ayudarte a elegir tu vehículo ideal.</p>
               </div>
             </div>
-            <h4 itemprop="name">6. ¿Qué métodos de pago aceptan?</h4>
+            <h4 itemprop="name">5. ¿Qué métodos de pago aceptan?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Aceptamos efectivo, tarjeta de crédito, Vale Vista o transferencia bancaria. Asimismo, siempre buscamos acordar el método de pago en base a lo que le resulte más conveniente tanto a la parte compradora como vendedora.</p>
               </div>
             </div>
-            <h4 itemprop="name">7. ¿Brindan financiación?</h4>
+            <h4 itemprop="name">6. ¿Brindan financiación?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Sí. Financiamos hasta el <b>70% del valor de tu vehículo</b> y trabajamos con los líderes nacionales en prendarios para que puedas acceder a tu nuevo auto de la mejor manera.</p>
               </div>
             </div>
-            <h4 itemprop="name">8. ¿Aceptan mi auto cómo método de pago?</h4>
+            <h4 itemprop="name">7. ¿Aceptan mi auto cómo método de pago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Sí, siempre que tu auto cumpla con los requisitos necesarios para formar parte de nuestro catálogo. Se le realizará una inspección para conocer su estado y definir su valor real.</p>
               </div>
             </div>
-            <h4 itemprop="name">9. ¿Cómo es el proceso de compra?</h4>
+            <h4 itemprop="name">8. ¿Cómo es el proceso de compra?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Simple y transparente. Durante la venta, nuestro asesor coordinará el intercambio con el vendedor. Nosotros te acompañaremos durante toda la gestión para que luego de la visita, el auto sea tuyo en los próximos días.</p>
               </div>
             </div>
-            <h4 itemprop="name">10. Listo, quiero comprar con ustedes.</h4>
+            <h4 itemprop="name">9. Listo, quiero comprar con ustedes.</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
               <p>Perfecto. Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la experiencia Cárbula. <a href="https://catalogo.carbula.cl/" target="__blank">Hacé click en nuestro catálogo</a> para conocer todos los vehículos disponibles y nuestros asesores se encargarán del resto.</p>
@@ -186,62 +174,56 @@ const ComoComprar = () => {
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h4 itemprop="name">1. ¿Revisan los autos?</h4>
-            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div itemprop="text">
-                <p>Sí, todos los autos de catálogo pasaron por un protocolo de inspección. Solo trabajamos con autos que aprueben el proceso de inspección.</p>
-              </div>
-            </div>
-            <h4 itemprop="name">2. ¿Qué tipo de autos tienen?</h4>
+            <h4 itemprop="name">1. ¿Qué tipo de autos tienen?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Contamos con una amplia variedad de modelos y marcas. Todos nuestros vehículos tienen menos de 10 años de antigüedad, poseen menos de 150.000 kilómetros, aprobaron la inspección y <b>están listos para que sean tuyos.</b></p>
               </div>
             </div>
-            <h4 itemprop="name">3. Me interesa un vehículo en particular, ¿qué hago?</h4>
+            <h4 itemprop="name">2. Me interesa un vehículo en particular, ¿qué hago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
               <p>Primero, dentro de la publicación hacé click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado). Si te interesa, <a href="https://blog.carbula.com/informes-y-transferencias-autofact-conoce-estos-servicios" target="__blank" rel="noopener noreferrer">podés leer más aquí</a>.</p>
                   <p>El segundo paso es generar un link de inspección.</p>
               </div>
             </div>
-            <h4 itemprop="name">4. ¿En qué consiste la visita vehicular?</h4>
+            <h4 itemprop="name">3. ¿En qué consiste la visita vehicular?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Es una cita en el día y horario que te quede más conveniente para que conozcas tu futuro auto. Uno de nuestros asesores estará allí para despejar todas tus dudas y acompañarte durante el encuentro.</p>
               </div>
             </div>
-            <h4 itemprop="name">5. Todavía no sé qué auto quiero</h4>
+            <h4 itemprop="name">4. Todavía no sé qué auto quiero</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>No hay ningún problema. Queremos que tengas la mejor experiencia posible, por eso nuestros asesores te brindarán asesoramiento personalizado para ayudarte a elegir tu vehículo ideal.</p>
               </div>
             </div>
-            <h4 itemprop="name">6. ¿Qué métodos de pago aceptan?</h4>
+            <h4 itemprop="name">5. ¿Qué métodos de pago aceptan?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Aceptamos efectivo o transferencia bancaria. Asimismo, siempre buscamos acordar el método de pago en base a lo que le resulte más conveniente tanto a la parte compradora como vendedora.</p>
               </div>
             </div>
-            <h4 itemprop="name">¿Brindan financiación?</h4>
+            <h4 itemprop="name">6. ¿Brindan financiación?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Sí. Financiamos hasta el <b>50% del valor de tu vehículo</b> y trabajamos con los líderes nacionales en prendarios para que puedas acceder a tu nuevo auto de la mejor manera.</p>
               </div>
             </div>
-            <h4 itemprop="name">8. ¿Aceptan mi auto cómo método de pago?</h4>
+            <h4 itemprop="name">7. ¿Aceptan mi auto cómo método de pago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Sí, siempre que tu auto cumpla con los requisitos necesarios para formar parte de nuestro catálogo. Se le realizará una inspección para conocer su estado y definir su valor real.</p>
               </div>
             </div>
-            <h4 itemprop="name">¿Cómo es el proceso de compra?</h4>
+            <h4 itemprop="name">8¿Cómo es el proceso de compra?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Simple y transparente. Durante la venta, nuestro asesor coordinará el intercambio con el vendedor. Nosotros te acompañaremos durante todo el trámite para que luego de la visita, el auto sea tuyo en los próximos días.</p>
               </div>
             </div>
-            <h4 itemprop="name">10. Listo, quiero comprar con ustedes.</h4>
+            <h4 itemprop="name">9. Listo, quiero comprar con ustedes.</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Perfecto. Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la experiencia Cárbula. <a href="https://catalogo.carbula.cl/" target="__blank">Hacé click en nuestro catálogo</a> para conocer todos los vehículos disponibles y nuestros asesores se encargarán del resto.</p>
@@ -266,62 +248,56 @@ const ComoComprar = () => {
         </div>
         <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h4 itemprop="name">1. ¿Revisan los autos?</h4>
-            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div itemprop="text">
-                <p>Sí, todos los autos de catálogo pasaron por un protocolo de inspección. Solo trabajamos con autos que aprueben el proceso de inspección.</p>
-              </div>
-            </div>
-            <h4 itemprop="name">2. ¿Qué tipo de autos tienen?</h4>
+            <h4 itemprop="name">1. ¿Qué tipo de autos tienen?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
               <p>Contamos con una amplia variedad de modelos y marcas. Todos nuestros vehículos tienen menos de 10 años de antigüedad, poseen menos de 150.000 kilómetros, aprobaron la inspección y <b>están listos para que sean tuyos.</b></p>
               </div>
             </div>
-            <h4 itemprop="name">3. Me interesa un vehículo en particular, ¿qué hago?</h4>
+            <h4 itemprop="name">2. Me interesa un vehículo en particular, ¿qué hago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Primero, dentro de la publicación haz click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado). Si te interesa, <a href="https://blog.carbula.com/informes-y-transferencias-autofact-conoce-estos-servicios" target="__blank" rel="noopener noreferrer">podés leer más aquí</a>.</p>
                 <p>El segundo paso es generar un link de inspección.</p>
               </div>
             </div>
-            <h4 itemprop="name">4. ¿En qué consiste la visita vehicular?</h4>
+            <h4 itemprop="name">3. ¿En qué consiste la visita vehicular?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Es una cita en el día y horario que te quede más conveniente para que conozcas tu futuro auto. Uno de nuestros asesores estará allí para despejar todas tus dudas y acompañarte durante el encuentro.</p>
               </div>
             </div>
-            <h4 itemprop="name">5. Todavía no sé qué auto quiero</h4>
+            <h4 itemprop="name">4. Todavía no sé qué auto quiero</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>No hay ningún problema. Queremos que tengas la mejor experiencia posible, por eso nuestros asesores te brindarán asesoramiento personalizado para ayudarte a elegir tu vehículo ideal.</p>
               </div>
             </div>
-            <h4 itemprop="name">6. ¿Qué métodos de pago aceptan?</h4>
+            <h4 itemprop="name">5. ¿Qué métodos de pago aceptan?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Aceptamos efectivo, tarjeta de crédito, Vale Vista o transferencia bancaria. Asimismo, siempre buscamos acordar el método de pago en base a lo que le resulte más conveniente tanto a la parte compradora como vendedora.</p>
               </div>
             </div>
-            <h4 itemprop="name">7. ¿Brindan financiación?</h4>
+            <h4 itemprop="name">6. ¿Brindan financiación?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Sí. Financiamos hasta el <b>70% del valor de tu vehículo</b> y trabajamos con los líderes nacionales en prendarios para que puedas acceder a tu nuevo auto de la mejor manera.</p>
               </div>
             </div>
-            <h4 itemprop="name">8. ¿Aceptan mi auto cómo método de pago?</h4>
+            <h4 itemprop="name">7. ¿Aceptan mi auto cómo método de pago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Sí, siempre que tu auto cumpla con los requisitos necesarios para formar parte de nuestro catálogo. Se le realizará una inspección para conocer su estado y definir su valor real.</p>
               </div>
             </div>
-            <h4 itemprop="name">9. ¿Cómo es el proceso de compra?</h4>
+            <h4 itemprop="name">8. ¿Cómo es el proceso de compra?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Simple y transparente. Durante la venta, nuestro asesor coordinará el intercambio con el vendedor. Nosotros te acompañaremos durante toda la gestión para que luego de la visita, el auto sea tuyo en los próximos días.</p>
               </div>
             </div>
-            <h4 itemprop="name">10. Listo, quiero comprar con ustedes.</h4>
+            <h4 itemprop="name">9. Listo, quiero comprar con ustedes.</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
               <p>Perfecto. Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la experiencia Cárbula. <a href="https://catalogo.carbula.cl/" target="__blank">Hacé click en nuestro catálogo</a> para conocer todos los vehículos disponibles y nuestros asesores se encargarán del resto.</p>
@@ -345,62 +321,56 @@ const ComoComprar = () => {
       </div>
       <div className={styles.comprar}>
           <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h4 itemprop="name">1. ¿Revisan los autos?</h4>
-            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div itemprop="text">
-                <p>Sí, todos los autos de catálogo pasaron por un protocolo de inspección. Solo trabajamos con autos que aprueben el proceso de inspección.</p>
-              </div>
-            </div>
-            <h4 itemprop="name">2. ¿Qué tipo de autos tienen?</h4>
+            <h4 itemprop="name">1. ¿Qué tipo de autos tienen?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Contamos con una amplia variedad de modelos y marcas. Todos nuestros vehículos tienen menos de 10 años de antigüedad, poseen menos de 150.000 kilómetros, aprobaron la inspección técnica y <b>están listos para que sean tuyos.</b></p>
               </div>
             </div>
-            <h4 itemprop="name">3. Me interesa un vehículo en particular, ¿qué hago?</h4>
+            <h4 itemprop="name">2. Me interesa un vehículo en particular, ¿qué hago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                   <p>Primero, dentro de la publicación hace click en "ME INTERESA”. Luego, uno de nuestros asesores se contactará y te brindará toda la información necesaria (contamos con los informes mecánicos más completos del mercado).</p>
                   <p>El segundo paso es generar un link de inspección.</p>
               </div>
             </div>
-            <h4 itemprop="name">4. ¿En qué consiste la visita vehicular?</h4>
+            <h4 itemprop="name">3. ¿En qué consiste la visita vehicular?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Es una cita en el día y horario que te quede más conveniente para que conozcas tu futuro auto. Uno de nuestros asesores estará allí para despejar todas tus dudas y acompañarte durante el encuentro.</p>
               </div>
             </div>
-            <h4 itemprop="name">5. Todavía no sé qué auto quiero</h4>
+            <h4 itemprop="name">4. Todavía no sé qué auto quiero</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>No hay ningún problema. Queremos que tengas la mejor experiencia posible, por eso nuestros asesores te brindarán asesoramiento personalizado para ayudarte a elegir tu vehículo ideal.</p>
               </div>
             </div>
-            <h4 itemprop="name">6. ¿Qué métodos de pago aceptan?</h4>
+            <h4 itemprop="name">5. ¿Qué métodos de pago aceptan?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Aceptamos efectivo o transferencia bancaria. Asimismo, siempre buscamos acordar el método de pago en base a lo que le resulte más conveniente tanto a la parte compradora como vendedora.</p>
               </div>
             </div>
-            <h4 itemprop="name">7. ¿Brindan financiación?</h4>
+            <h4 itemprop="name">6. ¿Brindan financiación?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Sí. Financiamos desde el <b>50% del valor de tu vehículo</b> y trabajamos con los líderes nacionales en prendarios para que puedas acceder a tu nuevo auto de la mejor manera.</p>
               </div>
             </div>
-            <h4 itemprop="name">8. ¿Aceptan mi auto cómo método de pago?</h4>
+            <h4 itemprop="name">7. ¿Aceptan mi auto cómo método de pago?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Sí, siempre que tu auto cumpla con los requisitos necesarios para formar parte de nuestro catálogo. Se le realizará una inspección para conocer su estado y definir su valor real.</p>
               </div>
             </div>
-            <h4 itemprop="name">9. ¿Cómo es el proceso de compra?</h4>
+            <h4 itemprop="name">8. ¿Cómo es el proceso de compra?</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Simple y transparente. Durante la venta, nuestro asesor coordinará el intercambio con el vendedor. Nosotros te acompañaremos durante todo el trámite para que luego de la visita, el auto sea tuyo en los próximos días.</p>
               </div>
             </div>
-            <h4 itemprop="name">10. Listo, quiero comprar con ustedes.</h4>
+            <h4 itemprop="name">9. Listo, quiero comprar con ustedes.</h4>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div itemprop="text">
                 <p>Perfecto. Muchas gracias por confiar en nosotros y te damos oficialmente la bienvenida a la experiencia Cárbula. Hacé click en nuestro catálogo para conocer todos los vehículos disponibles y nuestros asesores se encargarán del resto.</p>

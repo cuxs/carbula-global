@@ -38,23 +38,32 @@ dayjs.updateLocale('es', {
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     // Initialize Google Tag Manager
-    TagManager.initialize({ gtmId: getGTMid(pageProps.COUNTRY_CODE) });
+    //TagManager.initialize({ gtmId: getGTMid(pageProps.COUNTRY_CODE) });
+    {/* Google tag (gtag.js) */ }
+    // Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
 
     // Initialize Facebook Pixel
     if (typeof window !== 'undefined') {
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID); // Reemplaza 'YOUR_PIXEL_ID' con tu ID de píxel
       fbq('track', 'PageView');
 
       // Create a global fbq function to track events
-      window.fbq = window.fbq || function() { (window.fbq.q = window.fbq.q || []).push(arguments) };
+      window.fbq = window.fbq || function () { (window.fbq.q = window.fbq.q || []).push(arguments) };
     }
   }, [pageProps.COUNTRY_CODE]);
 
@@ -66,6 +75,16 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      {/* google adds*/}
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX');
+        `}
+      </Script>
       {/* Global Site Code Pixel - Facebook Pixel */}
       <Component {...pageProps} handleEvent={handleEvent} />
     </>

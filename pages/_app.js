@@ -38,7 +38,13 @@ dayjs.updateLocale('es', {
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     // Initialize Google Tag Manager
-    TagManager.initialize({ gtmId: getGTMid(pageProps.COUNTRY_CODE) });
+        //TagManager.initialize({ gtmId: getGTMid(pageProps.COUNTRY_CODE) });
+        // Google Analytics
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YPVCKX90N6');
+
 
     // Initialize Facebook Pixel
     if (typeof window !== 'undefined') {
@@ -66,6 +72,16 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+    {/*codigo google ads*/}
+    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-YPVCKX90N6');
+        `}
+      </Script>
       {/* Global Site Code Pixel - Facebook Pixel */}
       <Component {...pageProps} handleEvent={handleEvent} />
     </>

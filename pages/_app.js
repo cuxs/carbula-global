@@ -10,6 +10,7 @@ import { getGTMid } from '../utils/helpers';
 import '../sass/carousel.scss';
 import '../sass/odometer.scss';
 import { FB_PIXEL_ID } from "../utils/constants";
+import Script from 'next/script';
 
 
 dayjs.extend(calendar)
@@ -44,7 +45,7 @@ function MyApp({ Component, pageProps }) {
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-YPVCKX90N6');
 
     // Initialize Facebook Pixel
     if (typeof window !== 'undefined') {
@@ -76,13 +77,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {/* google adds*/}
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-YPVCKX90N6" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX');
+          gtag('config', 'G-YPVCKX90N6');
         `}
       </Script>
       {/* Global Site Code Pixel - Facebook Pixel */}

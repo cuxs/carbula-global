@@ -14,6 +14,16 @@ class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
+       {/* Google tag (gtag.js) */}
+       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-YPVCKX90N6"></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YPVCKX90N6');
+          `}
+        </Script>
         </Head>
         <body>
           <Main />
@@ -21,7 +31,7 @@ class MyDocument extends Document {
         </body>
         {/* script chat 
             <Script defer type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></Script>
-        */}    
+        */}
         <Script defer type="text/javascript" id="hs-script-loader" src="//js.hs-scripts.com/8886399.js"></Script>
 
       </Html>

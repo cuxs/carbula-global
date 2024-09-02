@@ -180,6 +180,11 @@
     margin: 50px auto;
   }
 }
+@media (max-width: 690px) {
+  .text__container {
+    text-align: center;
+    margin: 6em 0em 0em 0em;
+}}
 @media (max-width: 576px) {
   .section1__title {
     margin-top: 210px;

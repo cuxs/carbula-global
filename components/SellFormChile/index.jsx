@@ -405,6 +405,10 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
           <div className={styles.submit__button}>
             <Button type="submit" primary>Continuar</Button>
           </div>
+          <div className={styles.portales}>En caso de no encontrar su automóvil, no dude en <a 
+    href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20quiero%20cotizar%20un%20vehiculo`} 
+    target="_blank" 
+    rel="noopener noreferrer">escribirnos</a></div>
           <div className={styles.portales}>Publicaremos y anunciaremos en nuestro portal y en los más visitados del país: <b>ChileAutos, Yapo, Mercado Libre.</b></div>
         </form>
         <form className={styles['fields--mobile']} onSubmit={handleSubmit}>
@@ -496,6 +500,10 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
           <div className={styles.submit__button}>
             <Button type="submit" primary>Continuar</Button>
           </div>
+          <div className={styles.portales}>En caso de no encontrar su automóvil, no dude en <a 
+    href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20quiero%20cotizar%20un%20vehiculo`} 
+    target="_blank" 
+    rel="noopener noreferrer">escribirnos</a></div>
           <div className={styles.portales}>Publicaremos y anunciaremos en nuestro portal y en los más visitados del país: <b>ChileAutos, Yapo, Mercado Libre.</b></div>
         </form>
 

@@ -55,6 +55,10 @@ const Toolbar = ({ drawerClickHandler }) => {
       <div className={styles['toolbar__toggle-button']}>
         <DrawerToggleButton click={drawerClickHandler} />
       </div>
+      <div className={styles.icons_nav}>
+        <img src="/icons/instagram.svg" alt="" className={styles.icon_insta} />
+        <img src="/icons/whatsapp-white.svg" alt="" className={styles.icon_wsp}/>
+      </div>
     </header>
   )
 }

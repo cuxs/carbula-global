@@ -18,6 +18,21 @@
     list-style-type: none;
   }
 }
+
+.icons_nav{
+  display: flex;
+  margin-left: 30px;
+  gap: 15px;
+}
+
+.icon_wsp:hover {
+  filter: invert(80%) sepia(100%) saturate(1000%) hue-rotate(90deg) brightness(1) contrast(1);
+}
+
+.icon_insta:hover {
+  filter: invert(20%) sepia(100%) saturate(5000%) hue-rotate(-50deg) brightness(1) contrast(1);
+}
+
 .toolbar__container-items {
   display: flex;
   align-items: center;

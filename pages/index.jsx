@@ -190,9 +190,6 @@ const Home = ({ zonas, referer, COUNTRY_CODE }) => {
           </div>
         </div>
       </section>
-      <section>
-        <BlogComponent />
-      </section>
       <section className={styles.section3}>
         <div className={styles.section3__container}>
           <h3 className={styles.text__primary}>{t('testimonios')}</h3>

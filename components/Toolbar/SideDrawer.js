@@ -30,6 +30,16 @@ const SideDrawer = ({ show, click, }) => {
           </li>
           <li><a href="https://blog.carbula.com" target="__blank" rel="noopener noreferrer">Blog</a></li>
           <li><a href="/preguntas-frecuentes">FAQs</a></li>
+          <li>
+          <div className={styles.icons_nav_side}>
+        <a href="https://www.instagram.com/carbula.chile/" target="_blank" rel="noopener noreferrer">
+          <img src="/icons/instagram.svg" alt="Instagram" className={styles.icon_insta_side} />
+        </a>
+        <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="_blank" rel="noopener noreferrer">
+          <img src="/icons/whatsapp-white.svg" alt="WhatsApp" className={styles.icon_wsp_side} />
+        </a>
+      </div>
+          </li>
         </ul>
       </div>
     </nav>

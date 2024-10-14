@@ -33,6 +33,28 @@
   filter: invert(20%) sepia(100%) saturate(5000%) hue-rotate(-50deg) brightness(1) contrast(1);
 }
 
+.icons_nav_side{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon_insta_side, .icon_wsp_side {
+  width: 40px;
+  height: auto;  
+}
+
+.icon_wsp_side:hover {
+  filter: invert(80%) sepia(100%) saturate(1000%) hue-rotate(90deg) brightness(1) contrast(1);
+}
+
+.icon_insta_side:hover {
+  filter: invert(20%) sepia(100%) saturate(5000%) hue-rotate(-50deg) brightness(1) contrast(1);
+}
+
+
 .toolbar__container-items {
   display: flex;
   align-items: center;
@@ -242,7 +264,7 @@
   .icons_nav{
     display: none;
   }
-  
+
   .toolbar__toggle-button {
     display: block;
     width: 10%;

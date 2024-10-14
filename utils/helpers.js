@@ -581,7 +581,7 @@ export const getGTMid= country_code=>{
 export const getInstagramLink = country_code=>{
   const urls={
     ar: 'https://www.instagram.com/carbula.ar/',
-    cl: 'https://www.instagram.com/carbula.cl/',
+    cl: 'https://www.instagram.com/carbula.chile/',
     mx: 'https://www.instagram.com/carbula.mx/',
     pe: 'https://www.instagram.com/carbula.pe/',
     uy: 'https://www.instagram.com/carbula.uy/'

@@ -21,10 +21,6 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
   }
   return (<div className={styles.footerInfo__container}  id='contacto'> 
     <img src={renderImagSrc('carbula')} alt="Cárbula Autos" title="Cárbula Autos" className={styles.footerInfo__logo} />
-    <div className={styles.legal__texts}>
-      <p style={renderColorStyle()} className={styles.razon__text}>{t('razonSocial')}</p>
-      <p style={renderColorStyle()} className={styles.rut__text}>{t('cuit')}</p>
-    </div>
     <div className={styles.elements__container}>
       <div className={styles.text__area}>
         <p style={renderColorStyle()}>{t('queSomos')}<br></br>{t('queHacemos')}<br></br>{t('nuestroClaim')}</p>
@@ -36,7 +32,6 @@ const FooterInfo = ({ blue, grey, white, country_code }) => {
         <Button link> <a style={renderColorStyle()} href={getComoComprar()} >  ¿Cómo comprar un auto?</a></Button>
         <Button link> <a style={renderColorStyle()} href={getComoVender()} > ¿Cómo vender mi auto?</a></Button>
         <Button link> <a style={renderColorStyle()} href={getTerminosCondiciones()} > Términos y condiciones</a></Button>
-        <Button link> <a style={renderColorStyle()} target="__blank" rel="noopener noreferrer" href="https://blog.carbula.com/"> Blog</a></Button>
       </div>
       <div className={styles.social__container}>
       <a

@@ -468,7 +468,7 @@ export const getCatalogoURL = (country_code) => {
     ar: 'https://catalogo.carbula.ar',
     mx: 'https://catalogo.carbula.mx',
     uy: 'https://catalogo.carbula.uy',
-    cl: 'https://catalogo.carbula.cl',
+    cl: 'https://listado.mercadolibre.cl/_Tienda_carbula',
     pe: 'https://catalogo.carbula.pe'
   }
   return catalogoUrl[country_code]

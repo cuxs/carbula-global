@@ -37,7 +37,7 @@ dayjs.updateLocale('es', {
 
 // This default export is required in a new `pages/_app.js` file.
 function MyApp({ Component, pageProps }) {
-  const tiktokpixelID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
+  const tiktokpixelID = process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID;
   useEffect(() => {
     // Initialize Google Tag Manager
     //TagManager.initialize({ gtmId: getGTMid(pageProps.COUNTRY_CODE) });

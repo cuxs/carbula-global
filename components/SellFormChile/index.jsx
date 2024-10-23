@@ -13,8 +13,6 @@ import CryptoJS from 'crypto-js'
 import { useRouter } from "next/router"
 import { useSpring, useTransition, config } from "react-spring";
 import { checkYear, checkZone, getCampania, getSourceType, saveCotization, globalValidationData, getPhoneNumber, getWhatsappNumber } from '../../utils/helpers';
-//esto importa el componente InConstruction
-import InConstruction from '../InConstruction/InConstruction';
 
 
 const whereOptions = [
@@ -68,16 +66,6 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       uuid: '',
     }
   )
-  //este estado es para el funcionamientro del modal InConstruction
-  const [showModal, setShowModal] = useState(false);
-  //aqui se setean los nuevos valores del modal
-  const openModal = () => {
-    setShowModal(true)
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
   const router = useRouter()
 
   function parseMarcaModeloResponse(data) {
@@ -128,7 +116,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
 
   const handleMarcaModeloInputChange = (text,) => setMarcaModeloText(text)
   const handleMarcaModeloOnChange = async (option) => {
-    if (router.pathname === "/") {
+    if(router.pathname === "/"){
       history.pushState(TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.data, TRACKING_URLS.datos_del_vehiculo.url)
     }
     try {
@@ -161,7 +149,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         country_code: COUNTRY_CODE
       }
       checkYear(values.year);
-      const { data } = await submitCarForm(carData).catch(err => { console.log("ERROR: ", err); setUnhandledError(err.message, carData) });
+      const { data } = await submitCarForm(carData).catch(err => {console.log("ERROR: ", err); setUnhandledError(err.message, carData)});
       setcotizationUuid(data.uuid);
     } catch (e) {
       setUnhandledError(e.message)
@@ -183,14 +171,14 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       carAndContactData.hs_analytics_source = dealSource
       carAndContactData.campania = getCampania(router.query)
       setOverlayBackground(true)
-      const { data } = await submitFormAndGetCotization(carAndContactData).catch(err => { console.log("Cotization ERROR: ", err) })
+      const { data } = await submitFormAndGetCotization(carAndContactData).catch(err => {console.log("Cotization ERROR: ", err)})
       carAndContactData.external_id = data.data.external_id
       const query = CryptoJS.AES.encrypt(JSON.stringify(data.data), 'cotizacion').toString()
       saveCotization(query)
       router.push({
         pathname: 'cotizacion',
         query: { paso: 'paso-1' }
-      }, undefined, { shallow: true })
+      }, undefined, {shallow: true})
     } catch (e) {
       setOverlayBackground(false)
       if (e.message.indexOf('cobertura') > -1) {
@@ -200,7 +188,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         setStep('error-cobertura')
         return setUserName(values.name)
       }
-      if (e.message.indexOf('year') > -1) {
+      if(e.message.indexOf('year')> -1) {
         carAndContactData.noGeneroNegocio = 'auto_antiguo' // para propiedad de hubspot
         submitFormAndGetCotization(carAndContactData)
         router.replace({ pathname: '/', query: { cotizacion: 'aniofueradecobertura' } })
@@ -213,21 +201,21 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       }
     }
   }
-  const setUnhandledError = async (unhandledError = "Sin especificar", carAndContactData = {}) => {
+  const setUnhandledError = async(unhandledError = "Sin especificar", carAndContactData = {}) => {
     const errorData = {
       ...formData,
       error: unhandledError,
     }
-    try {
+    try{
       console.log(`ERROR no contemplado: ${unhandledError}`)
       console.log(unhandledError)
       carAndContactData.noGeneroNegocio = 'negocio_con_error' // para propiedad de hubspot)
     }
-    catch (err) {
+    catch(err){
       console.log("ERROR: ", err)
     }
     sendUnhandledErrorData(errorData)
-    typeof errorData.email !== 'undefined' || typeof errorData.phone !== 'undefined' ? setStep('error-global') : setStep('error-undefined')
+    typeof errorData.email !== 'undefined'|| typeof errorData.phone !== 'undefined' ? setStep('error-global') : setStep('error-undefined')
   }
   // const setInspectionData = async (carAndContactData) => {
   //   try{
@@ -277,7 +265,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
         .min(2, "Muy corto."),
       email: mixed()
         .test('isValidEmail',
-          "Ingrese un email válido. (.com o .cl)",
+        "Ingrese un email válido. (.com o .cl)",
           value => /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.(com|cl(?:\.[a-z]{2})?)$/.test(value)
         )
         .required("Ingresa tu email."),
@@ -317,14 +305,13 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
   const renderForm = (handleSubmit, handleChange, handleBlur, errors, values, touched, setFieldValue) => {
     const formSteps = {
       0: <Fragment>
-        <InConstruction showModal={showModal} setShowModal={setShowModal} wsp={getWhatsappNumber(COUNTRY_CODE)}></InConstruction>
         <div className={"styles.division__container" + "hidden-lg hidden-xs"} hidden="true">
           <div className={styles.sellform__division} />
           <p>o</p>
           <div className={styles.sellform__division} />
         </div>
         <form className={styles['fields--desktop']} onSubmit={handleSubmit}>
-          <div className={styles.form__row} onClick={() => openModal()}>
+          <div className={styles.form__row}>
             <div className='form-item'>
               <Select
                 onBlur={handleBlur}
@@ -332,14 +319,14 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
                 options={marcaModeloOptions}
                 large
                 placeholder={formData.marcaModelo ? formData.marcaModelo : 'Marca y modelo'}
-                onInputChange={/*handleMarcaModeloInputChange*/()=>openModal()}
-                onChange={()=>openModal() /*(option) => {
+                onInputChange={handleMarcaModeloInputChange}
+                onChange={(option) => {
                   handleMarcaModeloOnChange(option)
                   setFieldValue('marcaModelo', `${option.nombreMarca} ${option.nombreModelo}`)
                   setFieldValue('brand', option.nombreMarca)
                   setFieldValue('model', option.nombreModelo)
                   setFieldValue('idMarca', option.value)
-                }*/
+                }
                 }
                 isLoading={isMarcaModeloLoading}
                 renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('inMarcaYmodeloNoEncontrado') : 'Escribe...'}
@@ -375,7 +362,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
           </div>
           <div className={styles.form__row}>
             <div className='form-item'>
-              <InputMask
+            <InputMask
                 formatChars={{
                   'n': '[0-9]'
                 }}
@@ -418,32 +405,30 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
           <div className={styles.submit__button}>
             <Button type="submit" primary>Continuar</Button>
           </div>
-          <div className={styles.portales}>En caso de no encontrar su automóvil, no dude en<a
-            href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20quiero%20cotizar%20un%20vehiculo`}
-            target="_blank"
-            rel="noopener noreferrer"><span><b className={styles.stand_out}> Contactarnos</b></span></a></div>
+          <div className={styles.portales}>En caso de no encontrar su automóvil, no dude en<a 
+    href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20quiero%20cotizar%20un%20vehiculo`} 
+    target="_blank" 
+    rel="noopener noreferrer"><span><b className={styles.stand_out}> Contactarnos</b></span></a></div>
           <div className={styles.portales}>Publicaremos y anunciaremos en nuestro portal y en los más visitados del país: <b>ChileAutos, Yapo, Mercado Libre.</b></div>
         </form>
         <form className={styles['fields--mobile']} onSubmit={handleSubmit}>
-          <div className={styles.form__row} onClick={() => openModal()}>
-            <div className='form-item' onClick={() => openModal()}>
+          <div className={styles.form__row}>
+            <div className='form-item'>
               <Select
                 onBlur={handleBlur}
                 options={marcaModeloOptions}
                 name='marcaModelo'
                 large
                 placeholder={formData.marcaModelo ? formData.marcaModelo : 'Marca y modelo'}
-                onInputChange={() => openModal()}
-                onChange={() => openModal()}
-                  /*(option) => {
+                onInputChange={handleMarcaModeloInputChange}
+                onChange={(option) => {
                   handleMarcaModeloOnChange(option)
                   setFieldValue('marcaModelo', `${option.nombreMarca} ${option.nombreModelo}`)
                   setFieldValue('brand', option.nombreMarca)
                   setFieldValue('model', option.nombreModelo)
                   setFieldValue('idMarca', option.value)
 
-                }}*/
-                onClick={() => openModal()}
+                }}
                 isLoading={isMarcaModeloLoading}
                 renderNoOptionMessage={({ inputValue }) => inputValue.length > MIN_TEXT_SEARCH_LENGTH ? t('inMarcaYmodeloNoEncontrado') : 'Escribe...'} />
               {errors.marcaModelo && touched.marcaModelo && (
@@ -515,10 +500,10 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
           <div className={styles.submit__button}>
             <Button type="submit" primary>Continuar</Button>
           </div>
-          <div className={styles.portales}>En caso de no encontrar su automóvil, no dude en<a
-            href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20quiero%20cotizar%20un%20vehiculo`}
-            target="_blank"
-            rel="noopener noreferrer"><span><b className={styles.stand_out}> Contactarnos</b></span></a></div>
+          <div className={styles.portales}>En caso de no encontrar su automóvil, no dude en<a 
+    href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20quiero%20cotizar%20un%20vehiculo`} 
+    target="_blank" 
+    rel="noopener noreferrer"><span><b className={styles.stand_out}> Contactarnos</b></span></a></div>
           <div className={styles.portales}>Publicaremos y anunciaremos en nuestro portal y en los más visitados del país: <b>ChileAutos, Yapo, Mercado Libre.</b></div>
         </form>
 
@@ -596,11 +581,11 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
             <input type="checkbox" id="newsletter" name="newsletter" onChange={handleChange} />
             <label for="newsletter">Quiero recibir newsletters</label>
           </div>
-        </div>
-        <div className={styles.buttons__container}>
-          <Button type="button" link onClick={handleBack}>Volver</Button>
-          <Button overlayEffect type="submit" primary>Cotizar</Button>
-        </div>
+          </div>
+          <div className={styles.buttons__container}>
+            <Button type="button" link onClick={handleBack}>Volver</Button>
+            <Button overlayEffect type="submit" primary>Cotizar</Button>
+          </div>
       </form>
     }
     return formSteps[step]
@@ -638,14 +623,14 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
     </div>,
     'error-year': <div>
       <p>Estimado {userName},</p>
-      <br />
+      <br/>
       <p>Por el momento <b>no</b> estamos trabajando con vehículos que tengan más de 10 años de antigüedad. </p>
       <p>Gracias por la visita :)</p>
       <br />
       <Button noBorder><a href={`https://catalogo.carbula.${COUNTRY_CODE}`} target="__blank">Ver catálogo</a></Button>
     </div>,
     'error-undefined': <div>
-      <p><b>Hola{typeof (userName) !== "undefined" ? ` ${userName},` : ","}</b></p>
+      <p><b>Hola{typeof(userName) !== "undefined" ? ` ${userName},` : ","}</b></p>
       <br />
       <p>Muchas gracias por utilizar nuestra plataforma.</p><br />
       <p>Lamentablemente, por el momento no hemos podido proceder con la marca y modelo seleccionados.</p><br />
@@ -653,7 +638,7 @@ const SellFormChile = ({ step, setStep, setOverlayBackground, zonas, referer, CO
       <div align='center'>
         <a href={`tel:${getPhoneNumber(COUNTRY_CODE)}`}><Button secondaryOutlined>Llamar</Button></a>
         <a href={`http://api.whatsapp.com/send?phone=${getWhatsappNumber(COUNTRY_CODE)}&text=Hola,%20tengo%20una%20consulta`} target="__blank"><Button secondary>Whatsapp</Button></a>
-        <br /><Button noBorder onClick={() => setStep(0)}>Reintentar</Button><br />
+        <br /><Button noBorder onClick={() => setStep(0)}>Reintentar</Button><br/>
       </div>
     </div>,
     'error-global': <div>
